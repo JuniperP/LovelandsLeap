@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccc6gfv7e6o6w"]
+
+[ext_resource type="Script" path="res://scripts/Player.cs" id="1_lwu2u"]
+[ext_resource type="Texture2D" uid="uid://bt3jtehq75olq" path="res://frog.jpg" id="2_1pcs2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vlg27"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1pcs2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1eq5"]
+radius = 54.0
+height = 346.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_lwu2u")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_vlg27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_j1eq5")
