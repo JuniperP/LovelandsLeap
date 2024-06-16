@@ -3,36 +3,33 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	[Export]
-	public int Speed = 150;
-	
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+	[Export] public int Speed = 300;
+	[Export] public int JumpImpulse = 20;
+	private float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
+	private Vector2 _targetVelocity = Vector2.Zero;
 
 	public override void _PhysicsProcess(double delta)
 	{
 		handleMovement(delta);
-		base._PhysicsProcess(delta);
+		Velocity = _targetVelocity;
+		MoveAndSlide();
 	}
 
 	private void handleMovement(double delta)
 	{
-		Vector2 velocity = Vector2.Zero;
+		// Handle gravity
+		if (!IsOnFloor())
+			_targetVelocity.Y += gravity * (float)delta;
+
+		Vector2 direction = Vector2.Zero;
 		
 		if (Input.IsActionPressed("move_right"))
-			velocity.X += 1;
+			direction.X += 1;
 		
 		if (Input.IsActionPressed("move_left"))
-			velocity.X -= 1;
+			direction.X -= 1;
 		
-		velocity = velocity.Normalized() * Speed;
-		Position += velocity * (float)delta;
+		direction = direction.Normalized() * Speed;
+		Position += direction * (float)delta;
 	}
 }

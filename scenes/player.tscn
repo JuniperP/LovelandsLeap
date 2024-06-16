@@ -19,6 +19,8 @@ radius = 54.0
 height = 346.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_lwu2u")
 metadata/_edit_group_ = true
 
