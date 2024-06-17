@@ -4,6 +4,7 @@ using System;
 public partial class Player : CharacterBody2D
 {
 	[Export] public int Speed = 300;
+	[Export] public int Acceleration = 2000;
 	[Export] public int JumpImpulse = 1000;
 	[Export] public float GravityMultiplier = 1;
 
@@ -13,8 +14,6 @@ public partial class Player : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		HandleMovement(delta);
-		Velocity = _targetVelocity;
-		MoveAndSlide();
 	}
 
 	private void HandleMovement(double delta)
@@ -24,20 +23,19 @@ public partial class Player : CharacterBody2D
 			_targetVelocity.Y += gravity * GravityMultiplier * (float)delta;
 
 		// Handle jump
-		if (Input.IsActionJustPressed("move_up") && IsOnFloor())
-		{
+		else if (Input.IsActionJustPressed("move_up"))
 			_targetVelocity.Y = -JumpImpulse;
-		}
 
-		// TODO: Change to float
-		Vector2 direction = Vector2.Zero;
+		// Smooth velocity towards horizontal direction
+		float direction = Input.GetAxis("move_left", "move_right");
+		_targetVelocity.X = Mathf.MoveToward(
+			Velocity.X,
+			direction * Speed,
+			Acceleration * (float)delta
+		);
 
-		if (Input.IsActionPressed("move_right"))
-			direction.X += 1;
-
-		if (Input.IsActionPressed("move_left"))
-			direction.X -= 1;
-
-		_targetVelocity.X = direction.X * Speed;
+		// Update velocity and move
+		Velocity = _targetVelocity;
+		MoveAndSlide();
 	}
 }
