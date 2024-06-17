@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt5bfn4iraty0"]
+
+[ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://artwork/background/MainMenu.jpg" id="1_ddlmj"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -39.0
+offset_right = 41.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ddlmj")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 38.0
+offset_right = -36.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 128
+text = "
+THE LOVELAND FROG "
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1650.0
+offset_top = 450.0
+offset_right = -88.0
+offset_bottom = -703.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1700.0
+offset_top = 600.0
+offset_right = -115.0
+offset_bottom = -553.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+
+[node name="Button3" type="Button" parent="Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1718.0
+offset_top = 750.0
+offset_right = -118.0
+offset_bottom = -403.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Credits"
