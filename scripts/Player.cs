@@ -10,26 +10,32 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		handleMovement(delta);
+		HandleMovement(delta);
 		Velocity = _targetVelocity;
 		MoveAndSlide();
 	}
 
-	private void handleMovement(double delta)
+	private void HandleMovement(double delta)
 	{
 		// Handle gravity
 		if (!IsOnFloor())
 			_targetVelocity.Y += gravity * (float)delta;
 
+		// Handle jump
+		if (Input.IsActionJustPressed("move_up") && IsOnFloor())
+		{
+			// TODO: Implement jump
+		}
+
+		// TODO: Change to float
 		Vector2 direction = Vector2.Zero;
-		
+
 		if (Input.IsActionPressed("move_right"))
 			direction.X += 1;
-		
+
 		if (Input.IsActionPressed("move_left"))
 			direction.X -= 1;
-		
-		direction = direction.Normalized() * Speed;
-		Position += direction * (float)delta;
+
+		_targetVelocity.X = direction.X * Speed;
 	}
 }
