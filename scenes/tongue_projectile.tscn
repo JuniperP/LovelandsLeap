@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4jo10kefl0o4"]
+
+[ext_resource type="Texture2D" uid="uid://dm3ngak4vwujg" path="res://assets/tongue.png" id="1_donv3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cd8mv"]
+
+[node name="TongueProjectile" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cd8mv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_donv3")

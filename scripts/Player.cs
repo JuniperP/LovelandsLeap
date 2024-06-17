@@ -10,11 +10,19 @@ public partial class Player : CharacterBody2D
 	[Export] public int MaxFallSpeed = 1500;
 
 	private float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
+	private PackedScene tongueScene;
+	
 	private Vector2 _targetVelocity = Vector2.Zero;
+
+	public override void _Ready()
+	{
+		tongueScene = GD.Load<PackedScene>("res://scenes/tongue_projectile.tscn");
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		HandleMovement(delta);
+		HandleAction(delta);
 	}
 
 	private void HandleMovement(double delta)
@@ -45,5 +53,14 @@ public partial class Player : CharacterBody2D
 		// Update velocity and move
 		Velocity = _targetVelocity;
 		MoveAndSlide();
+	}
+
+	private void HandleAction(double delta)
+	{
+		if (Input.IsActionJustPressed("primary_click"))
+		{
+			var tongue = tongueScene.Instantiate<RigidBody2D>();
+			AddChild(tongue);
+		}
 	}
 }
