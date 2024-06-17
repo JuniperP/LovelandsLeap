@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://beaw13scnxun1"]
+[gd_scene load_steps=4 format=3 uid="uid://beaw13scnxun1"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_6e165"]
 [ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://assets/background/MainMenu.jpg" id="2_6e27h"]
+[ext_resource type="PackedScene" uid="uid://c4suej1iw3wkr" path="res://scenes/settings.tscn" id="3_ggmk5"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -115,5 +116,9 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "Start Game"
 
+[node name="Settings" parent="Panel" instance=ExtResource("3_ggmk5")]
+layout_mode = 1
+
 [connection signal="pressed" from="Panel/TextureRect/QuitButton" to="." method="_quit_game"]
 [connection signal="pressed" from="Panel/TextureRect/CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="Panel/TextureRect/SettingsButton" to="Panel/Settings" method="_open"]
