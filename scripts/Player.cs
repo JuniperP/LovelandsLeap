@@ -4,7 +4,9 @@ using System;
 public partial class Player : CharacterBody2D
 {
 	[Export] public int Speed = 300;
-	[Export] public int JumpImpulse = 20;
+	[Export] public int JumpImpulse = 1000;
+	[Export] public float GravityMultiplier = 1;
+
 	private float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 	private Vector2 _targetVelocity = Vector2.Zero;
 
@@ -19,12 +21,12 @@ public partial class Player : CharacterBody2D
 	{
 		// Handle gravity
 		if (!IsOnFloor())
-			_targetVelocity.Y += gravity * (float)delta;
+			_targetVelocity.Y += gravity * GravityMultiplier * (float)delta;
 
 		// Handle jump
 		if (Input.IsActionJustPressed("move_up") && IsOnFloor())
 		{
-			// TODO: Implement jump
+			_targetVelocity.Y = -JumpImpulse;
 		}
 
 		// TODO: Change to float
