@@ -14,9 +14,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1eq5"]
-radius = 54.0
-height = 346.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_455w7"]
+size = Vector2(100, 200)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -26,8 +25,10 @@ GravityMultiplier = 2.5
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
+position = Vector2(-2.38419e-07, 16.5)
+scale = Vector2(0.0926784, 0.0577314)
 sprite_frames = SubResource("SpriteFrames_vlg27")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_j1eq5")
+position = Vector2(0, 16.5)
+shape = SubResource("RectangleShape2D_455w7")
