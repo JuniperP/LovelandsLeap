@@ -18,6 +18,10 @@ public partial class Player : CharacterBody2D
 
 	private void HandleMovement(double delta)
 	{
+		// Kill vertical velocity when hitting ceiling
+		if (IsOnCeiling())
+			_targetVelocity.Y = 0;
+
 		// Handle gravity
 		if (!IsOnFloor())
 			_targetVelocity.Y += gravity * GravityMultiplier * (float)delta;
