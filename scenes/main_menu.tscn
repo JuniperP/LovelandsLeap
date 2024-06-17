@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dt5bfn4iraty0"]
+[gd_scene load_steps=2 format=3 uid="uid://beaw13scnxun1"]
 
-[ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://artwork/background/MainMenu.jpg" id="1_ddlmj"]
+[ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://assets/background/MainMenu.jpg" id="1_ddlmj"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
