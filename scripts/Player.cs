@@ -7,6 +7,7 @@ public partial class Player : CharacterBody2D
 	[Export] public int Acceleration = 2000;
 	[Export] public int JumpImpulse = 1000;
 	[Export] public float GravityMultiplier = 1;
+	[Export] public int MaxFallSpeed = 1500;
 
 	private float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 	private Vector2 _targetVelocity = Vector2.Zero;
@@ -37,6 +38,9 @@ public partial class Player : CharacterBody2D
 			direction * Speed,
 			Acceleration * (float)delta
 		);
+
+		// Cap vertical speed
+		_targetVelocity.Y = Mathf.Min(_targetVelocity.Y, MaxFallSpeed);
 
 		// Update velocity and move
 		Velocity = _targetVelocity;
