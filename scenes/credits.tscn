@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/Credits.cs" id="1_miogk"]
 [ext_resource type="Script" path="res://scripts/CreditText.cs" id="1_r4fjn"]
 
-[node name="Control" type="Control"]
+[node name="Credits" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
