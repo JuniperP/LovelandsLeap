@@ -3,7 +3,7 @@ using System;
 
 public partial class CreditText : Label
 {
-	//Used simply for styling the ending of the credits
+	// Used simply for styling the ending of the credits
 	int CoolEnd = 0;
 
 	// Called when the node enters the scene tree for the first time.
@@ -14,10 +14,10 @@ public partial class CreditText : Label
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		//Checks if at point in credits to cut the scrolling
+		// Checks if at point in credits to cut the scrolling
 		if (CoolEnd != 2000)
 		{
-			//Scrolls and updates
+			// Scrolls and updates
 			Position = new Vector2(Position.X, Position.Y - 2);
 			CoolEnd++;
 		}
