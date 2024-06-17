@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://beaw13scnxun1"]
+[gd_scene load_steps=3 format=3 uid="uid://beaw13scnxun1"]
 
-[ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://assets/background/MainMenu.jpg" id="1_ddlmj"]
+[ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_6e165"]
+[ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://assets/background/MainMenu.jpg" id="2_6e27h"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6e165")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -29,10 +31,10 @@ offset_right = 41.0
 offset_bottom = 109.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ddlmj")
+texture = ExtResource("2_6e27h")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="Panel/TextureRect"]
+[node name="Title" type="Label" parent="Panel/TextureRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,7 +50,7 @@ text = "
 LOVELAND "
 horizontal_alignment = 2
 
-[node name="Button" type="Button" parent="Panel/TextureRect"]
+[node name="CreditButton" type="Button" parent="Panel/TextureRect"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -56,15 +58,15 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -358.0
-offset_top = -154.0
+offset_top = 246.0
 offset_right = -88.0
-offset_bottom = -79.0
+offset_bottom = 321.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-text = "Start Game"
+text = "Credits"
 
-[node name="Button2" type="Button" parent="Panel/TextureRect"]
+[node name="SettingsButton" type="Button" parent="Panel/TextureRect"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -80,7 +82,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "Settings"
 
-[node name="Button3" type="Button" parent="Panel/TextureRect"]
+[node name="StartGameButton" type="Button" parent="Panel/TextureRect"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -88,10 +90,12 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -358.0
-offset_top = 246.0
+offset_top = -154.0
 offset_right = -88.0
-offset_bottom = 321.0
+offset_bottom = -79.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-text = "Credits"
+text = "Start Game"
+
+[connection signal="pressed" from="Panel/TextureRect/CreditButton" to="." method="_on_credit_button_pressed"]

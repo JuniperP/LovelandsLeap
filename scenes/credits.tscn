@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://u6bod5tg4hhb"]
+[gd_scene load_steps=3 format=3 uid="uid://u6bod5tg4hhb"]
 
+[ext_resource type="Script" path="res://scripts/Credits.cs" id="1_miogk"]
 [ext_resource type="Script" path="res://scripts/CreditText.cs" id="1_r4fjn"]
 
 [node name="Control" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_miogk")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -23,16 +25,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = -8.0
-offset_right = 16.0
-offset_bottom = 3641.0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 9.0
+offset_bottom = 4021.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "
-
-
 
 
 
@@ -81,6 +81,12 @@ Alex Llyod
 A special thanks to the Godot Wild Jam 
 for hosting this game jam!
 
-And thank you for playing!"
+And thank you for playing!
+
+
+
+
+Press the escape key to return to
+the main menu"
 horizontal_alignment = 1
 script = ExtResource("1_r4fjn")
