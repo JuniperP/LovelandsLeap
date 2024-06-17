@@ -13,8 +13,15 @@ public partial class MainMenu : Control
 	{
 	}
 
+	//Runs the credits
 	private void _on_credit_button_pressed()
 	{
 		GetTree().ChangeSceneToFile("res://scenes/credits.tscn");
+	}
+
+	//quits the game from the menu
+	private void _quit_game()
+	{
+		GetTree().Quit();
 	}
 }
