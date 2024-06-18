@@ -25,14 +25,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = 8.0
-offset_right = 9.0
-offset_bottom = 4021.0
+offset_bottom = 4104.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "
+
+
 
 
 
@@ -48,7 +47,6 @@ LOVELAND
 Programming and Godot creator
 Juniper Pasternak
 Teddy Jacobson
-Clara Siefke
 
 
 Sound Design
@@ -78,8 +76,7 @@ Alex Llyod
 
 
 
-A special thanks to the Godot Wild Jam 
-for hosting this game jam!
+A special thanks to the Godot Wild Jam!
 
 And thank you for playing!
 
