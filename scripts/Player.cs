@@ -8,13 +8,17 @@ public partial class Player : CharacterBody2D
 	[Export] public int JumpImpulse = 1000;
 	[Export] public float GravityMultiplier = 1;
 	[Export] public int MaxFallSpeed = 1500;
+	[Export] public int TongueSpeed = 800;
 
 	private float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
-	private PackedScene tongueScene;
+	private PackedScene tongueProjScene;
+	private RigidBody2D _tongueProj;
+	private bool _isGrappling = false;
+	private bool _isTongueProj = false;  // TODO: Refactor into singleton
 
 	public override void _Ready()
 	{
-		tongueScene = GD.Load<PackedScene>("res://scenes/tongue_projectile.tscn");
+		tongueProjScene = GD.Load<PackedScene>("res://scenes/tongue_projectile.tscn");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -59,8 +63,28 @@ public partial class Player : CharacterBody2D
 	{
 		if (Input.IsActionJustPressed("primary_click"))
 		{
-			var tongue = tongueScene.Instantiate<RigidBody2D>();
-			AddChild(tongue);
+			if (_isTongueProj || _isGrappling) // Skip if using tongue
+				return;
+
+			// Create tongue projectile
+			_tongueProj = tongueProjScene.Instantiate<RigidBody2D>();
+			_isTongueProj = true;
+
+			// Move tongue towards mouse position
+			Vector2 mousePos = GetViewport().GetMousePosition();
+			Vector2 direction = (mousePos - Position).Normalized();
+			_tongueProj.LinearVelocity = direction * TongueSpeed;
+
+			_tongueProj.BodyEntered += EnableGrapple;
+			AddChild(_tongueProj);
 		}
+	}
+
+	private void EnableGrapple(Node target)
+	{
+		if (_isGrappling) // Skip if already grappling
+			return;
+
+		GD.Print("Enabling grapple");
 	}
 }
