@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8f7p6im4eby"]
+
+[ext_resource type="PackedScene" uid="uid://ccc6gfv7e6o6w" path="res://scenes/player.tscn" id="1_rt5gs"]
+[ext_resource type="PackedScene" uid="uid://bogkg7ij1umf1" path="res://scenes/pause_screen.tscn" id="2_edrwf"]
+
+[node name="PlayerandPause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseScreen" parent="." instance=ExtResource("2_edrwf")]
+layout_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("1_rt5gs")]
