@@ -17,7 +17,7 @@ public partial class MainMenu : Control
 	private void _on_start_game_button_pressed()
 	{
 		//Temporary location for the game starting
-		GetTree().ChangeSceneToFile("res://scenes/player.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/game.tscn");
 	}
 	
 	// Runs the credits
