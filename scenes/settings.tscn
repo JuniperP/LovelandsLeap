@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4suej1iw3wkr"]
+[gd_scene load_steps=4 format=3 uid="uid://c4suej1iw3wkr"]
 
 [ext_resource type="Script" path="res://scripts/Settings.cs" id="1_2gc7l"]
+
+[sub_resource type="Theme" id="Theme_m3tk4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dd3uq"]
+bg_color = Color(0, 0, 0, 0.901961)
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -24,6 +29,8 @@ offset_right = 500.0
 offset_bottom = 420.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_m3tk4")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dd3uq")
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0

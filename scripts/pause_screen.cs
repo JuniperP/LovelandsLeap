@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Settings : Control
+public partial class pause_screen : Control
 {
 	// Setup
 	public override void _Ready()
@@ -20,4 +20,11 @@ public partial class Settings : Control
 	{
 		Visible=true;
 	}
+
+	// Return to the main menu
+	private void _to_main_menu()
+	{
+		GetTree().ChangeSceneToFile("res://scenes/main_menu.tscn");
+	}
 }
+
