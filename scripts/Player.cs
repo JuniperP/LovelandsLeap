@@ -11,8 +11,6 @@ public partial class Player : CharacterBody2D
 
 	private float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 	private PackedScene tongueScene;
-	
-	private Vector2 _targetVelocity = Vector2.Zero;
 
 	public override void _Ready()
 	{
@@ -27,31 +25,33 @@ public partial class Player : CharacterBody2D
 
 	private void HandleMovement(double delta)
 	{
+		Vector2 targetVelocity = Velocity;
+
 		// Kill vertical velocity when hitting ceiling
 		if (IsOnCeiling())
-			_targetVelocity.Y = 0;
+			targetVelocity.Y = 0;
 
 		// Handle gravity
 		if (!IsOnFloor())
-			_targetVelocity.Y += gravity * GravityMultiplier * (float)delta;
+			targetVelocity.Y += gravity * GravityMultiplier * (float)delta;
 
 		// Handle jump
 		else if (Input.IsActionJustPressed("move_up"))
-			_targetVelocity.Y = -JumpImpulse;
+			targetVelocity.Y = -JumpImpulse;
 
 		// Smooth velocity towards horizontal direction
 		float direction = Input.GetAxis("move_left", "move_right");
-		_targetVelocity.X = Mathf.MoveToward(
+		targetVelocity.X = Mathf.MoveToward(
 			Velocity.X,
 			direction * Speed,
 			Acceleration * (float)delta
 		);
 
 		// Cap vertical speed
-		_targetVelocity.Y = Mathf.Min(_targetVelocity.Y, MaxFallSpeed);
+		targetVelocity.Y = Mathf.Min(targetVelocity.Y, MaxFallSpeed);
 
 		// Update velocity and move
-		Velocity = _targetVelocity;
+		Velocity = targetVelocity;
 		MoveAndSlide();
 	}
 
