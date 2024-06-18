@@ -13,7 +13,7 @@ public partial class Player : CharacterBody2D
 	private float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 	private PackedScene tongueProjScene;
 	private RigidBody2D _tongueProj;
-	private bool _isGrappling = false;
+	private bool _isGrappling = false;  // TODO: Refactor into pattern
 	private bool _isTongueProj = false;  // TODO: Refactor into singleton
 
 	public override void _Ready()
@@ -84,7 +84,8 @@ public partial class Player : CharacterBody2D
 	{
 		if (_isGrappling) // Skip if already grappling
 			return;
-
-		GD.Print("Enabling grapple");
+		
+		_tongueProj.QueueFree();
+		_isTongueProj = false;
 	}
 }
