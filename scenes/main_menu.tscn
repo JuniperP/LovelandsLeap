@@ -117,8 +117,10 @@ theme_override_font_sizes/font_size = 48
 text = "Start Game"
 
 [node name="Settings" parent="Panel" instance=ExtResource("3_ps8pg")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="Panel/TextureRect/QuitButton" to="." method="_quit_game"]
 [connection signal="pressed" from="Panel/TextureRect/CreditButton" to="." method="_on_credit_button_pressed"]
 [connection signal="pressed" from="Panel/TextureRect/SettingsButton" to="Panel/Settings" method="_open"]
+[connection signal="pressed" from="Panel/TextureRect/StartGameButton" to="." method="_on_start_game_button_pressed"]

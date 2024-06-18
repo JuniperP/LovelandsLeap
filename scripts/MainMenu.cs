@@ -13,6 +13,13 @@ public partial class MainMenu : Control
 	{
 	}
 
+	// Starts the game
+	private void _on_start_game_button_pressed()
+	{
+		//Temporary location for the game starting
+		GetTree().ChangeSceneToFile("res://scenes/player.tscn");
+	}
+	
 	// Runs the credits
 	private void _on_credit_button_pressed()
 	{

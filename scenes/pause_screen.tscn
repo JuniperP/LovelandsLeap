@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scripts/pause_screen.cs" id="1_q33xn"]
 
 [node name="PauseScreen" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -86,6 +87,7 @@ theme_override_font_sizes/font_size = 32
 text = "Return to main menu"
 
 [node name="Settings" parent="." instance=ExtResource("1_2igoe")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="Panel/ResumeButton" to="." method="_close"]
