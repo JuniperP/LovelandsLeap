@@ -1,14 +1,14 @@
 using Godot;
 using System;
 
-public enum PlayerState
-{
-	Walk,
-	Grapple
-}
-
 public partial class Player : CharacterBody2D
 {
+	public enum PlayerState : byte
+	{
+		Walk,
+		Grapple
+	}
+
 	[Export] public int Speed = 300;
 	[Export] public int Acceleration = 2000;
 	[Export] public int JumpImpulse = 1000;
