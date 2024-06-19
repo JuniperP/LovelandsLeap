@@ -1,7 +1,8 @@
 using Godot;
 using System;
+using System.Runtime.CompilerServices;
 
-public partial class PauseScreen : Control
+public partial class PauseScreen : Toggleable
 {
 	// Setup
 	public override void _Ready()
