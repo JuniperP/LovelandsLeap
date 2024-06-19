@@ -46,7 +46,7 @@ offset_bottom = 75.0
 grow_vertical = 2
 texture = ExtResource("1_tluhj")
 
-[node name="InsertTextHere" type="Label" parent="BackBox"]
+[node name="Text" type="Label" parent="BackBox"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
