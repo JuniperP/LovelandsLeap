@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxyctaqoyr6tj"]
+
+[ext_resource type="Texture2D" uid="uid://bc1ravcc5syh4" path="res://icon.svg" id="1_tluhj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06tws"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+
+[node name="DialogueBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackBox" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -700.0
+offset_top = -280.0
+offset_right = 700.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_06tws")
+
+[node name="ProfilePicture" type="NinePatchRect" parent="BackBox"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -75.0
+offset_right = 200.0
+offset_bottom = 75.0
+grow_vertical = 2
+texture = ExtResource("1_tluhj")
+
+[node name="InsertTextHere" type="Label" parent="BackBox"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1150.0
+offset_top = -50.0
+offset_right = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Insert your text here
+Insert your text here"
+clip_text = true
