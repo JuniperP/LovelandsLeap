@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Settings : Control
+public partial class Settings : Toggleable
 {
 	// Setup
 	public override void _Ready()
@@ -9,15 +9,4 @@ public partial class Settings : Control
 		Visible=false;
 	}
 	
-	// Close the menu
-	private void _close()
-	{
-		Visible=false;
-	}
-
-	// Open the menu
-	private void _open()
-	{
-		Visible=true;
-	}
 }
