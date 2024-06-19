@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class WalkingState : IMovementState
+public class WalkState : IMovementState
 {
     public void HandleMovement(Player ctx, double delta)
     {

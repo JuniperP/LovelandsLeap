@@ -1,6 +1,12 @@
 using Godot;
 using System;
 
+public enum PlayerState
+{
+	Walk,
+	Grapple
+}
+
 public partial class Player : CharacterBody2D
 {
 	[Export] public int Speed = 300;
@@ -11,7 +17,7 @@ public partial class Player : CharacterBody2D
 	[Export] public int TongueSpeed = 800;
 	[Export] public int TongueAngle = 15;
 
-	public IMovementState MovementState = new WalkingState();
+	public IMovementState MovementState = new WalkState();
 	public bool TongueProjExists = false;  // TODO: Refactor into singleton
 	public PackedScene TongueProjScene;
 	public RigidBody2D TongueProj;
