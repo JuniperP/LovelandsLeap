@@ -12,14 +12,17 @@ public partial class Player : CharacterBody2D
 	[Export] public int TongueAngle = 15;
 
 	private float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
-	private PackedScene tongueProjScene;
+	private PackedScene _tongueProjScene;
+	private PackedScene _tongueLineScene;
 	private RigidBody2D _tongueProj;
+	private TongueLine _tongueLine;
 	private bool _isGrappling = false;  // TODO: Refactor into pattern
 	private bool _isTongueProj = false;  // TODO: Refactor into singleton
 
 	public override void _Ready()
 	{
-		tongueProjScene = GD.Load<PackedScene>("res://scenes/tongue_projectile.tscn");
+		_tongueProjScene = GD.Load<PackedScene>("res://scenes/tongue_projectile.tscn");
+		_tongueLineScene = GD.Load<PackedScene>("res://scenes/tongue_line.tscn");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -70,19 +73,26 @@ public partial class Player : CharacterBody2D
 			Vector2 mousePos = GetViewport().GetMousePosition();
 			Vector2 direction = (mousePos - Position).Normalized();
 
+			// Skip if shooting too low
 			float minSin = -Mathf.Sin(Mathf.DegToRad(TongueAngle));
 			if (direction.Y > minSin)
 				return;
 
 			// Create tongue projectile
-			_tongueProj = tongueProjScene.Instantiate<RigidBody2D>();
+			_tongueProj = _tongueProjScene.Instantiate<RigidBody2D>();
 			_isTongueProj = true;
 
-			// Move tongue towards mouse position
+			// Move projectile towards mouse position
 			_tongueProj.LinearVelocity = direction * TongueSpeed;
 
+			// Setup projectile
 			_tongueProj.BodyEntered += EnableGrapple;
 			AddChild(_tongueProj);
+
+			// Create and setup tongue line
+			_tongueLine = _tongueLineScene.Instantiate<TongueLine>();
+			_tongueLine.Target = _tongueProj;
+			AddChild(_tongueLine);
 		}
 	}
 
@@ -93,5 +103,6 @@ public partial class Player : CharacterBody2D
 
 		_tongueProj.QueueFree();
 		_isTongueProj = false;
+		_tongueLine.QueueFree(); // TODO: Replace with tongue anchor
 	}
 }
