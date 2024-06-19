@@ -9,6 +9,7 @@ public partial class Player : CharacterBody2D
 	[Export] public float GravityMultiplier = 1;
 	[Export] public int MaxFallSpeed = 1500;
 	[Export] public int TongueSpeed = 800;
+	[Export] public int TongueAngle = 15;
 
 	private float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 	private PackedScene tongueProjScene;
@@ -66,13 +67,18 @@ public partial class Player : CharacterBody2D
 			if (_isTongueProj || _isGrappling) // Skip if using tongue
 				return;
 
+			Vector2 mousePos = GetViewport().GetMousePosition();
+			Vector2 direction = (mousePos - Position).Normalized();
+
+			float minSin = -Mathf.Sin(Mathf.DegToRad(TongueAngle));
+			if (direction.Y > minSin)
+				return;
+
 			// Create tongue projectile
 			_tongueProj = tongueProjScene.Instantiate<RigidBody2D>();
 			_isTongueProj = true;
 
 			// Move tongue towards mouse position
-			Vector2 mousePos = GetViewport().GetMousePosition();
-			Vector2 direction = (mousePos - Position).Normalized();
 			_tongueProj.LinearVelocity = direction * TongueSpeed;
 
 			_tongueProj.BodyEntered += EnableGrapple;
@@ -84,7 +90,7 @@ public partial class Player : CharacterBody2D
 	{
 		if (_isGrappling) // Skip if already grappling
 			return;
-		
+
 		_tongueProj.QueueFree();
 		_isTongueProj = false;
 	}

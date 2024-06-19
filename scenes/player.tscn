@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ccc6gfv7e6o6w"]
 
-[ext_resource type="Script" path="res://scripts/player/Player.cs" id="1_lwu2u"]
+[ext_resource type="Script" path="res://scripts/player/Player.cs" id="1_neipv"]
 [ext_resource type="Texture2D" uid="uid://bt3jtehq75olq" path="res://assets/frog.jpg" id="2_1pcs2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vlg27"]
@@ -19,7 +19,7 @@ size = Vector2(100, 200)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-script = ExtResource("1_lwu2u")
+script = ExtResource("1_neipv")
 GravityMultiplier = 2.5
 metadata/_edit_group_ = true
 
