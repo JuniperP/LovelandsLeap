@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxyctaqoyr6tj"]
 
-[ext_resource type="Script" path="res://scripts/dialogue_box.cs" id="1_dns7l"]
+[ext_resource type="Script" path="res://scripts/DialogueBox.cs" id="1_dns7l"]
 [ext_resource type="Texture2D" uid="uid://bc1ravcc5syh4" path="res://icon.svg" id="1_tluhj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06tws"]
