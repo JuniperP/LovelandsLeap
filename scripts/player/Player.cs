@@ -11,106 +11,30 @@ public partial class Player : CharacterBody2D
 	[Export] public int TongueSpeed = 800;
 	[Export] public int TongueAngle = 15;
 
-	private float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
-	private PackedScene _tongueProjScene;
-	private RigidBody2D _tongueProj;
-	private PackedScene _tongueLineScene;
-	private TongueLine _tongueLine;
-	private PackedScene _tongueSpringScene;
-	private TongueSpring _tongueSpring;
-	private bool _isGrappling = false;  // TODO: Refactor into pattern
-	private bool _isTongueProj = false;  // TODO: Refactor into singleton
+	public IMovementState MovementState = new WalkingState();
+	public bool TongueProjExists = false;  // TODO: Refactor into singleton
+	public PackedScene TongueProjScene;
+	public RigidBody2D TongueProj;
+	public PackedScene TongueLineScene;
+	public TongueLine TongueLine;
+	public PackedScene TongueSpringScene;
+	public TongueSpring TongueSpring;
 
 	public override void _Ready()
 	{
-		_tongueProjScene = GD.Load<PackedScene>("res://scenes/tongue_projectile.tscn");
-		_tongueLineScene = GD.Load<PackedScene>("res://scenes/tongue_line.tscn");
-		_tongueSpringScene = GD.Load<PackedScene>("res://scenes/tongue_spring.tscn");
+		TongueProjScene = GD.Load<PackedScene>("res://scenes/tongue_projectile.tscn");
+		TongueLineScene = GD.Load<PackedScene>("res://scenes/tongue_line.tscn");
+		TongueSpringScene = GD.Load<PackedScene>("res://scenes/tongue_spring.tscn");
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-		HandleMovement(delta);
-		HandleAction(delta);
+		MovementState.HandleMovement(this, delta);
+		MovementState.HandleAction(this);
 	}
 
-	private void HandleMovement(double delta)
+	public void EnableGrapple(Node target)
 	{
-		Vector2 targetVelocity = Velocity;
-
-		// Kill vertical velocity when hitting ceiling
-		if (IsOnCeiling())
-			targetVelocity.Y = 0;
-
-		// Handle gravity
-		if (!IsOnFloor())
-			targetVelocity.Y += gravity * GravityMultiplier * (float)delta;
-
-		// Handle jump
-		else if (Input.IsActionJustPressed("move_up"))
-			targetVelocity.Y = -JumpImpulse;
-
-		// Smooth velocity towards horizontal direction
-		float direction = Input.GetAxis("move_left", "move_right");
-		targetVelocity.X = Mathf.MoveToward(
-			Velocity.X,
-			direction * Speed,
-			Acceleration * (float)delta
-		);
-
-		// Cap vertical speed
-		targetVelocity.Y = Mathf.Min(targetVelocity.Y, MaxFallSpeed);
-
-		// Update velocity and move
-		Velocity = targetVelocity;
-		MoveAndSlide();
-	}
-
-	private void HandleAction(double delta)
-	{
-		if (Input.IsActionJustPressed("primary_click"))
-		{
-			if (_isTongueProj || _isGrappling) // Skip if using tongue
-				return;
-
-			Vector2 mousePos = GetViewport().GetMousePosition();
-			Vector2 direction = (mousePos - Position).Normalized();
-
-			// Skip if shooting too low
-			float minSin = -Mathf.Sin(Mathf.DegToRad(TongueAngle));
-			if (direction.Y > minSin)
-				return;
-
-			// Create tongue projectile
-			_tongueProj = _tongueProjScene.Instantiate<RigidBody2D>();
-			_isTongueProj = true;
-
-			// Move projectile towards mouse position
-			_tongueProj.LinearVelocity = direction * TongueSpeed;
-
-			// Setup projectile
-			_tongueProj.BodyEntered += EnableGrapple;
-			AddChild(_tongueProj);
-
-			// Create and setup tongue line
-			_tongueLine = _tongueLineScene.Instantiate<TongueLine>();
-			_tongueLine.Target = _tongueProj;
-			AddChild(_tongueLine);
-		}
-	}
-
-	private void EnableGrapple(Node target)
-	{
-		if (_isGrappling) // Skip if already grappling
-			return;
-
-		_tongueProj.QueueFree();
-		_isTongueProj = false;
-
-		_tongueSpring = _tongueSpringScene.Instantiate<TongueSpring>();
-		_tongueSpring.GlobalPosition = _tongueProj.GlobalPosition;
-		_tongueSpring.Target = this;
-		_tongueLine.Target = _tongueSpring;
-		CallDeferred("add_sibling", _tongueSpring);
+		MovementState.EnableGrapple(this);
 	}
 }
