@@ -13,9 +13,11 @@ public partial class Player : CharacterBody2D
 
 	private float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 	private PackedScene _tongueProjScene;
-	private PackedScene _tongueLineScene;
 	private RigidBody2D _tongueProj;
+	private PackedScene _tongueLineScene;
 	private TongueLine _tongueLine;
+	private PackedScene _tongueSpringScene;
+	private TongueSpring _tongueSpring;
 	private bool _isGrappling = false;  // TODO: Refactor into pattern
 	private bool _isTongueProj = false;  // TODO: Refactor into singleton
 
@@ -23,6 +25,7 @@ public partial class Player : CharacterBody2D
 	{
 		_tongueProjScene = GD.Load<PackedScene>("res://scenes/tongue_projectile.tscn");
 		_tongueLineScene = GD.Load<PackedScene>("res://scenes/tongue_line.tscn");
+		_tongueSpringScene = GD.Load<PackedScene>("res://scenes/tongue_spring.tscn");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -103,6 +106,11 @@ public partial class Player : CharacterBody2D
 
 		_tongueProj.QueueFree();
 		_isTongueProj = false;
-		_tongueLine.QueueFree(); // TODO: Replace with tongue anchor
+
+		_tongueSpring = _tongueSpringScene.Instantiate<TongueSpring>();
+		_tongueSpring.GlobalPosition = _tongueProj.GlobalPosition;
+		_tongueSpring.Target = this;
+		_tongueLine.Target = _tongueSpring;
+		CallDeferred("add_sibling", _tongueSpring);
 	}
 }

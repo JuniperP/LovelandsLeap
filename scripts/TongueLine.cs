@@ -7,6 +7,6 @@ public partial class TongueLine : Line2D
 
 	public override void _Process(double delta)
 	{
-		SetPointPosition(1, Target.Position);
+		SetPointPosition(1, Target.GlobalPosition - GlobalPosition);
 	}
 }
