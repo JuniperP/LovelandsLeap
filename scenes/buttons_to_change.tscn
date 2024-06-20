@@ -52,6 +52,7 @@ text = "Move Left"
 horizontal_alignment = 1
 
 [node name="ChangeJump" type="Button" parent="."]
+layout_mode = 0
 offset_left = 500.0
 offset_top = 100.0
 offset_right = 700.0
@@ -74,6 +75,7 @@ text = "Jump"
 horizontal_alignment = 1
 
 [node name="ChangeRight2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 750.0
 offset_top = 100.0
 offset_right = 950.0

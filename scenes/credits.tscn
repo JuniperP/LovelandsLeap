@@ -25,7 +25,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 4650.0
+offset_bottom = 4741.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
@@ -49,7 +49,7 @@ Juniper Pasternak
 Teddy Jacobson
 
 
-Sound Design
+Music
 Max Tozer
 Phoebe Tozer
 
@@ -65,9 +65,10 @@ Lee Zwart
 Alex Llyod
 
 
-Sound effect creation
+Sound Effect Creation
 Juniper Pasternak
 Teddy Jacobson
+Anja Jacobson
 Phoebe Tozer
 Lee Zwart
 Alex Llyod
