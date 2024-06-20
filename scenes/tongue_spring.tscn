@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cuum0y4nttngt"]
 
-[ext_resource type="Script" path="res://scripts/TongueSpring.cs" id="1_aw2ux"]
+[ext_resource type="Script" path="res://scripts/player/TongueSpring.cs" id="1_aw2ux"]
 [ext_resource type="Texture2D" uid="uid://bc1ravcc5syh4" path="res://icon.svg" id="2_bsoo2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mh0wl"]

@@ -12,7 +12,5 @@ public partial class TongueSpring : DampedSpringJoint2D
 		Vector2 direction = GlobalPosition - Target.GlobalPosition;
 		Rotation = direction.Angle();
 		Length = direction.Length();
-
-		GD.Print("Spring ready!");
 	}
 }
