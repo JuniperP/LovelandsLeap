@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dcxi6hn46xvnw"]
+
+[node name="ButtonsToChange" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChangeRight" type="Button" parent="."]
+layout_mode = 1
+offset_left = 250.0
+offset_top = 100.0
+offset_right = 450.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 48
+text = "→"
+
+[node name="NameOfButton" type="Label" parent="ChangeRight"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Move Right"
+horizontal_alignment = 1
+
+[node name="ChangeLeft" type="Button" parent="."]
+layout_mode = 1
+offset_top = 100.0
+offset_right = 200.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 48
+text = "←"
+
+[node name="NameOfButton" type="Label" parent="ChangeLeft"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Move Left"
+horizontal_alignment = 1
+
+[node name="ChangeJump" type="Button" parent="."]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 100.0
+offset_right = 700.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 48
+text = "↑
+"
+
+[node name="NameOfButton" type="Label" parent="ChangeJump"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Jump"
+horizontal_alignment = 1
+
+[node name="ChangeRight2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 100.0
+offset_right = 950.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 48
+text = "R_Click"
+
+[node name="NameOfButton" type="Label" parent="ChangeRight2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Use Tongue"
+horizontal_alignment = 1
