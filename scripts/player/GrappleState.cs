@@ -12,7 +12,15 @@ public class GrappleState : IMovementState
 			DisableGrapple(ctx);
 	}
 
-	public void HandleAction(Player ctx) { }
+	public void HandleAction(Player ctx)
+	{
+		if (Input.IsActionJustPressed("move_up") ||
+			Input.IsActionJustPressed("move_down") ||
+			Input.IsActionJustPressed("primary_click"))
+		{
+			DisableGrapple(ctx);
+		}
+	}
 
 	public void EnableGrapple(Player ctx) { }
 
