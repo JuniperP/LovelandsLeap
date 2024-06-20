@@ -2,15 +2,15 @@ using Godot;
 
 public class GrappleState : IMovementState
 {
-    public void HandleMovement(Player ctx, double delta)
-    {
-        // Set velocity to move to weight
-        Vector2 diff = ctx.TongueWeight.GlobalPosition - ctx.GlobalPosition;
-        ctx.Velocity = diff * 10;
-        
-        if (ctx.MoveAndSlide()) // If player floored
-            DisableGrapple(ctx);
-    }
+	public void HandleMovement(Player ctx, double delta)
+	{
+		// Set velocity to move to weight
+		Vector2 diff = ctx.TongueWeight.GlobalPosition - ctx.GlobalPosition;
+		ctx.Velocity = diff * 10;
+
+		if (ctx.MoveAndSlide()) // If player floored
+			DisableGrapple(ctx);
+	}
 
 	public void HandleAction(Player ctx) { }
 
