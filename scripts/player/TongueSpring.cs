@@ -8,9 +8,9 @@ public partial class TongueSpring : DampedSpringJoint2D
 	public override void _Ready()
 	{
 		NodeB = Target.GetPath(); // Set secondary spring node to target
-		
-		Vector2 direction = GlobalPosition - Target.GlobalPosition;
-		Rotation = direction.Angle();
-		Length = direction.Length();
+
+		LookAt(Target.GlobalPosition);
+		Rotate((float)-0.5f * Mathf.Pi); // NECESSARY, but no clue why :3
+		Length = GlobalPosition.DistanceTo(Target.GlobalPosition);
 	}
 }

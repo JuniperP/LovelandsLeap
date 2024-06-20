@@ -3,7 +3,7 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public enum PlayerState : byte
+	public enum State : byte
 	{
 		Walk,
 		Grapple
@@ -14,23 +14,31 @@ public partial class Player : CharacterBody2D
 	[Export] public int JumpImpulse = 1000;
 	[Export] public float GravityMultiplier = 1;
 	[Export] public int MaxFallSpeed = 1500;
-	[Export] public int TongueSpeed = 800;
+	[Export] public int TongueProjSpeed = 800;
+	[Export] public int SwingSpeed = 1500;
 	[Export] public int TongueAngle = 15;
 
+	// Refactor states to only be created once and switch with Player methods
+	public State StateEnum = State.Walk;
 	public IMovementState MovementState = new WalkState();
-	public bool TongueProjExists = false;  // TODO: Refactor into singleton
+	public bool TongueProjExists = false; // TODO: Refactor into singleton
+
+	// TODO: Refactor into sibling nodes that are disabled
 	public PackedScene TongueProjScene;
 	public RigidBody2D TongueProj;
 	public PackedScene TongueLineScene;
 	public TongueLine TongueLine;
 	public PackedScene TongueSpringScene;
 	public TongueSpring TongueSpring;
+	public PackedScene TongueWeightScene;
+	public RigidBody2D TongueWeight;
 
 	public override void _Ready()
 	{
 		TongueProjScene = GD.Load<PackedScene>("res://scenes/tongue_projectile.tscn");
 		TongueLineScene = GD.Load<PackedScene>("res://scenes/tongue_line.tscn");
 		TongueSpringScene = GD.Load<PackedScene>("res://scenes/tongue_spring.tscn");
+		TongueWeightScene = GD.Load<PackedScene>("res://scenes/tongue_weight.tscn");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -42,5 +50,10 @@ public partial class Player : CharacterBody2D
 	public void EnableGrapple(Node target)
 	{
 		MovementState.EnableGrapple(this);
+	}
+
+	public void DisableGrapple()
+	{
+		MovementState.DisableGrapple(this);
 	}
 }

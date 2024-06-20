@@ -3,16 +3,16 @@ using Godot;
 
 public class WalkState : IMovementState
 {
-    public void HandleMovement(Player ctx, double delta)
-    {
-        Vector2 targetVelocity = ctx.Velocity;
+	public void HandleMovement(Player ctx, double delta)
+	{
+		Vector2 targetVelocity = ctx.Velocity;
 
 		// Kill vertical velocity when hitting ceiling
 		if (ctx.IsOnCeiling())
 			targetVelocity.Y = 0;
 
 		// Handle gravity
-        float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
+		float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 		if (!ctx.IsOnFloor())
 			targetVelocity.Y += gravity * ctx.GravityMultiplier * (float)delta;
 
@@ -34,11 +34,11 @@ public class WalkState : IMovementState
 		// Update velocity and move
 		ctx.Velocity = targetVelocity;
 		ctx.MoveAndSlide();
-    }
+	}
 
-    public void HandleAction(Player ctx)
-    {
-        if (Input.IsActionJustPressed("primary_click"))
+	public void HandleAction(Player ctx)
+	{
+		if (Input.IsActionJustPressed("primary_click"))
 		{
 			if (ctx.TongueProjExists) // Skip if using tongue
 				return;
@@ -56,7 +56,7 @@ public class WalkState : IMovementState
 			ctx.TongueProjExists = true;
 
 			// Move projectile towards mouse position
-			ctx.TongueProj.LinearVelocity = direction * ctx.TongueSpeed;
+			ctx.TongueProj.LinearVelocity = direction * ctx.TongueProjSpeed;
 
 			// Setup projectile
 			ctx.TongueProj.BodyEntered += ctx.EnableGrapple;
@@ -67,19 +67,32 @@ public class WalkState : IMovementState
 			ctx.TongueLine.Target = ctx.TongueProj;
 			ctx.AddChild(ctx.TongueLine);
 		}
-    }
+	}
 
-    public void EnableGrapple(Player ctx)
-    {
-        ctx.TongueProj.QueueFree();
+	public void EnableGrapple(Player ctx)
+	{
+		// Remove tongue projectile
+		ctx.TongueProj.QueueFree();
 		ctx.TongueProjExists = false;
 
+		// Create spring and update line
 		ctx.TongueSpring = ctx.TongueSpringScene.Instantiate<TongueSpring>();
 		ctx.TongueSpring.GlobalPosition = ctx.TongueProj.GlobalPosition;
-		ctx.TongueSpring.Target = ctx;
 		ctx.TongueLine.Target = ctx.TongueSpring;
-		ctx.CallDeferred("add_sibling", ctx.TongueSpring);
 
-        ctx.MovementState = new GrappleState();
-    }
+		// Create tongue weight
+		ctx.TongueWeight = ctx.TongueWeightScene.Instantiate<RigidBody2D>();
+		ctx.TongueSpring.Target = ctx.TongueWeight;
+		ctx.TongueWeight.GlobalPosition = ctx.GlobalPosition;
+
+		// Add spring and weight to scene
+		ctx.CallDeferred(Node.MethodName.AddSibling, ctx.TongueWeight);
+		ctx.CallDeferred(Node.MethodName.AddSibling, ctx.TongueSpring);
+
+		// Change state to grapple
+		ctx.MovementState = new GrappleState();
+		ctx.StateEnum = Player.State.Grapple;
+	}
+
+	public void DisableGrapple(Player ctx) { }
 }

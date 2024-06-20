@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7aqftar3bnar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aikcu"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltoyo"]
+size = Vector2(100, 100)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" type="DampedSpringJoint2D" parent="."]
+position = Vector2(387, 100)
+rotation = 0.362447
+node_a = NodePath("StaticBody2D")
+node_b = NodePath("../RigidBody2D")
+length = 200.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+rotation = -0.362447
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_aikcu")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(325, 265)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_ltoyo")
