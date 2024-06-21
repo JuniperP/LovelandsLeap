@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuum0y4nttngt"]
 
-[ext_resource type="Script" path="res://scripts/player/TongueSpring.cs" id="1_aw2ux"]
+[ext_resource type="Script" path="res://scripts/player/tongue/TongueSpring.cs" id="1_vfrg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mh0wl"]
 
 [node name="TongueSpring" type="DampedSpringJoint2D"]
 node_a = NodePath("StaticBody2D")
 stiffness = 50.0
-script = ExtResource("1_aw2ux")
+script = ExtResource("1_vfrg2")
 LengthFactor = 0.75
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

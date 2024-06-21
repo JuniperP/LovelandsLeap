@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnivan88wrgo2"]
+
+[ext_resource type="Texture2D" uid="uid://hii5ek3scgjb" path="res://assets/tongue.png" id="1_54py5"]
+[ext_resource type="Script" path="res://scripts/player/tongue/TongueLine.cs" id="2_duvw6"]
+
+[node name="TongueLine" type="Line2D"]
+points = PackedVector2Array(0, 0, 0, 0)
+texture = ExtResource("1_54py5")
+script = ExtResource("2_duvw6")
