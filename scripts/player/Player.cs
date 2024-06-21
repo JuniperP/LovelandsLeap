@@ -12,6 +12,7 @@ public partial class Player : CharacterBody2D
 	[Export] public int Speed = 300;
 	[Export] public int Acceleration = 2000;
 	[Export] public int JumpImpulse = 1000;
+	[Export] public float JumpCutFactor = 0.5f;
 	[Export] public float GravityMultiplier = 1;
 	[Export] public int MaxFallSpeed = 1500;
 	[Export] public int TongueProjSpeed = 800;
@@ -34,10 +35,10 @@ public partial class Player : CharacterBody2D
 
 	public override void _Ready()
 	{
-		TongueProjScene = GD.Load<PackedScene>("res://scenes/tongue_projectile.tscn");
-		TongueLineScene = GD.Load<PackedScene>("res://scenes/tongue_line.tscn");
-		TongueSpringScene = GD.Load<PackedScene>("res://scenes/tongue_spring.tscn");
-		TongueWeightScene = GD.Load<PackedScene>("res://scenes/tongue_weight.tscn");
+		TongueProjScene = GD.Load<PackedScene>("res://scenes/tongue/tongue_projectile.tscn");
+		TongueLineScene = GD.Load<PackedScene>("res://scenes/tongue/tongue_line.tscn");
+		TongueSpringScene = GD.Load<PackedScene>("res://scenes/tongue/tongue_spring.tscn");
+		TongueWeightScene = GD.Load<PackedScene>("res://scenes/tongue/tongue_weight.tscn");
 	}
 
 	public override void _PhysicsProcess(double delta)
