@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bywmj0eupi163"]
 
-[ext_resource type="Script" path="res://scripts/Toggleable.cs" id="1_8lq3f"]
+[ext_resource type="Script" path="res://scripts/Toggleable.cs" id="1_c1fyc"]
 
 [node name="Toggleable" type="Control"]
 layout_mode = 3
@@ -9,4 +9,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8lq3f")
+script = ExtResource("1_c1fyc")

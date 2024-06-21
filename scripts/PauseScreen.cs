@@ -19,7 +19,7 @@ public partial class PauseScreen : Toggleable
 	{
 		GetTree().Paused = false;
 		_close();
-		GetTree().ChangeSceneToFile("res://scenes/main_menu.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/ui/main_menu.tscn");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

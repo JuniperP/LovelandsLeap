@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c4suej1iw3wkr"]
 
-[ext_resource type="Script" path="res://scripts/Settings.cs" id="1_2gc7l"]
-[ext_resource type="PackedScene" uid="uid://btiq6vr6uavrk" path="res://scenes/audio_to_change.tscn" id="2_lhlfe"]
+[ext_resource type="Script" path="res://scripts/Settings.cs" id="1_0yej3"]
+[ext_resource type="PackedScene" uid="uid://btiq6vr6uavrk" path="res://scenes/ui/settings/audio_to_change.tscn" id="2_eko1f"]
 
 [sub_resource type="Theme" id="Theme_m3tk4"]
 
@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2gc7l")
+script = ExtResource("1_0yej3")
 
 [node name="BackBox" type="Panel" parent="."]
 layout_mode = 1
@@ -67,7 +67,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7w0kv")
 [node name="Audio" type="TabBar" parent="BackBox/TabContainer"]
 layout_mode = 2
 
-[node name="AudioToChange" parent="BackBox/TabContainer/Audio" instance=ExtResource("2_lhlfe")]
+[node name="AudioToChange" parent="BackBox/TabContainer/Audio" instance=ExtResource("2_eko1f")]
 layout_mode = 1
 
 [node name="Controls" type="TabBar" parent="BackBox/TabContainer"]
