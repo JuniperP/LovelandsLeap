@@ -35,10 +35,10 @@ public partial class Player : CharacterBody2D
 
 	public override void _Ready()
 	{
-		TongueProjScene = GD.Load<PackedScene>("res://scenes/tongue/tongue_projectile.tscn");
-		TongueLineScene = GD.Load<PackedScene>("res://scenes/tongue/tongue_line.tscn");
-		TongueSpringScene = GD.Load<PackedScene>("res://scenes/tongue/tongue_spring.tscn");
-		TongueWeightScene = GD.Load<PackedScene>("res://scenes/tongue/tongue_weight.tscn");
+		TongueProjScene = GD.Load<PackedScene>("res://scenes/player/tongue/tongue_projectile.tscn");
+		TongueLineScene = GD.Load<PackedScene>("res://scenes/player/tongue/tongue_line.tscn");
+		TongueSpringScene = GD.Load<PackedScene>("res://scenes/player/tongue/tongue_spring.tscn");
+		TongueWeightScene = GD.Load<PackedScene>("res://scenes/player/tongue/tongue_weight.tscn");
 	}
 
 	public override void _PhysicsProcess(double delta)
