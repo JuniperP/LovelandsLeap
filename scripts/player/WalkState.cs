@@ -41,7 +41,12 @@ public class WalkState : IMovementState
 		if (Input.IsActionJustPressed("primary_click"))
 		{
 			if (ctx.TongueProjExists) // Skip if using tongue
+			{
+				ctx.TongueProj.RetractTongue(
+					ctx.GlobalPosition - ctx.TongueProj.GlobalPosition
+				);
 				return;
+			}
 
 			Vector2 mousePos = ctx.GetViewport().GetMousePosition();
 			Vector2 direction = (mousePos - ctx.Position).Normalized();
