@@ -12,20 +12,15 @@ public partial class Toggleable : Control
 {
 
 	// Closes the node
-	private void _close()
+	protected virtual void _close()
 	{
 		Visible = false;
 	}
 
 	// Open the node
-	private void _open()
+	protected virtual void _open()
 	{
 		Visible = true;
-	}
-
-	private void _test()
-	{
-		GD.Print("THIS IS A TEST");
 	}
 
 }

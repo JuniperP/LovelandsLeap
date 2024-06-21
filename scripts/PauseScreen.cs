@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 public partial class PauseScreen : Toggleable
 {
 	// Effectively the timer we use to ensure a reasonable amount of time passes between our events
-	double counter;
+	private double counter;
 
 	// Setup
 	public override void _Ready()
@@ -14,23 +14,10 @@ public partial class PauseScreen : Toggleable
 		counter = 0;
 	}
 
-	// Close the menu
-	private void _close()
-	{
-		GetTree().Paused = false;
-		Visible = false;
-	}
-
-	// Open the menu
-	private void _open()
-	{
-		Visible = true;
-		GetTree().Paused = true;
-	}
-
 	// Return to the main menu
 	private void _to_main_menu()
 	{
+		GetTree().Paused = false;
 		_close();
 		GetTree().ChangeSceneToFile("res://scenes/main_menu.tscn");
 	}
@@ -44,9 +31,13 @@ public partial class PauseScreen : Toggleable
 			counter += delta;
 		}
 
+		// Seeing if settings is open
+		Settings node = (Settings)this.GetNode("Settings");
+
+
 
 		// Sees if the user is trying to pause the game
-		if (Input.IsActionPressed("ui_cancel") && (counter>=.5))
+		if (Input.IsActionPressed("ui_cancel") && (counter >= .5) && !node.Visible && (node.counter >= .3))
 		{
 			// Reset the timer
 			counter = 0;
@@ -54,11 +45,14 @@ public partial class PauseScreen : Toggleable
 			//Switch visibility
 			if (Visible)
 			{
+				GetTree().Paused = false;
 				_close();
 			}
+
 			else
 			{
 				_open();
+				GetTree().Paused = true;
 			}
 
 		}
