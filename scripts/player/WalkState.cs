@@ -53,10 +53,14 @@ public class WalkState : IMovementState
 			Vector2 mousePos = ctx.GetViewport().GetMousePosition();
 			Vector2 direction = (mousePos - ctx.Position).Normalized();
 
-			// Skip if shooting too low
+			// Set direction to minimum angle if outside of accepted angle
 			float minSin = -Mathf.Sin(Mathf.DegToRad(ctx.TongueAngle));
 			if (direction.Y > minSin)
-				return;
+			{
+				float minCos = Mathf.Cos(Mathf.DegToRad(ctx.TongueAngle));
+				minCos *= Mathf.Sign(direction.X);
+				direction = new Vector2(minCos, minSin);
+			}
 
 			// Create tongue projectile
 			ctx.TongueProj = ctx.TongueProjScene.Instantiate<TongueProjectile>();
