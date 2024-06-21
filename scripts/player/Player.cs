@@ -24,7 +24,7 @@ public partial class Player : CharacterBody2D
 
 	// TODO: Refactor into sibling nodes that are disabled
 	public PackedScene TongueProjScene;
-	public RigidBody2D TongueProj;
+	public TongueProjectile TongueProj;
 	public PackedScene TongueLineScene;
 	public TongueLine TongueLine;
 	public PackedScene TongueSpringScene;
