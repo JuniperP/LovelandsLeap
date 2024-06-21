@@ -52,7 +52,7 @@ public class WalkState : IMovementState
 				return;
 
 			// Create tongue projectile
-			ctx.TongueProj = ctx.TongueProjScene.Instantiate<RigidBody2D>();
+			ctx.TongueProj = ctx.TongueProjScene.Instantiate<TongueProjectile>();
 			ctx.TongueProjExists = true;
 
 			// Move projectile towards mouse position
@@ -65,6 +65,7 @@ public class WalkState : IMovementState
 			// Create and setup tongue line
 			ctx.TongueLine = ctx.TongueLineScene.Instantiate<TongueLine>();
 			ctx.TongueLine.Target = ctx.TongueProj;
+			ctx.TongueProj.TongueLine = ctx.TongueLine;
 			ctx.AddChild(ctx.TongueLine);
 		}
 	}
