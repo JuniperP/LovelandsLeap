@@ -8,7 +8,7 @@ public class GrappleState : IMovementState
 		Vector2 diff = ctx.TongueWeight.GlobalPosition - ctx.GlobalPosition;
 		ctx.Velocity = diff * 10;
 
-		if (ctx.MoveAndSlide()) // If player floored
+		if (ctx.MoveAndSlide()) // If player collided
 			DisableGrapple(ctx);
 	}
 

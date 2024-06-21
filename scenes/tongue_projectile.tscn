@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4jo10kefl0o4"]
-
-[ext_resource type="Texture2D" uid="uid://hii5ek3scgjb" path="res://assets/tongue.png" id="1_donv3"]
+[gd_scene load_steps=2 format=3 uid="uid://c4jo10kefl0o4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cd8mv"]
 
@@ -13,7 +11,3 @@ contact_monitor = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cd8mv")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_donv3")

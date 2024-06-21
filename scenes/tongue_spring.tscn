@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuum0y4nttngt"]
+[gd_scene load_steps=3 format=3 uid="uid://cuum0y4nttngt"]
 
 [ext_resource type="Script" path="res://scripts/player/TongueSpring.cs" id="1_aw2ux"]
-[ext_resource type="Texture2D" uid="uid://bc1ravcc5syh4" path="res://icon.svg" id="2_bsoo2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mh0wl"]
 
@@ -9,14 +8,15 @@
 node_a = NodePath("StaticBody2D")
 stiffness = 50.0
 script = ExtResource("1_aw2ux")
+LengthFactor = 0.75
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 0
 collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_bsoo2")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_mh0wl")
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+color = Color(0.815686, 0.0980392, 0.27451, 1)
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)

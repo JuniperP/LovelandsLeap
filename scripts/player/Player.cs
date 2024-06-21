@@ -15,7 +15,6 @@ public partial class Player : CharacterBody2D
 	[Export] public float GravityMultiplier = 1;
 	[Export] public int MaxFallSpeed = 1500;
 	[Export] public int TongueProjSpeed = 800;
-	[Export] public int SwingSpeed = 1500;
 	[Export] public int TongueAngle = 15;
 
 	// Refactor states to only be created once and switch with Player methods

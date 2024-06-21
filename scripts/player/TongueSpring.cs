@@ -3,6 +3,7 @@ using System;
 
 public partial class TongueSpring : DampedSpringJoint2D
 {
+	[Export] public float LengthFactor = 1;
 	[Export] public PhysicsBody2D Target;
 
 	public override void _Ready()
@@ -11,6 +12,6 @@ public partial class TongueSpring : DampedSpringJoint2D
 
 		LookAt(Target.GlobalPosition);
 		Rotate((float)-0.5f * Mathf.Pi); // NECESSARY, but no clue why :3
-		Length = GlobalPosition.DistanceTo(Target.GlobalPosition);
+		Length = LengthFactor * GlobalPosition.DistanceTo(Target.GlobalPosition);
 	}
 }
