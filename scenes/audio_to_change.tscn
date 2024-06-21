@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://btiq6vr6uavrk"]
+
+[node name="AudioToChange" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MasterVolumeLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 316.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 40
+text = "Master Volume"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="."]
+layout_mode = 1
+offset_left = 75.0
+offset_top = 105.0
+offset_right = 850.0
+offset_bottom = 135.0
+
+[node name="MusicVolumeLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 25.0
+offset_top = 225.0
+offset_right = 293.0
+offset_bottom = 280.0
+theme_override_font_sizes/font_size = 40
+text = "Music Volume"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="."]
+layout_mode = 1
+offset_left = 75.0
+offset_top = 305.0
+offset_right = 850.0
+offset_bottom = 335.0
+
+[node name="SoundEffectVolumeLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 25.0
+offset_top = 425.0
+offset_right = 422.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 40
+text = "Sound Effect Volume"
+
+[node name="SoundEffectVolumeSlider" type="HSlider" parent="."]
+layout_mode = 1
+offset_left = 75.0
+offset_top = 505.0
+offset_right = 850.0
+offset_bottom = 535.0
