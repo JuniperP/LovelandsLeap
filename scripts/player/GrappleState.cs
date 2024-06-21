@@ -1,14 +1,20 @@
 using Godot;
+using Godot.NativeInterop;
 
 public class GrappleState : IMovementState
 {
+	private double _grappleTime = 0d;
+
 	public void HandleMovement(Player ctx, double delta)
 	{
+		_grappleTime += delta;
+
 		// Set velocity to move to weight
 		Vector2 diff = ctx.TongueWeight.GlobalPosition - ctx.GlobalPosition;
 		ctx.Velocity = diff * 10;
 
-		if (ctx.MoveAndSlide()) // If player collided
+		// If player collided after buffer time
+		if (ctx.MoveAndSlide() && _grappleTime >= ctx.AutoDegrappleBuffer)
 			DisableGrapple(ctx);
 	}
 

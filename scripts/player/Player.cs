@@ -17,6 +17,7 @@ public partial class Player : CharacterBody2D
 	[Export] public int MaxFallSpeed = 1500;
 	[Export] public int TongueProjSpeed = 800;
 	[Export] public int TongueAngle = 15;
+	[Export] public double AutoDegrappleBuffer = 0.5;
 
 	// Refactor states to only be created once and switch with Player methods
 	public State StateEnum = State.Walk;
