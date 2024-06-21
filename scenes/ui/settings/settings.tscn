@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c4suej1iw3wkr"]
 
-[ext_resource type="Script" path="res://scripts/Settings.cs" id="1_0yej3"]
+[ext_resource type="Script" path="res://scripts/ui/Settings.cs" id="1_0yej3"]
 [ext_resource type="PackedScene" uid="uid://btiq6vr6uavrk" path="res://scenes/ui/settings/audio_to_change.tscn" id="2_eko1f"]
 
 [sub_resource type="Theme" id="Theme_m3tk4"]
