@@ -19,6 +19,8 @@ public class WalkState : IMovementState
 		// Handle jump
 		else if (Input.IsActionJustPressed("move_up"))
 			targetVelocity.Y = -ctx.JumpImpulse;
+		if (Input.IsActionJustReleased("move_up") && targetVelocity.Y < -0.1f)
+			targetVelocity.Y *= ctx.JumpCutFactor;
 
 		// Smooth velocity towards horizontal direction
 		float direction = Input.GetAxis("move_left", "move_right");
