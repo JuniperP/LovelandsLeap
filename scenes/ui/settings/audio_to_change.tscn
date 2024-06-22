@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://btiq6vr6uavrk"]
+[gd_scene load_steps=4 format=3 uid="uid://btiq6vr6uavrk"]
 
 [ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/MasterVolumeSlider.cs" id="1_lnsvi"]
-[ext_resource type="PackedScene" uid="uid://cu66u07uk56un" path="res://scenes/ui/settings/number_percentage.tscn" id="2_huqha"]
 [ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/MusicVolumeSlider.cs" id="2_la803"]
 [ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/SoundEffectVolumeSlider.cs" id="3_erhhb"]
 
@@ -33,16 +32,18 @@ step = 0.001
 value = 1.0
 script = ExtResource("1_lnsvi")
 
-[node name="Percentage" parent="MasterVolumeSlider" instance=ExtResource("2_huqha")]
+[node name="Percentage" type="Label" parent="MasterVolumeSlider"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 775.0
 offset_top = -22.5
-offset_right = 803.0
+offset_right = 815.0
 offset_bottom = 22.5
 grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "%"
 
 [node name="MusicVolumeLabel" type="Label" parent="."]
 layout_mode = 1
@@ -64,16 +65,18 @@ step = 0.001
 value = 1.0
 script = ExtResource("2_la803")
 
-[node name="Percentage" parent="MusicVolumeSlider" instance=ExtResource("2_huqha")]
+[node name="Percentage" type="Label" parent="MusicVolumeSlider"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 775.0
 offset_top = -22.5
-offset_right = 803.0
+offset_right = 815.0
 offset_bottom = 22.5
 grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "%"
 
 [node name="SoundEffectVolumeLabel" type="Label" parent="."]
 layout_mode = 1
@@ -95,16 +98,18 @@ step = 0.001
 value = 1.0
 script = ExtResource("3_erhhb")
 
-[node name="Percentage" parent="SoundEffectVolumeSlider" instance=ExtResource("2_huqha")]
+[node name="Percentage" type="Label" parent="SoundEffectVolumeSlider"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 775.0
 offset_top = -22.5
-offset_right = 803.0
+offset_right = 815.0
 offset_bottom = 22.5
 grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "%"
 
 [connection signal="value_changed" from="MasterVolumeSlider" to="MasterVolumeSlider" method="_change_percent"]
 [connection signal="value_changed" from="MasterVolumeSlider" to="MasterVolumeSlider" method="_set_volume"]
