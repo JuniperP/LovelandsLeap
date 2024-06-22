@@ -10,7 +10,7 @@ public partial class MasterVolumeSlider : VolumeSlider
 		BusIndex = AudioServer.GetBusIndex("Master");
 
 		// Sets up slider
-		_setup(BusIndex);
+		Setup(BusIndex);
 
 	}
 

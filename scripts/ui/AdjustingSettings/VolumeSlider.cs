@@ -10,14 +10,14 @@ public partial class VolumeSlider : HSlider
 	protected Label OurNum;
 
 	// Setting our new volume
-	protected void _set_volume(float newVol)
+	protected void SetVolume(float newVol)
 	{
 		AudioServer.SetBusVolumeDb(BusIndex, Mathf.LinearToDb(newVol));
 	}
 
 
 	// Set slider based on if it's the first time the game was run
-	protected void _setup(int BusIndex)
+	protected void Setup(int BusIndex)
 	{
 		// Sets sliders current value to match the bus
 		Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(BusIndex));
@@ -31,7 +31,7 @@ public partial class VolumeSlider : HSlider
 	 Updates the number_percent at the end of the slider
 	 (Note slider should be turned into a scene with slider so needed relation of slider and % is more obvious)
 	*/
-	protected void _change_percent(float newNum)
+	protected void ChangePercent(float newNum)
 	{
 		// Sets up our percentage and default value
 		OurNum = (Label)GetNode("Percentage");

@@ -11,7 +11,7 @@ public partial class SoundEffectVolumeSlider : VolumeSlider
 
 
 		// Sets up slider
-		_setup(BusIndex);
+		Setup(BusIndex);
 	}
 
 
