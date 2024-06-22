@@ -8,90 +8,65 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ChangeRight" type="Button" parent="."]
+[node name="MoveLeftsBinds" type="TabContainer" parent="."]
 layout_mode = 1
-offset_left = 250.0
-offset_top = 100.0
-offset_right = 450.0
-offset_bottom = 200.0
-theme_override_font_sizes/font_size = 48
-text = "→"
+offset_left = 300.0
+offset_right = 900.0
+offset_bottom = 55.0
 
-[node name="NameOfButton" type="Label" parent="ChangeRight"]
+[node name="MoveLeftLabel" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -100.0
-offset_top = -50.0
-offset_right = 100.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 28
-text = "Move Right"
-horizontal_alignment = 1
-
-[node name="ChangeLeft" type="Button" parent="."]
-layout_mode = 1
-offset_top = 100.0
-offset_right = 200.0
-offset_bottom = 200.0
-theme_override_font_sizes/font_size = 48
-text = "←"
-
-[node name="NameOfButton" type="Label" parent="ChangeLeft"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -100.0
-offset_top = -50.0
-offset_right = 100.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 28
+offset_left = 25.0
+offset_right = 225.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
 text = "Move Left"
 horizontal_alignment = 1
 
-[node name="ChangeJump" type="Button" parent="."]
-layout_mode = 0
-offset_left = 500.0
-offset_top = 100.0
-offset_right = 700.0
-offset_bottom = 200.0
-theme_override_font_sizes/font_size = 48
-text = "↑
-"
-
-[node name="NameOfButton" type="Label" parent="ChangeJump"]
+[node name="MoveRightLabel" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -100.0
-offset_top = -50.0
-offset_right = 100.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 28
+offset_left = 25.0
+offset_top = 150.0
+offset_right = 240.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 40
+text = "Move Right"
+horizontal_alignment = 1
+
+[node name="JumpLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 25.0
+offset_top = 300.0
+offset_right = 225.0
+offset_bottom = 355.0
+theme_override_font_sizes/font_size = 40
 text = "Jump"
 horizontal_alignment = 1
 
-[node name="ChangeRight2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 750.0
-offset_top = 100.0
-offset_right = 950.0
-offset_bottom = 200.0
-theme_override_font_sizes/font_size = 48
-text = "R_Click"
-
-[node name="NameOfButton" type="Label" parent="ChangeRight2"]
+[node name="UseTongueLabel" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -100.0
-offset_top = -50.0
-offset_right = 100.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 28
+offset_left = 25.0
+offset_top = 450.0
+offset_right = 249.0
+offset_bottom = 505.0
+theme_override_font_sizes/font_size = 40
 text = "Use Tongue"
 horizontal_alignment = 1
+
+[node name="MoveRightBinds" type="TabContainer" parent="."]
+offset_left = 300.0
+offset_top = 150.0
+offset_right = 900.0
+offset_bottom = 205.0
+
+[node name="JumpBinds" type="TabContainer" parent="."]
+offset_left = 300.0
+offset_top = 300.0
+offset_right = 900.0
+offset_bottom = 355.0
+
+[node name="UseTongueBinds" type="TabContainer" parent="."]
+offset_left = 300.0
+offset_top = 450.0
+offset_right = 900.0
+offset_bottom = 505.0
