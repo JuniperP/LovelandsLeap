@@ -9,7 +9,7 @@
 [node name="Opening" type="Node2D" node_paths=PackedStringArray("Nodes")]
 position = Vector2(-2, 0)
 script = ExtResource("1_1imdu")
-Nodes = [NodePath("DialogueBox")]
+Nodes = [null, NodePath("DialogueBox")]
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -25,6 +25,7 @@ texture = ExtResource("1_1731u")
 expand_mode = 1
 
 [node name="DialogueBox" parent="." instance=ExtResource("3_sf47s")]
+visible = false
 offset_left = 960.0
 offset_top = 1080.0
 offset_right = 960.0
@@ -35,5 +36,8 @@ NextTrigger = 1.0
 
 [node name="ProfilePicture" parent="DialogueBox/BackBox" index="1"]
 texture = ExtResource("4_kug12")
+
+[node name="Text" parent="DialogueBox/BackBox" index="2"]
+text = "My order better not be in the woods again..."
 
 [editable path="DialogueBox"]

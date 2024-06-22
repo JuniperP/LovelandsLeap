@@ -4,6 +4,7 @@ using System;
 public partial class Cutscene : Node2D
 {
 	[Export] public bool Autoplay = true;
+	[Export] public double NullWaitTime = 1d;
 	[Export] public Node[] Nodes;
 	[Export] public PackedScene NextScene;
 
@@ -18,7 +19,8 @@ public partial class Cutscene : Node2D
 		{
 			try
 			{
-				_animNodes[i] = (ICutAnimatable)Nodes[i];
+				if (Nodes[i] is not null)
+					_animNodes[i] = (ICutAnimatable)Nodes[i];
 			}
 			catch (InvalidCastException e)
 			{
@@ -36,6 +38,11 @@ public partial class Cutscene : Node2D
 			Run();
 	}
 
+	public override void _Process(double delta)
+	{
+
+	}
+
 	public void Run()
 	{
 		_current = 0;
@@ -47,8 +54,13 @@ public partial class Cutscene : Node2D
 		// If there are still animations left
 		if (_current < _animNodes.Length)
 		{
-			double nextTrigger = _animNodes[_current].TriggerAnimation();
-			_timer.Start(nextTrigger);
+			if (_animNodes[_current] is null)
+				_timer.Start(NullWaitTime);
+			else
+			{
+				double nextTrigger = _animNodes[_current].TriggerAnimation();
+				_timer.Start(nextTrigger);
+			}
 			_current++;
 		}
 	}
