@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhbw0ude0nsrw"]
+
+[ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_1imdu"]
+[ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://assets/background/MainMenu.jpg" id="1_1731u"]
+[ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="3_sf47s"]
+[ext_resource type="Script" path="res://scripts/cutscene/CutAnimationControl.cs" id="4_dmbpd"]
+[ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/McPortrait.png" id="4_kug12"]
+
+[node name="Opening" type="Node2D" node_paths=PackedStringArray("Nodes")]
+position = Vector2(-2, 0)
+script = ExtResource("1_1imdu")
+Nodes = [NodePath("DialogueBox")]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -39.0
+offset_right = 1961.0
+offset_bottom = 1189.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1731u")
+expand_mode = 1
+
+[node name="DialogueBox" parent="." instance=ExtResource("3_sf47s")]
+offset_left = 960.0
+offset_top = 1080.0
+offset_right = 960.0
+offset_bottom = 1080.0
+script = ExtResource("4_dmbpd")
+LifeSpan = 5.0
+NextTrigger = 1.0
+
+[node name="ProfilePicture" parent="DialogueBox/BackBox" index="1"]
+texture = ExtResource("4_kug12")
+
+[editable path="DialogueBox"]
