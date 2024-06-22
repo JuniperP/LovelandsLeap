@@ -9,6 +9,6 @@ public partial class VolumeSlider :  HSlider
 	//Setting our new volume
 	protected void _set_volume(float newVol)
 	{
-		AudioServer.SetBusVolumeDb(BusIndex, newVol);
+		AudioServer.SetBusVolumeDb(BusIndex, Mathf.LinearToDb(newVol));
 	}
 }
