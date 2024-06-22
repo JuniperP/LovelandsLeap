@@ -25,12 +25,25 @@ text = "Master Volume"
 layout_mode = 1
 offset_left = 75.0
 offset_top = 105.0
-offset_right = 850.0
+offset_right = 825.0
 offset_bottom = 135.0
 max_value = 1.0
 step = 0.001
 value = 1.0
 script = ExtResource("1_lnsvi")
+
+[node name="Percentage" type="Label" parent="MasterVolumeSlider"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 775.0
+offset_top = -22.5
+offset_right = 815.0
+offset_bottom = 22.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "100%"
 
 [node name="MusicVolumeLabel" type="Label" parent="."]
 layout_mode = 1
@@ -45,12 +58,25 @@ text = "Music Volume"
 layout_mode = 1
 offset_left = 75.0
 offset_top = 305.0
-offset_right = 850.0
+offset_right = 825.0
 offset_bottom = 335.0
 max_value = 1.0
 step = 0.001
 value = 1.0
 script = ExtResource("2_la803")
+
+[node name="Percentage" type="Label" parent="MusicVolumeSlider"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 775.0
+offset_top = -22.5
+offset_right = 815.0
+offset_bottom = 22.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "100%"
 
 [node name="SoundEffectVolumeLabel" type="Label" parent="."]
 layout_mode = 1
@@ -65,13 +91,29 @@ text = "Sound Effect Volume"
 layout_mode = 1
 offset_left = 75.0
 offset_top = 505.0
-offset_right = 850.0
+offset_right = 825.0
 offset_bottom = 535.0
 max_value = 1.0
 step = 0.001
 value = 1.0
 script = ExtResource("3_erhhb")
 
+[node name="Percentage" type="Label" parent="SoundEffectVolumeSlider"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 775.0
+offset_top = -22.5
+offset_right = 815.0
+offset_bottom = 22.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "100%"
+
 [connection signal="value_changed" from="MasterVolumeSlider" to="MasterVolumeSlider" method="_set_volume"]
+[connection signal="value_changed" from="MasterVolumeSlider" to="MasterVolumeSlider" method="_change_percent"]
 [connection signal="value_changed" from="MusicVolumeSlider" to="MusicVolumeSlider" method="_set_volume"]
+[connection signal="value_changed" from="MusicVolumeSlider" to="MusicVolumeSlider" method="_change_percent"]
 [connection signal="value_changed" from="SoundEffectVolumeSlider" to="SoundEffectVolumeSlider" method="_set_volume"]
+[connection signal="value_changed" from="SoundEffectVolumeSlider" to="SoundEffectVolumeSlider" method="_change_percent"]
