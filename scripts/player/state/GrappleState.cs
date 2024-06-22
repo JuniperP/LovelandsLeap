@@ -16,6 +16,12 @@ public class GrappleState : IMovementState
 		// If player collided after buffer time
 		if (ctx.MoveAndSlide() && _grappleTime >= ctx.AutoDegrappleBuffer)
 			DisableGrapple(ctx);
+		
+		// Handle sprite direction
+		if (ctx.Velocity.X > 0.01f)
+			ctx.animManager.IsLeftFacing = false;
+		else if (ctx.Velocity.X < -0.01f)
+			ctx.animManager.IsLeftFacing = true;
 	}
 
 	public void HandleAction(Player ctx)

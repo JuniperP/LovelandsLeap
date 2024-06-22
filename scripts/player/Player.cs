@@ -19,6 +19,7 @@ public partial class Player : CharacterBody2D
 	[Export] public int TongueAngle = 15;
 	[Export] public double AutoDegrappleBuffer = 0.5;
 
+	public AnimationManager animManager;
 	// Refactor states to only be created once and switch with Player methods
 	public State StateEnum = State.Walk;
 	public IMovementState MovementState = new WalkState();
@@ -36,6 +37,8 @@ public partial class Player : CharacterBody2D
 
 	public override void _Ready()
 	{
+		animManager = new AnimationManager(this);
+
 		TongueProjScene = GD.Load<PackedScene>("res://scenes/player/tongue/tongue_projectile.tscn");
 		TongueLineScene = GD.Load<PackedScene>("res://scenes/player/tongue/tongue_line.tscn");
 		TongueSpringScene = GD.Load<PackedScene>("res://scenes/player/tongue/tongue_spring.tscn");

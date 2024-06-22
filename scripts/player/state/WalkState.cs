@@ -29,6 +29,12 @@ public class WalkState : IMovementState
 			direction * ctx.Speed,
 			ctx.Acceleration * (float)delta
 		);
+		
+		// Handle sprite direction
+		if (direction > 0.01f)
+			ctx.animManager.IsLeftFacing = false;
+		else if (direction < -0.01f)
+			ctx.animManager.IsLeftFacing = true;
 
 		// Cap vertical speed
 		targetVelocity.Y = Mathf.Min(targetVelocity.Y, ctx.MaxFallSpeed);

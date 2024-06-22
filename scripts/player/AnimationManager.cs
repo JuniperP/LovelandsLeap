@@ -17,7 +17,7 @@ public class AnimationManager
 		set { SetState(value); }
 	}
 
-	public bool FlipH
+	public bool IsLeftFacing
 	{
 		get { return _sprite.FlipH; }
 		set { _sprite.FlipH = value; }
