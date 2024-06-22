@@ -50,7 +50,7 @@ public class WalkState : IMovementState
 				return;
 			}
 
-			Vector2 mousePos = ctx.GetViewport().GetMousePosition();
+			Vector2 mousePos = ctx.GetGlobalMousePosition();
 			Vector2 direction = (mousePos - ctx.Position).Normalized();
 
 			// Set direction to minimum angle if outside of accepted angle

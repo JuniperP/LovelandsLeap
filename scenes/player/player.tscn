@@ -23,7 +23,7 @@ script = ExtResource("1_neipv")
 GravityMultiplier = 2.5
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2.38419e-07, 16.5)
 scale = Vector2(0.0926784, 0.0577314)
 sprite_frames = SubResource("SpriteFrames_vlg27")
