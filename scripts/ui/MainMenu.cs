@@ -4,7 +4,7 @@ using System;
 public partial class MainMenu : Control
 {
 	// Main menu music
-	AudioStreamPlayer mus;
+	private AudioStreamPlayer mus;
 
 
 	// Called when the node enters the scene tree for the first time.

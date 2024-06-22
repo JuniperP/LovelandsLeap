@@ -123,6 +123,7 @@ layout_mode = 1
 
 [node name="MainMenuTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_yokp6")
+bus = &"Music"
 
 [connection signal="pressed" from="Panel/TextureRect/QuitButton" to="." method="_quit_game"]
 [connection signal="pressed" from="Panel/TextureRect/CreditButton" to="." method="_on_credit_button_pressed"]
