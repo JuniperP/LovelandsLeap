@@ -43,7 +43,7 @@ offset_right = 815.0
 offset_bottom = 22.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "%"
+text = "100%"
 
 [node name="MusicVolumeLabel" type="Label" parent="."]
 layout_mode = 1
@@ -76,7 +76,7 @@ offset_right = 815.0
 offset_bottom = 22.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "%"
+text = "100%"
 
 [node name="SoundEffectVolumeLabel" type="Label" parent="."]
 layout_mode = 1
@@ -109,11 +109,11 @@ offset_right = 815.0
 offset_bottom = 22.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "%"
+text = "100%"
 
-[connection signal="value_changed" from="MasterVolumeSlider" to="MasterVolumeSlider" method="_change_percent"]
 [connection signal="value_changed" from="MasterVolumeSlider" to="MasterVolumeSlider" method="_set_volume"]
-[connection signal="value_changed" from="MusicVolumeSlider" to="MusicVolumeSlider" method="_change_percent"]
+[connection signal="value_changed" from="MasterVolumeSlider" to="MasterVolumeSlider" method="_change_percent"]
 [connection signal="value_changed" from="MusicVolumeSlider" to="MusicVolumeSlider" method="_set_volume"]
-[connection signal="value_changed" from="SoundEffectVolumeSlider" to="SoundEffectVolumeSlider" method="_change_percent"]
+[connection signal="value_changed" from="MusicVolumeSlider" to="MusicVolumeSlider" method="_change_percent"]
 [connection signal="value_changed" from="SoundEffectVolumeSlider" to="SoundEffectVolumeSlider" method="_set_volume"]
+[connection signal="value_changed" from="SoundEffectVolumeSlider" to="SoundEffectVolumeSlider" method="_change_percent"]

@@ -22,9 +22,7 @@ public partial class VolumeSlider : HSlider
 		// Sets sliders current value to match the bus
 		Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(BusIndex));
 
-		// Sets up our percentage and default value
-		OurNum = (Label)GetNode("Percentage");
-		OurNum.Text = "" + 100 + "%";
+	
 
 	}
 
@@ -35,7 +33,8 @@ public partial class VolumeSlider : HSlider
 	*/
 	protected void _change_percent(float newNum)
 	{
-
+		// Sets up our percentage and default value
+		OurNum = (Label)GetNode("Percentage");
 		String numToAdd = "" + Mathf.Round(newNum * 100);
 		OurNum.Text = numToAdd + "%";
 
