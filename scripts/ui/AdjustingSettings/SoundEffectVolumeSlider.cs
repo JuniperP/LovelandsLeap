@@ -10,7 +10,7 @@ public partial class SoundEffectVolumeSlider : VolumeSlider
 		BusIndex = AudioServer.GetBusIndex("Sound Effects");
 
 		// Sets up slider
-		Setup(BusIndex);
+		_setup(BusIndex);
 	}
 
 
