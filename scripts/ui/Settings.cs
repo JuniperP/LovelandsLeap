@@ -20,7 +20,6 @@ public partial class Settings : Toggleable
 		if(counter<=.3 && !Visible)
 		{
 			counter+=delta;
-			GD.Print(counter);
 		}
 
 		// Letting the user quit from settings and resetting counter
