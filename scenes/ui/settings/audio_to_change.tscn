@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://btiq6vr6uavrk"]
+[gd_scene load_steps=2 format=3 uid="uid://btiq6vr6uavrk"]
+
+[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/MasterVolumeSlider.cs" id="1_lnsvi"]
 
 [node name="AudioToChange" type="Control"]
 layout_mode = 3
@@ -23,6 +25,10 @@ offset_left = 75.0
 offset_top = 105.0
 offset_right = 850.0
 offset_bottom = 135.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("1_lnsvi")
 
 [node name="MusicVolumeLabel" type="Label" parent="."]
 layout_mode = 1
@@ -39,6 +45,9 @@ offset_left = 75.0
 offset_top = 305.0
 offset_right = 850.0
 offset_bottom = 335.0
+max_value = 1.0
+step = 0.001
+value = 1.0
 
 [node name="SoundEffectVolumeLabel" type="Label" parent="."]
 layout_mode = 1
@@ -55,3 +64,8 @@ offset_left = 75.0
 offset_top = 505.0
 offset_right = 850.0
 offset_bottom = 535.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[connection signal="value_changed" from="MasterVolumeSlider" to="MasterVolumeSlider" method="_set_volume"]
