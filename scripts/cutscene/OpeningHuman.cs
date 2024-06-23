@@ -21,7 +21,9 @@ public partial class OpeningHuman : MultiAnimation2D
 	{
 		return new Action<double>[]{
 			Appear,
-			WalkOff
+			(double _) => {},
+			(double _) => {},
+			WalkOff,
 		};
 	}
 

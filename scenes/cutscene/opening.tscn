@@ -13,7 +13,7 @@
 position = Vector2(-2, 0)
 script = ExtResource("1_1imdu")
 CancelScene = ExtResource("2_kkoj4")
-Nodes = [null, NodePath("OrderDialogue"), NodePath("Player"), NodePath("ForestDialogue"), NodePath("Player")]
+Nodes = [null, NodePath("OrderDialogue"), NodePath("Player"), NodePath("Player"), NodePath("ForestDialogue"), NodePath("Player"), NodePath("Player")]
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -28,6 +28,16 @@ grow_vertical = 2
 texture = ExtResource("1_1731u")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 56.0
+offset_right = 388.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Press [Esc] to skip"
 
 [node name="OrderDialogue" parent="." instance=ExtResource("3_sf47s")]
 visible = false
@@ -49,15 +59,15 @@ text = "My order better not be in the woods again..."
 visible = false
 script = ExtResource("7_6tcm6")
 Sprite = NodePath("Sprite")
-LifeSpans = PackedFloat64Array(0, 8)
-NextTriggers = PackedFloat64Array(2, 9)
-SpriteAnims = PackedStringArray("default", "walking")
+LifeSpans = PackedFloat64Array(0, 0, 0, 8)
+NextTriggers = PackedFloat64Array(2, 0, 1, 9)
+SpriteAnims = PackedStringArray("default", "talking", "default", "walking")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(423, 882)
 scale = Vector2(0.075, 0.075)
 sprite_frames = ExtResource("6_h2cw7")
-animation = &"walking"
+frame_progress = 1.0
 
 [node name="ForestDialogue" parent="." instance=ExtResource("3_sf47s")]
 visible = false
@@ -67,7 +77,7 @@ offset_right = 960.0
 offset_bottom = 1080.0
 script = ExtResource("4_dmbpd")
 LifeSpan = 7.0
-NextTrigger = 8.0
+NextTrigger = 7.0
 
 [node name="ProfilePicture" parent="ForestDialogue/BackBox" index="1"]
 texture = ExtResource("4_kug12")

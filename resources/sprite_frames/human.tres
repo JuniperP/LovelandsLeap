@@ -1,10 +1,12 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bpsekjb4cflxu"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bpsekjb4cflxu"]
 
-[ext_resource type="Texture2D" uid="uid://df28yqeogjhxk" path="res://assets/human/Mc.png" id="1_yqc85"]
-[ext_resource type="Texture2D" uid="uid://fp45kqq3ay8" path="res://assets/human/Mcwalk2.png" id="2_i2wq4"]
-[ext_resource type="Texture2D" uid="uid://djkohq3cjdqje" path="res://assets/human/Mcwalk1.png" id="3_f511q"]
-[ext_resource type="Texture2D" uid="uid://bv7wfp40t4i7a" path="res://assets/human/Mcwalk3.png" id="4_uafg2"]
-[ext_resource type="Texture2D" uid="uid://dlh36hv3fncg7" path="res://assets/human/Mcwalk4.png" id="5_jq8db"]
+[ext_resource type="Texture2D" uid="uid://bsj83htn4qp1v" path="res://assets/human/Mc.png" id="1_yqc85"]
+[ext_resource type="Texture2D" uid="uid://bmvld47lgk0tw" path="res://assets/human/Mcwalk2.png" id="2_i2wq4"]
+[ext_resource type="Texture2D" uid="uid://cfmudke3ww7bk" path="res://assets/human/Mctalk2.png" id="2_s5e38"]
+[ext_resource type="Texture2D" uid="uid://3k3bko01lx02" path="res://assets/human/Mcwalk1.png" id="3_f511q"]
+[ext_resource type="Texture2D" uid="uid://bgbcf4e2pnnrq" path="res://assets/human/Mctalk3.png" id="3_iyajx"]
+[ext_resource type="Texture2D" uid="uid://dtfjn7qxdw86u" path="res://assets/human/Mcwalk3.png" id="4_uafg2"]
+[ext_resource type="Texture2D" uid="uid://b5bmijtsyt33p" path="res://assets/human/Mcwalk4.png" id="5_jq8db"]
 
 [resource]
 animations = [{
@@ -14,6 +16,29 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yqc85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s5e38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iyajx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s5e38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_yqc85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_yqc85")
+}],
+"loop": true,
+"name": &"talking",
 "speed": 5.0
 }, {
 "frames": [{

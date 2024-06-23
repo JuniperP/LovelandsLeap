@@ -60,14 +60,19 @@ public partial class Cutscene : Node2D
 		// If there are still animations left
 		if (_current < _animNodes.Length)
 		{
+			// Get time till next animation
+			double nextTrigger;
 			if (_animNodes[_current] is null)
-				_timer.Start(NullWaitTime);
+				nextTrigger = NullWaitTime;
 			else
-			{
-				double nextTrigger = _animNodes[_current].TriggerAnimation();
-				_timer.Start(nextTrigger);
-			}
+				nextTrigger = _animNodes[_current].TriggerAnimation();
+
+			// Perform next animation in appropriate time
 			_current++;
+			if (nextTrigger > 0d)
+				_timer.Start(nextTrigger);
+			else
+				Step();
 		}
 		else if (NextScene is not null)
 			GetTree().ChangeSceneToPacked(NextScene);
