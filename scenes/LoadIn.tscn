@@ -1,6 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0pebp4k0idlf"]
+[gd_scene load_steps=3 format=3 uid="uid://uuwvr6er1w3s"]
 
-[ext_resource type="Script" path="res://LoadIn.cs" id="1_ow7ot"]
+[sub_resource type="CSharpScript" id="CSharpScript_v2w1o"]
+script/source = "using Godot;
+using System;
+
+public partial class LoadIn : Control
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		SaveGame.LoadData();
+		GetTree().ChangeSceneToFile(\"res://scenes/ui/main_menu.tscn\");
+	}
+
+
+}
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rs82"]
 bg_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
@@ -12,7 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ow7ot")
+script = SubResource("CSharpScript_v2w1o")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

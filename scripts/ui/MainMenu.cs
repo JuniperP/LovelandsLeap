@@ -11,7 +11,7 @@ public partial class MainMenu : Control
 	public override void _Ready()
 	{
 		// Loads in save data
-		SaveGame.LoadData();
+		//SaveGame.LoadData();
 
 		// Getting opening theme
 		mus = (AudioStreamPlayer) GetNode("MainMenuTheme");
@@ -36,7 +36,7 @@ public partial class MainMenu : Control
 	// Quits the game from the menu after saving
 	private void _quit_game()
 	{
-		SaveGame.Save();
+		//SaveGame.Save();
 		GetTree().Quit();
 	}
 }
