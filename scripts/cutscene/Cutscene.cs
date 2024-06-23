@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Cutscene : Node2D
+public partial class Cutscene : Node
 {
 	[Export] public bool Autoplay = true;
 	[Export] public double NullWaitTime = 1d;

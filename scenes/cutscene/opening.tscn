@@ -9,25 +9,26 @@
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="6_h2cw7"]
 [ext_resource type="Script" path="res://scripts/cutscene/OpeningHuman.cs" id="7_6tcm6"]
 
-[node name="Opening" type="Node2D" node_paths=PackedStringArray("Nodes")]
-position = Vector2(-2, 0)
+[node name="Opening" type="Control" node_paths=PackedStringArray("Nodes")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_1imdu")
 CancelScene = ExtResource("2_kkoj4")
 Nodes = [null, NodePath("OrderDialogue"), NodePath("Player"), NodePath("Player"), NodePath("ForestDialogue"), NodePath("Player"), NodePath("Player")]
 
 [node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -47.0
-offset_top = -39.0
-offset_right = 1961.0
-offset_bottom = 1189.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_1731u")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Background"]
 layout_mode = 0
@@ -39,24 +40,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Press [Esc] to skip"
 
-[node name="OrderDialogue" parent="." instance=ExtResource("3_sf47s")]
-visible = false
-offset_left = 960.0
-offset_top = 1080.0
-offset_right = 960.0
-offset_bottom = 1080.0
-script = ExtResource("4_dmbpd")
-LifeSpan = 5.0
-NextTrigger = 6.0
-
-[node name="ProfilePicture" parent="OrderDialogue/BackBox" index="1"]
-texture = ExtResource("4_kug12")
-
-[node name="Text" parent="OrderDialogue/BackBox" index="2"]
-text = "My order better not be in the woods again..."
-
 [node name="Player" type="Node2D" parent="." node_paths=PackedStringArray("Sprite")]
-visible = false
 script = ExtResource("7_6tcm6")
 Sprite = NodePath("Sprite")
 LifeSpans = PackedFloat64Array(0, 0, 0, 8)
@@ -69,11 +53,7 @@ scale = Vector2(0.075, 0.075)
 sprite_frames = ExtResource("6_h2cw7")
 
 [node name="ForestDialogue" parent="." instance=ExtResource("3_sf47s")]
-visible = false
-offset_left = 960.0
-offset_top = 1080.0
-offset_right = 960.0
-offset_bottom = 1080.0
+layout_mode = 1
 script = ExtResource("4_dmbpd")
 LifeSpan = 7.0
 NextTrigger = 7.0
@@ -88,5 +68,22 @@ offset_bottom = 88.0
 text = "Why would they actually leave it at my house
 like I asked when there’s a perfectly good forest."
 
-[editable path="OrderDialogue"]
+[node name="OrderDialogue" parent="." instance=ExtResource("3_sf47s")]
+visible = false
+layout_mode = 1
+offset_left = 960.0
+offset_top = 1080.0
+offset_right = 960.0
+offset_bottom = 1080.0
+script = ExtResource("4_dmbpd")
+LifeSpan = 5.0
+NextTrigger = 6.0
+
+[node name="ProfilePicture" parent="OrderDialogue/BackBox" index="1"]
+texture = ExtResource("4_kug12")
+
+[node name="Text" parent="OrderDialogue/BackBox" index="2"]
+text = "My order better not be in the woods again..."
+
 [editable path="ForestDialogue"]
+[editable path="OrderDialogue"]
