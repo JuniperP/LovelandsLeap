@@ -1,17 +1,94 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccc6gfv7e6o6w"]
+[gd_scene load_steps=19 format=3 uid="uid://ccc6gfv7e6o6w"]
 
 [ext_resource type="Script" path="res://scripts/player/Player.cs" id="1_neipv"]
-[ext_resource type="Texture2D" uid="uid://bt3jtehq75olq" path="res://assets/frog.jpg" id="2_1pcs2"]
+[ext_resource type="Texture2D" uid="uid://cfp5imsajyjw3" path="res://assets/frog/frogbase.png" id="2_ijeop"]
+[ext_resource type="Texture2D" uid="uid://cmentswd75fhb" path="res://assets/frog/Frogidle1.png" id="2_yg0dr"]
+[ext_resource type="Texture2D" uid="uid://cipdio2h0n0db" path="res://assets/frog/Frogidle2.png" id="4_w1rcl"]
+[ext_resource type="Texture2D" uid="uid://dnpa78fs61gtv" path="res://assets/frog/Frogjump2.png" id="5_otpw3"]
+[ext_resource type="Texture2D" uid="uid://dpd4k5jhc8ejd" path="res://assets/frog/Frogwalk1.png" id="5_vabx8"]
+[ext_resource type="Texture2D" uid="uid://o1o22mtjmpg6" path="res://assets/frog/Frogwalk2.png" id="6_46t3d"]
+[ext_resource type="Texture2D" uid="uid://cka8i5sbqxf75" path="res://assets/frog/Frogjump3.png" id="6_56fmp"]
+[ext_resource type="Texture2D" uid="uid://dvbvxatbtuj4j" path="res://assets/frog/Frog5.png" id="7_cmg5d"]
+[ext_resource type="Texture2D" uid="uid://bo34vm5kufg8q" path="res://assets/frog/Frogwalk3.png" id="7_vajsu"]
+[ext_resource type="Texture2D" uid="uid://7q263khcsnd2" path="res://assets/frog/Frog4.png" id="8_arhjq"]
+[ext_resource type="Texture2D" uid="uid://b5dao0wirnswg" path="res://assets/frog/Frogwalk4.png" id="8_hvo1t"]
+[ext_resource type="Texture2D" uid="uid://dv4nwmkbas6tq" path="res://assets/frog/Frog3.png" id="9_45nty"]
+[ext_resource type="Texture2D" uid="uid://dqntvh6oj0vc2" path="res://assets/frog/Frogwalk5.png" id="9_md66q"]
+[ext_resource type="Texture2D" uid="uid://boxsf2qm8j3k6" path="res://assets/frog/Frogwalk6.png" id="10_dk2rf"]
+[ext_resource type="Texture2D" uid="uid://5bgefkhocyis" path="res://assets/frog/Frogwalk7.png" id="11_afms8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vlg27"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_1pcs2")
+"texture": ExtResource("2_ijeop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yg0dr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w1rcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yg0dr")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_otpw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_56fmp")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ijeop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cmg5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_arhjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_45nty")
+}],
+"loop": false,
+"name": &"tongue",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vabx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_46t3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vajsu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hvo1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_md66q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dk2rf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_afms8")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_455w7"]
@@ -24,10 +101,13 @@ GravityMultiplier = 2.5
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2.38419e-07, 16.5)
-scale = Vector2(0.0926784, 0.0577314)
+scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_vlg27")
+animation = &"tongue"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 16.5)
 shape = SubResource("RectangleShape2D_455w7")

@@ -81,6 +81,7 @@ grow_vertical = 2
 layout_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_1djk0")]
+z_index = 10
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_12rfl")
