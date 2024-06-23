@@ -19,7 +19,7 @@ public partial class TongueProjectile : RigidBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		Vector2 diff = _source.GlobalPosition - GlobalPosition;
+		Vector2 diff = _source.TongueGlobalPos - GlobalPosition;
 		if (_isReturning)
 		{
 			if (diff.LengthSquared() < Mathf.Pow(ReturnDistance, 2))

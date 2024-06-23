@@ -93,12 +93,14 @@ public class WalkState : IMovementState
 			// Setup projectile
 			ctx.TongueProj.BodyEntered += ctx.EnableGrapple;
 			ctx.AddChild(ctx.TongueProj);
+			ctx.TongueProj.GlobalPosition = ctx.TongueGlobalPos;
 
 			// Create and setup tongue line
 			ctx.TongueLine = ctx.TongueLineScene.Instantiate<TongueLine>();
 			ctx.TongueLine.Target = ctx.TongueProj;
 			ctx.TongueProj.TongueLine = ctx.TongueLine;
 			ctx.AddChild(ctx.TongueLine);
+			ctx.TongueLine.GlobalPosition = ctx.TongueGlobalPos;
 		}
 	}
 

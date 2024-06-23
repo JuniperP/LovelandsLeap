@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bd8tulp331yce"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rjaj2"]
-radius = 75.0
+radius = 60.0
 
 [node name="Weight" type="RigidBody2D"]
 collision_layer = 0
