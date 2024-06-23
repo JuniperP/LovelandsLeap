@@ -1,15 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhbw0ude0nsrw"]
+[gd_scene load_steps=8 format=3 uid="uid://dhbw0ude0nsrw"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_1imdu"]
 [ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://assets/background/MainMenu.jpg" id="1_1731u"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="3_sf47s"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationControl.cs" id="4_dmbpd"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/McPortrait.png" id="4_kug12"]
+[ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="6_h2cw7"]
+[ext_resource type="Script" path="res://scripts/cutscene/OpeningHuman.cs" id="7_6tcm6"]
 
 [node name="Opening" type="Node2D" node_paths=PackedStringArray("Nodes")]
 position = Vector2(-2, 0)
 script = ExtResource("1_1imdu")
-Nodes = [null, NodePath("DialogueBox")]
+Nodes = [null, NodePath("DialogueBox"), NodePath("Player"), NodePath("Player")]
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -32,12 +34,21 @@ offset_right = 960.0
 offset_bottom = 1080.0
 script = ExtResource("4_dmbpd")
 LifeSpan = 5.0
-NextTrigger = 1.0
+NextTrigger = 6.0
 
 [node name="ProfilePicture" parent="DialogueBox/BackBox" index="1"]
 texture = ExtResource("4_kug12")
 
 [node name="Text" parent="DialogueBox/BackBox" index="2"]
 text = "My order better not be in the woods again..."
+
+[node name="Player" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(423, 882)
+scale = Vector2(0.075, 0.075)
+sprite_frames = ExtResource("6_h2cw7")
+script = ExtResource("7_6tcm6")
+LifeSpans = PackedFloat64Array(3, 0)
+NextTriggers = PackedFloat64Array(4, 0)
 
 [editable path="DialogueBox"]
