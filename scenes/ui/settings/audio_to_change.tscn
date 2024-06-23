@@ -111,6 +111,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "100%"
 
+[connection signal="gui_input" from="MasterVolumeSlider" to="MasterVolumeSlider" method="_test"]
 [connection signal="value_changed" from="MasterVolumeSlider" to="MasterVolumeSlider" method="_change_percent"]
 [connection signal="value_changed" from="MasterVolumeSlider" to="MasterVolumeSlider" method="_set_volume"]
 [connection signal="value_changed" from="MusicVolumeSlider" to="MusicVolumeSlider" method="_change_percent"]

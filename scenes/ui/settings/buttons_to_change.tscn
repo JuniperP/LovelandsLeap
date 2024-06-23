@@ -54,18 +54,21 @@ text = "Use Tongue"
 horizontal_alignment = 1
 
 [node name="MoveRightBinds" type="TabContainer" parent="."]
+layout_mode = 0
 offset_left = 300.0
 offset_top = 150.0
 offset_right = 900.0
 offset_bottom = 205.0
 
 [node name="JumpBinds" type="TabContainer" parent="."]
+layout_mode = 0
 offset_left = 300.0
 offset_top = 300.0
 offset_right = 900.0
 offset_bottom = 355.0
 
 [node name="UseTongueBinds" type="TabContainer" parent="."]
+layout_mode = 0
 offset_left = 300.0
 offset_top = 450.0
 offset_right = 900.0

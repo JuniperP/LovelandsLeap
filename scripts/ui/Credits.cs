@@ -8,7 +8,7 @@ public partial class Credits : Control
 	public override void _Process(double delta)
 	{
 		// Letting the user quit from the credits
-		if (Input.IsActionPressed("ui_cancel"))
+		if (Input.IsActionPressed("ui_escape"))
 		{
 			GetTree().ChangeSceneToFile("res://scenes/ui/main_menu.tscn");
 		}
