@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_1imdu"]
 [ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://assets/background/MainMenu.jpg" id="1_1731u"]
 [ext_resource type="PackedScene" uid="uid://duhqqspapvtn0" path="res://scenes/Levels/level_1.tscn" id="2_07ujb"]
-[ext_resource type="PackedScene" uid="uid://beaw13scnxun1" path="res://scenes/ui/main_menu.tscn" id="2_kkoj4"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="3_sf47s"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationControl.cs" id="4_dmbpd"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/McPortrait.png" id="4_kug12"]
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="6_h2cw7"]
 [ext_resource type="Script" path="res://scripts/cutscene/OpeningHuman.cs" id="7_6tcm6"]
+[ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frogportrait.png" id="9_55qf0"]
 [ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/lovelandCutsceneMusic.wav" id="10_86f4d"]
 
 [node name="Opening" type="Control" node_paths=PackedStringArray("Nodes")]
@@ -20,8 +20,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1imdu")
 NextScene = ExtResource("2_07ujb")
-CancelScene = ExtResource("2_kkoj4")
-Nodes = [null, NodePath("OrderDialogue"), NodePath("Player"), NodePath("Player"), NodePath("ForestDialogue"), NodePath("Player"), NodePath("Player")]
+CancelScene = ExtResource("2_07ujb")
+Nodes = [null, NodePath("OrderDialogue"), NodePath("Player"), NodePath("Player"), NodePath("ForestDialogue"), NodePath("Player"), NodePath("Player"), NodePath("FrogDialogue")]
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -44,6 +44,7 @@ theme_override_font_sizes/font_size = 32
 text = "Press [Esc] to skip"
 
 [node name="Player" type="Node2D" parent="." node_paths=PackedStringArray("Sprite")]
+visible = false
 script = ExtResource("7_6tcm6")
 Sprite = NodePath("Sprite")
 LifeSpans = PackedFloat64Array(0, 0, 0, 8)
@@ -55,7 +56,21 @@ position = Vector2(423, 882)
 scale = Vector2(0.075, 0.075)
 sprite_frames = ExtResource("6_h2cw7")
 
+[node name="OrderDialogue" parent="." instance=ExtResource("3_sf47s")]
+visible = false
+layout_mode = 1
+script = ExtResource("4_dmbpd")
+LifeSpan = 5.0
+NextTrigger = 6.0
+
+[node name="ProfilePicture" parent="OrderDialogue/BackBox" index="1"]
+texture = ExtResource("4_kug12")
+
+[node name="Text" parent="OrderDialogue/BackBox" index="2"]
+text = "My order better not be in the woods again..."
+
 [node name="ForestDialogue" parent="." instance=ExtResource("3_sf47s")]
+visible = false
 layout_mode = 1
 script = ExtResource("4_dmbpd")
 LifeSpan = 7.0
@@ -71,27 +86,24 @@ offset_bottom = 88.0
 text = "Why would they actually leave it at my house
 like I asked when there’s a perfectly good forest."
 
-[node name="OrderDialogue" parent="." instance=ExtResource("3_sf47s")]
+[node name="FrogDialogue" parent="." instance=ExtResource("3_sf47s")]
 visible = false
 layout_mode = 1
-offset_left = 960.0
-offset_top = 1080.0
-offset_right = 960.0
-offset_bottom = 1080.0
 script = ExtResource("4_dmbpd")
 LifeSpan = 5.0
 NextTrigger = 6.0
 
-[node name="ProfilePicture" parent="OrderDialogue/BackBox" index="1"]
-texture = ExtResource("4_kug12")
+[node name="ProfilePicture" parent="FrogDialogue/BackBox" index="1"]
+texture = ExtResource("9_55qf0")
 
-[node name="Text" parent="OrderDialogue/BackBox" index="2"]
-text = "My order better not be in the woods again..."
+[node name="Text" parent="FrogDialogue/BackBox" index="2"]
+text = "*CROAK!!!*"
 
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_86f4d")
 autoplay = true
 bus = &"Music"
 
-[editable path="ForestDialogue"]
 [editable path="OrderDialogue"]
+[editable path="ForestDialogue"]
+[editable path="FrogDialogue"]
