@@ -22,8 +22,6 @@ public partial class VolumeSlider : HSlider
 		// Sets sliders current value to match the bus
 		Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(BusIndex));
 
-	
-
 	}
 
 
