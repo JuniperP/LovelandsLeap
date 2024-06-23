@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhbw0ude0nsrw"]
+[gd_scene load_steps=11 format=3 uid="uid://dhbw0ude0nsrw"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_1imdu"]
 [ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://assets/background/MainMenu.jpg" id="1_1731u"]
+[ext_resource type="PackedScene" uid="uid://duhqqspapvtn0" path="res://scenes/Levels/level_1.tscn" id="2_07ujb"]
 [ext_resource type="PackedScene" uid="uid://beaw13scnxun1" path="res://scenes/ui/main_menu.tscn" id="2_kkoj4"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="3_sf47s"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationControl.cs" id="4_dmbpd"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/McPortrait.png" id="4_kug12"]
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="6_h2cw7"]
 [ext_resource type="Script" path="res://scripts/cutscene/OpeningHuman.cs" id="7_6tcm6"]
+[ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/lovelandCutsceneMusic.wav" id="10_86f4d"]
 
 [node name="Opening" type="Control" node_paths=PackedStringArray("Nodes")]
 layout_mode = 3
@@ -17,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1imdu")
+NextScene = ExtResource("2_07ujb")
 CancelScene = ExtResource("2_kkoj4")
 Nodes = [null, NodePath("OrderDialogue"), NodePath("Player"), NodePath("Player"), NodePath("ForestDialogue"), NodePath("Player"), NodePath("Player")]
 
@@ -84,6 +87,10 @@ texture = ExtResource("4_kug12")
 
 [node name="Text" parent="OrderDialogue/BackBox" index="2"]
 text = "My order better not be in the woods again..."
+
+[node name="Theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_86f4d")
+bus = &"Music"
 
 [editable path="ForestDialogue"]
 [editable path="OrderDialogue"]
