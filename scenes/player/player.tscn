@@ -91,23 +91,21 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_455w7"]
-size = Vector2(100, 200)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_olhqh"]
+radius = 54.0
+height = 232.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_neipv")
 GravityMultiplier = 2.5
-metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_vlg27")
-animation = &"tongue"
-frame = 3
-frame_progress = 1.0
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 16.5)
-shape = SubResource("RectangleShape2D_455w7")
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_olhqh")

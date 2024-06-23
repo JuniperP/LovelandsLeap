@@ -1,17 +1,27 @@
 using Godot;
+using System;
+using System.Collections.Generic;
+
+public enum AnimState : byte
+{
+	Idle,
+	Walking,
+	Jumping,
+	Grapple,
+}
 
 public class AnimationManager
 {
-	public enum State
+	private readonly Dictionary<AnimState, string> _animNames = new()
 	{
-		Idle,
-		Walking,
-		Jump,
-		Grapple
-	}
+		{AnimState.Idle, "idle"},
+		{AnimState.Walking, "walking"},
+		{AnimState.Jumping, "jumping"},
+		{AnimState.Grapple, "tongue"},
+	};
 
-	private State _animState = State.Idle;
-	public State AnimState
+	private AnimState _animState = AnimState.Idle;
+	public AnimState State
 	{
 		get { return _animState; }
 		set { SetState(value); }
@@ -32,12 +42,12 @@ public class AnimationManager
 		_sprite = _ctx.GetNode<AnimatedSprite2D>("Sprite");
 	}
 
-	private void SetState(State state)
+	private void SetState(AnimState state)
 	{
 		if (state == _animState)
 			return;
 		_animState = state;
 
-		// TODO: Implement switch statement for animations
+		_sprite.Play(_animNames[state]);
 	}
 }

@@ -6,6 +6,7 @@ public class WalkState : IMovementState
 	public void HandleMovement(Player ctx, double delta)
 	{
 		Vector2 targetVelocity = ctx.Velocity;
+		AnimState newState = AnimState.Idle;
 
 		// Kill vertical velocity when hitting ceiling
 		if (ctx.IsOnCeiling())
@@ -14,7 +15,10 @@ public class WalkState : IMovementState
 		// Handle gravity
 		float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 		if (!ctx.IsOnFloor())
+		{
 			targetVelocity.Y += gravity * ctx.GravityMultiplier * (float)delta;
+			newState = AnimState.Jumping;
+		}
 
 		// Handle jump
 		else if (Input.IsActionJustPressed("move_up"))
@@ -29,12 +33,6 @@ public class WalkState : IMovementState
 			direction * ctx.Speed,
 			ctx.Acceleration * (float)delta
 		);
-		
-		// Handle sprite direction
-		if (direction > 0.01f)
-			ctx.animManager.IsLeftFacing = false;
-		else if (direction < -0.01f)
-			ctx.animManager.IsLeftFacing = true;
 
 		// Cap vertical speed
 		targetVelocity.Y = Mathf.Min(targetVelocity.Y, ctx.MaxFallSpeed);
@@ -42,6 +40,17 @@ public class WalkState : IMovementState
 		// Update velocity and move
 		ctx.Velocity = targetVelocity;
 		ctx.MoveAndSlide();
+
+		// Handle sprite direction
+		if (direction > 0.01f)
+			ctx.AnimManager.IsLeftFacing = false;
+		else if (direction < -0.01f)
+			ctx.AnimManager.IsLeftFacing = true;
+
+		// Set animation state
+		if (newState == AnimState.Idle && Mathf.Abs(direction) > 0.01f)
+			newState = AnimState.Walking;
+		ctx.AnimManager.State = newState;
 	}
 
 	public void HandleAction(Player ctx)
