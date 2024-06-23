@@ -27,6 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_1731u")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="OrderDialogue" parent="." instance=ExtResource("3_sf47s")]
 visible = false

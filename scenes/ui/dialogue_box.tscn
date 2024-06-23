@@ -21,6 +21,7 @@ grow_vertical = 2
 script = ExtResource("1_dns7l")
 
 [node name="BackBox" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
