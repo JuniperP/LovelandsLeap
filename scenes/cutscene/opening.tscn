@@ -90,6 +90,7 @@ text = "My order better not be in the woods again..."
 
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_86f4d")
+autoplay = true
 bus = &"Music"
 
 [editable path="ForestDialogue"]
