@@ -30,7 +30,7 @@ public partial class MainMenu : Control
 	private void _on_credit_button_pressed()
 	{
 		mus.Stop();
-		GetTree().ChangeSceneToFile("res://scenes/ui/credits.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/cutscene/opening.tscn");
 	}
 	
 	// Quits the game from the menu after saving
