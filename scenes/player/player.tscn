@@ -49,9 +49,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ijeop")
-}, {
-"duration": 1.0,
 "texture": ExtResource("7_cmg5d")
 }, {
 "duration": 1.0,
@@ -103,7 +100,7 @@ GravityMultiplier = 2.5
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_vlg27")
-animation = &"idle"
+animation = &"tongue"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

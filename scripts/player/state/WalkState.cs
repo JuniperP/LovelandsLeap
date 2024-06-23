@@ -6,7 +6,7 @@ public class WalkState : IMovementState
 	public void HandleMovement(Player ctx, double delta)
 	{
 		Vector2 targetVelocity = ctx.Velocity;
-		AnimState newState = AnimState.Idle;
+		AnimState newState = ctx.AnimManager.State;
 
 		// Kill vertical velocity when hitting ceiling
 		if (ctx.IsOnCeiling())
@@ -17,7 +17,8 @@ public class WalkState : IMovementState
 		if (!ctx.IsOnFloor())
 		{
 			targetVelocity.Y += gravity * ctx.GravityMultiplier * (float)delta;
-			newState = AnimState.Jumping;
+			if (newState != AnimState.Tongue)
+				newState = AnimState.Jumping;
 		}
 
 		// Handle jump
@@ -48,8 +49,9 @@ public class WalkState : IMovementState
 			ctx.AnimManager.IsLeftFacing = true;
 
 		// Set animation state
-		if (newState == AnimState.Idle && Mathf.Abs(direction) > 0.01f)
-			newState = AnimState.Walking;
+		if (ctx.IsOnFloor() && newState != AnimState.Tongue)
+			newState = Mathf.Abs(direction) > 0.01f
+			? AnimState.Walking : AnimState.Idle;
 		ctx.AnimManager.State = newState;
 	}
 
@@ -57,13 +59,17 @@ public class WalkState : IMovementState
 	{
 		if (Input.IsActionJustPressed("primary_click"))
 		{
-			if (ctx.TongueProjExists) // Skip if using tongue
+			if (ctx.TongueProjExists) // Retract if using tongue
 			{
 				ctx.TongueProj.RetractTongue(
 					ctx.GlobalPosition - ctx.TongueProj.GlobalPosition
 				);
+				ctx.AnimManager.State = AnimState.Idle;
 				return;
 			}
+
+			// Set animation to tongue
+			ctx.AnimManager.State = AnimState.Tongue;
 
 			Vector2 mousePos = ctx.GetGlobalMousePosition();
 			Vector2 direction = (mousePos - ctx.Position).Normalized();

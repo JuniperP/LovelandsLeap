@@ -27,6 +27,7 @@ public partial class TongueProjectile : RigidBody2D
 				QueueFree();
 				TongueLine.QueueFree();
 				_source.TongueProjExists = false;
+				_source.AnimManager.State = AnimState.Idle;
 			}
 			else
 				// TODO: Not supposed to set this every frame

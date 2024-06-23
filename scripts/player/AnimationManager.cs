@@ -7,7 +7,7 @@ public enum AnimState : byte
 	Idle,
 	Walking,
 	Jumping,
-	Grapple,
+	Tongue,
 }
 
 public class AnimationManager
@@ -17,7 +17,7 @@ public class AnimationManager
 		{AnimState.Idle, "idle"},
 		{AnimState.Walking, "walking"},
 		{AnimState.Jumping, "jumping"},
-		{AnimState.Grapple, "tongue"},
+		{AnimState.Tongue, "tongue"},
 	};
 
 	private AnimState _animState = AnimState.Idle;
