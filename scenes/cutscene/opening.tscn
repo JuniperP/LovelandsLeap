@@ -67,7 +67,6 @@ SpriteAnims = PackedStringArray("default", "talking", "default", "walking")
 position = Vector2(423, 882)
 scale = Vector2(0.075, 0.075)
 sprite_frames = ExtResource("6_h2cw7")
-frame_progress = 1.0
 
 [node name="ForestDialogue" parent="." instance=ExtResource("3_sf47s")]
 visible = false
