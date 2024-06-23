@@ -1,0 +1,19 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://bpsekjb4cflxu"]
+
+[ext_resource type="Texture2D" uid="uid://df28yqeogjhxk" path="res://assets/human/Mc.png" id="1_yqc85"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yqc85")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
