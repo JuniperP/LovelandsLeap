@@ -11,7 +11,7 @@
 [node name="Opening" type="Node2D" node_paths=PackedStringArray("Nodes")]
 position = Vector2(-2, 0)
 script = ExtResource("1_1imdu")
-Nodes = [null, NodePath("DialogueBox"), NodePath("Player"), NodePath("Player")]
+Nodes = [null, NodePath("OrderDialogue"), NodePath("Player"), NodePath("ForestDialogue"), NodePath("Player")]
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -26,7 +26,7 @@ grow_vertical = 2
 texture = ExtResource("1_1731u")
 expand_mode = 1
 
-[node name="DialogueBox" parent="." instance=ExtResource("3_sf47s")]
+[node name="OrderDialogue" parent="." instance=ExtResource("3_sf47s")]
 visible = false
 offset_left = 960.0
 offset_top = 1080.0
@@ -36,10 +36,10 @@ script = ExtResource("4_dmbpd")
 LifeSpan = 5.0
 NextTrigger = 6.0
 
-[node name="ProfilePicture" parent="DialogueBox/BackBox" index="1"]
+[node name="ProfilePicture" parent="OrderDialogue/BackBox" index="1"]
 texture = ExtResource("4_kug12")
 
-[node name="Text" parent="DialogueBox/BackBox" index="2"]
+[node name="Text" parent="OrderDialogue/BackBox" index="2"]
 text = "My order better not be in the woods again..."
 
 [node name="Player" type="AnimatedSprite2D" parent="."]
@@ -48,7 +48,28 @@ position = Vector2(423, 882)
 scale = Vector2(0.075, 0.075)
 sprite_frames = ExtResource("6_h2cw7")
 script = ExtResource("7_6tcm6")
-LifeSpans = PackedFloat64Array(3, 0)
-NextTriggers = PackedFloat64Array(4, 0)
+LifeSpans = PackedFloat64Array(0, 8)
+NextTriggers = PackedFloat64Array(2, 9)
 
-[editable path="DialogueBox"]
+[node name="ForestDialogue" parent="." instance=ExtResource("3_sf47s")]
+visible = false
+offset_left = 960.0
+offset_top = 1080.0
+offset_right = 960.0
+offset_bottom = 1080.0
+script = ExtResource("4_dmbpd")
+LifeSpan = 7.0
+NextTrigger = 8.0
+
+[node name="ProfilePicture" parent="ForestDialogue/BackBox" index="1"]
+texture = ExtResource("4_kug12")
+
+[node name="Text" parent="ForestDialogue/BackBox" index="2"]
+offset_top = -87.0
+offset_right = -34.0
+offset_bottom = 88.0
+text = "Why would they actually leave it at my house
+like I asked when there’s a perfectly good forest."
+
+[editable path="OrderDialogue"]
+[editable path="ForestDialogue"]
