@@ -13,11 +13,20 @@ public partial class Player : CharacterBody2D
 	[Export] public int Acceleration = 2000;
 	[Export] public int JumpImpulse = 1000;
 	[Export] public float JumpCutFactor = 0.5f;
-	[Export] public float GravityMultiplier = 1;
+	[Export] public float GravityMultiplier = 1f;
 	[Export] public int MaxFallSpeed = 1500;
 	[Export] public int TongueProjSpeed = 800;
 	[Export] public int TongueAngle = 15;
 	[Export] public double AutoDegrappleBuffer = 0.5;
+	[Export] public float TongueOffset = -30f;
+
+	public Vector2 TongueGlobalPos
+	{
+		get
+		{
+			return new Vector2(GlobalPosition.X, GlobalPosition.Y + TongueOffset);
+		}
+	}
 
 	public AnimationManager AnimManager;
 	// Refactor states to only be created once and switch with Player methods
