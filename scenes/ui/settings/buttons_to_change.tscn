@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dcxi6hn46xvnw"]
+[gd_scene load_steps=2 format=3 uid="uid://dcxi6hn46xvnw"]
+
+[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/LeftLabel.cs" id="1_ojyx3"]
 
 [node name="ButtonsToChange" type="Control"]
 layout_mode = 3
@@ -29,6 +31,7 @@ offset_right = 435.0
 offset_bottom = 47.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 24
+script = ExtResource("1_ojyx3")
 
 [node name="MoveRightLabel" type="Label" parent="."]
 layout_mode = 1
