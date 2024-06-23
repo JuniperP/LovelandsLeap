@@ -13,8 +13,11 @@ public partial class SetRight : InputGetter
 			// Updates current mapped button
 			Keybinds.RightSym = OurInput.AsText();
 
+			// Updates newest event stored in action 
+			Keybinds.RightIn = OurInput;
+
 			// Maps wanted button
-			InputMap.ActionAddEvent("move_right", OurInput);
+			InputMap.ActionAddEvent("move_right", Keybinds.RightIn);
 
 
 		}

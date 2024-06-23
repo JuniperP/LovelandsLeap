@@ -10,7 +10,10 @@ public partial class MainMenu : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		// Getting opening them
+		// Loads in save data
+		SaveGame.LoadData();
+
+		// Getting opening theme
 		mus = (AudioStreamPlayer) GetNode("MainMenuTheme");
 		mus.Play();
 	}
@@ -30,9 +33,10 @@ public partial class MainMenu : Control
 		GetTree().ChangeSceneToFile("res://scenes/ui/credits.tscn");
 	}
 	
-	// Quits the game from the menu
+	// Quits the game from the menu after saving
 	private void _quit_game()
 	{
+		SaveGame.Save();
 		GetTree().Quit();
 	}
 }

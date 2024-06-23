@@ -25,10 +25,7 @@ public partial class VolumeSlider : HSlider
 	}
 
 
-	/* 
-	 Updates the number_percent at the end of the slider
-	 (Note slider should be turned into a scene with slider so needed relation of slider and % is more obvious)
-	*/
+	// Updates the percentage at the end of the slider
 	protected void ChangePercent(float newNum)
 	{
 		// Sets up our percentage and default value

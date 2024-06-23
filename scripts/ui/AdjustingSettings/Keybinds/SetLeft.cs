@@ -13,8 +13,11 @@ public partial class SetLeft: InputGetter
 			// Updates current mapped button
 			Keybinds.LeftSym = OurInput.AsText();
 
+			// Updates newest event stored in action 
+			Keybinds.LeftIn = OurInput;
+
 			// Maps wanted button
-			InputMap.ActionAddEvent("move_left", OurInput);
+			InputMap.ActionAddEvent("move_left", Keybinds.LeftIn);
 
 
 		}

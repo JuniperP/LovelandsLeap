@@ -13,8 +13,11 @@ public partial class SetClick : InputGetter
 			// Updates current mapped button
 			Keybinds.ClickSym = OurInput.AsText();
 
+			// Updates newest event stored in action 
+			Keybinds.ClickIn = OurInput;
+
 			// Maps wanted button
-			InputMap.ActionAddEvent("primary_click", OurInput);
+			InputMap.ActionAddEvent("primary_click", Keybinds.ClickIn);
 
 
 

@@ -13,8 +13,11 @@ public partial class SetJump : InputGetter
 			// Updates current mapped button
 			Keybinds.JumpSym = OurInput.AsText();
 
+			// Updates newest event stored in action 
+			Keybinds.JumpIn = OurInput;
+
 			// Maps wanted button
-			InputMap.ActionAddEvent("move_up", OurInput);
+			InputMap.ActionAddEvent("move_up", Keybinds.JumpIn);
 
 
 		}
