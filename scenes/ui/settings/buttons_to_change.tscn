@@ -8,68 +8,92 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MoveLeftsBinds" type="TabContainer" parent="."]
-layout_mode = 1
-offset_left = 300.0
-offset_right = 900.0
-offset_bottom = 55.0
-
 [node name="MoveLeftLabel" type="Label" parent="."]
 layout_mode = 1
-offset_left = 25.0
+offset_top = 100.0
 offset_right = 225.0
-offset_bottom = 55.0
+offset_bottom = 155.0
 theme_override_font_sizes/font_size = 40
 text = "Move Left"
 horizontal_alignment = 1
 
+[node name="LeftLabel" type="Button" parent="MoveLeftLabel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 235.0
+offset_top = -27.5
+offset_right = 435.0
+offset_bottom = 47.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+
 [node name="MoveRightLabel" type="Label" parent="."]
 layout_mode = 1
-offset_left = 25.0
-offset_top = 150.0
-offset_right = 240.0
-offset_bottom = 205.0
-theme_override_font_sizes/font_size = 40
-text = "Move Right"
-horizontal_alignment = 1
-
-[node name="JumpLabel" type="Label" parent="."]
-layout_mode = 1
-offset_left = 25.0
 offset_top = 300.0
 offset_right = 225.0
 offset_bottom = 355.0
 theme_override_font_sizes/font_size = 40
+text = "Move Right"
+horizontal_alignment = 1
+
+[node name="RightLabel" type="Button" parent="MoveRightLabel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 235.0
+offset_top = -27.5
+offset_right = 435.0
+offset_bottom = 47.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+
+[node name="JumpLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 475.0
+offset_top = 100.0
+offset_right = 700.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 40
 text = "Jump"
 horizontal_alignment = 1
 
+[node name="JumpLabel" type="Button" parent="JumpLabel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 235.0
+offset_top = -27.5
+offset_right = 435.0
+offset_bottom = 47.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+
 [node name="UseTongueLabel" type="Label" parent="."]
 layout_mode = 1
-offset_left = 25.0
-offset_top = 450.0
-offset_right = 249.0
-offset_bottom = 505.0
+offset_left = 475.0
+offset_top = 300.0
+offset_right = 700.0
+offset_bottom = 355.0
 theme_override_font_sizes/font_size = 40
 text = "Use Tongue"
 horizontal_alignment = 1
 
-[node name="MoveRightBinds" type="TabContainer" parent="."]
-layout_mode = 0
-offset_left = 300.0
-offset_top = 150.0
-offset_right = 900.0
-offset_bottom = 205.0
-
-[node name="JumpBinds" type="TabContainer" parent="."]
-layout_mode = 0
-offset_left = 300.0
-offset_top = 300.0
-offset_right = 900.0
-offset_bottom = 355.0
-
-[node name="UseTongueBinds" type="TabContainer" parent="."]
-layout_mode = 0
-offset_left = 300.0
-offset_top = 450.0
-offset_right = 900.0
-offset_bottom = 505.0
+[node name="TongueLabel" type="Button" parent="UseTongueLabel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 235.0
+offset_top = -27.5
+offset_right = 435.0
+offset_bottom = 47.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24

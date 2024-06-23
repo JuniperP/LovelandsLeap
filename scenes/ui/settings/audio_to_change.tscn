@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://btiq6vr6uavrk"]
 
-[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/MasterVolumeSlider.cs" id="1_lnsvi"]
-[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/MusicVolumeSlider.cs" id="2_la803"]
-[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/SoundEffectVolumeSlider.cs" id="3_erhhb"]
+[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Audio/MasterVolumeSlider.cs" id="1_lnsvi"]
+[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Audio/MusicVolumeSlider.cs" id="2_la803"]
+[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Audio/SoundEffectVolumeSlider.cs" id="3_erhhb"]
 
 [node name="AudioToChange" type="Control"]
 layout_mode = 3
