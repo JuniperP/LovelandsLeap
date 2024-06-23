@@ -71,3 +71,7 @@ primary_click={
 
 2d_physics/layer_1="ground"
 2d_physics/layer_2="player"
+
+[rendering]
+
+textures/vram_compression/import_s3tc_bptc=true
