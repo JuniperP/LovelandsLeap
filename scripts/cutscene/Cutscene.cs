@@ -6,6 +6,7 @@ public partial class Cutscene : Node2D
 	[Export] public bool Autoplay = true;
 	[Export] public double NullWaitTime = 1d;
 	[Export] public PackedScene NextScene;
+	[Export] public PackedScene CancelScene;
 	[Export] public Node[] Nodes;
 
 	private ICutAnimatable[] _animNodes;
@@ -40,8 +41,13 @@ public partial class Cutscene : Node2D
 
 	public override void _Process(double delta)
 	{
-		// TODO: Use UI escape key to skip
-	}
+		if (Input.IsActionJustPressed("ui_cancel"))
+		{
+			PackedScene transition = CancelScene ?? NextScene;
+			if (transition is not null)
+				GetTree().ChangeSceneToPacked(transition);
+        }
+    }
 
 	public void Run()
 	{
