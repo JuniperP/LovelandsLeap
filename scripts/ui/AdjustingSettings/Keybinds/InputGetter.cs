@@ -6,7 +6,7 @@ public partial class InputGetter : Toggleable
 {
     public override void _Ready()
     {
-        _open();
+        _close();
     }
 
     public override void _Input(InputEvent ourInput)

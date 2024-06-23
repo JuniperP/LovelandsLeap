@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcxi6hn46xvnw"]
+[gd_scene load_steps=10 format=3 uid="uid://dcxi6hn46xvnw"]
 
 [ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/LeftLabel.cs" id="1_ojyx3"]
 [ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/RightLabel.cs" id="2_wycq1"]
 [ext_resource type="PackedScene" uid="uid://0tltao4dqf8q" path="res://scenes/ui/settings/set_key_binds.tscn" id="3_8v77q"]
+[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/JumpLabel.cs" id="3_e2v3b"]
+[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/TongueLabel.cs" id="4_ypt5q"]
+[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/SetLeft.cs" id="6_cvxc6"]
+[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/SetRight.cs" id="7_l6wrq"]
+[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/SetJump.cs" id="8_5ubet"]
+[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/SetClick.cs" id="9_jewat"]
 
 [node name="ButtonsToChange" type="Control"]
 layout_mode = 3
@@ -21,7 +27,7 @@ theme_override_font_sizes/font_size = 40
 text = "Move Left"
 horizontal_alignment = 1
 
-[node name="LeftLabel" type="Button" parent="MoveLeftLabel"]
+[node name="LeftButton" type="Button" parent="MoveLeftLabel"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -44,7 +50,7 @@ theme_override_font_sizes/font_size = 40
 text = "Move Right"
 horizontal_alignment = 1
 
-[node name="RightLabel" type="Button" parent="MoveRightLabel"]
+[node name="RightButton" type="Button" parent="MoveRightLabel"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -54,7 +60,7 @@ offset_top = -27.5
 offset_right = 435.0
 offset_bottom = 47.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 40
 text_overrun_behavior = 1
 script = ExtResource("2_wycq1")
 
@@ -68,7 +74,7 @@ theme_override_font_sizes/font_size = 40
 text = "Jump"
 horizontal_alignment = 1
 
-[node name="JumpLabel" type="Button" parent="JumpLabel"]
+[node name="JumpButton" type="Button" parent="JumpLabel"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -78,8 +84,9 @@ offset_top = -27.5
 offset_right = 435.0
 offset_bottom = 47.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 40
 text_overrun_behavior = 1
+script = ExtResource("3_e2v3b")
 
 [node name="UseTongueLabel" type="Label" parent="."]
 layout_mode = 1
@@ -91,7 +98,7 @@ theme_override_font_sizes/font_size = 40
 text = "Use Tongue"
 horizontal_alignment = 1
 
-[node name="TongueLabel" type="Button" parent="UseTongueLabel"]
+[node name="TongueButton" type="Button" parent="UseTongueLabel"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -101,8 +108,9 @@ offset_top = -27.5
 offset_right = 435.0
 offset_bottom = 47.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 40
 text_overrun_behavior = 1
+script = ExtResource("4_ypt5q")
 
 [node name="SetLeft" parent="." instance=ExtResource("3_8v77q")]
 visible = false
@@ -111,9 +119,10 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_right = 900.0
-offset_bottom = 500.0
+offset_bottom = 525.0
 grow_horizontal = 1
 grow_vertical = 1
+script = ExtResource("6_cvxc6")
 
 [node name="SetRight" parent="." instance=ExtResource("3_8v77q")]
 visible = false
@@ -121,9 +130,10 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_right = 900.0
-offset_bottom = 500.0
+offset_bottom = 525.0
 grow_horizontal = 1
 grow_vertical = 1
+script = ExtResource("7_l6wrq")
 
 [node name="SetJump" parent="." instance=ExtResource("3_8v77q")]
 visible = false
@@ -131,9 +141,10 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_right = 900.0
-offset_bottom = 500.0
+offset_bottom = 525.0
 grow_horizontal = 1
 grow_vertical = 1
+script = ExtResource("8_5ubet")
 
 [node name="SetTongue" parent="." instance=ExtResource("3_8v77q")]
 visible = false
@@ -141,6 +152,12 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_right = 900.0
-offset_bottom = 500.0
+offset_bottom = 525.0
 grow_horizontal = 1
 grow_vertical = 1
+script = ExtResource("9_jewat")
+
+[connection signal="pressed" from="MoveLeftLabel/LeftButton" to="SetLeft" method="_open"]
+[connection signal="pressed" from="MoveRightLabel/RightButton" to="SetRight" method="_open"]
+[connection signal="pressed" from="JumpLabel/JumpButton" to="SetJump" method="_open"]
+[connection signal="pressed" from="UseTongueLabel/TongueButton" to="SetTongue" method="_open"]
