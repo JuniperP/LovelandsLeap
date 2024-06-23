@@ -23,14 +23,14 @@ public partial class MainMenu : Control
 	{
 		mus.Stop();
 		//Temporary location for the game starting
-		GetTree().ChangeSceneToFile("res://scenes/game.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/cutscene/opening.tscn");
 	}
 	
 	// Runs the credits
 	private void _on_credit_button_pressed()
 	{
 		mus.Stop();
-		GetTree().ChangeSceneToFile("res://scenes/cutscene/opening.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/ui/credits.tscn");
 	}
 	
 	// Quits the game from the menu after saving
