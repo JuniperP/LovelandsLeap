@@ -14,6 +14,4 @@ public partial class CutAnimation2D : Node2D, ICutAnimatable
 
 		return NextTrigger;
 	}
-
-	
 }
