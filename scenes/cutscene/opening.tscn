@@ -42,14 +42,19 @@ texture = ExtResource("4_kug12")
 [node name="Text" parent="OrderDialogue/BackBox" index="2"]
 text = "My order better not be in the woods again..."
 
-[node name="Player" type="AnimatedSprite2D" parent="."]
+[node name="Player" type="Node2D" parent="." node_paths=PackedStringArray("Sprite")]
 visible = false
+script = ExtResource("7_6tcm6")
+Sprite = NodePath("Sprite")
+LifeSpans = PackedFloat64Array(0, 8)
+NextTriggers = PackedFloat64Array(2, 9)
+SpriteAnims = PackedStringArray("default", "walking")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(423, 882)
 scale = Vector2(0.075, 0.075)
 sprite_frames = ExtResource("6_h2cw7")
-script = ExtResource("7_6tcm6")
-LifeSpans = PackedFloat64Array(0, 8)
-NextTriggers = PackedFloat64Array(2, 9)
+animation = &"walking"
 
 [node name="ForestDialogue" parent="." instance=ExtResource("3_sf47s")]
 visible = false
