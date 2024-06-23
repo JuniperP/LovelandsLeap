@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcxi6hn46xvnw"]
+[gd_scene load_steps=4 format=3 uid="uid://dcxi6hn46xvnw"]
 
 [ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/LeftLabel.cs" id="1_ojyx3"]
+[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/RightLabel.cs" id="2_wycq1"]
+[ext_resource type="PackedScene" uid="uid://0tltao4dqf8q" path="res://scenes/ui/settings/set_key_binds.tscn" id="3_8v77q"]
 
 [node name="ButtonsToChange" type="Control"]
 layout_mode = 3
@@ -20,7 +22,6 @@ text = "Move Left"
 horizontal_alignment = 1
 
 [node name="LeftLabel" type="Button" parent="MoveLeftLabel"]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -30,7 +31,8 @@ offset_top = -27.5
 offset_right = 435.0
 offset_bottom = 47.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 40
+text_overrun_behavior = 1
 script = ExtResource("1_ojyx3")
 
 [node name="MoveRightLabel" type="Label" parent="."]
@@ -43,7 +45,6 @@ text = "Move Right"
 horizontal_alignment = 1
 
 [node name="RightLabel" type="Button" parent="MoveRightLabel"]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -54,6 +55,8 @@ offset_right = 435.0
 offset_bottom = 47.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 24
+text_overrun_behavior = 1
+script = ExtResource("2_wycq1")
 
 [node name="JumpLabel" type="Label" parent="."]
 layout_mode = 1
@@ -66,7 +69,6 @@ text = "Jump"
 horizontal_alignment = 1
 
 [node name="JumpLabel" type="Button" parent="JumpLabel"]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -77,6 +79,7 @@ offset_right = 435.0
 offset_bottom = 47.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 24
+text_overrun_behavior = 1
 
 [node name="UseTongueLabel" type="Label" parent="."]
 layout_mode = 1
@@ -89,7 +92,6 @@ text = "Use Tongue"
 horizontal_alignment = 1
 
 [node name="TongueLabel" type="Button" parent="UseTongueLabel"]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -100,3 +102,45 @@ offset_right = 435.0
 offset_bottom = 47.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 24
+text_overrun_behavior = 1
+
+[node name="SetLeft" parent="." instance=ExtResource("3_8v77q")]
+visible = false
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 900.0
+offset_bottom = 500.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="SetRight" parent="." instance=ExtResource("3_8v77q")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 900.0
+offset_bottom = 500.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="SetJump" parent="." instance=ExtResource("3_8v77q")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 900.0
+offset_bottom = 500.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="SetTongue" parent="." instance=ExtResource("3_8v77q")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 900.0
+offset_bottom = 500.0
+grow_horizontal = 1
+grow_vertical = 1

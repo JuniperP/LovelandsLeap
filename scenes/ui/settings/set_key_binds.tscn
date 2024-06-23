@@ -35,4 +35,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Press any key to set new keybind"
+text = "Press any key to
+set new keybind"
+horizontal_alignment = 1
