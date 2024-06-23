@@ -5,8 +5,8 @@ public partial class Cutscene : Node2D
 {
 	[Export] public bool Autoplay = true;
 	[Export] public double NullWaitTime = 1d;
-	[Export] public Node[] Nodes;
 	[Export] public PackedScene NextScene;
+	[Export] public Node[] Nodes;
 
 	private ICutAnimatable[] _animNodes;
 	private Timer _timer;
@@ -40,7 +40,7 @@ public partial class Cutscene : Node2D
 
 	public override void _Process(double delta)
 	{
-
+		// TODO: Use UI escape key to skip
 	}
 
 	public void Run()
@@ -63,5 +63,7 @@ public partial class Cutscene : Node2D
 			}
 			_current++;
 		}
+		else if (NextScene is not null)
+			GetTree().ChangeSceneToPacked(NextScene);
 	}
 }
