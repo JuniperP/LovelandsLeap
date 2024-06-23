@@ -19,9 +19,9 @@ public class GrappleState : IMovementState
 		
 		// Handle sprite direction
 		if (ctx.Velocity.X > 0.01f)
-			ctx.animManager.IsLeftFacing = false;
+			ctx.AnimManager.IsLeftFacing = false;
 		else if (ctx.Velocity.X < -0.01f)
-			ctx.animManager.IsLeftFacing = true;
+			ctx.AnimManager.IsLeftFacing = true;
 	}
 
 	public void HandleAction(Player ctx)
