@@ -15,7 +15,7 @@ public partial class Keybinds : Node
 	public static String JumpSym =  "↑";
 
 	public static String UseTounge = "primary_click";
-	public static String ClickSym = "R_Click";
+	public static String ClickSym = "L_Click";
 
 
 

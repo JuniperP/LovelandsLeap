@@ -64,7 +64,13 @@ offset_bottom = 800.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
 theme_override_styles/panel = SubResource("StyleBoxFlat_7w0kv")
-current_tab = 1
+
+[node name="Audio" type="TabBar" parent="BackBox/TabContainer"]
+layout_mode = 2
+
+[node name="AudioToChange" parent="BackBox/TabContainer/Audio" instance=ExtResource("2_eko1f")]
+layout_mode = 1
+offset_bottom = 13.0
 
 [node name="Controls" type="TabBar" parent="BackBox/TabContainer"]
 visible = false
@@ -75,12 +81,5 @@ layout_mode = 1
 offset_top = 63.0
 offset_right = 900.0
 offset_bottom = 663.0
-
-[node name="Audio" type="TabBar" parent="BackBox/TabContainer"]
-layout_mode = 2
-
-[node name="AudioToChange" parent="BackBox/TabContainer/Audio" instance=ExtResource("2_eko1f")]
-layout_mode = 1
-offset_bottom = 13.0
 
 [connection signal="pressed" from="BackBox/Cancel" to="." method="_close"]
