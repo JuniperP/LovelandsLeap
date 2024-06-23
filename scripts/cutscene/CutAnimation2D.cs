@@ -7,10 +7,10 @@ public partial class CutAnimation2D : Node2D, ICutAnimatable
 
 	public double TriggerAnimation()
 	{
-		ProcessMode = ProcessModeEnum.Inherit;
+		Visible = true;
 
 		SceneTreeTimer timer = GetTree().CreateTimer(LifeSpan);
-		timer.Timeout += () => ProcessMode = ProcessModeEnum.Disabled;
+		timer.Timeout += () => Visible = false;
 
 		return NextTrigger;
 	}
