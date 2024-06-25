@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://u6bod5tg4hhb"]
+[gd_scene load_steps=4 format=3 uid="uid://u6bod5tg4hhb"]
 
 [ext_resource type="Script" path="res://scripts/ui/Credits.cs" id="1_miogk"]
 [ext_resource type="Script" path="res://scripts/ui/CreditText.cs" id="1_r4fjn"]
+[ext_resource type="AudioStream" uid="uid://bak83atxgk1vl" path="res://audio/Abomination.wav" id="3_yyq67"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -12,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_miogk")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Backdrop" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,14 +21,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CreditText" type="Label" parent="Panel"]
+[node name="CreditText" type="Label" parent="Backdrop"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_right = 3.0
-offset_bottom = 4923.0
+offset_right = 6.0
+offset_bottom = 5378.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
@@ -46,20 +46,27 @@ text = "
 LOVELAND
 
 
-Programming and Godot creator
+Programming & Godot Engineers
 Juniper Pasternak
+Teddy Jacobson
+
+
+Level Design
 Teddy Jacobson
 
 
 Music
 Max Tozer
 Phoebe Tozer
-trouby for the \"frogs at summer night\" effect from FreeSound.
- https://freesound.org/s/379828/
+trouby for the \"frogs at summer night\" effect from
+FreeSound.  https://freesound.org/s/379828/
 
 
-Visual Design
+Background Art
 Phoebe Tozer
+
+
+Sprite Creation
 Lee Zwart
 
 
@@ -70,11 +77,9 @@ Alex Llyod
 
 
 Sound Effect Creation
-Juniper Pasternak
 Teddy Jacobson
 Anja Jacobson
 Phoebe Tozer
-Lee Zwart
 Alex Llyod
 
 
@@ -99,3 +104,8 @@ Press the escape key to return to
 the main menu"
 horizontal_alignment = 1
 script = ExtResource("1_r4fjn")
+
+[node name="CredtMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yyq67")
+autoplay = true
+bus = &"Music"
