@@ -14,10 +14,16 @@ public partial class PauseScreen : Toggleable
 		counter = 0;
 	}
 
+	// Overriding the close method to also unpause the game
+	protected override void _close()
+	{
+		GetTree().Paused = false;
+		Visible = false;
+	}
+
 	// Return to the main menu
 	private void _to_main_menu()
 	{
-		GetTree().Paused = false;
 		_close();
 		GetTree().ChangeSceneToFile("res://scenes/ui/main_menu.tscn");
 	}
