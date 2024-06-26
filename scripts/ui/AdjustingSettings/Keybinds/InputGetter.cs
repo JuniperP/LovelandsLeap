@@ -10,7 +10,7 @@ public partial class InputGetter : Toggleable
         _close();
     }
 
-    // Checks for any input and if a valid input is given it is sent to change our keybinds
+    // Checks for any input and if a valid input is given it is sent to change our key binds
     public override void _Input(InputEvent OurInput)
     {
         if (OurInput is InputEventMouseButton || OurInput is InputEventKey)
