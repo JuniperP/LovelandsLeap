@@ -17,18 +17,18 @@ public partial class Settings : Toggleable
 	public override void _Process(double delta)
 	{
 		// Count since settings has been closed
-		if(counter<=.3 && !Visible)
+		if (counter <= .3 && !Visible)
 		{
-			counter+=delta;
+			counter += delta;
 		}
 
 		// Letting the user quit from settings and resetting counter
 		if (Input.IsActionPressed("ui_cancel") && Visible)
 		{
 			_close();
-			counter=0;
+			counter = 0;
 		}
-		
+
 	}
-	
+
 }

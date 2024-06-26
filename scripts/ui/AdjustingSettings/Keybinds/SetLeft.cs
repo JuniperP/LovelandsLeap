@@ -1,11 +1,11 @@
 using Godot;
 using System;
 
-public partial class SetLeft: InputGetter
+public partial class SetLeft : InputGetter
 {
 	protected override void ChangeValue(InputEvent OurInput)
 	{
-		if(Visible)
+		if (Visible)
 		{
 			// Gets rid of all other keybinds
 			InputMap.ActionEraseEvents("move_left");
@@ -21,6 +21,6 @@ public partial class SetLeft: InputGetter
 
 
 		}
-		
+
 	}
 }

@@ -12,7 +12,7 @@ public partial class CreditText : Label
 		{
 			// Scrolls and updates
 			Position = new Vector2(Position.X, Position.Y - 2);
-			
+
 		}
 
 	}

@@ -11,13 +11,13 @@ public partial class InputGetter : Toggleable
 
     public override void _Input(InputEvent OurInput)
     {
-        if (OurInput is InputEventMouseButton || OurInput is InputEventKey )
+        if (OurInput is InputEventMouseButton || OurInput is InputEventKey)
         {
             ChangeValue(OurInput);
             _close();
         }
-       
+
     }
 
-    protected virtual void ChangeValue(InputEvent OurInput){;}
+    protected virtual void ChangeValue(InputEvent OurInput) {; }
 }

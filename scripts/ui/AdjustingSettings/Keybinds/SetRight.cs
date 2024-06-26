@@ -5,7 +5,7 @@ public partial class SetRight : InputGetter
 {
 	protected override void ChangeValue(InputEvent OurInput)
 	{
-		if(Visible)
+		if (Visible)
 		{
 			// Gets rid of all other keybinds
 			InputMap.ActionEraseEvents("move_right");
@@ -21,7 +21,7 @@ public partial class SetRight : InputGetter
 
 
 		}
-		
+
 	}
 
 }
