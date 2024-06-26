@@ -10,6 +10,9 @@ public partial class SetJump : InputGetter
 			// Gets rid of all other keybinds
 			InputMap.ActionEraseEvents("move_up");
 
+			// Releasing the button just in case to ensure Godot isn't confused about adding just removed items
+			Input.ActionRelease("move_up");//		-	Not needed as we are operating under only one key per option for now
+
 			// Updates current mapped button
 			Keybinds.JumpSym = OurInput.AsText();
 
