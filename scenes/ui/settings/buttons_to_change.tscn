@@ -43,9 +43,10 @@ script = ExtResource("1_ojyx3")
 
 [node name="MoveRightLabel" type="Label" parent="."]
 layout_mode = 1
-offset_top = 300.0
-offset_right = 225.0
-offset_bottom = 355.0
+offset_left = 475.0
+offset_top = 100.0
+offset_right = 700.0
+offset_bottom = 155.0
 theme_override_font_sizes/font_size = 40
 text = "Move Right"
 horizontal_alignment = 1
@@ -66,10 +67,9 @@ script = ExtResource("2_wycq1")
 
 [node name="JumpLabel" type="Label" parent="."]
 layout_mode = 1
-offset_left = 475.0
-offset_top = 100.0
-offset_right = 700.0
-offset_bottom = 155.0
+offset_top = 300.0
+offset_right = 225.0
+offset_bottom = 355.0
 theme_override_font_sizes/font_size = 40
 text = "Jump"
 horizontal_alignment = 1
