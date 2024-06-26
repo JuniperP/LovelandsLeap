@@ -4,24 +4,28 @@ using System;
 public partial class VolumeSlider : HSlider
 {
 	// Getting the bus to change 
-	protected int BusIndex;
+	[Export] private String BusName;
+	private int BusIndex;
 
 	// Our number following the slider
-	protected Label OurNum;
+	private Label OurNum;
+ 
+
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		// Setting our slider to adjusts to work with the provided bus
+		BusIndex = AudioServer.GetBusIndex(BusName);
+
+		// Sets sliders current value to match the bus
+		Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(BusIndex));
+	}
 
 	// Setting our new volume
 	protected void SetVolume(float newVol)
 	{
 		AudioServer.SetBusVolumeDb(BusIndex, Mathf.LinearToDb(newVol));
-	}
-
-
-	// Set slider based on if it's the first time the game was run
-	protected void Setup(int BusIndex)
-	{
-		// Sets sliders current value to match the bus
-		Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(BusIndex));
-
 	}
 
 

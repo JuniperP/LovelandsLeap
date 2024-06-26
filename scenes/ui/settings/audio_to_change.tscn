@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://btiq6vr6uavrk"]
+[gd_scene load_steps=2 format=3 uid="uid://btiq6vr6uavrk"]
 
-[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Audio/MasterVolumeSlider.cs" id="1_lnsvi"]
-[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Audio/MusicVolumeSlider.cs" id="2_la803"]
-[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Audio/SoundEffectVolumeSlider.cs" id="3_erhhb"]
+[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Audio/VolumeSlider.cs" id="1_ik70a"]
 
 [node name="AudioToChange" type="Control"]
 layout_mode = 3
@@ -21,18 +19,22 @@ offset_bottom = 80.0
 theme_override_font_sizes/font_size = 40
 text = "Master Volume"
 
-[node name="MasterVolumeSlider" type="HSlider" parent="."]
+[node name="MasterVolumeSlider" type="HSlider" parent="MasterVolumeLabel"]
 layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
 offset_left = 75.0
-offset_top = 105.0
+offset_top = 77.5
 offset_right = 775.0
-offset_bottom = 135.0
+offset_bottom = 107.5
+grow_vertical = 2
 max_value = 1.0
-step = 0.001
-value = 1.0
-script = ExtResource("1_lnsvi")
+step = 0.01
+script = ExtResource("1_ik70a")
+BusName = "Master"
 
-[node name="Percentage" type="Label" parent="MasterVolumeSlider"]
+[node name="Percentage" type="Label" parent="MasterVolumeLabel/MasterVolumeSlider"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -54,18 +56,22 @@ offset_bottom = 280.0
 theme_override_font_sizes/font_size = 40
 text = "Music Volume"
 
-[node name="MusicVolumeSlider" type="HSlider" parent="."]
+[node name="MusicVolumeSlider" type="HSlider" parent="MusicVolumeLabel"]
 layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
 offset_left = 75.0
-offset_top = 305.0
+offset_top = 77.5
 offset_right = 775.0
-offset_bottom = 335.0
+offset_bottom = 107.5
+grow_vertical = 2
 max_value = 1.0
-step = 0.001
-value = 1.0
-script = ExtResource("2_la803")
+step = 0.01
+script = ExtResource("1_ik70a")
+BusName = "Music"
 
-[node name="Percentage" type="Label" parent="MusicVolumeSlider"]
+[node name="Percentage" type="Label" parent="MusicVolumeLabel/MusicVolumeSlider"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -87,18 +93,22 @@ offset_bottom = 480.0
 theme_override_font_sizes/font_size = 40
 text = "Sound Effect Volume"
 
-[node name="SoundEffectVolumeSlider" type="HSlider" parent="."]
+[node name="SFXVolumeSlider" type="HSlider" parent="SoundEffectVolumeLabel"]
 layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
 offset_left = 75.0
-offset_top = 505.0
+offset_top = 77.5
 offset_right = 775.0
-offset_bottom = 535.0
+offset_bottom = 107.5
+grow_vertical = 2
 max_value = 1.0
-step = 0.001
-value = 1.0
-script = ExtResource("3_erhhb")
+step = 0.01
+script = ExtResource("1_ik70a")
+BusName = "Sound Effects"
 
-[node name="Percentage" type="Label" parent="SoundEffectVolumeSlider"]
+[node name="Percentage" type="Label" parent="SoundEffectVolumeLabel/SFXVolumeSlider"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -111,9 +121,9 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "100%"
 
-[connection signal="value_changed" from="MasterVolumeSlider" to="MasterVolumeSlider" method="SetVolume"]
-[connection signal="value_changed" from="MasterVolumeSlider" to="MasterVolumeSlider" method="ChangePercent"]
-[connection signal="value_changed" from="MusicVolumeSlider" to="MusicVolumeSlider" method="SetVolume"]
-[connection signal="value_changed" from="MusicVolumeSlider" to="MusicVolumeSlider" method="ChangePercent"]
-[connection signal="value_changed" from="SoundEffectVolumeSlider" to="SoundEffectVolumeSlider" method="SetVolume"]
-[connection signal="value_changed" from="SoundEffectVolumeSlider" to="SoundEffectVolumeSlider" method="ChangePercent"]
+[connection signal="value_changed" from="MasterVolumeLabel/MasterVolumeSlider" to="MasterVolumeLabel/MasterVolumeSlider" method="ChangePercent"]
+[connection signal="value_changed" from="MasterVolumeLabel/MasterVolumeSlider" to="MasterVolumeLabel/MasterVolumeSlider" method="SetVolume"]
+[connection signal="value_changed" from="MusicVolumeLabel/MusicVolumeSlider" to="MusicVolumeLabel/MusicVolumeSlider" method="ChangePercent"]
+[connection signal="value_changed" from="MusicVolumeLabel/MusicVolumeSlider" to="MusicVolumeLabel/MusicVolumeSlider" method="SetVolume"]
+[connection signal="value_changed" from="SoundEffectVolumeLabel/SFXVolumeSlider" to="SoundEffectVolumeLabel/SFXVolumeSlider" method="ChangePercent"]
+[connection signal="value_changed" from="SoundEffectVolumeLabel/SFXVolumeSlider" to="SoundEffectVolumeLabel/SFXVolumeSlider" method="SetVolume"]
