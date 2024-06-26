@@ -25,7 +25,7 @@ public partial class PauseScreen : Toggleable
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		//Counting up time since the last escape press 
+		// Counting up time since the last escape press 
 		if (counter < .5)
 		{
 			counter += delta;

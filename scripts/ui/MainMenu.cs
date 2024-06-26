@@ -8,14 +8,14 @@ public partial class MainMenu : Control
 	public override void _Ready()
 	{
 		// Loads in save data
-		//SaveGame.LoadData();
+		// SaveGame.LoadData();
 	}
 
 	// Starts the game
 	private void _on_start_game_button_pressed()
 	{
 
-		//Temporary location for the game starting
+		// Temporary location for the game starting
 		GetTree().ChangeSceneToFile("res://scenes/cutscene/opening.tscn");
 	}
 
