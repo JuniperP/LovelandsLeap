@@ -95,7 +95,9 @@ height = 232.0
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_neipv")
+Speed = 600
 GravityMultiplier = 2.5
+TongueProjSpeed = 1000
 TongueOffset = -70.0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
