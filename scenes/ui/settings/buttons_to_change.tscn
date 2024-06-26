@@ -1,14 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcxi6hn46xvnw"]
+[gd_scene load_steps=6 format=3 uid="uid://dcxi6hn46xvnw"]
 
 [ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/LeftLabel.cs" id="1_ojyx3"]
 [ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/RightLabel.cs" id="2_wycq1"]
 [ext_resource type="PackedScene" uid="uid://0tltao4dqf8q" path="res://scenes/ui/settings/set_key_binds.tscn" id="3_8v77q"]
 [ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/JumpLabel.cs" id="3_e2v3b"]
 [ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/TongueLabel.cs" id="4_ypt5q"]
-[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/SetLeft.cs" id="6_cvxc6"]
-[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/SetRight.cs" id="7_l6wrq"]
-[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/SetJump.cs" id="8_5ubet"]
-[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/SetClick.cs" id="9_jewat"]
 
 [node name="ButtonsToChange" type="Control"]
 layout_mode = 3
@@ -113,51 +109,32 @@ text_overrun_behavior = 1
 script = ExtResource("4_ypt5q")
 
 [node name="SetLeft" parent="." instance=ExtResource("3_8v77q")]
-visible = false
 layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 900.0
-offset_bottom = 525.0
-grow_horizontal = 1
-grow_vertical = 1
-script = ExtResource("6_cvxc6")
+offset_right = -870.0
+offset_bottom = -680.0
+mapping = "move_left"
 
 [node name="SetRight" parent="." instance=ExtResource("3_8v77q")]
 visible = false
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 900.0
-offset_bottom = 525.0
-grow_horizontal = 1
-grow_vertical = 1
-script = ExtResource("7_l6wrq")
+layout_mode = 1
+offset_right = -870.0
+offset_bottom = -680.0
+mapping = "move_right"
 
 [node name="SetJump" parent="." instance=ExtResource("3_8v77q")]
 visible = false
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 900.0
-offset_bottom = 525.0
-grow_horizontal = 1
-grow_vertical = 1
-script = ExtResource("8_5ubet")
+layout_mode = 1
+offset_right = -870.0
+offset_bottom = -680.0
 
-[node name="SetTongue" parent="." instance=ExtResource("3_8v77q")]
+[node name="SetClick" parent="." instance=ExtResource("3_8v77q")]
 visible = false
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 900.0
-offset_bottom = 525.0
-grow_horizontal = 1
-grow_vertical = 1
-script = ExtResource("9_jewat")
+layout_mode = 1
+offset_right = -870.0
+offset_bottom = -680.0
+mapping = "primary_click"
 
 [connection signal="pressed" from="MoveLeftLabel/LeftButton" to="SetLeft" method="_open"]
 [connection signal="pressed" from="MoveRightLabel/RightButton" to="SetRight" method="_open"]
 [connection signal="pressed" from="JumpLabel/JumpButton" to="SetJump" method="_open"]
-[connection signal="pressed" from="UseTongueLabel/TongueButton" to="SetTongue" method="_open"]
+[connection signal="pressed" from="UseTongueLabel/TongueButton" to="SetClick" method="_open"]
