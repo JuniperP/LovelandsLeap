@@ -90,7 +90,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_olhqh"]
 radius = 54.0
-height = 232.0
+height = 228.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2

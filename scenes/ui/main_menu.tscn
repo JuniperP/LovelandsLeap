@@ -123,7 +123,6 @@ layout_mode = 1
 
 [node name="MainMenuTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_e7cc2")
-autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="Panel/TextureRect/QuitButton" to="." method="_quit_game"]
