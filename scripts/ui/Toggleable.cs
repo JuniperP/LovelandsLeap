@@ -18,6 +18,7 @@ public partial class Toggleable : Control
 	protected virtual void _open()
 	{
 		Visible = true;
+		GD.Print("TEST");
 	}
 
 }

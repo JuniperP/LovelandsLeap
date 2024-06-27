@@ -1,10 +1,9 @@
 using Godot;
 using System;
-//using System.Runtime.CompilerServices;
 
+// Static class holding all of the names each button maps to along with their events
 public partial class Keybinds : Node
 {
-	// Variables holding all of the names each mapped button along with their events
 	public static InputEvent LeftIn = InputMap.ActionGetEvents("move_left")[0];
 	public static String LeftSym = LeftIn.AsText();
 

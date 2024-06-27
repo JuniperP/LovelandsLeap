@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/ui/Settings.cs" id="1_0yej3"]
 [ext_resource type="PackedScene" uid="uid://btiq6vr6uavrk" path="res://scenes/ui/settings/audio_to_change.tscn" id="2_eko1f"]
-[ext_resource type="PackedScene" uid="uid://dcxi6hn46xvnw" path="res://scenes/ui/settings/buttons_to_change.tscn" id="3_34cfb"]
+[ext_resource type="PackedScene" uid="uid://dcxi6hn46xvnw" path="res://scenes/ui/settings/key bind setting/buttons_to_change.tscn" id="3_34cfb"]
 
 [sub_resource type="Theme" id="Theme_m3tk4"]
 
