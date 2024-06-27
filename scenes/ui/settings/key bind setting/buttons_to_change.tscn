@@ -18,7 +18,7 @@ offset_right = -50.0
 offset_bottom = 100.0
 LeftButton = true
 
-[node name="Jump3" parent="." instance=ExtResource("1_510al")]
+[node name="Jump" parent="." instance=ExtResource("1_510al")]
 layout_mode = 1
 offset_left = -50.0
 offset_top = 300.0
