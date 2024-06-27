@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccppbbbwwkdtb"]
 
-[ext_resource type="Script" path="res://KeyBindSetButton.cs" id="1_qonc8"]
+[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/KeyBindSetButton.cs" id="1_qonc8"]
 [ext_resource type="PackedScene" uid="uid://0tltao4dqf8q" path="res://scenes/ui/settings/key bind setting/set_key_binds.tscn" id="2_hlarh"]
 
 [node name="AdjustKeyCombo" type="Control"]
@@ -11,7 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qonc8")
-TongueButton = true
 
 [node name="MoveLabel" type="Label" parent="."]
 layout_mode = 0
