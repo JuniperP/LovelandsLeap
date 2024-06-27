@@ -1,14 +1,11 @@
 using Godot;
 using System;
 /*
- If I had time: this system would work via the decorator pattern, because
- using inheritance feels very limiting just to declare an action many nodes may use...
- HOWEVER, I am running on very little time (in different country) so... sorry :3!
-
- Idea = Any UI node that can be toggled on and off can be a sub class of this for easy
- signal interactions
+ Any UI node that should be toggled on and off can be a sub class of this. This allows
+ for easy signal interactions as one can toggle the visibility by calls to _close()
+ and open().
 */
-public partial class Toggleable : Control
+public abstract partial class Toggleable : Control
 {
 
 	// Closes the node
