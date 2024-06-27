@@ -6,9 +6,11 @@ public partial class Player : CharacterBody2D
 	public enum State : byte
 	{
 		Walk,
-		Grapple
+		Grapple,
+		Max = 1,
 	}
 
+	// Inspector variables
 	[Export] public int Speed = 300;
 	[Export] public int Acceleration = 2000;
 	[Export] public int JumpImpulse = 1000;
@@ -20,6 +22,7 @@ public partial class Player : CharacterBody2D
 	[Export] public double AutoDegrappleBuffer = 0.5;
 	[Export] public float TongueOffset = -30f;
 
+	// Internal calculation for where the tongue originates
 	public Vector2 TongueGlobalPos
 	{
 		get
@@ -28,11 +31,19 @@ public partial class Player : CharacterBody2D
 		}
 	}
 
-	public AnimationManager AnimManager;
-	// Refactor states to only be created once and switch with Player methods
+	// Movement state chooses from an array of states using the enum
 	public State StateEnum = State.Walk;
-	public IMovementState MovementState = new WalkState();
+	private readonly IMovementState[] _movementStates = {
+		new WalkState(),
+		new GrappleState()
+	};
+	public IMovementState MovementState
+	{
+		get { return _movementStates[(int)StateEnum]; }
+	}
+
 	public bool TongueProjExists = false; // TODO: Refactor into singleton
+	public AnimationManager AnimManager;
 
 	// TODO: Refactor into sibling nodes that are disabled
 	public PackedScene TongueProjScene;

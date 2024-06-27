@@ -125,7 +125,6 @@ public class WalkState : IMovementState
 		ctx.CallDeferred(Node.MethodName.AddSibling, ctx.TongueSpring);
 
 		// Change state to grapple
-		ctx.MovementState = new GrappleState();
 		ctx.StateEnum = Player.State.Grapple;
 	}
 
