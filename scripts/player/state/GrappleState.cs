@@ -44,7 +44,6 @@ public class GrappleState : IMovementState
 		ctx.TongueWeight.QueueFree();
 
 		// Change state to walk
-		ctx.MovementState = new WalkState();
 		ctx.StateEnum = Player.State.Walk;
 
 		// Set animation to idle
