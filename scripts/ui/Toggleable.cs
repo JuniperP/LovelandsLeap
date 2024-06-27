@@ -5,7 +5,7 @@ using System;
  for easy signal interactions as one can toggle the visibility by calls to _close()
  and open().
 */
-public abstract partial class Toggleable : Control
+public partial class Toggleable : Control
 {
 
 	// Closes the node
