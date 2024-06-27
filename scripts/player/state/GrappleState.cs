@@ -1,52 +1,54 @@
 using Godot;
 using Godot.NativeInterop;
 
-public class GrappleState : IMovementState
+public class GrappleState : MovementState
 {
 	private double _grappleTime = 0d;
 
-	public void HandleMovement(Player ctx, double delta)
+	public GrappleState(Player ctx) : base(ctx) { }
+
+	public override void HandleMovement(double delta)
 	{
 		_grappleTime += delta;
 
 		// Set velocity to move to weight
-		Vector2 diff = ctx.TongueWeight.GlobalPosition - ctx.GlobalPosition;
-		ctx.Velocity = diff * 10;
+		Vector2 diff = _ctx.TongueWeight.GlobalPosition - _ctx.GlobalPosition;
+		_ctx.Velocity = diff * 10;
 
 		// If player collided after buffer time
-		if (ctx.MoveAndSlide() && _grappleTime >= ctx.AutoDegrappleBuffer)
-			DisableGrapple(ctx);
-		
+		if (_ctx.MoveAndSlide() && _grappleTime >= _ctx.AutoDegrappleBuffer)
+			DisableGrapple();
+
 		// Handle sprite direction
-		if (ctx.Velocity.X > 0.01f)
-			ctx.AnimManager.IsLeftFacing = false;
-		else if (ctx.Velocity.X < -0.01f)
-			ctx.AnimManager.IsLeftFacing = true;
+		if (_ctx.Velocity.X > 0.01f)
+			_ctx.AnimManager.IsLeftFacing = false;
+		else if (_ctx.Velocity.X < -0.01f)
+			_ctx.AnimManager.IsLeftFacing = true;
 	}
 
-	public void HandleAction(Player ctx)
+	public override void HandleAction()
 	{
 		if (Input.IsActionJustPressed("move_up") ||
 			Input.IsActionJustPressed("move_down") ||
 			Input.IsActionJustPressed("primary_click"))
 		{
-			DisableGrapple(ctx);
+			DisableGrapple();
 		}
 	}
 
-	public void EnableGrapple(Player ctx) { }
+	public override void EnableGrapple() { }
 
-	public void DisableGrapple(Player ctx)
+	public override void DisableGrapple()
 	{
 		// Remove all grappling objects
-		ctx.TongueLine.QueueFree();
-		ctx.TongueSpring.QueueFree();
-		ctx.TongueWeight.QueueFree();
+		_ctx.TongueLine.QueueFree();
+		_ctx.TongueSpring.QueueFree();
+		_ctx.TongueWeight.QueueFree();
 
 		// Change state to walk
-		ctx.StateEnum = Player.State.Walk;
+		_ctx.StateEnum = Player.State.Walk;
 
 		// Set animation to idle
-		ctx.AnimManager.State = AnimState.Idle;
+		_ctx.AnimManager.State = AnimState.Idle;
 	}
 }

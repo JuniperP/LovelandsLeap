@@ -7,7 +7,6 @@ public partial class Player : CharacterBody2D
 	{
 		Walk,
 		Grapple,
-		Max = 1,
 	}
 
 	// Inspector variables
@@ -33,11 +32,8 @@ public partial class Player : CharacterBody2D
 
 	// Movement state chooses from an array of states using the enum
 	public State StateEnum = State.Walk;
-	private readonly IMovementState[] _movementStates = {
-		new WalkState(),
-		new GrappleState()
-	};
-	public IMovementState MovementState
+	private MovementState[] _movementStates;
+	public MovementState MovementState
 	{
 		get { return _movementStates[(int)StateEnum]; }
 	}
@@ -58,6 +54,10 @@ public partial class Player : CharacterBody2D
 	public override void _Ready()
 	{
 		AnimManager = new AnimationManager(this);
+		_movementStates = new MovementState[]{
+			new WalkState(this),
+			new GrappleState(this)
+		};
 
 		TongueProjScene = GD.Load<PackedScene>("res://scenes/player/tongue/tongue_projectile.tscn");
 		TongueLineScene = GD.Load<PackedScene>("res://scenes/player/tongue/tongue_line.tscn");
@@ -67,17 +67,17 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		MovementState.HandleMovement(this, delta);
-		MovementState.HandleAction(this);
+		MovementState.HandleMovement(delta);
+		MovementState.HandleAction();
 	}
 
 	public void EnableGrapple(Node target)
 	{
-		MovementState.EnableGrapple(this);
+		MovementState.EnableGrapple();
 	}
 
 	public void DisableGrapple()
 	{
-		MovementState.DisableGrapple(this);
+		MovementState.DisableGrapple();
 	}
 }
