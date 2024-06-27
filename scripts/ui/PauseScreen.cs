@@ -1,17 +1,20 @@
 using Godot;
 using System;
-//using System.Runtime.CompilerServices;
+
 
 public partial class PauseScreen : Toggleable
 {
-	// Effectively the timer we use to ensure a reasonable amount of time passes between our events
-	private double counter;
+	// Boolean to see if a cancel is held down
+	private Boolean HeldDown;
 
-	// Setup
+
+	// Setup by ensuring the pause screen isn't visible and setting up key hold check
 	public override void _Ready()
 	{
-		Visible = false;
-		counter = 0;
+		_close();
+
+		// Initially set to true in the case where escape is held entering a scene
+		HeldDown = true;
 	}
 
 	// Overriding the close method to also unpause the game
@@ -31,22 +34,16 @@ public partial class PauseScreen : Toggleable
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		// Counting up time since the last escape press 
-		if (counter < .5)
-		{
-			counter += delta;
-		}
 
 		// Seeing if settings is open
-		Settings node = (Settings)this.GetNode("Settings");
-
+		Settings node = (Settings)GetNode("Settings");
 
 
 		// Sees if the user is trying to pause the game
-		if (Input.IsActionPressed("ui_cancel") && (counter >= .5) && !node.Visible && (node.counter >= .3))
+		if (Input.IsActionPressed("ui_cancel") && (!HeldDown) && !node.Visible)
 		{
-			// Reset the timer
-			counter = 0;
+			// Cancel must be currently held down and deemed as such
+			HeldDown = true;
 
 			//Switch visibility
 			if (Visible)
@@ -61,6 +58,18 @@ public partial class PauseScreen : Toggleable
 				GetTree().Paused = true;
 			}
 
+		}
+
+		// Key is deemed as not held down if not pressed when pause screen stands alone
+		else if (!Input.IsActionPressed("ui_cancel") && (HeldDown) && !node.Visible)
+		{
+			HeldDown = false;
+		}
+
+		// Assumes the user will be holding down the escape key when exiting the settings menu
+		else if (node.Visible)
+		{
+			HeldDown = true;
 		}
 
 

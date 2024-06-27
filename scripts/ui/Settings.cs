@@ -1,32 +1,35 @@
 using Godot;
 using System;
-//using System.Diagnostics.Metrics;
+
 
 public partial class Settings : Toggleable
 {
-	// Counter to ensure pause screen can't be closed the next frame
-	public double counter;
 
-	// Setup
+	// Boolean to check if the user is holding down the button they intend to escape with 
+	public Boolean HeldDown;
+
+	// Setup by closing the visibility and prepping our held down check
 	public override void _Ready()
 	{
 		_close();
-		counter = 0;
+		HeldDown = false;
 	}
 
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		// Count since settings has been closed
-		if (counter <= .3 && !Visible)
-		{
-			counter += delta;
-		}
 
-		// Letting the user quit from settings and resetting counter
-		if (Input.IsActionPressed("ui_cancel") && Visible)
+		// Letting the user quit from settings
+		if (Input.IsActionPressed("ui_cancel") && !HeldDown)
 		{
 			_close();
-			counter = 0;
+			HeldDown = true;
+		}
+
+		// If the escape key isn't being pressed, it is deemed not held down
+		else if (!Input.IsActionPressed("ui_cancel") && HeldDown)
+		{
+			HeldDown = false;
 		}
 
 	}
