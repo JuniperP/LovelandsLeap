@@ -98,14 +98,12 @@ visible = false
 layout_mode = 1
 offset_right = -870.0
 offset_bottom = -680.0
-mapping = "move_left"
 
 [node name="SetRight" parent="." instance=ExtResource("5_u4rin")]
 visible = false
 layout_mode = 1
 offset_right = -870.0
 offset_bottom = -680.0
-mapping = "move_right"
 
 [node name="SetJump" parent="." instance=ExtResource("5_u4rin")]
 visible = false
@@ -118,7 +116,6 @@ visible = false
 layout_mode = 1
 offset_right = -870.0
 offset_bottom = -680.0
-mapping = "primary_click"
 
 [connection signal="pressed" from="MoveRightLabel/RightButton" to="SetRight" method="_open"]
 [connection signal="pressed" from="JumpLabel/JumpButton" to="SetJump" method="_open"]

@@ -3,10 +3,13 @@ using System;
 
 public partial class KeyBindSetButton : Control
 {
+	// Choice for which button we will be using this combo to set
 	[Export] private Boolean LeftButton;
 	[Export] private Boolean RightButton;
 	[Export] private Boolean JumpButton;
 	[Export] private Boolean TongueButton;
+
+
 
 
 	// The button containing the name of the current key bind
@@ -16,14 +19,31 @@ public partial class KeyBindSetButton : Control
 	public override void _Ready()
 	{
 		// Getting the children we will need
+		SetKeyBinds toSet = (SetKeyBinds)GetNode("SetKeyBinds");
 		Label label = (Label)GetNode("MoveLabel");
 		OurButton = (Button)label.GetNode("ButtonToAdjust");
-		
-		// Setting the name besides the button accordingly
-		if (LeftButton) { label.Text = "Move Left"; }
-		else if (RightButton) { label.Text = "Move Right";  }
-		else if (JumpButton) { label.Text = "Jump";  }
-		else if (TongueButton) { label.Text = "Use Tongue";  }
+
+		// Setting the action and name besides the button accordingly
+		if (LeftButton)
+		{
+			label.Text = "Move Left";
+			toSet.Mapping = "move_left";
+		}
+		else if (RightButton)
+		{
+			label.Text = "Move Right";
+			toSet.Mapping = "move_right";
+		}
+		else if (JumpButton)
+		{
+			label.Text = "Jump";
+			toSet.Mapping = "move_up";
+		}
+		else if (TongueButton)
+		{
+			label.Text = "Use Tongue";
+			toSet.Mapping = "primary_click";
+		}
 	}
 
 

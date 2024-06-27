@@ -3,7 +3,8 @@ using System;
 
 public partial class SetKeyBinds : Toggleable
 {
-	[Export] String mapping = "move_up";
+	// What we are mapping to (meant to be set by the parent of the key bind set combo)
+	public String Mapping = "";
 
 	// Close on loading in
 	public override void _Ready()
@@ -28,26 +29,26 @@ public partial class SetKeyBinds : Toggleable
 		if (Visible)
 		{
 			// Gets rid of all other keybinds
-			InputMap.ActionEraseEvents(mapping);
+			InputMap.ActionEraseEvents(Mapping);
 
 
 			// Updates current mapped button label and the stored action
-			if (mapping == "move_left")
+			if (Mapping == "move_left")
 			{
 				Keybinds.LeftSym = OurInput.AsText();
 				Keybinds.LeftIn = OurInput;
 			}
-			else if (mapping == "move_right")
+			else if (Mapping == "move_right")
 			{
 				Keybinds.RightSym = OurInput.AsText();
 				Keybinds.RightIn = OurInput;
 			}
-			else if (mapping == "move_up")
+			else if (Mapping == "move_up")
 			{
 				Keybinds.JumpSym = OurInput.AsText();
 				Keybinds.JumpIn = OurInput;
 			}
-			else
+			else if (Mapping == "primary_click")
 			{
 				Keybinds.ClickSym = OurInput.AsText();
 				Keybinds.ClickIn = OurInput;
@@ -56,7 +57,7 @@ public partial class SetKeyBinds : Toggleable
 
 
 			// Maps wanted button
-			InputMap.ActionAddEvent(mapping, OurInput);
+			InputMap.ActionAddEvent(Mapping, OurInput);
 
 
 		}
