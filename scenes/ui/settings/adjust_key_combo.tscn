@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ccppbbbwwkdtb"]
 
-[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/KeyBindManager.cs" id="1_qonc8"]
+[ext_resource type="Script" path="res://scripts/ui/settings/KeyBindManager.cs" id="1_qonc8"]
 
 [node name="AdjustKeyCombo" type="Control"]
 layout_mode = 3

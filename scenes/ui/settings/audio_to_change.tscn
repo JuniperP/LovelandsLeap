@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://btiq6vr6uavrk"]
 
-[ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/VolumeSlider.cs" id="1_uwcpn"]
+[ext_resource type="Script" path="res://scripts/ui/settings/VolumeSlider.cs" id="1_uwcpn"]
 
 [node name="AudioToChange" type="Control"]
 layout_mode = 3
