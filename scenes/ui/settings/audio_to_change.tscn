@@ -13,9 +13,9 @@ grow_vertical = 2
 [node name="MasterVolumeLabel" type="Label" parent="."]
 layout_mode = 1
 offset_left = 25.0
-offset_top = 25.0
+offset_top = 125.0
 offset_right = 316.0
-offset_bottom = 80.0
+offset_bottom = 180.0
 theme_override_font_sizes/font_size = 40
 text = "Master Volume"
 
@@ -25,9 +25,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 75.0
-offset_top = 77.5
+offset_top = 47.5
 offset_right = 775.0
-offset_bottom = 107.5
+offset_bottom = 77.5
 grow_vertical = 2
 max_value = 1.0
 step = 0.01
@@ -50,9 +50,9 @@ text = "100%"
 [node name="MusicVolumeLabel" type="Label" parent="."]
 layout_mode = 1
 offset_left = 25.0
-offset_top = 225.0
+offset_top = 275.0
 offset_right = 293.0
-offset_bottom = 280.0
+offset_bottom = 330.0
 theme_override_font_sizes/font_size = 40
 text = "Music Volume"
 
@@ -62,9 +62,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 75.0
-offset_top = 77.5
+offset_top = 47.5
 offset_right = 775.0
-offset_bottom = 107.5
+offset_bottom = 77.5
 grow_vertical = 2
 max_value = 1.0
 step = 0.01
@@ -99,9 +99,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 75.0
-offset_top = 77.5
+offset_top = 47.5
 offset_right = 775.0
-offset_bottom = 107.5
+offset_bottom = 77.5
 grow_vertical = 2
 max_value = 1.0
 step = 0.01
@@ -120,6 +120,15 @@ offset_bottom = 22.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "100%"
+
+[node name="Instructions" type="RichTextLabel" parent="."]
+offset_right = 900.0
+offset_bottom = 120.0
+theme_override_font_sizes/italics_font_size = 32
+bbcode_enabled = true
+text = "[center][i] 																																																		Drag the sliders to adjust each outputs volume[i] [center]
+"
+scroll_active = false
 
 [connection signal="value_changed" from="MasterVolumeLabel/MasterVolumeSlider" to="MasterVolumeLabel/MasterVolumeSlider" method="ChangePercent"]
 [connection signal="value_changed" from="MasterVolumeLabel/MasterVolumeSlider" to="MasterVolumeLabel/MasterVolumeSlider" method="SetVolume"]
