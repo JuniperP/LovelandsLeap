@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dcxi6hn46xvnw"]
 
-[ext_resource type="PackedScene" uid="uid://ccppbbbwwkdtb" path="res://scenes/ui/settings/key bind setting/adjust_key_combo.tscn" id="1_510al"]
+[ext_resource type="PackedScene" uid="uid://ccppbbbwwkdtb" path="res://scenes/ui/settings/adjust_key_combo.tscn" id="1_gx03p"]
 
 [node name="ButtonsToChange" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MoveLeft" parent="." instance=ExtResource("1_510al")]
+[node name="MoveLeft" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
@@ -22,7 +22,7 @@ grow_horizontal = 1
 grow_vertical = 1
 LeftButton = true
 
-[node name="Jump" parent="." instance=ExtResource("1_510al")]
+[node name="Jump" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
@@ -34,7 +34,7 @@ grow_horizontal = 1
 grow_vertical = 1
 JumpButton = true
 
-[node name="MoveRight" parent="." instance=ExtResource("1_510al")]
+[node name="MoveRight" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
@@ -47,7 +47,7 @@ grow_horizontal = 1
 grow_vertical = 1
 RightButton = true
 
-[node name="UseTongue" parent="." instance=ExtResource("1_510al")]
+[node name="UseTongue" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
