@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4suej1iw3wkr"]
+[gd_scene load_steps=8 format=3 uid="uid://c4suej1iw3wkr"]
 
 [ext_resource type="Script" path="res://scripts/ui/Settings.cs" id="1_0yej3"]
 [ext_resource type="PackedScene" uid="uid://btiq6vr6uavrk" path="res://scenes/ui/settings/audio_to_change.tscn" id="2_eko1f"]
 [ext_resource type="PackedScene" uid="uid://dcxi6hn46xvnw" path="res://scenes/ui/settings/buttons_to_change.tscn" id="3_34cfb"]
+[ext_resource type="PackedScene" uid="uid://b3unscwxm55g1" path="res://scenes/ui/settings/display_to_change.tscn" id="4_h7u6u"]
 
 [sub_resource type="Theme" id="Theme_m3tk4"]
 
@@ -81,5 +82,12 @@ layout_mode = 1
 offset_top = 63.0
 offset_right = 900.0
 offset_bottom = 663.0
+
+[node name="Display" type="TabBar" parent="BackBox/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="DisplayToChange" parent="BackBox/TabContainer/Display" instance=ExtResource("4_h7u6u")]
+layout_mode = 1
 
 [connection signal="pressed" from="BackBox/Cancel" to="." method="_close"]
