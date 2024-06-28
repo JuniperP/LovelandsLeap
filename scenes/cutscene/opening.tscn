@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhbw0ude0nsrw"]
+[gd_scene load_steps=12 format=3 uid="uid://dhbw0ude0nsrw"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_1imdu"]
 [ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://assets/background/MainMenu.jpg" id="1_1731u"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/cutscene/OpeningHuman.cs" id="7_6tcm6"]
 [ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frogportrait.png" id="9_55qf0"]
 [ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/lovelandCutsceneMusic.wav" id="10_86f4d"]
+[ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscene/info_to_skip.tscn" id="11_t7lkt"]
 
 [node name="Opening" type="Control" node_paths=PackedStringArray("Nodes")]
 layout_mode = 3
@@ -32,16 +33,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_1731u")
 expand_mode = 1
-
-[node name="Label" type="Label" parent="Background"]
-layout_mode = 0
-offset_left = 78.0
-offset_top = 56.0
-offset_right = 388.0
-offset_bottom = 101.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "Press [Esc] to skip"
 
 [node name="Player" type="Node2D" parent="." node_paths=PackedStringArray("Sprite")]
 visible = false
@@ -103,6 +94,9 @@ text = "*CROAK!!!*"
 stream = ExtResource("10_86f4d")
 autoplay = true
 bus = &"Music"
+
+[node name="InfoToSkip" parent="." instance=ExtResource("11_t7lkt")]
+layout_mode = 0
 
 [editable path="OrderDialogue"]
 [editable path="ForestDialogue"]
