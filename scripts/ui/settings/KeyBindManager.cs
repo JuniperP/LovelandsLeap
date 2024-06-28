@@ -7,9 +7,11 @@ public partial class KeyBindManager : Control
 	[Export] private Boolean LeftButton;
 	[Export] private Boolean RightButton;
 	[Export] private Boolean JumpButton;
+	[Export] private Boolean DownButton;
+
 	[Export] private Boolean TongueButton;
 	[Export] private Boolean CancelButton;
-
+	
 
 	// The button containing the name of the current key bind
 	private Button OurButton;
@@ -47,6 +49,12 @@ public partial class KeyBindManager : Control
 			OurButton.Text = Keybinds.JumpSym;
 			label.Text = "Jump";
 			Mapping = "move_up";
+		}
+		else if (DownButton)
+		{
+			OurButton.Text = Keybinds.DownSym;
+			label.Text = "Fast Fall";
+			Mapping = "move_down";
 		}
 		else if (TongueButton)
 		{
@@ -99,6 +107,11 @@ public partial class KeyBindManager : Control
 			{
 				Keybinds.JumpSym = OurInput.AsText();
 				Keybinds.JumpIn = OurInput;
+			}
+			else if (DownButton)
+			{
+				Keybinds.DownSym = OurInput.AsText();
+				Keybinds.DownIn = OurInput;
 			}
 			else if (TongueButton)
 			{

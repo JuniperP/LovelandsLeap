@@ -16,6 +16,9 @@ public partial class Keybinds : Node
 	public static InputEvent JumpIn = InputMap.ActionGetEvents("move_up")[0];
 	public static String JumpSym = JumpIn.AsText();
 
+	public static InputEvent DownIn = InputMap.ActionGetEvents("move_down")[0];
+	public static String DownSym = DownIn.AsText();
+
 
 	public static InputEvent ClickIn = InputMap.ActionGetEvents("primary_click")[0];
 	public static String ClickSym = ClickIn.AsText();

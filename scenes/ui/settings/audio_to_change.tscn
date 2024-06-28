@@ -131,9 +131,9 @@ text = "[center][i] 																																																		Drag the s
 "
 scroll_active = false
 
-[connection signal="value_changed" from="MasterVolumeLabel/MasterVolumeSlider" to="MasterVolumeLabel/MasterVolumeSlider" method="SetVolume"]
 [connection signal="value_changed" from="MasterVolumeLabel/MasterVolumeSlider" to="MasterVolumeLabel/MasterVolumeSlider" method="ChangePercent"]
-[connection signal="value_changed" from="MusicVolumeLabel/MusicVolumeSlider" to="MusicVolumeLabel/MusicVolumeSlider" method="SetVolume"]
+[connection signal="value_changed" from="MasterVolumeLabel/MasterVolumeSlider" to="MasterVolumeLabel/MasterVolumeSlider" method="SetVolume"]
 [connection signal="value_changed" from="MusicVolumeLabel/MusicVolumeSlider" to="MusicVolumeLabel/MusicVolumeSlider" method="ChangePercent"]
-[connection signal="value_changed" from="SoundEffectVolumeLabel/SFXVolumeSlider" to="SoundEffectVolumeLabel/SFXVolumeSlider" method="SetVolume"]
+[connection signal="value_changed" from="MusicVolumeLabel/MusicVolumeSlider" to="MusicVolumeLabel/MusicVolumeSlider" method="SetVolume"]
 [connection signal="value_changed" from="SoundEffectVolumeLabel/SFXVolumeSlider" to="SoundEffectVolumeLabel/SFXVolumeSlider" method="ChangePercent"]
+[connection signal="value_changed" from="SoundEffectVolumeLabel/SFXVolumeSlider" to="SoundEffectVolumeLabel/SFXVolumeSlider" method="SetVolume"]
