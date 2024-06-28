@@ -122,6 +122,7 @@ theme_override_font_sizes/font_size = 32
 text = "100%"
 
 [node name="Instructions" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_right = 900.0
 offset_bottom = 120.0
 theme_override_font_sizes/italics_font_size = 32
@@ -130,9 +131,9 @@ text = "[center][i] 																																																		Drag the s
 "
 scroll_active = false
 
-[connection signal="value_changed" from="MasterVolumeLabel/MasterVolumeSlider" to="MasterVolumeLabel/MasterVolumeSlider" method="ChangePercent"]
 [connection signal="value_changed" from="MasterVolumeLabel/MasterVolumeSlider" to="MasterVolumeLabel/MasterVolumeSlider" method="SetVolume"]
-[connection signal="value_changed" from="MusicVolumeLabel/MusicVolumeSlider" to="MusicVolumeLabel/MusicVolumeSlider" method="ChangePercent"]
+[connection signal="value_changed" from="MasterVolumeLabel/MasterVolumeSlider" to="MasterVolumeLabel/MasterVolumeSlider" method="ChangePercent"]
 [connection signal="value_changed" from="MusicVolumeLabel/MusicVolumeSlider" to="MusicVolumeLabel/MusicVolumeSlider" method="SetVolume"]
-[connection signal="value_changed" from="SoundEffectVolumeLabel/SFXVolumeSlider" to="SoundEffectVolumeLabel/SFXVolumeSlider" method="ChangePercent"]
+[connection signal="value_changed" from="MusicVolumeLabel/MusicVolumeSlider" to="MusicVolumeLabel/MusicVolumeSlider" method="ChangePercent"]
 [connection signal="value_changed" from="SoundEffectVolumeLabel/SFXVolumeSlider" to="SoundEffectVolumeLabel/SFXVolumeSlider" method="SetVolume"]
+[connection signal="value_changed" from="SoundEffectVolumeLabel/SFXVolumeSlider" to="SoundEffectVolumeLabel/SFXVolumeSlider" method="ChangePercent"]

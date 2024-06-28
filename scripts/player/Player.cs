@@ -15,6 +15,8 @@ public partial class Player : CharacterBody2D
 	[Export] public int JumpImpulse = 1000;
 	[Export] public float JumpCutFactor = 0.5f;
 	[Export] public float GravityMultiplier = 1f;
+	[Export] public float FastFallMultiplier = 2f;
+	[Export] public float FastFallMaxMultiplier = 2f;
 	[Export] public int MaxFallSpeed = 1500;
 	[Export] public int SwingForce = 100;
 	[Export] public int TongueProjSpeed = 800;

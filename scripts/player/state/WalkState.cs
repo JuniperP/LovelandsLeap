@@ -3,6 +3,7 @@ using Godot;
 
 public class WalkState : MovementState
 {
+	private bool _fastFall = false;
 	public WalkState(Player ctx) : base(ctx) { }
 
 	public override void HandleMovement(double delta)
@@ -16,16 +17,30 @@ public class WalkState : MovementState
 
 		// Handle gravity
 		float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
-		if (!_ctx.IsOnFloor())
+		if (_ctx.IsOnFloor())
 		{
-			targetVelocity.Y += gravity * _ctx.GravityMultiplier * (float)delta;
+			_fastFall = false;
+
+			// Handle jump
+			if (Input.IsActionJustPressed("move_up"))
+				targetVelocity.Y = -_ctx.JumpImpulse;
+		}
+		else
+		{
+			if(Input.IsActionJustPressed("move_down"))
+				_fastFall = true;
+	
+			float velIncrease = gravity * _ctx.GravityMultiplier * (float)delta;
+			if (_fastFall)
+				velIncrease *= _ctx.FastFallMultiplier;
+			targetVelocity.Y += velIncrease;
+
+			// Display jumping animation unless shooting tongue 
 			if (newState != AnimState.Tongue)
 				newState = AnimState.Jumping;
 		}
 
-		// Handle jump
-		else if (Input.IsActionJustPressed("move_up"))
-			targetVelocity.Y = -_ctx.JumpImpulse;
+		// Handle jump cut
 		if (Input.IsActionJustReleased("move_up") && targetVelocity.Y < -0.1f)
 			targetVelocity.Y *= _ctx.JumpCutFactor;
 
@@ -38,7 +53,10 @@ public class WalkState : MovementState
 		);
 
 		// Cap vertical speed
-		targetVelocity.Y = Mathf.Min(targetVelocity.Y, _ctx.MaxFallSpeed);
+		float maxFall = _ctx.MaxFallSpeed;
+		if (_fastFall)
+			maxFall *= _ctx.FastFallMaxMultiplier;
+		targetVelocity.Y = Mathf.Min(targetVelocity.Y, maxFall);
 
 		// Update velocity and move
 		_ctx.Velocity = targetVelocity;

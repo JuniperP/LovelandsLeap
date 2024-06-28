@@ -97,6 +97,8 @@ collision_layer = 2
 script = ExtResource("1_neipv")
 Speed = 600
 GravityMultiplier = 2.5
+FastFallMultiplier = 3.0
+SwingForce = 200
 TongueProjSpeed = 1000
 TongueOffset = -70.0
 
