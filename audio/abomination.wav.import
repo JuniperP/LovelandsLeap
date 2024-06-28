@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bak83atxgk1vl"
-path="res://.godot/imported/Abomination.wav-07a92981f5830961add1410656ce0828.sample"
+path="res://.godot/imported/abomination.wav-a6a2585eb497453e8b9dce78f1c74ef7.sample"
 
 [deps]
 
-source_file="res://audio/Abomination.wav"
-dest_files=["res://.godot/imported/Abomination.wav-07a92981f5830961add1410656ce0828.sample"]
+source_file="res://audio/abomination.wav"
+dest_files=["res://.godot/imported/abomination.wav-a6a2585eb497453e8b9dce78f1c74ef7.sample"]
 
 [params]
 
