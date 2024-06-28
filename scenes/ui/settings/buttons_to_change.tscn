@@ -73,7 +73,7 @@ grow_horizontal = 1
 grow_vertical = 1
 CancelButton = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Instructions" type="RichTextLabel" parent="."]
 layout_mode = 1
 offset_right = 880.0
 offset_bottom = 120.0
