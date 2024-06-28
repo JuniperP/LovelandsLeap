@@ -5,8 +5,8 @@ radius = 60.0
 
 [node name="Weight" type="RigidBody2D"]
 collision_layer = 0
-mass = 0.5
-gravity_scale = 3.0
+mass = 0.3
+gravity_scale = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rjaj2")
