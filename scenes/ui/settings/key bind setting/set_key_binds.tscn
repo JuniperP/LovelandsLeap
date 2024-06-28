@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://0tltao4dqf8q"]
+[gd_scene load_steps=2 format=3 uid="uid://0tltao4dqf8q"]
 
 [ext_resource type="Script" path="res://scripts/ui/AdjustingSettings/Keybinds/SetKeyBinds.cs" id="1_y7qun"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5e7c"]
-bg_color = Color(0, 0, 0, 0.901961)
 
 [node name="SetKeyBinds" type="Control"]
 layout_mode = 3
@@ -13,31 +10,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y7qun")
-
-[node name="BackDrop" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_g5e7c")
-
-[node name="Instructions" type="Label" parent="BackDrop"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -598.5
-offset_top = -66.0
-offset_right = 598.5
-offset_bottom = 66.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 96
-text = "Press any key to
-set new keybind"
-horizontal_alignment = 1

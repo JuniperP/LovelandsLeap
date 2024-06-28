@@ -28,36 +28,6 @@ public partial class SetKeyBinds : Toggleable
 	{
 		if (Visible)
 		{
-			// Gets rid of all other keybinds
-			InputMap.ActionEraseEvents(Mapping);
-
-
-			// Updates current mapped button label and the stored action
-			if (Mapping == "move_left")
-			{
-				Keybinds.LeftSym = OurInput.AsText();
-				Keybinds.LeftIn = OurInput;
-			}
-			else if (Mapping == "move_right")
-			{
-				Keybinds.RightSym = OurInput.AsText();
-				Keybinds.RightIn = OurInput;
-			}
-			else if (Mapping == "move_up")
-			{
-				Keybinds.JumpSym = OurInput.AsText();
-				Keybinds.JumpIn = OurInput;
-			}
-			else if (Mapping == "primary_click")
-			{
-				Keybinds.ClickSym = OurInput.AsText();
-				Keybinds.ClickIn = OurInput;
-			}
-
-
-
-			// Maps wanted button
-			InputMap.ActionAddEvent(Mapping, OurInput);
 
 
 		}
