@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class KeyBindSetButton : Control
+public partial class KeyBindManager : Control
 {
 	// Choice for which button we will be using this combo to set
 	[Export] private Boolean LeftButton;
