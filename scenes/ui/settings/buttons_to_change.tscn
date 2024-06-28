@@ -72,3 +72,13 @@ offset_bottom = 450.0
 grow_horizontal = 1
 grow_vertical = 1
 CancelButton = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+offset_right = 880.0
+offset_bottom = 120.0
+theme_override_font_sizes/italics_font_size = 32
+bbcode_enabled = true
+text = "[center][i] Set a key bind by selecting a control and entering the new key you wish to utilize[i] [center]
+"
+scroll_active = false
