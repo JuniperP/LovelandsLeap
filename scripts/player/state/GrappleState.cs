@@ -10,9 +10,17 @@ public class GrappleState : MovementState
 	{
 		_grappleTime += delta;
 
+		float inputDir = Input.GetAxis("move_left", "move_right");
+		if (inputDir != 0f)
+		{
+			Vector2 currentDir = _ctx.TongueWeight.LinearVelocity.Normalized();
+			float opposite = Mathf.Sign(currentDir.X) * Mathf.Sign(inputDir);
+			_ctx.TongueWeight.ApplyForce(opposite * currentDir * _ctx.SwingForce);
+		}
+
 		// Set velocity to move to weight
 		Vector2 diff = _ctx.TongueWeight.GlobalPosition - _ctx.GlobalPosition;
-		_ctx.Velocity = diff * 10;
+		_ctx.Velocity = diff * 100;
 
 		// If player collided after buffer time
 		if (_ctx.MoveAndSlide() && _grappleTime >= _ctx.AutoDegrappleBuffer)
