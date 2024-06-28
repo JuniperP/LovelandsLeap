@@ -8,6 +8,7 @@ public partial class KeyBindManager : Control
 	[Export] private Boolean RightButton;
 	[Export] private Boolean JumpButton;
 	[Export] private Boolean TongueButton;
+	[Export] private Boolean CancelButton;
 
 
 	// The button containing the name of the current key bind
@@ -53,6 +54,12 @@ public partial class KeyBindManager : Control
 			label.Text = "Use Tongue";
 			Mapping = "primary_click";
 		}
+		else
+		{
+			OurButton.Text = Keybinds.CancelSym;
+			label.Text = "Cancel";
+			Mapping = "ui_cancel";
+		}
 
 
 		// Set up changing the value in the future
@@ -97,6 +104,11 @@ public partial class KeyBindManager : Control
 			{
 				Keybinds.ClickSym = OurInput.AsText();
 				Keybinds.ClickIn = OurInput;
+			}
+			else
+			{
+				Keybinds.CancelSym = OurInput.AsText();
+				Keybinds.CancelIn = OurInput;
 			}
 
 			

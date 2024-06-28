@@ -21,4 +21,7 @@ public partial class Keybinds : Node
 	public static String ClickSym = ClickIn.AsText();
 
 
+	public static InputEvent CancelIn = InputMap.ActionGetEvents("ui_cancel")[0];
+	public static String CancelSym = CancelIn.AsText();
+
 }
