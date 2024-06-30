@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://btiq6vr6uavrk"]
 
-[ext_resource type="Script" path="res://scripts/ui/settings/VolumeSlider.cs" id="1_uwcpn"]
+[ext_resource type="PackedScene" uid="uid://dre8q7wfajx32" path="res://scenes/ui/settings/volume_slider_combo.tscn" id="1_chxld"]
 
 [node name="AudioToChange" type="Control"]
 layout_mode = 3
@@ -9,117 +9,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="MasterVolumeLabel" type="Label" parent="."]
-layout_mode = 1
-offset_left = 25.0
-offset_top = 125.0
-offset_right = 316.0
-offset_bottom = 180.0
-theme_override_font_sizes/font_size = 40
-text = "Master Volume"
-
-[node name="MasterVolumeSlider" type="HSlider" parent="MasterVolumeLabel"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 75.0
-offset_top = 47.5
-offset_right = 775.0
-offset_bottom = 77.5
-grow_vertical = 2
-max_value = 1.0
-step = 0.01
-script = ExtResource("1_uwcpn")
-BusName = "Master"
-
-[node name="Percentage" type="Label" parent="MasterVolumeLabel/MasterVolumeSlider"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 725.0
-offset_top = -22.5
-offset_right = 807.0
-offset_bottom = 22.5
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "100%"
-
-[node name="MusicVolumeLabel" type="Label" parent="."]
-layout_mode = 1
-offset_left = 25.0
-offset_top = 275.0
-offset_right = 293.0
-offset_bottom = 330.0
-theme_override_font_sizes/font_size = 40
-text = "Music Volume"
-
-[node name="MusicVolumeSlider" type="HSlider" parent="MusicVolumeLabel"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 75.0
-offset_top = 47.5
-offset_right = 775.0
-offset_bottom = 77.5
-grow_vertical = 2
-max_value = 1.0
-step = 0.01
-script = ExtResource("1_uwcpn")
-BusName = "Music"
-
-[node name="Percentage" type="Label" parent="MusicVolumeLabel/MusicVolumeSlider"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 725.0
-offset_top = -22.5
-offset_right = 807.0
-offset_bottom = 22.5
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "100%"
-
-[node name="SoundEffectVolumeLabel" type="Label" parent="."]
-layout_mode = 1
-offset_left = 25.0
-offset_top = 425.0
-offset_right = 422.0
-offset_bottom = 480.0
-theme_override_font_sizes/font_size = 40
-text = "Sound Effect Volume"
-
-[node name="SFXVolumeSlider" type="HSlider" parent="SoundEffectVolumeLabel"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 75.0
-offset_top = 47.5
-offset_right = 775.0
-offset_bottom = 77.5
-grow_vertical = 2
-max_value = 1.0
-step = 0.01
-script = ExtResource("1_uwcpn")
-BusName = "Sound Effects"
-
-[node name="Percentage" type="Label" parent="SoundEffectVolumeLabel/SFXVolumeSlider"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 725.0
-offset_top = -22.5
-offset_right = 807.0
-offset_bottom = 22.5
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "100%"
 
 [node name="Instructions" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -131,9 +20,26 @@ text = "[center][i] 																																																		Drag the s
 "
 scroll_active = false
 
-[connection signal="value_changed" from="MasterVolumeLabel/MasterVolumeSlider" to="MasterVolumeLabel/MasterVolumeSlider" method="ChangePercent"]
-[connection signal="value_changed" from="MasterVolumeLabel/MasterVolumeSlider" to="MasterVolumeLabel/MasterVolumeSlider" method="SetVolume"]
-[connection signal="value_changed" from="MusicVolumeLabel/MusicVolumeSlider" to="MusicVolumeLabel/MusicVolumeSlider" method="ChangePercent"]
-[connection signal="value_changed" from="MusicVolumeLabel/MusicVolumeSlider" to="MusicVolumeLabel/MusicVolumeSlider" method="SetVolume"]
-[connection signal="value_changed" from="SoundEffectVolumeLabel/SFXVolumeSlider" to="SoundEffectVolumeLabel/SFXVolumeSlider" method="ChangePercent"]
-[connection signal="value_changed" from="SoundEffectVolumeLabel/SFXVolumeSlider" to="SoundEffectVolumeLabel/SFXVolumeSlider" method="SetVolume"]
+[node name="MasterVolume" parent="." instance=ExtResource("1_chxld")]
+layout_mode = 1
+offset_left = 25.0
+offset_top = 125.0
+offset_right = 366.0
+offset_bottom = 180.0
+BusName = "Master"
+
+[node name="MusicVolume" parent="." instance=ExtResource("1_chxld")]
+layout_mode = 1
+offset_left = 25.0
+offset_top = 275.0
+offset_right = 366.0
+offset_bottom = 330.0
+BusName = "Music"
+
+[node name="SFXVolume" parent="." instance=ExtResource("1_chxld")]
+layout_mode = 1
+offset_left = 25.0
+offset_top = 425.0
+offset_right = 366.0
+offset_bottom = 480.0
+BusName = "Sound Effects"

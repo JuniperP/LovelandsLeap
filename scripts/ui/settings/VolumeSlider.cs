@@ -7,6 +7,7 @@ public partial class VolumeSlider : HSlider
 	[Export] private String BusName;
 	private int BusIndex;
 
+
 	// Our number following the slider
 	private Label OurNum;
  
@@ -15,6 +16,8 @@ public partial class VolumeSlider : HSlider
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		
+
 		// Setting our slider to adjusts to work with the provided bus
 		BusIndex = AudioServer.GetBusIndex(BusName);
 
