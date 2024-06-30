@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/ui/MainMenu.cs" id="1_byusu"]
 [ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://assets/background/MainMenu.jpg" id="2_qxlys"]
 [ext_resource type="PackedScene" uid="uid://c4suej1iw3wkr" path="res://scenes/ui/settings/settings.tscn" id="3_ps8pg"]
-[ext_resource type="AudioStream" uid="uid://nnautoxm2usu" path="res://audio/Loveland_menu_music.wav" id="4_e7cc2"]
+[ext_resource type="AudioStream" uid="uid://nnautoxm2usu" path="res://audio/music/Loveland_menu_music.wav" id="4_e7cc2"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

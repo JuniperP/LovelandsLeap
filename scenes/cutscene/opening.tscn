@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_1imdu"]
 [ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://assets/background/MainMenu.jpg" id="1_1731u"]
-[ext_resource type="PackedScene" uid="uid://duhqqspapvtn0" path="res://scenes/Levels/level_1.tscn" id="2_07ujb"]
+[ext_resource type="PackedScene" uid="uid://duhqqspapvtn0" path="res://scenes/levels/level_1.tscn" id="2_07ujb"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="3_sf47s"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationControl.cs" id="4_dmbpd"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/McPortrait.png" id="4_kug12"]
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="6_h2cw7"]
 [ext_resource type="Script" path="res://scripts/cutscene/OpeningHuman.cs" id="7_6tcm6"]
 [ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frogportrait.png" id="9_55qf0"]
-[ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/lovelandCutsceneMusic.wav" id="10_86f4d"]
+[ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/music/lovelandCutsceneMusic.wav" id="10_86f4d"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscene/info_to_skip.tscn" id="11_t7lkt"]
 
 [node name="Opening" type="Control" node_paths=PackedStringArray("Nodes")]
