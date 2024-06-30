@@ -53,7 +53,6 @@ public partial class Player : CharacterBody2D
 	}
 
 	public AnimationManager AnimManager;
-	// TODO: Refactor into sibling nodes that are disabled
 	public TongueProjectile TongueProj;
 	public TongueLine TongueLine;
 	public TongueSpring TongueSpring;
