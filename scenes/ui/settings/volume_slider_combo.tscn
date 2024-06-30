@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://dre8q7wfajx32"]
 
-[ext_resource type="Script" path="res://scripts/ui/settings/VolumeSliderCombo.cs" id="1_vwbfy"]
+[ext_resource type="Script" path="res://scripts/ui/settings/VolumeManager.cs" id="1_2546l"]
 
 [node name="VolumeSliderCombo" type="Label"]
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 40
 text = "BusName Volume"
-script = ExtResource("1_vwbfy")
+script = ExtResource("1_2546l")
 
 [node name="VolumeSlider" type="HSlider" parent="."]
 layout_mode = 1

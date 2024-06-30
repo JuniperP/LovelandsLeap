@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class VolumeSliderCombo : Label
+public partial class VolumeManager : Label
 {
 	// Getting the bus to change 
 	[Export] private String BusName;
