@@ -27,9 +27,9 @@ public class WalkState : MovementState
 		}
 		else
 		{
-			if(Input.IsActionJustPressed("move_down"))
+			if (Input.IsActionJustPressed("move_down"))
 				_fastFall = true;
-	
+
 			float velIncrease = gravity * _ctx.GravityMultiplier * (float)delta;
 			if (_fastFall)
 				velIncrease *= _ctx.FastFallMultiplier;
@@ -44,6 +44,12 @@ public class WalkState : MovementState
 		if (Input.IsActionJustReleased("move_up") && targetVelocity.Y < -0.1f)
 			targetVelocity.Y *= _ctx.JumpCutFactor;
 
+		// Cap vertical speed
+		float maxFall = _ctx.MaxFallSpeed;
+		if (_fastFall)
+			maxFall *= _ctx.FastFallMaxMultiplier;
+		targetVelocity.Y = Mathf.Min(targetVelocity.Y, maxFall);
+
 		// Smooth velocity towards horizontal direction
 		float direction = Input.GetAxis("move_left", "move_right");
 		targetVelocity.X = Mathf.MoveToward(
@@ -51,12 +57,6 @@ public class WalkState : MovementState
 			direction * _ctx.Speed,
 			_ctx.Acceleration * (float)delta
 		);
-
-		// Cap vertical speed
-		float maxFall = _ctx.MaxFallSpeed;
-		if (_fastFall)
-			maxFall *= _ctx.FastFallMaxMultiplier;
-		targetVelocity.Y = Mathf.Min(targetVelocity.Y, maxFall);
 
 		// Update velocity and move
 		_ctx.Velocity = targetVelocity;
