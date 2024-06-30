@@ -57,5 +57,7 @@ public class GrappleState : MovementState
 
 		// Set animation to idle
 		_ctx.AnimManager.State = AnimState.Idle;
+
+		_grappleTime = 0d;
 	}
 }
