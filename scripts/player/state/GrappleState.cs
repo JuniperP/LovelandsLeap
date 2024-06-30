@@ -35,12 +35,8 @@ public class GrappleState : MovementState
 
 	public override void HandleAction()
 	{
-		if (Input.IsActionJustPressed("move_up") ||
-			Input.IsActionJustPressed("move_down") ||
-			Input.IsActionJustPressed("primary_click"))
-		{
+		if (Input.IsActionJustPressed("primary_click"))
 			DisableGrapple();
-		}
 	}
 
 	public override void EnableGrapple() { }
