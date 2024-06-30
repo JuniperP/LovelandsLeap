@@ -102,7 +102,6 @@ script = ExtResource("1_neipv")
 Speed = 600
 GravityMultiplier = 2.5
 TongueOffset = -70.0
-TongueProjSpeed = 1000
 TongueProjScene = ExtResource("2_f7ocn")
 TongueLineScene = ExtResource("3_ptmb2")
 TongueSpringScene = ExtResource("4_a8bvo")

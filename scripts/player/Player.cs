@@ -24,7 +24,6 @@ public partial class Player : CharacterBody2D
 
 	[ExportGroup("Tongue")]
 	[Export] public float TongueOffset = -30f;
-	[Export] public int TongueProjSpeed = 800;
 	[Export] public int TongueAngle = 15;
 	[Export] public double AutoDegrappleBuffer = 0.5;
 	[Export] public int SwingForce = 100;

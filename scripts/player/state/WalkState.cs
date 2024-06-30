@@ -107,16 +107,10 @@ public class WalkState : MovementState
 
 			// Create tongue projectile
 			_ctx.TongueProj = _ctx.TongueProjScene.Instantiate<TongueProjectile>();
-
-			// Move projectile towards mouse position
-			_ctx.TongueProj.LinearVelocity = direction * _ctx.TongueProjSpeed;
-
-			// Setup projectile
-			_ctx.TongueProj.BodyEntered += _ctx.EnableGrapple;
+			_ctx.TongueProj.Setup(_ctx.EnableGrapple, direction);
 			_ctx.AddChild(_ctx.TongueProj);
-			_ctx.TongueProj.GlobalPosition = _ctx.TongueGlobalPos;
 
-			// Create and setup tongue line
+			// Create tongue line
 			_ctx.TongueLine = _ctx.TongueLineScene.Instantiate<TongueLine>();
 			_ctx.TongueLine.Target = _ctx.TongueProj;
 			_ctx.TongueProj.TongueLine = _ctx.TongueLine;
