@@ -15,9 +15,11 @@ public class WalkState : MovementState
 		if (_ctx.IsOnCeiling())
 			targetVelocity.Y = 0;
 
+		bool floored = _ctx.IsOnFloor();
+
 		// Handle gravity
 		float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
-		if (_ctx.IsOnFloor())
+		if (floored)
 		{
 			_fastFall = false;
 
@@ -69,7 +71,7 @@ public class WalkState : MovementState
 			_ctx.AnimManager.IsLeftFacing = true;
 
 		// Set animation state
-		if (_ctx.IsOnFloor() && newState != AnimState.Tongue)
+		if (floored && newState != AnimState.Tongue)
 			newState = Mathf.Abs(direction) > 0.01f
 			? AnimState.Walking : AnimState.Idle;
 		_ctx.AnimManager.State = newState;
