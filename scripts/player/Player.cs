@@ -26,6 +26,11 @@ public partial class Player : CharacterBody2D
 	[Export] public int TongueAngle = 15;
 	[Export] public double AutoDegrappleBuffer = 0.5;
 	[Export] public int SwingForce = 100;
+	[ExportGroup("Scenes")]
+	[Export] public PackedScene TongueProjScene;
+	[Export] public PackedScene TongueLineScene;
+	[Export] public PackedScene TongueSpringScene;
+	[Export] public PackedScene TongueWeightScene;
 
 	// Internal calculation for where the tongue originates
 	public Vector2 TongueGlobalPos
@@ -48,13 +53,9 @@ public partial class Player : CharacterBody2D
 	public AnimationManager AnimManager;
 
 	// TODO: Refactor into sibling nodes that are disabled
-	public PackedScene TongueProjScene;
 	public TongueProjectile TongueProj;
-	public PackedScene TongueLineScene;
 	public TongueLine TongueLine;
-	public PackedScene TongueSpringScene;
 	public TongueSpring TongueSpring;
-	public PackedScene TongueWeightScene;
 	public RigidBody2D TongueWeight;
 
 	public override void _Ready()
@@ -64,11 +65,6 @@ public partial class Player : CharacterBody2D
 			new WalkState(this),
 			new GrappleState(this)
 		};
-
-		TongueProjScene = GD.Load<PackedScene>("res://scenes/player/tongue/tongue_projectile.tscn");
-		TongueLineScene = GD.Load<PackedScene>("res://scenes/player/tongue/tongue_line.tscn");
-		TongueSpringScene = GD.Load<PackedScene>("res://scenes/player/tongue/tongue_spring.tscn");
-		TongueWeightScene = GD.Load<PackedScene>("res://scenes/player/tongue/tongue_weight.tscn");
 	}
 
 	public override void _PhysicsProcess(double delta)

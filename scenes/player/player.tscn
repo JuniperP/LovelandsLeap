@@ -1,9 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://ccc6gfv7e6o6w"]
+[gd_scene load_steps=23 format=3 uid="uid://ccc6gfv7e6o6w"]
 
 [ext_resource type="Script" path="res://scripts/player/Player.cs" id="1_neipv"]
+[ext_resource type="PackedScene" uid="uid://c4jo10kefl0o4" path="res://scenes/player/tongue/tongue_projectile.tscn" id="2_f7ocn"]
 [ext_resource type="Texture2D" uid="uid://cfp5imsajyjw3" path="res://assets/frog/frogbase.png" id="2_ijeop"]
 [ext_resource type="Texture2D" uid="uid://cmentswd75fhb" path="res://assets/frog/Frogidle1.png" id="2_yg0dr"]
+[ext_resource type="PackedScene" uid="uid://bnivan88wrgo2" path="res://scenes/player/tongue/tongue_line.tscn" id="3_ptmb2"]
+[ext_resource type="PackedScene" uid="uid://cuum0y4nttngt" path="res://scenes/player/tongue/tongue_spring.tscn" id="4_a8bvo"]
 [ext_resource type="Texture2D" uid="uid://cipdio2h0n0db" path="res://assets/frog/Frogidle2.png" id="4_w1rcl"]
+[ext_resource type="PackedScene" uid="uid://bd8tulp331yce" path="res://scenes/player/tongue/tongue_weight.tscn" id="5_n5dxp"]
 [ext_resource type="Texture2D" uid="uid://dnpa78fs61gtv" path="res://assets/frog/Frogjump2.png" id="5_otpw3"]
 [ext_resource type="Texture2D" uid="uid://dpd4k5jhc8ejd" path="res://assets/frog/Frogwalk1.png" id="5_vabx8"]
 [ext_resource type="Texture2D" uid="uid://o1o22mtjmpg6" path="res://assets/frog/Frogwalk2.png" id="6_46t3d"]
@@ -97,10 +101,12 @@ collision_layer = 2
 script = ExtResource("1_neipv")
 Speed = 600
 GravityMultiplier = 2.5
-FastFallMultiplier = 3.0
-SwingForce = 200
-TongueProjSpeed = 1000
 TongueOffset = -70.0
+TongueProjSpeed = 1000
+TongueProjScene = ExtResource("2_f7ocn")
+TongueLineScene = ExtResource("3_ptmb2")
+TongueSpringScene = ExtResource("4_a8bvo")
+TongueWeightScene = ExtResource("5_n5dxp")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 z_index = 10

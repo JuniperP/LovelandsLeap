@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_1imdu"]
 [ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://assets/background/MainMenu.jpg" id="1_1731u"]
-[ext_resource type="PackedScene" uid="uid://duhqqspapvtn0" path="res://scenes/levels/level_1.tscn" id="2_07ujb"]
+[ext_resource type="PackedScene" uid="uid://duhqqspapvtn0" path="res://scenes/Levels/level_1.tscn" id="2_07ujb"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="3_sf47s"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationControl.cs" id="4_dmbpd"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/McPortrait.png" id="4_kug12"]
