@@ -13,6 +13,7 @@ public partial class Player : CharacterBody2D
 	[ExportGroup("Horizontal")]
 	[Export] public int Speed = 300;
 	[Export] public int Acceleration = 2000;
+
 	[ExportGroup("Vertical")]
 	[Export] public int JumpImpulse = 1000;
 	[Export] public float JumpCutFactor = 0.5f;
@@ -20,12 +21,14 @@ public partial class Player : CharacterBody2D
 	[Export] public int MaxFallSpeed = 1500;
 	[Export] public float FastFallMultiplier = 2f;
 	[Export] public float FastFallMaxMultiplier = 2f;
+
 	[ExportGroup("Tongue")]
 	[Export] public float TongueOffset = -30f;
 	[Export] public int TongueProjSpeed = 800;
 	[Export] public int TongueAngle = 15;
 	[Export] public double AutoDegrappleBuffer = 0.5;
 	[Export] public int SwingForce = 100;
+
 	[ExportGroup("Scenes")]
 	[Export] public PackedScene TongueProjScene;
 	[Export] public PackedScene TongueLineScene;
@@ -49,9 +52,7 @@ public partial class Player : CharacterBody2D
 		get { return _movementStates[(int)StateEnum]; }
 	}
 
-	public bool TongueProjExists = false; // TODO: Refactor into singleton
 	public AnimationManager AnimManager;
-
 	// TODO: Refactor into sibling nodes that are disabled
 	public TongueProjectile TongueProj;
 	public TongueLine TongueLine;

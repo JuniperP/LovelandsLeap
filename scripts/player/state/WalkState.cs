@@ -79,7 +79,7 @@ public class WalkState : MovementState
 	{
 		if (Input.IsActionJustPressed("primary_click"))
 		{
-			if (_ctx.TongueProjExists) // Retract if using tongue
+			if (_ctx.TongueProj is not null) // Retract if using tongue
 			{
 				_ctx.TongueProj.RetractTongue(
 					_ctx.GlobalPosition - _ctx.TongueProj.GlobalPosition
@@ -105,7 +105,6 @@ public class WalkState : MovementState
 
 			// Create tongue projectile
 			_ctx.TongueProj = _ctx.TongueProjScene.Instantiate<TongueProjectile>();
-			_ctx.TongueProjExists = true;
 
 			// Move projectile towards mouse position
 			_ctx.TongueProj.LinearVelocity = direction * _ctx.TongueProjSpeed;
@@ -128,7 +127,6 @@ public class WalkState : MovementState
 	{
 		// Remove tongue projectile
 		_ctx.TongueProj.QueueFree();
-		_ctx.TongueProjExists = false;
 
 		// Create spring and update line
 		_ctx.TongueSpring = _ctx.TongueSpringScene.Instantiate<TongueSpring>();
