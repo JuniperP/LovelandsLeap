@@ -110,7 +110,7 @@ public class WalkState : MovementState
 			_ctx.AnimManager.State = AnimState.Tongue;
 
 			Vector2 mousePos = _ctx.GetGlobalMousePosition();
-			Vector2 direction = (mousePos - _ctx.Position).Normalized();
+			Vector2 direction = (mousePos - _ctx.TongueGlobalPos).Normalized();
 
 			// Set direction to minimum angle if outside of accepted angle
 			float minSin = -Mathf.Sin(Mathf.DegToRad(_ctx.TongueAngle));
