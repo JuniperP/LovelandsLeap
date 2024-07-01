@@ -73,7 +73,9 @@ public class WalkState : MovementState
 				_fastFall = true;
 
 			float velIncrease = gravity * _ctx.GravityMultiplier * (float)delta;
-			if (_fastFall)
+			if (velocity > 0.1f) // If falling, increase gravity
+				velIncrease *= _ctx.FallGravityMultiplier;
+			if (_fastFall) // If fast falling, increase gravity
 				velIncrease *= _ctx.FastFallMultiplier;
 			velocity += velIncrease;
 		}
