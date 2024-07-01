@@ -17,15 +17,9 @@ public class WalkState : MovementState
 			targetVelocity.Y = 0;
 
 		bool floored = _ctx.IsOnFloor();
-
-		// Smooth velocity towards horizontal direction
 		float direction = Input.GetAxis("move_left", "move_right");
-		targetVelocity.X = Mathf.MoveToward(
-			_ctx.Velocity.X,
-			direction * _ctx.Speed,
-			_ctx.Acceleration * (float)delta
-		);
 
+		targetVelocity.X = HorizontalVelocity(delta, targetVelocity.X, direction, floored);
 		targetVelocity.Y = VerticalVelocity(delta, targetVelocity.Y, floored);
 
 		// Handle sprite direction
@@ -47,6 +41,18 @@ public class WalkState : MovementState
 		// Update velocity and move
 		_ctx.Velocity = targetVelocity;
 		_ctx.MoveAndSlide();
+	}
+
+	private float HorizontalVelocity(double delta, float velocity, float direction, bool floored)
+	{
+		// Smooth velocity towards input direction
+		velocity = Mathf.MoveToward(
+			_ctx.Velocity.X,
+			direction * _ctx.Speed,
+			_ctx.Acceleration * (float)delta
+		);
+
+		return velocity;
 	}
 
 	private float VerticalVelocity(double delta, float velocity, bool floored)
