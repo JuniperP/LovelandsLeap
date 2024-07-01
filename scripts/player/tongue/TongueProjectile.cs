@@ -11,11 +11,12 @@ public partial class TongueProjectile : RigidBody2D
 	private Player _source;
 	private float _maxDistanceSqr;
 	private bool _isReturning = false;
+	private Vector2 _targetVelocity;
 
 	public void Setup(BodyEnteredEventHandler onCollision, Vector2 direction)
 	{
 		BodyEntered += onCollision;
-		LinearVelocity = direction * Speed;
+		_targetVelocity = direction * Speed;
 	}
 
 	public override void _Ready()
@@ -37,14 +38,18 @@ public partial class TongueProjectile : RigidBody2D
 				_source.AnimManager.State = AnimState.Idle;
 			}
 			else
-				// TODO: Not supposed to set this every frame
-				LinearVelocity = diff.Normalized() * Speed * 2;
+				_targetVelocity = diff.Normalized() * Speed * 2;
 		}
 		else if (diff.LengthSquared() > _maxDistanceSqr)
 			RetractTongue(diff);
 	}
 
-	public void RetractTongue(Vector2 diff)
+    public override void _IntegrateForces(PhysicsDirectBodyState2D state)
+    {
+        state.LinearVelocity = _targetVelocity;
+    }
+
+    public void RetractTongue(Vector2 diff)
 	{
 		_isReturning = true;
 		LinearVelocity = Vector2.Zero;
