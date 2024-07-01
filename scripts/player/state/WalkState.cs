@@ -4,6 +4,7 @@ using Godot;
 public class WalkState : MovementState
 {
 	private bool _fastFall = false;
+
 	public WalkState(Player ctx) : base(ctx) { }
 
 	public override void HandleMovement(double delta)
@@ -17,6 +18,39 @@ public class WalkState : MovementState
 
 		bool floored = _ctx.IsOnFloor();
 
+		// Smooth velocity towards horizontal direction
+		float direction = Input.GetAxis("move_left", "move_right");
+		targetVelocity.X = Mathf.MoveToward(
+			_ctx.Velocity.X,
+			direction * _ctx.Speed,
+			_ctx.Acceleration * (float)delta
+		);
+
+		targetVelocity.Y = VerticalVelocity(delta, targetVelocity.Y, floored);
+
+		// Handle sprite direction
+		if (direction > 0.01f)
+			_ctx.AnimManager.IsLeftFacing = false;
+		else if (direction < -0.01f)
+			_ctx.AnimManager.IsLeftFacing = true;
+
+		if (newState != AnimState.Tongue) // If using tongue, do not change animation
+		{
+			if (floored) // If floored, walk if moving else idle
+				newState = Mathf.Abs(targetVelocity.X) > 0.01f
+				? AnimState.Walking : AnimState.Idle;
+			else // If in the air, use jump animation
+				newState = AnimState.Jumping;
+		}
+		_ctx.AnimManager.State = newState;
+
+		// Update velocity and move
+		_ctx.Velocity = targetVelocity;
+		_ctx.MoveAndSlide();
+	}
+
+	private float VerticalVelocity(double delta, float velocity, bool floored)
+	{
 		// Handle gravity
 		float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 		if (floored)
@@ -25,7 +59,7 @@ public class WalkState : MovementState
 
 			// Handle jump
 			if (Input.IsActionJustPressed("move_up"))
-				targetVelocity.Y = -_ctx.JumpImpulse;
+				velocity = -_ctx.JumpImpulse;
 		}
 		else
 		{
@@ -35,46 +69,20 @@ public class WalkState : MovementState
 			float velIncrease = gravity * _ctx.GravityMultiplier * (float)delta;
 			if (_fastFall)
 				velIncrease *= _ctx.FastFallMultiplier;
-			targetVelocity.Y += velIncrease;
-
-			// Display jumping animation unless shooting tongue 
-			if (newState != AnimState.Tongue)
-				newState = AnimState.Jumping;
+			velocity += velIncrease;
 		}
 
 		// Handle jump cut
-		if (Input.IsActionJustReleased("move_up") && targetVelocity.Y < -0.1f)
-			targetVelocity.Y *= _ctx.JumpCutFactor;
+		if (Input.IsActionJustReleased("move_up") && velocity < -0.1f)
+			velocity *= _ctx.JumpCutFactor;
 
 		// Cap vertical speed
 		float maxFall = _ctx.MaxFallSpeed;
 		if (_fastFall)
 			maxFall *= _ctx.FastFallMaxMultiplier;
-		targetVelocity.Y = Mathf.Min(targetVelocity.Y, maxFall);
+		velocity = Mathf.Min(velocity, maxFall);
 
-		// Smooth velocity towards horizontal direction
-		float direction = Input.GetAxis("move_left", "move_right");
-		targetVelocity.X = Mathf.MoveToward(
-			_ctx.Velocity.X,
-			direction * _ctx.Speed,
-			_ctx.Acceleration * (float)delta
-		);
-
-		// Update velocity and move
-		_ctx.Velocity = targetVelocity;
-		_ctx.MoveAndSlide();
-
-		// Handle sprite direction
-		if (direction > 0.01f)
-			_ctx.AnimManager.IsLeftFacing = false;
-		else if (direction < -0.01f)
-			_ctx.AnimManager.IsLeftFacing = true;
-
-		// Set animation state
-		if (floored && newState != AnimState.Tongue)
-			newState = Mathf.Abs(direction) > 0.01f
-			? AnimState.Walking : AnimState.Idle;
-		_ctx.AnimManager.State = newState;
+		return velocity;
 	}
 
 	public override void HandleAction()
