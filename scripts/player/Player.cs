@@ -18,11 +18,11 @@ public partial class Player : CharacterBody2D
 	[ExportGroup("Vertical")]
 	[Export] public int JumpImpulse = 1000;
 	[Export] public float JumpCutFactor = 0.5f;
-	[Export] public float GravityMultiplier = 1f;
-	[Export] public float FallGravityMultiplier = 1.5f;
+	[Export] public float GravityFactor = 1f;
+	[Export] public float FallGravityFactor = 1.5f;
 	[Export] public int MaxFallSpeed = 1500;
-	[Export] public float FastFallMultiplier = 2f;
-	[Export] public float FastFallMaxMultiplier = 2f;
+	[Export] public float FastFallFactor = 2f;
+	[Export] public float FastFallMaxFactor = 2f;
 
 	[ExportGroup("Tongue")]
 	[Export] public float TongueOffset = -30f;

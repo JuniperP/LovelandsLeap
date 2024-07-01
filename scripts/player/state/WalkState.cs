@@ -76,11 +76,11 @@ public class WalkState : MovementState
 			if (Input.IsActionJustPressed("move_down"))
 				_fastFall = true;
 
-			float velIncrease = gravity * _ctx.GravityMultiplier * (float)delta;
+			float velIncrease = gravity * _ctx.GravityFactor * (float)delta;
 			if (velocity > 0.1f) // If falling, increase gravity
-				velIncrease *= _ctx.FallGravityMultiplier;
+				velIncrease *= _ctx.FallGravityFactor;
 			if (_fastFall) // If fast falling, increase gravity
-				velIncrease *= _ctx.FastFallMultiplier;
+				velIncrease *= _ctx.FastFallFactor;
 			velocity += velIncrease;
 		}
 
@@ -91,7 +91,7 @@ public class WalkState : MovementState
 		// Cap vertical speed
 		float maxFall = _ctx.MaxFallSpeed;
 		if (_fastFall)
-			maxFall *= _ctx.FastFallMaxMultiplier;
+			maxFall *= _ctx.FastFallMaxFactor;
 		velocity = Mathf.Min(velocity, maxFall);
 
 		return velocity;
