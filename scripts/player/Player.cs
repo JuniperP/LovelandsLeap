@@ -13,6 +13,7 @@ public partial class Player : CharacterBody2D
 	[ExportGroup("Horizontal")]
 	[Export] public int Speed = 300;
 	[Export] public int Acceleration = 2000;
+	[Export] public float AirAccelFactor = 0.7f;
 
 	[ExportGroup("Vertical")]
 	[Export] public int JumpImpulse = 1000;
