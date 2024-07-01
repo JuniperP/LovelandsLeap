@@ -100,7 +100,6 @@ height = 228.0
 collision_layer = 2
 script = ExtResource("1_neipv")
 Speed = 600
-Acceleration = 3000
 GravityFactor = 2.5
 FastFallFactor = 1.5
 TongueOffset = -70.0

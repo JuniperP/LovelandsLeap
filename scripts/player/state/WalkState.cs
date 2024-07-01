@@ -46,8 +46,16 @@ public class WalkState : MovementState
 	private float HorizontalVelocity(double delta, float velocity, float direction, bool floored)
 	{
 		float accelFactor = 1f;
+
 		if (!floored)
-			accelFactor *= _ctx.AirAccelFactor;
+			accelFactor *= _ctx.AccelAirFactor;
+
+		// If trying to move in opposite direction
+		if (Mathf.Sign(velocity) != Mathf.Sign(direction))
+			accelFactor *= _ctx.AccelOppositionFactor;
+		// If same direction but going faster than walk speed
+		else if (Mathf.Abs(velocity) > _ctx.Speed)
+			accelFactor *= _ctx.AccelSpeedingFactor;
 
 		// Smooth velocity towards input direction
 		velocity = Mathf.MoveToward(
