@@ -3,14 +3,6 @@ using System;
 
 public partial class MainMenu : Control
 {
-
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		// Loads in save data
-		// SaveGame.LoadData();
-	}
-
 	// Starts the game
 	private void _on_start_game_button_pressed()
 	{
