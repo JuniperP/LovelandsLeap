@@ -41,11 +41,11 @@ public partial class SoundManager : Node
 
 		// Giant if statement mess cause I couldn't think of a better way to assign names and files
 		if(sfx==SFX.Walk)
-			NewPlayer.Name = "_temporary_sfx";
+			NewPlayer.Name = "temporary_sfx";
 		else if(sfx==SFX.Jump)
 			NewPlayer.Name = "jump_sfx";
 		else if(sfx==SFX.Land)
-			NewPlayer.Name = "_temporary_sfx";
+			NewPlayer.Name = "temporary_sfx";
 		else if(sfx==SFX.TongueShoot)
 			NewPlayer.Name = "tongue_shoot_sfx";
 		else if(sfx==SFX.TongueHit)
@@ -53,7 +53,7 @@ public partial class SoundManager : Node
 		else if(sfx==SFX.Dialogue)
 			NewPlayer.Name = "dialogue_sfx";
 		else if(sfx==SFX.UIButton)
-			NewPlayer.Name = "_temporary_sfx";
+			NewPlayer.Name = "ui_buttons_sfx";
 			
 		
 		// Assigning the file for each sound
