@@ -77,7 +77,11 @@ public class WalkState : MovementState
 
 			// Handle jump
 			if (Input.IsActionJustPressed("move_up"))
+			{
 				velocity = -_ctx.JumpImpulse;
+				SoundManager.PlaySound(SFX.Jump, _ctx);
+			}
+				
 		}
 		else
 		{
