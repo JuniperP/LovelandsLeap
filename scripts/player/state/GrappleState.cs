@@ -10,16 +10,27 @@ public class GrappleState : MovementState
 	{
 		_grappleTime += delta;
 
+		Vector2 weightPos = _ctx.TongueWeight.GlobalPosition;
+		Vector2 springPos = _ctx.TongueSpring.GlobalPosition;
+
+		// Handle horizontal input
 		float inputDir = Input.GetAxis("move_left", "move_right");
 		if (inputDir != 0f)
 		{
-			Vector2 currentDir = _ctx.TongueWeight.LinearVelocity.Normalized();
-			float opposite = Mathf.Sign(currentDir.X) * Mathf.Sign(inputDir);
-			_ctx.TongueWeight.ApplyForce(opposite * currentDir * _ctx.SwingForce);
+			if (weightPos.Y > springPos.Y) // Flip rotation if above spring
+				inputDir *= -1;
+
+			// Rotate a 2D vector clockwise or counterclockwise depending on input
+			// TODO: Explain this better because vectors are confusing
+			Vector2 forceDir = (springPos - weightPos).Normalized();
+			forceDir = new Vector2(forceDir.Y, forceDir.X);
+			forceDir *= new Vector2(inputDir, -inputDir);
+
+			_ctx.TongueWeight.ApplyForce(forceDir * _ctx.SwingForce);
 		}
 
 		// Set velocity to move to weight
-		Vector2 diff = _ctx.TongueWeight.GlobalPosition - _ctx.GlobalPosition;
+		Vector2 diff = weightPos - _ctx.GlobalPosition;
 		_ctx.Velocity = diff * 100;
 
 		// If player collided after buffer time
