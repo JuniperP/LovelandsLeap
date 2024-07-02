@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://fw1twcqald85"
-path="res://.godot/imported/FrogTongue1.wav-48886c15cd12c17475684f3f85bb3812.sample"
+path="res://.godot/imported/tongue_shoot_sfx.wav-4437f7dba8aaabcff219fddd5931708a.sample"
 
 [deps]
 
-source_file="res://audio/sfx/FrogTongue1.wav"
-dest_files=["res://.godot/imported/FrogTongue1.wav-48886c15cd12c17475684f3f85bb3812.sample"]
+source_file="res://audio/sfx/tongue_shoot_sfx.wav"
+dest_files=["res://.godot/imported/tongue_shoot_sfx.wav-4437f7dba8aaabcff219fddd5931708a.sample"]
 
 [params]
 

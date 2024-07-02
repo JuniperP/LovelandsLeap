@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cll43a6s6r1vc"
-path="res://.godot/imported/FrogTongue3.wav-4ed79d2a6b60a95851202b52b70f1620.sample"
+uid="uid://8emlja8k0kjt"
+path="res://.godot/imported/jump_sfx.wav-432c98428ce7a06db8f8d0ddb79bd385.sample"
 
 [deps]
 
-source_file="res://audio/sfx/FrogTongue3.wav"
-dest_files=["res://.godot/imported/FrogTongue3.wav-4ed79d2a6b60a95851202b52b70f1620.sample"]
+source_file="res://audio/sfx/jump_sfx.wav"
+dest_files=["res://.godot/imported/jump_sfx.wav-432c98428ce7a06db8f8d0ddb79bd385.sample"]
 
 [params]
 
