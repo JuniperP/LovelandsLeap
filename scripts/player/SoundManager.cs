@@ -84,7 +84,7 @@ public partial class SoundManager : Node
 	public static void PlaySound(SFX Sound, Node PlayOn)
 	{
 		// Adds the sound to the node tree if not already there
-		if(PlayOn.FindChild(_sounds[Sound].Name) == null)
+		if(PlayOn.FindChild(_sounds[Sound].Name, false, false) == null)
 		{
 			PlayOn.AddChild(_sounds[Sound]);
 		}
