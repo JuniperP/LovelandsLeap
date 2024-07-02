@@ -47,30 +47,8 @@ public partial class SoundManager : Node
 		// Ensures we are only working with sound effects
 		NewPlayer.Bus = "Sound Effects";
 
-		// Giant if statement mess cause I couldn't think of a better way to assign names and files
-		if (sfx == SFX.Walk)
-			NewPlayer.Name = "temporary_sfx";
-		else if (sfx == SFX.Jump)
-			NewPlayer.Name = "jump_sfx";
-		else if (sfx == SFX.Land)
-			NewPlayer.Name = "temporary_sfx";
-		else if (sfx == SFX.TongueShoot)
-			NewPlayer.Name = "tongue_shoot_sfx";
-		else if (sfx == SFX.TongueHit)
-			NewPlayer.Name = "tongue_hit_sfx";
-		else if (sfx == SFX.Croak)
-			NewPlayer.Name = "temporary_sfx";
-		else if (sfx == SFX.DialogueMC)
-			NewPlayer.Name = "dialogue_sfx";
-		else if (sfx == SFX.DialogueFrog)
-			NewPlayer.Name = "dialogue_sfx";
-		else if (sfx == SFX.DialogueWitch)
-			NewPlayer.Name = "dialogue_sfx";
-		else if (sfx == SFX.DialoguePrincess)
-			NewPlayer.Name = "dialogue_sfx";
-		else if (sfx == SFX.UIButton)
-			NewPlayer.Name = "ui_buttons_sfx";
-
+		// Assigning the name
+		NewPlayer.Name = $"{(sfx)}_sfx";
 
 		// Assigning the file for each sound
 		NewPlayer.Stream = (AudioStream)GD.Load($"res://audio/sfx/{NewPlayer.Name}.wav");
