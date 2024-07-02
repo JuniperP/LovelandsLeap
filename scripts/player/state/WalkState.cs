@@ -148,6 +148,9 @@ public class WalkState : MovementState
 			_ctx.TongueProj.TongueLine = _ctx.TongueLine;
 			_ctx.AddChild(_ctx.TongueLine);
 			_ctx.TongueLine.GlobalPosition = _ctx.TongueGlobalPos;
+
+			// Activate tongue shoot sound effect
+			SoundManager.PlaySound(SFX.TongueShoot, _ctx);
 		}
 	}
 
@@ -172,6 +175,9 @@ public class WalkState : MovementState
 
 		// Change state to grapple
 		_ctx.StateEnum = Player.State.Grapple;
+
+		//Activate tongue hit effect
+		SoundManager.PlaySound(SFX.TongueHit, _ctx);
 	}
 
 	public override void DisableGrapple() { }
