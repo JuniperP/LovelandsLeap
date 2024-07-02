@@ -122,10 +122,4 @@ public partial class SoundManager : Node
 		
 	}
 
-	/*
-		IDEA:
-		Will be only called during Loadin, the single time scene that is only accessible when the game
-		starts up. This will also be where other entering game features happen like loading settings data.
-	*/
-
 }
