@@ -103,6 +103,7 @@ Speed = 600
 GravityFactor = 2.5
 FastFallFactor = 1.5
 TongueOffset = -70.0
+SwingForce = 9000
 TongueProjScene = ExtResource("2_f7ocn")
 TongueLineScene = ExtResource("3_ptmb2")
 TongueSpringScene = ExtResource("4_a8bvo")

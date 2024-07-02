@@ -26,7 +26,8 @@ public class GrappleState : MovementState
 			forceDir = new Vector2(forceDir.Y, forceDir.X);
 			forceDir *= new Vector2(inputDir, -inputDir);
 
-			_ctx.TongueWeight.ApplyForce(forceDir * _ctx.SwingForce);
+			// The forceDir will now be tangent to the swing curve of the weight
+			_ctx.TongueWeight.ApplyForce(forceDir * _ctx.SwingForce * (float)delta);
 		}
 
 		// Set velocity to move to weight
