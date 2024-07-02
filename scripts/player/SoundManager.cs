@@ -11,7 +11,11 @@ public enum SFX :  byte
 	Land,
 	TongueShoot,
 	TongueHit,
-	Dialogue,
+	Croak, 
+	DialogueMC,
+	DialogueFrog,
+	DialogueWitch,
+	DialoguePrincess,
 	UIButton,
 }
 
@@ -21,17 +25,21 @@ public partial class SoundManager : Node
 	// Dictionary for comprehensive access to each sfx
 	private static readonly Dictionary<SFX, AudioStreamPlayer> _sounds = new()
 	{
-		{SFX.Walk, _create_player(SFX.Walk)},
-		{SFX.Jump,  _create_player(SFX.Jump)},
-		{SFX.Land,  _create_player(SFX.Land)},
-		{SFX.TongueShoot,  _create_player(SFX.TongueShoot)},
-		{SFX.TongueHit, _create_player(SFX.TongueHit)},
-		{SFX.Dialogue,  _create_player(SFX.Dialogue)},
-		{SFX.UIButton,  _create_player(SFX.UIButton)},
+		{SFX.Walk, _create_audio_player(SFX.Walk)},
+		{SFX.Jump,  _create_audio_player(SFX.Jump)},
+		{SFX.Land,  _create_audio_player(SFX.Land)},
+		{SFX.Croak,  _create_audio_player(SFX.Croak)},
+		{SFX.TongueShoot,  _create_audio_player(SFX.TongueShoot)},
+		{SFX.TongueHit, _create_audio_player(SFX.TongueHit)},
+		{SFX.DialogueMC,  _create_audio_player(SFX.DialogueMC)},
+		{SFX.DialogueFrog,  _create_audio_player(SFX.DialogueFrog)},
+		{SFX.DialogueWitch,  _create_audio_player(SFX.DialogueWitch)},
+		{SFX.DialoguePrincess,  _create_audio_player(SFX.DialoguePrincess)},
+		{SFX.UIButton,  _create_audio_player(SFX.UIButton)},
 	};
 
 	// Method to create our audio sources for our dictionary
-	private static AudioStreamPlayer _create_player(SFX sfx)
+	private static AudioStreamPlayer _create_audio_player(SFX sfx)
 	{
 		// Creates our player to return
 		AudioStreamPlayer NewPlayer = new AudioStreamPlayer();
@@ -50,7 +58,15 @@ public partial class SoundManager : Node
 			NewPlayer.Name = "tongue_shoot_sfx";
 		else if(sfx==SFX.TongueHit)
 			NewPlayer.Name = "tongue_hit_sfx";
-		else if(sfx==SFX.Dialogue)
+		else if(sfx==SFX.Croak)
+			NewPlayer.Name = "temporary_sfx";
+		else if(sfx==SFX.DialogueMC)
+			NewPlayer.Name = "dialogue_sfx";
+		else if(sfx==SFX.DialogueFrog)
+			NewPlayer.Name = "dialogue_sfx";
+		else if(sfx==SFX.DialogueWitch)
+			NewPlayer.Name = "dialogue_sfx";
+		else if(sfx==SFX.DialoguePrincess)
 			NewPlayer.Name = "dialogue_sfx";
 		else if(sfx==SFX.UIButton)
 			NewPlayer.Name = "ui_buttons_sfx";
