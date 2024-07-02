@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dgq7757hmp8rm"
-path="res://.godot/imported/ui_buttons_sfx.wav-2ba7c3fe7affb682890200f614bf0557.sample"
+path="res://.godot/imported/UIButton_sfx.wav-71975cbab9e3d590059ac74f86e531c8.sample"
 
 [deps]
 
-source_file="res://audio/sfx/ui_buttons_sfx.wav"
-dest_files=["res://.godot/imported/ui_buttons_sfx.wav-2ba7c3fe7affb682890200f614bf0557.sample"]
+source_file="res://audio/sfx/UIButton_sfx.wav"
+dest_files=["res://.godot/imported/UIButton_sfx.wav-71975cbab9e3d590059ac74f86e531c8.sample"]
 
 [params]
 
