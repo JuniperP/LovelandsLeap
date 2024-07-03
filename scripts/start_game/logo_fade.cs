@@ -45,6 +45,6 @@ public partial class logo_fade : RichTextLabel
 	public override void _Input(InputEvent OurInput)
 	{
 		if ((OurInput is InputEventMouseButton || OurInput is InputEventKey) && CanFade)
-			VisibleRatio = (float).9999999;
+			VisibleRatio = .9999999f;
 	}
 }
