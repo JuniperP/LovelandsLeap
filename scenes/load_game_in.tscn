@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://dba3e64c56mki"]
+
+[ext_resource type="FontFile" uid="uid://dhcdmwy2ej2gw" path="res://assets/fonts/opening/Raleway/Raleway-VariableFont_wght.ttf" id="1_bp4yi"]
+[ext_resource type="FontFile" uid="uid://c7qfe6sxy0wg1" path="res://assets/fonts/opening/Raleway/static/Raleway-Bold.ttf" id="2_6djbw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpufk"]
+bg_color = Color(0.0846899, 0.0846899, 0.0846899, 0.972549)
+
+[node name="LoadGameIn" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="BackDrop" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hpufk")
+
+[node name="Logo" type="RichTextLabel" parent="CanvasLayer/BackDrop"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -184.0
+offset_right = 500.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_bp4yi")
+theme_override_fonts/bold_font = ExtResource("2_6djbw")
+theme_override_font_sizes/normal_font_size = 156
+theme_override_font_sizes/bold_font_size = 156
+bbcode_enabled = true
+text = "[color=\"C4A5DF\"][b]Alcove[/b][color=\"red\"/] Devs"
+fit_content = true
+scroll_active = false
