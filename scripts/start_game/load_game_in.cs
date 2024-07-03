@@ -19,6 +19,9 @@ public partial class load_game_in : Control
 	// Used to finish loading when the game is ready
 	private void LogoIn()
 	{
+		// Finish transition with sound effect
+		SoundManager.PlaySound(SFX.TongueHit, this);
+
 		// Dramatic pause
 		System.Threading.Thread.Sleep(1000);
 

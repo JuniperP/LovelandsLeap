@@ -17,6 +17,7 @@ public partial class logo_fade : RichTextLabel
 		VisibleRatio = 0;
 	}
 
+
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
@@ -27,15 +28,18 @@ public partial class logo_fade : RichTextLabel
 		// Slowly brings in logo if aloud
 		if (CanFade)
 			VisibleRatio += (float)delta / 2;
-		
-
 	}
+
 
 	// Starts bringing in logo if told to
 	private void CanNowFade()
 	{
 		CanFade = true;
+
+		// Start transition with sound effect
+		SoundManager.PlaySound(SFX.TongueShoot, this);
 	}
+
 
 	// Allows user to skip the opening fade in 
 	public override void _Input(InputEvent OurInput)
