@@ -36,4 +36,11 @@ public partial class logo_fade : RichTextLabel
 	{
 		CanFade = true;
 	}
+
+	// Allows user to skip the opening fade in 
+	public override void _Input(InputEvent OurInput)
+	{
+		if ((OurInput is InputEventMouseButton || OurInput is InputEventKey) && CanFade)
+			VisibleRatio = (float).9999999;
+	}
 }
