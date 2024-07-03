@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw25gbmxm0mis"
-path="res://.godot/imported/backroundswirly.jpg-abe576e93c78e53ca2a6ca424a402b8b.ctex"
+uid="uid://5wsnb6pe0l6l"
+path="res://.godot/imported/TwinTrees.png-ad72c45e6968fe17e6488ea5888a5e80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/backroundswirly.jpg"
-dest_files=["res://.godot/imported/backroundswirly.jpg-abe576e93c78e53ca2a6ca424a402b8b.ctex"]
+source_file="res://assets/background/TwinTrees.png"
+dest_files=["res://.godot/imported/TwinTrees.png-ad72c45e6968fe17e6488ea5888a5e80.ctex"]
 
 [params]
 
