@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://duhqqspapvtn0"]
+[gd_scene load_steps=4 format=3 uid="uid://duhqqspapvtn0"]
 
+[ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/Levels/parallax_background.tscn" id="1_u3dt8"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
 [ext_resource type="AudioStream" uid="uid://bcvqpqcmfakkp" path="res://audio/music/Loveland__platforming_music.wav" id="4_iwaey"]
 
@@ -11,9 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_u3dt8")]
 
 [node name="Room" parent="." instance=ExtResource("3_7eaaa")]
 
