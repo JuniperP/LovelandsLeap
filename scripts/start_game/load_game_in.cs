@@ -19,11 +19,10 @@ public partial class load_game_in : Control
 		SoundManager.PlaySound(SFX.TongueHit, this);
 
 		// Dramatic pause
+		// FIXME: Should not use system threading sleep, use Godot timer
 		System.Threading.Thread.Sleep(1000);
 
 		// Send to main screen
 		GetTree().ChangeSceneToFile("res://scenes/ui/main_menu.tscn");
 	}
-    
-
 }
