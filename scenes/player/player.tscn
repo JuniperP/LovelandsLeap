@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ccc6gfv7e6o6w"]
+[gd_scene load_steps=25 format=3 uid="uid://ccc6gfv7e6o6w"]
 
 [ext_resource type="Script" path="res://scripts/player/Player.cs" id="1_neipv"]
 [ext_resource type="PackedScene" uid="uid://c4jo10kefl0o4" path="res://scenes/player/tongue/tongue_projectile.tscn" id="2_f7ocn"]
@@ -96,7 +96,21 @@ animations = [{
 radius = 54.0
 height = 228.0
 
+[sub_resource type="Gradient" id="Gradient_xpjvo"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.44, 0.72)
+colors = PackedColorArray(1, 1, 1, 1, 0.596263, 0.596263, 0.596263, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hy2ek"]
+gradient = SubResource("Gradient_xpjvo")
+width = 1024
+height = 1024
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Player" type="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 2
 collision_layer = 2
 script = ExtResource("1_neipv")
 Speed = 600
@@ -122,3 +136,8 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_olhqh")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+range_item_cull_mask = 6
+shadow_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_hy2ek")

@@ -72,6 +72,10 @@ primary_click={
 
 [layer_names]
 
+2d_render/layer_1="UI"
+2d_render/layer_2="Foreground"
+2d_render/layer_3="Midground"
+2d_render/layer_4="Background"
 2d_physics/layer_1="ground"
 2d_physics/layer_2="player"
 
