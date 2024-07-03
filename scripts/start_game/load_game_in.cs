@@ -9,10 +9,6 @@ public partial class load_game_in : Control
 	{
 		// Loads in user settings
 
-
-		// Applies button sound effects mayhaps
-		//SoundManager.ApplyButtonSFX(GetNode("../scenes/ui/main_menu.tscn"), true);
-
 		// By this method finishing the logo fade in is triggered to begin
 	}
 
