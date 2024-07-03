@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://beaw13scnxun1"]
 
 [ext_resource type="Script" path="res://scripts/ui/MainMenu.cs" id="1_byusu"]
-[ext_resource type="Texture2D" uid="uid://bbqyn2rryryns" path="res://assets/background/MainMenu.jpg" id="2_qxlys"]
+[ext_resource type="Texture2D" uid="uid://yug3fmemh31" path="res://assets/background/MainMenu.jpg" id="2_qxlys"]
 [ext_resource type="FontFile" uid="uid://cbxq0tmy5e4n3" path="res://assets/fonts/logo/Wittgenstien/Wittgenstein-Italic-VariableFont_wght.ttf" id="3_d8am2"]
 [ext_resource type="PackedScene" uid="uid://c4suej1iw3wkr" path="res://scenes/ui/settings/settings.tscn" id="3_ps8pg"]
 [ext_resource type="AudioStream" uid="uid://nnautoxm2usu" path="res://audio/music/Loveland_menu_music.wav" id="4_e7cc2"]

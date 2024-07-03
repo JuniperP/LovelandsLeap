@@ -1,7 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://duhqqspapvtn0"]
+[gd_scene load_steps=3 format=3 uid="uid://duhqqspapvtn0"]
 
-[ext_resource type="Texture2D" uid="uid://b50lijxtwjaic" path="res://assets/background/backroundStripey.jpg" id="1_q5rg4"]
-[ext_resource type="Texture2D" uid="uid://cd84cjmkjinux" path="res://assets/background/BigTree.png" id="2_uyfpm"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
 [ext_resource type="AudioStream" uid="uid://bcvqpqcmfakkp" path="res://audio/music/Loveland__platforming_music.wav" id="4_iwaey"]
 
@@ -13,32 +11,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -300.0
-offset_top = -1000.0
-offset_right = 1706.0
-offset_bottom = -80.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_q5rg4")
-expand_mode = 1
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = -1000.0
-offset_top = -2098.0
-offset_right = 2491.0
-offset_bottom = 1365.0
-grow_vertical = 2
-texture = ExtResource("2_uyfpm")
-expand_mode = 1
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Room" parent="." instance=ExtResource("3_7eaaa")]
 
