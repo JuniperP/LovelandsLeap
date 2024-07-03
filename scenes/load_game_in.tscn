@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dba3e64c56mki"]
+[gd_scene load_steps=6 format=3 uid="uid://dba3e64c56mki"]
 
 [ext_resource type="FontFile" uid="uid://dhcdmwy2ej2gw" path="res://assets/fonts/opening/Raleway/Raleway-VariableFont_wght.ttf" id="1_bp4yi"]
-[ext_resource type="Script" path="res://scenes/load_game_in.cs" id="1_mhsui"]
+[ext_resource type="Script" path="res://scripts/start_game/load_game_in.cs" id="1_mhsui"]
 [ext_resource type="FontFile" uid="uid://c7qfe6sxy0wg1" path="res://assets/fonts/opening/Raleway/Raleway-Bold.ttf" id="2_6djbw"]
+[ext_resource type="Script" path="res://scripts/start_game/logo_fade.cs" id="4_i84q3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpufk"]
 bg_color = Color(0.0846899, 0.0846899, 0.0846899, 0.972549)
@@ -48,3 +49,7 @@ bbcode_enabled = true
 text = "[color=\"C4A5DF\"][b]Alcove[/b][color=\"red\"/] Devs"
 fit_content = true
 scroll_active = false
+script = ExtResource("4_i84q3")
+
+[connection signal="ready" from="." to="CanvasLayer/BackDrop/Logo" method="CanNowFade"]
+[connection signal="LogoFadedIn" from="CanvasLayer/BackDrop/Logo" to="." method="LogoIn"]
