@@ -77,14 +77,8 @@ public partial class SoundManager : Node
 	}
 
 	// Recursive post-order depth 1st search through children assigning sound effects to UI buttons
-	public static void ApplyButtonSFX(Node CurrentNode, bool first)
+	public static void ApplyButtonSFX(Node CurrentNode)
 	{
-		// Ensuring all children have access to the sound to play
-		if(first)
-		{
-			CurrentNode.AddChild(_sounds[SFX.UIButton]);
-			first = false;
-		}
 
 		// Getting all of the children
 		Godot.Collections.Array<Node> Children = CurrentNode.GetChildren();
@@ -93,11 +87,13 @@ public partial class SoundManager : Node
 		{
 			
 			// Recursively going down as far as possible into the tree
-			ApplyButtonSFX(Children[i], first);
+			ApplyButtonSFX(Children[i]);
 
 			// If a button is found it is set up to make a sound on click
 			if (Children[i].GetClass() == "Button")
-				((Button)CurrentNode.GetChildren()[i]).Pressed += () => _sounds[SFX.UIButton].Play();
+				((Button)Children[i]).Pressed += () => SoundManager.PlaySound(SFX.UIButton, Children[i-1]); //IDK WHY THIS NEEDS TO BE i-1!!!!
+			
+			
 
 		}
 		
