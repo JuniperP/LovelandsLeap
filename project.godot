@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Loveland"
-run/main_scene="res://scenes/ui/main_menu.tscn"
+run/main_scene="res://scenes/load_game_in.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://assets/frog/frogportrait.png"
 
