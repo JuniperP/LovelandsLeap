@@ -6,7 +6,7 @@ public partial class MainMenu : Control
 	// Set up button sfx
 	public override void _Ready()
 	{
-		//SoundManager.ApplyButtonSFX(this, true);
+		SoundManager.ApplyButtonSFX(this);
 	}
 
 	// Starts the game
