@@ -46,7 +46,7 @@ theme_override_fonts/bold_font = ExtResource("2_6djbw")
 theme_override_font_sizes/normal_font_size = 156
 theme_override_font_sizes/bold_font_size = 156
 bbcode_enabled = true
-text = "[color=\"C4A5DF\"][b]Alcove[/b][color=\"red\"/]Devs"
+text = "[color=\"C4A5DF\"][b]Alcove[/b][color=\"red\"/] Devs"
 fit_content = true
 scroll_active = false
 script = ExtResource("4_i84q3")

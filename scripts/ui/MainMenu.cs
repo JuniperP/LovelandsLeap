@@ -3,10 +3,15 @@ using System;
 
 public partial class MainMenu : Control
 {
+	// Set up button sfx
+	public override void _Ready()
+	{
+		//SoundManager.ApplyButtonSFX(this, true);
+	}
+
 	// Starts the game
 	private void _on_start_game_button_pressed()
 	{
-
 		// Temporary location for the game starting
 		GetTree().ChangeSceneToFile("res://scenes/cutscene/opening.tscn");
 	}

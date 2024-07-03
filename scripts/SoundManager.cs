@@ -61,16 +61,19 @@ public partial class SoundManager : Node
 	// Client method to easily play sounds from anywhere
 	public static void PlaySound(SFX Sound, Node PlayOn)
 	{
-		// Adds the sound to the node tree if not already there
-		if (PlayOn.FindChild(_sounds[Sound].Name, false, false) == null)
-		{
-			PlayOn.AddChild(_sounds[Sound]);
-		}
 
-		// Plays the sound effect
-		_sounds[Sound].Play();
+		// Makes new case of sound effect
+		AudioStreamPlayer ToPlay = (AudioStreamPlayer) _sounds[Sound].Duplicate();
 
+		// Set up sound effect to explode ensuring no dispose, many AudioStreamPlayer, etc issues
+		ToPlay.Finished += () => ToPlay.QueueFree();
 
+		// Adds the sound effect
+		PlayOn.AddChild(ToPlay);
+
+        // Plays the sound effect
+        ToPlay.Play();
+	
 	}
 
 	// Recursive post-order depth 1st search through children assigning sound effects to UI buttons

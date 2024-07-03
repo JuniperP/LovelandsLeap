@@ -13,6 +13,9 @@ public partial class PauseScreen : Toggleable
 	{
 		_close();
 
+		// Set up sfx
+		//SoundManager.ApplyButtonSFX(this, true);
+
 		// Initially set to true in the case where escape is held entering a scene
 		HeldDown = true;
 	}
