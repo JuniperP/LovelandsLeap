@@ -138,6 +138,7 @@ position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_olhqh")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+range_layer_min = -100
 range_item_cull_mask = 6
 shadow_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_hy2ek")
