@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c7qfe6sxy0wg1"
-path="res://.godot/imported/Raleway-Bold.ttf-0edb40fcc2c856fe5ac37349b20aca1b.fontdata"
+path="res://.godot/imported/Raleway-Bold.ttf-3748b1357c751c445e1789dc1c0e44f0.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/opening/Raleway/static/Raleway-Bold.ttf"
-dest_files=["res://.godot/imported/Raleway-Bold.ttf-0edb40fcc2c856fe5ac37349b20aca1b.fontdata"]
+source_file="res://assets/fonts/opening/Raleway/Raleway-Bold.ttf"
+dest_files=["res://.godot/imported/Raleway-Bold.ttf-3748b1357c751c445e1789dc1c0e44f0.fontdata"]
 
 [params]
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dba3e64c56mki"]
+[gd_scene load_steps=5 format=3 uid="uid://dba3e64c56mki"]
 
 [ext_resource type="FontFile" uid="uid://dhcdmwy2ej2gw" path="res://assets/fonts/opening/Raleway/Raleway-VariableFont_wght.ttf" id="1_bp4yi"]
-[ext_resource type="FontFile" uid="uid://c7qfe6sxy0wg1" path="res://assets/fonts/opening/Raleway/static/Raleway-Bold.ttf" id="2_6djbw"]
+[ext_resource type="Script" path="res://scenes/load_game_in.cs" id="1_mhsui"]
+[ext_resource type="FontFile" uid="uid://c7qfe6sxy0wg1" path="res://assets/fonts/opening/Raleway/Raleway-Bold.ttf" id="2_6djbw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpufk"]
 bg_color = Color(0.0846899, 0.0846899, 0.0846899, 0.972549)
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mhsui")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
