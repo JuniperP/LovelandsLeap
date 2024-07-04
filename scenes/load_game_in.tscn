@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://e4nnbk5anku"]
+[gd_scene load_steps=7 format=3 uid="uid://e4nnbk5anku"]
 
 [ext_resource type="FontFile" uid="uid://dhcdmwy2ej2gw" path="res://assets/fonts/opening/Raleway/Raleway-VariableFont_wght.ttf" id="1_bp4yi"]
 [ext_resource type="Script" path="res://scripts/start_game/load_game_in.cs" id="1_mhsui"]
 [ext_resource type="FontFile" uid="uid://c7qfe6sxy0wg1" path="res://assets/fonts/opening/Raleway/Raleway-Bold.ttf" id="2_6djbw"]
 [ext_resource type="Script" path="res://scripts/start_game/logo_fade.cs" id="4_i84q3"]
+[ext_resource type="Script" path="res://scripts/start_game/DramaticPauseTimer.cs" id="5_xccu4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpufk"]
 bg_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
@@ -51,5 +52,9 @@ fit_content = true
 scroll_active = false
 script = ExtResource("4_i84q3")
 
+[node name="DramaticPauseTimer" type="Timer" parent="."]
+script = ExtResource("5_xccu4")
+
 [connection signal="ready" from="." to="CanvasLayer/BackDrop/Logo" method="CanNowFade"]
-[connection signal="LogoFadedIn" from="CanvasLayer/BackDrop/Logo" to="." method="LogoIn"]
+[connection signal="LogoFadedIn" from="CanvasLayer/BackDrop/Logo" to="DramaticPauseTimer" method="DramaticPause"]
+[connection signal="timeout" from="DramaticPauseTimer" to="." method="LogoIn"]

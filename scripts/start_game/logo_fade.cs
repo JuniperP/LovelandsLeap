@@ -6,6 +6,9 @@ public partial class logo_fade : RichTextLabel
 	// Boolean to track if process can start fading
 	private bool CanFade;
 
+	// Only emit the signal once
+	private bool once;
+
 	// Signal to alert manager game loader that everything is set
 	[Signal] public delegate void LogoFadedInEventHandler();
 
@@ -14,6 +17,7 @@ public partial class logo_fade : RichTextLabel
 	public override void _Ready()
 	{
 		CanFade = false;
+		once = true;
 		VisibleRatio = 0;
 	}
 
@@ -22,8 +26,18 @@ public partial class logo_fade : RichTextLabel
 	public override void _Process(double delta)
 	{
 		// Emits done if fully faded in logo
-		if (VisibleRatio == 1)
+		if (VisibleRatio == 1 && once)
+		{
+			// End transition with sound effect
+			SoundManager.PlaySound(SFX.TongueHit, this);
+
+			// Emit that we hit the end
 			EmitSignal(SignalName.LogoFadedIn);
+
+			// Completed goal
+			once = false;
+		}
+			
 
 		// Slowly brings in logo if aloud
 		if (CanFade)
