@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class load_game_in : Control
+public partial class LoadGameIn : Control
 {
 
 	// Sets up the game

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class logo_fade : RichTextLabel
+public partial class LogoFade : RichTextLabel
 {
 	// Boolean to track if process can start fading
 	private bool CanFade;
