@@ -11,7 +11,7 @@ public partial class KeyBindManager : Control
 
 	[Export] private Boolean TongueButton;
 	[Export] private Boolean CancelButton;
-	
+
 
 	// The button containing the name of the current key bind
 	private Button OurButton;
@@ -87,7 +87,7 @@ public partial class KeyBindManager : Control
 		// Makes sure input is looked for and valid
 		if ((OurInput is InputEventMouseButton || OurInput is InputEventKey) && ToBeSet)
 		{
-			
+
 			// Gets rid of all other key binds
 			InputMap.ActionEraseEvents(Mapping);
 
@@ -124,17 +124,17 @@ public partial class KeyBindManager : Control
 				Keybinds.CancelIn = OurInput;
 			}
 
-			
+
 			// Maps wanted button
 			InputMap.ActionAddEvent(Mapping, OurInput);
 
 
 			// Updating our button
-			OurButton.Text= OurInput.AsText();
+			OurButton.Text = OurInput.AsText();
 
 
 			// Resets marker of to be set
-			ToBeSet=false;
+			ToBeSet = false;
 		}
 
 	}
