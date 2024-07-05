@@ -7,10 +7,13 @@ public partial class PauseScreen : Toggleable
 	// Boolean to see if a cancel is held down
 	private Boolean HeldDown;
 
+	// Where we will doing a scene change to
+	private String GoTo;
 
 	// Setup by ensuring the pause screen isn't visible and setting up key hold check
 	public override void _Ready()
 	{
+		// Hide this scene till allowed
 		_close();
 
 		// Set up sfx
@@ -18,6 +21,9 @@ public partial class PauseScreen : Toggleable
 
 		// Initially set to true in the case where escape is held entering a scene
 		HeldDown = true;
+
+		// Ensure scene isn't changed without permission
+		GoTo = "";
 	}
 
 	// Overriding the close method to also unpause the game
@@ -31,7 +37,7 @@ public partial class PauseScreen : Toggleable
 	private void _to_main_menu()
 	{
 		_close();
-		GetTree().ChangeSceneToFile("res://scenes/ui/main_menu.tscn");
+		GoTo = "res://scenes/ui/main_menu.tscn";
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -76,6 +82,9 @@ public partial class PauseScreen : Toggleable
 		}
 
 
+		// If asked, the scene switches
+		if (!GoTo.Equals(""))
+			GetTree().ChangeSceneToFile(GoTo);
 	}
 }
 

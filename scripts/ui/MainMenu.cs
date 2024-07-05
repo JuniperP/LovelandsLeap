@@ -3,23 +3,28 @@ using System;
 
 public partial class MainMenu : Control
 {
-	// Set up button sfx
+	// Where we will doing a scene change to
+	private String GoTo;
+
 	public override void _Ready()
 	{
+		// Set up button sfx
 		SoundManager.ApplyButtonSFX(this);
+
+		// Ensure scene isn't changed without permission
+		GoTo = "";
 	}
 
-	// Starts the game
+	// Sets up to start the game
 	private void _on_start_game_button_pressed()
 	{
-		// Temporary location for the game starting
-		GetTree().ChangeSceneToFile("res://scenes/cutscene/opening.tscn");
+		GoTo = "res://scenes/cutscene/opening.tscn";
 	}
 
-	// Runs the credits
+	// Sets up to run the credits
 	private void _on_credit_button_pressed()
 	{
-		GetTree().ChangeSceneToFile("res://scenes/ui/credits.tscn");
+		GoTo = "res://scenes/ui/credits.tscn";
 	}
 
 	// Quits the game from the menu after saving
@@ -27,5 +32,15 @@ public partial class MainMenu : Control
 	{
 		//SaveGame.Save();
 		GetTree().Quit();
+	}
+
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+		// If asked, the scene switches
+		if (!GoTo.Equals(""))
+			GetTree().ChangeSceneToFile(GoTo);
+
 	}
 }
