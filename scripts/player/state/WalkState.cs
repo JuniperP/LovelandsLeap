@@ -68,7 +68,11 @@ public class WalkState : MovementState
 			accelFactor *= _ctx.AccelOppositionFactor;
 		// If same direction but going faster than walk speed
 		else if (Mathf.Abs(velocity) > _ctx.Speed)
-			accelFactor *= _ctx.AccelSpeedingFactor;
+		{
+			float speedRatio = Mathf.Abs(velocity) / _ctx.Speed;
+			float expSlowing = Mathf.Pow(_ctx.AccelSpeedingBase, speedRatio - 1);
+			accelFactor *= expSlowing * _ctx.AccelSpeedingFactor;
+		}
 
 		// Smooth velocity towards input direction
 		velocity = Mathf.MoveToward(

@@ -17,6 +17,7 @@ public partial class Player : CharacterBody2D
 	[Export] public float AccelAirFactor = 0.7f;
 	[Export] public float AccelOppositionFactor = 1.5f;
 	[Export] public float AccelSpeedingFactor = 0.25f;
+	[Export] public float AccelSpeedingBase = 1.5f;
 
 	[ExportGroup("Vertical")]
 	[Export] public int JumpImpulse = 1000;
