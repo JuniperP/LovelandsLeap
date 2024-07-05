@@ -63,7 +63,7 @@ public partial class SoundManager : Node
 	{
 
 		// Makes new case of sound effect
-		AudioStreamPlayer ToPlay = (AudioStreamPlayer) _sounds[Sound].Duplicate();
+		AudioStreamPlayer ToPlay = (AudioStreamPlayer)_sounds[Sound].Duplicate();
 
 		// Set up sound effect to explode ensuring no dispose, many AudioStreamPlayer, etc issues
 		ToPlay.Finished += () => ToPlay.QueueFree();
@@ -71,9 +71,9 @@ public partial class SoundManager : Node
 		// Adds the sound effect
 		PlayOn.AddChild(ToPlay);
 
-        // Plays the sound effect
-        ToPlay.Play();
-	
+		// Plays the sound effect
+		ToPlay.Play();
+
 	}
 
 	// Recursive post-order depth 1st search through children assigning sound effects to UI buttons
@@ -85,18 +85,17 @@ public partial class SoundManager : Node
 
 		for (int i = 0; i < Children.Count; i++)
 		{
-			
 			// Recursively going down as far as possible into the tree
 			ApplyButtonSFX(Children[i]);
 
-			// If a button is found it is set up to make a sound on click
+			// If a button or TabBar is found it is set up to make a sound on click (IDK WHY THESE USE i-1!!!!)
 			if (Children[i].GetClass() == "Button")
-				((Button)Children[i]).Pressed += () => SoundManager.PlaySound(SFX.UIButton, Children[i-1]); //IDK WHY THIS NEEDS TO BE i-1!!!!
-			
-			
+				((Button)Children[i]).Pressed += () => PlaySound(SFX.UIButton, Children[i - 1]);
 
+			if (Children[i].GetClass() == "TabContainer")
+				((TabContainer)Children[i]).TabClicked += (long NotUsed) => PlaySound(SFX.UIButton, Children[i - 1]);
 		}
-		
+
 	}
 
 }
