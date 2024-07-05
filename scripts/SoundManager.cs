@@ -88,7 +88,7 @@ public partial class SoundManager : Node
 			// Recursively going down as far as possible into the tree
 			ApplyButtonSFX(Children[i]);
 
-			// If a button or TabContainer is found it's set up for sfx on click (IDK WHY THESE USE i-1!!!!)
+			// If a button or TabContainer is found it's set up to play sound on click (IDK WHY THESE USE i-1!!!!)
 			if (Children[i].GetClass() == "Button")
 				((Button)Children[i]).Pressed += () => PlaySound(SFX.UIButton, Children[i - 1]);
 
