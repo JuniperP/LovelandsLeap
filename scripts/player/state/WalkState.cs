@@ -3,7 +3,11 @@ using Godot;
 
 public class WalkState : MovementState
 {
+	// Boolean to track if the player is fast falling
 	private bool _fastFall = false;
+
+	// Boolean to track if the player was in the air last frame
+	private bool _wasInAir = false;
 
 	public WalkState(Player ctx) : base(ctx) { }
 
@@ -47,8 +51,18 @@ public class WalkState : MovementState
 	{
 		float accelFactor = 1f;
 
-		if (!floored)
+		// Accounting for free fall and subsequent landing sfx
+		if(floored && _wasInAir)
+		{
+			SoundManager.PlaySound(SFX.Land, _ctx);
+			_wasInAir = false;
+		}
+		else if (!floored)
+		{
 			accelFactor *= _ctx.AccelAirFactor;
+			_wasInAir = true;
+		}
+			
 
 		// If trying to move in opposite direction
 		if (Mathf.Sign(velocity) != Mathf.Sign(direction))
