@@ -8,6 +8,7 @@ public partial class LoadGameIn : Control
 	public override void _Ready()
 	{
 		// Loads in user settings
+		LoadSettingsData.LoadData();
 
 		// By this method finishing the logo fade in is triggered to begin
 	}
