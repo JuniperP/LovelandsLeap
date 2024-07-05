@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 public partial class LoadSettingsData : Node
 {
 	// The file we will store to
-	private static String StoreTo = "res://ourUsersSettings.cfg";
+	private static String StoreTo = "user://LoveLandSettingsInfo.cfg";
 
 
 	// Save settings data from the game
