@@ -20,7 +20,6 @@ offset_right = 0.0
 offset_bottom = 150.0
 grow_horizontal = 1
 grow_vertical = 1
-LeftButton = true
 
 [node name="Jump" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
@@ -32,7 +31,7 @@ offset_right = 0.0
 offset_bottom = 300.0
 grow_horizontal = 1
 grow_vertical = 1
-JumpButton = true
+ActionToSet = 2
 
 [node name="MoveRight" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
@@ -45,7 +44,7 @@ offset_right = 500.0
 offset_bottom = 150.0
 grow_horizontal = 1
 grow_vertical = 1
-RightButton = true
+ActionToSet = 1
 
 [node name="UseTongue" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
@@ -58,7 +57,7 @@ offset_right = 500.0
 offset_bottom = 450.0
 grow_horizontal = 1
 grow_vertical = 1
-TongueButton = true
+ActionToSet = 4
 
 [node name="Cancel" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
@@ -70,7 +69,7 @@ offset_right = 0.0
 offset_bottom = 450.0
 grow_horizontal = 1
 grow_vertical = 1
-CancelButton = true
+ActionToSet = 5
 
 [node name="Down" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
@@ -83,7 +82,7 @@ offset_right = 500.0
 offset_bottom = 300.0
 grow_horizontal = 1
 grow_vertical = 1
-DownButton = true
+ActionToSet = 3
 
 [node name="Instructions" type="RichTextLabel" parent="."]
 layout_mode = 1
