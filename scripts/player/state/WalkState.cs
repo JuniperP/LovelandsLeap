@@ -52,7 +52,7 @@ public class WalkState : MovementState
 		float accelFactor = 1f;
 
 		// Accounting for free fall and subsequent landing sfx
-		if(floored && _wasInAir)
+		if (floored && _wasInAir)
 		{
 			SoundManager.PlaySound(SFX.Land, _ctx);
 			_wasInAir = false;
@@ -62,7 +62,6 @@ public class WalkState : MovementState
 			accelFactor *= _ctx.AccelAirFactor;
 			_wasInAir = true;
 		}
-			
 
 		// If trying to move in opposite direction
 		if (Mathf.Sign(velocity) != Mathf.Sign(direction))
@@ -95,7 +94,6 @@ public class WalkState : MovementState
 				velocity = -_ctx.JumpImpulse;
 				SoundManager.PlaySound(SFX.Jump, _ctx);
 			}
-				
 		}
 		else
 		{
