@@ -22,10 +22,10 @@ public partial class KeyBindManager : Control
 		OurButton = (Button)label.GetNode("ButtonToAdjust");
 
 		// Giving a special name for each button's accompanying label
-		label.Text = KeyBindSetterHelper._acts[ActionToSet].ButtonLabel;
+		label.Text = Keybinds._acts[ActionToSet].ButtonLabel;
 
 		// Giving the symbol for each button
-		OurButton.Text = KeyBindSetterHelper._acts[ActionToSet].Input.AsText();
+		OurButton.Text = Keybinds._acts[ActionToSet].Input.AsText();
 
 		// Set up changing the value in the future
 		ToBeSet = false;

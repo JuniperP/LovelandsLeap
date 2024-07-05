@@ -21,13 +21,12 @@ public partial class LoadSettingsData : Node
 
 
 		// Setting up key binds to be stored
-		// Putting in current input
-		config.SetValue("KeyBindsInput", "LeftIn", Keybinds.LeftIn);
-		config.SetValue("KeyBindsInput", "RightIn", Keybinds.RightIn);
-		config.SetValue("KeyBindsInput", "JumpIn", Keybinds.JumpIn);
-		config.SetValue("KeyBindsInput", "DownIn", Keybinds.DownIn);
-		config.SetValue("KeyBindsInput", "ClickIn", Keybinds.ClickIn);
-		config.SetValue("KeyBindsInput", "CancelIn", Keybinds.CancelIn);
+		config.SetValue("KeyBinds", "LeftIn", Keybinds._acts[UserAction.Left].Input);
+		config.SetValue("KeyBinds", "RightIn",Keybinds._acts[UserAction.Right].Input);
+		config.SetValue("KeyBinds", "JumpIn", Keybinds._acts[UserAction.Jump].Input);
+		config.SetValue("KeyBinds", "DownIn", Keybinds._acts[UserAction.Down].Input);
+		config.SetValue("KeyBinds", "ClickIn", Keybinds._acts[UserAction.Click].Input);
+		config.SetValue("KeyBinds", "CancelIn", Keybinds._acts[UserAction.Cancel].Input);
 
 		// Storing data, overwriting past settings
 		config.Save(StoreTo);
@@ -51,5 +50,11 @@ public partial class LoadSettingsData : Node
 		AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Sound Effects"), (float)config.GetValue("Audio", "SFX"));
 
 		// Setting key binds to users choice
+		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "LeftIn"), UserAction.Left);
+		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "RightIn"), UserAction.Right);
+		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "JumpIn"), UserAction.Jump);
+		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "DownIn"), UserAction.Down);
+		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "ClickIn"), UserAction.Click);
+		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "CancelIn"), UserAction.Cancel);
 	}
 }
