@@ -24,8 +24,8 @@ public partial class KeyBindManager : Control
 		// Giving a special name for each button's accompanying label
 		label.Text = KeyBindSetterHelper._acts[ActionToSet].ButtonLabel;
 
-		// Setting the symbol displayed on the button
-		OurButton.Text = KeyBindSetterHelper._acts[ActionToSet].Symbol;
+		// Giving the symbol for each button
+		OurButton.Text = KeyBindSetterHelper._acts[ActionToSet].Input.AsText();
 
 		// Set up changing the value in the future
 		ToBeSet = false;

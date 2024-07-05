@@ -21,12 +21,12 @@ public partial class KeyBindSetterHelper : Node
 	// Dictionary for comprehensive access to each sfx
 	public static readonly Dictionary<UserAction, ActionRep> _acts = new()
 	{
-		{UserAction.Left, new ActionRep("move_left", Keybinds.LeftIn, Keybinds.LeftSym, "Move Left")},
-		{UserAction.Right, new ActionRep("move_right",Keybinds.RightIn, Keybinds.RightSym, "Move Right")},
-		{UserAction.Jump, new ActionRep("move_up", Keybinds.JumpIn, Keybinds.JumpSym, "Jump")},
-		{UserAction.Down, new ActionRep("move_down", Keybinds.DownIn, Keybinds.DownSym, "Fast Fall")},
-		{UserAction.Click, new ActionRep("primary_click", Keybinds.ClickIn, Keybinds.ClickSym, "Use Tongue")},
-		{UserAction.Cancel, new ActionRep("ui_cancel", Keybinds.CancelIn, Keybinds.CancelSym, "Cancel")}
+		{UserAction.Left, new ActionRep("move_left", Keybinds.LeftIn, "Move Left")},
+		{UserAction.Right, new ActionRep("move_right",Keybinds.RightIn, "Move Right")},
+		{UserAction.Jump, new ActionRep("move_up", Keybinds.JumpIn, "Jump")},
+		{UserAction.Down, new ActionRep("move_down", Keybinds.DownIn, "Fast Fall")},
+		{UserAction.Click, new ActionRep("primary_click", Keybinds.ClickIn, "Use Tongue")},
+		{UserAction.Cancel, new ActionRep("ui_cancel", Keybinds.CancelIn, "Cancel")}
 	};
 
 
@@ -40,9 +40,6 @@ public partial class KeyBindSetterHelper : Node
 		// Updates current stored key to click for that action's key bind
 		_acts[OurAction].Input = OurInput; 
 
-		// Updates current symbol for that action's key bind
-		_acts[OurAction].Symbol = OurInput.AsText();
-		
 		// Maps wanted button
 		InputMap.ActionAddEvent(_acts[OurAction].Mapping, _acts[OurAction].Input);
 	}

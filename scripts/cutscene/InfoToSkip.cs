@@ -5,6 +5,6 @@ public partial class InfoToSkip : Label
 {
 	public override void _Ready()
 	{
-		Text = $"Press [{Keybinds.CancelSym}] to skip";
+		Text = $"Press [{Keybinds.CancelIn.AsText()}] to skip";
 	}
 }

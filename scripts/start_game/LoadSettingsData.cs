@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Runtime.CompilerServices;
 
 public partial class LoadSettingsData : Node
 {
@@ -27,14 +28,6 @@ public partial class LoadSettingsData : Node
 		config.SetValue("KeyBindsInput", "DownIn", Keybinds.DownIn);
 		config.SetValue("KeyBindsInput", "ClickIn", Keybinds.ClickIn);
 		config.SetValue("KeyBindsInput", "CancelIn", Keybinds.CancelIn);
-
-		//Putting in current labels
-		config.SetValue("KeyBindsSymbol", "LeftSym", Keybinds.LeftSym);
-		config.SetValue("KeyBindsSymbol", "RightSym", Keybinds.RightSym);
-		config.SetValue("KeyBindsSymbol", "JumpSym", Keybinds.JumpSym);
-		config.SetValue("KeyBindsSymbol", "DownSym", Keybinds.DownSym);
-		config.SetValue("KeyBindsSymbol", "ClickSym", Keybinds.ClickSym);
-		config.SetValue("KeyBindsSymbol", "CancelSym", Keybinds.CancelSym);
 
 		// Storing data, overwriting past settings
 		config.Save(StoreTo);

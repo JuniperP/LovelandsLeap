@@ -5,26 +5,14 @@ using System;
 public partial class Keybinds : Node
 {
 	public static InputEvent LeftIn = InputMap.ActionGetEvents("move_left")[0];
-	public static String LeftSym = LeftIn.AsText();
-
 
 	public static InputEvent RightIn = InputMap.ActionGetEvents("move_right")[0];
-	public static String RightSym = RightIn.AsText();
-
-
 
 	public static InputEvent JumpIn = InputMap.ActionGetEvents("move_up")[0];
-	public static String JumpSym = JumpIn.AsText();
 
 	public static InputEvent DownIn = InputMap.ActionGetEvents("move_down")[0];
-	public static String DownSym = DownIn.AsText();
-
 
 	public static InputEvent ClickIn = InputMap.ActionGetEvents("primary_click")[0];
-	public static String ClickSym = ClickIn.AsText();
-
 
 	public static InputEvent CancelIn = InputMap.ActionGetEvents("ui_cancel")[0];
-	public static String CancelSym = CancelIn.AsText();
-
 }
