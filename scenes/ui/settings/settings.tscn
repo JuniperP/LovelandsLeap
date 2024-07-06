@@ -67,6 +67,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/panel = SubResource("StyleBoxFlat_7w0kv")
 
 [node name="Audio" type="TabBar" parent="BackBox/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="AudioToChange" parent="BackBox/TabContainer/Audio" instance=ExtResource("2_eko1f")]
@@ -89,5 +90,7 @@ layout_mode = 2
 
 [node name="DisplayToChange" parent="BackBox/TabContainer/Display" instance=ExtResource("4_h7u6u")]
 layout_mode = 1
+offset_top = 63.0
+offset_bottom = 63.0
 
 [connection signal="pressed" from="BackBox/Cancel" to="." method="_close"]

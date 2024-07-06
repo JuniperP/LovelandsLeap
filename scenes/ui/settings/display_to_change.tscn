@@ -40,9 +40,9 @@ script = ExtResource("1_6l5df")
 
 [node name="ResolutionName" type="Label" parent="."]
 layout_mode = 0
-offset_top = 400.0
+offset_top = 350.0
 offset_right = 215.0
-offset_bottom = 455.0
+offset_bottom = 405.0
 theme_override_font_sizes/font_size = 40
 text = "Resolution:"
 
