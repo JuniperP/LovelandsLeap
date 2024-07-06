@@ -14,6 +14,7 @@ public partial class LoadSettingsData : Node
 		// User config file we will be utilizing access config data
 		ConfigFile config = new ConfigFile();
 
+
 		// Setting up sound data to be stored
 		config.SetValue("Audio", "Master", AudioServer.GetBusVolumeDb(AudioServer.GetBusIndex("Master")));
 		config.SetValue("Audio", "Music", AudioServer.GetBusVolumeDb(AudioServer.GetBusIndex("Music")));
@@ -27,6 +28,11 @@ public partial class LoadSettingsData : Node
 		config.SetValue("KeyBinds", "DownIn", Keybinds._acts[UserAction.Down].Input);
 		config.SetValue("KeyBinds", "ClickIn", Keybinds._acts[UserAction.Click].Input);
 		config.SetValue("KeyBinds", "CancelIn", Keybinds._acts[UserAction.Cancel].Input);
+
+
+		// Setting up display settings to be stored
+		config.SetValue("Display", "FullScreen", ToggleFullScreen.IsOn);
+
 
 		// Storing data, overwriting past settings
 		config.Save(StoreTo);
@@ -56,5 +62,9 @@ public partial class LoadSettingsData : Node
 		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "DownIn"), UserAction.Down);
 		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "ClickIn"), UserAction.Click);
 		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "CancelIn"), UserAction.Cancel);
+
+		// Adjusting for if the screen isn't windowed for user
+		if(ToggleFullScreen.IsOn != (bool) config.GetValue("Display", "FullScreen"))
+			ToggleFullScreen.Toggle();
 	}
 }
