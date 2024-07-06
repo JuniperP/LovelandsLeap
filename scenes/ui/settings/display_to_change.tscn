@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3unscwxm55g1"]
 
-[ext_resource type="Script" path="res://scripts/ui/settings/ToggleFullScreen.cs" id="1_6l5df"]
+[ext_resource type="Script" path="res://scripts/ui/settings/ToggleFullScreen.cs" id="1_1oo7p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nyn2"]
 bg_color = Color(0, 0, 0, 1)
@@ -36,7 +36,7 @@ offset_bottom = 30.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_2nyn2")
-script = ExtResource("1_6l5df")
+script = ExtResource("1_1oo7p")
 
 [node name="ResolutionName" type="Label" parent="."]
 layout_mode = 0
@@ -59,6 +59,7 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_ojplt")
 
 [node name="Instructions" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_right = 930.0
 offset_bottom = 120.0
 theme_override_font_sizes/italics_font_size = 32
@@ -68,4 +69,4 @@ text = "[center][i]Utilize the following options to adjust how
 "
 scroll_active = false
 
-[connection signal="pressed" from="FullScreenName/ToggleFullScreen" to="FullScreenName/ToggleFullScreen" method="_toggle"]
+[connection signal="pressed" from="FullScreenName/ToggleFullScreen" to="FullScreenName/ToggleFullScreen" method="_adjust_name_and_screen"]

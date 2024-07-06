@@ -16,20 +16,29 @@ public partial class ToggleFullScreen : Button
 	}
 	
 	// Turning off and on full screen
-	private void _toggle()
+	public static void Toggle()
 	{
-		if (IsOn)
-		{
-			Text = "Off";
+		// Switch in or out of full screen
+		if (IsOn)	
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-		}
 		else
-		{
-			Text = "On";
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
-		}
-
+		
 		// Switch IsOn
 		IsOn = !IsOn;
+	}
+
+
+	private void _adjust_name_and_screen()
+	{
+		// Change what the button displays
+		if(IsOn)
+			Text = "Off";
+		else
+			Text = "On";
+		
+		// Change what 
+		Toggle();
+		
 	}
 }
