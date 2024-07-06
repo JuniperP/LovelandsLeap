@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccppbbbwwkdtb"]
+[gd_scene load_steps=3 format=3 uid="uid://ccppbbbwwkdtb"]
 
 [ext_resource type="Script" path="res://scripts/ui/settings/KeyBindManager.cs" id="1_qonc8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50hl3"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="AdjustKeyCombo" type="Control"]
 layout_mode = 3
@@ -32,6 +35,7 @@ offset_right = 430.0
 offset_bottom = 37.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_50hl3")
 text_overrun_behavior = 1
 
 [connection signal="pressed" from="MoveLabel/ButtonToAdjust" to="." method="ChangeValue"]
