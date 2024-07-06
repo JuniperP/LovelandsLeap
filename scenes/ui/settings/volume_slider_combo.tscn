@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dre8q7wfajx32"]
+[gd_scene load_steps=5 format=3 uid="uid://dre8q7wfajx32"]
 
 [ext_resource type="Script" path="res://scripts/ui/settings/VolumeManager.cs" id="1_2546l"]
 
@@ -12,12 +12,25 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_color = Color(0, 0, 0, 0)
+border_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejbhv"]
+bg_color = Color(0.6, 0.6, 0.6, 0.470588)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8yh3"]
+bg_color = Color(0.864675, 0.864675, 0.864675, 0.470588)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="VolumeSliderCombo" type="Label"]
 offset_right = 40.0
@@ -37,6 +50,8 @@ offset_right = 775.0
 offset_bottom = 77.5
 grow_vertical = 2
 theme_override_styles/slider = SubResource("StyleBoxFlat_gkr4b")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ejbhv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_h8yh3")
 max_value = 1.0
 step = 0.01
 
