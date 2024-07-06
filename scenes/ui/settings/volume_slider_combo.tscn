@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dre8q7wfajx32"]
+[gd_scene load_steps=3 format=3 uid="uid://dre8q7wfajx32"]
 
 [ext_resource type="Script" path="res://scripts/ui/settings/VolumeManager.cs" id="1_2546l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkr4b"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0)
 
 [node name="VolumeSliderCombo" type="Label"]
 offset_right = 40.0
@@ -19,6 +36,7 @@ offset_top = 47.5
 offset_right = 775.0
 offset_bottom = 77.5
 grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_gkr4b")
 max_value = 1.0
 step = 0.01
 

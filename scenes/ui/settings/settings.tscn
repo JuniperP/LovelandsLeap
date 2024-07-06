@@ -67,7 +67,6 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/panel = SubResource("StyleBoxFlat_7w0kv")
 
 [node name="Audio" type="TabBar" parent="BackBox/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="AudioToChange" parent="BackBox/TabContainer/Audio" instance=ExtResource("2_eko1f")]
