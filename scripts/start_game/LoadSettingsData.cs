@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Runtime.CompilerServices;
 
 public partial class LoadSettingsData : Node
 {
@@ -23,7 +22,7 @@ public partial class LoadSettingsData : Node
 
 		// Setting up key binds to be stored
 		config.SetValue("KeyBinds", "LeftIn", Keybinds._acts[UserAction.Left].Input);
-		config.SetValue("KeyBinds", "RightIn",Keybinds._acts[UserAction.Right].Input);
+		config.SetValue("KeyBinds", "RightIn", Keybinds._acts[UserAction.Right].Input);
 		config.SetValue("KeyBinds", "JumpIn", Keybinds._acts[UserAction.Jump].Input);
 		config.SetValue("KeyBinds", "DownIn", Keybinds._acts[UserAction.Down].Input);
 		config.SetValue("KeyBinds", "ClickIn", Keybinds._acts[UserAction.Click].Input);
@@ -56,15 +55,15 @@ public partial class LoadSettingsData : Node
 		AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Sound Effects"), (float)config.GetValue("Audio", "SFX"));
 
 		// Setting key binds to users choice
-		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "LeftIn"), UserAction.Left);
-		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "RightIn"), UserAction.Right);
-		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "JumpIn"), UserAction.Jump);
-		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "DownIn"), UserAction.Down);
-		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "ClickIn"), UserAction.Click);
-		KeyBindSetterHelper.SetKeyBind((InputEvent) config.GetValue("KeyBinds", "CancelIn"), UserAction.Cancel);
+		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "LeftIn"), UserAction.Left);
+		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "RightIn"), UserAction.Right);
+		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "JumpIn"), UserAction.Jump);
+		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "DownIn"), UserAction.Down);
+		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "ClickIn"), UserAction.Click);
+		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "CancelIn"), UserAction.Cancel);
 
 		// Adjusting for if the screen isn't windowed for user
-		if(ToggleFullScreen.IsOn != (bool) config.GetValue("Display", "FullScreen"))
+		if (ToggleFullScreen.IsOn != (bool)config.GetValue("Display", "FullScreen"))
 			ToggleFullScreen.Toggle();
 	}
 }
