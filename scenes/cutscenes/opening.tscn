@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://scripts/cutscene/OpeningHuman.cs" id="7_6tcm6"]
 [ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frogportrait.png" id="9_55qf0"]
 [ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/music/lovelandCutsceneMusic.wav" id="10_86f4d"]
-[ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscene/info_to_skip.tscn" id="11_t7lkt"]
+[ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="11_t7lkt"]
 
 [node name="Opening" type="Control" node_paths=PackedStringArray("Nodes")]
 layout_mode = 3

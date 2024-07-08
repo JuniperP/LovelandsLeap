@@ -18,7 +18,7 @@ public partial class MainMenu : Control
 	// Sets up to start the game
 	private void _on_start_game_button_pressed()
 	{
-		GoTo = "res://scenes/cutscene/opening.tscn";
+		GoTo = "res://scenes/cutscenes/opening.tscn";
 	}
 
 	// Sets up to run the credits
