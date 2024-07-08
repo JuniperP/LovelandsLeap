@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://br888scm3xpk"]
+[gd_scene load_steps=11 format=3 uid="uid://br888scm3xpk"]
 
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/MainMenu.jpg" id="1_1v0w2"]
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="3_mf1q6"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="9_anup7"]
 
 [sub_resource type="Animation" id="Animation_dmnhy"]
-resource_name = "new_animation"
+resource_name = "IntroCutscene"
 length = 23.0
 step = 0.25
 tracks/0/type = "value"
@@ -40,7 +40,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerLoc/Sprite:visible")
+tracks/2/path = NodePath("HumanLoc/Sprite:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -52,7 +52,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerLoc/Sprite:modulate")
+tracks/3/path = NodePath("HumanLoc/Sprite:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -88,7 +88,7 @@ tracks/5/keys = {
 tracks/6/type = "method"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("PlayerLoc/Sprite")
+tracks/6/path = NodePath("HumanLoc/Sprite")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -108,7 +108,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("PlayerLoc:position")
+tracks/7/path = NodePath("HumanLoc:position")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -142,97 +142,9 @@ tracks/9/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_s3g0d"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerLoc/Sprite:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerLoc/Sprite:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ForestDialogue:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ForestDialogue:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PlayerLoc:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(429, 791)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Overlay:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Overlay:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qtv0h"]
 _data = {
-"RESET": SubResource("Animation_s3g0d"),
-"orderDialogue": SubResource("Animation_dmnhy")
+"IntroCutscene": SubResource("Animation_dmnhy")
 }
 
 [node name="Intro" type="Control"]
@@ -245,6 +157,7 @@ grow_vertical = 2
 
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 z_index = 100
 layout_mode = 1
 anchors_preset = 15
@@ -265,8 +178,6 @@ texture = ExtResource("1_1v0w2")
 expand_mode = 1
 
 [node name="OrderDialogue" parent="." instance=ExtResource("4_vo1hj")]
-visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 
 [node name="ProfilePicture" parent="OrderDialogue/BackBox" index="1"]
@@ -275,14 +186,14 @@ texture = ExtResource("6_1deqh")
 [node name="Text" parent="OrderDialogue/BackBox" index="2"]
 text = "My order better not be in the woods again..."
 
-[node name="PlayerLoc" type="Control" parent="."]
+[node name="HumanLoc" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 429.0
 offset_top = 791.0
 offset_right = 469.003
 offset_bottom = 831.0
 
-[node name="Sprite" type="AnimatedSprite2D" parent="PlayerLoc"]
+[node name="Sprite" type="AnimatedSprite2D" parent="HumanLoc"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(12, 39)
@@ -318,19 +229,19 @@ texture = ExtResource("7_v3fs0")
 [node name="Text" parent="FrogDialogue/BackBox" index="2"]
 text = "*CROAK!!!*"
 
+[node name="InfoToSkip" parent="." instance=ExtResource("9_anup7")]
+layout_mode = 0
+
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_5gsvf")
 autoplay = true
 bus = &"Music"
 
-[node name="InfoToSkip" parent="." instance=ExtResource("9_anup7")]
-layout_mode = 0
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_qtv0h")
 }
-autoplay = "orderDialogue"
+autoplay = "IntroCutscene"
 
 [editable path="OrderDialogue"]
 [editable path="ForestDialogue"]
