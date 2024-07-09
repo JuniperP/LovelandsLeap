@@ -25,8 +25,9 @@ scroll_active = false
 
 [node name="SpeedRunTimer" type="Label" parent="."]
 layout_mode = 1
+offset_left = 25.0
 offset_top = 225.0
-offset_right = 383.0
+offset_right = 408.0
 offset_bottom = 280.0
 theme_override_font_sizes/font_size = 40
 text = "Speedrun Timer:"
@@ -46,8 +47,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_buu4u")
 
 [node name="FactoryReset" type="Label" parent="."]
 layout_mode = 1
+offset_left = 25.0
 offset_top = 525.0
-offset_right = 383.0
+offset_right = 408.0
 offset_bottom = 580.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
@@ -68,8 +70,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_buu4u")
 text = "Click to reset"
 
 [node name="VerburgingToggle" type="Label" parent="."]
+offset_left = 25.0
 offset_top = 125.0
-offset_right = 383.0
+offset_right = 408.0
 offset_bottom = 180.0
 theme_override_font_sizes/font_size = 40
 text = "Classic Verburging:"
