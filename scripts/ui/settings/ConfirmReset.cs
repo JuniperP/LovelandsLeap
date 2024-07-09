@@ -1,6 +1,3 @@
-using Godot;
-using System;
-
 public partial class ConfirmReset : Toggleable
 {	
 	// Used to reset the default settings
