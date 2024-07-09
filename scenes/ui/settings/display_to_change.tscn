@@ -13,14 +13,16 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -970.0
+offset_bottom = -480.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FullScreenName" type="Label" parent="."]
 layout_mode = 1
-offset_top = 200.0
+offset_top = 150.0
 offset_right = 219.0
-offset_bottom = 255.0
+offset_bottom = 205.0
 theme_override_font_sizes/font_size = 40
 text = "Full Screen:"
 
@@ -40,9 +42,9 @@ script = ExtResource("1_1oo7p")
 
 [node name="ResolutionName" type="Label" parent="."]
 layout_mode = 0
-offset_top = 350.0
+offset_top = 300.0
 offset_right = 215.0
-offset_bottom = 405.0
+offset_bottom = 355.0
 theme_override_font_sizes/font_size = 40
 text = "Resolution:"
 

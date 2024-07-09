@@ -8,10 +8,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -970.0
+offset_bottom = -480.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Instructions" type="RichTextLabel" parent="."]
+layout_mode = 1
 offset_right = 900.0
 offset_bottom = 120.0
 theme_override_font_sizes/italics_font_size = 32
@@ -21,6 +24,7 @@ text = "[center][i] 																																																		Further yo
 scroll_active = false
 
 [node name="SpeedRunTimer" type="Label" parent="."]
+layout_mode = 1
 offset_top = 225.0
 offset_right = 383.0
 offset_bottom = 280.0
@@ -41,6 +45,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_buu4u")
 
 [node name="FactoryReset" type="Label" parent="."]
+layout_mode = 1
 offset_top = 525.0
 offset_right = 383.0
 offset_bottom = 580.0

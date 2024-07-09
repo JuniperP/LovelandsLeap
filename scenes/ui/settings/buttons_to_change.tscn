@@ -5,12 +5,18 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmpa0"]
 bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="ButtonsToChange" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -970.0
+offset_bottom = -480.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -19,9 +25,9 @@ layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_top = 150.0
+offset_top = 200.0
 offset_right = 0.0
-offset_bottom = 150.0
+offset_bottom = 200.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -43,9 +49,9 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 500.0
-offset_top = 150.0
+offset_top = 200.0
 offset_right = 500.0
-offset_bottom = 150.0
+offset_bottom = 200.0
 grow_horizontal = 1
 grow_vertical = 1
 ActionToSet = 1
@@ -56,9 +62,9 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 500.0
-offset_top = 450.0
+offset_top = 400.0
 offset_right = 500.0
-offset_bottom = 450.0
+offset_bottom = 400.0
 grow_horizontal = 1
 grow_vertical = 1
 ActionToSet = 4
@@ -68,9 +74,9 @@ layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_top = 450.0
+offset_top = 400.0
 offset_right = 0.0
-offset_bottom = 450.0
+offset_bottom = 400.0
 grow_horizontal = 1
 grow_vertical = 1
 ActionToSet = 5
@@ -94,19 +100,23 @@ offset_right = 930.0
 offset_bottom = 120.0
 theme_override_font_sizes/italics_font_size = 32
 bbcode_enabled = true
-text = "[center][i] Set a key bind by selecting a control and entering the new key you wish to utilize[i] [center]
+text = "[center][i]
+ Set a key bind by selecting a control and entering the new key you wish to utilize[i] [center]
 "
+fit_content = true
 scroll_active = false
 
 [node name="PlayTestButton" type="Button" parent="."]
 layout_mode = 1
-offset_left = 76.0
-offset_top = 534.0
-offset_right = 876.0
-offset_bottom = 594.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_right = 600.0
+grow_vertical = 0
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_rmpa0")
-text = "PRESS HERE TO PLAY TEST CONTROLS"
+text = " PLAY TEST CONTROLS"
 script = ExtResource("2_wxg0s")
 
 [connection signal="pressed" from="PlayTestButton" to="PlayTestButton" method="_play_test"]
