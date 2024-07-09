@@ -30,7 +30,7 @@ public partial class MainMenu : Control
 	// Quits the game from the menu after saving
 	private void _quit_game()
 	{
-		LoadSettingsData.SaveData();
+		LoadSettingsData.SaveData(false);
 		GetTree().Quit();
 	}
 

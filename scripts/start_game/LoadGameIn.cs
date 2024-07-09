@@ -1,5 +1,5 @@
 using Godot;
-using System;
+
 
 public partial class LoadGameIn : Control
 {
@@ -7,8 +7,11 @@ public partial class LoadGameIn : Control
 	// Sets up the game
 	public override void _Ready()
 	{
+		// Set up for easy default settings
+		LoadSettingsData.SetUpDefault();
+
 		// Loads in user settings
-		LoadSettingsData.LoadData();
+		LoadSettingsData.LoadData(false);
 
 		// By this method finishing the logo fade in is triggered to begin
 	}

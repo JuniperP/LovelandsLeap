@@ -1,11 +1,7 @@
-using Godot;
-using System;
-
 public partial class DialogueBox : Toggleable
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		Visible = false;
-	}
+	/*
+		Currently nothing further in here but this will likely
+		change once different types of dialogue are used.
+	*/
 }

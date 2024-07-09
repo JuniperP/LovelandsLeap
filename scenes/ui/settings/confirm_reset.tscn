@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj4wxcrjnpx2w"]
+
+[ext_resource type="Script" path="res://scripts/ui/settings/ConfirmReset.cs" id="1_xrs10"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qttnp"]
+bg_color = Color(0, 0, 0, 0.784314)
+
+[node name="ConfirmReset" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -970.0
+offset_bottom = -480.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xrs10")
+
+[node name="BackDrop" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qttnp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BackDrop"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -475.0
+offset_right = 475.0
+offset_bottom = 3080.0
+grow_horizontal = 2
+theme_override_font_sizes/bold_font_size = 56
+bbcode_enabled = true
+text = "[center][b]
+ARE YOU SURE YOU WANT TO RESET ALL SETTINGS AND SPEED RUN DATA[center]"
+fit_content = true
+
+[node name="NoButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 50.0
+offset_top = 350.0
+offset_right = 350.0
+offset_bottom = 450.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "... no"
+
+[node name="YESButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_top = 350.0
+offset_right = -50.0
+offset_bottom = 450.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "YES!"
+
+[connection signal="pressed" from="NoButton" to="." method="_close"]
+[connection signal="pressed" from="YESButton" to="." method="_reset_settings"]
