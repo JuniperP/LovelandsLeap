@@ -7,6 +7,11 @@ using System;
 */
 public partial class Toggleable : Control
 {
+	// By default, sets visibility to closed
+	public override void _Ready()
+	{
+		_close();
+	}
 
 	// Closes the node
 	protected virtual void _close()

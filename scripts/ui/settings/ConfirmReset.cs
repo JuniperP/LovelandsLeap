@@ -2,13 +2,8 @@ using Godot;
 using System;
 
 public partial class ConfirmReset : Toggleable
-{
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		_close();
-	}
-
+{	
+	// Used to reset the default settings
 	private void _reset_settings()
 	{
 		LoadSettingsData.LoadData(true);
