@@ -16,7 +16,8 @@ offset_right = 900.0
 offset_bottom = 120.0
 theme_override_font_sizes/italics_font_size = 32
 bbcode_enabled = true
-text = "[center][i] 																																																		Drag the sliders to adjust each outputs volume[i] [center]
+text = "[center][i] 
+	Drag the sliders to adjust each outputs volume[i] [center]
 "
 scroll_active = false
 
