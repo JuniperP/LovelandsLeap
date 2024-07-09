@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx1xpj1qy44d8"]
-
-[ext_resource type="Script" path="res://scripts/ui/settings/PlayTestButton.cs" id="1_41fwr"]
+[gd_scene load_steps=2 format=3 uid="uid://bx1xpj1qy44d8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buu4u"]
 bg_color = Color(0, 0, 0, 1)
@@ -21,28 +19,6 @@ bbcode_enabled = true
 text = "[center][i] 																																																		Further your experience by editing other settings[i] [center]
 "
 scroll_active = false
-
-[node name="PlayTestLabel" type="Label" parent="."]
-offset_top = 125.0
-offset_right = 353.0
-offset_bottom = 180.0
-theme_override_font_sizes/font_size = 40
-text = "Play Test Controls:"
-
-[node name="PlayTestButton" type="Button" parent="PlayTestLabel"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 400.0
-offset_top = -30.0
-offset_right = 700.0
-offset_bottom = 30.0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_buu4u")
-text = "Press to Test"
-script = ExtResource("1_41fwr")
 
 [node name="SpeedRunTimer" type="Label" parent="."]
 offset_top = 225.0
@@ -85,5 +61,3 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_buu4u")
 text = "Click to reset"
-
-[connection signal="pressed" from="PlayTestLabel/PlayTestButton" to="PlayTestLabel/PlayTestButton" method="_play_test"]
