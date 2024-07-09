@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://br888scm3xpk"]
+[gd_scene load_steps=12 format=3 uid="uid://br888scm3xpk"]
 
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/MainMenu.jpg" id="1_1v0w2"]
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_pqwlb"]
+[ext_resource type="PackedScene" uid="uid://drmiub3t1pxal" path="res://scenes/cutscenes/transformation.tscn" id="2_i48bo"]
 [ext_resource type="PackedScene" uid="uid://duhqqspapvtn0" path="res://scenes/levels/level_1.tscn" id="2_jxyog"]
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="3_mf1q6"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="4_vo1hj"]
@@ -169,7 +170,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pqwlb")
-NextScene = ExtResource("2_jxyog")
+NextScene = ExtResource("2_i48bo")
 CancelScene = ExtResource("2_jxyog")
 
 [node name="Overlay" type="ColorRect" parent="."]
