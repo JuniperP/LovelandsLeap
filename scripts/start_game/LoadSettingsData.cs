@@ -6,9 +6,12 @@ public partial class LoadSettingsData : Node
 	// The file we will store to
 	private static String StoreTo = "user://LoveLandSettingsInfo.cfg";
 
+	// File for resetting settings
+	private static String DefaultSettings = "user://LoveLandDefaultSettings.cfg";
+
 
 	// Save settings data from the game
-	public static void SaveData()
+	public static void SaveData(bool SetUpDefault)
 	{
 		// User config file we will be utilizing access config data
 		ConfigFile config = new ConfigFile();
@@ -34,20 +37,30 @@ public partial class LoadSettingsData : Node
 
 
 		// Storing data, overwriting past settings
-		config.Save(StoreTo);
+		if (SetUpDefault)
+			config.Save(DefaultSettings);
+		else
+			config.Save(StoreTo);
 	}
 
 
 	// Load settings data into the game
-	public static void LoadData()
+	public static void LoadData(bool SetUpDefault)
 	{
 		// User config file we will be utilizing access config data
 		ConfigFile config = new ConfigFile();
 
-		// Ensuring a save file exists and backing out if not
-		Error err = config.Load(StoreTo);
-		if (err != Error.Ok)
-			return;
+		// Loading in the correct file into config
+		if (SetUpDefault)
+			config.Load(DefaultSettings);
+		else
+		{
+			// Ensuring a save file exists and backing out if not
+			Error err = config.Load(StoreTo);
+			if (err != Error.Ok)
+				return;
+		}
+
 
 		// Setting sound data to what it once was
 		AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Master"), (float)config.GetValue("Audio", "Master"));
@@ -65,5 +78,20 @@ public partial class LoadSettingsData : Node
 		// Adjusting for if the screen isn't windowed for user
 		if (ToggleFullScreen.IsOn != (bool)config.GetValue("Display", "FullScreen"))
 			ToggleFullScreen.Toggle();
+	}
+
+
+	public static void SetUpDefault()
+	{
+		// User config file we will be utilizing access config data
+		ConfigFile config = new ConfigFile();
+
+		//Ensuring the file doesn't exist
+		Error err = config.Load(DefaultSettings);
+		if (err != Error.Ok)
+		{
+			// Create the default file
+			SaveData(true);
+		}
 	}
 }
