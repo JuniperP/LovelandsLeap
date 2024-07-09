@@ -31,6 +31,8 @@ motion_offset = Vector2(960, 540)
 motion_mirroring = Vector2(3000, 0)
 
 [node name="SimpleYellowTree" type="Sprite2D" parent="FarLayer"]
+light_mask = 8
+visibility_layer = 8
 position = Vector2(678, 7)
 scale = Vector2(0.5215, 0.5215)
 texture = ExtResource("2_1m08n")
