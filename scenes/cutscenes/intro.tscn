@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://br888scm3xpk"]
+[gd_scene load_steps=12 format=3 uid="uid://br888scm3xpk"]
 
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/MainMenu.jpg" id="1_1v0w2"]
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_pqwlb"]
 [ext_resource type="PackedScene" uid="uid://duhqqspapvtn0" path="res://scenes/levels/level_1.tscn" id="2_jxyog"]
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="3_mf1q6"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="4_vo1hj"]
-[ext_resource type="Script" path="res://scripts/cutscene/CutAnimationControl.cs" id="5_l8y3g"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/McPortrait.png" id="6_1deqh"]
 [ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frogportrait.png" id="7_v3fs0"]
 [ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/music/lovelandCutsceneMusic.wav" id="8_5gsvf"]
@@ -240,9 +239,6 @@ like I asked when there’s a perfectly good forest."
 [node name="FrogDialogue" parent="." instance=ExtResource("4_vo1hj")]
 visible = false
 layout_mode = 1
-script = ExtResource("5_l8y3g")
-LifeSpan = 5.0
-NextTrigger = 6.0
 
 [node name="ProfilePicture" parent="FrogDialogue/BackBox" index="1"]
 texture = ExtResource("7_v3fs0")
