@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://drmiub3t1pxal"]
+[gd_scene load_steps=16 format=3 uid="uid://drmiub3t1pxal"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_3ohwg"]
 [ext_resource type="PackedScene" uid="uid://duhqqspapvtn0" path="res://scenes/levels/level_1.tscn" id="2_ok0po"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="3_5l45d"]
+[ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backroundStripey.jpg" id="3_7q2re"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/McPortrait.png" id="4_4qoas"]
+[ext_resource type="Texture2D" uid="uid://ysmgbmc0yui1" path="res://assets/background/MossyTree.png" id="4_y5tct"]
 [ext_resource type="Texture2D" uid="uid://chm8yefqnrjo1" path="res://assets/witch/WitchPortrait.png" id="5_25kel"]
 [ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frogportrait.png" id="6_ooaw7"]
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="7_pxjvu"]
@@ -513,6 +515,42 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="Background" type="Control" parent="."]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stripey" type="TextureRect" parent="Background"]
+modulate = Color(0.639216, 0.65098, 0.788235, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+offset_right = 1920.0
+offset_bottom = 1631.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_7q2re")
+stretch_mode = 5
+
+[node name="MossyTree" type="TextureRect" parent="Background"]
+modulate = Color(0.356863, 0.360784, 0.490196, 1)
+layout_mode = 1
+offset_left = 76.0
+offset_top = 260.0
+offset_right = 1076.0
+offset_bottom = 1894.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_y5tct")
+expand_mode = 3
+stretch_mode = 5
+
 [node name="Dialogue" type="Control" parent="."]
 z_index = 10
 layout_mode = 1
@@ -705,8 +743,10 @@ frame = 6
 frame_progress = 1.0
 
 [node name="InfoToSkip" parent="." instance=ExtResource("10_pflis")]
+layout_mode = 0
 offset_right = 355.0
 offset_bottom = 67.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
