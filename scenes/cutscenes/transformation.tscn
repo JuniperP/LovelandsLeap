@@ -279,16 +279,25 @@ tracks/1/path = NodePath("FrogLoc/FrogSprite")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(10, 18, 33),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(10, 11, 18, 19, 33, 34),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [&"croak"],
 "method": &"play"
 }, {
-"args": [&"croak"],
+"args": [&"idle"],
 "method": &"play"
 }, {
 "args": [&"croak"],
+"method": &"play"
+}, {
+"args": [&"idle"],
+"method": &"play"
+}, {
+"args": [&"croak"],
+"method": &"play"
+}, {
+"args": [&"idle"],
 "method": &"play"
 }]
 }
@@ -695,14 +704,16 @@ autoplay = "idle"
 frame = 6
 frame_progress = 1.0
 
+[node name="InfoToSkip" parent="." instance=ExtResource("10_pflis")]
+offset_right = 355.0
+offset_bottom = 67.0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_hfskv")
 }
 autoplay = "pre_transformation"
 next/pre_transformation = &"post_transformation"
-
-[node name="InfoToSkip" parent="." instance=ExtResource("10_pflis")]
 
 [editable path="Dialogue/Human1"]
 [editable path="Dialogue/Witch1"]
