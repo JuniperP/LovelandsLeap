@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/MainMenu.jpg" id="1_1v0w2"]
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_pqwlb"]
+[ext_resource type="PackedScene" uid="uid://drmiub3t1pxal" path="res://scenes/cutscenes/transformation.tscn" id="2_i48bo"]
 [ext_resource type="PackedScene" uid="uid://duhqqspapvtn0" path="res://scenes/levels/level_1.tscn" id="2_jxyog"]
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="3_mf1q6"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="4_vo1hj"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/McPortrait.png" id="6_1deqh"]
-[ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frogportrait.png" id="7_v3fs0"]
 [ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/music/lovelandCutsceneMusic.wav" id="8_5gsvf"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="9_anup7"]
 
@@ -159,7 +159,7 @@ tracks/10/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qtv0h"]
 _data = {
-"IntroCutscene": SubResource("Animation_dmnhy")
+"intro_cutscene": SubResource("Animation_dmnhy")
 }
 
 [node name="Intro" type="Control"]
@@ -170,12 +170,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pqwlb")
-NextScene = ExtResource("2_jxyog")
+NextScene = ExtResource("2_i48bo")
 CancelScene = ExtResource("2_jxyog")
 
 [node name="Overlay" type="ColorRect" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0)
 z_index = 100
 layout_mode = 1
 anchors_preset = 15
@@ -204,22 +202,21 @@ layout_mode = 1
 texture = ExtResource("6_1deqh")
 
 [node name="Text" parent="OrderDialogue/BackBox" index="2"]
-text = "My order better not be in the woods again..."
+text = "My dinner better not be in the woods again..."
 
 [node name="HumanLoc" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 429.0
+offset_left = 2100.0
 offset_top = 791.0
-offset_right = 469.003
-offset_bottom = 831.0
+offset_right = 2100.0
+offset_bottom = 791.0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="HumanLoc"]
-visible = false
-modulate = Color(1, 1, 1, 0)
 position = Vector2(12, 39)
 scale = Vector2(0.075, 0.075)
 sprite_frames = ExtResource("3_mf1q6")
 animation = &"idle"
+autoplay = "idle"
 
 [node name="ForestDialogue" parent="." instance=ExtResource("4_vo1hj")]
 visible = false
@@ -233,18 +230,9 @@ texture = ExtResource("6_1deqh")
 offset_top = -87.0
 offset_right = -34.0
 offset_bottom = 88.0
-text = "Why would they actually leave it at my house
+theme_override_font_sizes/font_size = 44
+text = "Why would they actually leave delivery at my house
 like I asked when there’s a perfectly good forest."
-
-[node name="FrogDialogue" parent="." instance=ExtResource("4_vo1hj")]
-visible = false
-layout_mode = 1
-
-[node name="ProfilePicture" parent="FrogDialogue/BackBox" index="1"]
-texture = ExtResource("7_v3fs0")
-
-[node name="Text" parent="FrogDialogue/BackBox" index="2"]
-text = "*CROAK!!!*"
 
 [node name="InfoToSkip" parent="." instance=ExtResource("9_anup7")]
 layout_mode = 0
@@ -258,8 +246,7 @@ bus = &"Music"
 libraries = {
 "": SubResource("AnimationLibrary_qtv0h")
 }
-autoplay = "IntroCutscene"
+autoplay = "intro_cutscene"
 
 [editable path="OrderDialogue"]
 [editable path="ForestDialogue"]
-[editable path="FrogDialogue"]

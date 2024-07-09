@@ -1,0 +1,70 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://dyimfn0lnsc3"]
+
+[ext_resource type="Texture2D" uid="uid://dheap3uyeierq" path="res://assets/witch/Witch.png" id="1_pjgti"]
+[ext_resource type="Texture2D" uid="uid://bulcvu3fnr3bn" path="res://assets/witch/Witchb1.png" id="2_6x4r1"]
+[ext_resource type="Texture2D" uid="uid://c5p2ee38frcf5" path="res://assets/witch/Witchtalk1.png" id="2_bbv74"]
+[ext_resource type="Texture2D" uid="uid://cnra5lliw3qg7" path="res://assets/witch/Witchtalk2.png" id="3_vgdig"]
+[ext_resource type="Texture2D" uid="uid://c3lipp14m2lb6" path="res://assets/witch/Witchb2.png" id="3_y0kdb"]
+[ext_resource type="Texture2D" uid="uid://c6lrhlbw7ypl7" path="res://assets/witch/Witchb3.png" id="4_5qfem"]
+[ext_resource type="Texture2D" uid="uid://c1vwuwt5ljf2v" path="res://assets/witch/Witchb5.png" id="5_8c2c3"]
+[ext_resource type="Texture2D" uid="uid://cwysmrgh20q6o" path="res://assets/witch/Witchb6.png" id="6_srqv1"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pjgti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6x4r1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y0kdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5qfem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8c2c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_srqv1")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"disappearing",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pjgti")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pjgti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bbv74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vgdig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bbv74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_pjgti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_pjgti")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
