@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://br888scm3xpk"]
+[gd_scene load_steps=11 format=3 uid="uid://br888scm3xpk"]
 
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/MainMenu.jpg" id="1_1v0w2"]
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_pqwlb"]
@@ -6,7 +6,6 @@
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="3_mf1q6"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="4_vo1hj"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/McPortrait.png" id="6_1deqh"]
-[ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frogportrait.png" id="7_v3fs0"]
 [ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/music/lovelandCutsceneMusic.wav" id="8_5gsvf"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="9_anup7"]
 
@@ -236,16 +235,6 @@ offset_bottom = 88.0
 text = "Why would they actually leave it at my house
 like I asked when there’s a perfectly good forest."
 
-[node name="FrogDialogue" parent="." instance=ExtResource("4_vo1hj")]
-visible = false
-layout_mode = 1
-
-[node name="ProfilePicture" parent="FrogDialogue/BackBox" index="1"]
-texture = ExtResource("7_v3fs0")
-
-[node name="Text" parent="FrogDialogue/BackBox" index="2"]
-text = "*CROAK!!!*"
-
 [node name="InfoToSkip" parent="." instance=ExtResource("9_anup7")]
 layout_mode = 0
 
@@ -262,4 +251,3 @@ autoplay = "IntroCutscene"
 
 [editable path="OrderDialogue"]
 [editable path="ForestDialogue"]
-[editable path="FrogDialogue"]
