@@ -195,8 +195,6 @@ texture = ExtResource("1_1v0w2")
 expand_mode = 1
 
 [node name="OrderDialogue" parent="." instance=ExtResource("4_vo1hj")]
-visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 
 [node name="ProfilePicture" parent="OrderDialogue/BackBox" index="1"]
@@ -209,8 +207,8 @@ text = "My order better not be in the woods again..."
 anchors_preset = 0
 offset_left = 429.0
 offset_top = 791.0
-offset_right = 469.003
-offset_bottom = 831.0
+offset_right = 429.0
+offset_bottom = 791.0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="HumanLoc"]
 visible = false
