@@ -46,6 +46,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_buu4u")
 
 [node name="VerburgingToggle" type="Label" parent="."]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 125.0
 offset_right = 408.0
