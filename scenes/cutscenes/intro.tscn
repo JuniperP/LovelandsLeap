@@ -158,7 +158,7 @@ tracks/10/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qtv0h"]
 _data = {
-"IntroCutscene": SubResource("Animation_dmnhy")
+"intro_cutscene": SubResource("Animation_dmnhy")
 }
 
 [node name="Intro" type="Control"]
@@ -247,7 +247,7 @@ bus = &"Music"
 libraries = {
 "": SubResource("AnimationLibrary_qtv0h")
 }
-autoplay = "IntroCutscene"
+autoplay = "intro_cutscene"
 
 [editable path="OrderDialogue"]
 [editable path="ForestDialogue"]
