@@ -173,8 +173,6 @@ NextScene = ExtResource("2_jxyog")
 CancelScene = ExtResource("2_jxyog")
 
 [node name="Overlay" type="ColorRect" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0)
 z_index = 100
 layout_mode = 1
 anchors_preset = 15
@@ -207,9 +205,9 @@ text = "My dinner better not be in the woods again..."
 
 [node name="HumanLoc" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 429.0
+offset_left = 2100.0
 offset_top = 791.0
-offset_right = 429.0
+offset_right = 2100.0
 offset_bottom = 791.0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="HumanLoc"]
