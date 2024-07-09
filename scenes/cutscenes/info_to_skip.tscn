@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scripts/cutscene/InfoToSkip.cs" id="1_iw4ap"]
 
 [node name="InfoToSkip" type="Label"]
-modulate = Color(0, 0, 0, 1)
 offset_right = 100.0
 offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "Press [_] to skip"
 script = ExtResource("1_iw4ap")
