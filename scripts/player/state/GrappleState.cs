@@ -15,16 +15,14 @@ public class GrappleState : MovementState
 
 		// Handle horizontal input
 		float inputDir = Input.GetAxis("move_left", "move_right");
-		if (inputDir != 0f)
+		// If trying to move and below the tongue pivot
+		if (inputDir != 0f && weightPos.Y > springPos.Y)
 		{
-			if (weightPos.Y > springPos.Y) // Flip rotation if above spring
-				inputDir *= -1;
-
 			// Rotate a 2D vector clockwise or counterclockwise depending on input
 			// TODO: Explain this better because vectors are confusing
 			Vector2 forceDir = (springPos - weightPos).Normalized();
 			forceDir = new Vector2(forceDir.Y, forceDir.X);
-			forceDir *= new Vector2(inputDir, -inputDir);
+			forceDir *= new Vector2(-inputDir, inputDir);
 
 			// The forceDir will now be tangent to the swing curve of the weight
 			_ctx.TongueWeight.ApplyForce(forceDir * _ctx.SwingForce * (float)delta);
