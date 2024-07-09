@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://drmiub3t1pxal"]
+[gd_scene load_steps=7 format=3 uid="uid://drmiub3t1pxal"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_3ohwg"]
+[ext_resource type="PackedScene" uid="uid://duhqqspapvtn0" path="res://scenes/levels/level_1.tscn" id="2_ok0po"]
+[ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="3_5l45d"]
+[ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/McPortrait.png" id="4_4qoas"]
+[ext_resource type="Texture2D" uid="uid://chm8yefqnrjo1" path="res://assets/witch/WitchPortrait.png" id="5_25kel"]
+[ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frogportrait.png" id="6_ooaw7"]
 
 [node name="Transformation" type="Control"]
 layout_mode = 3
@@ -10,3 +15,162 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3ohwg")
+NextScene = ExtResource("2_ok0po")
+CancelScene = ExtResource("2_ok0po")
+
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Dialogue" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Human1" parent="Dialogue" instance=ExtResource("3_5l45d")]
+visible = false
+layout_mode = 1
+
+[node name="ProfilePicture" parent="Dialogue/Human1/BackBox" index="1"]
+texture = ExtResource("4_4qoas")
+
+[node name="Text" parent="Dialogue/Human1/BackBox" index="2"]
+text = "Wha-? Hey, that’s mine!"
+
+[node name="Witch1" parent="Dialogue" instance=ExtResource("3_5l45d")]
+visible = false
+layout_mode = 1
+
+[node name="Background" parent="Dialogue/Witch1/BackBox" index="0"]
+modulate = Color(0.3978, 0.78, 0.4615, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Witch1/BackBox" index="1"]
+texture = ExtResource("5_25kel")
+
+[node name="Text" parent="Dialogue/Witch1/BackBox" index="2"]
+text = "Uh- crap! No it isn't, I found it first!"
+
+[node name="Human2" parent="Dialogue" instance=ExtResource("3_5l45d")]
+visible = false
+layout_mode = 1
+
+[node name="ProfilePicture" parent="Dialogue/Human2/BackBox" index="1"]
+texture = ExtResource("4_4qoas")
+
+[node name="Text" parent="Dialogue/Human2/BackBox" index="2"]
+text = "Hey weirdo, what the hell is your problem?!
+That’s clearly my food! Give it back!"
+
+[node name="Witch2" parent="Dialogue" instance=ExtResource("3_5l45d")]
+visible = false
+layout_mode = 1
+
+[node name="Background" parent="Dialogue/Witch2/BackBox" index="0"]
+modulate = Color(0.3978, 0.78, 0.4615, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Witch2/BackBox" index="1"]
+texture = ExtResource("5_25kel")
+
+[node name="Text" parent="Dialogue/Witch2/BackBox" index="2"]
+text = "Aack!! Don’t yell at me! Finders keepers!!"
+
+[node name="Witch3" parent="Dialogue" instance=ExtResource("3_5l45d")]
+visible = false
+layout_mode = 1
+
+[node name="Background" parent="Dialogue/Witch3/BackBox" index="0"]
+modulate = Color(0.3978, 0.78, 0.4615, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Witch3/BackBox" index="1"]
+texture = ExtResource("5_25kel")
+
+[node name="Text" parent="Dialogue/Witch3/BackBox" index="2"]
+offset_top = -68.5
+offset_bottom = 68.5
+theme_override_font_sizes/font_size = 42
+text = "Hehehe! The only one who would be able to reverse that crafty spell is the Princess of Loveland, and she doesn’t see visitors! Hehehe!"
+autowrap_mode = 2
+clip_text = false
+
+[node name="Frog1" parent="Dialogue" instance=ExtResource("3_5l45d")]
+visible = false
+layout_mode = 1
+
+[node name="ProfilePicture" parent="Dialogue/Frog1/BackBox" index="1"]
+texture = ExtResource("6_ooaw7")
+
+[node name="Text" parent="Dialogue/Frog1/BackBox" index="2"]
+text = "*Croak?*"
+
+[node name="Witch4" parent="Dialogue" instance=ExtResource("3_5l45d")]
+visible = false
+layout_mode = 1
+
+[node name="Background" parent="Dialogue/Witch4/BackBox" index="0"]
+modulate = Color(0.3978, 0.78, 0.4615, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Witch4/BackBox" index="1"]
+texture = ExtResource("5_25kel")
+
+[node name="Text" parent="Dialogue/Witch4/BackBox" index="2"]
+text = "What? Of course there’s a Princess of Loveland.
+I’ve met her."
+
+[node name="Frog2" parent="Dialogue" instance=ExtResource("3_5l45d")]
+visible = false
+layout_mode = 1
+
+[node name="ProfilePicture" parent="Dialogue/Frog2/BackBox" index="1"]
+texture = ExtResource("6_ooaw7")
+
+[node name="Text" parent="Dialogue/Frog2/BackBox" index="2"]
+text = "*Croak.*"
+
+[node name="Witch5" parent="Dialogue" instance=ExtResource("3_5l45d")]
+visible = false
+layout_mode = 1
+
+[node name="Background" parent="Dialogue/Witch5/BackBox" index="0"]
+modulate = Color(0.3978, 0.78, 0.4615, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Witch5/BackBox" index="1"]
+texture = ExtResource("5_25kel")
+
+[node name="Text" parent="Dialogue/Witch5/BackBox" index="2"]
+offset_top = -68.5
+offset_bottom = 68.5
+theme_override_font_sizes/font_size = 42
+text = "Well who else would she be? She hangs around in a full dress and crown in the forest over there. Wait! I’ve said too much already. Gotta go!"
+autowrap_mode = 2
+clip_text = false
+
+[node name="Frog3" parent="Dialogue" instance=ExtResource("3_5l45d")]
+visible = false
+layout_mode = 1
+
+[node name="ProfilePicture" parent="Dialogue/Frog3/BackBox" index="1"]
+texture = ExtResource("6_ooaw7")
+
+[node name="Text" parent="Dialogue/Frog3/BackBox" index="2"]
+text = "*Croak... (angrily)*"
+
+[editable path="Dialogue/Human1"]
+[editable path="Dialogue/Witch1"]
+[editable path="Dialogue/Human2"]
+[editable path="Dialogue/Witch2"]
+[editable path="Dialogue/Witch3"]
+[editable path="Dialogue/Frog1"]
+[editable path="Dialogue/Witch4"]
+[editable path="Dialogue/Frog2"]
+[editable path="Dialogue/Witch5"]
+[editable path="Dialogue/Frog3"]
