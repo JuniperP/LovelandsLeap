@@ -1,13 +1,7 @@
 using Godot;
 
-public partial class SaveWarning : RichTextLabel
+public partial class SaveWarning : FadeIn
 {
-	// Boolean to track if process can start fading
-	private bool CanFade;
-
-	// Only emit the signal once
-	private bool once;
-
 	// Seeing if should start fading out
 	private bool Start;
 
@@ -22,7 +16,7 @@ public partial class SaveWarning : RichTextLabel
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (CanFade && once)
+		if (CanFade && Once)
 		{
 			// Fade in
 			if (Start)
@@ -41,7 +35,7 @@ public partial class SaveWarning : RichTextLabel
 				if (Trans <= 0)
 				{
 					EmitSignal(SignalName.WarningDone);
-					once = false;
+					Once = false;
 				}
 				else
 					Trans -= (float)delta / 2;
@@ -55,17 +49,16 @@ public partial class SaveWarning : RichTextLabel
 
 	}
 
-	// Starts bringing in logo if told to
-	private void CanNowFade()
+	// Extra setup for ready
+	protected override void FurtherSetUp()
 	{
-		CanFade = true;
-	}
-
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		CanFade = false;
-		once = true;
 		Start = true;
 	}
+
+	// Having start of tongue shoot for fade in
+    protected override void SFXSetUp()
+    {
+        // None currently though this may change
+    }
+
 }
