@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://df6ucomymik0q"]
+[gd_scene load_steps=9 format=3 uid="uid://df6ucomymik0q"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_e7reo"]
 [ext_resource type="PackedScene" uid="uid://duhqqspapvtn0" path="res://scenes/levels/level_1.tscn" id="2_4w278"]
 [ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backroundStripey.jpg" id="3_5gnx6"]
 [ext_resource type="Texture2D" uid="uid://ysmgbmc0yui1" path="res://assets/background/MossyTree.png" id="4_d0b8k"]
+[ext_resource type="SpriteFrames" uid="uid://hq7btpb76h0j" path="res://resources/sprite_frames/princess.tres" id="5_2xgpo"]
 [ext_resource type="SpriteFrames" uid="uid://dyimfn0lnsc3" path="res://resources/sprite_frames/witch.tres" id="10_nwuek"]
 [ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="11_r41yp"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="12_e71ay"]
@@ -85,9 +86,10 @@ offset_right = 1553.0
 offset_bottom = 790.0
 
 [node name="PrincessSprite" type="AnimatedSprite2D" parent="PrincessLoc"]
-visible = false
-scale = Vector2(0.075, 0.075)
-autoplay = "walking"
+scale = Vector2(0.4, 0.4)
+sprite_frames = ExtResource("5_2xgpo")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="WitchLoc" type="Control" parent="."]
 layout_mode = 3
@@ -115,10 +117,8 @@ offset_bottom = 790.0
 [node name="FrogSprite" type="AnimatedSprite2D" parent="FrogLoc"]
 scale = Vector2(0.765957, 0.765957)
 sprite_frames = ExtResource("11_r41yp")
-animation = &"croak"
+animation = &"idle"
 autoplay = "idle"
-frame = 6
-frame_progress = 1.0
 
 [node name="InfoToSkip" parent="." instance=ExtResource("12_e71ay")]
 layout_mode = 0
