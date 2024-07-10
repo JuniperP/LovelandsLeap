@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx1xpj1qy44d8"]
+[gd_scene load_steps=4 format=3 uid="uid://bx1xpj1qy44d8"]
 
+[ext_resource type="Script" path="res://scripts/ui/settings/toggle_buttons/ToggleClassicVerburg.cs" id="1_1mm41"]
 [ext_resource type="PackedScene" uid="uid://bj4wxcrjnpx2w" path="res://scenes/ui/settings/confirm_reset.tscn" id="1_vwavv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buu4u"]
@@ -68,6 +69,7 @@ offset_bottom = 30.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_buu4u")
+script = ExtResource("1_1mm41")
 
 [node name="FactoryReset" type="Label" parent="."]
 layout_mode = 1
@@ -104,4 +106,5 @@ offset_bottom = 600.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[connection signal="pressed" from="VerburgingToggle/ToggleClassic" to="VerburgingToggle/ToggleClassic" method="_adjust_name_and_screen"]
 [connection signal="pressed" from="FactoryReset/ResetSettings" to="ConfirmReset" method="_open"]
