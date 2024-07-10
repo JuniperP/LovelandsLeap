@@ -25,7 +25,11 @@ public abstract partial class ToggleButton : Button
 		else
 			Text = "On";
 
-		// Change what 
+		// Switch IsOn
+		IsOn = !IsOn;
+
+
+		// Change effects accordingly
 		Toggle();
 
 	}

@@ -6,13 +6,13 @@ public partial class ToggleFullScreen : ToggleButton
 	public override void Toggle()
 	{
 		// Switch in or out of full screen
-		if (IsOn)	
-			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-		else
+		if (IsOn)
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+		else
+			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+			
 		
-		// Switch IsOn
-		IsOn = !IsOn;
+		
 	}
 
 
