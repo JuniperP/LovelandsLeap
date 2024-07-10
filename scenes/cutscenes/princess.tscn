@@ -1,0 +1,130 @@
+[gd_scene load_steps=8 format=3 uid="uid://df6ucomymik0q"]
+
+[ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_e7reo"]
+[ext_resource type="PackedScene" uid="uid://duhqqspapvtn0" path="res://scenes/levels/level_1.tscn" id="2_4w278"]
+[ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backroundStripey.jpg" id="3_5gnx6"]
+[ext_resource type="Texture2D" uid="uid://ysmgbmc0yui1" path="res://assets/background/MossyTree.png" id="4_d0b8k"]
+[ext_resource type="SpriteFrames" uid="uid://dyimfn0lnsc3" path="res://resources/sprite_frames/witch.tres" id="10_nwuek"]
+[ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="11_r41yp"]
+[ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="12_e71ay"]
+
+[node name="Transformation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e7reo")
+NextScene = ExtResource("2_4w278")
+CancelScene = ExtResource("2_4w278")
+
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="Control" parent="."]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stripey" type="TextureRect" parent="Background"]
+modulate = Color(0.639216, 0.65098, 0.788235, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+offset_right = 1920.0
+offset_bottom = 1631.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_5gnx6")
+stretch_mode = 5
+
+[node name="MossyTree" type="TextureRect" parent="Background"]
+modulate = Color(0.356863, 0.360784, 0.490196, 1)
+layout_mode = 1
+offset_left = 76.0
+offset_top = 260.0
+offset_right = 1076.0
+offset_bottom = 1894.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_d0b8k")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Dialogue" type="Control" parent="."]
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PrincessLoc" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1553.0
+offset_top = 790.0
+offset_right = 1553.0
+offset_bottom = 790.0
+
+[node name="PrincessSprite" type="AnimatedSprite2D" parent="PrincessLoc"]
+visible = false
+scale = Vector2(0.075, 0.075)
+autoplay = "walking"
+
+[node name="WitchLoc" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -245.0
+offset_top = 796.0
+offset_right = -245.0
+offset_bottom = 796.0
+
+[node name="WitchSprite" type="AnimatedSprite2D" parent="WitchLoc"]
+scale = Vector2(0.075, 0.075)
+sprite_frames = ExtResource("10_nwuek")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true
+
+[node name="FrogLoc" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -204.0
+offset_top = 790.0
+offset_right = -204.0
+offset_bottom = 790.0
+
+[node name="FrogSprite" type="AnimatedSprite2D" parent="FrogLoc"]
+scale = Vector2(0.765957, 0.765957)
+sprite_frames = ExtResource("11_r41yp")
+animation = &"croak"
+autoplay = "idle"
+frame = 6
+frame_progress = 1.0
+
+[node name="InfoToSkip" parent="." instance=ExtResource("12_e71ay")]
+layout_mode = 0
+offset_right = 355.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "pre_transformation"
