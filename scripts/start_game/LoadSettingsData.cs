@@ -77,7 +77,17 @@ public partial class LoadSettingsData : Node
 
 		// Adjusting for if the screen isn't windowed for user
 		if (ToggleFullScreen.IsOn != (bool)config.GetValue("Display", "FullScreen"))
-			ToggleFullScreen.Toggle();
+		{
+			// Match saved
+			ToggleFullScreen.IsOn = (bool)config.GetValue("Display", "FullScreen");
+
+			// Update to be full screen or not
+			if (ToggleFullScreen.IsOn)
+				DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+			else
+				DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+				
+		}
 	}
 
 
@@ -90,6 +100,6 @@ public partial class LoadSettingsData : Node
 		Error err = config.Load(DefaultSettings);
 		if (err != Error.Ok)
 			SaveData(true);
-		
+
 	}
 }
