@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dcxi6hn46xvnw"]
 
 [ext_resource type="PackedScene" uid="uid://ccppbbbwwkdtb" path="res://scenes/ui/settings/adjust_key_combo.tscn" id="1_gx03p"]
-[ext_resource type="Script" path="res://scripts/ui/settings/PlayTestButton.cs" id="2_wxg0s"]
+[ext_resource type="Script" path="res://scripts/ui/settings/key_binds/PlayTestButton.cs" id="2_wxg0s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmpa0"]
 bg_color = Color(0, 0, 0, 1)
