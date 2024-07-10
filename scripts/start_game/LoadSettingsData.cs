@@ -86,12 +86,10 @@ public partial class LoadSettingsData : Node
 		// User config file we will be utilizing access config data
 		ConfigFile config = new ConfigFile();
 
-		//Ensuring the file doesn't exist
+		// Ensuring the file doesn't exist to create a default file
 		Error err = config.Load(DefaultSettings);
 		if (err != Error.Ok)
-		{
-			// Create the default file
 			SaveData(true);
-		}
+		
 	}
 }

@@ -15,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_byusu")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="OPBack" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
+[node name="TextureRect" type="TextureRect" parent="OPBack"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,7 +37,7 @@ grow_vertical = 2
 texture = ExtResource("2_qxlys")
 expand_mode = 1
 
-[node name="Title" type="Label" parent="Panel/TextureRect"]
+[node name="Title" type="Label" parent="OPBack/TextureRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,7 +54,7 @@ text = "
 LOVELAND "
 horizontal_alignment = 2
 
-[node name="QuitButton" type="Button" parent="Panel/TextureRect"]
+[node name="QuitButton" type="Button" parent="OPBack/TextureRect"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -71,7 +71,7 @@ theme_override_font_sizes/font_size = 48
 text = "Quit
 "
 
-[node name="CreditButton" type="Button" parent="Panel/TextureRect"]
+[node name="CreditButton" type="Button" parent="OPBack/TextureRect"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -87,7 +87,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "Credits"
 
-[node name="SettingsButton" type="Button" parent="Panel/TextureRect"]
+[node name="SettingsButton" type="Button" parent="OPBack/TextureRect"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -103,7 +103,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "Settings"
 
-[node name="StartGameButton" type="Button" parent="Panel/TextureRect"]
+[node name="StartGameButton" type="Button" parent="OPBack/TextureRect"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -119,7 +119,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "Start Game"
 
-[node name="Settings" parent="Panel" instance=ExtResource("3_ps8pg")]
+[node name="Settings" parent="." instance=ExtResource("3_ps8pg")]
 visible = false
 layout_mode = 1
 
@@ -128,7 +128,7 @@ stream = ExtResource("4_e7cc2")
 autoplay = true
 bus = &"Music"
 
-[connection signal="pressed" from="Panel/TextureRect/QuitButton" to="." method="_quit_game"]
-[connection signal="pressed" from="Panel/TextureRect/CreditButton" to="." method="_on_credit_button_pressed"]
-[connection signal="pressed" from="Panel/TextureRect/SettingsButton" to="Panel/Settings" method="_open"]
-[connection signal="pressed" from="Panel/TextureRect/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="OPBack/TextureRect/QuitButton" to="." method="_quit_game"]
+[connection signal="pressed" from="OPBack/TextureRect/CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="OPBack/TextureRect/SettingsButton" to="Settings" method="_open"]
+[connection signal="pressed" from="OPBack/TextureRect/StartGameButton" to="." method="_on_start_game_button_pressed"]

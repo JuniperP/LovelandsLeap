@@ -28,9 +28,7 @@ public partial class Settings : Toggleable
 
 		// If the escape key isn't being pressed, it is deemed not held down
 		else if (!Input.IsActionPressed("ui_cancel") && HeldDown)
-		{
 			HeldDown = false;
-		}
 
 	}
 

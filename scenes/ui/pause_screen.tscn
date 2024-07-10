@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q33xn")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="BackDrop" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0.490196)
 layout_mode = 1
 anchors_preset = 15
@@ -22,7 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="PausedLabel" type="Label" parent="BackDrop"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -38,7 +38,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 96
 text = "PAUSED"
 
-[node name="ResumeButton" type="Button" parent="Panel"]
+[node name="ResumeButton" type="Button" parent="BackDrop"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -54,7 +54,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Resume"
 
-[node name="SettingsButton" type="Button" parent="Panel"]
+[node name="SettingsButton" type="Button" parent="BackDrop"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -70,7 +70,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Settings"
 
-[node name="MainMenuButton" type="Button" parent="Panel"]
+[node name="MainMenuButton" type="Button" parent="BackDrop"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -90,6 +90,6 @@ text = "Return to main menu"
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="Panel/ResumeButton" to="." method="_close"]
-[connection signal="pressed" from="Panel/SettingsButton" to="Settings" method="_open"]
-[connection signal="pressed" from="Panel/MainMenuButton" to="." method="_to_main_menu"]
+[connection signal="pressed" from="BackDrop/ResumeButton" to="." method="_close"]
+[connection signal="pressed" from="BackDrop/SettingsButton" to="Settings" method="_open"]
+[connection signal="pressed" from="BackDrop/MainMenuButton" to="." method="_to_main_menu"]
