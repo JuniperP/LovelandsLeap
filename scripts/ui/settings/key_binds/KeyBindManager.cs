@@ -42,6 +42,10 @@ public partial class KeyBindManager : Control
 	{
 		OurButton.Text = "...";
 		ToBeSet = true;
+
+		// Stopping the instance of escaping right after entering a key bind
+		if(ActionToSet == UserAction.Cancel)
+			InputMap.ActionEraseEvents(Keybinds._acts[ActionToSet].Mapping);
 	}
 
 
