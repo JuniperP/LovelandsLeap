@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://hq7btpb76h0j"]
+
+[ext_resource type="Texture2D" uid="uid://25xdj5fui433" path="res://assets/princess/princess.png" id="1_yi2my"]
+[ext_resource type="Texture2D" uid="uid://d3erovreq81a0" path="res://assets/princess/princess_kiss.png" id="2_nesdc"]
+[ext_resource type="Texture2D" uid="uid://dbbsroimcqv4j" path="res://assets/princess/princess_talk_1.png" id="3_7neyr"]
+[ext_resource type="Texture2D" uid="uid://ctquau2vvhucu" path="res://assets/princess/princess_talk_2.png" id="4_ym7xq"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yi2my")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yi2my")
+}, {
+"duration": 2.5,
+"texture": ExtResource("2_nesdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_yi2my")
+}],
+"loop": false,
+"name": &"kiss",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yi2my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7neyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ym7xq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7neyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ym7xq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7neyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_yi2my")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
