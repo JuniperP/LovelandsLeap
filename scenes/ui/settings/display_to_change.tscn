@@ -41,16 +41,36 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_2nyn2")
 script = ExtResource("1_1oo7p")
 
-[node name="ResolutionName" type="Label" parent="."]
+[node name="ChooseDisplay" type="Label" parent="."]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 300.0
 offset_right = 240.0
 offset_bottom = 355.0
 theme_override_font_sizes/font_size = 40
+text = "Display To:"
+
+[node name="OptionButton" type="OptionButton" parent="ChooseDisplay"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 250.0
+offset_top = -45.0
+offset_right = 750.0
+offset_bottom = 45.0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ojplt")
+
+[node name="ResolutionName2" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 450.0
+offset_right = 240.0
+offset_bottom = 505.0
+theme_override_font_sizes/font_size = 40
 text = "Resolution:"
 
-[node name="OptionButton" type="OptionButton" parent="ResolutionName"]
+[node name="OptionButton" type="OptionButton" parent="ResolutionName2"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
