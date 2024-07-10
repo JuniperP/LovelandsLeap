@@ -3,7 +3,7 @@ using Godot;
 public abstract partial class ToggleButton : Button
 {
 	// To see if in full screen or not
-	public static bool IsOn = true;
+	public static bool IsOn = false;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

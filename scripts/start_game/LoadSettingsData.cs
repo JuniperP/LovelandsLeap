@@ -75,19 +75,17 @@ public partial class LoadSettingsData : Node
 		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "ClickIn"), UserAction.Click);
 		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "CancelIn"), UserAction.Cancel);
 
+		// Matching if the screen is windowed
+		ToggleFullScreen.IsOn = (bool)config.GetValue("Display", "FullScreen");
 		// Adjusting for if the screen isn't windowed for user
-		if (ToggleFullScreen.IsOn != (bool)config.GetValue("Display", "FullScreen"))
-		{
-			// Match saved
-			ToggleFullScreen.IsOn = (bool)config.GetValue("Display", "FullScreen");
-
-			// Update to be full screen or not
-			if (ToggleFullScreen.IsOn)
-				DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
-			else
-				DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-				
-		}
+		if ((bool)config.GetValue("Display", "FullScreen"))
+			// Full screened
+			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+		else
+			// Windowed
+			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+		
+	
 	}
 
 
