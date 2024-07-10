@@ -7,11 +7,10 @@ public partial class CreditText : Label
 	public override void _Process(double delta)
 	{
 		// Checks if at point in credits to cut the scrolling
-		if (Position.Y > -5400)
+		if (Position.Y > -5850)
 		{
 			// Scrolls and updates
 			Position = new Vector2(Position.X, Position.Y - 2);
-
 		}
 
 	}

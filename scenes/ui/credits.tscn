@@ -27,7 +27,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 6.0
-offset_bottom = 5378.0
+offset_bottom = 5742.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
@@ -59,7 +59,7 @@ Teddy Jacobson
 Music
 Max Tozer
 Phoebe Tozer
-trouby for the \"frogs at summer night\" effect from
+trouby, \"frogs at summer night\" effect from
 FreeSound.  https://freesound.org/s/379828/
 
 
