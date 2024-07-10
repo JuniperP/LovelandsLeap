@@ -110,6 +110,8 @@ grow_vertical = 1
 
 [connection signal="pressed" from="FactoryReset/ResetSettings" to="ConfirmReset" method="_open"]
 [connection signal="pressed" from="VerburgingToggle/ToggleClassic" to="VerburgingToggle/ToggleClassic" method="_adjust_name_and_screen"]
+[connection signal="visibility_changed" from="VerburgingToggle/ToggleClassic" to="VerburgingToggle/ToggleClassic" method="_update"]
 [connection signal="pressed" from="SpeedRunTimer/ToggleSpeedrun" to="SpeedRunTimer/ToggleSpeedrun" method="_adjust_name_and_screen"]
+[connection signal="visibility_changed" from="SpeedRunTimer/ToggleSpeedrun" to="SpeedRunTimer/ToggleSpeedrun" method="_update"]
 [connection signal="visibility_changed" from="ConfirmReset" to="VerburgingToggle/ToggleClassic" method="_Ready"]
 [connection signal="visibility_changed" from="ConfirmReset" to="SpeedRunTimer/ToggleSpeedrun" method="_Ready"]

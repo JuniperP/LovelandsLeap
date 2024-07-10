@@ -2,30 +2,31 @@ using Godot;
 
 public abstract partial class ToggleButton : Button
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	// Update whether the box says on or off (but only when seen)
+	public void _update()
 	{
-		if (GetState())
-			Text = "On";
-		else
-			Text = "Off";
+		if (Visible)
+		{
+			if (GetState())
+				Text = "On";
+			else
+				Text = "Off";
+		}
+
 	}
 
 
 	// Letting the button switch its label on and off
 	protected void _adjust_name_and_screen()
 	{
-		// Change what the button displays
-		if (GetState())
-			Text = "Off";
-		else
-			Text = "On";
-
-		// Switch IsOn
+		// Switch state
 		SetState(!GetState());
 
 		// Change effects accordingly
 		Toggle();
+
+		// Change what the button displays
+		_update();
 
 	}
 
