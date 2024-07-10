@@ -10,9 +10,7 @@ public partial class ToggleFullScreen : ToggleButton
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
 		else
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-			
-		
-		
+
 	}
 
 

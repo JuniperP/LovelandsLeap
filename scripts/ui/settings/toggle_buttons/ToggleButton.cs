@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public abstract partial class ToggleButton : Button
 {
@@ -27,7 +26,6 @@ public abstract partial class ToggleButton : Button
 
 		// Switch IsOn
 		IsOn = !IsOn;
-
 
 		// Change effects accordingly
 		Toggle();
