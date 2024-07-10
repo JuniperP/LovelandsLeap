@@ -85,11 +85,6 @@ public partial class PauseScreen : Toggleable
 		// If asked, the scene switches
 		if (!GoTo.Equals(""))
 			GetTree().ChangeSceneToFile(GoTo);
-
-		
-		// In the case of a settings factory reset
-		// if(ConfirmReset.SettingsReset)
-		// 	ConfirmReset.RefreshSettings(this);
 	}
 }
 
