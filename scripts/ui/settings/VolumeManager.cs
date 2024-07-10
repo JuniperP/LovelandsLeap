@@ -25,10 +25,14 @@ public partial class VolumeManager : Label
 
 		// Setting our slider to adjusts to work with the provided bus
 		BusIndex = AudioServer.GetBusIndex(BusName);
+	}
 
+	// Updating the current info
+	private void _update()
+	{
 		// Sets sliders current value to match the bus
-		Slider.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(BusIndex));
-
+		if(Visible)
+			Slider.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(BusIndex));
 
 	}
 

@@ -39,4 +39,4 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_50hl3")
 text_overrun_behavior = 1
 
 [connection signal="pressed" from="MoveLabel/ButtonToAdjust" to="." method="ChangeValue"]
-[connection signal="visibility_changed" from="MoveLabel/ButtonToAdjust" to="." method="_Ready"]
+[connection signal="visibility_changed" from="MoveLabel/ButtonToAdjust" to="." method="_update"]

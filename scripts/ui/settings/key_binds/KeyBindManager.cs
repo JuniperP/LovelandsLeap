@@ -24,11 +24,16 @@ public partial class KeyBindManager : Control
 		// Giving a special name for each button's accompanying label
 		label.Text = Keybinds._acts[ActionToSet].ButtonLabel;
 
-		// Giving the symbol for each button
-		OurButton.Text = Keybinds._acts[ActionToSet].Input.AsText();
-
 		// Set up changing the value in the future
 		ToBeSet = false;
+	}
+
+	// Updating the current info
+	private void _update()
+	{
+		// Giving the symbol for each button
+		if(Visible)
+			OurButton.Text = Keybinds._acts[ActionToSet].Input.AsText();
 	}
 
 
