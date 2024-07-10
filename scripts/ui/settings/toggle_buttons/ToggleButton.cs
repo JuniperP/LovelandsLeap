@@ -2,13 +2,10 @@ using Godot;
 
 public abstract partial class ToggleButton : Button
 {
-	// To see if in full screen or not
-	public static bool IsOn = false;
-
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		if (IsOn)
+		if (GetState())
 			Text = "On";
 		else
 			Text = "Off";
@@ -19,13 +16,13 @@ public abstract partial class ToggleButton : Button
 	protected void _adjust_name_and_screen()
 	{
 		// Change what the button displays
-		if (IsOn)
+		if (GetState())
 			Text = "Off";
 		else
 			Text = "On";
 
 		// Switch IsOn
-		IsOn = !IsOn;
+		SetState(!GetState());
 
 		// Change effects accordingly
 		Toggle();
@@ -36,4 +33,7 @@ public abstract partial class ToggleButton : Button
 	// Toggling the desired effect
 	public abstract void Toggle();
 
+	// All subclasses must have getters and setters for their respected static states
+	protected abstract void SetState(bool b);
+	protected abstract bool GetState();
 }

@@ -33,7 +33,7 @@ public partial class LoadSettingsData : Node
 
 
 		// Setting up display settings to be stored
-		config.SetValue("Display", "FullScreen", ToggleFullScreen.IsOn);
+		config.SetValue("Display", "FullScreen", ToggleFullScreen.Full);
 
 
 		// Storing data, overwriting past settings
@@ -76,7 +76,7 @@ public partial class LoadSettingsData : Node
 		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "CancelIn"), UserAction.Cancel);
 
 		// Matching if the screen is windowed
-		ToggleFullScreen.IsOn = (bool)config.GetValue("Display", "FullScreen");
+		ToggleFullScreen.Full = (bool)config.GetValue("Display", "FullScreen");
 		// Adjusting for if the screen isn't windowed for user
 		if ((bool)config.GetValue("Display", "FullScreen"))
 			// Full screened
@@ -84,8 +84,8 @@ public partial class LoadSettingsData : Node
 		else
 			// Windowed
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-		
-	
+
+
 	}
 
 
