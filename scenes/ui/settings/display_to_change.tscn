@@ -74,3 +74,4 @@ text = "[center][i]Utilize the following options to adjust how
 scroll_active = false
 
 [connection signal="pressed" from="FullScreenName/ToggleFullScreen" to="FullScreenName/ToggleFullScreen" method="_adjust_name_and_screen"]
+[connection signal="visibility_changed" from="FullScreenName/ToggleFullScreen" to="FullScreenName/ToggleFullScreen" method="_Ready"]

@@ -69,3 +69,4 @@ theme_override_font_sizes/font_size = 32
 text = "100%"
 
 [connection signal="value_changed" from="VolumeSlider" to="." method="SetVolume"]
+[connection signal="visibility_changed" from="VolumeSlider" to="." method="_Ready"]
