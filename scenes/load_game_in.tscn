@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://e4nnbk5anku"]
+[gd_scene load_steps=8 format=3 uid="uid://e4nnbk5anku"]
 
 [ext_resource type="FontFile" uid="uid://dhcdmwy2ej2gw" path="res://assets/fonts/opening/Raleway/Raleway-VariableFont_wght.ttf" id="1_bp4yi"]
 [ext_resource type="Script" path="res://scripts/start_game/LoadGameIn.cs" id="1_mhsui"]
 [ext_resource type="FontFile" uid="uid://c7qfe6sxy0wg1" path="res://assets/fonts/opening/Raleway/Raleway-Bold.ttf" id="2_6djbw"]
 [ext_resource type="Script" path="res://scripts/start_game/LogoFade.cs" id="4_i84q3"]
+[ext_resource type="Script" path="res://scripts/start_game/SaveWarning.cs" id="5_o0rh0"]
 [ext_resource type="Script" path="res://scripts/start_game/DramaticPauseTimer.cs" id="5_xccu4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpufk"]
@@ -28,6 +29,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_hpufk")
+
+[node name="SaveWarning" type="RichTextLabel" parent="CanvasLayer/BackDrop"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -192.5
+offset_right = 500.0
+offset_bottom = 192.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/italics_font_size = 56
+bbcode_enabled = true
+text = "[center][i]Warning: 
+Exiting the game by manually closing the window or force stopping execution can lead to loss of progress.[i]"
+fit_content = true
+script = ExtResource("5_o0rh0")
 
 [node name="Logo" type="RichTextLabel" parent="CanvasLayer/BackDrop"]
 layout_mode = 1
@@ -55,6 +76,7 @@ script = ExtResource("4_i84q3")
 [node name="DramaticPauseTimer" type="Timer" parent="."]
 script = ExtResource("5_xccu4")
 
-[connection signal="ready" from="." to="CanvasLayer/BackDrop/Logo" method="CanNowFade"]
+[connection signal="ready" from="." to="CanvasLayer/BackDrop/SaveWarning" method="CanNowFade"]
+[connection signal="WarningDone" from="CanvasLayer/BackDrop/SaveWarning" to="CanvasLayer/BackDrop/Logo" method="CanNowFade"]
 [connection signal="LogoFadedIn" from="CanvasLayer/BackDrop/Logo" to="DramaticPauseTimer" method="DramaticPause"]
 [connection signal="timeout" from="DramaticPauseTimer" to="." method="LogoIn"]
