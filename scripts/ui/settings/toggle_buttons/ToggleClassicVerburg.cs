@@ -9,12 +9,12 @@ public partial class ToggleClassicVerburg : ToggleButton
 
 	protected override bool GetState()
 	{
-		return false;
+		return Classic;
 	}
 
 	protected override void SetState(bool state)
 	{
-		// Bogos Binted
+		Classic = state;
 	}
 
 }
