@@ -21,7 +21,7 @@ public partial class SaveWarning : FadeIn
 			// Fade in
 			if (Start)
 			{
-				if (Trans >= 1)
+				if (Trans >= 1.5f)
 				{
 					Start = false;
 				}
