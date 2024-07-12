@@ -40,9 +40,6 @@ public partial class LogoFade : FadeIn
 		// Having start of tongue shoot for fade in
 		SoundManager.PlaySound(SFX.TongueShoot, this);
 
-		// Ensuring same button isn't pressed twice
-		Held = input;
-
 	}
 
 	// Instantly loads in logo

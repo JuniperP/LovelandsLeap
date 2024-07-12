@@ -59,7 +59,6 @@ public partial class SaveWarning : FadeIn
 	protected override void FadeSetUp(InputEvent input)
 	{
 		// Currently no extra setup with sfx or waiting for fades (may change later)
-		Held = input;
 	}
 
 	// Instantly loads in warning

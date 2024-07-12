@@ -28,6 +28,9 @@ public abstract partial class FadeIn : RichTextLabel
 		// Saying fading is now allowed
 		CanFade = true;
 
+		// Ensuring same button isn't pressed twice
+		Held = input;
+
 		// Start transition with sound effect
 		FadeSetUp(input);
 	}
@@ -36,7 +39,10 @@ public abstract partial class FadeIn : RichTextLabel
 	public override void _Input(InputEvent OurInput)
 	{
 		if ((OurInput is InputEventMouseButton || OurInput is InputEventKey) && CanFade && Held != OurInput)
+		{
+			Held = OurInput;
 			InstantFade();
+		}
 	}
 
 	// Extra sub class setup
