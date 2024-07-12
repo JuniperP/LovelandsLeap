@@ -56,10 +56,10 @@ public partial class SaveWarning : FadeIn
 	}
 
 	// Having start of tongue shoot for fade in
-    protected override void SFXSetUp()
-    {
-        // None currently though this may change
-    }
+	protected override void SFXSetUp()
+	{
+		// None currently though this may change
+	}
 
 	// Instantly loads in warning
 	protected override void InstantFade()

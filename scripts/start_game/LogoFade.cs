@@ -20,7 +20,7 @@ public partial class LogoFade : FadeIn
 
 			// Completed goal
 			Once = false;
-		}	
+		}
 
 		// Slowly brings in logo if aloud
 		if (CanFade)
@@ -35,10 +35,10 @@ public partial class LogoFade : FadeIn
 	}
 
 	// Having start of tongue shoot for fade in
-    protected override void SFXSetUp()
-    {
-        SoundManager.PlaySound(SFX.TongueShoot, this);
-    }
+	protected override void SFXSetUp()
+	{
+		SoundManager.PlaySound(SFX.TongueShoot, this);
+	}
 
 	// Instantly loads in logo
 	protected override void InstantFade()
