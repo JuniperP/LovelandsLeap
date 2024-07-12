@@ -76,7 +76,7 @@ script = ExtResource("4_i84q3")
 [node name="DramaticPauseTimer" type="Timer" parent="."]
 script = ExtResource("5_xccu4")
 
-[connection signal="ready" from="." to="CanvasLayer/BackDrop/SaveWarning" method="CanNowFade"]
+[connection signal="StartSplash" from="." to="CanvasLayer/BackDrop/SaveWarning" method="CanNowFade"]
 [connection signal="WarningDone" from="CanvasLayer/BackDrop/SaveWarning" to="CanvasLayer/BackDrop/Logo" method="CanNowFade"]
 [connection signal="LogoFadedIn" from="CanvasLayer/BackDrop/Logo" to="DramaticPauseTimer" method="DramaticPause"]
 [connection signal="timeout" from="DramaticPauseTimer" to="." method="LogoIn"]

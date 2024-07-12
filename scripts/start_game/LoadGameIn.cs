@@ -4,6 +4,10 @@ using Godot;
 public partial class LoadGameIn : Control
 {
 
+	// Signal to start the splash sequence
+	[Signal] public delegate void StartSplashEventHandler(InputEvent input);
+
+
 	// Sets up the game
 	public override void _Ready()
 	{
@@ -13,7 +17,9 @@ public partial class LoadGameIn : Control
 		// Loads in user settings
 		LoadSettingsData.LoadData(false);
 
-		// By this method finishing the logo fade in is triggered to begin
+		// Starts the splash sequence
+		EmitSignal(SignalName.StartSplash, null);
+
 	}
 
 	// Used to finish loading when the game is ready

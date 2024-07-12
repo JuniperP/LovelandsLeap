@@ -34,10 +34,15 @@ public partial class LogoFade : FadeIn
 		VisibleRatio = 0;
 	}
 
-	// Having start of tongue shoot for fade in
-	protected override void SFXSetUp()
+	
+	protected override void FadeSetUp(InputEvent input)
 	{
+		// Having start of tongue shoot for fade in
 		SoundManager.PlaySound(SFX.TongueShoot, this);
+
+		// Ensuring same button isn't pressed twice
+		Held = input;
+
 	}
 
 	// Instantly loads in logo
