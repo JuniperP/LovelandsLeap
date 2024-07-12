@@ -61,4 +61,12 @@ public partial class SaveWarning : FadeIn
         // None currently though this may change
     }
 
+	// Instantly loads in warning
+	protected override void InstantFade()
+	{
+		Start = false;
+		Trans = 0;
+	}
+
+
 }

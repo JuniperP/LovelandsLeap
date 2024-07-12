@@ -40,11 +40,10 @@ public partial class LogoFade : FadeIn
         SoundManager.PlaySound(SFX.TongueShoot, this);
     }
 
-
-    // Allows user to skip the opening fade in 
-    public override void _Input(InputEvent OurInput)
+	// Instantly loads in logo
+	protected override void InstantFade()
 	{
-		if ((OurInput is InputEventMouseButton || OurInput is InputEventKey) && CanFade)
-			VisibleRatio = .9999999f;
+		VisibleRatio = .9999999f;
 	}
+
 }

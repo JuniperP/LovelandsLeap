@@ -27,8 +27,17 @@ public abstract partial class FadeIn : RichTextLabel
 		SFXSetUp();
 	}
 
+	// Allows user to skip the opening fade in 
+	public override void _Input(InputEvent OurInput)
+	{
+		if ((OurInput is InputEventMouseButton || OurInput is InputEventKey) && CanFade)
+			InstantFade();
+	}
+
 	// Extra sub class setup
 	protected abstract void FurtherSetUp();
 	// The sound effect to play when allowed to fade in
 	protected abstract void SFXSetUp();
+	// Instantly loads in whatever is fading
+	protected abstract void InstantFade();
 }
