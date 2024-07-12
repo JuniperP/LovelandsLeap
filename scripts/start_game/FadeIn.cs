@@ -10,7 +10,7 @@ public abstract partial class FadeIn : RichTextLabel
 	protected bool Once;
 
 	// Used to ensure previously used inputs can't held to skip fades
-	protected InputEvent Held;
+	protected bool NotHeld;
 
 
 	// Called when the node enters the scene tree for the first time.
@@ -18,18 +18,18 @@ public abstract partial class FadeIn : RichTextLabel
 	{
 		CanFade = false;
 		Once = true;
-		Held = null;
+		NotHeld = false;
 		FurtherSetUp();
 	}
 
 	// Starts bringing in logo if told to
-	protected void CanNowFade(InputEvent input)
+	protected void CanNowFade(bool input)
 	{
 		// Saying fading is now allowed
 		CanFade = true;
 
 		// Ensuring same button isn't pressed twice
-		Held = input;
+		NotHeld = input;
 
 		// Start transition with sound effect
 		FadeSetUp(input);
@@ -38,17 +38,19 @@ public abstract partial class FadeIn : RichTextLabel
 	// Allows user to skip the opening fade in 
 	public override void _Input(InputEvent OurInput)
 	{
-		if ((OurInput is InputEventMouseButton || OurInput is InputEventKey) && CanFade && Held != OurInput)
+		if ((OurInput is InputEventMouseButton || OurInput is InputEventKey) && CanFade && NotHeld)
 		{
-			Held = OurInput;
+			NotHeld = false;
 			InstantFade();
 		}
 	}
 
 	// Extra sub class setup
 	protected abstract void FurtherSetUp();
+
 	// When fading in is allowed, extra class specific set up is done
-	protected abstract void FadeSetUp(InputEvent input);
+	protected abstract void FadeSetUp(bool input);
+
 	// Instantly loads in whatever is fading
 	protected abstract void InstantFade();
 }

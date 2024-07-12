@@ -25,6 +25,10 @@ public partial class LogoFade : FadeIn
 		// Slowly brings in logo if aloud
 		if (CanFade)
 			VisibleRatio += (float)delta / 2;
+
+		// Ensuring if nothing is pressed at any moment, the fade can be skipped 
+		if(!Input.IsAnythingPressed())
+			NotHeld = true;
 	}
 
 
@@ -34,8 +38,8 @@ public partial class LogoFade : FadeIn
 		VisibleRatio = 0;
 	}
 
-	
-	protected override void FadeSetUp(InputEvent input)
+	// Further set up for the fade
+	protected override void FadeSetUp(bool input)
 	{
 		// Having start of tongue shoot for fade in
 		SoundManager.PlaySound(SFX.TongueShoot, this);

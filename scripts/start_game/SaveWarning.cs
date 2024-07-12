@@ -10,7 +10,7 @@ public partial class SaveWarning : FadeIn
 
 
 	// Signal to alert manager game loader that everything is set
-	[Signal] public delegate void WarningDoneEventHandler(InputEvent input);
+	[Signal] public delegate void WarningDoneEventHandler(bool input);
 
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,7 +34,7 @@ public partial class SaveWarning : FadeIn
 			{
 				if (Trans <= 0)
 				{
-					EmitSignal(SignalName.WarningDone, Held);
+					EmitSignal(SignalName.WarningDone, NotHeld);
 					Once = false;
 				}
 				else
@@ -56,7 +56,7 @@ public partial class SaveWarning : FadeIn
 	}
 
 	// Extra preparation for fade in
-	protected override void FadeSetUp(InputEvent input)
+	protected override void FadeSetUp(bool input)
 	{
 		// Currently no extra setup with sfx or waiting for fades (may change later)
 	}

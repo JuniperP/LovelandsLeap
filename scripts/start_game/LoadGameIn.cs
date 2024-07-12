@@ -18,7 +18,7 @@ public partial class LoadGameIn : Control
 		LoadSettingsData.LoadData(false);
 
         // Starts the splash sequence
-        EmitSignal(SignalName.StartSplash, (InputEvent) null);
+        EmitSignal(SignalName.StartSplash, true);
 
 	}
 
