@@ -70,16 +70,12 @@ public partial class PauseScreen : Toggleable
 		}
 
 		// Key is deemed as not held down if not pressed when pause screen stands alone
-		else if (!Input.IsActionPressed("ui_cancel") && (HeldDown) && !node.Visible)
-		{
+		else if (!Input.IsActionPressed("ui_cancel") && HeldDown && !node.Visible)
 			HeldDown = false;
-		}
 
 		// Assumes the user will be holding down the escape key when exiting the settings menu
 		else if (node.Visible)
-		{
 			HeldDown = true;
-		}
 
 
 		// If asked, the scene switches
