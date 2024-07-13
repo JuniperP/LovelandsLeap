@@ -7,7 +7,7 @@
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="3_mf1q6"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="4_vo1hj"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/McPortrait.png" id="6_1deqh"]
-[ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/music/lovelandCutsceneMusic.wav" id="8_5gsvf"]
+[ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/music/Loveland_cutscene_music.wav" id="8_5gsvf"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="9_anup7"]
 
 [sub_resource type="Animation" id="Animation_dmnhy"]
