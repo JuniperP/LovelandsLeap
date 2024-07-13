@@ -26,6 +26,6 @@ public partial class LoadGameIn : Control
 	private void LogoIn()
 	{
 		// Send to main screen
-		GetTree().ChangeSceneToFile("res://scenes/ui/main_menu.tscn");
+		GetTree().ChangeSceneToFile(SceneManager.GetPath(ToScene.MainMenu));
 	}
 }

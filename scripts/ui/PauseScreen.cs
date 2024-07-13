@@ -37,7 +37,7 @@ public partial class PauseScreen : Toggleable
 	private void _to_main_menu()
 	{
 		_close();
-		GoTo = "res://scenes/ui/main_menu.tscn";
+		GoTo = SceneManager.GetPath(ToScene.MainMenu);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

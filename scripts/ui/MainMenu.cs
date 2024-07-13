@@ -18,13 +18,13 @@ public partial class MainMenu : Control
 	// Sets up to start the game
 	private void _on_start_game_button_pressed()
 	{
-		GoTo = "res://scenes/cutscenes/intro.tscn";
+		GoTo = SceneManager.GetPath(ToScene.IntroCutscene);
 	}
 
 	// Sets up to run the credits
 	private void _on_credit_button_pressed()
 	{
-		GoTo = "res://scenes/ui/credits.tscn";
+		GoTo = SceneManager.GetPath(ToScene.Credits);
 	}
 
 	// Quits the game from the menu after saving

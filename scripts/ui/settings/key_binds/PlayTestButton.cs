@@ -9,7 +9,7 @@ public partial class PlayTestButton : Button
 	// Telling the node that its time to play test
 	private void _play_test()
 	{
-		GoTo = "res://scenes/levels/play_test.tscn";
+		GoTo = SceneManager.GetPath(ToScene.PlayTestLevel);
 
 	}
 
