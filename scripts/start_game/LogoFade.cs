@@ -27,7 +27,7 @@ public partial class LogoFade : FadeIn
 			VisibleRatio += (float)delta / 2;
 
 		// Ensuring if nothing is pressed at any moment, the fade can be skipped 
-		if(!Input.IsAnythingPressed())
+		if (!Input.IsAnythingPressed())
 			NotHeld = true;
 	}
 
