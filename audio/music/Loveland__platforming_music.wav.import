@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bcvqpqcmfakkp"
+uid="uid://ca1nkabl72yvt"
 path="res://.godot/imported/Loveland__platforming_music.wav-c3438efb5176fb1b80c8337b21f0874b.sample"
 
 [deps]
@@ -19,6 +19,6 @@ force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
 edit/loop_mode=2
-edit/loop_begin=14
+edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=0
