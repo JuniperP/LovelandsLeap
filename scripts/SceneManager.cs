@@ -29,6 +29,7 @@ public partial class SceneManager : Node
 		{ToScene.PlayTestLevel,  "res://scenes/levels/play_test.tscn"},
 	};
 
+	// Allows client to easily get paths to any scene
 	public static String GetPath(ToScene scene) 
 	{
 		return _scenes[scene];
