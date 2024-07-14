@@ -115,4 +115,4 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rmpa0")
 text = " PLAY TEST CONTROLS"
 script = ExtResource("2_wxg0s")
 
-[connection signal="pressed" from="PlayTestButton" to="PlayTestButton" method="_play_test"]
+[connection signal="pressed" from="PlayTestButton" to="PlayTestButton" method="PlayTest"]

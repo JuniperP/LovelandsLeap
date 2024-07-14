@@ -66,5 +66,5 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
 text = "YES!"
 
-[connection signal="pressed" from="NoButton" to="." method="_close"]
-[connection signal="pressed" from="YESButton" to="." method="_reset_settings"]
+[connection signal="pressed" from="NoButton" to="." method="Close"]
+[connection signal="pressed" from="YESButton" to="." method="ResetSettings"]

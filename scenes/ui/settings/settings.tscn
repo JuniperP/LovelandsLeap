@@ -110,4 +110,4 @@ layout_mode = 2
 [node name="OtherToChange" parent="BackBox/TabContainer/Other" instance=ExtResource("5_h2a55")]
 layout_mode = 1
 
-[connection signal="pressed" from="BackBox/Cancel" to="." method="_close"]
+[connection signal="pressed" from="BackBox/Cancel" to="." method="Close"]

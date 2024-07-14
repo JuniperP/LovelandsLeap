@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class MainMenu : Control
 {
@@ -16,19 +15,19 @@ public partial class MainMenu : Control
 	}
 
 	// Sets up to start the game
-	private void _on_start_game_button_pressed()
+	private void OnStartGameButtonPressed()
 	{
 		_goTo = SceneManager.GetPath(ToScene.IntroCutscene);
 	}
 
 	// Sets up to run the credits
-	private void _on_credit_button_pressed()
+	private void OnCreditButtonPressed()
 	{
 		_goTo = SceneManager.GetPath(ToScene.Credits);
 	}
 
 	// Quits the game from the menu after saving
-	private void _quit_game()
+	private void QuitGame()
 	{
 		LoadSettingsData.SaveData(false);
 		GetTree().Quit();

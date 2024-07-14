@@ -63,6 +63,7 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_ojplt")
 
 [node name="ResolutionName2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 450.0
 offset_right = 240.0
@@ -93,5 +94,5 @@ text = "[center][i]Utilize the following options to adjust how
 "
 scroll_active = false
 
-[connection signal="pressed" from="FullScreenName/ToggleFullScreen" to="FullScreenName/ToggleFullScreen" method="_adjust_name_and_screen"]
-[connection signal="visibility_changed" from="FullScreenName/ToggleFullScreen" to="FullScreenName/ToggleFullScreen" method="_update"]
+[connection signal="pressed" from="FullScreenName/ToggleFullScreen" to="FullScreenName/ToggleFullScreen" method="AdjustNameAndScreen"]
+[connection signal="visibility_changed" from="FullScreenName/ToggleFullScreen" to="FullScreenName/ToggleFullScreen" method="UpdateText"]

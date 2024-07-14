@@ -128,7 +128,7 @@ stream = ExtResource("4_e7cc2")
 autoplay = true
 bus = &"Music"
 
-[connection signal="pressed" from="OPBack/TextureRect/QuitButton" to="." method="_quit_game"]
-[connection signal="pressed" from="OPBack/TextureRect/CreditButton" to="." method="_on_credit_button_pressed"]
-[connection signal="pressed" from="OPBack/TextureRect/SettingsButton" to="Settings" method="_open"]
-[connection signal="pressed" from="OPBack/TextureRect/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="OPBack/TextureRect/QuitButton" to="." method="QuitGame"]
+[connection signal="pressed" from="OPBack/TextureRect/CreditButton" to="." method="OnCreditButtonPressed"]
+[connection signal="pressed" from="OPBack/TextureRect/SettingsButton" to="Settings" method="Open"]
+[connection signal="pressed" from="OPBack/TextureRect/StartGameButton" to="." method="OnStartGameButtonPressed"]

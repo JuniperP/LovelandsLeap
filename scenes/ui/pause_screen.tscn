@@ -90,6 +90,6 @@ text = "Return to Main Menu"
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="BackDrop/ResumeButton" to="." method="_close"]
-[connection signal="pressed" from="BackDrop/SettingsButton" to="Settings" method="_open"]
-[connection signal="pressed" from="BackDrop/MainMenuButton" to="." method="_to_main_menu"]
+[connection signal="pressed" from="BackDrop/ResumeButton" to="." method="Close"]
+[connection signal="pressed" from="BackDrop/SettingsButton" to="Settings" method="Open"]
+[connection signal="pressed" from="BackDrop/MainMenuButton" to="." method="ToMainMenu"]
