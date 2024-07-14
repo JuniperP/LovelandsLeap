@@ -3,10 +3,10 @@ using Godot;
 public partial class SaveWarning : FadeIn
 {
 	// Seeing if should start fading out
-	private bool Start;
+	private bool _start;
 
 	// Tracking fade transition
-	private static float Trans = 0;
+	private static float _trans = 0;
 
 
 	// Signal to alert manager game loader that everything is set
@@ -19,40 +19,40 @@ public partial class SaveWarning : FadeIn
 		if (CanFade && Once)
 		{
 			// Fade in
-			if (Start)
+			if (_start)
 			{
-				if (Trans >= 1.5f)
+				if (_trans >= 1.5f)
 				{
-					Start = false;
+					_start = false;
 				}
 
 				else
-					Trans += (float)delta / 2;
+					_trans += (float)delta / 2;
 			}
 			// Fade out
 			else
 			{
-				if (Trans <= 0)
+				if (_trans <= 0)
 				{
 					EmitSignal(SignalName.WarningDone, NotHeld);
 					Once = false;
 				}
 				else
-					Trans -= (float)delta / 2;
+					_trans -= (float)delta / 2;
 			}
 
 		}
 
 
 		// Changing the fade accordingly
-		SelfModulate = new Color(1f, 1f, 1f, Trans);
+		SelfModulate = new Color(1f, 1f, 1f, _trans);
 
 	}
 
 	// Extra setup for ready
 	protected override void FurtherSetUp()
 	{
-		Start = true;
+		_start = true;
 	}
 
 	// Extra preparation for fade in
@@ -64,8 +64,8 @@ public partial class SaveWarning : FadeIn
 	// Instantly loads in warning
 	protected override void InstantFade()
 	{
-		Start = false;
-		Trans = 0;
+		_start = false;
+		_trans = 0;
 	}
 
 

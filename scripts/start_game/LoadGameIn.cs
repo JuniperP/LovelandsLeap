@@ -3,7 +3,6 @@ using Godot;
 
 public partial class LoadGameIn : Control
 {
-
 	// Signal to start the splash sequence
 	[Signal] public delegate void StartSplashEventHandler(InputEvent input);
 

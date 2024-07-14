@@ -4,12 +4,12 @@ using System;
 public partial class PlayTestButton : Button
 {
 	// What are play tets will assign
-	private String GoTo = "";
+	private string _goTo = "";
 
 	// Telling the node that its time to play test
-	private void _play_test()
+	private void PlayTest()
 	{
-		GoTo = SceneManager.GetPath(ToScene.PlayTestLevel);
+		_goTo = SceneManager.GetPath(ToScene.PlayTestLevel);
 
 	}
 
@@ -17,8 +17,8 @@ public partial class PlayTestButton : Button
 	public override void _Process(double delta)
 	{
 		// If asked, the scene switches
-		if (!GoTo.Equals(""))
-			GetTree().ChangeSceneToFile(GoTo);
+		if (!_goTo.Equals(""))
+			GetTree().ChangeSceneToFile(_goTo);
 
 	}
 }

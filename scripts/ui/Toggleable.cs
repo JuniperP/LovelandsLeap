@@ -9,17 +9,17 @@ public partial class Toggleable : Control
 	// By default, sets visibility to closed
 	public override void _Ready()
 	{
-		_close();
+		Close();
 	}
 
 	// Closes the node
-	protected virtual void _close()
+	protected virtual void Close()
 	{
 		Visible = false;
 	}
 
 	// Open the node
-	protected virtual void _open()
+	protected virtual void Open()
 	{
 		Visible = true;
 	}

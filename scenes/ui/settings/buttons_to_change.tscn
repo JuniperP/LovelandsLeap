@@ -37,7 +37,7 @@ offset_right = 0.0
 offset_bottom = 300.0
 grow_horizontal = 1
 grow_vertical = 1
-ActionToSet = 2
+_actionToSet = 2
 
 [node name="MoveRight" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
@@ -50,7 +50,7 @@ offset_right = 500.0
 offset_bottom = 200.0
 grow_horizontal = 1
 grow_vertical = 1
-ActionToSet = 1
+_actionToSet = 1
 
 [node name="UseTongue" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
@@ -63,7 +63,7 @@ offset_right = 500.0
 offset_bottom = 400.0
 grow_horizontal = 1
 grow_vertical = 1
-ActionToSet = 4
+_actionToSet = 4
 
 [node name="Cancel" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
@@ -75,7 +75,7 @@ offset_right = 0.0
 offset_bottom = 400.0
 grow_horizontal = 1
 grow_vertical = 1
-ActionToSet = 5
+_actionToSet = 5
 
 [node name="Down" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
@@ -88,7 +88,7 @@ offset_right = 500.0
 offset_bottom = 300.0
 grow_horizontal = 1
 grow_vertical = 1
-ActionToSet = 3
+_actionToSet = 3
 
 [node name="Instructions" type="RichTextLabel" parent="."]
 layout_mode = 1

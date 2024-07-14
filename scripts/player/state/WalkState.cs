@@ -1,4 +1,3 @@
-using System;
 using Godot;
 
 public class WalkState : MovementState
@@ -131,9 +130,7 @@ public class WalkState : MovementState
 		{
 			if (_ctx.TongueProj.IsValid()) // Retract if using tongue
 			{
-				_ctx.TongueProj.RetractTongue(
-					_ctx.GlobalPosition - _ctx.TongueProj.GlobalPosition
-				);
+				_ctx.TongueProj.RetractTongue();
 				_ctx.AnimManager.State = AnimState.Idle;
 				return;
 			}

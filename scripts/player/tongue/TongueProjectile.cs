@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class TongueProjectile : RigidBody2D
 {
@@ -41,7 +40,7 @@ public partial class TongueProjectile : RigidBody2D
 				_targetVelocity = diff.Normalized() * Speed * 2;
 		}
 		else if (diff.LengthSquared() > _maxDistanceSqr)
-			RetractTongue(diff);
+			RetractTongue();
 	}
 
     public override void _IntegrateForces(PhysicsDirectBodyState2D state)
@@ -49,7 +48,7 @@ public partial class TongueProjectile : RigidBody2D
         state.LinearVelocity = _targetVelocity;
     }
 
-    public void RetractTongue(Vector2 diff)
+    public void RetractTongue()
 	{
 		_isReturning = true;
 		LinearVelocity = Vector2.Zero;

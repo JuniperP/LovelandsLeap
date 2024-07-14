@@ -6,12 +6,12 @@ public partial class Settings : Toggleable
 {
 
 	// Boolean to check if the user is holding down the button they intend to escape with 
-	public Boolean HeldDown;
+	public bool HeldDown;
 
 	// Setup by closing the visibility and prepping our held down check
 	public override void _Ready()
 	{
-		_close();
+		Close();
 		HeldDown = false;
 	}
 
@@ -22,7 +22,7 @@ public partial class Settings : Toggleable
 		// Letting the user quit from settings
 		if (Input.IsActionPressed("ui_cancel") && !HeldDown)
 		{
-			_close();
+			Close();
 			HeldDown = true;
 		}
 

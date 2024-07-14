@@ -7,10 +7,10 @@ public partial class ConfirmReset : Toggleable
 	public static bool SettingsReset;
 
 	// Used to reset the default settings
-	private void _reset_settings()
+	private void ResetSettings()
 	{
 		LoadSettingsData.LoadData(true);
 		SettingsReset = true;
-		_close();
+		Close();
 	}
 }

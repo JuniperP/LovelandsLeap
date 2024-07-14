@@ -30,7 +30,7 @@ public partial class SceneManager : Node
 	};
 
 	// Allows client to easily get paths to any scene
-	public static String GetPath(ToScene scene) 
+	public static string GetPath(ToScene scene) 
 	{
 		return _scenes[scene];
 	}

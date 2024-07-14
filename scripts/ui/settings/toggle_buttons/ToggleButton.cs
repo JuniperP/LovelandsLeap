@@ -3,7 +3,7 @@ using Godot;
 public abstract partial class ToggleButton : Button
 {
 	// Update whether the box says on or off (but only when seen)
-	public void _update()
+	public void UpdateText()
 	{
 		if (Visible)
 		{
@@ -17,7 +17,7 @@ public abstract partial class ToggleButton : Button
 
 
 	// Letting the button switch its label on and off
-	protected void _adjust_name_and_screen()
+	protected void AdjustNameAndScreen()
 	{
 		// Switch state
 		SetState(!GetState());
@@ -26,7 +26,7 @@ public abstract partial class ToggleButton : Button
 		Toggle();
 
 		// Change what the button displays
-		_update();
+		UpdateText();
 
 	}
 
@@ -35,6 +35,6 @@ public abstract partial class ToggleButton : Button
 	public abstract void Toggle();
 
 	// All subclasses must have getters and setters for their respected static states
-	protected abstract void SetState(bool b);
+	protected abstract void SetState(bool ourState);
 	protected abstract bool GetState();
 }

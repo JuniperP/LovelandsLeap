@@ -29,7 +29,7 @@ offset_left = 25.0
 offset_top = 125.0
 offset_right = 366.0
 offset_bottom = 180.0
-BusName = "Master"
+_busName = "Master"
 
 [node name="MusicVolume" parent="." instance=ExtResource("1_chxld")]
 layout_mode = 1
@@ -37,7 +37,7 @@ offset_left = 25.0
 offset_top = 275.0
 offset_right = 366.0
 offset_bottom = 330.0
-BusName = "Music"
+_busName = "Music"
 
 [node name="SFXVolume" parent="." instance=ExtResource("1_chxld")]
 layout_mode = 1
@@ -45,4 +45,4 @@ offset_left = 25.0
 offset_top = 425.0
 offset_right = 366.0
 offset_bottom = 480.0
-BusName = "Sound Effects"
+_busName = "Sound Effects"

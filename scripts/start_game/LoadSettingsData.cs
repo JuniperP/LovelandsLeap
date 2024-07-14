@@ -4,14 +4,14 @@ using System;
 public partial class LoadSettingsData : Node
 {
 	// The file we will store to
-	private static String StoreTo = "user://LoveLandSettingsInfo.cfg";
+	private static string _storeTo = "user://LoveLandSettingsInfo.cfg";
 
 	// File for resetting settings
-	private static String DefaultSettings = "user://LoveLandDefaultSettings.cfg";
+	private static string _defaultSettings = "user://LoveLandDefaultSettings.cfg";
 
 
 	// Save settings data from the game
-	public static void SaveData(bool SetUpDefault)
+	public static void SaveData(bool setUpDefault)
 	{
 		// User config file we will be utilizing access config data
 		ConfigFile config = new ConfigFile();
@@ -37,26 +37,26 @@ public partial class LoadSettingsData : Node
 
 
 		// Storing data, overwriting past settings
-		if (SetUpDefault)
-			config.Save(DefaultSettings);
+		if (setUpDefault)
+			config.Save(_defaultSettings);
 		else
-			config.Save(StoreTo);
+			config.Save(_storeTo);
 	}
 
 
 	// Load settings data into the game
-	public static void LoadData(bool SetUpDefault)
+	public static void LoadData(bool setUpDefault)
 	{
 		// User config file we will be utilizing access config data
 		ConfigFile config = new ConfigFile();
 
 		// Loading in the correct file into config
-		if (SetUpDefault)
-			config.Load(DefaultSettings);
+		if (setUpDefault)
+			config.Load(_defaultSettings);
 		else
 		{
 			// Ensuring a save file exists and backing out if not
-			Error err = config.Load(StoreTo);
+			Error err = config.Load(_storeTo);
 			if (err != Error.Ok)
 				return;
 		}
@@ -95,7 +95,7 @@ public partial class LoadSettingsData : Node
 		ConfigFile config = new ConfigFile();
 
 		// Ensuring the file doesn't exist to create a default file
-		Error err = config.Load(DefaultSettings);
+		Error err = config.Load(_defaultSettings);
 		if (err != Error.Ok)
 			SaveData(true);
 

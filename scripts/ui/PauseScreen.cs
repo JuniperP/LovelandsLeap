@@ -5,39 +5,39 @@ using System;
 public partial class PauseScreen : Toggleable
 {
 	// Boolean to see if a cancel is held down
-	private Boolean HeldDown;
+	private bool _heldDown;
 
 	// Where we will doing a scene change to
-	private String GoTo;
+	private string _goTo;
 
 	// Setup by ensuring the pause screen isn't visible and setting up key hold check
 	public override void _Ready()
 	{
 		// Hide this scene till allowed
-		_close();
+		Close();
 
 		// Set up sfx
 		SoundManager.ApplyButtonSFX(this);
 
 		// Initially set to true in the case where escape is held entering a scene
-		HeldDown = true;
+		_heldDown = true;
 
 		// Ensure scene isn't changed without permission
-		GoTo = "";
+		_goTo = "";
 	}
 
 	// Overriding the close method to also unpause the game
-	protected override void _close()
+	protected override void Close()
 	{
 		GetTree().Paused = false;
 		Visible = false;
 	}
 
 	// Return to the main menu
-	private void _to_main_menu()
+	private void ToMainMenu()
 	{
-		_close();
-		GoTo = SceneManager.GetPath(ToScene.MainMenu);
+		Close();
+		_goTo = SceneManager.GetPath(ToScene.MainMenu);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,38 +49,38 @@ public partial class PauseScreen : Toggleable
 
 
 		// Sees if the user is trying to pause the game
-		if (Input.IsActionPressed("ui_cancel") && (!HeldDown) && !node.Visible)
+		if (Input.IsActionPressed("ui_cancel") && (!_heldDown) && !node.Visible)
 		{
 			// Cancel must be currently held down and deemed as such
-			HeldDown = true;
+			_heldDown = true;
 
 			//Switch visibility
 			if (Visible)
 			{
 				GetTree().Paused = false;
-				_close();
+				Close();
 			}
 
 			else
 			{
-				_open();
+				Open();
 				GetTree().Paused = true;
 			}
 
 		}
 
 		// Key is deemed as not held down if not pressed when pause screen stands alone
-		else if (!Input.IsActionPressed("ui_cancel") && HeldDown && !node.Visible)
-			HeldDown = false;
+		else if (!Input.IsActionPressed("ui_cancel") && _heldDown && !node.Visible)
+			_heldDown = false;
 
 		// Assumes the user will be holding down the escape key when exiting the settings menu
 		else if (node.Visible)
-			HeldDown = true;
+			_heldDown = true;
 
 
 		// If asked, the scene switches
-		if (!GoTo.Equals(""))
-			GetTree().ChangeSceneToFile(GoTo);
+		if (!_goTo.Equals(""))
+			GetTree().ChangeSceneToFile(_goTo);
 	}
 }
 

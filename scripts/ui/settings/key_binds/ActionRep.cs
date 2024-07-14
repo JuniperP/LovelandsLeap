@@ -9,11 +9,11 @@ public partial class ActionRep
 
 
 	// Constructor to create objects
-	public ActionRep(string Mapping, InputEvent Input, string ButtonLabel)
+	public ActionRep(string mapping, InputEvent input, string buttonLabel)
 	{
-		this.Mapping = Mapping;
-		this.Input = Input;
-		this.ButtonLabel = ButtonLabel;
+		Mapping = mapping;
+		Input = input;
+		ButtonLabel = buttonLabel;
 		
 	}
 
