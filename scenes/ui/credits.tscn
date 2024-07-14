@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/ui/Credits.cs" id="1_miogk"]
 [ext_resource type="Script" path="res://scripts/ui/CreditText.cs" id="1_r4fjn"]
-[ext_resource type="AudioStream" uid="uid://bak83atxgk1vl" path="res://audio/music/Abomination.wav" id="3_yyq67"]
+[ext_resource type="AudioStream" uid="uid://bak83atxgk1vl" path="res://audio/music/abomination.wav" id="3_yyq67"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3

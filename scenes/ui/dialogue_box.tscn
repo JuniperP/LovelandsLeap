@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/ui/DialogueBox.cs" id="1_dns7l"]
 [ext_resource type="Texture2D" uid="uid://bc1ravcc5syh4" path="res://assets/ui/icon.svg" id="1_tluhj"]
-[ext_resource type="Texture2D" uid="uid://c3io5vbd8qgt4" path="res://assets/ui/dialogueBack.png" id="2_lwrnj"]
+[ext_resource type="Texture2D" uid="uid://c3io5vbd8qgt4" path="res://assets/ui/dialogue_back.png" id="2_lwrnj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06tws"]
 bg_color = Color(1, 1, 1, 1)
