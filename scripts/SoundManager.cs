@@ -22,25 +22,41 @@ public enum SFX : byte
 
 public partial class SoundManager : Node
 {
+	private static readonly Dictionary<SFX, string> _sound_paths = new()
+	{
+		{SFX.Walk, "walk_sfx"},
+		{SFX.Jump, "jump_sfx"},
+		{SFX.Land, "land_sfx"},
+		{SFX.Croak, "croak_sfx"},
+		{SFX.IntoFrog, "into_frog_sfx"},
+		{SFX.TongueShoot, "tongue_shoot_sfx"},
+		{SFX.TongueHit, "tongue_hit_sfx"},
+		{SFX.DialogueMC, "dialogue_mc_sfx"},
+		{SFX.DialogueFrog, "dialogue_frog_sfx"},
+		{SFX.DialogueWitch, "dialogue_witch_sfx"},
+		{SFX.DialoguePrincess, "dialogue_princess_sfx"},
+		{SFX.UIButton, "ui_button_sfx"},
+	};
+
 	// Dictionary for comprehensive access to each sfx
 	private static readonly Dictionary<SFX, AudioStreamPlayer> _sounds = new()
 	{
-		{SFX.Walk, _create_audio_player(SFX.Walk)},
-		{SFX.Jump,  _create_audio_player(SFX.Jump)},
-		{SFX.Land,  _create_audio_player(SFX.Land)},
-		{SFX.Croak,  _create_audio_player(SFX.Croak)},
-		{SFX.IntoFrog,  _create_audio_player(SFX.IntoFrog)},
-		{SFX.TongueShoot,  _create_audio_player(SFX.TongueShoot)},
-		{SFX.TongueHit, _create_audio_player(SFX.TongueHit)},
-		{SFX.DialogueMC,  _create_audio_player(SFX.DialogueMC)},
-		{SFX.DialogueFrog,  _create_audio_player(SFX.DialogueFrog)},
-		{SFX.DialogueWitch,  _create_audio_player(SFX.DialogueWitch)},
-		{SFX.DialoguePrincess,  _create_audio_player(SFX.DialoguePrincess)},
-		{SFX.UIButton,  _create_audio_player(SFX.UIButton)},
+		{SFX.Walk, CreateAudioPlayer(SFX.Walk)},
+		{SFX.Jump,  CreateAudioPlayer(SFX.Jump)},
+		{SFX.Land,  CreateAudioPlayer(SFX.Land)},
+		{SFX.Croak,  CreateAudioPlayer(SFX.Croak)},
+		{SFX.IntoFrog,  CreateAudioPlayer(SFX.IntoFrog)},
+		{SFX.TongueShoot,  CreateAudioPlayer(SFX.TongueShoot)},
+		{SFX.TongueHit, CreateAudioPlayer(SFX.TongueHit)},
+		{SFX.DialogueMC,  CreateAudioPlayer(SFX.DialogueMC)},
+		{SFX.DialogueFrog,  CreateAudioPlayer(SFX.DialogueFrog)},
+		{SFX.DialogueWitch,  CreateAudioPlayer(SFX.DialogueWitch)},
+		{SFX.DialoguePrincess,  CreateAudioPlayer(SFX.DialoguePrincess)},
+		{SFX.UIButton,  CreateAudioPlayer(SFX.UIButton)},
 	};
 
 	// Method to create our audio sources for our dictionary
-	private static AudioStreamPlayer _create_audio_player(SFX sfx)
+	private static AudioStreamPlayer CreateAudioPlayer(SFX sfx)
 	{
 		// Creates our player to return
 		AudioStreamPlayer NewPlayer = new AudioStreamPlayer();
@@ -48,11 +64,8 @@ public partial class SoundManager : Node
 		// Ensures we are only working with sound effects
 		NewPlayer.Bus = "Sound Effects";
 
-		// Assigning the name
-		NewPlayer.Name = $"{(sfx)}_sfx";
-
 		// Assigning the file for each sound
-		NewPlayer.Stream = (AudioStream)GD.Load($"res://audio/sfx/{NewPlayer.Name}.wav");
+		NewPlayer.Stream = GD.Load<AudioStream>(FormPath(_sound_paths[sfx]));
 
 		// Gives back our new player
 		return NewPlayer;
@@ -62,7 +75,6 @@ public partial class SoundManager : Node
 	// Client method to easily play sounds from anywhere
 	public static void PlaySound(SFX Sound, Node PlayOn)
 	{
-
 		// Makes new case of sound effect
 		AudioStreamPlayer ToPlay = (AudioStreamPlayer)_sounds[Sound].Duplicate();
 
@@ -97,6 +109,11 @@ public partial class SoundManager : Node
 				((TabContainer)Children[i]).TabClicked += (long NotUsed) => PlaySound(SFX.UIButton, Children[i - 1]);
 		}
 
+	}
+
+	private static string FormPath(string unique)
+	{
+		return $"res://audio/sfx/{unique}.wav";
 	}
 
 }
