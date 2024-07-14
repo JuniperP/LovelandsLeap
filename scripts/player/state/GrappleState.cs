@@ -10,8 +10,8 @@ public class GrappleState : MovementState
 	{
 		_grappleTime += delta;
 
-		Vector2 weightPos = _ctx.TongueWeight.GlobalPosition;
-		Vector2 springPos = _ctx.TongueSpring.GlobalPosition;
+		Vector2 weightPos = Ctx.TongueWeight.GlobalPosition;
+		Vector2 springPos = Ctx.TongueSpring.GlobalPosition;
 
 		// Handle horizontal input
 		float inputDir = Input.GetAxis("move_left", "move_right");
@@ -25,22 +25,22 @@ public class GrappleState : MovementState
 			forceDir *= new Vector2(-inputDir, inputDir);
 
 			// The forceDir will now be tangent to the swing curve of the weight
-			_ctx.TongueWeight.ApplyForce(forceDir * _ctx.SwingForce * (float)delta);
+			Ctx.TongueWeight.ApplyForce(forceDir * Ctx.SwingForce * (float)delta);
 		}
 
 		// Set velocity to move to weight
-		Vector2 diff = weightPos - _ctx.GlobalPosition;
-		_ctx.Velocity = diff * 100;
+		Vector2 diff = weightPos - Ctx.GlobalPosition;
+		Ctx.Velocity = diff * 100;
 
 		// If player collided after buffer time
-		if (_ctx.MoveAndSlide() && _grappleTime >= _ctx.AutoDegrappleBuffer)
+		if (Ctx.MoveAndSlide() && _grappleTime >= Ctx.AutoDegrappleBuffer)
 			DisableGrapple();
 
 		// Handle sprite direction
-		if (_ctx.Velocity.X > 0.01f)
-			_ctx.AnimManager.IsLeftFacing = false;
-		else if (_ctx.Velocity.X < -0.01f)
-			_ctx.AnimManager.IsLeftFacing = true;
+		if (Ctx.Velocity.X > 0.01f)
+			Ctx.AnimManager.IsLeftFacing = false;
+		else if (Ctx.Velocity.X < -0.01f)
+			Ctx.AnimManager.IsLeftFacing = true;
 	}
 
 	public override void HandleAction()
@@ -54,15 +54,15 @@ public class GrappleState : MovementState
 	public override void DisableGrapple()
 	{
 		// Remove all grappling objects
-		_ctx.TongueLine.QueueFree();
-		_ctx.TongueSpring.QueueFree();
-		_ctx.TongueWeight.QueueFree();
+		Ctx.TongueLine.QueueFree();
+		Ctx.TongueSpring.QueueFree();
+		Ctx.TongueWeight.QueueFree();
 
 		// Change state to walk
-		_ctx.StateEnum = Player.State.Walk;
+		Ctx.StateEnum = Player.State.Walk;
 
 		// Set animation to idle
-		_ctx.AnimManager.State = AnimState.Idle;
+		Ctx.AnimManager.State = AnimState.Idle;
 
 		_grappleTime = 0d;
 	}
