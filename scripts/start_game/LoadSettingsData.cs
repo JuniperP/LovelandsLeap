@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class LoadSettingsData : Node
 {
@@ -32,8 +31,10 @@ public partial class LoadSettingsData : Node
 		config.SetValue("KeyBinds", "CancelIn", Keybinds._acts[UserAction.Cancel].Input);
 
 
-		// Setting up display settings to be stored
+		// Setting up toggle button info to be stored
 		config.SetValue("Display", "FullScreen", ToggleFullScreen.Full);
+		config.SetValue("Extra", "ClassicVer", ToggleClassicVerburg.Classic);
+		config.SetValue("Extra", "Speedrun", ToggleSpeedrun.HaveTimer);
 
 
 		// Storing data, overwriting past settings
@@ -85,7 +86,9 @@ public partial class LoadSettingsData : Node
 			// Windowed
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
 
-
+		// Setting extra settings
+		ToggleClassicVerburg.Classic = (bool)config.GetValue("Extra", "ClassicVer");
+		ToggleSpeedrun.HaveTimer = (bool)config.GetValue("Extra", "Speedrun");
 	}
 
 
