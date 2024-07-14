@@ -1,9 +1,9 @@
 public abstract class MovementState
 {
-	protected Player _ctx;
+	protected Player Ctx;
 	public MovementState(Player ctx)
 	{
-		_ctx = ctx;
+		Ctx = ctx;
 	}
 	
 	public abstract void HandleMovement(double delta);
