@@ -28,7 +28,6 @@ public partial class PauseScreen : Toggleable
 	// Return to the main menu
 	private void ToMainMenu()
 	{
-		Close();
 		SceneManager.SetNextGoTo(ToScene.MainMenu);
 	}
 
