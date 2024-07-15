@@ -79,7 +79,7 @@ public partial class SoundManager : Node
 		AudioStreamPlayer toPlay = (AudioStreamPlayer)_sounds[sound].Duplicate();
 
 		// Set up sound effect to explode ensuring no dispose, many AudioStreamPlayer, etc issues
-		toPlay.Finished += () => toPlay.QueueFree();
+		toPlay.Finished += () => CleanUpSound(toPlay, playOn);
 
 		// Adds the sound effect
 		playOn.AddChild(toPlay);
@@ -103,25 +103,27 @@ public partial class SoundManager : Node
 
 			// If a button or TabContainer is found it's set up to play sound on click (IDK WHY THESE USE i-1!!!!)
 			if (children[i].GetClass() == "Button")
-				((Button)children[i]).Pressed += () =>
-				{
-					PlaySound(SFX.UIButton, children[i - 1]);
-					SceneManager.GoToSetScene(children[i-1]);
-				};
+				((Button)children[i]).Pressed += () => PlaySound(SFX.UIButton, children[i - 1]);
+
 
 			if (children[i].GetClass() == "TabContainer")
-				((TabContainer)children[i]).TabClicked += (long NotUsed) =>
-				{
-					PlaySound(SFX.UIButton, children[i - 1]);
-					SceneManager.GoToSetScene(children[i-1]);
-				};
+				((TabContainer)children[i]).TabClicked += (long NotUsed) => PlaySound(SFX.UIButton, children[i - 1]);
+
 		}
 
 	}
 
+	// Forms the path name for some audio file 
 	private static string FormPath(string unique)
 	{
 		return $"res://audio/sfx/{unique}.wav";
+	}
+
+	// Removes used up AudioStreamPlayer and switches the scene on toSwitch
+	private static void CleanUpSound(AudioStreamPlayer toErase, Node toSwitch)
+	{
+		toErase.QueueFree();
+		SceneManager.GoToSetScene(toSwitch);
 	}
 
 }
