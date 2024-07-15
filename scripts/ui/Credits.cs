@@ -9,7 +9,8 @@ public partial class Credits : Control
 		// Letting the user quit from the credits
 		if (Input.IsActionPressed("ui_cancel"))
 		{
-			GetTree().ChangeSceneToFile(SceneManager.GetPath(ToScene.MainMenu));
+			SceneManager.SetNextGoTo(ToScene.MainMenu);
+			SceneManager.GoToSetScene(this);
 		}
 	}
 }

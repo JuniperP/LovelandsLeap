@@ -5,9 +5,6 @@ public partial class PauseScreen : Toggleable
 	// Boolean to see if a cancel is held down
 	private bool _heldDown;
 
-	// Where we will doing a scene change to
-	private string _goTo;
-
 	// Setup by ensuring the pause screen isn't visible and setting up key hold check
 	public override void _Ready()
 	{
@@ -19,9 +16,6 @@ public partial class PauseScreen : Toggleable
 
 		// Initially set to true in the case where escape is held entering a scene
 		_heldDown = true;
-
-		// Ensure scene isn't changed without permission
-		_goTo = "";
 	}
 
 	// Overriding the close method to also unpause the game
@@ -35,7 +29,7 @@ public partial class PauseScreen : Toggleable
 	private void ToMainMenu()
 	{
 		Close();
-		_goTo = SceneManager.GetPath(ToScene.MainMenu);
+		SceneManager.SetNextGoTo(ToScene.MainMenu);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -75,10 +69,6 @@ public partial class PauseScreen : Toggleable
 		else if (node.Visible)
 			_heldDown = true;
 
-
-		// If asked, the scene switches
-		if (!_goTo.Equals(""))
-			GetTree().ChangeSceneToFile(_goTo);
 	}
 }
 

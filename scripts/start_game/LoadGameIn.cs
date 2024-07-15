@@ -25,6 +25,7 @@ public partial class LoadGameIn : Control
 	private void LogoIn()
 	{
 		// Send to main screen
-		GetTree().ChangeSceneToFile(SceneManager.GetPath(ToScene.MainMenu));
+		SceneManager.SetNextGoTo(ToScene.MainMenu);
+		SceneManager.GoToSetScene(this);
 	}
 }

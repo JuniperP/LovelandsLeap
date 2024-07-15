@@ -20,6 +20,10 @@ public partial class SceneManager : Node
 		thus causing an infinite loop when if one scene tries going to another. (also starts
 		corrupting scenes!)
 	*/
+
+	// Where we will be changing scenes to
+	private static string _goTo = "";
+
 	private static readonly Dictionary<ToScene, string> _scenes = new()
 	{
 		{ToScene.MainMenu, "res://scenes/ui/main_menu.tscn"},
@@ -28,9 +32,20 @@ public partial class SceneManager : Node
 		{ToScene.PlayTestLevel,  "res://scenes/levels/play_test.tscn"},
 	};
 
-	// Allows client to easily get paths to any scene
-	public static string GetPath(ToScene scene) 
+	// Allows the client to set where to go to next
+	public static void SetNextGoTo(ToScene scene)
 	{
-		return _scenes[scene];
+		_goTo = _scenes[scene];
+	}
+
+	// Sends user to new scene
+	public static void GoToSetScene(Node useNode)
+	{
+		// If asked, the scene switches
+		if (!_goTo.Equals(""))
+		{
+			useNode.GetTree().ChangeSceneToFile(_goTo);
+			_goTo = "";
+		}
 	}
 }
