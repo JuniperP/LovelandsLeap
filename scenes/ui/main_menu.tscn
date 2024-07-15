@@ -41,7 +41,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_d8am2")
-theme_override_font_sizes/font_size = 140
+theme_override_font_sizes/font_size = 156
 text = "
 LOVELAND "
 horizontal_alignment = 2
