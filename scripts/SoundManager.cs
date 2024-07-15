@@ -75,16 +75,17 @@ public partial class SoundManager : Node
 	// Client method to easily play sounds from anywhere
 	public static void PlaySound(SFX sound, Node playOn)
 	{
-		// Makes new case of sound effect
+		// Makes new case of sfx
 		AudioStreamPlayer toPlay = (AudioStreamPlayer)_sounds[sound].Duplicate();
 
-		// Set up sound effect to explode ensuring no dispose, many AudioStreamPlayer, etc issues
+		// Set up sfx to explode ensuring no dispose issues, many AudioStreamPlayers, etc.
+		// This also switches the scene if applicable
 		toPlay.Finished += () => CleanUpSound(toPlay, playOn);
 
-		// Adds the sound effect
+		// Adds the sfx
 		playOn.AddChild(toPlay);
 
-		// Plays the sound effect
+		// Plays the sfx
 		toPlay.Play();
 
 	}
