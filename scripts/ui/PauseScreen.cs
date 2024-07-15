@@ -43,7 +43,7 @@ public partial class PauseScreen : Toggleable
 	{
 
 		// Seeing if settings is open
-		Settings node = (Settings)GetNode("Settings");
+		Settings node = GetNode<Settings>("Settings");
 
 
 		// Sees if the user is trying to pause the game

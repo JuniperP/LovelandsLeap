@@ -18,7 +18,7 @@ public partial class VolumeManager : Label
 	public override void _Ready()
 	{
 		// Getting our slider to control
-		_slider = (HSlider)GetNode("VolumeSlider");
+		_slider = GetNode<HSlider>("VolumeSlider");
 
 		// Changing the label of our combo accordingly
 		Text = $"{_busName} Volume";
@@ -31,7 +31,7 @@ public partial class VolumeManager : Label
 	private void Update()
 	{
 		// Sets sliders current value to match the bus
-		if(Visible)
+		if (Visible)
 			_slider.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(_busIndex));
 
 	}
@@ -44,7 +44,7 @@ public partial class VolumeManager : Label
 		AudioServer.SetBusVolumeDb(_busIndex, Mathf.LinearToDb(newVol));
 
 		// Sets up our percentage
-		Label perLabel = (Label)_slider.GetNode("Percentage");
+		Label perLabel = _slider.GetNode<Label>("Percentage");
 		string numToAdd = $"{Mathf.Round(newVol * 100)}";
 		perLabel.Text = $"{numToAdd}%";
 	}

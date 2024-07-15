@@ -18,8 +18,8 @@ public partial class KeyBindManager : Control
 	public override void _Ready()
 	{
 		// Getting the children we will need
-		Label label = (Label)GetNode("MoveLabel");
-		_ourButton = (Button)label.GetNode("ButtonToAdjust");
+		Label label = GetNode<Label>("MoveLabel");
+		_ourButton = label.GetNode<Button>("ButtonToAdjust");
 
 		// Giving a special name for each button's accompanying label
 		label.Text = Keybinds._acts[_actionToSet].ButtonLabel;
@@ -32,7 +32,7 @@ public partial class KeyBindManager : Control
 	private void UpdateText()
 	{
 		// Giving the symbol for each button
-		if(Visible)
+		if (Visible)
 			_ourButton.Text = Keybinds._acts[_actionToSet].Input.AsText();
 	}
 
@@ -44,7 +44,7 @@ public partial class KeyBindManager : Control
 		_toBeSet = true;
 
 		// Stopping the instance of escaping right after entering a key bind
-		if(_actionToSet == UserAction.Cancel)
+		if (_actionToSet == UserAction.Cancel)
 			InputMap.ActionEraseEvents(Keybinds._acts[_actionToSet].Mapping);
 	}
 
