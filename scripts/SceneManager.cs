@@ -1,5 +1,4 @@
 using Godot;
-using System;
 using System.Collections.Generic;
 
 // Enums for all of the possible scenes transitioned to
@@ -21,7 +20,7 @@ public partial class SceneManager : Node
 		thus causing an infinite loop when if one scene tries going to another. (also starts
 		corrupting scenes!)
 	*/
-	private static readonly Dictionary<ToScene, String> _scenes = new()
+	private static readonly Dictionary<ToScene, string> _scenes = new()
 	{
 		{ToScene.MainMenu, "res://scenes/ui/main_menu.tscn"},
 		{ToScene.Credits,  "res://scenes/ui/credits.tscn"},

@@ -22,6 +22,9 @@ public enum SFX : byte
 
 public partial class SoundManager : Node
 {
+	// Signal to alert when a sound has finished playing
+	[Signal] public delegate void SoundPlayedEventHandler();
+
 	private static readonly Dictionary<SFX, string> _sound_paths = new()
 	{
 		{SFX.Walk, "walk_sfx"},
@@ -103,10 +106,19 @@ public partial class SoundManager : Node
 
 			// If a button or TabContainer is found it's set up to play sound on click (IDK WHY THESE USE i-1!!!!)
 			if (children[i].GetClass() == "Button")
-				((Button)children[i]).Pressed += () => PlaySound(SFX.UIButton, children[i - 1]);
+				((Button)children[i]).Pressed += () =>
+				{
+					PlaySound(SFX.UIButton, children[i - 1]);
+                    children[i-1].EmitSignal(SignalName.SoundPlayed);
+
+				};
 
 			if (children[i].GetClass() == "TabContainer")
-				((TabContainer)children[i]).TabClicked += (long NotUsed) => PlaySound(SFX.UIButton, children[i - 1]);
+				((TabContainer)children[i]).TabClicked += (long NotUsed) => 
+				{
+					PlaySound(SFX.UIButton, children[i - 1]);
+					children[i-1].EmitSignal(SignalName.SoundPlayed);
+				};
 		}
 
 	}

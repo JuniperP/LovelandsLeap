@@ -37,6 +37,7 @@ public partial class MainMenu : Control
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		
 		// If asked, the scene switches
 		if (!_goTo.Equals(""))
 			GetTree().ChangeSceneToFile(_goTo);
