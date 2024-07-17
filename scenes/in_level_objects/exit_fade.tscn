@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://do2r4ht25v76b"]
+[gd_scene load_steps=5 format=3 uid="uid://do2r4ht25v76b"]
+
+[ext_resource type="Script" path="res://scripts/in_level_objects/enter_exit_fades/Arrow.cs" id="1_cxx22"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1aw5"]
 size = Vector2(400, 300)
@@ -13,11 +15,15 @@ width = 200
 height = 300
 
 [node name="ExitFade" type="Area2D"]
+light_mask = 2
+visibility_layer = 2
+z_index = 20
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionFade" type="CollisionShape2D" parent="."]
 light_mask = 2
 visibility_layer = 2
-z_index = 30
 shape = SubResource("RectangleShape2D_e1aw5")
 
 [node name="FadeOut" type="TextureRect" parent="CollisionFade"]
@@ -42,3 +48,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 255
 text = "→"
+script = ExtResource("1_cxx22")
+
+[connection signal="body_entered" from="." to="CollisionFade/Arrow" method="InArea"]
+[connection signal="body_exited" from="." to="CollisionFade/Arrow" method="OutArea"]
