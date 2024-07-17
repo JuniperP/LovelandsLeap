@@ -11,3 +11,4 @@ z_index = 20
 [node name="ExitArrow" parent="." instance=ExtResource("1_t7g7p")]
 
 [node name="ExitFade" parent="." instance=ExtResource("2_cwaex")]
+position = Vector2(100, 0)
