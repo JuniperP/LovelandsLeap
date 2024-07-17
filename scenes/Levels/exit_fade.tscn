@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://do2r4ht25v76b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1aw5"]
+size = Vector2(400, 300)
+
+[sub_resource type="Gradient" id="Gradient_7kihx"]
+offsets = PackedFloat32Array(0, 0.0635838, 0.320809, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.72549, 0.0196078, 0.0196078, 0.0196078, 0.901961, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sktwo"]
+gradient = SubResource("Gradient_7kihx")
+width = 200
+height = 300
+
+[node name="ExitFade" type="Area2D"]
+
+[node name="CollisionFade" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = 30
+shape = SubResource("RectangleShape2D_e1aw5")
+
+[node name="FadeOut" type="TextureRect" parent="CollisionFade"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_sktwo")
+
+[node name="Arrow" type="Label" parent="CollisionFade"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -204.0
+offset_bottom = 144.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 255
+text = "→"
