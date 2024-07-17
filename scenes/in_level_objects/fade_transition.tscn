@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://l1sc7rrtk6mn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80ngs"]
+size = Vector2(100, 300)
+
+[node name="FadeTransition" type="Area2D"]
+
+[node name="CollisionFade" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_80ngs")
