@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://do2r4ht25v76b"]
+
+[ext_resource type="Script" path="res://scripts/in_level_objects/enter_exit_fades/Arrow.cs" id="1_cxx22"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1aw5"]
+size = Vector2(400, 300)
+
+[node name="ExitArrow" type="Area2D"]
+light_mask = 2
+visibility_layer = 2
+z_index = 20
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("RectangleShape2D_e1aw5")
+
+[node name="Arrow" type="Label" parent="CollisionBox"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -204.0
+offset_bottom = 144.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 255
+text = "→"
+script = ExtResource("1_cxx22")
+
+[connection signal="body_entered" from="." to="CollisionBox/Arrow" method="InArea"]
+[connection signal="body_exited" from="." to="CollisionBox/Arrow" method="OutArea"]

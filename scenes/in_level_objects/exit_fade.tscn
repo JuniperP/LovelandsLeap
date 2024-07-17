@@ -1,30 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://do2r4ht25v76b"]
+[gd_scene load_steps=4 format=3 uid="uid://l1sc7rrtk6mn"]
 
-[ext_resource type="Script" path="res://scripts/in_level_objects/enter_exit_fades/Arrow.cs" id="1_cxx22"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80ngs"]
+size = Vector2(200, 300)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1aw5"]
-size = Vector2(400, 300)
-
-[sub_resource type="Gradient" id="Gradient_7kihx"]
+[sub_resource type="Gradient" id="Gradient_ortab"]
 offsets = PackedFloat32Array(0, 0.0635838, 0.320809, 1)
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.72549, 0.0196078, 0.0196078, 0.0196078, 0.901961, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_sktwo"]
-gradient = SubResource("Gradient_7kihx")
+gradient = SubResource("Gradient_ortab")
 width = 200
 height = 300
 
 [node name="ExitFade" type="Area2D"]
-light_mask = 2
-visibility_layer = 2
-z_index = 20
-collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionFade" type="CollisionShape2D" parent="."]
-light_mask = 2
-visibility_layer = 2
-shape = SubResource("RectangleShape2D_e1aw5")
+shape = SubResource("RectangleShape2D_80ngs")
 
 [node name="FadeOut" type="TextureRect" parent="CollisionFade"]
 anchors_preset = 4
@@ -35,20 +26,3 @@ offset_right = 200.0
 offset_bottom = 150.0
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_sktwo")
-
-[node name="Arrow" type="Label" parent="CollisionFade"]
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -220.0
-offset_top = -204.0
-offset_bottom = 144.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 255
-text = "→"
-script = ExtResource("1_cxx22")
-
-[connection signal="body_entered" from="." to="CollisionFade/Arrow" method="InArea"]
-[connection signal="body_exited" from="." to="CollisionFade/Arrow" method="OutArea"]

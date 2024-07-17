@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci8ejwpb6ts7x"]
+
+[ext_resource type="PackedScene" uid="uid://do2r4ht25v76b" path="res://scenes/in_level_objects/exit_arrow.tscn" id="1_t7g7p"]
+[ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/exit_fade.tscn" id="2_cwaex"]
+
+[node name="FadeExit" type="Node2D"]
+light_mask = 2
+visibility_layer = 2
+z_index = 20
+
+[node name="ExitArrow" parent="." instance=ExtResource("1_t7g7p")]
+
+[node name="ExitFade" parent="." instance=ExtResource("2_cwaex")]
