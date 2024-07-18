@@ -55,7 +55,12 @@ public partial class AsciiFrog : RichTextLabel
 			else
 			{
 				if (VisibleRatio >= 1f)
+				{
 					_canFade = false;
+					// Full loading animation is done so we switch scenes
+					SceneManager.SetNextGoTo(LoadingScreen.nextScene);
+					SceneManager.GoToSetScene(this);
+				}
 			}
 
 			// Type out frog accordingly

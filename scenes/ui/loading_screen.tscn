@@ -41,5 +41,4 @@ ng l[color=#a3f0a1]oading loading load[color=#37823d]ing lo
 script = ExtResource("2_hgsv7")
 
 [connection signal="FadedIn" from="." to="AsciiFrog" method="FadeIn"]
-[connection signal="ready" from="." to="." method="FadeIn"]
 [connection signal="FadedOut" from="AsciiFrog" to="." method="FadeOut"]
