@@ -99,4 +99,3 @@ layout_mode = 1
 [connection signal="pressed" from="BackDrop/ResumeButton" to="." method="Close"]
 [connection signal="pressed" from="BackDrop/SettingsButton" to="Settings" method="Open"]
 [connection signal="pressed" from="BackDrop/MainMenuButton" to="." method="ToMainMenu"]
-[connection signal="pressed" from="BackDrop/MainMenuButton" to="LoadingScreen" method="Open"]

@@ -146,4 +146,3 @@ layout_mode = 1
 [connection signal="pressed" from="OPBack/TextureRect/CreditButton" to="." method="OnCreditButtonPressed"]
 [connection signal="pressed" from="OPBack/TextureRect/SettingsButton" to="Settings" method="Open"]
 [connection signal="pressed" from="OPBack/TextureRect/StartGameButton" to="." method="OnStartGameButtonPressed"]
-[connection signal="pressed" from="OPBack/TextureRect/StartGameButton" to="LoadingScreen" method="Open"]

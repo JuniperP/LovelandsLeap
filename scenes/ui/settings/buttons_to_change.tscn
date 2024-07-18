@@ -123,4 +123,3 @@ offset_top = -325.0
 offset_bottom = -275.0
 
 [connection signal="pressed" from="PlayTestButton" to="PlayTestButton" method="PlayTest"]
-[connection signal="pressed" from="PlayTestButton" to="LoadingScreen" method="Open"]
