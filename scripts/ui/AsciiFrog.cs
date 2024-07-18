@@ -8,8 +8,9 @@ public partial class AsciiFrog : RichTextLabel
 	// Which direction to fade
 	private bool _fadeOut;
 
-	// Tracking fade transition
-	private static float _trans = 0;
+	// 
+	public static float newVisRatio = 0;
+
 
 	// Signal to say we have faded out
 	[Signal] public delegate void FadedOutEventHandler();
@@ -18,7 +19,9 @@ public partial class AsciiFrog : RichTextLabel
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		if (_trans >= 1)
+		VisibleRatio = newVisRatio;
+
+		if (VisibleRatio >= 1)
 		{
 			_canFade = true;
 			_fadeOut = true;
@@ -42,7 +45,7 @@ public partial class AsciiFrog : RichTextLabel
 			{
 				delta *= -1f;
 
-				if (_trans <= 0)
+				if (VisibleRatio <= 0)
 				{
 					EmitSignal(SignalName.FadedOut);
 					_canFade = false;
@@ -51,15 +54,13 @@ public partial class AsciiFrog : RichTextLabel
 
 			else
 			{
-				if (_trans >= 1f)
+				if (VisibleRatio >= 1f)
 					_canFade = false;
 			}
 
-			_trans += (float)delta;
-
-
-			// Changing the fade accordingly
-			SelfModulate = new Color(0, 0, 0, _trans);
+			// Type out frog accordingly
+			newVisRatio += (float)delta;
+			VisibleRatio = newVisRatio;
 
 		}
 	}
