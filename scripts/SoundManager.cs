@@ -73,14 +73,14 @@ public partial class SoundManager : Node
 
 
 	// Client method to easily play sounds from anywhere
-	public static void PlaySound(SFX sound, Node playOn)
+	public static void PlaySound(SFX sound, Node playOn, bool isUIButton)
 	{
 		// Makes new case of sfx
 		AudioStreamPlayer toPlay = (AudioStreamPlayer)_sounds[sound].Duplicate();
 
 		// Set up sfx to explode ensuring no dispose issues, many AudioStreamPlayers, etc.
 		// This also switches the scene if applicable
-		toPlay.Finished += () => CleanUpSound(toPlay, playOn);
+		toPlay.Finished += () => CleanUpSound(toPlay, playOn, isUIButton);
 
 		// Adds the sfx
 		playOn.AddChild(toPlay);
@@ -104,11 +104,11 @@ public partial class SoundManager : Node
 
 			// If a button or TabContainer is found it's set up to play sound on click (IDK WHY THESE USE i-1!!!!)
 			if (children[i].GetClass() == "Button")
-				((Button)children[i]).Pressed += () => PlaySound(SFX.UIButton, children[i - 1]);
+				((Button)children[i]).Pressed += () => PlaySound(SFX.UIButton, children[i - 1], true);
 
 
 			if (children[i].GetClass() == "TabContainer")
-				((TabContainer)children[i]).TabClicked += (long NotUsed) => PlaySound(SFX.UIButton, children[i - 1]);
+				((TabContainer)children[i]).TabClicked += (long NotUsed) => PlaySound(SFX.UIButton, children[i - 1], true);
 
 		}
 
@@ -121,10 +121,12 @@ public partial class SoundManager : Node
 	}
 
 	// Removes used up AudioStreamPlayer and switches the scene on toSwitch
-	private static void CleanUpSound(AudioStreamPlayer toErase, Node toSwitch)
+	private static void CleanUpSound(AudioStreamPlayer toErase, Node toSwitch, bool isUIButton)
 	{
 		toErase.QueueFree();
-		SceneManager.GoToSetScene(toSwitch);
+
+		if(isUIButton)
+			SceneManager.GoToSetScene(toSwitch);
 	}
 
 }
