@@ -13,7 +13,7 @@ public partial class LogoFade : FadeIn
 		if (VisibleRatio == 1 && CanFade)
 		{
 			// End transition with sound effect
-			SoundManager.PlaySound(SFX.TongueHit, this, false);
+			SoundManager.PlaySound(SFX.TongueHit, this);
 
 			// Emit that we hit the end
 			EmitSignal(SignalName.LogoFadedIn);
@@ -42,7 +42,7 @@ public partial class LogoFade : FadeIn
 	protected override void FadeSetUp(bool input)
 	{
 		// Having start of tongue shoot for fade in
-		SoundManager.PlaySound(SFX.TongueShoot, this, false);
+		SoundManager.PlaySound(SFX.TongueShoot, this);
 
 	}
 

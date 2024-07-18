@@ -12,9 +12,6 @@ public partial class LoadingScreen : Panel
 	// Tracking fade transition
 	public static float trans = 0;
 
-	// Scene fading for
-	public static ToScene nextScene;
-
 	// Signal to say we have faded in
 	[Signal] public delegate void FadedInEventHandler();
 
@@ -64,11 +61,10 @@ public partial class LoadingScreen : Panel
 	}
 
 	// Used to fade into black so scene can change behind the curtain
-	private void FadeIn(ToScene scene)
+	private void FadeIn()
 	{
 		_fadeOut = false;
 		_canFade = true;
-		nextScene = scene;
 	}
 
 }

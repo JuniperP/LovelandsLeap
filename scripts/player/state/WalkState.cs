@@ -53,7 +53,7 @@ public class WalkState : MovementState
 		// Accounting for free fall and subsequent landing sfx
 		if (floored && _wasInAir)
 		{
-			SoundManager.PlaySound(SFX.Land, Ctx, false);
+			SoundManager.PlaySound(SFX.Land, Ctx);
 			_wasInAir = false;
 		}
 		else if (!floored)
@@ -95,7 +95,7 @@ public class WalkState : MovementState
 			if (Input.IsActionJustPressed("move_up"))
 			{
 				velocity = -Ctx.JumpImpulse;
-				SoundManager.PlaySound(SFX.Jump, Ctx, false);
+				SoundManager.PlaySound(SFX.Jump, Ctx);
 			}
 		}
 		else
@@ -163,7 +163,7 @@ public class WalkState : MovementState
 			Ctx.TongueLine.GlobalPosition = Ctx.TongueGlobalPos;
 
 			// Activate tongue shoot sound effect
-			SoundManager.PlaySound(SFX.TongueShoot, Ctx, false);
+			SoundManager.PlaySound(SFX.TongueShoot, Ctx);
 		}
 	}
 
@@ -190,7 +190,7 @@ public class WalkState : MovementState
 		Ctx.StateEnum = Player.State.Grapple;
 
 		//Activate tongue hit effect
-		SoundManager.PlaySound(SFX.TongueHit, Ctx, false);
+		SoundManager.PlaySound(SFX.TongueHit, Ctx);
 	}
 
 	public override void DisableGrapple() { }
