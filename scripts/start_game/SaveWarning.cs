@@ -16,7 +16,7 @@ public partial class SaveWarning : FadeIn
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (CanFade && Once)
+		if (CanFade)
 		{
 			// Fade in
 			if (_start)
@@ -35,7 +35,7 @@ public partial class SaveWarning : FadeIn
 				if (_trans <= 0)
 				{
 					EmitSignal(SignalName.WarningDone, NotHeld);
-					Once = false;
+					CanFade = false;
 				}
 				else
 					_trans -= (float)delta / 2;

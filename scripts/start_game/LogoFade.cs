@@ -10,7 +10,7 @@ public partial class LogoFade : FadeIn
 	public override void _Process(double delta)
 	{
 		// Emits done if fully faded in logo
-		if (VisibleRatio == 1 && Once)
+		if (VisibleRatio == 1 && CanFade)
 		{
 			// End transition with sound effect
 			SoundManager.PlaySound(SFX.TongueHit, this, false);
@@ -19,7 +19,7 @@ public partial class LogoFade : FadeIn
 			EmitSignal(SignalName.LogoFadedIn);
 
 			// Completed goal
-			Once = false;
+			CanFade = false;
 		}
 
 		// Slowly brings in logo if aloud

@@ -5,9 +5,6 @@ public abstract partial class FadeIn : RichTextLabel
 	// Boolean to track if process can start fading
 	protected bool CanFade;
 
-	// Only emit the signal once
-	protected bool Once;
-
 	// Used to ensure previously used inputs can't held to skip fades
 	protected bool NotHeld;
 
@@ -16,7 +13,6 @@ public abstract partial class FadeIn : RichTextLabel
 	public override void _Ready()
 	{
 		CanFade = false;
-		Once = true;
 		NotHeld = false;
 		FurtherSetUp();
 	}
