@@ -1,7 +1,6 @@
 using Godot;
 
-
-public partial class LoadingScreen : Panel
+public partial class LoadingScreen : Toggleable
 {
 	// Stating whether we can fade or not
 	private bool _canFade;
@@ -32,7 +31,10 @@ public partial class LoadingScreen : Panel
 			{
 				delta *= -1f;
 				if (trans <= 0)
+				{
 					_canFade = false;
+					Close();
+				}	
 			}
 
 			else
@@ -63,6 +65,7 @@ public partial class LoadingScreen : Panel
 	// Used to fade into black so scene can change behind the curtain
 	private void FadeIn()
 	{
+		Open();
 		_fadeOut = false;
 		_canFade = true;
 	}

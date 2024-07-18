@@ -11,7 +11,6 @@ public partial class AsciiFrog : RichTextLabel
 	// Static way of seeing the texts VisibleRatio
 	public static float newVisRatio = 0;
 
-
 	// Signal to say we have faded out
 	[Signal] public delegate void FadedOutEventHandler();
 
@@ -57,7 +56,7 @@ public partial class AsciiFrog : RichTextLabel
 				if (VisibleRatio >= 1f)
 				{
 					_canFade = false;
-					
+
 					// Full loading animation is done so we switch scenes
 					SceneManager.GoToSetScene(this);
 				}

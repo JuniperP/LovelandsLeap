@@ -129,6 +129,10 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "Load Game"
 
+[node name="LoadingScreen" parent="." instance=ExtResource("6_cfs3o")]
+visible = false
+layout_mode = 1
+
 [node name="Settings" parent="." instance=ExtResource("3_ps8pg")]
 visible = false
 layout_mode = 1
@@ -138,11 +142,9 @@ stream = ExtResource("4_e7cc2")
 autoplay = true
 bus = &"Music"
 
-[node name="LoadingScreen" parent="." instance=ExtResource("6_cfs3o")]
-visible = false
-layout_mode = 1
-
 [connection signal="pressed" from="OPBack/TextureRect/QuitButton" to="." method="QuitGame"]
 [connection signal="pressed" from="OPBack/TextureRect/CreditButton" to="." method="OnCreditButtonPressed"]
+[connection signal="pressed" from="OPBack/TextureRect/CreditButton" to="LoadingScreen" method="FadeIn"]
 [connection signal="pressed" from="OPBack/TextureRect/SettingsButton" to="Settings" method="Open"]
 [connection signal="pressed" from="OPBack/TextureRect/StartGameButton" to="." method="OnStartGameButtonPressed"]
+[connection signal="pressed" from="OPBack/TextureRect/StartGameButton" to="LoadingScreen" method="FadeIn"]
