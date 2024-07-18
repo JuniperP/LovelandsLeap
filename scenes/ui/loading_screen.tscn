@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://djsutjm53512j"]
+[gd_scene load_steps=4 format=3 uid="uid://djsutjm53512j"]
 
 [ext_resource type="Script" path="res://scripts/ui/LoadingScreen.cs" id="1_mo2ab"]
+[ext_resource type="Script" path="res://scripts/ui/AsciiFrog.cs" id="2_hgsv7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y2u2"]
-bg_color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [node name="LoadingScreen" type="Panel"]
 anchors_preset = 15
@@ -37,3 +38,8 @@ load[color=w]ing loading load[color=#37823d]ing lo
 adin[color=w]g loading loading[color=#37823d] loadi
 ng l[color=w]oading loading load[color=#37823d]ing lo
 "
+script = ExtResource("2_hgsv7")
+
+[connection signal="FadedIn" from="." to="AsciiFrog" method="FadeIn"]
+[connection signal="ready" from="." to="." method="FadeIn"]
+[connection signal="FadedOut" from="AsciiFrog" to="." method="FadeOut"]
