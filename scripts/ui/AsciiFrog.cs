@@ -8,7 +8,7 @@ public partial class AsciiFrog : RichTextLabel
 	// Which direction to fade
 	private bool _fadeOut;
 
-	// 
+	// Static way of seeing the texts VisibleRatio
 	public static float newVisRatio = 0;
 
 
