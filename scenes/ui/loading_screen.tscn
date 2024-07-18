@@ -1,25 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://djsutjm53512j"]
+[gd_scene load_steps=3 format=3 uid="uid://djsutjm53512j"]
 
 [ext_resource type="Script" path="res://scripts/ui/LoadingScreen.cs" id="1_mo2ab"]
 
-[node name="LoadingScreen" type="Control"]
-layout_mode = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y2u2"]
+bg_color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+
+[node name="LoadingScreen" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1y2u2")
 script = ExtResource("1_mo2ab")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="AsciiFrog" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/italics_font_size = 64
 theme_override_font_sizes/bold_italics_font_size = 156
 bbcode_enabled = true
-text = "[center][b][i]
+text = "[center][i] 
 
-LOADING..."
+[color=#37823d] game 				now:
+lo[color=w]adi[color=#3443eb]ng [color=#37823d]loa[color=#3443eb]di[color=#w]ng lo[color=#37823d]ad
+in[color=w]g lo[color=#3443eb]ad[color=#37823d]ing [color=#3443eb]lo[color=w]ading[color=#37823d] lo
+ading loading loading load
+																			  ing loading [color=pink]loading loading loading
+[color=#37823d] loading loading
+loadi[color=w]ng loading lo[color=#37823d]ading
+load[color=w]ing loading load[color=#37823d]ing lo
+adin[color=w]g loading loading[color=#37823d] loadi
+ng l[color=w]oading loading load[color=#37823d]ing lo
+"
