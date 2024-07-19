@@ -3,10 +3,10 @@ using Godot;
 public partial class LoadingScreen : Toggleable
 {
 	// Stating whether we can fade or not
-	public static bool canFade;
+	public static bool canFade = false;
 
 	// Which direction to fade
-	public static bool fadeOut;
+	public static bool fadeOut = true;
 
 	// Tracking fade transition
 	public static float trans = 0;
@@ -19,7 +19,6 @@ public partial class LoadingScreen : Toggleable
 	public override void _Ready()
 	{
 		Open();
-		canFade = false;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
