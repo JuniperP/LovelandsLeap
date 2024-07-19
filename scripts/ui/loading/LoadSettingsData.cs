@@ -2,6 +2,8 @@ using Godot;
 
 public partial class LoadSettingsData : Node
 {
+	//TODO: make store strings match naming convention
+
 	// The file we will store to
 	private static string _storeTo = "user://LoveLandSettingsInfo.cfg";
 

@@ -16,6 +16,9 @@ public partial class LoadGameIn : Control
 		// Loads in user settings
 		LoadSettingsData.LoadData(false);
 
+		//TEST
+		LoadLevelData.SaveData(ToScene.PlayTestLevel);
+
 		// Starts the splash sequence
 		EmitSignal(SignalName.StartSplash, true);
 
