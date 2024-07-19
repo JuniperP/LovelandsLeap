@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://br888scm3xpk"]
+[gd_scene load_steps=13 format=3 uid="uid://br888scm3xpk"]
 
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/main_menu.jpg" id="1_1v0w2"]
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_pqwlb"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/mc_portrait.png" id="6_1deqh"]
 [ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/music/loveland_cutscene_music.wav" id="8_5gsvf"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="9_anup7"]
+[ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="10_t3rc1"]
 
 [sub_resource type="Animation" id="Animation_dmnhy"]
 resource_name = "IntroCutscene"
@@ -251,6 +252,10 @@ libraries = {
 "": SubResource("AnimationLibrary_qtv0h")
 }
 autoplay = "intro_cutscene"
+
+[node name="LoadingScreen" parent="." instance=ExtResource("10_t3rc1")]
+visible = false
+layout_mode = 1
 
 [editable path="OrderDialogue"]
 [editable path="ForestDialogue"]
