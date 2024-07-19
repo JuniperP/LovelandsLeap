@@ -35,6 +35,10 @@ public partial class LoadLevelData : Node
 	}
 
 
+	/*
+		Method to get game data.
+		Currently gets level data, but feel free to add on more.
+	*/
 	public static ToScene LoadData()
 	{
 		// Getting where we saved from
