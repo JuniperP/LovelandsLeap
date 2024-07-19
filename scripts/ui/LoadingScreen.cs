@@ -32,7 +32,7 @@ public partial class LoadingScreen : Toggleable
 			{
 				delta *= -1f;
 				if (trans <= 0)
-					_canFade = false;	
+					_canFade = false;
 			}
 
 			else
@@ -65,6 +65,8 @@ public partial class LoadingScreen : Toggleable
 	{
 		_fadeOut = false;
 		_canFade = true;
+
+		MouseFilter = MouseFilterEnum.Stop;
 	}
 
 }
