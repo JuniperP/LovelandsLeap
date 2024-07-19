@@ -18,6 +18,7 @@ public partial class LoadingScreen : Toggleable
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		Open();
 		_canFade = false;
 	}
 
@@ -31,10 +32,7 @@ public partial class LoadingScreen : Toggleable
 			{
 				delta *= -1f;
 				if (trans <= 0)
-				{
-					_canFade = false;
-					Close();
-				}	
+					_canFade = false;	
 			}
 
 			else
@@ -65,7 +63,6 @@ public partial class LoadingScreen : Toggleable
 	// Used to fade into black so scene can change behind the curtain
 	private void FadeIn()
 	{
-		Open();
 		_fadeOut = false;
 		_canFade = true;
 	}

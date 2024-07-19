@@ -92,10 +92,10 @@ visible = false
 layout_mode = 1
 
 [node name="LoadingScreen" parent="." instance=ExtResource("3_m1si5")]
-visible = false
 layout_mode = 1
 
 [connection signal="tree_exiting" from="." to="." method="Close"]
 [connection signal="pressed" from="BackDrop/ResumeButton" to="." method="Close"]
 [connection signal="pressed" from="BackDrop/SettingsButton" to="Settings" method="Open"]
 [connection signal="pressed" from="BackDrop/MainMenuButton" to="." method="ToMainMenu"]
+[connection signal="pressed" from="BackDrop/MainMenuButton" to="LoadingScreen" method="FadeIn"]

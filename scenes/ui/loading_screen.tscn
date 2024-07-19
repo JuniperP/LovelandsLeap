@@ -7,11 +7,14 @@
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [node name="LoadingScreen" type="Panel"]
+process_priority = -1
+process_physics_priority = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1y2u2")
 script = ExtResource("1_mo2ab")
 
@@ -22,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_font_sizes/italics_font_size = 64
 theme_override_font_sizes/bold_italics_font_size = 156
 bbcode_enabled = true
@@ -36,7 +40,7 @@ ading loading loading load
 loadi[color=#a3f0a1]ng loading lo[color=#37823d]ading
 load[color=#a3f0a1]ing loading load[color=#37823d]ing lo
 adin[color=#a3f0a1]g loading loading[color=#37823d] loadi
-ng l[color=#a3f0a1]oading loading load[color=#37823d]ing lo
+ng l[color=#a3f0a1]oading loading load[color=#37823d]ing ...
 "
 script = ExtResource("2_hgsv7")
 
