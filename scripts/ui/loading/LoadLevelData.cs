@@ -6,14 +6,17 @@ public partial class LoadLevelData : Node
 	// Where we will be saving all non config data to
 	private static string _saveTo = "user://lovelandsavedata.json";
 
+
 	// Dictionaries of what stored values correspond to what
 	private static readonly Dictionary<ToScene, int> _levelToInt = new()
 	{
 		{ToScene.PlayTestLevel, 0},
+		{ToScene.Credits, 1}
 	};
 	private static readonly Dictionary<int, ToScene> _intToLevel = new()
 	{
 		{0, ToScene.PlayTestLevel},
+		{1, ToScene.Credits}
 	};
 
 
@@ -42,13 +45,27 @@ public partial class LoadLevelData : Node
 	public static ToScene LoadData()
 	{
 		// Getting where we saved from
-		FileAccess saveFile = FileAccess.Open(_saveTo, FileAccess.ModeFlags.Write);
+		FileAccess saveFile = FileAccess.Open(_saveTo, FileAccess.ModeFlags.Read);
 
-		// Getting the value of the level from the save file
-		Godot.Collections.Dictionary level = (Godot.Collections.Dictionary)Json.ParseString(saveFile.GetLine());
+		// Level to return
+		ToScene giveLevel = ToScene.PlayTestLevel;
 
-		// Converting from dictionary to int
-		return _intToLevel[(int)level["PlayerAtLevel"]];
+		// Json setup
+		Json json = new Json();
+		Error testFile = json.Parse(saveFile.GetLine());
+		if (testFile == Error.Ok)
+		{
+			// Getting the value of the level from the save file
+			Godot.Collections.Dictionary level = (Godot.Collections.Dictionary)json.Data;
+			
+			// Converting from dictionary to level
+			giveLevel = _intToLevel[(int)level["PlayerAtLevel"]];
+		}
+		else
+			GD.Print(testFile);
+
+		// Giving level 
+		return giveLevel;
 
 	}
 }
