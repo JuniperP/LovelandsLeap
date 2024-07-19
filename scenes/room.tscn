@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://clnx8ma77b6h3"]
+[gd_scene load_steps=8 format=3 uid="uid://clnx8ma77b6h3"]
 
 [ext_resource type="PackedScene" uid="uid://ccc6gfv7e6o6w" path="res://scenes/player/player.tscn" id="1_1djk0"]
 [ext_resource type="Script" path="res://scripts/Camera.cs" id="1_iamro"]
 [ext_resource type="PackedScene" uid="uid://bogkg7ij1umf1" path="res://scenes/ui/pause_screen.tscn" id="1_rm67i"]
+[ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="3_6sffn"]
 [ext_resource type="Texture2D" uid="uid://dnh0cnucyc6tp" path="res://assets/tiles.png" id="4_bh1hj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1drd"]
@@ -79,6 +80,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PauseScreen" parent="Camera2D/Control" instance=ExtResource("1_rm67i")]
+visible = false
+layout_mode = 1
+
+[node name="LoadingScreen" parent="Camera2D/Control" instance=ExtResource("3_6sffn")]
+visible = false
 layout_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_1djk0")]
