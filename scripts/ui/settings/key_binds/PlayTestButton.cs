@@ -5,6 +5,6 @@ public partial class PlayTestButton : Button
 	private void PlayTest()
 	{
 		SceneManager.SetNextGoTo(ToScene.PlayTestLevel);
-
+		LoadingScreen.FadeIn();
 	}
 }

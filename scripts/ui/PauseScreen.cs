@@ -29,6 +29,7 @@ public partial class PauseScreen : Toggleable
 	private void ToMainMenu()
 	{
 		SceneManager.SetNextGoTo(ToScene.MainMenu);
+		LoadingScreen.FadeIn();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

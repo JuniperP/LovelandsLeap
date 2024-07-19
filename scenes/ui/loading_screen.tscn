@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://djsutjm53512j"]
 
-[ext_resource type="Script" path="res://scripts/ui/LoadingScreen.cs" id="1_mo2ab"]
-[ext_resource type="Script" path="res://scripts/ui/AsciiFrog.cs" id="2_hgsv7"]
+[ext_resource type="Script" path="res://scripts/ui/loading_screen/LoadingScreen.cs" id="1_78q84"]
+[ext_resource type="Script" path="res://scripts/ui/loading_screen/AsciiFrog.cs" id="2_3s6kc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y2u2"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1y2u2")
-script = ExtResource("1_mo2ab")
+script = ExtResource("1_78q84")
 
 [node name="AsciiFrog" type="RichTextLabel" parent="."]
 process_mode = 3
@@ -44,7 +44,7 @@ load[color=#a3f0a1]ing loading load[color=#37823d]ing lo
 adin[color=#a3f0a1]g loading loading[color=#37823d] loadi
 ng l[color=#a3f0a1]oading loading load[color=#37823d]ing ...
 "
-script = ExtResource("2_hgsv7")
+script = ExtResource("2_3s6kc")
 
 [connection signal="FadedIn" from="." to="AsciiFrog" method="FadeIn"]
 [connection signal="FadedOut" from="AsciiFrog" to="." method="FadeOut"]
