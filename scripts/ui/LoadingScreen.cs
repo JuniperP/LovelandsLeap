@@ -3,10 +3,10 @@ using Godot;
 public partial class LoadingScreen : Toggleable
 {
 	// Stating whether we can fade or not
-	private bool _canFade;
+	public static bool canFade;
 
 	// Which direction to fade
-	private bool _fadeOut;
+	public static bool fadeOut;
 
 	// Tracking fade transition
 	public static float trans = 0;
@@ -19,20 +19,20 @@ public partial class LoadingScreen : Toggleable
 	public override void _Ready()
 	{
 		Open();
-		_canFade = false;
+		canFade = false;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		// If allowed to fade, fades as needed
-		if (_canFade)
+		if (canFade)
 		{
-			if (_fadeOut)
+			if (fadeOut)
 			{
 				delta *= -1f;
 				if (trans <= 0)
-					_canFade = false;
+					canFade = false;
 			}
 
 			else
@@ -40,7 +40,7 @@ public partial class LoadingScreen : Toggleable
 				if (trans >= 1f)
 				{
 					EmitSignal(SignalName.FadedIn);
-					_canFade = false;
+					canFade = false;
 				}
 			}
 
@@ -56,15 +56,15 @@ public partial class LoadingScreen : Toggleable
 	// Fades the background out
 	private void FadeOut()
 	{
-		_fadeOut = true;
-		_canFade = true;
+		fadeOut = true;
+		canFade = true;
 	}
 
 	// Used to fade into black so scene can change behind the curtain
 	private void FadeIn()
 	{
-		_fadeOut = false;
-		_canFade = true;
+		fadeOut = false;
+		canFade = true;
 
 		MouseFilter = MouseFilterEnum.Stop;
 	}

@@ -2,6 +2,14 @@ using Godot;
 
 public partial class Credits : Control
 {
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		// Jump cut effect
+		LoadingScreen.trans = 0;
+		AsciiFrog.newVisRatio = 0;
+	}
+
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
