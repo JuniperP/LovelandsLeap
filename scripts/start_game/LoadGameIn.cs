@@ -17,7 +17,7 @@ public partial class LoadGameIn : Control
 		LoadSettingsData.LoadData(false);
 
 		//TEST
-		LoadLevelData.SaveData(ToScene.Credits);
+		//LoadLevelData.SaveData(ToScene.Credits);
 
 		// Starts the splash sequence
 		EmitSignal(SignalName.StartSplash, true);
@@ -28,7 +28,8 @@ public partial class LoadGameIn : Control
 	private void LogoIn()
 	{
 		// Send to main screen
-		SceneManager.SetNextGoTo(LoadLevelData.LoadData());
+		//SceneManager.SetNextGoTo(LoadLevelData.LoadData());
+		SceneManager.SetNextGoTo(ToScene.MainMenu);
 		SceneManager.GoToSetScene(this);
 	}
 }
