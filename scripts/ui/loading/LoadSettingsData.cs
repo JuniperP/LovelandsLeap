@@ -5,10 +5,10 @@ public partial class LoadSettingsData : Node
 	//TODO: make store strings match naming convention
 
 	// The file we will store to
-	private static string _storeTo = "user://LoveLandSettingsInfo.cfg";
+	private static string _storeTo = "user://lovelandsettings.cfg";
 
 	// File for resetting settings
-	private static string _defaultSettings = "user://LoveLandDefaultSettings.cfg";
+	private static string _defaultSettings = "user://lovelanddefaultsettings.cfg";
 
 
 	// Save settings data from the game
