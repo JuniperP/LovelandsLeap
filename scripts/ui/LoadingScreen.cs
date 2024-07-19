@@ -28,11 +28,16 @@ public partial class LoadingScreen : Toggleable
 		// If allowed to fade, fades as needed
 		if (canFade)
 		{
+			MouseFilter = MouseFilterEnum.Stop;
 			if (fadeOut)
 			{
 				delta *= -1f;
 				if (trans <= 0)
+				{
 					canFade = false;
+					MouseFilter = MouseFilterEnum.Ignore;
+				}
+
 			}
 
 			else
@@ -45,8 +50,8 @@ public partial class LoadingScreen : Toggleable
 			}
 
 			trans += (float)delta;
-
 		}
+
 
 		// Changing the fade accordingly
 		SelfModulate = new Color(0, 0, 0, trans);
@@ -61,12 +66,11 @@ public partial class LoadingScreen : Toggleable
 	}
 
 	// Used to fade into black so scene can change behind the curtain
-	private void FadeIn()
+	public static void FadeIn()
 	{
 		fadeOut = false;
 		canFade = true;
 
-		MouseFilter = MouseFilterEnum.Stop;
 	}
 
 }
