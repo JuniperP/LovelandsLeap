@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://djsutjm53512j"]
 
-[ext_resource type="Script" path="res://scripts/ui/loading_screen/LoadingScreen.cs" id="1_78q84"]
-[ext_resource type="Script" path="res://scripts/ui/loading_screen/AsciiFrog.cs" id="2_3s6kc"]
+[ext_resource type="Script" path="res://scripts/ui/loading/LoadingScreen.cs" id="1_78q84"]
+[ext_resource type="Script" path="res://scripts/ui/loading/AsciiFrog.cs" id="2_3s6kc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y2u2"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
