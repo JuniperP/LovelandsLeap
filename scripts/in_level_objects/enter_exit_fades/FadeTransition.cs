@@ -10,8 +10,16 @@ public partial class FadeTransition : Area2D
 	{
 		if (node is Player)
 		{
+			// Saves the game
+			LoadLevelData.SaveData(sendsTo);
+
+			// Sets up to go to the next area
 			SceneManager.SetNextGoTo(sendsTo);
+
+			// Pauses so the player cant run around
 			GetTree().Paused = true;
+
+			// Starts into next scene
 			LoadingScreen.FadeIn();
 		}
 
