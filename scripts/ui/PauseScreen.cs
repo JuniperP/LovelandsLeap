@@ -47,7 +47,7 @@ public partial class PauseScreen : Toggleable
 			_heldDown = true;
 
 			//Switch visibility
-			if (Visible)
+			if (Visible && LoadingScreen.trans <= 0)
 			{
 				GetTree().Paused = false;
 				Close();
