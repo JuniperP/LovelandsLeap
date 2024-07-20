@@ -49,56 +49,7 @@ text = "
 LOVELAND "
 horizontal_alignment = 2
 
-[node name="QuitButton" type="Button" parent="OPBack/TextureRect"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -320.0
-offset_top = 410.0
-offset_right = -50.0
-offset_bottom = 485.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
-text = "Quit
-"
-
-[node name="CreditButton" type="Button" parent="OPBack/TextureRect"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -320.0
-offset_top = 285.0
-offset_right = -50.0
-offset_bottom = 360.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
-text = "Credits"
-
-[node name="SettingsButton" type="Button" parent="OPBack/TextureRect"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -320.0
-offset_top = 160.0
-offset_right = -50.0
-offset_bottom = 235.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
-text = "Settings"
-
-[node name="StartGameButton" type="Button" parent="OPBack/TextureRect"]
+[node name="NewGameButton" type="Button" parent="OPBack/TextureRect"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -131,6 +82,55 @@ theme_override_font_sizes/font_size = 48
 text = "Load Game"
 script = ExtResource("4_k3vkt")
 
+[node name="SettingsButton" type="Button" parent="OPBack/TextureRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = 160.0
+offset_right = -50.0
+offset_bottom = 235.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+
+[node name="CreditButton" type="Button" parent="OPBack/TextureRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = 285.0
+offset_right = -50.0
+offset_bottom = 360.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="OPBack/TextureRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = 410.0
+offset_right = -50.0
+offset_bottom = 485.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Quit
+"
+
 [node name="Settings" parent="." instance=ExtResource("3_ps8pg")]
 visible = false
 layout_mode = 1
@@ -144,10 +144,10 @@ stream = ExtResource("4_e7cc2")
 autoplay = true
 bus = &"Music"
 
-[connection signal="pressed" from="OPBack/TextureRect/QuitButton" to="." method="QuitGame"]
+[connection signal="pressed" from="OPBack/TextureRect/NewGameButton" to="." method="OnNewGameButtonPressed"]
+[connection signal="pressed" from="OPBack/TextureRect/NewGameButton" to="LoadingScreen" method="FadeIn"]
+[connection signal="pressed" from="OPBack/TextureRect/LoadButton" to="OPBack/TextureRect/LoadButton" method="LoadSavedGame"]
+[connection signal="pressed" from="OPBack/TextureRect/SettingsButton" to="Settings" method="Open"]
 [connection signal="pressed" from="OPBack/TextureRect/CreditButton" to="." method="OnCreditButtonPressed"]
 [connection signal="pressed" from="OPBack/TextureRect/CreditButton" to="LoadingScreen" method="FadeIn"]
-[connection signal="pressed" from="OPBack/TextureRect/SettingsButton" to="Settings" method="Open"]
-[connection signal="pressed" from="OPBack/TextureRect/StartGameButton" to="." method="OnStartGameButtonPressed"]
-[connection signal="pressed" from="OPBack/TextureRect/StartGameButton" to="LoadingScreen" method="FadeIn"]
-[connection signal="pressed" from="OPBack/TextureRect/LoadButton" to="OPBack/TextureRect/LoadButton" method="LoadSavedGame"]
+[connection signal="pressed" from="OPBack/TextureRect/QuitButton" to="." method="QuitGame"]
