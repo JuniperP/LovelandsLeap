@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public partial class LoadLevelData : Node
 {
 	// Where we will be saving all non config data to
-	private static string _saveTo = "user://lovelandsavedata.json";
+	public static string saveTo = "user://lovelandsavedata.json";
 
 
 	// Dictionaries of what stored values correspond to what
@@ -28,7 +28,7 @@ public partial class LoadLevelData : Node
 	public static void SaveData(ToScene level)
 	{
 		// Getting where we will be saving to
-		FileAccess saveFile = FileAccess.Open(_saveTo, FileAccess.ModeFlags.Write);
+		FileAccess saveFile = FileAccess.Open(saveTo, FileAccess.ModeFlags.Write);
 
 		// Converting where the player currently is into json format
 		string jsonString = Json.Stringify((Godot.Collections.Dictionary)new() { { "PlayerAtLevel", _levelToInt[level] } });
@@ -48,7 +48,7 @@ public partial class LoadLevelData : Node
 	public static ToScene LoadData()
 	{
 		// Getting where we saved from
-		FileAccess saveFile = FileAccess.Open(_saveTo, FileAccess.ModeFlags.Read);
+		FileAccess saveFile = FileAccess.Open(saveTo, FileAccess.ModeFlags.Read);
 		
 		// Level to return
 		ToScene giveLevel = ToScene.PlayTestLevel;
