@@ -49,7 +49,7 @@ public partial class LoadLevelData : Node
 	{
 		// Getting where we saved from
 		FileAccess saveFile = FileAccess.Open(saveTo, FileAccess.ModeFlags.Read);
-		
+
 		// Level to return
 		ToScene giveLevel = ToScene.PlayTestLevel;
 
@@ -73,7 +73,7 @@ public partial class LoadLevelData : Node
 		// Giving level 
 		return giveLevel;
 
-		
+
 
 	}
 }
