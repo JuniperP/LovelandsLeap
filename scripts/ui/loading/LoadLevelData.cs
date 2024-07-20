@@ -35,6 +35,9 @@ public partial class LoadLevelData : Node
 
 		// Storing data
 		saveFile.StoreLine(jsonString);
+
+		// Ensuring the file is done being changed
+		saveFile.Close();
 	}
 
 
@@ -46,7 +49,7 @@ public partial class LoadLevelData : Node
 	{
 		// Getting where we saved from
 		FileAccess saveFile = FileAccess.Open(_saveTo, FileAccess.ModeFlags.Read);
-
+		
 		// Level to return
 		ToScene giveLevel = ToScene.PlayTestLevel;
 
@@ -57,15 +60,20 @@ public partial class LoadLevelData : Node
 		{
 			// Getting the value of the level from the save file
 			Godot.Collections.Dictionary level = (Godot.Collections.Dictionary)json.Data;
-			
+
 			// Converting from dictionary to level
 			giveLevel = _intToLevel[(int)level["PlayerAtLevel"]];
 		}
 		else
 			GD.Print(testFile);
 
+		// Ensuring the file is done being changed
+		saveFile.Close();
+
 		// Giving level 
 		return giveLevel;
+
+		
 
 	}
 }
