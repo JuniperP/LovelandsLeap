@@ -11,6 +11,7 @@ public partial class MainMenu : Control
 	// Sets up to start the game
 	private void OnStartGameButtonPressed()
 	{
+		LoadLevelData.SaveData(ToScene.Level1);
 		SceneManager.SetNextGoTo(ToScene.IntroCutscene);
 	}
 
