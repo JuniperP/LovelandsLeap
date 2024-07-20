@@ -11,12 +11,12 @@ public partial class LoadLevelData : Node
 	private static readonly Dictionary<ToScene, int> _levelToInt = new()
 	{
 		{ToScene.PlayTestLevel, 0},
-		{ToScene.Credits, 1}
+		{ToScene.Level1, 1}
 	};
 	private static readonly Dictionary<int, ToScene> _intToLevel = new()
 	{
 		{0, ToScene.PlayTestLevel},
-		{1, ToScene.Credits}
+		{1, ToScene.Level1}
 	};
 
 

@@ -8,6 +8,7 @@ public enum ToScene : byte
 	Credits,
 	IntroCutscene,
 	PlayTestLevel,
+	Level1,
 
 }
 public partial class SceneManager : Node
@@ -30,6 +31,8 @@ public partial class SceneManager : Node
 		{ToScene.Credits,  "res://scenes/ui/credits.tscn"},
 		{ToScene.IntroCutscene,  "res://scenes/cutscenes/intro.tscn"},
 		{ToScene.PlayTestLevel,  "res://scenes/levels/play_test.tscn"},
+		{ToScene.Level1,  "res://scenes/levels/level_1.tscn"},
+
 	};
 
 	// Allows the client to set where to go to next
