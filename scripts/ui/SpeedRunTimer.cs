@@ -4,7 +4,7 @@ using System;
 public partial class SpeedRunTimer : Panel
 {
 	// Total time elapsed
-	private static double _timeElapsed = 0;
+	private static float _timeElapsed = 0;
 
 	// To see if a run is currently happening 
 	private static bool _currentlyRunning = false;
@@ -26,17 +26,18 @@ public partial class SpeedRunTimer : Panel
 	public override void _Process(double delta)
 	{
 		// Increasing the time
-		if(_currentlyRunning)
-			_timeElapsed += delta;
+		if (_currentlyRunning)
+			_timeElapsed += (float) delta;
 
 		// Updating the clock
-		if(Visible)
+		if (Visible)
 		{
-			_minutes.Text = $"{1}";
-			_seconds.Text = $"{1}";
-			_milliseconds.Text = $"{1}";
-		}
+			_minutes.Text = $"{MathF.Round(_timeElapsed / 60)}";
+			_seconds.Text = $"{MathF.Round(_timeElapsed % 60f)}";
+			_milliseconds.Text = $"{MathF.Round(_timeElapsed % 1f, 2)}";
 		
+		}
+
 	}
 
 	// Starts a speedrun
