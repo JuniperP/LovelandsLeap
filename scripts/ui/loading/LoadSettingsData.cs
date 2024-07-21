@@ -86,6 +86,7 @@ public partial class LoadSettingsData : Node
 			// Windowed
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
 
+
 		// Setting extra settings
 		ToggleClassicVerburg.Classic = (bool)config.GetValue("Extra", "ClassicVer");
 		ToggleSpeedrun.HaveTimer = (bool)config.GetValue("Extra", "Speedrun");
