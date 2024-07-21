@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://2jyl564ee5cu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vx6lk"]
-bg_color = Color(1, 1, 1, 0.901961)
+bg_color = Color(1, 1, 1, 0.784314)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
@@ -11,6 +11,7 @@ corner_radius_bottom_left = 15
 process_mode = 1
 offset_right = 350.0
 offset_bottom = 100.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vx6lk")
 
 [node name="Minutes" type="Label" parent="."]
