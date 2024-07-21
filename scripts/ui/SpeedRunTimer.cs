@@ -25,6 +25,16 @@ public partial class SpeedRunTimer : Toggleable
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		// Changing visibility accordingly
+		if(ToggleSpeedrun.HaveTimer && !Visible)
+		{
+			Open();
+			//_currentlyRunning = true;
+		}
+			
+		if(!ToggleSpeedrun.HaveTimer && Visible)
+			Close();
+
 		// Increasing the time
 		if (_currentlyRunning)
 			_timeElapsed += (float) delta;
@@ -35,7 +45,6 @@ public partial class SpeedRunTimer : Toggleable
 			_minutes.Text = $"{MathF.Round(_timeElapsed / 60)}";
 			_seconds.Text = $"{MathF.Round(_timeElapsed % 60f)}";
 			_milliseconds.Text = $"{MathF.Round(_timeElapsed % 1f, 2)}";
-		
 		}
 
 	}
