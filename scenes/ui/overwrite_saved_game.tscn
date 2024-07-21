@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dnkodbiws2j72"]
 
-[ext_resource type="Script" path="res://scripts/ui/overwrite_saved_game.cs" id="1_mwf81"]
+[ext_resource type="Script" path="res://scripts/ui/OverwriteSavedGame.cs" id="1_mwf81"]
 
 [sub_resource type="Theme" id="Theme_m3tk4"]
 

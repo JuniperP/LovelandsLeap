@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class overwrite_saved_game : Toggleable
+public partial class OverwriteSavedGame : Toggleable
 {
 	// Signal to say we confirmed a reset
 	[Signal] public delegate void OverwriteEventHandler();
