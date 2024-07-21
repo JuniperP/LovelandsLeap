@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class SpeedRunTimer : Panel
+public partial class SpeedRunTimer : Toggleable
 {
 	// Total time elapsed
 	private static float _timeElapsed = 0;
