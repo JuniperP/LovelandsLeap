@@ -14,7 +14,7 @@ public partial class MainMenu : Control
 	// Sets up to start the game
 	private void OnNewGameButtonPressed()
 	{
-		if(LoadLevelData.DoesSavePathExist())
+		if(LoadLevelData.SavePathExist())
 			EmitSignal(SignalName.TriedStartGame);
 		else
 			StartNewGame();

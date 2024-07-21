@@ -4,7 +4,7 @@ public partial class LoadButton : Button
 {
 	private void LoadSavedGame()
 	{
-		if (LoadLevelData.DoesSavePathExist())
+		if (LoadLevelData.SavePathExist())
 		{
 			SceneManager.SetNextGoTo(LoadLevelData.LoadData());
 			LoadingScreen.FadeIn();

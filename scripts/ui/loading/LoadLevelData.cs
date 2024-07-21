@@ -75,7 +75,7 @@ public partial class LoadLevelData : Node
 	}
 
 	// Easy way to get whether a save file exits
-	public static bool DoesSavePathExist()
+	public static bool SavePathExist()
 	{
 		return FileAccess.FileExists(_saveTo);
 	}
