@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnkodbiws2j72"]
+
+[ext_resource type="Script" path="res://scripts/ui/overwrite_saved_game.cs" id="1_mwf81"]
+
+[sub_resource type="Theme" id="Theme_m3tk4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dd3uq"]
+bg_color = Color(0.111197, 0.111197, 0.111197, 0.901961)
+
+[node name="OverwriteConfirm" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mwf81")
+
+[node name="BackBox" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -430.0
+offset_right = 500.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_m3tk4")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dd3uq")
+
+[node name="Title" type="Label" parent="BackBox"]
+layout_mode = 0
+offset_right = 1004.0
+offset_bottom = 561.0
+theme_override_font_sizes/font_size = 88
+text = "ARE YOU SURE YOU 
+WANT TO OVERWRITE
+YOUR CURRENT
+GAME'S SAVE DATA?"
+horizontal_alignment = 1
+
+[node name="YESButton" type="Button" parent="BackBox"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = -143.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 72
+text = "YES!"
+
+[node name="NoButton" type="Button" parent="BackBox"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -250.0
+offset_right = -100.0
+offset_bottom = -143.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 72
+text = "... no"
+
+[connection signal="pressed" from="BackBox/YESButton" to="." method="OverwriteSave"]
+[connection signal="pressed" from="BackBox/NoButton" to="." method="Close"]

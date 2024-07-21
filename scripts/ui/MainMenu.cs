@@ -2,6 +2,9 @@ using Godot;
 
 public partial class MainMenu : Control
 {
+	// Signal to pop up confirmation new game menu
+	[Signal] public delegate void TriedStartGameEventHandler();
+
 	public override void _Ready()
 	{
 		// Set up button sfx
@@ -11,8 +14,18 @@ public partial class MainMenu : Control
 	// Sets up to start the game
 	private void OnNewGameButtonPressed()
 	{
+		if(LoadLevelData.DoesSavePathExist())
+			EmitSignal(SignalName.TriedStartGame);
+		else
+			StartNewGame();
+	}
+
+	// Confirm starts a new game
+	private void StartNewGame()
+	{
 		LoadLevelData.SaveData(ToScene.Level1);
 		SceneManager.SetNextGoTo(ToScene.IntroCutscene);
+		LoadingScreen.FadeIn();
 	}
 
 	// Sets up to run the credits

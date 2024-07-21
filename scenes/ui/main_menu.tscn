@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://beaw13scnxun1"]
+[gd_scene load_steps=9 format=3 uid="uid://beaw13scnxun1"]
 
 [ext_resource type="Script" path="res://scripts/ui/MainMenu.cs" id="1_byusu"]
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/main_menu.jpg" id="2_qxlys"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c4suej1iw3wkr" path="res://scenes/ui/settings/settings.tscn" id="3_ps8pg"]
 [ext_resource type="AudioStream" uid="uid://nnautoxm2usu" path="res://audio/music/loveland_menu_music.wav" id="4_e7cc2"]
 [ext_resource type="Script" path="res://scripts/ui/loading/LoadButton.cs" id="4_k3vkt"]
+[ext_resource type="PackedScene" uid="uid://dnkodbiws2j72" path="res://scenes/ui/overwrite_saved_game.tscn" id="5_sksx0"]
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="6_cfs3o"]
 
 [node name="MainMenu" type="Control"]
@@ -131,6 +132,10 @@ theme_override_font_sizes/font_size = 48
 text = "Quit
 "
 
+[node name="OverwriteConfirm" parent="OPBack" instance=ExtResource("5_sksx0")]
+visible = false
+layout_mode = 1
+
 [node name="Settings" parent="." instance=ExtResource("3_ps8pg")]
 visible = false
 layout_mode = 1
@@ -144,10 +149,11 @@ stream = ExtResource("4_e7cc2")
 autoplay = true
 bus = &"Music"
 
+[connection signal="TriedStartGame" from="." to="OPBack/OverwriteConfirm" method="Open"]
 [connection signal="pressed" from="OPBack/TextureRect/NewGameButton" to="." method="OnNewGameButtonPressed"]
-[connection signal="pressed" from="OPBack/TextureRect/NewGameButton" to="LoadingScreen" method="FadeIn"]
 [connection signal="pressed" from="OPBack/TextureRect/LoadButton" to="OPBack/TextureRect/LoadButton" method="LoadSavedGame"]
 [connection signal="pressed" from="OPBack/TextureRect/SettingsButton" to="Settings" method="Open"]
 [connection signal="pressed" from="OPBack/TextureRect/CreditButton" to="." method="OnCreditButtonPressed"]
 [connection signal="pressed" from="OPBack/TextureRect/CreditButton" to="LoadingScreen" method="FadeIn"]
 [connection signal="pressed" from="OPBack/TextureRect/QuitButton" to="." method="QuitGame"]
+[connection signal="Overwrite" from="OPBack/OverwriteConfirm" to="." method="StartNewGame"]
