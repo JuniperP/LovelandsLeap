@@ -26,28 +26,48 @@ public partial class SpeedRunTimer : Toggleable
 	public override void _Process(double delta)
 	{
 		// Changing visibility accordingly
-		if(ToggleSpeedrun.HaveTimer && !Visible)
+		if (ToggleSpeedrun.HaveTimer && !Visible)
 		{
 			Open();
-			//_currentlyRunning = true;
+			_currentlyRunning = true;
 		}
-			
-		if(!ToggleSpeedrun.HaveTimer && Visible)
+
+		if (!ToggleSpeedrun.HaveTimer && Visible)
 			Close();
 
 		// Increasing the time
 		if (_currentlyRunning)
-			_timeElapsed += (float) delta;
+			_timeElapsed += (float)delta;
 
 		// Updating the clock
 		if (Visible)
 		{
-			_minutes.Text = $"{MathF.Round(_timeElapsed / 60)}";
-			_seconds.Text = $"{MathF.Round(_timeElapsed % 60f)}";
-			_milliseconds.Text = $"{MathF.Round(_timeElapsed % 1f, 2)}";
+			// Milliseconds excluding the "#."
+			string ourNum = $"{MathF.Round(_timeElapsed % 1f, 2)}";
+			if (ourNum.Length >= 2)
+				_milliseconds.Text = ourNum.Substring(ourNum.Length - 2);
+
+
+			// Seconds
+			_seconds.Text = FormatWithStart0($"{(int)(_timeElapsed % 60)}");
+
+			// Minutes
+			_minutes.Text = FormatWithStart0($"{(int)(_timeElapsed / 60)}");
+
 		}
 
 	}
+
+	// Helps to make stylistic format adjustments to our labels to display
+	private string FormatWithStart0(string ourNum)
+	{
+		// Adding an extra 0.
+		if (ourNum.Length < 2)
+			ourNum = $"0{ourNum}";
+
+		return ourNum;
+	}
+
 
 	// Starts a speedrun
 	private void StartSpeedrun()
