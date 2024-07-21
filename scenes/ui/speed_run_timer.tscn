@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://2jyl564ee5cu"]
+[gd_scene load_steps=3 format=3 uid="uid://2jyl564ee5cu"]
+
+[ext_resource type="Script" path="res://scripts/ui/SpeedRunTimer.cs" id="1_p6b2x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vx6lk"]
 bg_color = Color(1, 1, 1, 0.784314)
@@ -13,6 +15,7 @@ offset_right = 350.0
 offset_bottom = 100.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vx6lk")
+script = ExtResource("1_p6b2x")
 
 [node name="Minutes" type="Label" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -28,6 +31,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 56
 text = "00
 "
+horizontal_alignment = 2
 
 [node name="Seconds" type="Label" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -42,6 +46,7 @@ offset_bottom = 38.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
 text = "00"
+horizontal_alignment = 2
 
 [node name="Milliseconds" type="Label" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -57,6 +62,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 56
 text = "00
 "
+horizontal_alignment = 2
 
 [node name="Colon1" type="Label" parent="."]
 modulate = Color(0, 0, 0, 1)
