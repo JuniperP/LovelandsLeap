@@ -61,6 +61,7 @@ offset_top = -45.0
 offset_right = 750.0
 offset_bottom = 45.0
 grow_vertical = 2
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_ojplt")
 
 [node name="ResolutionName2" type="Label" parent="."]
@@ -82,6 +83,7 @@ offset_top = -45.0
 offset_right = 750.0
 offset_bottom = 45.0
 grow_vertical = 2
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_ojplt")
 script = ExtResource("2_8pndc")
 
