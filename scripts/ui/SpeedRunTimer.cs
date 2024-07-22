@@ -33,7 +33,13 @@ public partial class SpeedRunTimer : Toggleable
 			Open();
 
 		if (!ToggleSpeedrun.HaveTimer && Visible)
+		{
 			Close();
+			_milliseconds.Text = "00";
+			_seconds.Text = "00";
+			_minutes.Text = "00";
+		}
+			
 
 
 		// Accounting for a max amount
@@ -106,8 +112,8 @@ public partial class SpeedRunTimer : Toggleable
 	// Resets the current speedrun
 	public static void ResetRun()
 	{
-		_timeElapsed = 0;
 		_currentlyRunning = false;
+		_timeElapsed = 0;
 		_belowMax = true;
 	}
 }
