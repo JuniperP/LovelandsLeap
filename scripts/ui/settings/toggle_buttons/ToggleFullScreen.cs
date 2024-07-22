@@ -2,13 +2,13 @@ using Godot;
 
 public partial class ToggleFullScreen : ToggleButton
 {
-	public static bool Full = true;
+	public static bool full = true;
 
 	// Turning off and on full screen
 	public override void Toggle()
 	{
 		// Switch in or out of full screen
-		if (Full)
+		if (full)
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
 		else
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
@@ -17,12 +17,12 @@ public partial class ToggleFullScreen : ToggleButton
 
 	protected override bool GetState()
 	{
-		return Full;
+		return full;
 	}
 
 	protected override void SetState(bool state)
 	{
-		Full = state;
+		full = state;
 	}
 
 

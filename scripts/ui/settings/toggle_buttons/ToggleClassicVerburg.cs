@@ -1,6 +1,6 @@
 public partial class ToggleClassicVerburg : ToggleButton
 {
-	public static bool Classic = false;
+	public static bool classic = false;
 
 	public override void Toggle()
 	{
@@ -9,12 +9,12 @@ public partial class ToggleClassicVerburg : ToggleButton
 
 	protected override bool GetState()
 	{
-		return Classic;
+		return classic;
 	}
 
 	protected override void SetState(bool state)
 	{
-		Classic = state;
+		classic = state;
 	}
 
 }

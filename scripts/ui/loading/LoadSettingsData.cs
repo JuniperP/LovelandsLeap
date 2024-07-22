@@ -32,9 +32,9 @@ public partial class LoadSettingsData : Node
 
 
 		// Setting up toggle button info to be stored
-		config.SetValue("Display", "FullScreen", ToggleFullScreen.Full);
-		config.SetValue("Extra", "ClassicVer", ToggleClassicVerburg.Classic);
-		config.SetValue("Extra", "Speedrun", ToggleSpeedrun.HaveTimer);
+		config.SetValue("Display", "FullScreen", ToggleFullScreen.full);
+		config.SetValue("Extra", "ClassicVer", ToggleClassicVerburg.classic);
+		config.SetValue("Extra", "Speedrun", ToggleSpeedrun.haveTimer);
 
 
 		// Storing data, overwriting past settings
@@ -77,7 +77,7 @@ public partial class LoadSettingsData : Node
 		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "CancelIn"), UserAction.Cancel);
 
 		// Matching if the screen is windowed
-		ToggleFullScreen.Full = (bool)config.GetValue("Display", "FullScreen");
+		ToggleFullScreen.full = (bool)config.GetValue("Display", "FullScreen");
 		// Adjusting for if the screen isn't windowed for user
 		if ((bool)config.GetValue("Display", "FullScreen"))
 			// Full screened
@@ -88,8 +88,8 @@ public partial class LoadSettingsData : Node
 
 
 		// Setting extra settings
-		ToggleClassicVerburg.Classic = (bool)config.GetValue("Extra", "ClassicVer");
-		ToggleSpeedrun.HaveTimer = (bool)config.GetValue("Extra", "Speedrun");
+		ToggleClassicVerburg.classic = (bool)config.GetValue("Extra", "ClassicVer");
+		ToggleSpeedrun.haveTimer = (bool)config.GetValue("Extra", "Speedrun");
 	}
 
 
