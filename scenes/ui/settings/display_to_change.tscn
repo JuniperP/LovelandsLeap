@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3unscwxm55g1"]
+[gd_scene load_steps=4 format=3 uid="uid://b3unscwxm55g1"]
 
 [ext_resource type="Script" path="res://scripts/ui/settings/toggle_buttons/ToggleFullScreen.cs" id="1_1oo7p"]
-[ext_resource type="Script" path="res://scripts/ui/settings/AdjustResolution.cs" id="2_8pndc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nyn2"]
 bg_color = Color(0, 0, 0, 1)
@@ -64,29 +63,6 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_ojplt")
 
-[node name="ResolutionName2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 450.0
-offset_right = 240.0
-offset_bottom = 505.0
-theme_override_font_sizes/font_size = 40
-text = "Resolution:"
-
-[node name="AdjustResolution" type="OptionButton" parent="ResolutionName2"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 250.0
-offset_top = -45.0
-offset_right = 750.0
-offset_bottom = 45.0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_ojplt")
-script = ExtResource("2_8pndc")
-
 [node name="Instructions" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_right = 930.0
@@ -100,4 +76,3 @@ scroll_active = false
 
 [connection signal="pressed" from="FullScreenName/ToggleFullScreen" to="FullScreenName/ToggleFullScreen" method="AdjustNameAndScreen"]
 [connection signal="visibility_changed" from="FullScreenName/ToggleFullScreen" to="FullScreenName/ToggleFullScreen" method="UpdateText"]
-[connection signal="ready" from="ResolutionName2/AdjustResolution" to="ResolutionName2/AdjustResolution" method="PopulateOptions"]
