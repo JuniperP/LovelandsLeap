@@ -34,7 +34,8 @@ public partial class LoadSettingsData : Node
 		// Setting up toggle button info to be stored
 		config.SetValue("Display", "FullScreen", ToggleFullScreen.full);
 		config.SetValue("Extra", "ClassicVer", ToggleClassicVerburg.classic);
-		config.SetValue("Extra", "Speedrun", ToggleSpeedrun.haveTimer);
+		config.SetValue("Extra", "SpeedrunActive", ToggleSpeedrun.haveTimer);
+		config.SetValue("Extra", "SpeedrunPB", ToggleSpeedrun.pbTime);
 
 
 		// Storing data, overwriting past settings
@@ -89,7 +90,8 @@ public partial class LoadSettingsData : Node
 
 		// Setting extra settings
 		ToggleClassicVerburg.classic = (bool)config.GetValue("Extra", "ClassicVer");
-		ToggleSpeedrun.haveTimer = (bool)config.GetValue("Extra", "Speedrun");
+		ToggleSpeedrun.haveTimer = (bool)config.GetValue("Extra", "SpeedrunActive");
+		ToggleSpeedrun.pbTime = (float)config.GetValue("Extra", "SpeedrunPB");
 	}
 
 
