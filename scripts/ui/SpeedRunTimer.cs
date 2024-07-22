@@ -9,6 +9,9 @@ public partial class SpeedRunTimer : Toggleable
 	// To see if a run is currently happening 
 	private static bool _currentlyRunning = false;
 
+	// Creating a max value
+	private static bool _belowMax = true;
+
 	// Components of the clock
 	private Label _minutes;
 	private Label _seconds;
@@ -27,34 +30,50 @@ public partial class SpeedRunTimer : Toggleable
 	{
 		// Changing visibility accordingly
 		if (ToggleSpeedrun.HaveTimer && !Visible)
-		{
 			Open();
-			_currentlyRunning = true;
-		}
-
+			
 		if (!ToggleSpeedrun.HaveTimer && Visible)
 			Close();
 
-		// Increasing the time
-		if (_currentlyRunning)
-			_timeElapsed += (float)delta;
 
-		// Updating the clock
-		if (Visible)
+
+		// Accounting for a max amount
+		if (_belowMax)
 		{
-			// Milliseconds excluding the "#."
-			string ourNum = $"{MathF.Round(_timeElapsed % 1f, 2)}";
-			if (ourNum.Length >= 2)
-				_milliseconds.Text = ourNum.Substring(ourNum.Length - 2);
+			
+			// Increasing the time
+			if (_currentlyRunning)
+				_timeElapsed += (float)delta;
+
+			// Updating the clock
+			if (Visible)
+			{
+				// Milliseconds excluding the "#."
+				string ourNum = $"{MathF.Round(_timeElapsed % 1f, 2)}";
+				if (ourNum.Length >= 2)
+					_milliseconds.Text = ourNum.Substring(ourNum.Length - 2);
 
 
-			// Seconds
-			_seconds.Text = FormatWithStart0($"{(int)(_timeElapsed % 60)}");
+				// Seconds
+				_seconds.Text = FormatWithStart0($"{(int)(_timeElapsed % 60)}");
 
-			// Minutes
-			_minutes.Text = FormatWithStart0($"{(int)(_timeElapsed / 60)}");
+				// Minutes
+				_minutes.Text = FormatWithStart0($"{(int)(_timeElapsed / 60)}");
+			}
 
+			// Ensuring the max wasn't met
+			if(_timeElapsed >= 6098f)
+				_belowMax = false;
 		}
+
+		else
+		{
+			_minutes.Text = "99";
+			_seconds.Text = "99";
+			_milliseconds.Text = "99";
+		}
+
+
 
 	}
 
@@ -80,6 +99,7 @@ public partial class SpeedRunTimer : Toggleable
 	private void FinishedRun()
 	{
 		_currentlyRunning = false;
+		_belowMax = true;
 	}
 
 	// Resets the current speedrun
@@ -87,5 +107,6 @@ public partial class SpeedRunTimer : Toggleable
 	{
 		_timeElapsed = 0;
 		_currentlyRunning = false;
+		_belowMax = true;
 	}
 }

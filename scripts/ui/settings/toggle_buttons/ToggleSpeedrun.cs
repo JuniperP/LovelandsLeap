@@ -4,7 +4,8 @@ public partial class ToggleSpeedrun : ToggleButton
 
     public override void Toggle()
     {
-        // To be implemented
+        // TODO:
+        // used just as a signal ?
     }
 
     protected override bool GetState()
