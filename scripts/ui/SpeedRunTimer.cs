@@ -39,7 +39,7 @@ public partial class SpeedRunTimer : Toggleable
 			_seconds.Text = "00";
 			_minutes.Text = "00";
 		}
-			
+
 
 
 		// Accounting for a max amount
