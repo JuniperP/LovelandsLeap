@@ -9,7 +9,7 @@ public partial class ToggleFullScreen : ToggleButton
 	{
 		// Switch in or out of full screen
 		if (full)
-			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+			DisplayServer.WindowSetMode(DisplayServer.WindowMode.ExclusiveFullscreen);
 		else
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
 
