@@ -202,3 +202,4 @@ grow_vertical = 1
 [connection signal="visibility_changed" from="SpeedRunTimer/ToggleSpeedrun" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateTime"]
 [connection signal="visibility_changed" from="ConfirmReset" to="VerburgingToggle/ToggleClassic" method="UpdateText"]
 [connection signal="visibility_changed" from="ConfirmReset" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateText"]
+[connection signal="visibility_changed" from="ConfirmReset" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateTime"]
