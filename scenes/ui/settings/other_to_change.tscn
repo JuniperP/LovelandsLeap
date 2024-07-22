@@ -114,7 +114,7 @@ offset_right = 405.0
 offset_bottom = 38.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
-text = "00
+text = "na
 "
 horizontal_alignment = 2
 
@@ -129,7 +129,7 @@ offset_right = 500.0
 offset_bottom = 38.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
-text = "00"
+text = "na"
 horizontal_alignment = 2
 
 [node name="Milliseconds" type="Label" parent="SpeedRunTimer/ToggleSpeedrun/CurrentTimeLabel"]
@@ -143,7 +143,7 @@ offset_right = 590.0
 offset_bottom = 38.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
-text = "00
+text = "na
 "
 horizontal_alignment = 2
 

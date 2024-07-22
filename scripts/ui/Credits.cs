@@ -8,6 +8,9 @@ public partial class Credits : Control
 		// Jump cut effect
 		LoadingScreen.trans = 0;
 		AsciiFrog.newVisRatio = 0;
+		
+		// Testing speedrun timer
+		//SpeedRunTimer.FinishedRun();
 	}
 
 
