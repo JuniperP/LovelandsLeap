@@ -28,7 +28,7 @@ public partial class SceneManager : Node
 	private static readonly Dictionary<ToScene, string> _scenes = new()
 	{
 		{ToScene.MainMenu, "res://scenes/ui/main_menu.tscn"},
-		{ToScene.Credits,  "res://scenes/ui/credits.tscn"},
+		{ToScene.Credits,  "res://scenes/credits.tscn"},
 		{ToScene.IntroCutscene,  "res://scenes/cutscenes/intro.tscn"},
 		{ToScene.PlayTestLevel,  "res://scenes/levels/play_test.tscn"},
 		{ToScene.Level1,  "res://scenes/levels/level_1.tscn"},
