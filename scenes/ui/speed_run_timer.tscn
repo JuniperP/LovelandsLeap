@@ -15,7 +15,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [node name="SpeedRunTimer" type="Panel"]
-process_mode = 1
+process_mode = 3
 offset_right = 350.0
 offset_bottom = 100.0
 mouse_filter = 2
