@@ -28,7 +28,7 @@ public partial class MainMenu : Control
 		LoadingScreen.FadeIn();
 
 		// Accounting for speedrun
-		if(ToggleSpeedrun.HaveTimer)
+		if(ToggleSpeedrun.haveTimer)
 			SpeedRunTimer.StartSpeedrun();
 	}
 

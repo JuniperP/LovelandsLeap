@@ -87,23 +87,23 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_buu4u")
 script = ExtResource("2_ml621")
 
-[node name="CurrentTimeLabel" type="Label" parent="SpeedRunTimer"]
+[node name="CurrentTimeLabel" type="Label" parent="SpeedRunTimer/ToggleSpeedrun"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -141.0
+offset_left = -502.5
 offset_top = 72.5
-offset_right = 141.0
+offset_right = -214.5
 offset_bottom = 117.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Current Best Time:"
 
-[node name="Minutes" type="Label" parent="SpeedRunTimer/CurrentTimeLabel"]
+[node name="Minutes" type="Label" parent="SpeedRunTimer/ToggleSpeedrun/CurrentTimeLabel"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -118,7 +118,7 @@ text = "00
 "
 horizontal_alignment = 2
 
-[node name="Seconds" type="Label" parent="SpeedRunTimer/CurrentTimeLabel"]
+[node name="Seconds" type="Label" parent="SpeedRunTimer/ToggleSpeedrun/CurrentTimeLabel"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -132,7 +132,7 @@ theme_override_font_sizes/font_size = 56
 text = "00"
 horizontal_alignment = 2
 
-[node name="Milliseconds" type="Label" parent="SpeedRunTimer/CurrentTimeLabel"]
+[node name="Milliseconds" type="Label" parent="SpeedRunTimer/ToggleSpeedrun/CurrentTimeLabel"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -147,7 +147,7 @@ text = "00
 "
 horizontal_alignment = 2
 
-[node name="Colon1" type="Label" parent="SpeedRunTimer/CurrentTimeLabel"]
+[node name="Colon1" type="Label" parent="SpeedRunTimer/ToggleSpeedrun/CurrentTimeLabel"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -160,7 +160,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 56
 text = ":"
 
-[node name="Colon2" type="Label" parent="SpeedRunTimer/CurrentTimeLabel"]
+[node name="Colon2" type="Label" parent="SpeedRunTimer/ToggleSpeedrun/CurrentTimeLabel"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -199,5 +199,6 @@ grow_vertical = 1
 [connection signal="visibility_changed" from="VerburgingToggle/ToggleClassic" to="VerburgingToggle/ToggleClassic" method="UpdateText"]
 [connection signal="pressed" from="SpeedRunTimer/ToggleSpeedrun" to="SpeedRunTimer/ToggleSpeedrun" method="AdjustNameAndScreen"]
 [connection signal="visibility_changed" from="SpeedRunTimer/ToggleSpeedrun" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateText"]
+[connection signal="visibility_changed" from="SpeedRunTimer/ToggleSpeedrun" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateTime"]
 [connection signal="visibility_changed" from="ConfirmReset" to="VerburgingToggle/ToggleClassic" method="UpdateText"]
 [connection signal="visibility_changed" from="ConfirmReset" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateText"]

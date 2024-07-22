@@ -29,17 +29,16 @@ public partial class SpeedRunTimer : Toggleable
 	public override void _Process(double delta)
 	{
 		// Changing visibility accordingly
-		if (ToggleSpeedrun.HaveTimer && !Visible)
+		if (ToggleSpeedrun.haveTimer && !Visible)
 			Open();
 
-		if (!ToggleSpeedrun.HaveTimer && Visible)
+		if (!ToggleSpeedrun.haveTimer && Visible)
 		{
 			Close();
 			_milliseconds.Text = "00";
 			_seconds.Text = "00";
 			_minutes.Text = "00";
 		}
-
 
 
 		// Accounting for a max amount
@@ -54,16 +53,13 @@ public partial class SpeedRunTimer : Toggleable
 			if (Visible)
 			{
 				// Milliseconds excluding the "#."
-				string ourNum = $"{MathF.Round(_timeElapsed % 1f, 2)}";
-				if (ourNum.Length >= 2)
-					_milliseconds.Text = ourNum.Substring(ourNum.Length - 2);
-
+				_milliseconds.Text = FormMilSec(_timeElapsed);
 
 				// Seconds
-				_seconds.Text = FormatWithStart0($"{(int)(_timeElapsed % 60)}");
+				_seconds.Text = FormSec(_timeElapsed);
 
 				// Minutes
-				_minutes.Text = FormatWithStart0($"{(int)(_timeElapsed / 60)}");
+				_minutes.Text = FormMin(_timeElapsed);
 			}
 
 			// Ensuring the max wasn't met
@@ -78,12 +74,40 @@ public partial class SpeedRunTimer : Toggleable
 			_minutes.Text = "99";
 		}
 
-
-
 	}
 
+	// Helper functions for making the time
+	// Gets milliseconds
+	public static string FormMilSec(float _timeElapsed)
+	{
+		string ourNum = $"{MathF.Round(_timeElapsed % 1f, 2)}";
+		if (ourNum.Length >= 2)
+			ourNum = ourNum.Substring(ourNum.Length - 2);
+
+		
+		if(ourNum.Equals("0"))
+			ourNum = "00";
+
+
+		return ourNum;
+	}
+
+	// Gets seconds
+	public static string FormSec(float _timeElapsed)
+	{
+		return FormatWithStart0($"{(int)(_timeElapsed % 60)}");
+	}
+
+
+	// Gets minutes
+	public static string FormMin(float _timeElapsed)
+	{
+		return FormatWithStart0($"{(int)(_timeElapsed / 60)}");
+	}
+
+
 	// Helps to make stylistic format adjustments to our labels to display
-	private string FormatWithStart0(string ourNum)
+	private static string FormatWithStart0(string ourNum)
 	{
 		// Adding an extra 0.
 		if (ourNum.Length < 2)
@@ -93,10 +117,12 @@ public partial class SpeedRunTimer : Toggleable
 	}
 
 
+
+	// Activating the speedrun methods
 	// Starts a speedrun
 	public static void StartSpeedrun()
 	{
-		if (ToggleSpeedrun.HaveTimer)
+		if (ToggleSpeedrun.haveTimer)
 			_currentlyRunning = true;
 	}
 
@@ -106,7 +132,8 @@ public partial class SpeedRunTimer : Toggleable
 		_currentlyRunning = false;
 		_belowMax = true;
 
-		// Save record?
+		// Save record
+		ToggleSpeedrun.NewTime(_timeElapsed);
 	}
 
 	// Resets the current speedrun
@@ -116,4 +143,6 @@ public partial class SpeedRunTimer : Toggleable
 		_timeElapsed = 0;
 		_belowMax = true;
 	}
+
+
 }
