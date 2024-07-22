@@ -30,17 +30,17 @@ public partial class SpeedRunTimer : Toggleable
 	{
 		// Changing visibility accordingly
 		if (ToggleSpeedrun.HaveTimer && !Visible)
+		
 			Open();
-			
+
 		if (!ToggleSpeedrun.HaveTimer && Visible)
 			Close();
-
 
 
 		// Accounting for a max amount
 		if (_belowMax)
 		{
-			
+
 			// Increasing the time
 			if (_currentlyRunning)
 				_timeElapsed += (float)delta;
@@ -62,7 +62,7 @@ public partial class SpeedRunTimer : Toggleable
 			}
 
 			// Ensuring the max wasn't met
-			if(_timeElapsed >= 6098f)
+			if (_timeElapsed >= 6000)
 				_belowMax = false;
 		}
 
