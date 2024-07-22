@@ -10,7 +10,7 @@ public partial class Credits : Control
 		AsciiFrog.newVisRatio = 0;
 		
 		// Testing speedrun timer
-		//SpeedRunTimer.FinishedRun();
+		// SpeedRunTimer.FinishedRun();
 	}
 
 
