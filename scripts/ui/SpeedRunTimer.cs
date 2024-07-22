@@ -30,7 +30,7 @@ public partial class SpeedRunTimer : Toggleable
 	{
 		// Changing visibility accordingly
 		if (ToggleSpeedrun.HaveTimer && !Visible)
-		
+
 			Open();
 
 		if (!ToggleSpeedrun.HaveTimer && Visible)
@@ -68,9 +68,9 @@ public partial class SpeedRunTimer : Toggleable
 
 		else
 		{
-			_minutes.Text = "99";
-			_seconds.Text = "99";
 			_milliseconds.Text = "99";
+			_seconds.Text = "99";
+			_minutes.Text = "99";
 		}
 
 
