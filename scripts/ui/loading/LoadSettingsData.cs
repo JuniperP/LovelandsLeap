@@ -91,7 +91,7 @@ public partial class LoadSettingsData : Node
 		// Setting extra settings
 		ToggleClassicVerburg.classic = (bool)config.GetValue("Extra", "ClassicVer");
 		ToggleSpeedrun.haveTimer = (bool)config.GetValue("Extra", "SpeedrunActive");
-		ToggleSpeedrun.NewTime((float)config.GetValue("Extra", "SpeedrunPB"));
+		ToggleSpeedrun.pbTime = (float)config.GetValue("Extra","SpeedrunPB");
 	}
 
 
