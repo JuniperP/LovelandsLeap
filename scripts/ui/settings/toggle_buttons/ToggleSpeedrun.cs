@@ -4,8 +4,8 @@ public partial class ToggleSpeedrun : ToggleButton
 
     public override void Toggle()
     {
-        // TODO:
-        // used just as a signal ?
+        if(!GetState())
+            SpeedRunTimer.ResetRun();
     }
 
     protected override bool GetState()

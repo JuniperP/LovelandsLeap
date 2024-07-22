@@ -26,6 +26,10 @@ public partial class MainMenu : Control
 		LoadLevelData.SaveData(ToScene.Level1);
 		SceneManager.SetNextGoTo(ToScene.IntroCutscene);
 		LoadingScreen.FadeIn();
+
+		// Accounting for speedrun
+		if(ToggleSpeedrun.HaveTimer)
+			SpeedRunTimer.StartSpeedrun();
 	}
 
 	// Sets up to run the credits

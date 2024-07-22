@@ -30,7 +30,6 @@ public partial class SpeedRunTimer : Toggleable
 	{
 		// Changing visibility accordingly
 		if (ToggleSpeedrun.HaveTimer && !Visible)
-
 			Open();
 
 		if (!ToggleSpeedrun.HaveTimer && Visible)
@@ -89,21 +88,23 @@ public partial class SpeedRunTimer : Toggleable
 
 
 	// Starts a speedrun
-	private void StartSpeedrun()
+	public static void StartSpeedrun()
 	{
 		if (ToggleSpeedrun.HaveTimer)
 			_currentlyRunning = true;
 	}
 
 	// Ends the current speedrun
-	private void FinishedRun()
+	public static void FinishedRun()
 	{
 		_currentlyRunning = false;
 		_belowMax = true;
+
+		// Save record?
 	}
 
 	// Resets the current speedrun
-	private void ResetRun()
+	public static void ResetRun()
 	{
 		_timeElapsed = 0;
 		_currentlyRunning = false;
