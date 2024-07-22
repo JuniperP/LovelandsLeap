@@ -19,7 +19,7 @@ public partial class AdjustResolution : OptionButton
 		// AddItem("test", 0);
 
 		// Select default option
-		Select(0);
+		// Select(0);
 	}
 
 
