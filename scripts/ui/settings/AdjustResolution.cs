@@ -1,20 +1,25 @@
 using Godot;
 using System;
 
+
 public partial class AdjustResolution : OptionButton
 {
 	// The users selected Resolution option
 	public static int userID = -1;
 
 
+
 	// Done at start of game and when display changes
-	public static void PopulateOptions()
+	public void PopulateOptions()
 	{
 		// Destroy current resolution options
+		Clear();
 
 		// Populate drop down with new resolutions
-		
+		// AddItem("test", 0);
+
 		// Select default option
+		Select(0);
 	}
 
 
@@ -22,7 +27,7 @@ public partial class AdjustResolution : OptionButton
 	public static void NewResolutionSet(int id)
 	{
 		userID = id;
-		
+
 		// AdjustScreenResolution(get(userID));
 
 	}
