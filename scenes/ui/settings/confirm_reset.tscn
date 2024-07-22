@@ -37,7 +37,8 @@ grow_horizontal = 2
 theme_override_font_sizes/bold_font_size = 56
 bbcode_enabled = true
 text = "[center][b]
-ARE YOU SURE YOU WANT TO RESET ALL SETTINGS AND SPEED RUN DATA[center]"
+ARE YOU SURE YOU WANT TO RESET ALL SETTINGS DATA
+(Note: you'll keep your best speedrunning time)[center]"
 fit_content = true
 
 [node name="NoButton" type="Button" parent="."]
@@ -46,9 +47,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 50.0
-offset_top = 350.0
+offset_top = 450.0
 offset_right = 350.0
-offset_bottom = 450.0
+offset_bottom = 550.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
 text = "... no"
@@ -59,9 +60,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -350.0
-offset_top = 350.0
+offset_top = 450.0
 offset_right = -50.0
-offset_bottom = 450.0
+offset_bottom = 550.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
 text = "YES!"
