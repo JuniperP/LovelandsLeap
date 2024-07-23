@@ -20,12 +20,18 @@ public class GrappleState : MovementState
 		{
 			// Rotate a 2D vector clockwise or counterclockwise depending on input
 			// TODO: Explain this better because vectors are confusing
+			// The forceDir will now be tangent to the swing curve of the weight
 			Vector2 forceDir = (springPos - weightPos).Normalized();
 			forceDir = new Vector2(forceDir.Y, forceDir.X);
 			forceDir *= new Vector2(-inputDir, inputDir);
 
-			// The forceDir will now be tangent to the swing curve of the weight
-			Ctx.TongueWeight.ApplyForce(forceDir * Ctx.SwingForce * (float)delta);
+			// Scale force with distance from pivot logarithmically
+			float distanceRatio = weightPos.DistanceTo(springPos) / Ctx.SwingBaseDistance;
+			distanceRatio = Mathf.Max(1f, distanceRatio);
+			float logFactor = Mathf.Log(distanceRatio + Ctx.SwingLogBase - 1)
+							/ Mathf.Log(Ctx.SwingLogBase);
+
+			Ctx.TongueWeight.ApplyForce(forceDir * logFactor * Ctx.SwingForce * (float)delta);
 		}
 
 		// Set velocity to move to weight

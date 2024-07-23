@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background.tscn" id="1_u3dt8"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
 [ext_resource type="PackedScene" uid="uid://ci8ejwpb6ts7x" path="res://scenes/in_level_objects/enter_exit_fade.tscn" id="3_gkmpk"]
-[ext_resource type="AudioStream" uid="uid://ca1nkabl72yvt" path="res://audio/music/loveland__platforming_music.wav" id="4_iwaey"]
+[ext_resource type="AudioStream" uid="uid://ca1nkabl72yvt" path="res://audio/music/Loveland__platforming_music.wav" id="4_iwaey"]
 
 [node name="Level1" type="Control"]
 layout_mode = 3

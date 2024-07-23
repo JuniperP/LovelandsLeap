@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://kycm67n3txwb"
-path="res://.godot/imported/croak_sfx.wav-d9f7f6aba010e292851ca4daa1b0a137.sample"
+path="res://.godot/imported/Croak_sfx.wav-adc1a9d7d5fc16ed5318e8a56bd110df.sample"
 
 [deps]
 
-source_file="res://audio/sfx/croak_sfx.wav"
-dest_files=["res://.godot/imported/croak_sfx.wav-d9f7f6aba010e292851ca4daa1b0a137.sample"]
+source_file="res://audio/sfx/Croak_sfx.wav"
+dest_files=["res://.godot/imported/Croak_sfx.wav-adc1a9d7d5fc16ed5318e8a56bd110df.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ca1nkabl72yvt"
-path="res://.godot/imported/loveland__platforming_music.wav-3491d8a1ab8a5888e31e630d4b7dfe90.sample"
+path="res://.godot/imported/Loveland__platforming_music.wav-c3438efb5176fb1b80c8337b21f0874b.sample"
 
 [deps]
 
-source_file="res://audio/music/loveland__platforming_music.wav"
-dest_files=["res://.godot/imported/loveland__platforming_music.wav-3491d8a1ab8a5888e31e630d4b7dfe90.sample"]
+source_file="res://audio/music/Loveland__platforming_music.wav"
+dest_files=["res://.godot/imported/Loveland__platforming_music.wav-c3438efb5176fb1b80c8337b21f0874b.sample"]
 
 [params]
 

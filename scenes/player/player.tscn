@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bnivan88wrgo2" path="res://scenes/player/tongue/tongue_line.tscn" id="3_ptmb2"]
 [ext_resource type="PackedScene" uid="uid://cuum0y4nttngt" path="res://scenes/player/tongue/tongue_spring.tscn" id="4_a8bvo"]
 [ext_resource type="PackedScene" uid="uid://bd8tulp331yce" path="res://scenes/player/tongue/tongue_weight.tscn" id="5_n5dxp"]
-[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/player.tres" id="6_uqoff"]
+[ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="6_uqoff"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_olhqh"]
 radius = 54.0
