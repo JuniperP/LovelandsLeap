@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6tbl3mr2oqqi"]
 
-[ext_resource type="Script" path="res://scripts/ui/settings/monitor_stand_in.cs" id="1_jl5qj"]
+[ext_resource type="Script" path="res://scripts/ui/settings/MonitorStandIn.cs" id="1_jl5qj"]
 [ext_resource type="Texture2D" uid="uid://bs33m23co8w" path="res://assets/ui/monitor_logo.svg" id="1_oc7gr"]
 
 [node name="MonitorStandIn" type="Control"]

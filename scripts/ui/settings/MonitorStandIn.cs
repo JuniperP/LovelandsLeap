@@ -1,5 +1,5 @@
 using Godot;
-public partial class monitor_stand_in : Control
+public partial class MonitorStandIn : Control
 {
 	// The number displayed on the screen of the monitor symbol
 	[Export] public int number;
