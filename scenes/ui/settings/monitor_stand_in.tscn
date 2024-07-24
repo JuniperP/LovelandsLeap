@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6tbl3mr2oqqi"]
+[gd_scene load_steps=3 format=3 uid="uid://b6tbl3mr2oqqi"]
 
+[ext_resource type="Script" path="res://scripts/ui/settings/monitor_stand_in.cs" id="1_jl5qj"]
 [ext_resource type="Texture2D" uid="uid://bs33m23co8w" path="res://assets/ui/monitor_logo.svg" id="1_oc7gr"]
 
 [node name="MonitorStandIn" type="Control"]
@@ -11,6 +12,7 @@ offset_right = -1720.0
 offset_bottom = -930.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jl5qj")
 
 [node name="MonitorLogo" type="TextureRect" parent="."]
 layout_mode = 0
@@ -33,6 +35,6 @@ offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
-text = "1"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
