@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/main_menu.jpg" id="2_qxlys"]
 [ext_resource type="FontFile" uid="uid://cbxq0tmy5e4n3" path="res://assets/fonts/logo/Wittgenstien/Wittgenstein-Italic-VariableFont_wght.ttf" id="3_d8am2"]
 [ext_resource type="PackedScene" uid="uid://c4suej1iw3wkr" path="res://scenes/ui/settings/settings.tscn" id="3_ps8pg"]
-[ext_resource type="AudioStream" uid="uid://nnautoxm2usu" path="res://audio/music/Loveland_menu_music.wav" id="4_e7cc2"]
+[ext_resource type="AudioStream" uid="uid://nnautoxm2usu" path="res://audio/music/loveland_menu_music.wav" id="4_e7cc2"]
 [ext_resource type="Script" path="res://scripts/ui/loading/LoadButton.cs" id="4_k3vkt"]
 [ext_resource type="PackedScene" uid="uid://dnkodbiws2j72" path="res://scenes/ui/overwrite_saved_game.tscn" id="5_sksx0"]
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="6_cfs3o"]
@@ -154,6 +154,7 @@ stream = ExtResource("4_e7cc2")
 autoplay = true
 bus = &"Music"
 
+[connection signal="TriedStartGame" from="." to="OPBack/OverwriteConfirm" method="Open"]
 [connection signal="pressed" from="OPBack/TextureRect/NewGameButton" to="." method="OnNewGameButtonPressed"]
 [connection signal="pressed" from="OPBack/TextureRect/LoadButton" to="OPBack/TextureRect/LoadButton" method="LoadSavedGame"]
 [connection signal="pressed" from="OPBack/TextureRect/SettingsButton" to="OPBack/Settings" method="Open"]
