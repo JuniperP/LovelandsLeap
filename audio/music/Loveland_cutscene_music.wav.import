@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://mwhd3dnj8cv0"
-path="res://.godot/imported/Loveland_cutscene_music.wav-1fa05cb1b8b912ca44eab9c97ff03f99.sample"
+path="res://.godot/imported/loveland_cutscene_music.wav-999fc26bc926f79ef64e036db3eda0be.sample"
 
 [deps]
 
-source_file="res://audio/music/Loveland_cutscene_music.wav"
-dest_files=["res://.godot/imported/Loveland_cutscene_music.wav-1fa05cb1b8b912ca44eab9c97ff03f99.sample"]
+source_file="res://audio/music/loveland_cutscene_music.wav"
+dest_files=["res://.godot/imported/loveland_cutscene_music.wav-999fc26bc926f79ef64e036db3eda0be.sample"]
 
 [params]
 
