@@ -29,7 +29,7 @@ public partial class SoundManager : Node
 		{SFX.Jump, "jump_sfx"},
 		{SFX.Land, "land_sfx"},
 		{SFX.Croak, "croak_sfx"},
-		{SFX.LongCroak, "ui_button_sfx"},
+		{SFX.LongCroak, "long_croak_sfx"},
 		{SFX.IntoFrog, "into_frog_sfx"},
 		{SFX.TongueShoot, "tongue_shoot_sfx"},
 		{SFX.TongueHit, "tongue_hit_sfx"},
