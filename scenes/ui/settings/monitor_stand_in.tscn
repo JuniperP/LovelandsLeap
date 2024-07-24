@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6tbl3mr2oqqi"]
+
+[ext_resource type="Texture2D" uid="uid://bs33m23co8w" path="res://assets/ui/monitor_logo.svg" id="1_oc7gr"]
+
+[node name="MonitorStandIn" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1720.0
+offset_bottom = -930.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MonitorLogo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 150.0
+texture = ExtResource("1_oc7gr")
+expand_mode = 1
+
+[node name="GivenNumber" type="Label" parent="MonitorLogo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -61.0
+offset_right = 79.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
