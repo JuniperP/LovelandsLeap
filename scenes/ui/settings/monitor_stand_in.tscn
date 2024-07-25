@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6tbl3mr2oqqi"]
+[gd_scene load_steps=6 format=3 uid="uid://b6tbl3mr2oqqi"]
 
 [ext_resource type="Script" path="res://scripts/ui/settings/MonitorStandIn.cs" id="1_afc4b"]
 [ext_resource type="Texture2D" uid="uid://bs33m23co8w" path="res://assets/ui/monitor_logo.svg" id="1_oc7gr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fo3ow"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_om4vk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 0.705882)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ohkv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
 
 [node name="MonitorStandIn" type="Control"]
 layout_mode = 3
@@ -39,10 +58,13 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonForChanging" type="Button" parent="."]
+[node name="ButtonForChanging" type="Button" parent="MonitorLogo"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fo3ow")
+theme_override_styles/hover = SubResource("StyleBoxFlat_om4vk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6ohkv")
