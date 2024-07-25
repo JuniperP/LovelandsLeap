@@ -53,6 +53,9 @@ public partial class DisplayChanging : Label
 				// Adjusts position
 				newMon.SetPosition(new Vector2(repo, 75));
 				repo += 215;
+
+				// Adjusting the size
+				newMon.SetSize(new Vector2(200, 150));
 			}
 
 
