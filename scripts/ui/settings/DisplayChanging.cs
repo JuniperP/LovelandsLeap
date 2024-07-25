@@ -37,7 +37,7 @@ public partial class DisplayChanging : Label
 			for (index = 0; index < DisplayServer.GetScreenCount(); index++)
 			{
 				// Hard limit on the amount of screens we can support
-				if (index >= 5)
+				if (index >= 4)
 					break;
 
 				// New monitor
