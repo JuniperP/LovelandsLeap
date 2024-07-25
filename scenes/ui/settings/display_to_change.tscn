@@ -46,7 +46,7 @@ offset_top = 250.0
 offset_right = 240.0
 offset_bottom = 305.0
 theme_override_font_sizes/font_size = 40
-text = "Display To:
+text = "Choose Monitor To Display To:
 "
 script = ExtResource("2_oj3xi")
 
