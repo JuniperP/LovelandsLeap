@@ -36,6 +36,10 @@ public partial class DisplayChanging : Label
 			MonitorStandIn newMon;
 			for (index = 0; index < DisplayServer.GetScreenCount(); index++)
 			{
+				// Hard limit on the amount of screens we can support
+				if (index >= 5)
+					break;
+
 				// New monitor
 				newMon = (MonitorStandIn)GD.Load<PackedScene>(SceneManager.GetPath(ToScene.Monitor)).Instantiate();
 
