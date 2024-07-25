@@ -17,7 +17,10 @@ public partial class MonitorStandIn : Control
 	// Adjusting for if the monitor is selected
 	private void OnSelect()
 	{
-		// Change icon color
-		// Change window view to number
+		// Adjusting the chosen screen
+		chosenScreen = number;
+
+		// Changing the screen displayed to
+		DisplayServer.WindowSetCurrentScreen(number, GetWindow().GetWindowId());
 	}
 }

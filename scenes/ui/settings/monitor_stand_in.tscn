@@ -68,3 +68,5 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_fo3ow")
 theme_override_styles/hover = SubResource("StyleBoxFlat_om4vk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6ohkv")
+
+[connection signal="pressed" from="MonitorLogo/ButtonForChanging" to="." method="OnSelect"]
