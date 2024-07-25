@@ -1,4 +1,5 @@
 using Godot;
+using System;
 using System.Collections.Generic;
 
 // Enums for all of the possible scenes transitioned to
@@ -7,6 +8,7 @@ public enum ToScene : byte
 	MainMenu,
 	Credits,
 	IntroCutscene,
+	Monitor,
 	PlayTestLevel,
 	Level1,
 
@@ -30,9 +32,9 @@ public partial class SceneManager : Node
 		{ToScene.MainMenu, "res://scenes/ui/main_menu.tscn"},
 		{ToScene.Credits,  "res://scenes/credits.tscn"},
 		{ToScene.IntroCutscene,  "res://scenes/cutscenes/intro.tscn"},
+		{ToScene.Monitor,  "res://scenes/ui/settings/monitor_stand_in.tscn"},
 		{ToScene.PlayTestLevel,  "res://scenes/levels/play_test.tscn"},
 		{ToScene.Level1,  "res://scenes/levels/level_1.tscn"},
-
 	};
 
 	// Allows the client to set where to go to next
@@ -50,5 +52,11 @@ public partial class SceneManager : Node
 			useNode.GetTree().ChangeSceneToFile(_goTo);
 			_goTo = "";
 		}
+	}
+
+	// Getter for niche cases
+	public static string GetPath(ToScene scene)
+	{
+		return _scenes[scene];
 	}
 }

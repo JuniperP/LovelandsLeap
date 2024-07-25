@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3unscwxm55g1"]
+[gd_scene load_steps=4 format=3 uid="uid://b3unscwxm55g1"]
 
 [ext_resource type="Script" path="res://scripts/ui/settings/toggle_buttons/ToggleFullScreen.cs" id="1_1oo7p"]
+[ext_resource type="Script" path="res://scenes/ui/settings/DisplayChanging.cs" id="2_oj3xi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nyn2"]
 bg_color = Color(0, 0, 0, 1)
@@ -41,12 +42,13 @@ script = ExtResource("1_1oo7p")
 [node name="ChooseDisplay" type="Label" parent="."]
 layout_mode = 0
 offset_left = 25.0
-offset_top = 300.0
+offset_top = 250.0
 offset_right = 240.0
-offset_bottom = 355.0
+offset_bottom = 305.0
 theme_override_font_sizes/font_size = 40
 text = "Display To:
 "
+script = ExtResource("2_oj3xi")
 
 [node name="Instructions" type="RichTextLabel" parent="."]
 layout_mode = 0
