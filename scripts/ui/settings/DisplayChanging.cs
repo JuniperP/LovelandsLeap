@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Threading;
 
 public partial class DisplayChanging : Label
 {
@@ -39,13 +38,13 @@ public partial class DisplayChanging : Label
 			for (i = 0; i < DisplayServer.GetScreenCount(); i++)
 			{
 				// New monitor
-				newMon = (MonitorStandIn) GD.Load<PackedScene>(SceneManager.GetPath(ToScene.Monitor)).Instantiate();
+				newMon = (MonitorStandIn)GD.Load<PackedScene>(SceneManager.GetPath(ToScene.Monitor)).Instantiate();
 
 				// Sets the number
 				newMon.number = i;
 
 				// Adds as child
-				AddChild ( newMon);
+				AddChild(newMon);
 
 				// Anchors child
 				newMon.SetAnchor(Side.Bottom, 1);

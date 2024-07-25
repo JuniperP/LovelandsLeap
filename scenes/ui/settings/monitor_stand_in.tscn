@@ -16,10 +16,6 @@ border_color = Color(1, 1, 1, 0.705882)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ohkv"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
 border_color = Color(1, 1, 1, 1)
 
 [node name="MonitorStandIn" type="Control"]

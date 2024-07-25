@@ -7,6 +7,11 @@ public partial class MonitorStandIn : Control
 	// The chosen monitor to use
 	public static int chosenScreen = 0;
 
+	// Reference to the last focused node
+	public static MonitorStandIn lastMainDisplay;
+
+
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -17,10 +22,19 @@ public partial class MonitorStandIn : Control
 	// Adjusting for if the monitor is selected
 	private void OnSelect()
 	{
-		// Adjusting the chosen screen
-		chosenScreen = number;
+		if (chosenScreen != number)
+		{
+			// Adjusting the chosen screen
+			chosenScreen = number;
 
-		// Changing the screen displayed to
-		DisplayServer.WindowSetCurrentScreen(number, GetWindow().GetWindowId());
+			// Changing the screen displayed to
+			DisplayServer.WindowSetCurrentScreen(number, GetWindow().GetWindowId());
+
+			// Changing the main displays around
+			lastMainDisplay.Modulate = new Color(1, 1, 1, 0.5f);
+			Modulate = new Color(1, 1, 1, 1f);
+			lastMainDisplay = this;
+		}
+
 	}
 }
