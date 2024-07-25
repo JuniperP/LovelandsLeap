@@ -4,6 +4,9 @@ public partial class MonitorStandIn : Control
 	// The number displayed on the screen of the monitor symbol
 	public int number;
 
+	// The chosen monitor to use
+	public static int chosenScreen = 0;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{

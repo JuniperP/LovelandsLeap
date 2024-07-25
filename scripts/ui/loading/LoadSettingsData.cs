@@ -31,8 +31,12 @@ public partial class LoadSettingsData : Node
 		config.SetValue("KeyBinds", "CancelIn", Keybinds._acts[UserAction.Cancel].Input);
 
 
-		// Setting up toggle button info to be stored
+		// Display info to be stored
 		config.SetValue("Display", "FullScreen", ToggleFullScreen.full);
+		config.SetValue("Display", "WhichScreen", MonitorStandIn.chosenScreen);
+
+
+		// Extra info to be stored
 		config.SetValue("Extra", "ClassicVer", ToggleClassicVerburg.classic);
 		config.SetValue("Extra", "SpeedrunActive", ToggleSpeedrun.haveTimer);
 		config.SetValue("Extra", "SpeedrunPB", ToggleSpeedrun.pbTime);
@@ -86,6 +90,10 @@ public partial class LoadSettingsData : Node
 		else
 			// Windowed
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+
+
+		// TODO: Adjust the screen based on the users preferred screen
+
 
 
 		// Setting extra settings
