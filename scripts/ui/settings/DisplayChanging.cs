@@ -18,29 +18,29 @@ public partial class DisplayChanging : Label
 		if (Visible && _numOfDis != DisplayServer.GetScreenCount())
 		{
 			// Designated index
-			int i;
+			int index;
 
 			// Removing children
 			Node node;
-			for (i = GetChildCount(); i > 0; i--)
+			for (index = GetChildCount(); index > 0; index--)
 			{
-				node = GetChild(i - 1);
+				node = GetChild(index - 1);
 				RemoveChild(node);
 				node.QueueFree();
 			}
 
 			// How much to reposition by
-			int repo = 0;
+			int repos = 0;
 
 			// Adding new children
 			MonitorStandIn newMon;
-			for (i = 0; i < DisplayServer.GetScreenCount(); i++)
+			for (index = 0; index < DisplayServer.GetScreenCount(); index++)
 			{
 				// New monitor
 				newMon = (MonitorStandIn)GD.Load<PackedScene>(SceneManager.GetPath(ToScene.Monitor)).Instantiate();
 
 				// Sets the number
-				newMon.number = i;
+				newMon.number = index;
 
 				// Adds as child
 				AddChild(newMon);
@@ -49,8 +49,8 @@ public partial class DisplayChanging : Label
 				newMon.SetAnchor(Side.Bottom, 1);
 
 				// Adjusts position
-				newMon.SetPosition(new Vector2(repo, 75));
-				repo += 215;
+				newMon.SetPosition(new Vector2(repos, 75));
+				repos += 215;
 
 				// Adjusting the size
 				newMon.SetSize(new Vector2(200, 150));
