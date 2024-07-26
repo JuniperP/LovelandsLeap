@@ -92,9 +92,8 @@ public partial class LoadSettingsData : Node
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
 
 
-		// TODO: Adjust the screen based on the users preferred screen
-
-
+		// Giving the preferred screen to play on
+		MonitorStandIn.chosenScreen = (int)config.GetValue("Display", "WhichScreen");
 
 		// Setting extra settings
 		ToggleClassicVerburg.classic = (bool)config.GetValue("Extra", "ClassicVer");
