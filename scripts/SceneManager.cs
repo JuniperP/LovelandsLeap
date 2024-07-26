@@ -1,16 +1,15 @@
 using Godot;
-using System;
 using System.Collections.Generic;
 
 // Enums for all of the possible scenes transitioned to
-public enum ToScene : byte
+public enum ToScene : int
 {
-	MainMenu,
-	Credits,
-	IntroCutscene,
-	Monitor,
-	PlayTestLevel,
-	Level1,
+	MainMenu = 1,
+	Credits = 2,
+	IntroCutscene = 3,
+	Monitor = 4,
+	PlayTestLevel = 5 ,
+	Level1 = 6,
 
 }
 public partial class SceneManager : Node

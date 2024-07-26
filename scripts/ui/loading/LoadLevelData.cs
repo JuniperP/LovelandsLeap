@@ -1,24 +1,9 @@
 using Godot;
-using System.Collections.Generic;
 
 public partial class LoadLevelData : Node
 {
 	// Where we will be saving all non config data to
 	private static string _saveTo = "user://lovelandsavedata.json";
-
-
-	// Dictionaries of what stored values correspond to what
-	private static readonly Dictionary<ToScene, int> _levelToInt = new()
-	{
-		{ToScene.PlayTestLevel, 0},
-		{ToScene.Level1, 1}
-	};
-	private static readonly Dictionary<int, ToScene> _intToLevel = new()
-	{
-		{0, ToScene.PlayTestLevel},
-		{1, ToScene.Level1}
-	};
-
 
 	/*
 		Method to store game data.
@@ -31,7 +16,7 @@ public partial class LoadLevelData : Node
 		FileAccess saveFile = FileAccess.Open(_saveTo, FileAccess.ModeFlags.Write);
 
 		// Converting where the player currently is into json format
-		string jsonString = Json.Stringify((Godot.Collections.Dictionary)new() { { "PlayerAtLevel", _levelToInt[level] } });
+		string jsonString = Json.Stringify((Godot.Collections.Dictionary)new() { { "PlayerAtLevel", (int) level } });
 
 		// Storing data
 		saveFile.StoreLine(jsonString);
@@ -62,7 +47,7 @@ public partial class LoadLevelData : Node
 			Godot.Collections.Dictionary level = (Godot.Collections.Dictionary)json.Data;
 
 			// Converting from dictionary to level
-			giveLevel = _intToLevel[(int)level["PlayerAtLevel"]];
+			giveLevel = (ToScene)(int)level["PlayerAtLevel"];
 		}
 		else
 			GD.Print(testFile);
