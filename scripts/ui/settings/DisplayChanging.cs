@@ -1,9 +1,17 @@
 using Godot;
 
+
+// TODO: Account for colors if disconnect monitor
+// Save and load users choices with all the malarky (ex: colors) that entails
+
+
 public partial class DisplayChanging : Label
 {
 	// The current displayed number of screens
 	private int _numOfDis;
+
+	// The current screen being displayed to
+	public static int currentScreen;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -14,6 +22,15 @@ public partial class DisplayChanging : Label
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		// Updating the current screen
+		currentScreen = GetWindow().CurrentScreen;
+
+		// Ensuring that windows aren't messed with for no reason
+		if (currentScreen != MonitorStandIn.tempChoice)
+		{
+			MonitorStandIn.tempChoice = -1;
+		}
+
 		// Ensuring the number of displays matches displays to select
 		if (Visible && _numOfDis != DisplayServer.GetScreenCount())
 		{
