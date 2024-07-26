@@ -17,7 +17,7 @@ public partial class LoadGameIn : Control
 		LoadSettingsData.LoadData(false);
 
 		// Adjusting which screen is displayed to based on the users preferred monitor
-		if(MonitorStandIn.chosenScreen > DisplayServer.GetScreenCount())
+		if(MonitorStandIn.chosenScreen >= DisplayServer.GetScreenCount())
 			MonitorStandIn.tempChoice = GetWindow().CurrentScreen;
 		else
 			DisplayServer.WindowSetCurrentScreen(MonitorStandIn.chosenScreen, GetWindow().GetWindowId());
