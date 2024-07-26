@@ -40,7 +40,6 @@ public partial class SpeedRunTimer : Toggleable
 			_minutes.Text = "00";
 		}
 
-
 		// Accounting for a max amount
 		if (_belowMax)
 		{
@@ -70,7 +69,7 @@ public partial class SpeedRunTimer : Toggleable
 		else
 		{
 			_milliseconds.Text = "99";
-			_seconds.Text = "99";
+			_seconds.Text = "59";
 			_minutes.Text = "99";
 		}
 
@@ -80,43 +79,21 @@ public partial class SpeedRunTimer : Toggleable
 	// Gets milliseconds
 	public static string FormMilSec(float _timeElapsed)
 	{
-		string ourNum = $"{MathF.Round(_timeElapsed % 1f, 2)}";
-		if (ourNum.Length >= 2)
-			ourNum = ourNum.Substring(ourNum.Length - 2);
-
-		
-		if(ourNum.Equals("0"))
-			ourNum = "00";
-
-
-		return ourNum;
+		int centiSec = (int)(100 * MathF.Round(_timeElapsed % 1f, 2, MidpointRounding.ToZero));
+		return centiSec.ToString("D2");
 	}
 
 	// Gets seconds
 	public static string FormSec(float _timeElapsed)
 	{
-		return FormatWithStart0($"{(int)(_timeElapsed % 60)}");
+		return ((int)_timeElapsed % 60).ToString("D2");
 	}
-
 
 	// Gets minutes
 	public static string FormMin(float _timeElapsed)
 	{
-		return FormatWithStart0($"{(int)(_timeElapsed / 60)}");
+		return ((int)(_timeElapsed / 60)).ToString("D2");
 	}
-
-
-	// Helps to make stylistic format adjustments to our labels to display
-	private static string FormatWithStart0(string ourNum)
-	{
-		// Adding an extra 0.
-		if (ourNum.Length < 2)
-			ourNum = $"0{ourNum}";
-
-		return ourNum;
-	}
-
-
 
 	// Activating the speedrun methods
 	// Starts a speedrun
@@ -143,6 +120,4 @@ public partial class SpeedRunTimer : Toggleable
 		_timeElapsed = 0;
 		_belowMax = true;
 	}
-
-
 }

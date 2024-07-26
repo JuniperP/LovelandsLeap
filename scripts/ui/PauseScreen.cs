@@ -29,21 +29,18 @@ public partial class PauseScreen : Toggleable
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-
 		// Seeing if settings is open
 		Settings node = GetNode<Settings>("Settings");
-
 
 		// Sees if the user is trying to pause the game
 		if (Input.IsActionJustPressed("ui_cancel") && !node.Visible)
 		{
-			//Switch visibility
+			// Switch visibility
 			if (Visible && LoadingScreen.trans <= 0)
 			{
 				GetTree().Paused = false;
 				Close();
 			}
-
 			else
 			{
 				Open();
@@ -52,4 +49,3 @@ public partial class PauseScreen : Toggleable
 		}
 	}
 }
-

@@ -141,13 +141,13 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="LoadingScreen" parent="OPBack" instance=ExtResource("6_cfs3o")]
+visible = false
+layout_mode = 1
+
 [node name="SpeedRunTimer" parent="OPBack" instance=ExtResource("7_4ckpd")]
 visible = false
 layout_mode = 0
-
-[node name="LoadingScreen" parent="." instance=ExtResource("6_cfs3o")]
-visible = false
-layout_mode = 1
 
 [node name="MainMenuTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_e7cc2")
@@ -159,6 +159,6 @@ bus = &"Music"
 [connection signal="pressed" from="OPBack/TextureRect/LoadButton" to="OPBack/TextureRect/LoadButton" method="LoadSavedGame"]
 [connection signal="pressed" from="OPBack/TextureRect/SettingsButton" to="OPBack/Settings" method="Open"]
 [connection signal="pressed" from="OPBack/TextureRect/CreditButton" to="." method="OnCreditButtonPressed"]
-[connection signal="pressed" from="OPBack/TextureRect/CreditButton" to="LoadingScreen" method="FadeIn"]
+[connection signal="pressed" from="OPBack/TextureRect/CreditButton" to="OPBack/LoadingScreen" method="FadeIn"]
 [connection signal="pressed" from="OPBack/TextureRect/QuitButton" to="." method="QuitGame"]
 [connection signal="Overwrite" from="OPBack/OverwriteConfirm" to="." method="StartNewGame"]
