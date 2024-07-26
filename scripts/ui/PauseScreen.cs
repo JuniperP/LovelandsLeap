@@ -2,9 +2,6 @@ using Godot;
 
 public partial class PauseScreen : Toggleable
 {
-	// Boolean to see if a cancel is held down
-	private bool _heldDown;
-
 	// Setup by ensuring the pause screen isn't visible and setting up key hold check
 	public override void _Ready()
 	{
@@ -13,9 +10,6 @@ public partial class PauseScreen : Toggleable
 
 		// Set up sfx
 		SoundManager.ApplyButtonSFX(this);
-
-		// Initially set to true in the case where escape is held entering a scene
-		_heldDown = true;
 	}
 
 	// Overriding the close method to also unpause the game
@@ -41,11 +35,8 @@ public partial class PauseScreen : Toggleable
 
 
 		// Sees if the user is trying to pause the game
-		if (Input.IsActionPressed("ui_cancel") && (!_heldDown) && !node.Visible)
+		if (Input.IsActionJustPressed("ui_cancel") && !node.Visible)
 		{
-			// Cancel must be currently held down and deemed as such
-			_heldDown = true;
-
 			//Switch visibility
 			if (Visible && LoadingScreen.trans <= 0)
 			{
@@ -58,17 +49,7 @@ public partial class PauseScreen : Toggleable
 				Open();
 				GetTree().Paused = true;
 			}
-
 		}
-
-		// Key is deemed as not held down if not pressed when pause screen stands alone
-		else if (!Input.IsActionPressed("ui_cancel") && _heldDown && !node.Visible)
-			_heldDown = false;
-
-		// Assumes the user will be holding down the escape key when exiting the settings menu
-		else if (node.Visible)
-			_heldDown = true;
-
 	}
 }
 
