@@ -23,6 +23,7 @@ public enum SFX : byte
 
 public partial class SoundManager : Node
 {
+	// Dictionary to easily get the prefix for a each sfx file name 
 	private static readonly Dictionary<SFX, string> _sound_paths = new()
 	{
 		{SFX.Walk, "walk_sfx"},

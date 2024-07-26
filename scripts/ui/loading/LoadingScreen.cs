@@ -27,7 +27,10 @@ public partial class LoadingScreen : Toggleable
 		// If allowed to fade, fades as needed
 		if (canFade)
 		{
+			// Ensuring the user can't click around
 			MouseFilter = MouseFilterEnum.Stop;
+
+			// Fading out
 			if (fadeOut)
 			{
 				delta *= -1f;
@@ -38,7 +41,7 @@ public partial class LoadingScreen : Toggleable
 				}
 
 			}
-
+			// Fading in
 			else
 			{
 				if (trans >= 1f)
@@ -69,7 +72,6 @@ public partial class LoadingScreen : Toggleable
 	{
 		fadeOut = false;
 		canFade = true;
-
 	}
 
 }

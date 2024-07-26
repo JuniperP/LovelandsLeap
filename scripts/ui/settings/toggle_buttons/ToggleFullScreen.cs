@@ -15,6 +15,7 @@ public partial class ToggleFullScreen : ToggleButton
 
 	}
 
+	// Getters and setters
 	protected override bool GetState()
 	{
 		return full;

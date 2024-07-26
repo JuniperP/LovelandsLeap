@@ -15,6 +15,7 @@ public partial class ToggleSpeedrun : ToggleButton
             SpeedRunTimer.ResetRun();
     }
 
+    // Getters and setters
     protected override bool GetState()
     {
         return haveTimer;

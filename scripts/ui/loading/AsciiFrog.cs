@@ -40,6 +40,7 @@ public partial class AsciiFrog : RichTextLabel
 		// If allowed to fade, fades as needed
 		if (_canFade)
 		{
+			// Fading out
 			if (_fadeOut)
 			{
 				delta *= -1f;
@@ -50,7 +51,7 @@ public partial class AsciiFrog : RichTextLabel
 					_canFade = false;
 				}
 			}
-
+			// Fading in
 			else
 			{
 				if (VisibleRatio >= 1f)
