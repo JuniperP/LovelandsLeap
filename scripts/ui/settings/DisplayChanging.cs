@@ -1,10 +1,5 @@
 using Godot;
 
-
-// TODO: Account for colors if disconnect monitor
-// Save and load users choices with all the malarky (ex: colors) that entails
-
-
 public partial class DisplayChanging : Label
 {
 	// The current displayed number of screens
