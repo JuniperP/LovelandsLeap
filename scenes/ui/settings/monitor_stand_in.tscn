@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6tbl3mr2oqqi"]
+[gd_scene load_steps=8 format=3 uid="uid://b6tbl3mr2oqqi"]
 
 [ext_resource type="Script" path="res://scripts/ui/settings/MonitorStandIn.cs" id="1_afc4b"]
 [ext_resource type="Texture2D" uid="uid://bs33m23co8w" path="res://assets/ui/monitor_logo.svg" id="1_oc7gr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fo3ow"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_om4vk"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -16,7 +17,13 @@ border_color = Color(1, 1, 1, 0.705882)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ohkv"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-border_color = Color(1, 1, 1, 1)
+border_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0km0a"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_il2gw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="MonitorStandIn" type="Control"]
 layout_mode = 3
@@ -64,5 +71,7 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_fo3ow")
 theme_override_styles/hover = SubResource("StyleBoxFlat_om4vk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6ohkv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0km0a")
+theme_override_styles/focus = SubResource("StyleBoxFlat_il2gw")
 
 [connection signal="pressed" from="MonitorLogo/ButtonForChanging" to="." method="OnSelect"]
