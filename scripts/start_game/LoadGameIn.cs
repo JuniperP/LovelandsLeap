@@ -6,7 +6,6 @@ public partial class LoadGameIn : Control
 	// Signal to start the splash sequence
 	[Signal] public delegate void StartSplashEventHandler(InputEvent input);
 
-
 	// Sets up the game
 	public override void _Ready()
 	{
@@ -17,7 +16,7 @@ public partial class LoadGameIn : Control
 		LoadSettingsData.LoadData(false);
 
 		// Adjusting which screen is displayed to based on the users preferred monitor
-		if(MonitorStandIn.chosenScreen >= DisplayServer.GetScreenCount())
+		if (MonitorStandIn.chosenScreen >= DisplayServer.GetScreenCount())
 			MonitorStandIn.tempChoice = GetWindow().CurrentScreen;
 		else
 			DisplayServer.WindowSetCurrentScreen(MonitorStandIn.chosenScreen, GetWindow().GetWindowId());
@@ -25,13 +24,5 @@ public partial class LoadGameIn : Control
 		// Starts the splash sequence
 		EmitSignal(SignalName.StartSplash, true);
 
-	}
-
-	// Used to finish loading when the game is ready
-	private void LogoIn()
-	{
-		// Send to main screen
-		SceneManager.SetNextGoTo(ToScene.MainMenu);
-		SceneManager.GoToSetScene(this);
 	}
 }

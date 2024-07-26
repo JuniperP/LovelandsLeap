@@ -8,29 +8,22 @@ public partial class SaveWarning : FadeIn
 	// Tracking fade transition
 	private static float _trans = 0;
 
-
 	// Signal to alert manager game loader that everything is set
 	[Signal] public delegate void WarningDoneEventHandler(bool input);
-
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		if (CanFade)
 		{
-			// Fade in
-			if (_start)
+			if (_start) // Fade in
 			{
 				if (_trans >= 1.5f)
-				{
 					_start = false;
-				}
-
 				else
 					_trans += (float)delta / 2;
 			}
-			// Fade out
-			else
+			else // Fade out
 			{
 				if (_trans <= 0)
 				{
@@ -40,13 +33,10 @@ public partial class SaveWarning : FadeIn
 				else
 					_trans -= (float)delta / 2;
 			}
-
 		}
-
 
 		// Changing the fade accordingly
 		SelfModulate = new Color(1f, 1f, 1f, _trans);
-
 	}
 
 	// Extra setup for ready
@@ -67,6 +57,4 @@ public partial class SaveWarning : FadeIn
 		_start = false;
 		_trans = 0;
 	}
-
-
 }
