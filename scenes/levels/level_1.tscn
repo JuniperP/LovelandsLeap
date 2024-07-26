@@ -27,7 +27,7 @@ layer_0/tile_data = PackedInt32Array(589824, 65539, 1, 589827, 65539, 0, 589828,
 
 [node name="EnterExitFade" parent="Room" instance=ExtResource("3_gkmpk")]
 position = Vector2(1142, 41)
-_sendPlayerTo = 4
+_sendPlayerTo = 5
 
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_iwaey")
