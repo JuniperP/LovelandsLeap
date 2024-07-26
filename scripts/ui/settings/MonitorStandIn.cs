@@ -10,7 +10,6 @@ public partial class MonitorStandIn : Control
 	// The filler choice if you don't have your primary monitor connected
 	public static int tempChoice = -1;
 
-
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -39,9 +38,7 @@ public partial class MonitorStandIn : Control
 			// Setting the new choice at the final run through (Godot goes in linear order)
 			if(number + 1 == DisplayServer.GetScreenCount())
 				chosenScreen = DisplayChanging.currentScreen;
-
 		}
-
 	}
 
 	// Adjusting for if the monitor is selected
@@ -52,6 +49,5 @@ public partial class MonitorStandIn : Control
 			tempChoice = -1;
 			DisplayServer.WindowSetCurrentScreen(number, GetWindow().GetWindowId());
 		}
-
 	}
 }

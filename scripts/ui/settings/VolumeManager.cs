@@ -9,10 +9,6 @@ public partial class VolumeManager : Label
 	// The slider we will be adjusting
 	private HSlider _slider;
 
-	// Our percentage following the slider
-	private Label _ourNum;
-
-
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -32,9 +28,7 @@ public partial class VolumeManager : Label
 		// Sets sliders current value to match the bus
 		if (Visible)
 			_slider.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(_busIndex));
-
 	}
-
 
 	// Setting our new volume while also updating the percentage
 	protected void SetVolume(float newVol)
@@ -44,8 +38,6 @@ public partial class VolumeManager : Label
 
 		// Sets up our percentage
 		Label perLabel = _slider.GetNode<Label>("Percentage");
-		string numToAdd = $"{Mathf.Round(newVol * 100)}";
-		perLabel.Text = $"{numToAdd}%";
+		perLabel.Text = $"{Mathf.Round(newVol * 100)}%";
 	}
-
 }

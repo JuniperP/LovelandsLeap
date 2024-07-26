@@ -72,7 +72,6 @@ public partial class DisplayChanging : Label
 				newMon.SetSize(new Vector2(200, 150));
 			}
 
-
 			// Updating count
 			_numOfDis = DisplayServer.GetScreenCount();
 		}
