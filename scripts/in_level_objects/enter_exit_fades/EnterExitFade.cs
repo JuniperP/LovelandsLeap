@@ -11,5 +11,4 @@ public partial class EnterExitFade : Node2D
 		// Sets the value of where we want the player to go
 		GetNode<FadeTransition>("StartTransHitBox").sendsTo = _sendPlayerTo;
 	}
-
 }

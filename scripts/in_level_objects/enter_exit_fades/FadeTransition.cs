@@ -22,8 +22,5 @@ public partial class FadeTransition : Area2D
 			// Starts into next scene
 			LoadingScreen.FadeIn();
 		}
-
 	}
-
-
 }
