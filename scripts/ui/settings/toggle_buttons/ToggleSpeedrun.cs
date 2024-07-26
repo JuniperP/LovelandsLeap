@@ -6,7 +6,7 @@ public partial class ToggleSpeedrun : ToggleButton
     public static bool haveTimer = false;
 
     // The players best speed run time (base = just above max)
-    public static float pbTime = 6001;
+    public static float pbTime = float.PositiveInfinity;
 
     // Adjusting and resetting speedruns
     public override void Toggle()
@@ -45,7 +45,7 @@ public partial class ToggleSpeedrun : ToggleButton
         Label min = current.GetNode<Label>("Minutes");
 
         // Accounting for no record
-        if(pbTime == 6001)
+        if(pbTime == float.PositiveInfinity)
         {
             milSec.Text = "na";
             sec.Text = "na";

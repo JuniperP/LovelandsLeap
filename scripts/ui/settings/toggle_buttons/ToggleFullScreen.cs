@@ -12,7 +12,6 @@ public partial class ToggleFullScreen : ToggleButton
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.ExclusiveFullscreen);
 		else
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-
 	}
 
 	// Getters and setters
@@ -25,6 +24,4 @@ public partial class ToggleFullScreen : ToggleButton
 	{
 		full = state;
 	}
-
-
 }

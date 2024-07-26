@@ -12,9 +12,7 @@ public abstract partial class ToggleButton : Button
 			else
 				Text = "Off";
 		}
-
 	}
-
 
 	// Letting the button switch its label on and off
 	protected void AdjustNameAndScreen()
@@ -27,9 +25,7 @@ public abstract partial class ToggleButton : Button
 
 		// Change what the button displays
 		UpdateText();
-
 	}
-
 
 	// Toggling the desired effect
 	public abstract void Toggle();

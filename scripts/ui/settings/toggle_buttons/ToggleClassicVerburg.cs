@@ -1,3 +1,5 @@
+using Godot;
+
 public partial class ToggleClassicVerburg : ToggleButton
 {
 	// Doesn't need explanation
@@ -7,6 +9,7 @@ public partial class ToggleClassicVerburg : ToggleButton
 	public override void Toggle()
 	{
 		//👽
+		GD.Print("👽");
 	}
 
 	// Getters and setters for IMPORTANT PURPOSES
@@ -19,5 +22,4 @@ public partial class ToggleClassicVerburg : ToggleButton
 	{
 		classic = state;
 	}
-
 }
