@@ -11,8 +11,6 @@ public partial class KeyBindManager : Control
 	// Used to see if a new key bind is about to be set
 	private bool _toBeSet;
 
-
-
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -35,7 +33,6 @@ public partial class KeyBindManager : Control
 			_ourButton.Text = Keybinds._acts[_actionToSet].Input.AsText();
 	}
 
-
 	// Used to adjust the key bind if user asks for a change
 	private void ChangeValue()
 	{
@@ -47,7 +44,6 @@ public partial class KeyBindManager : Control
 			InputMap.ActionEraseEvents(Keybinds._acts[_actionToSet].Mapping);
 	}
 
-
 	// Checks for any input and if a valid input is given it is sent to change our key binds
 	public override void _Input(InputEvent ourInput)
 	{
@@ -55,7 +51,7 @@ public partial class KeyBindManager : Control
 		if ((ourInput is InputEventMouseButton || ourInput is InputEventKey) && _toBeSet)
 		{
 			// Sets the key bind
-			KeyBindSetterHelper.SetKeyBind(ourInput, _actionToSet);
+			SetKeyBind(ourInput, _actionToSet);
 
 			// Updating our button's displayed symbol
 			_ourButton.Text = ourInput.AsText();
@@ -63,7 +59,19 @@ public partial class KeyBindManager : Control
 			// Resets marker of to be set
 			_toBeSet = false;
 		}
-
 	}
 
+	// THE KeyBindSetterHelper - R.I.P. 2024-07-26 4:36pm UTC-4
+	// Sets the key bind for an action in the game given a action to replace and user input
+	public static void SetKeyBind(InputEvent ourInput, UserAction ourAction)
+	{
+		// Gets rid of all other key binds
+		InputMap.ActionEraseEvents(Keybinds._acts[ourAction].Mapping);
+
+		// Updates current stored key to click for that action's key bind
+		Keybinds._acts[ourAction].Input = ourInput;
+
+		// Maps wanted button
+		InputMap.ActionAddEvent(Keybinds._acts[ourAction].Mapping, Keybinds._acts[ourAction].Input);
+	}
 }

@@ -73,12 +73,12 @@ public partial class LoadSettingsData : Node
 		AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Sound Effects"), (float)config.GetValue("Audio", "SFX"));
 
 		// Setting key binds to users choice
-		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "LeftIn"), UserAction.Left);
-		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "RightIn"), UserAction.Right);
-		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "JumpIn"), UserAction.Jump);
-		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "DownIn"), UserAction.Down);
-		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "ClickIn"), UserAction.Click);
-		KeyBindSetterHelper.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "CancelIn"), UserAction.Cancel);
+		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "LeftIn"), UserAction.Left);
+		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "RightIn"), UserAction.Right);
+		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "JumpIn"), UserAction.Jump);
+		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "DownIn"), UserAction.Down);
+		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "ClickIn"), UserAction.Click);
+		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "CancelIn"), UserAction.Cancel);
 
 		// Matching if the screen is windowed
 		ToggleFullScreen.full = (bool)config.GetValue("Display", "FullScreen");
