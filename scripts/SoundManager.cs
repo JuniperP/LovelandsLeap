@@ -1,7 +1,6 @@
 using Godot;
 using System.Collections.Generic;
 
-
 // Enums for all of the possible name
 public enum SFX : byte
 {
@@ -19,7 +18,6 @@ public enum SFX : byte
 	DialoguePrincess,
 	UIButton,
 }
-
 
 public partial class SoundManager : Node
 {
@@ -75,7 +73,6 @@ public partial class SoundManager : Node
 		return newPlayer;
 	}
 
-
 	// Client method to easily play sounds from anywhere
 	public static void PlaySound(SFX sound, Node playOn)
 	{
@@ -90,13 +87,11 @@ public partial class SoundManager : Node
 
 		// Plays the sfx
 		toPlay.Play();
-
 	}
 
 	// Recursive post-order depth 1st search through children assigning sound effects to UI buttons
 	public static void ApplyButtonSFX(Node currentNode)
 	{
-
 		// Getting all of the children
 		Godot.Collections.Array<Node> children = currentNode.GetChildren();
 
@@ -109,12 +104,9 @@ public partial class SoundManager : Node
 			if (children[i].GetClass() == "Button")
 				((Button)children[i]).Pressed += () => PlaySound(SFX.UIButton, children[i - 1]);
 
-
 			if (children[i].GetClass() == "TabContainer")
 				((TabContainer)children[i]).TabClicked += (long NotUsed) => PlaySound(SFX.UIButton, children[i - 1]);
-
 		}
-
 	}
 
 	// Forms the path name for some audio file 
@@ -122,6 +114,4 @@ public partial class SoundManager : Node
 	{
 		return $"res://audio/sfx/{unique}.wav";
 	}
-
-
 }
