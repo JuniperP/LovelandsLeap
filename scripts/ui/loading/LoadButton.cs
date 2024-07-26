@@ -10,6 +10,5 @@ public partial class LoadButton : Button
 			SceneManager.SetNextGoTo(LoadLevelData.LoadData());
 			LoadingScreen.FadeIn();
 		}
-
 	}
 }

@@ -14,7 +14,6 @@ public partial class AsciiFrog : RichTextLabel
 	// Signal to say we have faded out
 	[Signal] public delegate void FadedOutEventHandler();
 
-
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -30,9 +29,7 @@ public partial class AsciiFrog : RichTextLabel
 			_canFade = false;
 			_fadeOut = false;
 		}
-
 	}
-
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -40,8 +37,8 @@ public partial class AsciiFrog : RichTextLabel
 		// If allowed to fade, fades as needed
 		if (_canFade)
 		{
-			// Fading out
-			if (_fadeOut)
+
+			if (_fadeOut) // Fading out
 			{
 				delta *= -1f;
 
@@ -51,8 +48,7 @@ public partial class AsciiFrog : RichTextLabel
 					_canFade = false;
 				}
 			}
-			// Fading in
-			else
+			else // Fading in
 			{
 				if (VisibleRatio >= 1f)
 				{
@@ -66,7 +62,6 @@ public partial class AsciiFrog : RichTextLabel
 			// Type out frog accordingly
 			newVisRatio += (float)delta;
 			VisibleRatio = newVisRatio;
-
 		}
 	}
 
@@ -76,5 +71,4 @@ public partial class AsciiFrog : RichTextLabel
 		_fadeOut = false;
 		_canFade = true;
 	}
-
 }

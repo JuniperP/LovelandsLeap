@@ -54,7 +54,6 @@ public partial class LoadingScreen : Toggleable
 			trans += (float)delta;
 		}
 
-
 		// Changing the fade accordingly
 		SelfModulate = new Color(0, 0, 0, trans);
 	}
@@ -73,5 +72,4 @@ public partial class LoadingScreen : Toggleable
 		fadeOut = false;
 		canFade = true;
 	}
-
 }

@@ -8,7 +8,6 @@ public partial class LoadSettingsData : Node
 	// File for resetting settings
 	private static string _defaultSettings = "user://lovelanddefaultsettings.cfg";
 
-
 	// Save settings data from the game
 	public static void SaveData(bool setUpDefault)
 	{
@@ -111,6 +110,5 @@ public partial class LoadSettingsData : Node
 		Error err = config.Load(_defaultSettings);
 		if (err != Error.Ok)
 			SaveData(true);
-
 	}
 }
