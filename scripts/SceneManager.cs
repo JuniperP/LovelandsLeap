@@ -8,9 +8,8 @@ public enum ToScene : int
 	Credits = 2,
 	IntroCutscene = 3,
 	Monitor = 4,
-	PlayTestLevel = 5 ,
+	PlayTestLevel = 5,
 	Level1 = 6,
-
 }
 public partial class SceneManager : Node
 {
@@ -19,13 +18,14 @@ public partial class SceneManager : Node
 		This gives us only a single place by which we must update the paths names.
 
 		Note: Not currently using exports of packed scenes as they chain to load each other,
-		thus causing an infinite loop when if one scene tries going to another. (also starts
+		thus causing an infinite loop when if one scene tries going to another. (Also starts
 		corrupting scenes!)
 	*/
 
 	// Where we will be changing scenes to
 	private static string _goTo = "";
 
+	// Dictionary to map ToScene enums to scene paths
 	private static readonly Dictionary<ToScene, string> _scenes = new()
 	{
 		{ToScene.MainMenu, "res://scenes/ui/main_menu.tscn"},
