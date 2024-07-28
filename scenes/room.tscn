@@ -61,6 +61,7 @@ tile_proxies/coords_level = [[1, Vector2i(0, 0)], [2, Vector2i(0, 0)], [1, Vecto
 [node name="Room" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("Target")]
+zoom = Vector2(0.75, 0.75)
 script = ExtResource("1_iamro")
 Target = NodePath("../Player")
 metadata/_edit_group_ = true
