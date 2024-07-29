@@ -9,10 +9,10 @@ public partial class LiveFrogReaction : Toggleable
 	// Updates the visibility of the frog accordingly
 	private void UpdateReaction()
 	{
-		if(ToggleReaction.HaveReaction)
+		if (ToggleReaction.HaveReaction)
 			Open();
 		else
 			Close();
-	}	
+	}
 
 }

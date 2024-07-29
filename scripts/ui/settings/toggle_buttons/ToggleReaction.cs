@@ -1,4 +1,4 @@
-public partial class ToggleReaction :  ToggleButton
+public partial class ToggleReaction : ToggleButton
 {
 	// Whether or not to have the reaction on
 	public static bool HaveReaction = false;
