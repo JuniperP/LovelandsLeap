@@ -37,6 +37,7 @@ public partial class LoadSettingsData : Node
 
 		// Extra info to be stored
 		config.SetValue("Extra", "ClassicVer", ToggleClassicVerburg.Classic);
+		config.SetValue("Extra", "HaveReaction", ToggleReaction.HaveReaction);
 		config.SetValue("Extra", "SpeedrunActive", ToggleSpeedrun.HasTimer);
 		config.SetValue("Extra", "SpeedrunPB", ToggleSpeedrun.PBTime);
 
@@ -96,6 +97,7 @@ public partial class LoadSettingsData : Node
 
 		// Setting extra settings
 		ToggleClassicVerburg.Classic = (bool)config.GetValue("Extra", "ClassicVer");
+		ToggleReaction.HaveReaction = (bool)config.GetValue("Extra", "HaveReaction");
 		ToggleSpeedrun.HasTimer = (bool)config.GetValue("Extra", "SpeedrunActive");
 		ToggleSpeedrun.NewTime((float)config.GetValue("Extra", "SpeedrunPB"));
 	}
