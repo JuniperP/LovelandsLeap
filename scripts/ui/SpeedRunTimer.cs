@@ -15,14 +15,14 @@ public partial class SpeedRunTimer : Toggleable
 	// Components of the clock
 	private Label _minutes;
 	private Label _seconds;
-	private Label _milliseconds;
+	private Label _centiseconds;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		_minutes = GetNode<Label>("Minutes");
 		_seconds = GetNode<Label>("Seconds");
-		_milliseconds = GetNode<Label>("Milliseconds");
+		_centiseconds = GetNode<Label>("Centiseconds");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,7 +35,7 @@ public partial class SpeedRunTimer : Toggleable
 		if (!ToggleSpeedrun.HasTimer && Visible)
 		{
 			Close();
-			_milliseconds.Text = "00";
+			_centiseconds.Text = "00";
 			_seconds.Text = "00";
 			_minutes.Text = "00";
 		}
@@ -51,8 +51,8 @@ public partial class SpeedRunTimer : Toggleable
 			// Updating the clock
 			if (Visible)
 			{
-				// Milliseconds excluding the "#."
-				_milliseconds.Text = FormMilSec(_timeElapsed);
+				// Centiseconds excluding the "#."
+				_centiseconds.Text = FormCentSec(_timeElapsed);
 
 				// Seconds
 				_seconds.Text = FormSec(_timeElapsed);
@@ -68,7 +68,7 @@ public partial class SpeedRunTimer : Toggleable
 
 		else
 		{
-			_milliseconds.Text = "99";
+			_centiseconds.Text = "99";
 			_seconds.Text = "59";
 			_minutes.Text = "99";
 		}
@@ -76,8 +76,8 @@ public partial class SpeedRunTimer : Toggleable
 	}
 
 	// Helper functions for making the time
-	// Gets milliseconds
-	public static string FormMilSec(float _timeElapsed)
+	// Gets Centiseconds
+	public static string FormCentSec(float _timeElapsed)
 	{
 		int centiSec = (int)(100 * MathF.Round(_timeElapsed % 1f, 2, MidpointRounding.ToZero));
 		return centiSec.ToString("D2");

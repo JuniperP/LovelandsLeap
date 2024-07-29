@@ -40,21 +40,21 @@ public partial class ToggleSpeedrun : ToggleButton
         Label current = GetNode<Label>("CurrentTimeLabel");
 
         // Each time to change
-        Label milSec = current.GetNode<Label>("Milliseconds");
+        Label centiSec = current.GetNode<Label>("Centiseconds");
         Label sec = current.GetNode<Label>("Seconds");
         Label min = current.GetNode<Label>("Minutes");
 
         // Accounting for no record
         if(PBTime == float.PositiveInfinity)
         {
-            milSec.Text = "na";
+            centiSec.Text = "na";
             sec.Text = "na";
             min.Text = "na";
         }
         else
         {
             // Displaying the users pb
-            milSec.Text = SpeedRunTimer.FormMilSec(PBTime);
+            centiSec.Text = SpeedRunTimer.FormCentSec(PBTime);
             sec.Text = SpeedRunTimer.FormSec(PBTime);
             min.Text = SpeedRunTimer.FormMin(PBTime);
         }

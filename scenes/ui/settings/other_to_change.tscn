@@ -132,7 +132,7 @@ theme_override_font_sizes/font_size = 56
 text = "na"
 horizontal_alignment = 2
 
-[node name="Milliseconds" type="Label" parent="SpeedRunTimer/ToggleSpeedrun/CurrentTimeLabel"]
+[node name="Centiseconds" type="Label" parent="SpeedRunTimer/ToggleSpeedrun/CurrentTimeLabel"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
