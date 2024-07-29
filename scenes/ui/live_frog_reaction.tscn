@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://tig2ub6l5vjg"]
+
+[ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frog_portrait.png" id="1_8p4nj"]
+[ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backround_stripey.jpg" id="2_15r21"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4rym"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="LiveFrogReaction" type="Panel"]
+offset_right = 300.0
+offset_bottom = 250.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j4rym")
+
+[node name="LiveLabel;" type="Label" parent="."]
+layout_mode = 1
+offset_right = 300.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = "LIVE         REACTION"
+
+[node name="LabelFrog" type="TextureRect" parent="LiveLabel;"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 2.0
+offset_right = 138.0
+offset_bottom = 42.0
+texture = ExtResource("1_8p4nj")
+expand_mode = 1
+
+[node name="FrogBackDrop" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_15r21")
+expand_mode = 1
+
+[node name="FrogReacts" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_8p4nj")
+expand_mode = 1
