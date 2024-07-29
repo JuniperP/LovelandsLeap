@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx1xpj1qy44d8"]
+[gd_scene load_steps=6 format=3 uid="uid://bx1xpj1qy44d8"]
 
 [ext_resource type="Script" path="res://scripts/ui/settings/toggle_buttons/ToggleClassicVerburg.cs" id="1_1mm41"]
 [ext_resource type="PackedScene" uid="uid://bj4wxcrjnpx2w" path="res://scenes/ui/settings/confirm_reset.tscn" id="1_vwavv"]
 [ext_resource type="Script" path="res://scripts/ui/settings/toggle_buttons/ToggleSpeedrun.cs" id="2_ml621"]
+[ext_resource type="Script" path="res://scripts/ui/settings/toggle_buttons/ToggleReaction.cs" id="3_eo5p3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buu4u"]
 bg_color = Color(0, 0, 0, 1)
@@ -16,30 +17,7 @@ offset_right = -970.0
 offset_bottom = -480.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="FactoryReset" type="Label" parent="."]
-layout_mode = 1
-offset_left = 25.0
-offset_top = 525.0
-offset_right = 408.0
-offset_bottom = 580.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Reset Settings Data:"
-
-[node name="ResetSettings" type="Button" parent="FactoryReset"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 400.0
-offset_top = -30.0
-offset_right = 700.0
-offset_bottom = 30.0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_buu4u")
-text = "Click to reset"
+metadata/_edit_lock_ = true
 
 [node name="VerburgingToggle" type="Label" parent="."]
 layout_mode = 0
@@ -67,9 +45,9 @@ script = ExtResource("1_1mm41")
 [node name="SpeedRunTimer" type="Label" parent="."]
 layout_mode = 1
 offset_left = 25.0
-offset_top = 225.0
+offset_top = 305.0
 offset_right = 408.0
-offset_bottom = 280.0
+offset_bottom = 360.0
 theme_override_font_sizes/font_size = 40
 text = "Speedrun Timer:"
 
@@ -110,7 +88,7 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 340.0
 offset_top = -38.5
-offset_right = 405.0
+offset_right = 408.0
 offset_bottom = 38.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
@@ -125,7 +103,7 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 435.0
 offset_top = -38.5
-offset_right = 500.0
+offset_right = 503.0
 offset_bottom = 38.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
@@ -139,7 +117,7 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 525.0
 offset_top = -38.5
-offset_right = 590.0
+offset_right = 593.0
 offset_bottom = 38.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
@@ -173,6 +151,52 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 56
 text = ":"
 
+[node name="LiveFrogReaction" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 215.0
+offset_right = 408.0
+offset_bottom = 270.0
+theme_override_font_sizes/font_size = 40
+text = "Live Frog Reaction:"
+
+[node name="ToggleReaction" type="Button" parent="LiveFrogReaction"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 400.0
+offset_top = -30.0
+offset_right = 700.0
+offset_bottom = 30.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_buu4u")
+script = ExtResource("3_eo5p3")
+
+[node name="FactoryReset" type="Label" parent="."]
+layout_mode = 1
+offset_left = 25.0
+offset_top = 525.0
+offset_right = 408.0
+offset_bottom = 580.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Reset Settings Data:"
+
+[node name="ResetSettings" type="Button" parent="FactoryReset"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 400.0
+offset_top = -30.0
+offset_right = 700.0
+offset_bottom = 30.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_buu4u")
+text = "Click to reset"
+
 [node name="Instructions" type="RichTextLabel" parent="."]
 layout_mode = 1
 offset_right = 900.0
@@ -194,12 +218,14 @@ offset_bottom = 600.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[connection signal="pressed" from="FactoryReset/ResetSettings" to="ConfirmReset" method="Open"]
 [connection signal="pressed" from="VerburgingToggle/ToggleClassic" to="VerburgingToggle/ToggleClassic" method="AdjustNameAndScreen"]
 [connection signal="visibility_changed" from="VerburgingToggle/ToggleClassic" to="VerburgingToggle/ToggleClassic" method="UpdateText"]
 [connection signal="pressed" from="SpeedRunTimer/ToggleSpeedrun" to="SpeedRunTimer/ToggleSpeedrun" method="AdjustNameAndScreen"]
 [connection signal="visibility_changed" from="SpeedRunTimer/ToggleSpeedrun" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateText"]
 [connection signal="visibility_changed" from="SpeedRunTimer/ToggleSpeedrun" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateTime"]
+[connection signal="pressed" from="LiveFrogReaction/ToggleReaction" to="LiveFrogReaction/ToggleReaction" method="AdjustNameAndScreen"]
+[connection signal="visibility_changed" from="LiveFrogReaction/ToggleReaction" to="LiveFrogReaction/ToggleReaction" method="UpdateText"]
+[connection signal="pressed" from="FactoryReset/ResetSettings" to="ConfirmReset" method="Open"]
 [connection signal="visibility_changed" from="ConfirmReset" to="VerburgingToggle/ToggleClassic" method="UpdateText"]
 [connection signal="visibility_changed" from="ConfirmReset" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateText"]
 [connection signal="visibility_changed" from="ConfirmReset" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateTime"]

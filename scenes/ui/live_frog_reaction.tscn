@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://tig2ub6l5vjg"]
+[gd_scene load_steps=5 format=3 uid="uid://tig2ub6l5vjg"]
 
 [ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frog_portrait.png" id="1_8p4nj"]
+[ext_resource type="Script" path="res://scripts/ui/LiveFrogReaction.cs" id="1_at6ic"]
 [ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backround_stripey.jpg" id="2_15r21"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4rym"]
@@ -10,6 +11,7 @@ bg_color = Color(0, 0, 0, 1)
 offset_right = 300.0
 offset_bottom = 250.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_j4rym")
+script = ExtResource("1_at6ic")
 
 [node name="LiveLabel;" type="Label" parent="."]
 layout_mode = 1

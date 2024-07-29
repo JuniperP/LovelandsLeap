@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://clnx8ma77b6h3"]
+[gd_scene load_steps=10 format=3 uid="uid://clnx8ma77b6h3"]
 
 [ext_resource type="PackedScene" uid="uid://ccc6gfv7e6o6w" path="res://scenes/player/player.tscn" id="1_1djk0"]
 [ext_resource type="Script" path="res://scripts/Camera.cs" id="1_iamro"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="3_6sffn"]
 [ext_resource type="Texture2D" uid="uid://dnh0cnucyc6tp" path="res://assets/tiles.png" id="4_bh1hj"]
 [ext_resource type="PackedScene" uid="uid://2jyl564ee5cu" path="res://scenes/ui/speed_run_timer.tscn" id="4_cf0s8"]
+[ext_resource type="PackedScene" uid="uid://tig2ub6l5vjg" path="res://scenes/ui/live_frog_reaction.tscn" id="5_k7no0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1drd"]
 texture = ExtResource("4_bh1hj")
@@ -76,6 +77,16 @@ offset_right = 640.0
 offset_bottom = 360.0
 scale = Vector2(1.334, 1.334)
 
+[node name="LiveFrogReaction" parent="Camera2D/Control" instance=ExtResource("5_k7no0")]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -250.0
+offset_bottom = 0.0
+grow_vertical = 0
+
 [node name="PauseScreen" parent="Camera2D/Control" instance=ExtResource("1_rm67i")]
 visible = false
 layout_mode = 1
@@ -97,3 +108,5 @@ light_mask = 2
 visibility_layer = 2
 tile_set = SubResource("TileSet_12rfl")
 format = 2
+
+[connection signal="hidden" from="Camera2D/Control/PauseScreen" to="Camera2D/Control/LiveFrogReaction" method="UpdateReaction"]
