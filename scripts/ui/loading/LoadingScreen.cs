@@ -3,13 +3,13 @@ using Godot;
 public partial class LoadingScreen : Toggleable
 {
 	// Stating whether we can fade or not
-	public static bool canFade = false;
+	public static bool AllowFade = false;
 
 	// Which direction to fade
-	public static bool fadeOut = true;
+	public static bool IsFadeOut = true;
 
 	// Tracking fade transition
-	public static float trans = 0;
+	public static float TransTheFade = 0;
 
 	// Signal to say we have faded in
 	[Signal] public delegate void FadedInEventHandler();
@@ -25,18 +25,18 @@ public partial class LoadingScreen : Toggleable
 	public override void _Process(double delta)
 	{
 		// If allowed to fade, fades as needed
-		if (canFade)
+		if (AllowFade)
 		{
 			// Ensuring the user can't click around
 			MouseFilter = MouseFilterEnum.Stop;
 
 			// Fading out
-			if (fadeOut)
+			if (IsFadeOut)
 			{
 				delta *= -1f;
-				if (trans <= 0)
+				if (TransTheFade <= 0)
 				{
-					canFade = false;
+					AllowFade = false;
 					MouseFilter = MouseFilterEnum.Ignore;
 				}
 
@@ -44,32 +44,32 @@ public partial class LoadingScreen : Toggleable
 			// Fading in
 			else
 			{
-				if (trans >= 1f)
+				if (TransTheFade >= 1f)
 				{
 					EmitSignal(SignalName.FadedIn);
-					canFade = false;
+					AllowFade = false;
 				}
 			}
 
-			trans += (float)delta;
+			TransTheFade += (float)delta;
 		}
 
 		// Changing the fade accordingly
-		SelfModulate = new Color(0, 0, 0, trans);
+		SelfModulate = new Color(0, 0, 0, TransTheFade);
 	}
 
 	// Easy signal transfers to switch fading types
 	// Fades the background out
 	private void FadeOut()
 	{
-		fadeOut = true;
-		canFade = true;
+		IsFadeOut = true;
+		AllowFade = true;
 	}
 
 	// Used to fade into black so scene can change behind the curtain
 	public static void FadeIn()
 	{
-		fadeOut = false;
-		canFade = true;
+		IsFadeOut = false;
+		AllowFade = true;
 	}
 }

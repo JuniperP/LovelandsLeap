@@ -6,8 +6,8 @@ public partial class Credits : Control
 	public override void _Ready()
 	{
 		// Jump cut effect
-		LoadingScreen.trans = 0;
-		AsciiFrog.newVisRatio = 0;
+		LoadingScreen.TransTheFade = 0;
+		AsciiFrog.NewVisRatio = 0;
 		
 		// Testing speedrun timer
 		// SpeedRunTimer.FinishedRun();

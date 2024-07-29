@@ -16,10 +16,10 @@ public partial class LoadGameIn : Control
 		LoadSettingsData.LoadData(false);
 
 		// Adjusting which screen is displayed to based on the users preferred monitor
-		if (MonitorStandIn.chosenScreen >= DisplayServer.GetScreenCount())
-			MonitorStandIn.tempChoice = GetWindow().CurrentScreen;
+		if (MonitorStandIn.ChosenScreen >= DisplayServer.GetScreenCount())
+			MonitorStandIn.TempScreenChoice = GetWindow().CurrentScreen;
 		else
-			DisplayServer.WindowSetCurrentScreen(MonitorStandIn.chosenScreen, GetWindow().GetWindowId());
+			DisplayServer.WindowSetCurrentScreen(MonitorStandIn.ChosenScreen, GetWindow().GetWindowId());
 
 		// Starts the splash sequence
 		EmitSignal(SignalName.StartSplash, true);

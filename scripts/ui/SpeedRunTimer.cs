@@ -29,10 +29,10 @@ public partial class SpeedRunTimer : Toggleable
 	public override void _Process(double delta)
 	{
 		// Changing visibility accordingly
-		if (ToggleSpeedrun.haveTimer && !Visible)
+		if (ToggleSpeedrun.HasTimer && !Visible)
 			Open();
 
-		if (!ToggleSpeedrun.haveTimer && Visible)
+		if (!ToggleSpeedrun.HasTimer && Visible)
 		{
 			Close();
 			_milliseconds.Text = "00";
@@ -99,7 +99,7 @@ public partial class SpeedRunTimer : Toggleable
 	// Starts a speedrun
 	public static void StartSpeedrun()
 	{
-		if (ToggleSpeedrun.haveTimer)
+		if (ToggleSpeedrun.HasTimer)
 			_currentlyRunning = true;
 	}
 

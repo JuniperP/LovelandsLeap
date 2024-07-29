@@ -36,7 +36,7 @@ public partial class PauseScreen : Toggleable
 		if (Input.IsActionJustPressed("ui_cancel") && !node.Visible)
 		{
 			// Switch visibility
-			if (Visible && LoadingScreen.trans <= 0)
+			if (Visible && LoadingScreen.TransTheFade <= 0)
 			{
 				GetTree().Paused = false;
 				Close();

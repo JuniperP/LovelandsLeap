@@ -9,6 +9,6 @@ public partial class EnterExitFade : Node2D
 	public override void _Ready()
 	{
 		// Sets the value of where we want the player to go
-		GetNode<FadeTransition>("StartTransHitBox").sendsTo = _sendPlayerTo;
+		GetNode<FadeTransition>("StartTransHitBox").SendsTo = _sendPlayerTo;
 	}
 }

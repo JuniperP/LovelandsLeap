@@ -6,7 +6,7 @@ public partial class DisplayChanging : Label
 	private int _numOfDis;
 
 	// The current screen being displayed to
-	public static int currentScreen;
+	public static int CurrentScreen;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -18,12 +18,12 @@ public partial class DisplayChanging : Label
 	public override void _Process(double delta)
 	{
 		// Updating the current screen
-		currentScreen = GetWindow().CurrentScreen;
+		CurrentScreen = GetWindow().CurrentScreen;
 
 		// Ensuring that windows aren't messed with for no reason
-		if (currentScreen != MonitorStandIn.tempChoice)
+		if (CurrentScreen != MonitorStandIn.TempScreenChoice)
 		{
-			MonitorStandIn.tempChoice = -1;
+			MonitorStandIn.TempScreenChoice = -1;
 		}
 
 		// Ensuring the number of displays matches displays to select
@@ -56,7 +56,7 @@ public partial class DisplayChanging : Label
 				newMon = (MonitorStandIn)GD.Load<PackedScene>(SceneManager.GetPath(ToScene.Monitor)).Instantiate();
 
 				// Sets the number
-				newMon.number = index;
+				newMon.MonitorNum = index;
 
 				// Adds as child
 				AddChild(newMon);

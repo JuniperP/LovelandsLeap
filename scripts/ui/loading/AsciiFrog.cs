@@ -9,7 +9,7 @@ public partial class AsciiFrog : RichTextLabel
 	private bool _fadeOut;
 
 	// Static way of seeing the texts VisibleRatio
-	public static float newVisRatio = 0;
+	public static float NewVisRatio = 0;
 
 	// Signal to say we have faded out
 	[Signal] public delegate void FadedOutEventHandler();
@@ -17,7 +17,7 @@ public partial class AsciiFrog : RichTextLabel
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		VisibleRatio = newVisRatio;
+		VisibleRatio = NewVisRatio;
 
 		if (VisibleRatio >= 0)
 		{
@@ -60,8 +60,8 @@ public partial class AsciiFrog : RichTextLabel
 			}
 
 			// Type out frog accordingly
-			newVisRatio += (float)delta;
-			VisibleRatio = newVisRatio;
+			NewVisRatio += (float)delta;
+			VisibleRatio = NewVisRatio;
 		}
 	}
 

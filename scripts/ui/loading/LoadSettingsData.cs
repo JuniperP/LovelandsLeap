@@ -31,14 +31,14 @@ public partial class LoadSettingsData : Node
 
 
 		// Display info to be stored
-		config.SetValue("Display", "FullScreen", ToggleFullScreen.full);
-		config.SetValue("Display", "WhichScreen", MonitorStandIn.chosenScreen);
+		config.SetValue("Display", "FullScreen", ToggleFullScreen.IsFull);
+		config.SetValue("Display", "WhichScreen", MonitorStandIn.ChosenScreen);
 
 
 		// Extra info to be stored
-		config.SetValue("Extra", "ClassicVer", ToggleClassicVerburg.classic);
-		config.SetValue("Extra", "SpeedrunActive", ToggleSpeedrun.haveTimer);
-		config.SetValue("Extra", "SpeedrunPB", ToggleSpeedrun.pbTime);
+		config.SetValue("Extra", "ClassicVer", ToggleClassicVerburg.Classic);
+		config.SetValue("Extra", "SpeedrunActive", ToggleSpeedrun.HasTimer);
+		config.SetValue("Extra", "SpeedrunPB", ToggleSpeedrun.PBTime);
 
 
 		// Storing data, overwriting past settings
@@ -81,7 +81,7 @@ public partial class LoadSettingsData : Node
 		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "CancelIn"), UserAction.Cancel);
 
 		// Matching if the screen is windowed
-		ToggleFullScreen.full = (bool)config.GetValue("Display", "FullScreen");
+		ToggleFullScreen.IsFull = (bool)config.GetValue("Display", "FullScreen");
 		// Adjusting for if the screen isn't windowed for user
 		if ((bool)config.GetValue("Display", "FullScreen"))
 			// Full screened
@@ -92,11 +92,11 @@ public partial class LoadSettingsData : Node
 
 
 		// Giving the preferred screen to play on
-		MonitorStandIn.chosenScreen = (int)config.GetValue("Display", "WhichScreen");
+		MonitorStandIn.ChosenScreen = (int)config.GetValue("Display", "WhichScreen");
 
 		// Setting extra settings
-		ToggleClassicVerburg.classic = (bool)config.GetValue("Extra", "ClassicVer");
-		ToggleSpeedrun.haveTimer = (bool)config.GetValue("Extra", "SpeedrunActive");
+		ToggleClassicVerburg.Classic = (bool)config.GetValue("Extra", "ClassicVer");
+		ToggleSpeedrun.HasTimer = (bool)config.GetValue("Extra", "SpeedrunActive");
 		ToggleSpeedrun.NewTime((float)config.GetValue("Extra", "SpeedrunPB"));
 	}
 

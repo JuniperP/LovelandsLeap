@@ -3,10 +3,10 @@ using Godot;
 public partial class ToggleSpeedrun : ToggleButton
 {
     // Whether or not the timer should be displayed
-    public static bool haveTimer = false;
+    public static bool HasTimer = false;
 
     // The players best speed run time (base = just above max)
-    public static float pbTime = float.PositiveInfinity;
+    public static float PBTime = float.PositiveInfinity;
 
     // Adjusting and resetting speedruns
     public override void Toggle()
@@ -18,19 +18,19 @@ public partial class ToggleSpeedrun : ToggleButton
     // Getters and setters
     protected override bool GetState()
     {
-        return haveTimer;
+        return HasTimer;
     }
 
     protected override void SetState(bool state)
     {
-        haveTimer = state;
+        HasTimer = state;
     }
 
     // Allowing change to the pb time
     public static void NewTime(float time)
     {
-        if (time < pbTime)
-            pbTime = time;
+        if (time < PBTime)
+            PBTime = time;
     }
 
     // Updating users presented pb
@@ -45,7 +45,7 @@ public partial class ToggleSpeedrun : ToggleButton
         Label min = current.GetNode<Label>("Minutes");
 
         // Accounting for no record
-        if(pbTime == float.PositiveInfinity)
+        if(PBTime == float.PositiveInfinity)
         {
             milSec.Text = "na";
             sec.Text = "na";
@@ -54,9 +54,9 @@ public partial class ToggleSpeedrun : ToggleButton
         else
         {
             // Displaying the users pb
-            milSec.Text = SpeedRunTimer.FormMilSec(pbTime);
-            sec.Text = SpeedRunTimer.FormSec(pbTime);
-            min.Text = SpeedRunTimer.FormMin(pbTime);
+            milSec.Text = SpeedRunTimer.FormMilSec(PBTime);
+            sec.Text = SpeedRunTimer.FormSec(PBTime);
+            min.Text = SpeedRunTimer.FormMin(PBTime);
         }
     }
 }

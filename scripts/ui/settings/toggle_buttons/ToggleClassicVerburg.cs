@@ -3,7 +3,7 @@ using Godot;
 public partial class ToggleClassicVerburg : ToggleButton
 {
 	// Doesn't need explanation
-	public static bool classic = false;
+	public static bool Classic = false;
 
 	// It's a secret what this method does
 	public override void Toggle()
@@ -15,11 +15,11 @@ public partial class ToggleClassicVerburg : ToggleButton
 	// Getters and setters for IMPORTANT PURPOSES
 	protected override bool GetState()
 	{
-		return classic;
+		return Classic;
 	}
 
 	protected override void SetState(bool state)
 	{
-		classic = state;
+		Classic = state;
 	}
 }
