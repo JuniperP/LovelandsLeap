@@ -126,7 +126,7 @@ public class WalkState : MovementState
 
 	public override void HandleAction()
 	{
-		if (Input.IsActionJustPressed("primary_click"))
+		if (Input.IsActionJustPressed("primary_action"))
 		{
 			if (Ctx.TongueProj.IsValid()) // Retract if using tongue
 			{
