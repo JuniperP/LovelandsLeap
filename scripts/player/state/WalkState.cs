@@ -126,7 +126,8 @@ public class WalkState : MovementState
 
 	public override void HandleAction()
 	{
-		if (Input.IsActionJustPressed("primary_action"))
+		// If trying to create a new tongue shot with no pre-existing
+		if (!Ctx.TongueProj.IsValid() && Input.IsActionJustPressed("primary_action"))
 		{
 			if (Ctx.TongueProj.IsValid()) // Retract if using tongue
 			{
@@ -164,6 +165,13 @@ public class WalkState : MovementState
 
 			// Activate tongue shoot sound effect
 			SoundManager.PlaySound(SFX.TongueShoot, Ctx);
+		}
+		// Retract tongue if it is being used
+		else if (Ctx.TongueProj.IsValid() && Input.IsActionJustPressed("secondary_action"))
+		{
+			Ctx.TongueProj.RetractTongue();
+			Ctx.AnimManager.State = AnimState.Idle;
+			return;
 		}
 	}
 
