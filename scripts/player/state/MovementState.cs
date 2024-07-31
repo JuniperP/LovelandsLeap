@@ -6,8 +6,9 @@ public abstract class MovementState
 		Ctx = ctx;
 	}
 	
+	// Methods that subclass states must implement
 	public abstract void HandleMovement(double delta);
-	public abstract void HandleAction();
+	public abstract void HandleActions();
 	public abstract void EnableGrapple();
 	public abstract void DisableGrapple();
 }

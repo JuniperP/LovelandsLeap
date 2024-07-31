@@ -8,7 +8,7 @@ public partial class Player : CharacterBody2D
 		Grapple,
 	}
 
-	// Inspector variables
+	// Adjustable parameters for the player
 	[ExportGroup("Horizontal")]
 	[Export] public int Speed = 300;
 	[Export] public int Acceleration = 2000;
@@ -36,6 +36,7 @@ public partial class Player : CharacterBody2D
 	[Export] public int SwingBaseDistance = 100;
 	[Export] public float SwingLogBase = 3;
 
+	// Required external scenes
 	[ExportGroup("Scenes")]
 	[Export] public PackedScene TongueProjScene;
 	[Export] public PackedScene TongueLineScene;
@@ -51,14 +52,17 @@ public partial class Player : CharacterBody2D
 		}
 	}
 
-	// Movement state chooses from an array of states using the enum
+	// The state enum is the responsibility of a state object to update
 	public State StateEnum = State.Walk;
+
+	// Movement state chooses from an array of states using the enum
 	private MovementState[] _movementStates;
 	public MovementState MovementState
 	{
 		get { return _movementStates[(int)StateEnum]; }
 	}
 
+	// Objects that the player uses or keeps track of
 	public AnimationManager AnimManager;
 	public TongueProjectile TongueProj;
 	public TongueLine TongueLine;
@@ -67,6 +71,7 @@ public partial class Player : CharacterBody2D
 
 	public override void _Ready()
 	{
+		// Create what are effectively singleton objects
 		AnimManager = new AnimationManager(this);
 		_movementStates = new MovementState[]{
 			new WalkState(this),
@@ -77,9 +82,10 @@ public partial class Player : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		MovementState.HandleMovement(delta);
-		MovementState.HandleAction();
+		MovementState.HandleActions();
 	}
 
+	// The parameter is required for this method to be a collision listener
 	public void EnableGrapple(Node target)
 	{
 		MovementState.EnableGrapple();

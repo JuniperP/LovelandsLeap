@@ -49,7 +49,7 @@ public class GrappleState : MovementState
 			Ctx.AnimManager.IsLeftFacing = true;
 	}
 
-	public override void HandleAction()
+	public override void HandleActions()
 	{
 		if (Input.IsActionJustPressed("primary_action"))
 			DisableGrapple();
