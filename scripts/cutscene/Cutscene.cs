@@ -13,9 +13,9 @@ public partial class Cutscene : Node
 
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionJustPressed("ui_cancel") && LoadingScreen.TransTheFade<=0)
+		if (Input.IsActionJustPressed("ui_cancel") && LoadingScreen.TransTheFade <= 0)
 			SkipScene();
-    }
+	}
 
 	public void ChangeToNext()
 	{
