@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3y1226gfn5tq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdrkh"]
+bg_color = Color(1, 1, 1, 0.705882)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="FlyCountBackDrop" type="Panel"]
+offset_right = 300.0
+offset_bottom = 250.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hdrkh")
+
+[node name="FlyCountLabel" type="Label" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 25.0
+offset_right = 96.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 56
+text = "Fly Count
+"
+
+[node name="CurrentCount" type="Label" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.5
+offset_top = -150.0
+offset_right = 128.5
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 96
+text = "45/45"
+horizontal_alignment = 1

@@ -6,7 +6,7 @@ public partial class FlyCount : Node
 	public static int FliesGotten = 0;
 
 	// Total flies in whole game
-	private static int _totalFlies = 45; // (current number is a rough guess)
+	public static int TotalFlies = 45; // (current number is a rough guess)
 
 	// Used to adjust around new games and loading games
 	public static void NewFlyCount(int newCount)
@@ -22,7 +22,7 @@ public partial class FlyCount : Node
 	public static int GetCollectedRatio()
 	{
 		// Ratio as a decimal
-		float percent = FliesGotten / _totalFlies;
+		float percent = FliesGotten / TotalFlies;
 
 		// Ratio as a rounded number
 		return (int)(percent * 100);
