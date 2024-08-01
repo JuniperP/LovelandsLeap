@@ -26,7 +26,8 @@ public partial class LoadSettingsData : Node
 		config.SetValue("KeyBinds", "RightIn", Keybinds._acts[UserAction.Right].Input);
 		config.SetValue("KeyBinds", "JumpIn", Keybinds._acts[UserAction.Jump].Input);
 		config.SetValue("KeyBinds", "DownIn", Keybinds._acts[UserAction.Down].Input);
-		config.SetValue("KeyBinds", "ClickIn", Keybinds._acts[UserAction.Click].Input);
+		config.SetValue("KeyBinds", "PActIn", Keybinds._acts[UserAction.PAction].Input);
+		config.SetValue("KeyBinds", "SActIn", Keybinds._acts[UserAction.SAction].Input);
 		config.SetValue("KeyBinds", "CancelIn", Keybinds._acts[UserAction.Cancel].Input);
 
 
@@ -78,7 +79,8 @@ public partial class LoadSettingsData : Node
 		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "RightIn"), UserAction.Right);
 		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "JumpIn"), UserAction.Jump);
 		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "DownIn"), UserAction.Down);
-		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "ClickIn"), UserAction.Click);
+		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "PActIn"), UserAction.PAction);
+		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "SActIn"), UserAction.SAction);
 		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "CancelIn"), UserAction.Cancel);
 
 		// Matching if the screen is windowed

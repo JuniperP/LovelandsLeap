@@ -9,7 +9,8 @@ public enum UserAction : byte
 	Right,
 	Jump,
 	Down,
-	Click,
+	PAction,
+	SAction,
 	Cancel,
 }
 
@@ -24,7 +25,8 @@ public partial class Keybinds : Node
 		{UserAction.Right, new ActionRep("move_right", InputMap.ActionGetEvents("move_right")[0], "Move Right")},
 		{UserAction.Jump, new ActionRep("move_up", InputMap.ActionGetEvents("move_up")[0], "Jump")},
 		{UserAction.Down, new ActionRep("move_down", InputMap.ActionGetEvents("move_down")[0], "Fast Fall")},
-		{UserAction.Click, new ActionRep("primary_action", InputMap.ActionGetEvents("primary_action")[0], "Use Tongue")},
+		{UserAction.PAction, new ActionRep("primary_action", InputMap.ActionGetEvents("primary_action")[0], "Shoot Tongue")},
+		{UserAction.SAction, new ActionRep("secondary_action", InputMap.ActionGetEvents("secondary_action")[0], "Disengage Tongue")},
 		{UserAction.Cancel, new ActionRep("ui_cancel",InputMap.ActionGetEvents("ui_cancel")[0], "Cancel")}
 	};
 }

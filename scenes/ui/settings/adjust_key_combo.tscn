@@ -14,6 +14,7 @@ offset_right = -1467.0
 offset_bottom = -1004.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_qonc8")
 
 [node name="MoveLabel" type="Label" parent="."]

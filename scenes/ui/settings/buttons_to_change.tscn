@@ -63,7 +63,7 @@ offset_right = 500.0
 offset_bottom = 400.0
 grow_horizontal = 1
 grow_vertical = 1
-_actionToSet = 4
+_actionToSet = 5
 
 [node name="Cancel" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
@@ -75,7 +75,7 @@ offset_right = 0.0
 offset_bottom = 400.0
 grow_horizontal = 1
 grow_vertical = 1
-_actionToSet = 5
+_actionToSet = 4
 
 [node name="Down" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
