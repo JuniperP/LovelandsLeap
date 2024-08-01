@@ -8,10 +8,15 @@ public partial class FlyCount : Node
 	// Total flies in whole game
 	private static int _totalFlies = 45; // (current number is a rough guess)
 
-	// Method for adjusting around new games and loading games
+	// Used to adjust around new games and loading games
 	public static void NewFlyCount(int newCount)
 	{
 		FliesGotten = newCount;
+	}
+
+	public static void UpCount()
+	{
+		FliesGotten++;
 	}
 
 	public static int GetCollectedRatio()
