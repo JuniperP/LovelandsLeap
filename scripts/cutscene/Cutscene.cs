@@ -2,8 +2,8 @@ using Godot;
 
 public partial class Cutscene : Node
 {
-	[Export] public PackedScene NextScene;
-	[Export] public PackedScene CancelScene;
+	[Export(PropertyHint.File, "*.tscn")] public string NextScene;
+	[Export(PropertyHint.File, "*.tscn")] public string CancelScene;
 
 	public override void _Ready()
 	{
@@ -19,11 +19,11 @@ public partial class Cutscene : Node
 
 	public void ChangeToNext()
 	{
-		GetTree().ChangeSceneToPacked(NextScene);
+		GetTree().ChangeSceneToFile(NextScene);
 	}
 
 	public void SkipScene()
 	{
-		GetTree().ChangeSceneToPacked(CancelScene);
+		GetTree().ChangeSceneToFile(CancelScene);
 	}
 }
