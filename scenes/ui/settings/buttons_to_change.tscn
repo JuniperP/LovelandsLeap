@@ -18,51 +18,79 @@ grow_vertical = 2
 
 [node name="MoveLeft" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
-anchors_preset = 0
+anchors_preset = 4
+anchor_top = 0.5
 anchor_right = 0.0
-anchor_bottom = 0.0
-offset_top = 200.0
+anchor_bottom = 0.5
+offset_top = -120.0
 offset_right = 0.0
-offset_bottom = 200.0
+offset_bottom = -120.0
 grow_horizontal = 1
-grow_vertical = 1
+
+[node name="MoveRight" parent="." instance=ExtResource("1_gx03p")]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -880.0
+offset_top = -120.0
+offset_right = -880.0
+offset_bottom = -120.0
+grow_horizontal = 0
+_actionToSet = 1
 
 [node name="Jump" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
-anchors_preset = 0
+anchors_preset = 4
+anchor_top = 0.5
 anchor_right = 0.0
-anchor_bottom = 0.0
-offset_top = 300.0
+anchor_bottom = 0.5
+offset_top = -40.0
 offset_right = 0.0
-offset_bottom = 300.0
+offset_bottom = -40.0
 grow_horizontal = 1
-grow_vertical = 1
 _actionToSet = 2
 
-[node name="MoveRight" parent="." instance=ExtResource("1_gx03p")]
+[node name="FastFall" parent="." instance=ExtResource("1_gx03p")]
+layout_direction = 3
 layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 500.0
-offset_top = 200.0
-offset_right = 500.0
-offset_bottom = 200.0
-grow_horizontal = 1
-grow_vertical = 1
-_actionToSet = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -880.0
+offset_top = -40.0
+offset_right = -880.0
+offset_bottom = -40.0
+grow_horizontal = 0
+_actionToSet = 3
 
-[node name="UseTongue" parent="." instance=ExtResource("1_gx03p")]
+[node name="ShootTongue" parent="." instance=ExtResource("1_gx03p")]
 layout_mode = 1
-anchors_preset = 0
+anchors_preset = 4
+anchor_top = 0.5
 anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 500.0
-offset_top = 400.0
-offset_right = 500.0
-offset_bottom = 400.0
+anchor_bottom = 0.5
+offset_top = 40.0
+offset_right = 0.0
+offset_bottom = 40.0
 grow_horizontal = 1
-grow_vertical = 1
+_actionToSet = 4
+
+[node name="RetractTongue" parent="." instance=ExtResource("1_gx03p")]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -880.0
+offset_top = 40.0
+offset_right = -880.0
+offset_bottom = 40.0
+grow_horizontal = 0
 _actionToSet = 5
 
 [node name="Cancel" parent="." instance=ExtResource("1_gx03p")]
@@ -70,25 +98,13 @@ layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_top = 400.0
-offset_right = 0.0
-offset_bottom = 400.0
+offset_left = 100.0
+offset_top = 420.0
+offset_right = 100.0
+offset_bottom = 420.0
 grow_horizontal = 1
 grow_vertical = 1
-_actionToSet = 4
-
-[node name="Down" parent="." instance=ExtResource("1_gx03p")]
-layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 500.0
-offset_top = 300.0
-offset_right = 500.0
-offset_bottom = 300.0
-grow_horizontal = 1
-grow_vertical = 1
-_actionToSet = 3
+_actionToSet = 6
 
 [node name="Instructions" type="RichTextLabel" parent="."]
 layout_mode = 1

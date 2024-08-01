@@ -26,7 +26,7 @@ public partial class Keybinds : Node
 		{UserAction.Jump, new ActionRep("move_up", InputMap.ActionGetEvents("move_up")[0], "Jump")},
 		{UserAction.Down, new ActionRep("move_down", InputMap.ActionGetEvents("move_down")[0], "Fast Fall")},
 		{UserAction.PAction, new ActionRep("primary_action", InputMap.ActionGetEvents("primary_action")[0], "Shoot Tongue")},
-		{UserAction.SAction, new ActionRep("secondary_action", InputMap.ActionGetEvents("secondary_action")[0], "Disengage Tongue")},
+		{UserAction.SAction, new ActionRep("secondary_action", InputMap.ActionGetEvents("secondary_action")[0], "Retract Tongue")},
 		{UserAction.Cancel, new ActionRep("ui_cancel",InputMap.ActionGetEvents("ui_cancel")[0], "Cancel")}
 	};
 }
