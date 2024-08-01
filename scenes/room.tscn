@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://clnx8ma77b6h3"]
+[gd_scene load_steps=11 format=3 uid="uid://clnx8ma77b6h3"]
 
 [ext_resource type="PackedScene" uid="uid://ccc6gfv7e6o6w" path="res://scenes/player/player.tscn" id="1_1djk0"]
 [ext_resource type="Script" path="res://scripts/Camera.cs" id="1_iamro"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dnh0cnucyc6tp" path="res://assets/tiles.png" id="4_bh1hj"]
 [ext_resource type="PackedScene" uid="uid://2jyl564ee5cu" path="res://scenes/ui/speed_run_timer.tscn" id="4_cf0s8"]
 [ext_resource type="PackedScene" uid="uid://tig2ub6l5vjg" path="res://scenes/ui/live_frog_reaction.tscn" id="5_k7no0"]
+[ext_resource type="PackedScene" uid="uid://c3y1226gfn5tq" path="res://scenes/ui/fly_count_back_drop.tscn" id="6_adkuw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1drd"]
 texture = ExtResource("4_bh1hj")
@@ -76,6 +77,20 @@ offset_top = -720.0
 offset_right = 640.0
 offset_bottom = 360.0
 scale = Vector2(1.334, 1.334)
+
+[node name="FlyCountBackDrop" parent="Camera2D/Control" instance=ExtResource("6_adkuw")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -250.0
+offset_right = 0.00012207
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="LiveFrogReaction" parent="Camera2D/Control" instance=ExtResource("5_k7no0")]
 visible = false
