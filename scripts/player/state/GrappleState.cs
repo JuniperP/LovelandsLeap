@@ -2,26 +2,39 @@ using Godot;
 
 public class GrappleState : MovementState
 {
+	// How long the player has been grappling
 	private double _grappleTime = 0d;
 
+	// Constructor that calls parent constructor (weird notation)
 	public GrappleState(Player ctx) : base(ctx) { }
 
 	public override void HandleMovement(double delta)
 	{
 		_grappleTime += delta;
 
+		// Store as variables for brevity
 		Vector2 weightPos = Ctx.TongueWeight.GlobalPosition;
 		Vector2 springPos = Ctx.TongueSpring.GlobalPosition;
 
-		// Handle horizontal input
+		// Horizontal input direction in range [-1f, 1f]
 		float inputDir = Input.GetAxis("move_left", "move_right");
+
 		// If trying to move and below the tongue pivot
 		if (inputDir != 0f && weightPos.Y > springPos.Y)
 		{
-			// Rotate a 2D vector clockwise or counterclockwise depending on input
-			// TODO: Explain this better because vectors are confusing
-			// The forceDir will now be tangent to the swing curve of the weight
-			Vector2 forceDir = (springPos - weightPos).Normalized();
+			// Get the normalized vector from the weight to spring
+			Vector2 forceDir = weightPos.DirectionTo(springPos);
+			
+			/* 
+				Vector arithmetic dictates that swapping the X and Y values and
+				multiplying one component by -1 results in 90 degree rotation.
+
+				Which component is multiplied determines the clockwise-ness of the
+				rotation: Multiplying the X by -1 results in a clockwise rotation.
+
+				The forceDir will now be tangent to the swing curve of the weight,
+				and it will point in the direction of the desired force.
+			 */
 			forceDir = new Vector2(forceDir.Y, forceDir.X);
 			forceDir *= new Vector2(-inputDir, inputDir);
 
@@ -31,27 +44,28 @@ public class GrappleState : MovementState
 			float logFactor = Mathf.Log(distanceRatio + Ctx.SwingLogBase - 1)
 							/ Mathf.Log(Ctx.SwingLogBase);
 
+			// Apply the logarithmically adjusted force to the weight
 			Ctx.TongueWeight.ApplyForce(forceDir * logFactor * Ctx.SwingForce * (float)delta);
 		}
 
-		// Set velocity to move to weight
+		// Set player velocity to move towards weight
 		Vector2 diff = weightPos - Ctx.GlobalPosition;
 		Ctx.Velocity = diff * 100;
 
-		// If player collided after buffer time
+		// If player collided after buffer time (effectively a grace period)
 		if (Ctx.MoveAndSlide() && _grappleTime >= Ctx.AutoDegrappleBuffer)
 			DisableGrapple();
 
 		// Handle sprite direction
-		if (Ctx.Velocity.X > 0.01f)
+		if (Ctx.Velocity.X > 0.1f)
 			Ctx.AnimManager.IsLeftFacing = false;
-		else if (Ctx.Velocity.X < -0.01f)
+		else if (Ctx.Velocity.X < -0.1f)
 			Ctx.AnimManager.IsLeftFacing = true;
 	}
 
 	public override void HandleActions()
 	{
-		if (Input.IsActionJustPressed("primary_action"))
+		if (Input.IsActionJustPressed("secondary_action"))
 			DisableGrapple();
 	}
 
