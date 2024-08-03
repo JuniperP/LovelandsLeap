@@ -11,14 +11,21 @@ public partial class DialogueBox : Toggleable
 		Unloading
 	}
 
+	// Speed for loading text in characters per second
+	[Export] public float TextSpeed = 40f;
+
 	private State _loadState = State.Inactive;
 	private Tween _tween;
+	private Label _label;
 
 	public override void _Ready()
 	{
+		_label = GetNode<Label>("BackBox/Text");
+
 		// Set initial properties
 		Hide();
 		Modulate = Colors.Transparent;
+		_label.VisibleRatio = 0;
 	}
 
 	// Step to the next dialogue state
@@ -48,9 +55,13 @@ public partial class DialogueBox : Toggleable
 
 		// Use a new tween for fading and callback
 		_tween = CreateTween();
+
 		_tween.TweenProperty(this, "modulate", Colors.White, 0.25).SetTrans(
 			Tween.TransitionType.Sine
 		);
+		double textTime = _label.Text.Length / TextSpeed;
+		_tween.TweenProperty(_label, "visible_ratio", 1, textTime);
+
 		_tween.TweenCallback(Callable.From(Complete));
 
 		_loadState = State.Loading;
@@ -60,6 +71,7 @@ public partial class DialogueBox : Toggleable
 	private void Complete()
 	{
 		Modulate = Colors.White;
+		_label.VisibleRatio = 1;
 
 		_tween.Kill();
 
@@ -84,6 +96,7 @@ public partial class DialogueBox : Toggleable
 	{
 		Hide();
 		Modulate = Colors.Transparent;
+		_label.VisibleRatio = 0;
 
 		_tween.Kill();
 
