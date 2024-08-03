@@ -6,33 +6,48 @@ public partial class DialogueBox : Toggleable
 	{
 		Inactive,
 		Loading,
-		Paused
+		Paused,
+		Unloading
 	}
 
 	private State _loadState = State.Inactive;
+	private Tween _tween;
 
 	public override void _Ready()
 	{
-
 		Hide();
-		Modulate = new Color(1, 1, 1, 0);
+		Modulate = Colors.Transparent;
 	}
 
 	public void Step()
 	{
-		if (_loadState == State.Inactive)
-			Load();
-		else if (_loadState == State.Loading)
-			Complete();
-		else if (_loadState == State.Paused)
-			Unload();
+		switch (_loadState)
+		{
+			case State.Inactive:
+				Load();
+				break;
+			case State.Loading:
+				Complete();
+				break;
+			case State.Paused:
+				Unload();
+				break;
+			case State.Unloading:
+				Deactivate();
+				break;
+		}
 	}
 
 	private void Load()
 	{
 		// Fade in box and start loading in dialogue
 		Show();
-		Modulate = new Color(1, 1, 1, 0.5f);
+
+		_tween = CreateTween();
+		_tween.TweenProperty(this, "modulate", Colors.White, 0.25).SetTrans(
+			Tween.TransitionType.Sine
+		);
+		_tween.TweenCallback(Callable.From(Complete));
 
 		_loadState = State.Loading;
 	}
@@ -40,17 +55,32 @@ public partial class DialogueBox : Toggleable
 	private void Complete()
 	{
 		// Complete fade and text
-		Show();
-		Modulate = new Color(1, 1, 1, 1);
+		Modulate = Colors.White;
+
+		_tween.Kill();
 
 		_loadState = State.Paused;
 	}
 
 	private void Unload()
 	{
-		// Fade out and perform callback
+		// Fade out
+		_tween = CreateTween();
+		_tween.TweenProperty(this, "modulate", Colors.Transparent, 0.25).SetTrans(
+			Tween.TransitionType.Sine
+		);
+		_tween.TweenCallback(Callable.From(Deactivate));
+
+		_loadState = State.Unloading;
+	}
+
+	private void Deactivate()
+	{
+		// Completely hide and perform cutscene callback
 		Hide();
-		Modulate = new Color(1, 1, 1, 0);
+		Modulate = Colors.Transparent;
+
+		_tween.Kill();
 
 		_loadState = State.Inactive;
 	}
