@@ -161,7 +161,7 @@ _data = {
 "intro_cutscene": SubResource("Animation_dmnhy")
 }
 
-[node name="Intro" type="Control"]
+[node name="Intro" type="Control" node_paths=PackedStringArray("testBox")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -171,8 +171,10 @@ grow_vertical = 2
 script = ExtResource("1_pqwlb")
 NextScene = "res://scenes/cutscenes/transformation.tscn"
 CancelScene = "res://scenes/levels/level_1.tscn"
+testBox = NodePath("OrderDialogue")
 
 [node name="Overlay" type="ColorRect" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 100
 layout_mode = 1
@@ -206,12 +208,14 @@ text = "My dinner better not be in the woods again..."
 
 [node name="HumanLoc" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 2100.0
+offset_left = 429.0
 offset_top = 791.0
-offset_right = 2100.0
+offset_right = 429.0
 offset_bottom = 791.0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="HumanLoc"]
+visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(12, 39)
 scale = Vector2(0.075, 0.075)
 sprite_frames = ExtResource("3_mf1q6")
@@ -246,7 +250,6 @@ bus = &"Music"
 libraries = {
 "": SubResource("AnimationLibrary_qtv0h")
 }
-autoplay = "intro_cutscene"
 
 [node name="LoadingScreen" parent="." instance=ExtResource("10_t3rc1")]
 visible = false

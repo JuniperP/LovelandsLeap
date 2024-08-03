@@ -11,7 +11,14 @@ public partial class DialogueBox : Toggleable
 
 	private State _loadState = State.Inactive;
 
-	private void Step()
+	public override void _Ready()
+	{
+
+		Hide();
+		Modulate = new Color(1, 1, 1, 0);
+	}
+
+	public void Step()
 	{
 		if (_loadState == State.Inactive)
 			Load();
@@ -24,18 +31,27 @@ public partial class DialogueBox : Toggleable
 	private void Load()
 	{
 		// Fade in box and start loading in dialogue
+		Show();
+		Modulate = new Color(1, 1, 1, 0.5f);
+
 		_loadState = State.Loading;
 	}
 
 	private void Complete()
 	{
 		// Complete fade and text
+		Show();
+		Modulate = new Color(1, 1, 1, 1);
+
 		_loadState = State.Paused;
 	}
 
 	private void Unload()
 	{
 		// Fade out and perform callback
+		Hide();
+		Modulate = new Color(1, 1, 1, 0);
+
 		_loadState = State.Inactive;
 	}
 }
