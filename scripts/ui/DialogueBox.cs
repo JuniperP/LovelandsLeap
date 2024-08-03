@@ -2,6 +2,7 @@ using Godot;
 
 public partial class DialogueBox : Toggleable
 {
+	// Represents various states of the dialogue box
 	private enum State
 	{
 		Inactive,
@@ -15,10 +16,12 @@ public partial class DialogueBox : Toggleable
 
 	public override void _Ready()
 	{
+		// Set initial properties
 		Hide();
 		Modulate = Colors.Transparent;
 	}
 
+	// Step to the next dialogue state
 	public void Step()
 	{
 		switch (_loadState)
@@ -38,11 +41,12 @@ public partial class DialogueBox : Toggleable
 		}
 	}
 
+	// Fade in box and start loading in dialogue
 	private void Load()
 	{
-		// Fade in box and start loading in dialogue
 		Show();
 
+		// Use a new tween for fading and callback
 		_tween = CreateTween();
 		_tween.TweenProperty(this, "modulate", Colors.White, 0.25).SetTrans(
 			Tween.TransitionType.Sine
@@ -52,9 +56,9 @@ public partial class DialogueBox : Toggleable
 		_loadState = State.Loading;
 	}
 
+	// Complete fade and text
 	private void Complete()
 	{
-		// Complete fade and text
 		Modulate = Colors.White;
 
 		_tween.Kill();
@@ -62,9 +66,10 @@ public partial class DialogueBox : Toggleable
 		_loadState = State.Paused;
 	}
 
+	// Fade out box
 	private void Unload()
 	{
-		// Fade out
+		// Use a new tween for fading and callback
 		_tween = CreateTween();
 		_tween.TweenProperty(this, "modulate", Colors.Transparent, 0.25).SetTrans(
 			Tween.TransitionType.Sine
@@ -74,9 +79,9 @@ public partial class DialogueBox : Toggleable
 		_loadState = State.Unloading;
 	}
 
+	// Completely hide and perform cutscene callback
 	private void Deactivate()
 	{
-		// Completely hide and perform cutscene callback
 		Hide();
 		Modulate = Colors.Transparent;
 
