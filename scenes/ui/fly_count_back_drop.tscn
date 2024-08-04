@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/in_level_objects/flies/FlyCountDisplay.cs" id="1_uvknv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdrkh"]
-bg_color = Color(1, 1, 1, 0.784314)
+bg_color = Color(1, 1, 1, 0.882353)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5

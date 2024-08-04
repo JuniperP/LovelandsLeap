@@ -3,7 +3,9 @@ using Godot;
 public partial class FlyCountDisplay : Panel
 {
 	// How we will count up to 3
-	private double count;
+	private double _count;
+
+	private float _currentFade;
 
 	// Checking if we 
 	[Export] private bool _isInLevel;
@@ -12,7 +14,8 @@ public partial class FlyCountDisplay : Panel
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		count = 0;
+		_count = 0;
+		_currentFade = 0;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,31 +24,26 @@ public partial class FlyCountDisplay : Panel
 		if (_isInLevel)
 		{
 			if (GetTree().Paused)
-				Hide();
+				Modulate = new Color(1, 1, 1, 0);
 
 			else
 			{
-				if (!Visible && count >= 2)
-					Show();
-
-				else if (Visible && count < 2)
-					Hide();
+				if (_count >= 2)
+					_currentFade += (float)delta;
 
 				if (Input.IsAnythingPressed() == false)
-					count += delta;
+					_count += delta;
 
 				else
-					count = 0;
+				{
+					_count = 0;
+					_currentFade = 0;
+				}
+
+				Modulate = new Color(1, 1, 1, _currentFade);
 			}
 
 		}
-
-		else
-		{
-			if (!Visible)
-				Show();
-		}
-
 	}
 
 	// Updating the results every time for every time visibility changes
