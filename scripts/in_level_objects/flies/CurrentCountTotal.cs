@@ -1,10 +1,10 @@
 using Godot;
 
-public partial class CurrentCountLabel : Label
+public partial class CurrentCountTotal : Label
 {
 	// Updating the results every time for every time visibility changes
 	public void UpdateText()
 	{
-		Text = $"Total: {FlyCount.FliesGotten}/{FlyCount.TotalFlies}";
+		Text = $"Total: {FlyCount.FliesGottenTotal}/{FlyCount.TotalFlies}";
 	}
 }
