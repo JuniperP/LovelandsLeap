@@ -8,6 +8,7 @@ public enum ToScene : int
 	Credits = -2,
 	IntroCutscene = -3,
 	Monitor = -4,
+	PlaceHolder = -5,
 	PlayTestLevel = 0,
 	Tutorial = 1,
 	Level1 = 2,
@@ -28,7 +29,7 @@ public partial class SceneManager : Node
 	*/
 
 	// Where we will be changing scenes to
-	private static string _goTo = "";
+	private static ToScene _goTo = ToScene.PlaceHolder;
 
 	// Dictionary to map ToScene enums to scene paths
 	private static readonly Dictionary<ToScene, string> _scenes = new()
@@ -48,23 +49,25 @@ public partial class SceneManager : Node
 	// Allows the client to set where to go to next
 	public static void SetNextGoTo(ToScene scene)
 	{
-		_goTo = _scenes[scene];
+		_goTo = scene;
 	}
 
 	// Sends user to new scene
 	public static void GoToSetScene(Node useNode)
 	{
 		// If asked, the scene switches
-		if (!_goTo.Equals(""))
-		{
-			useNode.GetTree().ChangeSceneToFile(_goTo);
-			_goTo = "";
-		}
+		if (_goTo !=  ToScene.PlaceHolder)
+			useNode.GetTree().ChangeSceneToFile(_scenes[_goTo]);
 	}
 
-	// Getter for niche cases
+	// Niche case getters
 	public static string GetPath(ToScene scene)
 	{
 		return _scenes[scene];
+	}
+
+	public static ToScene GetNextGoTo()
+	{
+		return _goTo;
 	}
 }

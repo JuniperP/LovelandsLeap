@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3y1226gfn5tq"]
 
-[ext_resource type="Script" path="res://scripts/in_level_objects/flies/CurrentCountLabel.cs" id="1_fbgp2"]
+[ext_resource type="Script" path="res://scripts/in_level_objects/flies/FlyCountDisplay.cs" id="1_uvknv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdrkh"]
 bg_color = Color(1, 1, 1, 0.784314)
@@ -18,6 +18,7 @@ corner_radius_bottom_left = 10
 offset_right = 300.0
 offset_bottom = 225.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_hdrkh")
+script = ExtResource("1_uvknv")
 
 [node name="FlyCountLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -36,36 +37,29 @@ fit_content = true
 [node name="CurrentCountLevel" type="Label" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
 offset_left = -134.0
-offset_top = -145.0
+offset_top = 80.0
 offset_right = 134.0
-offset_bottom = -68.0
+offset_bottom = 157.0
 grow_horizontal = 2
-grow_vertical = 0
 theme_override_font_sizes/font_size = 48
 text = "Level: 4/4"
 
 [node name="CurrentCountInTotal" type="Label" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
 offset_left = -134.0
-offset_top = -85.0
+offset_top = 140.0
 offset_right = 134.0
-offset_bottom = -8.0
+offset_bottom = 217.0
 grow_horizontal = 2
-grow_vertical = 0
 theme_override_font_sizes/font_size = 48
 text = "Total: 20/20"
-script = ExtResource("1_fbgp2")
 
-[connection signal="visibility_changed" from="." to="CurrentCountInTotal" method="UpdateText"]
+[connection signal="visibility_changed" from="." to="." method="UpdateText"]
