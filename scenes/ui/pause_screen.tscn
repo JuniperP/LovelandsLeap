@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bogkg7ij1umf1"]
+[gd_scene load_steps=4 format=3 uid="uid://bogkg7ij1umf1"]
 
 [ext_resource type="PackedScene" uid="uid://c4suej1iw3wkr" path="res://scenes/ui/settings/settings.tscn" id="1_2igoe"]
 [ext_resource type="Script" path="res://scripts/ui/PauseScreen.cs" id="1_q33xn"]
+[ext_resource type="PackedScene" uid="uid://c3y1226gfn5tq" path="res://scenes/ui/fly_count_back_drop.tscn" id="2_m8ny6"]
 
 [node name="PauseScreen" type="Control"]
 process_mode = 3
@@ -19,6 +20,20 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FlyCountBackDrop" parent="BackDrop" instance=ExtResource("2_m8ny6")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 210.0
+offset_right = 150.0
+offset_bottom = 435.0
 grow_horizontal = 2
 grow_vertical = 2
 

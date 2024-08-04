@@ -91,6 +91,7 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 0
+_isInLevel = true
 
 [node name="LiveFrogReaction" parent="Camera2D/Control" instance=ExtResource("5_k7no0")]
 visible = false

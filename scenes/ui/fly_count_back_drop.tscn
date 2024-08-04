@@ -15,6 +15,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="FlyCountBackDrop" type="Panel"]
+process_mode = 3
 offset_right = 300.0
 offset_bottom = 225.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_hdrkh")
