@@ -15,6 +15,11 @@ public partial class DialogueBox : Toggleable
 	// Speed for loading text in characters per second
 	[Export] public float TextSpeed = 40f;
 
+	[ExportGroup("Sprite Animation")]
+	[Export] public Sprite2D sprite;
+	[Export] public string defaultAnimation;
+	[Export] public string talkingAnimation;
+
 	private State _loadState = State.Inactive;
 	private Label _label;
 	private Tween _tween;
