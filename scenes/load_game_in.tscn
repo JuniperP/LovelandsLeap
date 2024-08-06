@@ -3,11 +3,9 @@
 [ext_resource type="FontFile" uid="uid://dhcdmwy2ej2gw" path="res://assets/fonts/opening/Raleway/Raleway-VariableFont_wght.ttf" id="1_bp4yi"]
 [ext_resource type="Script" path="res://scripts/start_game/LoadGameIn.cs" id="1_mhsui"]
 [ext_resource type="FontFile" uid="uid://c7qfe6sxy0wg1" path="res://assets/fonts/opening/Raleway/Raleway-Bold.ttf" id="2_6djbw"]
+[ext_resource type="PackedScene" uid="uid://cx2t8r630gcb6" path="res://scenes/almost_black_backdrop.tscn" id="2_p8m87"]
 [ext_resource type="Script" path="res://scripts/start_game/LogoFade.cs" id="4_i84q3"]
 [ext_resource type="Script" path="res://scripts/start_game/SaveWarning.cs" id="5_o0rh0"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpufk"]
-bg_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 
 [node name="LoadGameIn" type="Control"]
 layout_mode = 3
@@ -21,13 +19,7 @@ script = ExtResource("1_mhsui")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="BackDrop" type="Panel" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_hpufk")
+[node name="BackDrop" parent="CanvasLayer" instance=ExtResource("2_p8m87")]
 
 [node name="SaveWarning" type="RichTextLabel" parent="CanvasLayer/BackDrop"]
 layout_mode = 1

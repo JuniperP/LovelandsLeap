@@ -21,6 +21,9 @@ public partial class LoadGameIn : Control
 		else
 			DisplayServer.WindowSetCurrentScreen(MonitorStandIn.ChosenScreen, GetWindow().GetWindowId());
 
+		// Setup loading screens
+		SceneManager.PreloadForLoading();
+
 		// Starts the splash sequence
 		EmitSignal(SignalName.StartSplash, true);
 

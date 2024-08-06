@@ -13,6 +13,7 @@ public partial class FlyCount : Node
 	public static readonly Dictionary<ToScene, int> _numFlies = new()
 	{
 		{ToScene.PlaceHolder, 0}, // Only activated in testing so no errors
+		//{ToScene.MainMenu, 0},
 		{ToScene.PlayTestLevel, 0},
 		{ToScene.IntroCutscene, 3}, // 3 for testing, but needed because Juniper doesn't use SceneManger system
 		{ToScene.Tutorial, 0},
