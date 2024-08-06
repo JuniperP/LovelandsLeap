@@ -66,7 +66,7 @@ public partial class SceneManager : Node
 	}
 
 	// Sends user to new scene
-	public static void GoToSetScene(Node useNode, bool useAsciiFrog)
+	public static void GoToSetScene(Node useNode)
 	{
 
 		// If asked, the scene switches
@@ -95,6 +95,9 @@ public partial class SceneManager : Node
 
 			// Getting rid of the static load screen
 			loadingScreen.QueueFree();
+
+			GD.Print(tree.Root.GetChildCount());
+
 		}
 	}
 

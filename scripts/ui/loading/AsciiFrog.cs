@@ -55,7 +55,7 @@ public partial class AsciiFrog : RichTextLabel
 					_canFade = false;
 
 					// Full loading animation is done so we switch scenes
-					SceneManager.GoToSetScene(this, false);
+					SceneManager.GoToSetScene(this);
 				}
 			}
 

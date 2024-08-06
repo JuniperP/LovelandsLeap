@@ -20,7 +20,7 @@ public partial class Credits : Control
 		if (Input.IsActionPressed("ui_cancel"))
 		{
 			SceneManager.SetNextGoTo(ToScene.MainMenu);
-			SceneManager.GoToSetScene(this, true);
+			SceneManager.GoToSetScene(this);
 		}
 	}
 }

@@ -22,7 +22,7 @@ public partial class LogoFade : FadeIn
 			timer.Timeout += () =>
 			{
 				SceneManager.SetNextGoTo(ToScene.MainMenu);
-				SceneManager.GoToSetScene(this, true);
+				SceneManager.GoToSetScene(this);
 			};
 		}
 
