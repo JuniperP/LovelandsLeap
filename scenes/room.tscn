@@ -80,18 +80,6 @@ scale = Vector2(1.334, 1.334)
 
 [node name="FlyCountBackDrop" parent="Camera2D/Control" instance=ExtResource("6_adkuw")]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -300.0
-offset_top = -225.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 0
-_isInLevel = true
 
 [node name="LiveFrogReaction" parent="Camera2D/Control" instance=ExtResource("5_k7no0")]
 visible = false
@@ -113,7 +101,13 @@ layout_mode = 1
 
 [node name="SpeedRunTimer" parent="Camera2D/Control" instance=ExtResource("4_cf0s8")]
 visible = false
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -350.0
+offset_right = 0.0
+grow_horizontal = 0
 
 [node name="Player" parent="." instance=ExtResource("1_1djk0")]
 z_index = 10
