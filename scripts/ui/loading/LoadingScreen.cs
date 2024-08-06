@@ -1,5 +1,16 @@
 using Godot;
 
+/*
+	Quick note:
+	For continuity, the background color of this panel should be
+	the same as the "almost_black_backdrop" scene.
+
+	I tried to use that scene as the background to carry this script
+	after I created it, but every time I try this, everything breaks.
+
+	Thus, just make sure the colors line up please :).
+*/
+
 public partial class LoadingScreen : Toggleable
 {
 	// Stating whether we can fade or not
