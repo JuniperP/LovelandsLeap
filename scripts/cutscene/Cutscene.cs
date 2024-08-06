@@ -6,19 +6,32 @@ public partial class Cutscene : Node
 	[Export(PropertyHint.File, "*.tscn")] public string NextScene;
 	[Export(PropertyHint.File, "*.tscn")] public string CancelScene;
 
-	[Export] public Node[] Elements;
+	[Export] public Node[] ElementNodes;
 
+	private ICutsceneElement[] _elements;
 	private int _currentElement = 0;
 
 	public override void _Ready()
 	{
-		// Create empty array if array is null
-		Elements ??= Array.Empty<Node>();
-
-		// Verify all cutscene elements are valid
-		foreach (Node element in Elements)
-			if (!element.IsCutsceneElement())
-				throw new InvalidOperationException("Invalid custcene elements within Elements.");
+		// If nodes array is null then create empty array for elements
+		if (ElementNodes is null)
+			_elements = Array.Empty<ICutsceneElement>();
+		// Otherwise, copy the nodes as cutscene elements
+		else
+		{
+			_elements = new ICutsceneElement[ElementNodes.Length];
+			try
+			{
+				// Copy all elements of the node array into _elements as ICutsceneElements
+				ElementNodes.CopyTo(_elements, 0);
+			}
+			catch (InvalidCastException e)
+			{
+				throw new InvalidOperationException(
+					"Invalid ElementNodes array. Ensure all nodes implement ICutsceneElement", e
+				);
+			}
+		}
 
 		// CancelScene defaults to NextScene if value is null
 		CancelScene ??= NextScene;
@@ -37,17 +50,14 @@ public partial class Cutscene : Node
 	public void StepAnimation()
 	{
 		// Base case, out of elements in array
-		if (_currentElement >= Elements.Length)
+		if (_currentElement >= _elements.Length)
 		{
 			ChangeToNext();
 			return;
 		}
 
-		Node element = Elements[_currentElement];
-		if (element is DialogueBox box)
-			box.Step(NextAnimation);
-		else if (element is AnimationPlayer anim)
-			; // TODO: Implement animation playing
+		// Perform an animation step on the current element
+		_elements[_currentElement].Step(NextAnimation);
 	}
 
 	public void NextAnimation()

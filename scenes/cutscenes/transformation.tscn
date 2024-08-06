@@ -491,7 +491,7 @@ _data = {
 "pre_transformation": SubResource("Animation_4s0el")
 }
 
-[node name="Transformation" type="Control"]
+[node name="Transformation" type="Control" node_paths=PackedStringArray("ElementNodes")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -500,6 +500,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3ohwg")
 NextScene = "res://scenes/levels/level_1.tscn"
+ElementNodes = []
 
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false

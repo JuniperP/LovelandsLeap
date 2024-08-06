@@ -10,9 +10,4 @@ public static class Extensions
 			&& GodotObject.IsInstanceValid(node)
 			&& !node.IsQueuedForDeletion();
 	}
-
-	public static bool IsCutsceneElement<T>(this T obj) where T : Node
-	{
-		return obj is DialogueBox || obj is AnimationPlayer;
-	}
 }

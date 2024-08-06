@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public partial class DialogueBox : Toggleable
+public partial class DialogueBox : Toggleable, ICutsceneElement
 {
 	// Represents various states of the dialogue box
 	private enum State
@@ -97,7 +97,7 @@ public partial class DialogueBox : Toggleable
 		_tween.TweenProperty(this, "modulate", Colors.Transparent, 0.25).SetTrans(
 			Tween.TransitionType.Sine
 		);
-		_tween.TweenInterval(1);
+		_tween.TweenInterval(1); // 1 second delay before deactivation
 		_tween.TweenCallback(Callable.From(Deactivate));
 
 		_loadState = State.Unloading;

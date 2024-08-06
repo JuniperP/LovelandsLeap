@@ -161,7 +161,7 @@ _data = {
 "intro_cutscene": SubResource("Animation_dmnhy")
 }
 
-[node name="Intro" type="Control" node_paths=PackedStringArray("Elements")]
+[node name="Intro" type="Control" node_paths=PackedStringArray("ElementNodes")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -171,7 +171,7 @@ grow_vertical = 2
 script = ExtResource("1_pqwlb")
 NextScene = "res://scenes/cutscenes/transformation.tscn"
 CancelScene = "res://scenes/levels/level_1.tscn"
-Elements = [NodePath("OrderDialogue"), NodePath("ForestDialogue")]
+ElementNodes = [NodePath("OrderDialogue"), NodePath("ForestDialogue")]
 
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false
