@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://u6bod5tg4hhb"]
+[gd_scene load_steps=5 format=3 uid="uid://u6bod5tg4hhb"]
 
 [ext_resource type="Script" path="res://scripts/ui/Credits.cs" id="1_miogk"]
 [ext_resource type="Script" path="res://scripts/ui/CreditText.cs" id="1_r4fjn"]
+[ext_resource type="PackedScene" uid="uid://cx2t8r630gcb6" path="res://scenes/almost_black_backdrop.tscn" id="2_17yki"]
 [ext_resource type="AudioStream" uid="uid://bak83atxgk1vl" path="res://audio/music/abomination.wav" id="3_yyq67"]
 
 [node name="Credits" type="Control"]
@@ -13,20 +14,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_miogk")
 
-[node name="Backdrop" type="Panel" parent="."]
+[node name="AlmostBlackBackdrop" parent="." instance=ExtResource("2_17yki")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
-[node name="CreditText" type="Label" parent="Backdrop"]
+[node name="CreditText" type="Label" parent="AlmostBlackBackdrop"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 6.0
 offset_bottom = 6379.0
 grow_horizontal = 2
 grow_vertical = 2
