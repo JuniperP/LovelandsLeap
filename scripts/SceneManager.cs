@@ -9,7 +9,7 @@ public enum ToScene : int
 	IntroCutscene = -3,
 	Monitor = -4,
 	BlackBackDrop = -5,
-	LoadingScreen = -6,
+	SplashScreen = -6,
 	PlaceHolder = -7,
 	PlayTestLevel = 0,
 	Tutorial = 1,
@@ -32,13 +32,13 @@ public partial class SceneManager : Node
 		thus causing an infinite loop when if one scene tries going to another. (Also starts
 		corrupting scenes!)
 	*/
-	private static readonly Dictionary<ToScene, string> _scenes = new()
+	public static readonly Dictionary<ToScene, string> _scenes = new()
 	{
 		{ToScene.MainMenu, "res://scenes/ui/main_menu.tscn"},
 		{ToScene.Credits,  "res://scenes/credits.tscn"},
 		{ToScene.IntroCutscene,  "res://scenes/cutscenes/intro.tscn"},
 		{ToScene.BlackBackDrop,  "res://scenes/almost_black_backdrop.tscn"},
-		{ToScene.LoadingScreen,  "res://scenes/ui/loading_screen.tscn"},
+		{ToScene.SplashScreen,  "res://scenes/load_game_in.tscn"},
 		{ToScene.Monitor,  "res://scenes/ui/settings/monitor_stand_in.tscn"},
 		{ToScene.PlayTestLevel,  "res://scenes/levels/play_test.tscn"},
 		{ToScene.Tutorial,  "res://scenes/levels/tutorial.tscn"},
@@ -62,28 +62,15 @@ public partial class SceneManager : Node
 		// If asked, the scene switches
 		if (_goTo != ToScene.PlaceHolder)
 		{
-			// The often called tree we will manipulate
-			SceneTree tree = useNode.GetTree();
-
-			// Setting the current scene so it can be deleted
-			tree.CurrentScene = tree.Root.GetChild(tree.Root.GetChildCount() - 1);
-
-			// Adding the loading box to root
-			PackedScene loadingScene;
-			loadingScene = (PackedScene) ResourceLoader.Load(_scenes[ToScene.BlackBackDrop]);
+			// Loading in a backdrop to hide the debug boxes
+			PackedScene loadingScene = (PackedScene) ResourceLoader.Load(_scenes[ToScene.BlackBackDrop]);
 			Node loadingScreen = loadingScene.Instantiate();
-			tree.Root.CallDeferred("add_child", loadingScreen);
+			useNode.GetTree().Root.CallDeferred("add_child", loadingScreen);
 
-			// Loading up the next area to goto
-			PackedScene loadScene = (PackedScene)ResourceLoader.Load(_scenes[_goTo]);
+			// Switching scenes
+			useNode.GetTree().ChangeSceneToFile(_scenes[_goTo]);
 
-			// Getting rid of the current scene
-			tree.CurrentScene.QueueFree();
-
-			// Adding new loaded scene to tree as current scene
-			tree.Root.CallDeferred("add_child", loadScene.Instantiate());
-
-			// Getting rid of the static load screen
+			// Getting rid of the hiding box
 			loadingScreen.QueueFree();
 		}
 	}

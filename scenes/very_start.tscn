@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://8ekx6he8xy86"]
+
+[ext_resource type="Script" path="res://scripts/ui/VeryStart.cs" id="1_g2so4"]
+[ext_resource type="PackedScene" uid="uid://cx2t8r630gcb6" path="res://scenes/almost_black_backdrop.tscn" id="2_ems0f"]
+
+[node name="VeryStart" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g2so4")
+
+[node name="AlmostBlackBackdrop" parent="." instance=ExtResource("2_ems0f")]
+layout_mode = 1
+
+[connection signal="ready" from="AlmostBlackBackdrop" to="." method="LoadGame"]

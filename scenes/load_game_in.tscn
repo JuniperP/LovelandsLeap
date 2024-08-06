@@ -22,6 +22,7 @@ follow_viewport_enabled = true
 [node name="BackDrop" parent="CanvasLayer" instance=ExtResource("2_p8m87")]
 
 [node name="SaveWarning" type="RichTextLabel" parent="CanvasLayer/BackDrop"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
