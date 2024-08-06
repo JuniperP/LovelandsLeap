@@ -55,7 +55,7 @@ public partial class LoadingScreen : Toggleable
 		}
 
 		// Changing the fade accordingly
-		SelfModulate = new Color(0, 0, 0, TransTheFade);
+		SelfModulate = new Color(1f, 1f, 1f, TransTheFade);
 	}
 
 	// Easy signal transfers to switch fading types
