@@ -24,9 +24,6 @@ public partial class SceneManager : Node
 	// Where we will be changing scenes to
 	private static ToScene _goTo = ToScene.PlaceHolder;
 
-	// Preloading screens for loading
-	private static ResourcePreloader _preloader = new ResourcePreloader();
-
 	/* 
 		Dictionary of strings for paths of scenes that will be changed to.
 		This gives us only a single place by which we must update the paths names.
@@ -52,13 +49,6 @@ public partial class SceneManager : Node
 	};
 
 
-	// Preloading the scenes we will have to use
-	public static void PreloadForLoading()
-	{
-		_preloader.AddResource("BackDrop", ResourceLoader.Load(_scenes[ToScene.BlackBackDrop]));
-	}
-
-
 	// Allows the client to set where to go to next
 	public static void SetNextGoTo(ToScene scene)
 	{
@@ -80,7 +70,7 @@ public partial class SceneManager : Node
 
 			// Adding the loading box to root
 			PackedScene loadingScene;
-			loadingScene = (PackedScene)_preloader.GetResource("BackDrop");
+			loadingScene = (PackedScene) ResourceLoader.Load(_scenes[ToScene.BlackBackDrop]);
 			Node loadingScreen = loadingScene.Instantiate();
 			tree.Root.CallDeferred("add_child", loadingScreen);
 
@@ -95,9 +85,6 @@ public partial class SceneManager : Node
 
 			// Getting rid of the static load screen
 			loadingScreen.QueueFree();
-
-			GD.Print(tree.Root.GetChildCount());
-
 		}
 	}
 
