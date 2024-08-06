@@ -29,4 +29,9 @@ stream = ExtResource("3_5ybmn")
 autoplay = true
 bus = &"Music"
 
+[connection signal="ChangedFrog" from="Room/Camera2D/Control/PauseScreen/Settings/BackBox/TabContainer/Other/OtherToChange/LiveFrogReaction/ToggleReaction" to="Room/Camera2D/Control/LiveFrogReaction" method="UpdateReaction"]
+
 [editable path="Room"]
+[editable path="Room/Camera2D/Control/PauseScreen"]
+[editable path="Room/Camera2D/Control/PauseScreen/Settings"]
+[editable path="Room/Camera2D/Control/PauseScreen/Settings/BackBox/TabContainer/Other/OtherToChange"]

@@ -1,12 +1,18 @@
+using Godot;
+
 public partial class ToggleReaction : ToggleButton
 {
 	// Whether or not to have the reaction on
 	public static bool HaveReaction = false;
 
+
+	// Signal to create frog reaction
+	[Signal] public delegate void ChangedFrogEventHandler();
+
 	// Toggling the desired effect
 	public override void Toggle()
 	{
-		// Nothing more at the moment
+		EmitSignal(SignalName.ChangedFrog);
 	}
 
 	// Needed getters and setters

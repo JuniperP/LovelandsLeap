@@ -20,7 +20,7 @@ grow_vertical = 2
 metadata/_edit_lock_ = true
 
 [node name="VerburgingToggle" type="Label" parent="."]
-layout_mode = 0
+layout_mode = 1
 offset_left = 25.0
 offset_top = 125.0
 offset_right = 408.0
@@ -152,6 +152,7 @@ theme_override_font_sizes/font_size = 56
 text = ":"
 
 [node name="LiveFrogReaction" type="Label" parent="."]
+layout_mode = 1
 offset_left = 25.0
 offset_top = 215.0
 offset_right = 408.0
