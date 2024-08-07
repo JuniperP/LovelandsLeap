@@ -11,13 +11,11 @@ public partial class CutAnimationPlayer : AnimationPlayer, ICutsceneElement
     {
         _callback = callback;
 
-        // If currently playing, end animation and perform callback
+        // If currently playing, end animation
         if (IsPlaying())
-        {
+            // Seeking the end will also trigger the callback method track
             Seek(CurrentAnimationLength);
-            Stop(true);
-            callback();
-        }
+
         // Otherwise, start the animation
         else
         {
