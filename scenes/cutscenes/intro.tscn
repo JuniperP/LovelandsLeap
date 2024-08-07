@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://br888scm3xpk"]
+[gd_scene load_steps=22 format=3 uid="uid://br888scm3xpk"]
 
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/main_menu.jpg" id="1_1v0w2"]
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_pqwlb"]
@@ -247,158 +247,6 @@ _data = {
 "main": SubResource("Animation_kks6q")
 }
 
-[sub_resource type="Animation" id="Animation_dmnhy"]
-resource_name = "IntroCutscene"
-length = 26.0
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("OrderDialogue:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3, 7.25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("OrderDialogue:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3, 3.25, 7, 7.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("HumanLoc/Sprite:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("HumanLoc/Sprite:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 8, 8.25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ForestDialogue:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 9, 16.25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ForestDialogue:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 9, 9.25, 16, 16.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/6/type = "method"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("HumanLoc/Sprite")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(9, 16.25, 17),
-"transitions": PackedFloat32Array(1, 1, 1),
-"values": [{
-"args": [&"talking"],
-"method": &"play"
-}, {
-"args": [&"idle"],
-"method": &"play"
-}, {
-"args": [&"walking"],
-"method": &"play"
-}]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("HumanLoc:position")
-tracks/7/interp = 2
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(17, 24),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(429, 791), Vector2(2100, 791)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Overlay:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 23),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Overlay:modulate")
-tracks/9/interp = 2
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 23, 25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/10/type = "method"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath(".")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(26),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"ChangeToNext"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qtv0h"]
-_data = {
-"intro_cutscene": SubResource("Animation_dmnhy")
-}
-
 [node name="Intro" type="Control" node_paths=PackedStringArray("ElementNodes")]
 layout_mode = 3
 anchors_preset = 15
@@ -506,11 +354,6 @@ layout_mode = 0
 stream = ExtResource("8_5gsvf")
 autoplay = true
 bus = &"Music"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_qtv0h")
-}
 
 [node name="LoadingScreen" parent="." instance=ExtResource("10_t3rc1")]
 visible = false
