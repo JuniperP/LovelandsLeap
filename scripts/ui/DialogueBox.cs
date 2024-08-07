@@ -16,9 +16,9 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 	[Export] public float TextSpeed = 40f;
 
 	[ExportGroup("Sprite Animation")]
-	[Export] public Sprite2D sprite;
-	[Export] public string defaultAnimation;
-	[Export] public string talkingAnimation;
+	[Export] public AnimatedSprite2D Sprite;
+	[Export] public string DefaultAnimation = "idle";
+	[Export] public string TalkingAnimation = "talking";
 
 	private State _loadState = State.Inactive;
 	private Label _label;
@@ -30,6 +30,8 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 		_label = GetNode<Label>("BackBox/Text");
 
 		// Set initial properties
+		if (Sprite.IsValid())
+			Sprite.Play(DefaultAnimation);
 		Hide();
 		Modulate = Colors.Transparent;
 		_label.VisibleRatio = 0;
@@ -69,12 +71,20 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 		_tween.TweenProperty(this, "modulate", Colors.White, 0.25).SetTrans(
 			Tween.TransitionType.Sine
 		);
+		TweenPlayAnimation(TalkingAnimation);
+
 		double textTime = _label.Text.Length / TextSpeed;
 		_tween.TweenProperty(_label, "visible_ratio", 1, textTime);
 
 		_tween.TweenCallback(Callable.From(Complete));
 
 		_loadState = State.Loading;
+	}
+
+	private void TweenPlayAnimation(string animation)
+	{
+		if (Sprite.IsValid())
+			_tween.TweenCallback(Callable.From(() => { Sprite.Play(animation); }));
 	}
 
 	// Complete fade and text
@@ -92,6 +102,9 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 	// Fade out box
 	private void Unload()
 	{
+		if (Sprite.IsValid())
+			Sprite.Play(DefaultAnimation);
+
 		// Use a new tween for fading and callback
 		_tween = CreateTween();
 		_tween.TweenProperty(this, "modulate", Colors.Transparent, 0.25).SetTrans(

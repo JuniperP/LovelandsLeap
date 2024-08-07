@@ -470,10 +470,11 @@ sprite_frames = ExtResource("3_mf1q6")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="ForestDialogue" parent="." instance=ExtResource("4_vo1hj")]
+[node name="ForestDialogue" parent="." node_paths=PackedStringArray("Sprite") instance=ExtResource("4_vo1hj")]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
+Sprite = NodePath("../HumanLoc/Sprite")
 
 [node name="ProfilePicture" parent="ForestDialogue/BackBox" index="1"]
 texture = ExtResource("6_1deqh")
