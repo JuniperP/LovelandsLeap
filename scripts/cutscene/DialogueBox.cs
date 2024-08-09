@@ -84,7 +84,7 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 	private void TweenPlayAnimation(string animation)
 	{
 		if (Sprite.IsValid())
-			_tween.TweenCallback(Callable.From(() => { Sprite.Play(animation); }));
+			_tween.TweenCallback(Callable.From(() => Sprite.Play(animation)));
 	}
 
 	// Complete fade and text
