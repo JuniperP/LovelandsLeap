@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://l1sc7rrtk6mn"]
 
-[ext_resource type="Script" path="res://scripts/in_level_objects/enter_exit_fades/FadeTransition.cs" id="1_0gttq"]
+[ext_resource type="Script" path="res://scripts/in_level_objects/FadeTransition.cs" id="1_y6f60"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80ngs"]
 size = Vector2(100, 300)
@@ -11,7 +11,7 @@ visibility_layer = 2
 z_index = 20
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_0gttq")
+script = ExtResource("1_y6f60")
 
 [node name="CollisionFade" type="CollisionShape2D" parent="."]
 light_mask = 2
