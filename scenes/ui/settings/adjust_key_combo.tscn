@@ -40,5 +40,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_50hl3")
 text_overrun_behavior = 1
 
+[connection signal="mouse_entered" from="MoveLabel/ButtonToAdjust" to="." method="CantDoubleClick"]
+[connection signal="mouse_exited" from="MoveLabel/ButtonToAdjust" to="." method="CantDoubleClick"]
 [connection signal="pressed" from="MoveLabel/ButtonToAdjust" to="." method="ChangeValue"]
 [connection signal="visibility_changed" from="MoveLabel/ButtonToAdjust" to="." method="UpdateText"]

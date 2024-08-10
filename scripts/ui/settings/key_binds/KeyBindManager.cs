@@ -11,6 +11,9 @@ public partial class KeyBindManager : Control
 	// Used to see if a new key bind is about to be set
 	private bool _toBeSet;
 
+	// Used to ensure the user doesn't double click for setting keybinds
+	private bool _preventDoubleClick;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -23,6 +26,7 @@ public partial class KeyBindManager : Control
 
 		// Set up changing the value in the future
 		_toBeSet = false;
+		_preventDoubleClick = false;
 	}
 
 	// Updating the current info
@@ -36,12 +40,19 @@ public partial class KeyBindManager : Control
 	// Used to adjust the key bind if user asks for a change
 	private void ChangeValue()
 	{
-		_ourButton.Text = "...";
-		_toBeSet = true;
+		if (_preventDoubleClick)
+		{
+			CantDoubleClick();
+		}
+		else
+		{
+			_ourButton.Text = "...";
+			_toBeSet = true;
 
-		// Stopping the instance of escaping right after entering a key bind
-		if (_actionToSet == UserAction.Cancel)
-			InputMap.ActionEraseEvents(Keybinds._acts[_actionToSet].Mapping);
+			// Stopping the instance of escaping right after entering a key bind
+			if (_actionToSet == UserAction.Cancel)
+				InputMap.ActionEraseEvents(Keybinds._acts[_actionToSet].Mapping);
+		}
 	}
 
 	// Checks for any input and if a valid input is given it is sent to change our key binds
@@ -58,6 +69,13 @@ public partial class KeyBindManager : Control
 
 			// Resets marker of to be set
 			_toBeSet = false;
+
+			// Ensuring the user doesn't click the button to change the bind again
+			if (ourInput is InputEventMouseButton && ((InputEventMouseButton)ourInput).ButtonIndex == MouseButton.Left)
+				_preventDoubleClick = true;
+			else
+				SoundManager.PlaySound(SFX.UIButton, this);
+
 		}
 	}
 
@@ -73,5 +91,12 @@ public partial class KeyBindManager : Control
 
 		// Maps wanted button
 		InputMap.ActionAddEvent(Keybinds._acts[ourAction].Mapping, Keybinds._acts[ourAction].Input);
+	}
+
+
+	// Used for easy signal changes to stop double clicking
+	private void CantDoubleClick()
+	{
+		_preventDoubleClick = false;
 	}
 }
