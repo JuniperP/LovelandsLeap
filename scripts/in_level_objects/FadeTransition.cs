@@ -10,14 +10,18 @@ public partial class FadeTransition : Area2D
 	{
 		if (node is Player)
 		{
+			// Pauses so the player cant run around
+			GetTree().Paused = true;
+
 			// Saves the game
 			LoadLevelData.SaveData(_sendsTo);
 
+			// Resting the amount flies for the in level count
+			FlyCount.FliesGottenLevel = 0;
+			FlyCount.TotalLevelFlies = 0;
+
 			// Sets up to go to the next area
 			SceneManager.SetNextGoTo(_sendsTo);
-
-			// Pauses so the player cant run around
-			GetTree().Paused = true;
 
 			// Starts into next scene
 			LoadingScreen.FadeIn();

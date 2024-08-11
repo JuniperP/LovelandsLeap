@@ -26,15 +26,5 @@ public partial class FlyCount : Node
 		FliesGottenTotal++;
 		FliesGottenLevel++;
 	}
-	
-	public static void EnteringNewArea()
-	{
-		// TODO: Saving the number of flies gotten
-
-		// Resting the amount of flies in the level
-		FliesGottenLevel = 0;
-		TotalLevelFlies = 0;
-
-	}
 
 }

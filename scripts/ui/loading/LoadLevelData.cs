@@ -16,9 +16,15 @@ public partial class LoadLevelData : Node
 		FileAccess saveFile = FileAccess.Open(_saveTo, FileAccess.ModeFlags.Write);
 
 		// Converting where the player currently is into json format
-		string jsonString = Json.Stringify((Godot.Collections.Dictionary)new() { { "PlayerAtLevel", (int) level } });
+		string jsonString = Json.Stringify((Godot.Collections.Dictionary)new() { { "PlayerAtLevel", (int)level } });
 
-		// Storing data
+		// Storing level data
+		saveFile.StoreLine(jsonString);
+
+		// Converting the player's fly count into json format
+		jsonString = Json.Stringify((Godot.Collections.Dictionary)new() { { "FlyCount", (int)FlyCount.FliesGottenTotal } });
+
+		// Storing fly data
 		saveFile.StoreLine(jsonString);
 
 		// Ensuring the file is done being changed
@@ -35,11 +41,13 @@ public partial class LoadLevelData : Node
 		// Getting where we saved from
 		FileAccess saveFile = FileAccess.Open(_saveTo, FileAccess.ModeFlags.Read);
 
-		// Level to return
+		// Level to return (PlayTestLevel assigned for debugging)
 		ToScene giveLevel = ToScene.PlayTestLevel;
 
 		// Json setup
 		Json json = new Json();
+
+		// Getting levels
 		Error testFile = json.Parse(saveFile.GetLine());
 		if (testFile == Error.Ok)
 		{
@@ -48,6 +56,20 @@ public partial class LoadLevelData : Node
 
 			// Converting from dictionary to level
 			giveLevel = (ToScene)(int)level["PlayerAtLevel"];
+		}
+		else
+			GD.Print(testFile);
+
+
+		// Getting flies
+		testFile = json.Parse(saveFile.GetLine());
+		if (testFile == Error.Ok)
+		{
+			// Getting the value of the level from the save file
+			Godot.Collections.Dictionary flyCount = (Godot.Collections.Dictionary)json.Data;
+
+			// Converting from dictionary to level
+			giveLevel = (ToScene)(int)flyCount["FlyCount"];
 		}
 		else
 			GD.Print(testFile);
