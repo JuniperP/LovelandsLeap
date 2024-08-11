@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://duhqqspapvtn0"]
+[gd_scene load_steps=6 format=3 uid="uid://duhqqspapvtn0"]
 
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background.tscn" id="1_u3dt8"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="4_6pusj"]
 [ext_resource type="AudioStream" uid="uid://ca1nkabl72yvt" path="res://audio/music/loveland__platforming_music.wav" id="4_iwaey"]
+[ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="5_t1vew"]
 
 [node name="Level1" type="Control"]
 layout_mode = 3
@@ -27,6 +28,9 @@ layer_0/tile_data = PackedInt32Array(589824, 65539, 1, 589827, 65539, 0, 589828,
 
 [node name="FadeTransition" parent="Room" instance=ExtResource("4_6pusj")]
 position = Vector2(2319, 653)
+
+[node name="Fly" parent="Room" instance=ExtResource("5_t1vew")]
+position = Vector2(1145, 44)
 
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_iwaey")
