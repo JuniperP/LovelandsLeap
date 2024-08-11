@@ -12,7 +12,7 @@ public partial class FlyBehavoir : Area2D
 	// Letting the player eat the fly
 	private void Collect(Node2D node)
 	{
-		if (node is Player || node is TongueProjectile)
+		if (node is Player || node is TongueProjectile || node.GetParent() is TongueLine)
 		{
 			SoundManager.PlaySound(SFX.Croak, GetTree().Root);
 			FlyCount.UpCount();

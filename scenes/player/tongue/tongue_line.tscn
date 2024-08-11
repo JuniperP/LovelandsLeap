@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnivan88wrgo2"]
+[gd_scene load_steps=4 format=3 uid="uid://bnivan88wrgo2"]
 
 [ext_resource type="Texture2D" uid="uid://hii5ek3scgjb" path="res://assets/tongue.png" id="1_54py5"]
 [ext_resource type="Script" path="res://scripts/player/tongue/TongueLine.cs" id="2_duvw6"]
 
-[node name="TongueLine" type="Line2D"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_82gfq"]
+b = Vector2(0, 0)
+
+[node name="TongueLine" type="Line2D" node_paths=PackedStringArray("_hitBox")]
 points = PackedVector2Array(0, 0, 0, 0)
 texture = ExtResource("1_54py5")
 script = ExtResource("2_duvw6")
+_hitBox = NodePath("Area2D/CollisionShape2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_82gfq")
