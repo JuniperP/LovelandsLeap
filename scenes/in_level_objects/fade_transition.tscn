@@ -6,9 +6,6 @@
 size = Vector2(100, 300)
 
 [node name="FadeTransition" type="Area2D"]
-light_mask = 2
-visibility_layer = 2
-z_index = 20
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_y6f60")

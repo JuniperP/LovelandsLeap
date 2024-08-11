@@ -7,17 +7,12 @@ public partial class FlyBehavoir : Area2D
 	{
 		// Match level count to fly assets used
 		FlyCount.TotalLevelFlies++;
-
-		// Setting up right collision because godot is cringe
-		SetCollisionLayerValue(2, true);
-		SetCollisionMaskValue(2, true);
-
 	}
 
 	// Letting the player eat the fly
 	private void Collect(Node2D node)
 	{
-		if (node is Player)
+		if (node is Player || node is TongueProjectile)
 		{
 			SoundManager.PlaySound(SFX.Croak, node);
 			FlyCount.UpCount();

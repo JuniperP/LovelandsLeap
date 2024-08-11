@@ -30,7 +30,10 @@ layer_0/tile_data = PackedInt32Array(589824, 65539, 1, 589827, 65539, 0, 589828,
 position = Vector2(2319, 653)
 
 [node name="Fly" parent="." instance=ExtResource("5_t1vew")]
-position = Vector2(712, 44)
+position = Vector2(1060, -256)
+
+[node name="Fly2" parent="." instance=ExtResource("5_t1vew")]
+position = Vector2(2236, 268)
 
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_iwaey")

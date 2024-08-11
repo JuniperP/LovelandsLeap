@@ -7,12 +7,11 @@
 size = Vector2(100, 100)
 
 [node name="Fly" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_ocbs5")
 
 [node name="FlyHitBox" type="CollisionShape2D" parent="."]
-light_mask = 2
-visibility_layer = 2
-z_index = 20
 shape = SubResource("RectangleShape2D_xgmb8")
 
 [node name="FlySprite" type="Sprite2D" parent="FlyHitBox"]
