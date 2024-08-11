@@ -69,7 +69,7 @@ public partial class LoadLevelData : Node
 			Godot.Collections.Dictionary flyCount = (Godot.Collections.Dictionary)json.Data;
 
 			// Converting from dictionary to level
-			giveLevel = (ToScene)(int)flyCount["FlyCount"];
+			FlyCount.FliesGottenTotal = (int)flyCount["FlyCount"];
 		}
 		else
 			GD.Print(testFile);
