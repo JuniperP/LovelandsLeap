@@ -29,8 +29,8 @@ layer_0/tile_data = PackedInt32Array(589824, 65539, 1, 589827, 65539, 0, 589828,
 [node name="FadeTransition" parent="Room" instance=ExtResource("4_6pusj")]
 position = Vector2(2319, 653)
 
-[node name="Fly" parent="Room" instance=ExtResource("5_t1vew")]
-position = Vector2(1145, 44)
+[node name="Fly" parent="." instance=ExtResource("5_t1vew")]
+position = Vector2(712, 44)
 
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_iwaey")
