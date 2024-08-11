@@ -14,7 +14,7 @@ public partial class MainMenu : Control
 	// Sets up to start the game
 	private void OnNewGameButtonPressed()
 	{
-		if(LoadLevelData.SavePathExist())
+		if (LoadLevelData.SavePathExist())
 			EmitSignal(SignalName.TriedStartGame);
 		else
 			StartNewGame();
@@ -23,13 +23,17 @@ public partial class MainMenu : Control
 	// Confirm starts a new game
 	private void StartNewGame()
 	{
+		// Overwrite save data
 		LoadLevelData.SaveData(ToScene.Level1);
+
+		// Accounting for speedrun
+		if (ToggleSpeedrun.HasTimer)
+			SpeedRunTimer.StartSpeedrun();
+
+		// Going to the start of game
 		SceneManager.SetNextGoTo(ToScene.IntroCutscene);
 		LoadingScreen.FadeIn();
 
-		// Accounting for speedrun
-		if(ToggleSpeedrun.HasTimer)
-			SpeedRunTimer.StartSpeedrun();
 	}
 
 	// Sets up to run the credits
