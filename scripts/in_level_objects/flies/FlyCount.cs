@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Godot;
 
 public partial class FlyCount : Node
@@ -10,18 +9,10 @@ public partial class FlyCount : Node
 	public static int FliesGottenTotal = 0;
 
 	// Dictionary of the number of flies per level
-	public static readonly Dictionary<ToScene, int> _numFlies = new()
-	{
-		{ToScene.PlaceHolder, 0}, // Only activated in testing so no errors
-		{ToScene.MainMenu, 0}, // Temporary before we rid of the dictionary system
-		{ToScene.PlayTestLevel, 0},
-		{ToScene.IntroCutscene, 3}, // 3 for testing, but needed because Juniper doesn't use SceneManger system
-		{ToScene.Tutorial, 0},
-		{ToScene.Level1, 3}
-	};
+	public static int TotalLevelFlies = 0;
 
 	// Total flies number in whole game
-	public static int TotalFlies = 20;
+	public static int TotalGameFlies = 20;
 
 
 	// Used to adjust around new games and loading games
@@ -38,10 +29,12 @@ public partial class FlyCount : Node
 	
 	public static void EnteringNewArea()
 	{
-		// Resting the amount
-		FliesGottenLevel = 0;
-
 		// TODO: Saving the number of flies gotten
+
+		// Resting the amount of flies in the level
+		FliesGottenLevel = 0;
+		TotalLevelFlies = 0;
+
 	}
 
 }

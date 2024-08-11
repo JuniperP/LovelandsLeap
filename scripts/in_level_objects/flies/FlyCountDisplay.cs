@@ -7,12 +7,12 @@ public partial class FlyCountDisplay : Panel
 	{
 		// Updating the current levels text
 		Label level = GetNode<Label>("CurrentCountLevel");
-		level.Text = $"Level: {FlyCount.FliesGottenLevel}/{FlyCount._numFlies[SceneManager.GetNextGoTo()]}";
+		level.Text = $"Level: {FlyCount.FliesGottenLevel}/{FlyCount.TotalLevelFlies}";
 
 
 		// Updating the total numbers text
 		Label total = GetNode<Label>("CurrentCountInTotal");
-		total.Text = $"Total: {FlyCount.FliesGottenTotal}/{FlyCount.TotalFlies}";
+		total.Text = $"Total: {FlyCount.FliesGottenTotal}/{FlyCount.TotalGameFlies}";
 	}
 
 }
