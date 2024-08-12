@@ -19,7 +19,7 @@ public partial class LeaderTrack : Area2D
 	// Helper bool to say if the item on the track should be moving
 	private bool _move;
 
-	[Signal] public delegate void ReachedEndEventHandler(Node2D node);
+	[Signal] public delegate void ReachedEndEventHandler(Node2D node, int trackSpeed);
 
 
 	[ExportGroup("SetUp")]
@@ -85,12 +85,13 @@ public partial class LeaderTrack : Area2D
 
 				// Passing the scene if the end is reached
 				if (_instanScene.Position == _lineToFollow.B)
-					EmitSignal(SignalName.ReachedEnd, _instanScene);
+				{
+					EmitSignal(SignalName.ReachedEnd, _instanScene, TrackSpeed);
+					_move = false;
+				}
+					
 			}
 		}
-
-
-
 	}
 
 
