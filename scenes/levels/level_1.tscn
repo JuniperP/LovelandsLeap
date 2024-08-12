@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://duhqqspapvtn0"]
+[gd_scene load_steps=8 format=3 uid="uid://duhqqspapvtn0"]
 
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background.tscn" id="1_u3dt8"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="4_6pusj"]
 [ext_resource type="AudioStream" uid="uid://ca1nkabl72yvt" path="res://audio/music/loveland__platforming_music.wav" id="4_iwaey"]
 [ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="5_t1vew"]
+[ext_resource type="PackedScene" uid="uid://3ocqcs25ejwi" path="res://scenes/in_level_objects/leader_track.tscn" id="5_vvtnc"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b04kl"]
+resource_local_to_scene = true
+a = Vector2(0, 300)
+b = Vector2(1920, 0)
 
 [node name="Level1" type="Control"]
 layout_mode = 3
@@ -40,7 +46,14 @@ stream = ExtResource("4_iwaey")
 autoplay = true
 bus = &"Music"
 
+[node name="LeaderTrack" parent="." instance=ExtResource("5_vvtnc")]
+position = Vector2(369, 349)
+
+[node name="LineToFollow" parent="LeaderTrack" index="0"]
+shape = SubResource("SegmentShape2D_b04kl")
+
 [editable path="Room"]
 [editable path="Room/Camera2D/Control/PauseScreen"]
 [editable path="Room/Camera2D/Control/PauseScreen/Settings"]
 [editable path="Room/Camera2D/Control/PauseScreen/Settings/BackBox/TabContainer/Other/OtherToChange"]
+[editable path="LeaderTrack"]
