@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://3ocqcs25ejwi"]
+
+[ext_resource type="Script" path="res://scripts/in_level_objects/tracks/LeaderTrack.cs" id="1_77jhk"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_m5si0"]
+b = Vector2(0, 0)
+
+[node name="LeaderTrack" type="Area2D"]
+script = ExtResource("1_77jhk")
+
+[node name="LineToFollow" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_m5si0")
