@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://drmiub3t1pxal"]
+[gd_scene load_steps=16 format=3 uid="uid://drmiub3t1pxal"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_3ohwg"]
+[ext_resource type="Script" path="res://scripts/cutscene/CutscenePause.cs" id="2_on0j3"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="3_5l45d"]
 [ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backround_stripey.jpg" id="3_7q2re"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/mc_portrait.png" id="4_4qoas"]
@@ -500,11 +501,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3ohwg")
 NextScene = "res://scenes/levels/level_1.tscn"
-ElementNodes = []
+ElementNodes = [NodePath("3s Pause")]
 
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0)
 z_index = 100
 layout_mode = 1
 anchors_preset = 15
@@ -513,6 +513,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="3s Pause" type="Timer" parent="."]
+wait_time = 3.0
+script = ExtResource("2_on0j3")
 
 [node name="Background" type="Control" parent="."]
 z_index = -10
@@ -699,13 +703,12 @@ text = "*Croak... (angrily)*"
 [node name="HumanLoc" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 600.0
+offset_left = -200.0
 offset_top = 790.0
-offset_right = 600.0
+offset_right = -200.0
 offset_bottom = 790.0
 
 [node name="HumanSprite" type="AnimatedSprite2D" parent="HumanLoc"]
-visible = false
 scale = Vector2(0.075, 0.075)
 sprite_frames = ExtResource("7_pxjvu")
 animation = &"walking"
@@ -724,6 +727,7 @@ scale = Vector2(0.075, 0.075)
 sprite_frames = ExtResource("8_hxawq")
 animation = &"idle"
 autoplay = "idle"
+flip_h = true
 
 [node name="FrogLoc" type="Control" parent="."]
 layout_mode = 3
@@ -734,6 +738,7 @@ offset_right = 600.0
 offset_bottom = 790.0
 
 [node name="FrogSprite" type="AnimatedSprite2D" parent="FrogLoc"]
+visible = false
 scale = Vector2(0.765957, 0.765957)
 sprite_frames = ExtResource("9_s3mif")
 animation = &"croak"
@@ -751,7 +756,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 libraries = {
 "": SubResource("AnimationLibrary_hfskv")
 }
-autoplay = "pre_transformation"
 next/pre_transformation = &"post_transformation"
 
 [editable path="Dialogue/Human1"]

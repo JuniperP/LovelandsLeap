@@ -259,6 +259,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="ForestDialogue" parent="." node_paths=PackedStringArray("Sprite") instance=ExtResource("4_vo1hj")]
+visible = false
 layout_mode = 1
 talkingAudio = ExtResource("9_15ff6")
 Sprite = NodePath("../HumanLoc/Sprite")
