@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://br888scm3xpk"]
+[gd_scene load_steps=22 format=3 uid="uid://br888scm3xpk"]
 
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/main_menu.jpg" id="1_1v0w2"]
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_pqwlb"]
@@ -6,8 +6,10 @@
 [ext_resource type="Script" path="res://scripts/cutscene/CutscenePause.cs" id="3_xpijr"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="4_vo1hj"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="5_ck5ta"]
+[ext_resource type="AudioStream" uid="uid://b81w6w82dsxf4" path="res://audio/sfx/dialogue/mc/mc_1_passive_babble_1.wav" id="5_w176a"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/mc_portrait.png" id="6_1deqh"]
 [ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/music/loveland_cutscene_music.wav" id="8_5gsvf"]
+[ext_resource type="AudioStream" uid="uid://rbqw1hh7q1es" path="res://audio/sfx/dialogue/mc/mc_4_angry_babble_1.wav" id="9_15ff6"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="9_anup7"]
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="10_t3rc1"]
 
@@ -227,6 +229,7 @@ script = ExtResource("3_xpijr")
 [node name="OrderDialogue" parent="." instance=ExtResource("4_vo1hj")]
 visible = false
 layout_mode = 1
+talkingAudio = ExtResource("5_w176a")
 
 [node name="ProfilePicture" parent="OrderDialogue/BackBox" index="1"]
 texture = ExtResource("6_1deqh")
@@ -256,8 +259,8 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="ForestDialogue" parent="." node_paths=PackedStringArray("Sprite") instance=ExtResource("4_vo1hj")]
-visible = false
 layout_mode = 1
+talkingAudio = ExtResource("9_15ff6")
 Sprite = NodePath("../HumanLoc/Sprite")
 
 [node name="ProfilePicture" parent="ForestDialogue/BackBox" index="1"]

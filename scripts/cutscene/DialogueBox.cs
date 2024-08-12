@@ -15,6 +15,9 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 	// Speed for loading text in characters per second
 	[Export] public float TextSpeed = 40f;
 
+	// [ExportGroup("Talking SFX")]
+	[Export] public AudioStream talkingAudio;
+
 	[ExportGroup("Sprite Animation")]
 	[Export] public AnimatedSprite2D Sprite;
 	[Export] public string DefaultAnimation = "idle";
@@ -24,6 +27,7 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 	private Label _label;
 	private Tween _tween;
 	private Action _callBack;
+	private AudioStreamPlayer _audioPlayer;
 
 	public override void _Ready()
 	{
@@ -68,14 +72,18 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 		// Use a new tween for fading and callback
 		_tween = CreateTween();
 
+		// Load in dialogue box and start talking animation and sfx
 		_tween.TweenProperty(this, "modulate", Colors.White, 0.25).SetTrans(
 			Tween.TransitionType.Sine
 		);
 		TweenPlayAnimation(TalkingAnimation);
+		_tween.TweenCallback(Callable.From(PlayAudio));
 
+		// Load in text
 		double textTime = _label.Text.Length / TextSpeed;
 		_tween.TweenProperty(_label, "visible_ratio", 1, textTime);
 
+		// Finish tween by calling complete method
 		_tween.TweenCallback(Callable.From(Complete));
 
 		_loadState = State.Loading;
@@ -102,6 +110,7 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 	// Fade out box
 	private void Unload()
 	{
+		// Play talking animation
 		if (Sprite.IsValid())
 			Sprite.Play(DefaultAnimation);
 
@@ -119,6 +128,10 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 	// Completely hide and perform cutscene callback
 	private void Deactivate()
 	{
+		// Remove talking sfx
+		if (_audioPlayer.IsValid())
+			_audioPlayer.QueueFree();
+
 		// Set properties to hidden values
 		Hide();
 		Modulate = Colors.Transparent;
@@ -130,5 +143,24 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 
 		// Perform callback
 		_callBack();
+	}
+
+	private void PlayAudio()
+	{
+		// Only play audio if the stream exists
+		if (talkingAudio is null)
+			return;
+
+		// TODO: Use instance variable
+		AudioStreamPlayer _audioPlayer = new()
+		{
+			Bus = "Sound Effects",
+			Stream = talkingAudio
+		};
+		_audioPlayer.Finished += () => _audioPlayer.QueueFree();
+
+		// Add to scene and start playing talking audio
+		AddChild(_audioPlayer);
+		_audioPlayer.Play();
 	}
 }
