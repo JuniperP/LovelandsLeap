@@ -226,7 +226,6 @@ script = ExtResource("3_xpijr")
 
 [node name="OrderDialogue" parent="." instance=ExtResource("4_vo1hj")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 
 [node name="ProfilePicture" parent="OrderDialogue/BackBox" index="1"]
@@ -258,7 +257,6 @@ autoplay = "idle"
 
 [node name="ForestDialogue" parent="." node_paths=PackedStringArray("Sprite") instance=ExtResource("4_vo1hj")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 Sprite = NodePath("../HumanLoc/Sprite")
 
