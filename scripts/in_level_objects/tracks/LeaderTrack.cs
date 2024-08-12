@@ -17,6 +17,9 @@ public partial class LeaderTrack : Area2D
 	// Helper bool for tracks that require bouncing
 	private bool _towardA;
 
+	// Helper bool to say if the item on the track should be moving
+	private bool _move;
+
 	[Signal] public delegate void ReachedEndEventHandler(Node2D node);
 
 
@@ -27,6 +30,7 @@ public partial class LeaderTrack : Area2D
 	[ExportGroup("PropertiesOfTheTrack")]
 	[Export] public float TrackSpeed = 1;
 	[Export] public bool Bounce = false;
+	[Export] public bool AutoStart = true;
 
 
 
@@ -44,14 +48,20 @@ public partial class LeaderTrack : Area2D
 		_instanScene.Position = _lineToFollow.A;
 
 		_towardA = false;
+		_move = AutoStart;
 
+	}
+
+	private void ToggleTrack()
+	{
+		_move = !_move;
 	}
 
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (_instanScene.IsValid())
+		if (_instanScene.IsValid() && _move)
 		{
 			float nodeSpeed = TrackSpeed * 100 * (float)delta;
 

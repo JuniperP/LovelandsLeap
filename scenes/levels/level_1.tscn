@@ -48,6 +48,7 @@ bus = &"Music"
 
 [node name="LeaderTrack" parent="." instance=ExtResource("5_vvtnc")]
 position = Vector2(369, 349)
+TrackSpeed = 10.0
 
 [node name="LineToFollow" parent="LeaderTrack" index="0"]
 shape = SubResource("SegmentShape2D_b04kl")
