@@ -12,11 +12,11 @@ public partial class LeaderTrack : Area2D
 	// The track for our object
 	private SegmentShape2D _lineToFollow;
 
-	// What will rid the railway
 	[Export] public PackedScene SceneOnTrack;
 
-	// Given scenes position on the track
-	private Vector2 _position;
+	// What will ride the railway
+	private Node2D _instanScene;
+
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -24,16 +24,21 @@ public partial class LeaderTrack : Area2D
 		// Using our hitbox to get the line our object will follow
 		_lineToFollow = (SegmentShape2D)HitBox.Shape;
 
+		_instanScene = SceneOnTrack.Instantiate<Node2D>();
+		AddChild(_instanScene);
+
 		// Starting the user at the beginning of the track
-		_position = _lineToFollow.A;
+		_instanScene.Position = _lineToFollow.A;
+
+
 	}
 
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		_instanScene.Position = _instanScene.Position.MoveToward(_lineToFollow.B, (float)delta*100);
 
-		
 	}
 
 

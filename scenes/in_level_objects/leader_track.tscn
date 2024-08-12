@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://3ocqcs25ejwi"]
+[gd_scene load_steps=4 format=3 uid="uid://3ocqcs25ejwi"]
 
 [ext_resource type="Script" path="res://scripts/in_level_objects/tracks/LeaderTrack.cs" id="1_77jhk"]
+[ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="2_c7drp"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_m5si0"]
-b = Vector2(0, 0)
+a = Vector2(0, 400)
+b = Vector2(1920, 0)
 
-[node name="LeaderTrack" type="Area2D"]
+[node name="LeaderTrack" type="Area2D" node_paths=PackedStringArray("HitBox")]
 script = ExtResource("1_77jhk")
+HitBox = NodePath("LineToFollow")
+SceneOnTrack = ExtResource("2_c7drp")
 
 [node name="LineToFollow" type="CollisionShape2D" parent="."]
 shape = SubResource("SegmentShape2D_m5si0")
