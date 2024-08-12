@@ -17,6 +17,9 @@ public partial class LeaderTrack : Area2D
 	// Helper bool for tracks that require bouncing
 	private bool _towardA;
 
+	[Signal] public delegate void ReachedEndEventHandler(Node2D node);
+
+	
 	[ExportGroup("SetUp")]
 	[Export] public CollisionShape2D HitBox;
 	[Export] public PackedScene SceneOnTrack;
@@ -25,7 +28,7 @@ public partial class LeaderTrack : Area2D
 	[Export] public float TrackSpeed = 1;
 	[Export] public bool Bounce = false;
 
-	// Properties of the track 
+	
 
 
 	// Called when the node enters the scene tree for the first time.
@@ -48,23 +51,30 @@ public partial class LeaderTrack : Area2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		float nodeSpeed = TrackSpeed * 100 * (float)delta;
+
 		if (Bounce)
 		{
-			float nodeSpeed = TrackSpeed * 100 * (float)delta;
-
 			// Going the right direction
 			if (_towardA)
 				_instanScene.Position = _instanScene.Position.MoveToward(_lineToFollow.A, nodeSpeed);
 			else
 				_instanScene.Position = _instanScene.Position.MoveToward(_lineToFollow.B, nodeSpeed);
-			
 
 			// Flipping direction once a side has been hit
-			if(_instanScene.Position == _lineToFollow.A)
+			if (_instanScene.Position == _lineToFollow.A)
 				_towardA = false;
 			else if (_instanScene.Position == _lineToFollow.B)
 				_towardA = true;
+		}
 
+		else
+		{
+			_instanScene.Position = _instanScene.Position.MoveToward(_lineToFollow.B, nodeSpeed);
+
+			// Passing the scene if the end is reached
+			if (_instanScene.Position == _lineToFollow.B)
+				EmitSignal(SignalName.ReachedEnd, _instanScene);	
 		}
 
 
