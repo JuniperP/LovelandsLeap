@@ -7,15 +7,25 @@ This track will outline the properties by which follower tracks will obey.
 */
 public partial class LeaderTrack : Area2D
 {
-	[Export] public CollisionShape2D HitBox;
 
 	// The track for our object
 	private SegmentShape2D _lineToFollow;
 
-	[Export] public PackedScene SceneOnTrack;
-
 	// What will ride the railway
 	private Node2D _instanScene;
+
+	// Helper bool for tracks that require bouncing
+	private bool _towardA;
+
+	[ExportGroup("SetUp")]
+	[Export] public CollisionShape2D HitBox;
+	[Export] public PackedScene SceneOnTrack;
+
+	[ExportGroup("PropertiesOfTheTrack")]
+	[Export] public float TrackSpeed = 1;
+	[Export] public bool Bounce = false;
+
+	// Properties of the track 
 
 
 	// Called when the node enters the scene tree for the first time.
@@ -30,6 +40,7 @@ public partial class LeaderTrack : Area2D
 		// Starting the user at the beginning of the track
 		_instanScene.Position = _lineToFollow.A;
 
+		_towardA = false;
 
 	}
 
@@ -37,7 +48,25 @@ public partial class LeaderTrack : Area2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		_instanScene.Position = _instanScene.Position.MoveToward(_lineToFollow.B, (float)delta*100);
+		if (Bounce)
+		{
+			float nodeSpeed = TrackSpeed * 100 * (float)delta;
+
+			// Going the right direction
+			if (_towardA)
+				_instanScene.Position = _instanScene.Position.MoveToward(_lineToFollow.A, nodeSpeed);
+			else
+				_instanScene.Position = _instanScene.Position.MoveToward(_lineToFollow.B, nodeSpeed);
+			
+
+			// Flipping direction once a side has been hit
+			if(_instanScene.Position == _lineToFollow.A)
+				_towardA = false;
+			else if (_instanScene.Position == _lineToFollow.B)
+				_towardA = true;
+
+		}
+
 
 	}
 
