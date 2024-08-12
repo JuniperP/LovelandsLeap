@@ -16,8 +16,11 @@ public partial class CutscenePause : Timer, ICutsceneElement
             Timeout += callback;
             Start();
         }
-        // Stop the timer, automatically performing callback
+        // Stop the timer and perform callback
         else
+        {
             Stop();
+            callback();
+        }
     }
 }
