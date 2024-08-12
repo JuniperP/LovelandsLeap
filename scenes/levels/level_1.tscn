@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://duhqqspapvtn0"]
+[gd_scene load_steps=11 format=3 uid="uid://duhqqspapvtn0"]
 
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background.tscn" id="1_u3dt8"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
@@ -17,6 +17,11 @@ b = Vector2(1085, -110)
 resource_local_to_scene = true
 a = Vector2(1085, -109)
 b = Vector2(1089, -556)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vw1ix"]
+resource_local_to_scene = true
+a = Vector2(1089, -551)
+b = Vector2(369, -130)
 
 [node name="Level1" type="Control"]
 layout_mode = 3
@@ -61,12 +66,18 @@ shape = SubResource("SegmentShape2D_b04kl")
 [node name="LineToFollow" parent="Room/FlyTrack1/FollowerTrack" index="0"]
 shape = SubResource("SegmentShape2D_b1hip")
 
+[node name="FollowerTrack2" parent="Room/FlyTrack1" instance=ExtResource("6_c50vl")]
+
+[node name="LineToFollow" parent="Room/FlyTrack1/FollowerTrack2" index="0"]
+shape = SubResource("SegmentShape2D_vw1ix")
+
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_iwaey")
 autoplay = true
 bus = &"Music"
 
 [connection signal="ReachedEnd" from="Room/FlyTrack1/LeaderTrack" to="Room/FlyTrack1/FollowerTrack" method="StartTrack"]
+[connection signal="ReachedEnd" from="Room/FlyTrack1/FollowerTrack" to="Room/FlyTrack1/FollowerTrack2" method="StartTrack"]
 
 [editable path="Room"]
 [editable path="Room/Camera2D/Control/PauseScreen"]
@@ -74,3 +85,4 @@ bus = &"Music"
 [editable path="Room/Camera2D/Control/PauseScreen/Settings/BackBox/TabContainer/Other/OtherToChange"]
 [editable path="Room/FlyTrack1/LeaderTrack"]
 [editable path="Room/FlyTrack1/FollowerTrack"]
+[editable path="Room/FlyTrack1/FollowerTrack2"]
