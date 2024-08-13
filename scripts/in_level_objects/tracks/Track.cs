@@ -2,12 +2,9 @@ using Godot;
 
 public partial class Track : Node
 {
-
-	//Orient option
-	//Sub class make
-	//loopable
-	//stop all aspects of the track
-
+	//TODO:
+	//Orient towards direction going option
+	//Stop all aspects of the track and followers options
 
 	// The track for our object
 	protected SegmentShape2D LineToFollow;
