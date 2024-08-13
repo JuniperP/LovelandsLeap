@@ -5,15 +5,14 @@
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_m5si0"]
 resource_local_to_scene = true
-b = Vector2(1920, 0)
+a = Vector2(43, 158)
+b = Vector2(500, 0)
 
 [node name="LeaderTrack" type="Area2D" node_paths=PackedStringArray("HitBox")]
 script = ExtResource("1_77jhk")
-HitBox = NodePath("LineToFollow")
 SceneOnTrack = ExtResource("2_c7drp")
 TrackSpeed = 5.0
-Bounce = true
-AutoStart = false
+HitBox = NodePath("LineToFollow")
 
 [node name="LineToFollow" type="CollisionShape2D" parent="."]
 shape = SubResource("SegmentShape2D_m5si0")
