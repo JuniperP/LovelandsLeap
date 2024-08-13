@@ -5,7 +5,6 @@
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_m5si0"]
 resource_local_to_scene = true
-a = Vector2(43, 158)
 b = Vector2(500, 0)
 
 [node name="LeaderTrack" type="Area2D" node_paths=PackedStringArray("HitBox")]

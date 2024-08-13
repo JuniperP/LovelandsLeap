@@ -1,10 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://duhqqspapvtn0"]
+[gd_scene load_steps=11 format=3 uid="uid://duhqqspapvtn0"]
 
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background.tscn" id="1_u3dt8"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="4_6pusj"]
 [ext_resource type="AudioStream" uid="uid://ca1nkabl72yvt" path="res://audio/music/loveland__platforming_music.wav" id="4_iwaey"]
 [ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="5_t1vew"]
+[ext_resource type="PackedScene" uid="uid://3ocqcs25ejwi" path="res://scenes/in_level_objects/leader_track.tscn" id="5_vvtnc"]
+[ext_resource type="PackedScene" uid="uid://dscnjvfmtdjdk" path="res://scenes/in_level_objects/follower_track.tscn" id="6_c50vl"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rl62k"]
+resource_local_to_scene = true
+a = Vector2(545, -245)
+b = Vector2(979, -112)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xhg5h"]
+resource_local_to_scene = true
+a = Vector2(977, -111)
+b = Vector2(1043, -328)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yxywn"]
+resource_local_to_scene = true
+a = Vector2(1042, -326)
+b = Vector2(547, -245)
 
 [node name="Level1" type="Control"]
 layout_mode = 3
@@ -35,12 +52,37 @@ position = Vector2(2319, 653)
 [node name="Fly" parent="Room" instance=ExtResource("5_t1vew")]
 position = Vector2(-25, 587)
 
+[node name="FlyTrack" type="Node2D" parent="Room"]
+
+[node name="LeaderTrack" parent="Room/FlyTrack" instance=ExtResource("5_vvtnc")]
+TrackSpeed = 2.0
+
+[node name="LineToFollow" parent="Room/FlyTrack/LeaderTrack" index="0"]
+shape = SubResource("SegmentShape2D_rl62k")
+
+[node name="FollowerTrack" parent="Room/FlyTrack" instance=ExtResource("6_c50vl")]
+
+[node name="LineToFollow" parent="Room/FlyTrack/FollowerTrack" index="0"]
+shape = SubResource("SegmentShape2D_xhg5h")
+
+[node name="FollowerTrack2" parent="Room/FlyTrack" instance=ExtResource("6_c50vl")]
+
+[node name="LineToFollow" parent="Room/FlyTrack/FollowerTrack2" index="0"]
+shape = SubResource("SegmentShape2D_yxywn")
+
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_iwaey")
 autoplay = true
 bus = &"Music"
 
+[connection signal="ReachedEnd" from="Room/FlyTrack/LeaderTrack" to="Room/FlyTrack/FollowerTrack" method="StartTrack"]
+[connection signal="ReachedEnd" from="Room/FlyTrack/FollowerTrack" to="Room/FlyTrack/FollowerTrack2" method="StartTrack"]
+[connection signal="ReachedEnd" from="Room/FlyTrack/FollowerTrack2" to="Room/FlyTrack/LeaderTrack" method="StartTrack"]
+
 [editable path="Room"]
 [editable path="Room/Camera2D/Control/PauseScreen"]
 [editable path="Room/Camera2D/Control/PauseScreen/Settings"]
 [editable path="Room/Camera2D/Control/PauseScreen/Settings/BackBox/TabContainer/Other/OtherToChange"]
+[editable path="Room/FlyTrack/LeaderTrack"]
+[editable path="Room/FlyTrack/FollowerTrack"]
+[editable path="Room/FlyTrack/FollowerTrack2"]
