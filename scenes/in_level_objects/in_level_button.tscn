@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs66fauscvr67"]
+
+[ext_resource type="Script" path="res://scripts/in_level_objects/InLevelButton.cs" id="1_awemj"]
+[ext_resource type="Texture2D" uid="uid://bc1ravcc5syh4" path="res://assets/ui/icon.svg" id="2_oqvsf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud0y0"]
+size = Vector2(100, 100)
+
+[node name="InLevelButton" type="Area2D" node_paths=PackedStringArray("OnStateSprite", "OffStateSprite")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_awemj")
+OnStateSprite = NodePath("HitBox/OnButton")
+OffStateSprite = NodePath("HitBox/OffButton")
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ud0y0")
+
+[node name="OnButton" type="Sprite2D" parent="HitBox"]
+texture = ExtResource("2_oqvsf")
+
+[node name="OffButton" type="Sprite2D" parent="HitBox"]
+visible = false
+texture = ExtResource("2_oqvsf")
+flip_v = true
+
+[connection signal="body_entered" from="." to="." method="PressButton"]

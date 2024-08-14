@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://duhqqspapvtn0"]
+[gd_scene load_steps=12 format=3 uid="uid://duhqqspapvtn0"]
 
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background.tscn" id="1_u3dt8"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="5_t1vew"]
 [ext_resource type="PackedScene" uid="uid://3ocqcs25ejwi" path="res://scenes/in_level_objects/leader_track.tscn" id="5_vvtnc"]
 [ext_resource type="PackedScene" uid="uid://dscnjvfmtdjdk" path="res://scenes/in_level_objects/follower_track.tscn" id="6_c50vl"]
+[ext_resource type="PackedScene" uid="uid://cs66fauscvr67" path="res://scenes/in_level_objects/in_level_button.tscn" id="8_vhq5w"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_875gf"]
 resource_local_to_scene = true
@@ -57,6 +58,7 @@ position = Vector2(-25, 587)
 [node name="LeaderTrack" parent="Room/FlyTrack" instance=ExtResource("5_vvtnc")]
 TrackSpeed = 10.0
 Bounce = false
+AutoStart = false
 
 [node name="LineToFollow" parent="Room/FlyTrack/LeaderTrack" index="0"]
 shape = SubResource("SegmentShape2D_875gf")
@@ -76,9 +78,13 @@ stream = ExtResource("4_iwaey")
 autoplay = true
 bus = &"Music"
 
+[node name="InLevelButton" parent="." instance=ExtResource("8_vhq5w")]
+position = Vector2(625, 124)
+
 [connection signal="ReachedEnd" from="Room/FlyTrack/LeaderTrack" to="Room/FlyTrack/FollowerTrack" method="StartTrack"]
 [connection signal="ReachedEnd" from="Room/FlyTrack/FollowerTrack" to="Room/FlyTrack/FollowerTrack2" method="StartTrack"]
 [connection signal="ReachedEnd" from="Room/FlyTrack/FollowerTrack2" to="Room/FlyTrack/LeaderTrack" method="StartTrack"]
+[connection signal="ButtonPressed" from="InLevelButton" to="Room/FlyTrack/LeaderTrack" method="StartLeader"]
 
 [editable path="Room"]
 [editable path="Room/Camera2D/Control/PauseScreen"]
