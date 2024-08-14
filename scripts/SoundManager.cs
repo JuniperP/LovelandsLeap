@@ -1,7 +1,13 @@
 using Godot;
 using System.Collections.Generic;
 
-// Enums for all of the possible name
+/* 
+Recognize:
+In the following sfx, no dialogue sfxs are included! Instead, all
+dialogue sfx are imported directly within their respective cutscenes.
+*/
+
+// Enums for all of the possible names
 public enum SFX : byte
 {
 	Walk,
@@ -12,10 +18,6 @@ public enum SFX : byte
 	Croak,
 	LongCroak,
 	IntoFrog,
-	DialogueMC,
-	DialogueFrog,
-	DialogueWitch,
-	DialoguePrincess,
 	UIButton,
 }
 
@@ -32,10 +34,6 @@ public partial class SoundManager : Node
 		{SFX.IntoFrog, "into_frog_sfx"},
 		{SFX.TongueShoot, "tongue_shoot_sfx"},
 		{SFX.TongueHit, "tongue_hit_sfx"},
-		{SFX.DialogueMC, "dialogue_mc_sfx"},
-		{SFX.DialogueFrog, "dialogue_frog_sfx"},
-		{SFX.DialogueWitch, "dialogue_witch_sfx"},
-		{SFX.DialoguePrincess, "dialogue_princess_sfx"},
 		{SFX.UIButton, "ui_button_sfx"},
 	};
 
@@ -50,10 +48,6 @@ public partial class SoundManager : Node
 		{SFX.IntoFrog,  CreateAudioPlayer(SFX.IntoFrog)},
 		{SFX.TongueShoot,  CreateAudioPlayer(SFX.TongueShoot)},
 		{SFX.TongueHit, CreateAudioPlayer(SFX.TongueHit)},
-		{SFX.DialogueMC,  CreateAudioPlayer(SFX.DialogueMC)},
-		{SFX.DialogueFrog,  CreateAudioPlayer(SFX.DialogueFrog)},
-		{SFX.DialogueWitch,  CreateAudioPlayer(SFX.DialogueWitch)},
-		{SFX.DialoguePrincess,  CreateAudioPlayer(SFX.DialoguePrincess)},
 		{SFX.UIButton,  CreateAudioPlayer(SFX.UIButton)},
 	};
 
