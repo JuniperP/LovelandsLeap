@@ -21,6 +21,11 @@ public partial class LeaderTrack : Track
 	[Export] public bool AutoStart = true;
 
 
+	// Easy signal starter for track system
+	public void StartLeader()
+	{
+		Move = true;
+	}
 
 	protected override void FurtherSetup()
 	{
@@ -75,9 +80,6 @@ public partial class LeaderTrack : Track
 			_towardA = false;
 		else if (InstanScene.Position == LineToFollow.B)
 			_towardA = true;
-
-
-
 	}
 
 
