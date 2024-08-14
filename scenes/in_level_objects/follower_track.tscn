@@ -4,7 +4,7 @@
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mo7qx"]
 resource_local_to_scene = true
-b = Vector2(1920, 0)
+b = Vector2(500, 0)
 
 [node name="FollowerTrack" type="Area2D" node_paths=PackedStringArray("HitBox")]
 script = ExtResource("1_dvu64")

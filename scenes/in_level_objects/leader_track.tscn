@@ -15,4 +15,4 @@ HitBox = NodePath("LineToFollow")
 
 [node name="LineToFollow" type="CollisionShape2D" parent="."]
 shape = SubResource("SegmentShape2D_m5si0")
-debug_color = Color(0.894118, 0, 0.25098, 0.784314)
+debug_color = Color(0.832487, 0.00164338, 0.964289, 0.784314)
