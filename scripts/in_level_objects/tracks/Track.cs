@@ -1,4 +1,3 @@
-using System;
 using Godot;
 
 public partial class Track : Node
@@ -18,7 +17,10 @@ public partial class Track : Node
 	// If the item on the track should be moving
 	protected bool Move;
 
-	[Signal] public delegate void ReachedEndEventHandler(Node2D node, int trackSpeed, bool Orient);
+	// This nodes leader in the system
+	protected LeaderTrack Leader;
+
+	[Signal] public delegate void ReachedEndEventHandler(Node2D node, int trackSpeed, bool Orient, LeaderTrack leader);
 
 	[Export] public CollisionShape2D HitBox;
 
@@ -33,20 +35,21 @@ public partial class Track : Node
 	}
 
 	// Starts up the track once it is passed the node by signals
-	protected void StartTrack(Node2D node, int trackSpeed, bool orient)
+	protected void StartTrack(Node2D node, int trackSpeed, bool orient, LeaderTrack leader)
 	{
 		SpeedMod = trackSpeed;
 		node.Position = LineToFollow.A;
 		InstanScene = node;
 		Move = true;
 		Orient = orient;
+		Leader = leader;
 	}
 
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (InstanScene.IsValid() && Move)
+		if (InstanScene.IsValid() && Move && Leader.MoveSystem)
 			MoveNoBounce(SpeedMod * 100 * (float)delta);
 	}
 
@@ -62,7 +65,7 @@ public partial class Track : Node
 		// Passing the scene if the end is reached
 		if (InstanScene.Position == LineToFollow.B)
 		{
-			EmitSignal(SignalName.ReachedEnd, InstanScene, SpeedMod, Orient);
+			EmitSignal(SignalName.ReachedEnd, InstanScene, SpeedMod, Orient, Leader);
 			Move = false;
 		}
 
@@ -73,9 +76,6 @@ public partial class Track : Node
 	protected virtual void FurtherSetup()
 	{
 		InstanScene = null;
-		Move = false;
-		SpeedMod = 0;
-		Orient = false;
 	}
 
 

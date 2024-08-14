@@ -11,8 +11,6 @@ b = Vector2(500, 0)
 script = ExtResource("1_77jhk")
 SceneOnTrack = ExtResource("2_c7drp")
 TrackSpeed = 5.0
-AngleWithTrack = true
-Bounce = true
 HitBox = NodePath("LineToFollow")
 
 [node name="LineToFollow" type="CollisionShape2D" parent="."]

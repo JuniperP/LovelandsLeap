@@ -1,4 +1,3 @@
-using System;
 using Godot;
 
 /*
@@ -13,6 +12,9 @@ public partial class LeaderTrack : Track
 	// Helper bool for tracks that require bouncing
 	private bool _towardA;
 
+	// Used by the whole system for pausing and stopping
+	public bool MoveSystem;
+
 	[Export] public PackedScene SceneOnTrack;
 
 	[ExportGroup("PropertiesOfTheTrack")]
@@ -21,17 +23,14 @@ public partial class LeaderTrack : Track
 	[Export] public bool Bounce = false;
 	[Export] public bool AutoStart = true;
 
-
-	// Easy signal starter for track system
-	public void StartLeader()
+	// Easy signal to toggle the system's movement
+	public void StartSystem()
 	{
-		Move = true;
+		MoveSystem = true;
 	}
-
-	// Easy signal to stop (not intended to use with system of tracks)
-	public void Stop()
+	public void StopSystem()
 	{
-		Move = false;
+		MoveSystem = false;
 	}
 
 	protected override void FurtherSetup()
@@ -43,9 +42,13 @@ public partial class LeaderTrack : Track
 		// Starting the user at the beginning of the track
 		InstanScene.Position = LineToFollow.A;
 
+		// Assigning this leader track as the leader of its group
+		Leader = this;
+
 		// Making fields align with exported properties
 		_towardA = false;
-		Move = AutoStart;
+		Move = true;
+		MoveSystem = AutoStart;
 		SpeedMod = TrackSpeed;
 		Orient = AngleWithTrack;
 	}
@@ -54,7 +57,7 @@ public partial class LeaderTrack : Track
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (InstanScene.IsValid() && Move)
+		if (InstanScene.IsValid() && Move && MoveSystem)
 		{
 			float nodeSpeed = SpeedMod * 100 * (float)delta;
 
