@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 /*
@@ -25,6 +26,12 @@ public partial class LeaderTrack : Track
 	public void StartLeader()
 	{
 		Move = true;
+	}
+
+	// Easy signal to stop (not intended to use with system of tracks)
+	public void Stop()
+	{
+		Move = false;
 	}
 
 	protected override void FurtherSetup()

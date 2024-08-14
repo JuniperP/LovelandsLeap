@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 public partial class Track : Node
@@ -64,7 +65,7 @@ public partial class Track : Node
 			EmitSignal(SignalName.ReachedEnd, InstanScene, SpeedMod, Orient);
 			Move = false;
 		}
-		
+
 	}
 
 
@@ -83,7 +84,7 @@ public partial class Track : Node
 	{
 		if (Orient)
 			InstanScene.Rotation = angle;
-			
+
 	}
 
 }

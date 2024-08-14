@@ -56,7 +56,7 @@ position = Vector2(-25, 587)
 [node name="FlyTrack" type="Node2D" parent="Room"]
 
 [node name="LeaderTrack" parent="Room/FlyTrack" instance=ExtResource("5_vvtnc")]
-TrackSpeed = 10.0
+TrackSpeed = 1.0
 Bounce = false
 AutoStart = false
 
@@ -80,12 +80,12 @@ bus = &"Music"
 
 [node name="InLevelButton" parent="." instance=ExtResource("8_vhq5w")]
 position = Vector2(625, 124)
-StaysOn = true
 
 [connection signal="ReachedEnd" from="Room/FlyTrack/LeaderTrack" to="Room/FlyTrack/FollowerTrack" method="StartTrack"]
 [connection signal="ReachedEnd" from="Room/FlyTrack/FollowerTrack" to="Room/FlyTrack/FollowerTrack2" method="StartTrack"]
 [connection signal="ReachedEnd" from="Room/FlyTrack/FollowerTrack2" to="Room/FlyTrack/LeaderTrack" method="StartTrack"]
 [connection signal="ButtonPressed" from="InLevelButton" to="Room/FlyTrack/LeaderTrack" method="StartLeader"]
+[connection signal="ButtonReleased" from="InLevelButton" to="Room/FlyTrack/LeaderTrack" method="Stop"]
 
 [editable path="Room"]
 [editable path="Room/Camera2D/Control/PauseScreen"]
