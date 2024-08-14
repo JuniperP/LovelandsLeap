@@ -16,6 +16,7 @@ public partial class LeaderTrack : Track
 
 	[ExportGroup("PropertiesOfTheTrack")]
 	[Export] public float TrackSpeed = 1;
+	[Export] public bool AngleWithTrack = false;
 	[Export] public bool Bounce = false;
 	[Export] public bool AutoStart = true;
 
@@ -30,9 +31,11 @@ public partial class LeaderTrack : Track
 		// Starting the user at the beginning of the track
 		InstanScene.Position = LineToFollow.A;
 
+		// Making fields align with exported properties
 		_towardA = false;
 		Move = AutoStart;
 		SpeedMod = TrackSpeed;
+		Orient = AngleWithTrack;
 	}
 
 
@@ -54,17 +57,27 @@ public partial class LeaderTrack : Track
 	// Used to move if their is bounce
 	private void MoveBounce(float nodeSpeed)
 	{
-		// Going the right direction
+		// Going the right direction and potentially aligning
 		if (_towardA)
+		{
+			AlignScene(LineToFollow.B.AngleToPoint(LineToFollow.A));
 			InstanScene.Position = InstanScene.Position.MoveToward(LineToFollow.A, nodeSpeed);
+		}
 		else
+		{
+			AlignScene(LineToFollow.A.AngleToPoint(LineToFollow.B));
 			InstanScene.Position = InstanScene.Position.MoveToward(LineToFollow.B, nodeSpeed);
+		}
+
 
 		// Flipping direction once a side has been hit
 		if (InstanScene.Position == LineToFollow.A)
 			_towardA = false;
 		else if (InstanScene.Position == LineToFollow.B)
 			_towardA = true;
+
+
+
 	}
 
 

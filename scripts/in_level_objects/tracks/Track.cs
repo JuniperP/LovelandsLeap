@@ -2,10 +2,6 @@ using Godot;
 
 public partial class Track : Node
 {
-	//TODO:
-	//Orient towards direction going option
-	//Stop all aspects of the track and followers options
-
 	// The track for our object
 	protected SegmentShape2D LineToFollow;
 
@@ -15,10 +11,13 @@ public partial class Track : Node
 	// How fast the track shall go
 	protected float SpeedMod;
 
-	// Helper bool to say if the item on the track should be moving
+	// Should the item align its top with the track
+	protected bool Orient;
+
+	// If the item on the track should be moving
 	protected bool Move;
 
-	[Signal] public delegate void ReachedEndEventHandler(Node2D node, int trackSpeed);
+	[Signal] public delegate void ReachedEndEventHandler(Node2D node, int trackSpeed, bool Orient);
 
 	[Export] public CollisionShape2D HitBox;
 
@@ -33,12 +32,13 @@ public partial class Track : Node
 	}
 
 	// Starts up the track once it is passed the node by signals
-	protected void StartTrack(Node2D node, int trackSpeed)
+	protected void StartTrack(Node2D node, int trackSpeed, bool orient)
 	{
 		SpeedMod = trackSpeed;
 		node.Position = LineToFollow.A;
 		InstanScene = node;
 		Move = true;
+		Orient = orient;
 	}
 
 
@@ -53,23 +53,37 @@ public partial class Track : Node
 	// Used to move if their is no bounce 
 	protected void MoveNoBounce(float nodeSpeed)
 	{
+		// Orienting the scene if needed
+		AlignScene(LineToFollow.A.AngleToPoint(LineToFollow.B));
+
 		InstanScene.Position = InstanScene.Position.MoveToward(LineToFollow.B, nodeSpeed);
 
 		// Passing the scene if the end is reached
 		if (InstanScene.Position == LineToFollow.B)
 		{
-			EmitSignal(SignalName.ReachedEnd, InstanScene, SpeedMod);
+			EmitSignal(SignalName.ReachedEnd, InstanScene, SpeedMod, Orient);
 			Move = false;
 		}
+		
 	}
 
-	
+
 	// To be used by special types of tracks that require more setup
 	protected virtual void FurtherSetup()
 	{
 		InstanScene = null;
 		Move = false;
 		SpeedMod = 0;
+		Orient = false;
+	}
+
+
+	// Aligns the object on the track towards the direction it is moving
+	protected void AlignScene(float angle)
+	{
+		if (Orient)
+			InstanScene.Rotation = angle;
+			
 	}
 
 }

@@ -8,20 +8,20 @@
 [ext_resource type="PackedScene" uid="uid://3ocqcs25ejwi" path="res://scenes/in_level_objects/leader_track.tscn" id="5_vvtnc"]
 [ext_resource type="PackedScene" uid="uid://dscnjvfmtdjdk" path="res://scenes/in_level_objects/follower_track.tscn" id="6_c50vl"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_rl62k"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_875gf"]
 resource_local_to_scene = true
-a = Vector2(545, -245)
-b = Vector2(979, -112)
+a = Vector2(760, -104)
+b = Vector2(1248, -252)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_xhg5h"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b1ixr"]
 resource_local_to_scene = true
-a = Vector2(977, -111)
-b = Vector2(1043, -328)
+a = Vector2(1247, -251)
+b = Vector2(711, -654)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_yxywn"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_acvff"]
 resource_local_to_scene = true
-a = Vector2(1042, -326)
-b = Vector2(547, -245)
+a = Vector2(712, -653)
+b = Vector2(762, -104)
 
 [node name="Level1" type="Control"]
 layout_mode = 3
@@ -55,20 +55,21 @@ position = Vector2(-25, 587)
 [node name="FlyTrack" type="Node2D" parent="Room"]
 
 [node name="LeaderTrack" parent="Room/FlyTrack" instance=ExtResource("5_vvtnc")]
-TrackSpeed = 2.0
+TrackSpeed = 10.0
+Bounce = false
 
 [node name="LineToFollow" parent="Room/FlyTrack/LeaderTrack" index="0"]
-shape = SubResource("SegmentShape2D_rl62k")
+shape = SubResource("SegmentShape2D_875gf")
 
 [node name="FollowerTrack" parent="Room/FlyTrack" instance=ExtResource("6_c50vl")]
 
 [node name="LineToFollow" parent="Room/FlyTrack/FollowerTrack" index="0"]
-shape = SubResource("SegmentShape2D_xhg5h")
+shape = SubResource("SegmentShape2D_b1ixr")
 
 [node name="FollowerTrack2" parent="Room/FlyTrack" instance=ExtResource("6_c50vl")]
 
 [node name="LineToFollow" parent="Room/FlyTrack/FollowerTrack2" index="0"]
-shape = SubResource("SegmentShape2D_yxywn")
+shape = SubResource("SegmentShape2D_acvff")
 
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_iwaey")

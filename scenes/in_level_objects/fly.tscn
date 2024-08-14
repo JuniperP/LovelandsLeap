@@ -15,6 +15,7 @@ script = ExtResource("1_ocbs5")
 shape = SubResource("RectangleShape2D_xgmb8")
 
 [node name="FlySprite" type="Sprite2D" parent="FlyHitBox"]
+rotation = 1.5708
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_fgfx3")
 
