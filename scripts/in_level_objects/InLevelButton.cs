@@ -2,12 +2,17 @@ using Godot;
 
 public partial class InLevelButton : Area2D
 {
+	// Signals to notifying the rest of scene of button changes
 	[Signal] public delegate void ButtonPressedEventHandler();
-
-	[Export] public Sprite2D OnStateSprite;
-	[Export] public Sprite2D OffStateSprite;
+	[Signal] public delegate void ButtonReleasedEventHandler();
 
 	private bool _pressed;
+	// Indicating whether buttons stay pushed down or pop back up
+	[Export] public bool StaysOn;
+
+	[ExportGroup("Sprites")]
+	[Export] public Sprite2D OnStateSprite;
+	[Export] public Sprite2D OffStateSprite;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -15,21 +20,43 @@ public partial class InLevelButton : Area2D
 		_pressed = false;
 	}
 
-	// Easy signal button press functionality
+	// Easy signals for button press/release functionality
 	private void PressButton(Node2D node)
 	{
 		if (!_pressed && (node is Player || node is TongueProjectile))
 		{
-			_pressed = true;
-
-			// Change sprite state to match click state
-			OnStateSprite.Hide();
-			OffStateSprite.Show();
-
-			// Notifying a button press to rest of scene
+			ToggleButton();
 			EmitSignal(SignalName.ButtonPressed);
 		}
+	}
 
+	private void ReleaseButton(Node2D node)
+	{
+		if (_pressed && !StaysOn && (node is Player || node is TongueProjectile))
+		{
+			ToggleButton();
+			EmitSignal(SignalName.ButtonReleased);
+		}
+	}
+
+
+	// Helper function for toggling button state
+	private void ToggleButton()
+	{
+		_pressed = !_pressed;
+
+		// Change sprite state to match click state
+		if(OnStateSprite.Visible == true)
+		{
+			OnStateSprite.Hide();
+			OffStateSprite.Show();
+		}
+		else
+		{
+			OnStateSprite.Show();
+			OffStateSprite.Hide();
+		}
+			
 	}
 
 }

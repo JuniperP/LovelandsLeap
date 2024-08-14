@@ -80,6 +80,7 @@ bus = &"Music"
 
 [node name="InLevelButton" parent="." instance=ExtResource("8_vhq5w")]
 position = Vector2(625, 124)
+StaysOn = true
 
 [connection signal="ReachedEnd" from="Room/FlyTrack/LeaderTrack" to="Room/FlyTrack/FollowerTrack" method="StartTrack"]
 [connection signal="ReachedEnd" from="Room/FlyTrack/FollowerTrack" to="Room/FlyTrack/FollowerTrack2" method="StartTrack"]

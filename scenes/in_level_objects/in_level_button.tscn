@@ -16,12 +16,13 @@ OffStateSprite = NodePath("HitBox/OffButton")
 [node name="HitBox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ud0y0")
 
-[node name="OnButton" type="Sprite2D" parent="HitBox"]
+[node name="OffButton" type="Sprite2D" parent="HitBox"]
 texture = ExtResource("2_oqvsf")
 
-[node name="OffButton" type="Sprite2D" parent="HitBox"]
+[node name="OnButton" type="Sprite2D" parent="HitBox"]
 visible = false
 texture = ExtResource("2_oqvsf")
 flip_v = true
 
 [connection signal="body_entered" from="." to="." method="PressButton"]
+[connection signal="body_exited" from="." to="." method="ReleaseButton"]
