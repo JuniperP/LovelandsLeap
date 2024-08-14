@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://defcxf6u7sip4"
-path="res://.godot/imported/witch_4_retol_pilesofeyes.wav-cc0e2ffe7e1b03e4ce1343d6c5b12d25.sample"
+path="res://.godot/imported/witch_4_retol_pilesofeyes.wav-7bf92b0e1b1da5cf4de20880ec7de4af.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/witch/witch_4_retol_pilesofeyes.wav"
-dest_files=["res://.godot/imported/witch_4_retol_pilesofeyes.wav-cc0e2ffe7e1b03e4ce1343d6c5b12d25.sample"]
+source_file="res://audio/sfx/dialogue/Witch/witch_4_retol_pilesofeyes.wav"
+dest_files=["res://.godot/imported/witch_4_retol_pilesofeyes.wav-7bf92b0e1b1da5cf4de20880ec7de4af.sample"]
 
 [params]
 

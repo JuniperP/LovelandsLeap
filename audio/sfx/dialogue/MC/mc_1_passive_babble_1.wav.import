@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b81w6w82dsxf4"
-path="res://.godot/imported/mc_1_passive_babble_1.wav-0ca8a17523ecfbee5764f94b6344890f.sample"
+path="res://.godot/imported/mc_1_passive_babble_1.wav-970072ecac411295884003691cda645c.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/mc/mc_1_passive_babble_1.wav"
-dest_files=["res://.godot/imported/mc_1_passive_babble_1.wav-0ca8a17523ecfbee5764f94b6344890f.sample"]
+source_file="res://audio/sfx/dialogue/MC/mc_1_passive_babble_1.wav"
+dest_files=["res://.godot/imported/mc_1_passive_babble_1.wav-970072ecac411295884003691cda645c.sample"]
 
 [params]
 

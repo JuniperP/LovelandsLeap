@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://8ifhykkxlgwa"
-path="res://.godot/imported/iguana_8_mrum.wav-42a05943f899f2a9119d0eb2ca896f99.sample"
+path="res://.godot/imported/iguana_8_mrum.wav-2e66ceb24ca2adb69950e8bb33bc2d49.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/iguana/iguana_8_mrum.wav"
-dest_files=["res://.godot/imported/iguana_8_mrum.wav-42a05943f899f2a9119d0eb2ca896f99.sample"]
+source_file="res://audio/sfx/dialogue/Iguana/iguana_8_mrum.wav"
+dest_files=["res://.godot/imported/iguana_8_mrum.wav-2e66ceb24ca2adb69950e8bb33bc2d49.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bvn6ry83a0ndr"
-path="res://.godot/imported/mc_9_sigh_2.wav-d69f65ec7a189acfcbab25156cd3cebd.sample"
+path="res://.godot/imported/mc_9_sigh_2.wav-475dac109f03bb7db6b6f43bd63fd429.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/mc/mc_9_sigh_2.wav"
-dest_files=["res://.godot/imported/mc_9_sigh_2.wav-d69f65ec7a189acfcbab25156cd3cebd.sample"]
+source_file="res://audio/sfx/dialogue/MC/mc_9_sigh_2.wav"
+dest_files=["res://.godot/imported/mc_9_sigh_2.wav-475dac109f03bb7db6b6f43bd63fd429.sample"]
 
 [params]
 

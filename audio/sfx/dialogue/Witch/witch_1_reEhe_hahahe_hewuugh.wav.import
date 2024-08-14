@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dl4tmk5obi7m7"
-path="res://.godot/imported/witch_1_reEhe_hahahe_hewuugh.wav-804c444aebc3306d16bc28eafdf8a8f6.sample"
+path="res://.godot/imported/witch_1_reEhe_hahahe_hewuugh.wav-79a8f271a406e137ffee064994cca402.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/witch/witch_1_reEhe_hahahe_hewuugh.wav"
-dest_files=["res://.godot/imported/witch_1_reEhe_hahahe_hewuugh.wav-804c444aebc3306d16bc28eafdf8a8f6.sample"]
+source_file="res://audio/sfx/dialogue/Witch/witch_1_reEhe_hahahe_hewuugh.wav"
+dest_files=["res://.godot/imported/witch_1_reEhe_hahahe_hewuugh.wav-79a8f271a406e137ffee064994cca402.sample"]
 
 [params]
 

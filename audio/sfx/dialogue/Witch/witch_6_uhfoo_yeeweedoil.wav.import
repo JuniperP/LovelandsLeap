@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cmofcnkiowbp0"
-path="res://.godot/imported/witch_6_uhfoo_yeeweedoil.wav-76bf177446d4108f16d679ad129f2f28.sample"
+path="res://.godot/imported/witch_6_uhfoo_yeeweedoil.wav-08ccf7e4025a726f9d50b5d370f1b6c7.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/witch/witch_6_uhfoo_yeeweedoil.wav"
-dest_files=["res://.godot/imported/witch_6_uhfoo_yeeweedoil.wav-76bf177446d4108f16d679ad129f2f28.sample"]
+source_file="res://audio/sfx/dialogue/Witch/witch_6_uhfoo_yeeweedoil.wav"
+dest_files=["res://.godot/imported/witch_6_uhfoo_yeeweedoil.wav-08ccf7e4025a726f9d50b5d370f1b6c7.sample"]
 
 [params]
 

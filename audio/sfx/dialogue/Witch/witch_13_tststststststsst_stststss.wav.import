@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cua6dqwm655k6"
-path="res://.godot/imported/witch_13_tststststststsst_stststss.wav-8e97d2c773abf0b202da9cc084f86443.sample"
+path="res://.godot/imported/witch_13_tststststststsst_stststss.wav-8fb2822b5740da4f7d7fe3e358a02d33.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/witch/witch_13_tststststststsst_stststss.wav"
-dest_files=["res://.godot/imported/witch_13_tststststststsst_stststss.wav-8e97d2c773abf0b202da9cc084f86443.sample"]
+source_file="res://audio/sfx/dialogue/Witch/witch_13_tststststststsst_stststss.wav"
+dest_files=["res://.godot/imported/witch_13_tststststststsst_stststss.wav-8fb2822b5740da4f7d7fe3e358a02d33.sample"]
 
 [params]
 

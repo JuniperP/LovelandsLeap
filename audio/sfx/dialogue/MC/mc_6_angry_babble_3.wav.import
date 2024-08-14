@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dgnr5yho7v72f"
-path="res://.godot/imported/mc_6_angry_babble_3.wav-28a56bfe59ddff5209d38ecb31770800.sample"
+path="res://.godot/imported/mc_6_angry_babble_3.wav-b596d6ff63fbebdffa4a05fd5e39efd9.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/mc/mc_6_angry_babble_3.wav"
-dest_files=["res://.godot/imported/mc_6_angry_babble_3.wav-28a56bfe59ddff5209d38ecb31770800.sample"]
+source_file="res://audio/sfx/dialogue/MC/mc_6_angry_babble_3.wav"
+dest_files=["res://.godot/imported/mc_6_angry_babble_3.wav-b596d6ff63fbebdffa4a05fd5e39efd9.sample"]
 
 [params]
 

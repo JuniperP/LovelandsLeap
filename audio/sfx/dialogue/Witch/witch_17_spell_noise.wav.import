@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bobahohgq2gpu"
-path="res://.godot/imported/witch_17_spell_noise.wav-4cb8d2c76320bed79a93fd8342e1817a.sample"
+path="res://.godot/imported/witch_17_spell_noise.wav-054a54c13c5d6b0ffbc0149437b3f886.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/witch/witch_17_spell_noise.wav"
-dest_files=["res://.godot/imported/witch_17_spell_noise.wav-4cb8d2c76320bed79a93fd8342e1817a.sample"]
+source_file="res://audio/sfx/dialogue/Witch/witch_17_spell_noise.wav"
+dest_files=["res://.godot/imported/witch_17_spell_noise.wav-054a54c13c5d6b0ffbc0149437b3f886.sample"]
 
 [params]
 

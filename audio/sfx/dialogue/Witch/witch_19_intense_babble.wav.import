@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d3pytxpjpv6nc"
-path="res://.godot/imported/witch_19_intense_babble.wav-6708d19bbef48d26b5d49f8b4890578c.sample"
+path="res://.godot/imported/witch_19_intense_babble.wav-c7e197dff3067af98f1b4909be04ff7d.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/witch/witch_19_intense_babble.wav"
-dest_files=["res://.godot/imported/witch_19_intense_babble.wav-6708d19bbef48d26b5d49f8b4890578c.sample"]
+source_file="res://audio/sfx/dialogue/Witch/witch_19_intense_babble.wav"
+dest_files=["res://.godot/imported/witch_19_intense_babble.wav-c7e197dff3067af98f1b4909be04ff7d.sample"]
 
 [params]
 

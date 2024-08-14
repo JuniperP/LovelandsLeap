@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dgfgadtraalj5"
-path="res://.godot/imported/witch_14_ur_reh_he_eh_eh_howw.wav-68fd30edccc435e6518b3915b19bcd9d.sample"
+path="res://.godot/imported/witch_14_ur_reh_he_eh_eh_howw.wav-4e0ae71636b16140a1a1b782d007ff3f.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/witch/witch_14_ur_reh_he_eh_eh_howw.wav"
-dest_files=["res://.godot/imported/witch_14_ur_reh_he_eh_eh_howw.wav-68fd30edccc435e6518b3915b19bcd9d.sample"]
+source_file="res://audio/sfx/dialogue/Witch/witch_14_ur_reh_he_eh_eh_howw.wav"
+dest_files=["res://.godot/imported/witch_14_ur_reh_he_eh_eh_howw.wav-4e0ae71636b16140a1a1b782d007ff3f.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ca57wsmu1c1fp"
-path="res://.godot/imported/witch_20_passive_to_mad_babble.wav-fb6b004e1275bf694084aa4f7c22e9a5.sample"
+path="res://.godot/imported/witch_20_passive_to_mad_babble.wav-cf361325fd66ce36c128f8d0d6586f6e.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/witch/witch_20_passive_to_mad_babble.wav"
-dest_files=["res://.godot/imported/witch_20_passive_to_mad_babble.wav-fb6b004e1275bf694084aa4f7c22e9a5.sample"]
+source_file="res://audio/sfx/dialogue/Witch/witch_20_passive_to_mad_babble.wav"
+dest_files=["res://.godot/imported/witch_20_passive_to_mad_babble.wav-cf361325fd66ce36c128f8d0d6586f6e.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bi3pdvdmheuds"
-path="res://.godot/imported/long_croak.wav-b59cfac43fbb4fba3aa73a75603a51c2.sample"
+path="res://.godot/imported/long_croak.wav-e3bf0530b970b2d040a2a4be07fe0014.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/frog/long_croak.wav"
-dest_files=["res://.godot/imported/long_croak.wav-b59cfac43fbb4fba3aa73a75603a51c2.sample"]
+source_file="res://audio/sfx/dialogue/Frog/long_croak.wav"
+dest_files=["res://.godot/imported/long_croak.wav-e3bf0530b970b2d040a2a4be07fe0014.sample"]
 
 [params]
 

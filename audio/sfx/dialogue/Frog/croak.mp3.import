@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cm31852o876g6"
-path="res://.godot/imported/croak.mp3-e0201b7226c733e8a466a0dd54041ea9.mp3str"
+path="res://.godot/imported/croak.mp3-778bafd08eba1beacbf6e7277737f6df.mp3str"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/frog/croak.mp3"
-dest_files=["res://.godot/imported/croak.mp3-e0201b7226c733e8a466a0dd54041ea9.mp3str"]
+source_file="res://audio/sfx/dialogue/Frog/croak.mp3"
+dest_files=["res://.godot/imported/croak.mp3-778bafd08eba1beacbf6e7277737f6df.mp3str"]
 
 [params]
 

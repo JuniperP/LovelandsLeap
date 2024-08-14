@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://brdbslvryknvn"
-path="res://.godot/imported/witch_10_susura_sasetah.wav-020038dbc02bc46af8080168eac70260.sample"
+path="res://.godot/imported/witch_10_susura_sasetah.wav-1c7b07a77397db4a733f4ab2358fe051.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/witch/witch_10_susura_sasetah.wav"
-dest_files=["res://.godot/imported/witch_10_susura_sasetah.wav-020038dbc02bc46af8080168eac70260.sample"]
+source_file="res://audio/sfx/dialogue/Witch/witch_10_susura_sasetah.wav"
+dest_files=["res://.godot/imported/witch_10_susura_sasetah.wav-1c7b07a77397db4a733f4ab2358fe051.sample"]
 
 [params]
 

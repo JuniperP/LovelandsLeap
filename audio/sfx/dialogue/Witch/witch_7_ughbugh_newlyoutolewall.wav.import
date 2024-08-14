@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dnojxhkp5aakw"
-path="res://.godot/imported/witch_7_ughbugh_newlyoutolewall.wav-a3eb1a454ff9f65747cdc6779248f7ca.sample"
+path="res://.godot/imported/witch_7_ughbugh_newlyoutolewall.wav-8398489fe38c7f2f537737ba2e6d8425.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/witch/witch_7_ughbugh_newlyoutolewall.wav"
-dest_files=["res://.godot/imported/witch_7_ughbugh_newlyoutolewall.wav-a3eb1a454ff9f65747cdc6779248f7ca.sample"]
+source_file="res://audio/sfx/dialogue/Witch/witch_7_ughbugh_newlyoutolewall.wav"
+dest_files=["res://.godot/imported/witch_7_ughbugh_newlyoutolewall.wav-8398489fe38c7f2f537737ba2e6d8425.sample"]
 
 [params]
 

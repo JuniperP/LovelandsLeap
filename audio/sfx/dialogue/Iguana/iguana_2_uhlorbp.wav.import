@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bk7gvm6p3dku1"
-path="res://.godot/imported/iguana_2_uhlorbp.wav-c792051b9b3e9f3c46f1f3606b7c4faf.sample"
+path="res://.godot/imported/iguana_2_uhlorbp.wav-3498f9bb81bb33a7c45ec5825373cb09.sample"
 
 [deps]
 
-source_file="res://audio/sfx/dialogue/iguana/iguana_2_uhlorbp.wav"
-dest_files=["res://.godot/imported/iguana_2_uhlorbp.wav-c792051b9b3e9f3c46f1f3606b7c4faf.sample"]
+source_file="res://audio/sfx/dialogue/Iguana/iguana_2_uhlorbp.wav"
+dest_files=["res://.godot/imported/iguana_2_uhlorbp.wav-3498f9bb81bb33a7c45ec5825373cb09.sample"]
 
 [params]
 
