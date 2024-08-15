@@ -78,6 +78,7 @@ TrackSpeed = 1.0
 Bounce = true
 
 [node name="LineToFollow" parent="Room/MovingPlatform" index="0"]
+position = Vector2(-1379, -42)
 shape = SubResource("SegmentShape2D_1j54v")
 
 [node name="Theme" type="AudioStreamPlayer" parent="."]

@@ -8,13 +8,11 @@ resource_local_to_scene = true
 b = Vector2(500, 0)
 
 [node name="LeaderTrack" type="Area2D" node_paths=PackedStringArray("HitBox")]
-position = Vector2(100, 100)
 script = ExtResource("1_77jhk")
 SceneOnTrack = ExtResource("2_c7drp")
 TrackSpeed = 5.0
 HitBox = NodePath("LineToFollow")
 
 [node name="LineToFollow" type="CollisionShape2D" parent="."]
-position = Vector2(200, 100)
 shape = SubResource("SegmentShape2D_m5si0")
 debug_color = Color(0.832487, 0.00164338, 0.964289, 0.784314)
