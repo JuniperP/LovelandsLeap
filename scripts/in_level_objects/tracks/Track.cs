@@ -17,6 +17,10 @@ public partial class Track : Node2D
 	// If the item on the track should be moving
 	protected bool Move;
 
+	// The positions on the track
+	protected Vector2 PointA;
+	protected Vector2 PointB;
+
 	// This nodes leader in the system
 	protected LeaderTrack Leader;
 
@@ -31,10 +35,10 @@ public partial class Track : Node2D
 		// Using our hitbox to get the line our object will follow
 		LineToFollow = (SegmentShape2D)HitBox.Shape;
 
-		// Adjusting for the parent's area's offset
-		LineToFollow.A += Position;
-		LineToFollow.B += Position;
-
+		// Setting up where we wish to go accounting for parents' areas' offsets
+		PointA = LineToFollow.A + HitBox.Position;
+		PointB = LineToFollow.B + HitBox.Position;
+		
 		FurtherSetup();
 	}
 
@@ -42,7 +46,7 @@ public partial class Track : Node2D
 	protected void StartTrack(Node2D node, int trackSpeed, bool orient, LeaderTrack leader)
 	{
 		SpeedMod = trackSpeed;
-		node.Position = LineToFollow.A;
+		node.Position = PointA;
 		InstanScene = node;
 		Move = true;
 		Orient = orient;
@@ -62,12 +66,12 @@ public partial class Track : Node2D
 	protected void MoveNoBounce(float nodeSpeed)
 	{
 		// Orienting the scene if needed
-		AlignScene(LineToFollow.A.AngleToPoint(LineToFollow.B));
+		AlignScene(PointA.AngleToPoint(PointB));
 
-		InstanScene.Position = InstanScene.Position.MoveToward(LineToFollow.B, nodeSpeed);
+		InstanScene.Position = InstanScene.Position.MoveToward(PointB, nodeSpeed);
 
 		// Passing the scene if the end is reached
-		if (InstanScene.Position == LineToFollow.B)
+		if (InstanScene.Position == PointB)
 		{
 			EmitSignal(SignalName.ReachedEnd, InstanScene, SpeedMod, Orient, Leader);
 			Move = false;
@@ -88,7 +92,6 @@ public partial class Track : Node2D
 	{
 		if (Orient)
 			InstanScene.Rotation = angle;
-
 	}
 
 }

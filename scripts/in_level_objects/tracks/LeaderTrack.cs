@@ -40,7 +40,7 @@ public partial class LeaderTrack : Track
 		AddChild(InstanScene);
 
 		// Starting the user at the beginning of the track
-		InstanScene.Position = LineToFollow.A;
+		InstanScene.Position = PointA;
 
 		// Assigning this leader track as the leader of its group
 		Leader = this;
@@ -75,20 +75,19 @@ public partial class LeaderTrack : Track
 		// Going the right direction and potentially aligning
 		if (_towardA)
 		{
-			AlignScene(LineToFollow.B.AngleToPoint(LineToFollow.A));
-			InstanScene.Position = InstanScene.Position.MoveToward(LineToFollow.A, nodeSpeed);
+			AlignScene(PointB.AngleToPoint(PointA));
+			InstanScene.Position = InstanScene.Position.MoveToward(PointA, nodeSpeed);
 		}
 		else
 		{
-			AlignScene(LineToFollow.A.AngleToPoint(LineToFollow.B));
-			InstanScene.Position = InstanScene.Position.MoveToward(LineToFollow.B, nodeSpeed);
+			AlignScene(PointA.AngleToPoint(PointB));
+			InstanScene.Position = InstanScene.Position.MoveToward(PointB, nodeSpeed);
 		}
 
-
 		// Flipping direction once a side has been hit
-		if (InstanScene.Position == LineToFollow.A)
+		if (InstanScene.Position == PointA)
 			_towardA = false;
-		else if (InstanScene.Position == LineToFollow.B)
+		else if (InstanScene.Position == PointB)
 			_towardA = true;
 	}
 
