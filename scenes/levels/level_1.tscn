@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://duhqqspapvtn0"]
+[gd_scene load_steps=13 format=3 uid="uid://duhqqspapvtn0"]
 
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background.tscn" id="1_u3dt8"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://3ocqcs25ejwi" path="res://scenes/in_level_objects/leader_track.tscn" id="5_vvtnc"]
 [ext_resource type="PackedScene" uid="uid://dscnjvfmtdjdk" path="res://scenes/in_level_objects/follower_track.tscn" id="6_c50vl"]
 [ext_resource type="PackedScene" uid="uid://cs66fauscvr67" path="res://scenes/in_level_objects/in_level_button.tscn" id="8_vhq5w"]
+[ext_resource type="PackedScene" uid="uid://bl0bgwhujge5k" path="res://scenes/in_level_objects/small_log.tscn" id="9_v5ymn"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5d6dv"]
 resource_local_to_scene = true
@@ -18,6 +19,11 @@ b = Vector2(1021, -122)
 resource_local_to_scene = true
 a = Vector2(1023, -117)
 b = Vector2(1213, -568)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1j54v"]
+resource_local_to_scene = true
+a = Vector2(3760, -178)
+b = Vector2(3226, 170)
 
 [node name="Level1" type="Control"]
 layout_mode = 3
@@ -66,6 +72,14 @@ shape = SubResource("SegmentShape2D_5icq6")
 [node name="InLevelButton" parent="Room" instance=ExtResource("8_vhq5w")]
 position = Vector2(616, 126)
 
+[node name="MovingPlatform" parent="Room" instance=ExtResource("5_vvtnc")]
+SceneOnTrack = ExtResource("9_v5ymn")
+TrackSpeed = 1.0
+Bounce = true
+
+[node name="LineToFollow" parent="Room/MovingPlatform" index="0"]
+shape = SubResource("SegmentShape2D_1j54v")
+
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_iwaey")
 autoplay = true
@@ -81,3 +95,4 @@ bus = &"Music"
 [editable path="Room/Camera2D/Control/PauseScreen/Settings/BackBox/TabContainer/Other/OtherToChange"]
 [editable path="Room/FlyTrack/LeaderTrack"]
 [editable path="Room/FlyTrack/FollowerTrack"]
+[editable path="Room/MovingPlatform"]

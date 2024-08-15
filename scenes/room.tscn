@@ -1,64 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://clnx8ma77b6h3"]
+[gd_scene load_steps=9 format=3 uid="uid://clnx8ma77b6h3"]
 
 [ext_resource type="PackedScene" uid="uid://ccc6gfv7e6o6w" path="res://scenes/player/player.tscn" id="1_1djk0"]
 [ext_resource type="Script" path="res://scripts/Camera.cs" id="1_iamro"]
 [ext_resource type="PackedScene" uid="uid://bogkg7ij1umf1" path="res://scenes/ui/pause_screen.tscn" id="1_rm67i"]
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="3_6sffn"]
-[ext_resource type="Texture2D" uid="uid://dnh0cnucyc6tp" path="res://assets/tiles.png" id="4_bh1hj"]
 [ext_resource type="PackedScene" uid="uid://2jyl564ee5cu" path="res://scenes/ui/speed_run_timer.tscn" id="4_cf0s8"]
 [ext_resource type="PackedScene" uid="uid://tig2ub6l5vjg" path="res://scenes/ui/live_frog_reaction.tscn" id="5_k7no0"]
 [ext_resource type="PackedScene" uid="uid://c3y1226gfn5tq" path="res://scenes/ui/fly_count_back_drop.tscn" id="6_adkuw"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1drd"]
-texture = ExtResource("4_bh1hj")
-texture_region_size = Vector2i(100, 100)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45.6874, 50, 50, 50, 50, -50, -45.985, -50)
-1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
-2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 45.7852, -50, 45.0422, 50, -50, 50)
-1:1/0 = 0
-1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:1/0/physics_layer_0/angular_velocity = 0.0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
-2:1/0 = 0
-2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:1/0/physics_layer_0/angular_velocity = 0.0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 45.0781, -50, 45.2548, 50, -50, 50)
-1:2/0 = 0
-1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:2/0/physics_layer_0/angular_velocity = 0.0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
-2:2/0 = 0
-2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:2/0/physics_layer_0/angular_velocity = 0.0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 40, -50, 48, -18, 46, 24, 40, 50, -50, 50)
-3:2/0 = 0
-3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:2/0/physics_layer_0/angular_velocity = 0.0
-0:2/0 = 0
-0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:2/0/physics_layer_0/angular_velocity = 0.0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(50, -50, 50, 50, -39.598, 50, -48, 18, -48, -18, -42, -50)
-0:1/0 = 0
-0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:1/0/physics_layer_0/angular_velocity = 0.0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45.4394, -50, 50, -50, 50, 50, -45.6378, 50)
-
-[sub_resource type="TileSet" id="TileSet_12rfl"]
-tile_size = Vector2i(100, 100)
-occlusion_layer_0/light_mask = 2
-physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 2
-sources/3 = SubResource("TileSetAtlasSource_f1drd")
-tile_proxies/coords_level = [[1, Vector2i(0, 0)], [2, Vector2i(0, 0)], [1, Vector2i(1, 0)], [2, Vector2i(1, 0)], [1, Vector2i(1, 1)], [2, Vector2i(1, 1)], [1, Vector2i(1, 2)], [2, Vector2i(1, 2)], [1, Vector2i(2, 0)], [2, Vector2i(2, 0)], [1, Vector2i(2, 1)], [2, Vector2i(2, 1)], [1, Vector2i(2, 2)], [2, Vector2i(2, 2)], [1, Vector2i(3, 0)], [2, Vector2i(3, 0)], [1, Vector2i(3, 1)], [2, Vector2i(3, 1)], [1, Vector2i(3, 2)], [2, Vector2i(3, 2)]]
+[ext_resource type="TileSet" uid="uid://b15sq0pdpd8h" path="res://assets/tilemap.tres" id="8_60br4"]
 
 [node name="Room" type="Node2D"]
 
@@ -116,7 +65,7 @@ z_index = 10
 modulate = Color(0.7, 0.7, 0.7, 1)
 light_mask = 2
 visibility_layer = 2
-tile_set = SubResource("TileSet_12rfl")
+tile_set = ExtResource("8_60br4")
 format = 2
 
 [connection signal="hidden" from="Camera2D/Control/PauseScreen" to="Camera2D/Control/LiveFrogReaction" method="UpdateReaction"]
