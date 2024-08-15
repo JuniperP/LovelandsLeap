@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class Track : Node
+public partial class Track : Node2D
 {
 	// The track for our object
 	protected SegmentShape2D LineToFollow;
@@ -30,6 +30,10 @@ public partial class Track : Node
 	{
 		// Using our hitbox to get the line our object will follow
 		LineToFollow = (SegmentShape2D)HitBox.Shape;
+
+		// Adjusting for the parent's area's offset
+		LineToFollow.A += Position;
+		LineToFollow.B += Position;
 
 		FurtherSetup();
 	}
