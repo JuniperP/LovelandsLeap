@@ -6,6 +6,15 @@ public partial class LiveFrogReaction : Toggleable
 		ToggleReaction.ChangeFrogFace = true;
 	}
 
+	/*
+	I wish this could just be a signal connected via enabling editable children
+	from button to this scene...
+	BUT NOOOOO!
+	Godot is being cringe!
+	This is why we can't have nice things, Godot just has to make a HUGE clutter
+	in the scene tree and give terrible error messages!
+	Fine! Have it your way Godot >:( !
+	*/
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
