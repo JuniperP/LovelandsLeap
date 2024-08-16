@@ -38,7 +38,7 @@ public partial class Track : Node2D
 		// Setting up where we wish to go accounting for parents' areas' offsets
 		PointA = LineToFollow.A + HitBox.Position;
 		PointB = LineToFollow.B + HitBox.Position;
-		
+
 		FurtherSetup();
 	}
 
@@ -94,4 +94,20 @@ public partial class Track : Node2D
 			InstanScene.Rotation = angle;
 	}
 
+	// Potential way of doing this if I was lazy and just made copies of the tile map for every platform
+	/*
+	protected void AdjustPlatformVelocity()
+	{
+		if (InstanScene is TileMap)
+		{
+			TileMap scene = (TileMap)InstanScene;
+			Godot.Collections.Array<Vector2I> usedCells = scene.GetUsedCells(0);
+
+			for (int i = 0; i < usedCells.Count; i++)
+			{
+				scene.GetCellTileData(0, usedCells[i]).SetConstantLinearVelocity(0, new Vector2(1000, -1000));
+			}
+		}
+	}
+*/
 }
