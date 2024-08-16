@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://brv2do2v4lh5y"]
 
 [ext_resource type="Script" path="res://scripts/in_level_objects/flies/FlyBehavoir.cs" id="1_ocbs5"]
-[ext_resource type="Texture2D" uid="uid://ccmw3orovb1gw" path="res://assets/TempFlyIcon.svg" id="2_fgfx3"]
+[ext_resource type="Texture2D" uid="uid://ccmw3orovb1gw" path="res://assets/temp_fly_icon.svg" id="2_fgfx3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgmb8"]
 size = Vector2(100, 100)
