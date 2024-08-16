@@ -69,8 +69,3 @@ tile_set = ExtResource("8_60br4")
 format = 2
 
 [connection signal="hidden" from="Camera2D/Control/PauseScreen" to="Camera2D/Control/LiveFrogReaction" method="UpdateReaction"]
-[connection signal="ChangedFrog" from="Camera2D/Control/PauseScreen/Settings/BackBox/TabContainer/Other/OtherToChange/LiveFrogReaction/ToggleReaction" to="Camera2D/Control/LiveFrogReaction" method="UpdateReaction"]
-
-[editable path="Camera2D/Control/PauseScreen"]
-[editable path="Camera2D/Control/PauseScreen/Settings"]
-[editable path="Camera2D/Control/PauseScreen/Settings/BackBox/TabContainer/Other/OtherToChange"]
