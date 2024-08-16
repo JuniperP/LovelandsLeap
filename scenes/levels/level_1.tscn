@@ -74,7 +74,6 @@ position = Vector2(616, 126)
 
 [node name="MovingPlatform" parent="Room" instance=ExtResource("5_vvtnc")]
 SceneOnTrack = ExtResource("9_v5ymn")
-TrackSpeed = 1.0
 Bounce = true
 
 [node name="LineToFollow" parent="Room/MovingPlatform" index="0"]
@@ -91,9 +90,6 @@ bus = &"Music"
 [connection signal="ButtonReleased" from="Room/InLevelButton" to="Room/FlyTrack/LeaderTrack" method="StopSystem"]
 
 [editable path="Room"]
-[editable path="Room/Camera2D/Control/PauseScreen"]
-[editable path="Room/Camera2D/Control/PauseScreen/Settings"]
-[editable path="Room/Camera2D/Control/PauseScreen/Settings/BackBox/TabContainer/Other/OtherToChange"]
 [editable path="Room/FlyTrack/LeaderTrack"]
 [editable path="Room/FlyTrack/FollowerTrack"]
 [editable path="Room/MovingPlatform"]

@@ -30,6 +30,3 @@ autoplay = true
 bus = &"Music"
 
 [editable path="Room"]
-[editable path="Room/Camera2D/Control/PauseScreen"]
-[editable path="Room/Camera2D/Control/PauseScreen/Settings"]
-[editable path="Room/Camera2D/Control/PauseScreen/Settings/BackBox/TabContainer/Other/OtherToChange"]
