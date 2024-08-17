@@ -87,9 +87,6 @@ public class WalkState : MovementState
 			Ctx.Acceleration * accelFactor * (float)delta  // How much to adjust by
 		);
 
-		// Adjusting for the tile's given linear velocity
-		velocity += Ctx.GetPlatformVelocity().X;
-
 		return velocity;
 	}
 
@@ -131,9 +128,6 @@ public class WalkState : MovementState
 		if (_isFastFalling)
 			maxFall *= Ctx.FastFallMaxFactor;
 		velocity = Mathf.Min(velocity, maxFall);
-
-		// Adjusting for the tile's given linear velocity
-		velocity += Ctx.GetPlatformVelocity().Y;
 
 		return velocity;
 	}
