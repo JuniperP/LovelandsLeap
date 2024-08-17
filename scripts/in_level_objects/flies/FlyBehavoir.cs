@@ -2,6 +2,8 @@ using Godot;
 
 public partial class FlyBehavoir : Area2D
 {
+	[Export] public Sprite2D Sprite;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -18,5 +20,11 @@ public partial class FlyBehavoir : Area2D
 			FlyCount.UpCount();
 			QueueFree();
 		}
+	}
+
+	// Toggle the way the fly is looking
+	public void FlipFly()
+	{
+		Sprite.FlipV = !Sprite.FlipV;
 	}
 }
