@@ -7,8 +7,7 @@ public partial class MovingPlatformTrack : Path2D
 	// Tracks direction of the platform
 	private bool _goBackward;
 
-	// TODO: See if remote transform can be removed without issue
-	[Export] public RemoteTransform2D RemoteTransform;
+	[Export] public RemoteTransform2D RemoteTransform; // Required less the collision doesn't actually move
 	[Export] public PathFollow2D HowToFollow;
 	[Export] public AnimatableBody2D Platform;
 
