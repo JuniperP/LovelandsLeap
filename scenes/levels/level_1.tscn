@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://duhqqspapvtn0"]
+[gd_scene load_steps=15 format=3 uid="uid://duhqqspapvtn0"]
 
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background.tscn" id="1_u3dt8"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://3ocqcs25ejwi" path="res://scenes/in_level_objects/leader_track.tscn" id="5_vvtnc"]
 [ext_resource type="PackedScene" uid="uid://dscnjvfmtdjdk" path="res://scenes/in_level_objects/follower_track.tscn" id="6_c50vl"]
 [ext_resource type="PackedScene" uid="uid://cs66fauscvr67" path="res://scenes/in_level_objects/in_level_button.tscn" id="8_vhq5w"]
-[ext_resource type="PackedScene" uid="uid://bl0bgwhujge5k" path="res://scenes/in_level_objects/small_log.tscn" id="9_v5ymn"]
+[ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/moving_platform_track.tscn" id="9_v68ep"]
+[ext_resource type="PackedScene" uid="uid://b5ovwc4k8xaal" path="res://scenes/in_level_objects/small_platform.tscn" id="10_e2kl1"]
 [ext_resource type="PackedScene" uid="uid://dynldm7etkjb2" path="res://scenes/in_level_objects/fly_path.tscn" id="10_k4vc1"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5d6dv"]
@@ -20,17 +21,19 @@ resource_local_to_scene = true
 a = Vector2(1023, -117)
 b = Vector2(1213, -568)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_1j54v"]
-resource_local_to_scene = true
-a = Vector2(3760, -178)
-b = Vector2(3226, 170)
-
 [sub_resource type="Curve2D" id="Curve2D_hck64"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 665, 322, 0, 0, 0, 0, 998, -242, 0, 0, 0, 0, 0, 0)
 }
 point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_ccfu5"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 442, -184, 0, 0, 0, 0, 696, -328)
+}
+point_count = 3
 
 [node name="Level1" type="Control"]
 layout_mode = 3
@@ -76,14 +79,6 @@ shape = SubResource("SegmentShape2D_5icq6")
 [node name="InLevelButton" parent="Room" instance=ExtResource("8_vhq5w")]
 position = Vector2(616, 126)
 
-[node name="MovingPlatform" parent="Room" instance=ExtResource("5_vvtnc")]
-SceneOnTrack = ExtResource("9_v5ymn")
-Bounce = true
-
-[node name="LineToFollow" parent="Room/MovingPlatform" index="0"]
-position = Vector2(-1379, -42)
-shape = SubResource("SegmentShape2D_1j54v")
-
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_iwaey")
 autoplay = true
@@ -94,6 +89,15 @@ position = Vector2(1086, 432)
 curve = SubResource("Curve2D_hck64")
 TrackLoops = true
 
+[node name="MovingPlatformTrack" parent="." node_paths=PackedStringArray("Platform") instance=ExtResource("9_v68ep")]
+position = Vector2(1581, -59)
+curve = SubResource("Curve2D_ccfu5")
+Platform = NodePath("SmallPlatform")
+BounceOffEnd = true
+AutoStart = true
+
+[node name="SmallPlatform" parent="MovingPlatformTrack" instance=ExtResource("10_e2kl1")]
+
 [connection signal="ReachedEnd" from="Room/FlyTrack/LeaderTrack" to="Room/FlyTrack/FollowerTrack" method="StartTrack"]
 [connection signal="ButtonPressed" from="Room/InLevelButton" to="Room/FlyTrack/LeaderTrack" method="StartSystem"]
 [connection signal="ButtonReleased" from="Room/InLevelButton" to="Room/FlyTrack/LeaderTrack" method="StopSystem"]
@@ -101,4 +105,3 @@ TrackLoops = true
 [editable path="Room"]
 [editable path="Room/FlyTrack/LeaderTrack"]
 [editable path="Room/FlyTrack/FollowerTrack"]
-[editable path="Room/MovingPlatform"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3v5dbjjeis3a"]
+[gd_scene load_steps=3 format=3 uid="uid://d3v5dbjjeis3a"]
 
 [ext_resource type="Script" path="res://scripts/in_level_objects/MovingPlatformTrack.cs" id="1_yxgwc"]
 
@@ -9,22 +9,12 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghah2"]
-
-[node name="MovingPlatformTrack" type="Path2D" node_paths=PackedStringArray("RemoteTransform", "HowToFollow", "Platform")]
+[node name="MovingPlatformTrack" type="Path2D" node_paths=PackedStringArray("RemoteTransform", "HowToFollow")]
 curve = SubResource("Curve2D_y5e3b")
 script = ExtResource("1_yxgwc")
 RemoteTransform = NodePath("FollowsPath/RemoteTransform")
 HowToFollow = NodePath("FollowsPath")
-Platform = NodePath("AnimatableBody2D")
-BounceOffEnd = true
-AutoStart = true
 
 [node name="FollowsPath" type="PathFollow2D" parent="."]
 
 [node name="RemoteTransform" type="RemoteTransform2D" parent="FollowsPath"]
-
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-shape = SubResource("RectangleShape2D_ghah2")
