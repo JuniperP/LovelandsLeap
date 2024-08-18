@@ -13,10 +13,10 @@ point_count = 3
 [node name="FlyPath" type="Path2D" node_paths=PackedStringArray("HowToFollow", "Fly")]
 curve = SubResource("Curve2D_0vgy8")
 script = ExtResource("1_54jng")
-HowToFollow = NodePath("PathToFollow")
-Fly = NodePath("PathToFollow/Fly")
+HowToFollow = NodePath("FollowsPath")
+Fly = NodePath("FollowsPath/Fly")
 
-[node name="PathToFollow" type="PathFollow2D" parent="."]
+[node name="FollowsPath" type="PathFollow2D" parent="."]
 rotation = 0.00499996
 
-[node name="Fly" parent="PathToFollow" instance=ExtResource("1_n5wqg")]
+[node name="Fly" parent="FollowsPath" instance=ExtResource("1_n5wqg")]
