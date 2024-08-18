@@ -19,9 +19,9 @@ point_count = 4
 [sub_resource type="Curve2D" id="Curve2D_ccfu5"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 442, -184, 0, 0, 0, 0, 696, -328)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 254, -99, 0, 0, 0, 0, 442, -184, 0, 0, 0, 0, 1236, -136, 0, 0, 0, 0, 1604, -190)
 }
-point_count = 3
+point_count = 5
 
 [node name="Level1" type="Control"]
 layout_mode = 3
@@ -50,7 +50,7 @@ layer_0/tile_data = PackedInt32Array(589824, 65539, 1, 589827, 65539, 0, 589828,
 position = Vector2(2319, 653)
 
 [node name="InLevelButton" parent="Room" instance=ExtResource("8_vhq5w")]
-position = Vector2(616, 126)
+position = Vector2(2714, 35)
 
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_iwaey")
@@ -63,12 +63,16 @@ curve = SubResource("Curve2D_hck64")
 TrackLoops = true
 
 [node name="MovingPlatformTrack" parent="." node_paths=PackedStringArray("Platform") instance=ExtResource("9_v68ep")]
-position = Vector2(1581, -59)
+position = Vector2(3000, -91)
 curve = SubResource("Curve2D_ccfu5")
 Platform = NodePath("SmallPlatform")
+TrackSpeed = 10.0
 BounceOffEnd = true
-AutoStart = true
+Stoppable = true
 
 [node name="SmallPlatform" parent="MovingPlatformTrack" instance=ExtResource("10_e2kl1")]
+
+[connection signal="ButtonPressed" from="Room/InLevelButton" to="MovingPlatformTrack" method="TogglePlatform"]
+[connection signal="ButtonReleased" from="Room/InLevelButton" to="MovingPlatformTrack" method="TogglePlatform"]
 
 [editable path="Room"]
