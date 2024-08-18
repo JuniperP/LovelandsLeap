@@ -7,6 +7,8 @@ public partial class MovingPlatformTrack : Path2D
 	// Tracks direction of the platform
 	private bool _goBackward;
 
+	private float _slowDownFactor;
+
 	[Export] public RemoteTransform2D RemoteTransform; // Required less the collision doesn't actually move
 	[Export] public PathFollow2D HowToFollow;
 	[Export] public AnimatableBody2D Platform;
@@ -34,6 +36,7 @@ public partial class MovingPlatformTrack : Path2D
 		// Starting process if applicable
 		_move = AutoStart;
 		_goBackward = true;
+		_slowDownFactor = 30;
 	}
 
 	// Easy signal transfers to stop / start the platform
@@ -48,16 +51,44 @@ public partial class MovingPlatformTrack : Path2D
 	{
 		if (_move)
 		{
-			if (BounceOffEnd && _goBackward)
-				HowToFollow.ProgressRatio -= (float)delta / 10 * TrackSpeed;
-			else
-				HowToFollow.ProgressRatio += (float)delta / 10 * TrackSpeed;
+			// Constant speed
+			float slowDownFactor = CalculateSpeedFactor(delta);
 
+			// Moving the platform the right direction
+			if (BounceOffEnd && _goBackward)
+				HowToFollow.ProgressRatio -= (float)delta / slowDownFactor * TrackSpeed;
+			else
+				HowToFollow.ProgressRatio += (float)delta / slowDownFactor * TrackSpeed;
+
+			// Flipping direction if needed
 			if (BounceOffEnd && (HowToFollow.ProgressRatio <= 0 || HowToFollow.ProgressRatio >= 1))
 				_goBackward = !_goBackward;
 
 		}
 
+	}
+
+	// Calculated the arbitrary speed with easing
+	private float CalculateSpeedFactor(double delta)
+	{
+		// Constant speed
+		float ratio = HowToFollow.ProgressRatio;
+
+		// Check basics reqs to ease
+		if ((HowToFollow.ProgressRatio <= .1 || HowToFollow.ProgressRatio >= .9) && BounceOffEnd)
+		{
+			// Speedup when headed toward center
+			if (_slowDownFactor > 10 && ((_goBackward && ratio >= .9) || (!_goBackward && ratio <= .1)))
+				_slowDownFactor -= (float)delta * 20;
+
+			// Slow down when approaching edge
+			if (_slowDownFactor < 30 && ((_goBackward && ratio <= .1) || (_goBackward && ratio >= .9)))
+				_slowDownFactor += (float)delta * 20;
+		}
+		else
+			_slowDownFactor = 10;
+
+		return _slowDownFactor;
 	}
 
 }

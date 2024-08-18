@@ -63,7 +63,7 @@ curve = SubResource("Curve2D_hck64")
 TrackLoops = true
 
 [node name="MovingPlatformTrack" parent="." node_paths=PackedStringArray("Platform") instance=ExtResource("9_v68ep")]
-position = Vector2(3000, -91)
+position = Vector2(2679, 625)
 curve = SubResource("Curve2D_ccfu5")
 Platform = NodePath("SmallPlatform")
 TrackSpeed = 10.0
