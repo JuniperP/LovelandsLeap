@@ -11,6 +11,7 @@ public partial class MovingPlatformTrack : Path2D
 	[Export] public PathFollow2D HowToFollow;
 	[Export] public AnimatableBody2D Platform;
 
+	// Note: it is not possible to have a looping bouncing track; less it would loop and bounce at the end
 	[ExportGroup("PropertiesOfTheTrack")]
 	[Export] public float TrackSpeed = 5;
 	[Export] public bool TrackLoops = false;
