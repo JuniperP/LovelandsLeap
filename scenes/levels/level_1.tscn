@@ -1,25 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://duhqqspapvtn0"]
+[gd_scene load_steps=11 format=3 uid="uid://duhqqspapvtn0"]
 
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background.tscn" id="1_u3dt8"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="4_6pusj"]
 [ext_resource type="AudioStream" uid="uid://ca1nkabl72yvt" path="res://audio/music/loveland__platforming_music.wav" id="4_iwaey"]
-[ext_resource type="PackedScene" uid="uid://3ocqcs25ejwi" path="res://scenes/in_level_objects/leader_track.tscn" id="5_vvtnc"]
-[ext_resource type="PackedScene" uid="uid://dscnjvfmtdjdk" path="res://scenes/in_level_objects/follower_track.tscn" id="6_c50vl"]
 [ext_resource type="PackedScene" uid="uid://cs66fauscvr67" path="res://scenes/in_level_objects/in_level_button.tscn" id="8_vhq5w"]
 [ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/moving_platform_track.tscn" id="9_v68ep"]
 [ext_resource type="PackedScene" uid="uid://b5ovwc4k8xaal" path="res://scenes/in_level_objects/small_platform.tscn" id="10_e2kl1"]
 [ext_resource type="PackedScene" uid="uid://dynldm7etkjb2" path="res://scenes/in_level_objects/fly_path.tscn" id="10_k4vc1"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_5d6dv"]
-resource_local_to_scene = true
-a = Vector2(674, -506)
-b = Vector2(1021, -122)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_5icq6"]
-resource_local_to_scene = true
-a = Vector2(1023, -117)
-b = Vector2(1213, -568)
 
 [sub_resource type="Curve2D" id="Curve2D_hck64"]
 resource_local_to_scene = true
@@ -61,21 +49,6 @@ layer_0/tile_data = PackedInt32Array(589824, 65539, 1, 589827, 65539, 0, 589828,
 [node name="FadeTransition" parent="Room" instance=ExtResource("4_6pusj")]
 position = Vector2(2319, 653)
 
-[node name="FlyTrack" type="Node2D" parent="Room"]
-
-[node name="LeaderTrack" parent="Room/FlyTrack" instance=ExtResource("5_vvtnc")]
-TrackSpeed = 3.0
-AngleWithTrack = true
-AutoStart = false
-
-[node name="LineToFollow" parent="Room/FlyTrack/LeaderTrack" index="0"]
-shape = SubResource("SegmentShape2D_5d6dv")
-
-[node name="FollowerTrack" parent="Room/FlyTrack" instance=ExtResource("6_c50vl")]
-
-[node name="LineToFollow" parent="Room/FlyTrack/FollowerTrack" index="0"]
-shape = SubResource("SegmentShape2D_5icq6")
-
 [node name="InLevelButton" parent="Room" instance=ExtResource("8_vhq5w")]
 position = Vector2(616, 126)
 
@@ -98,10 +71,4 @@ AutoStart = true
 
 [node name="SmallPlatform" parent="MovingPlatformTrack" instance=ExtResource("10_e2kl1")]
 
-[connection signal="ReachedEnd" from="Room/FlyTrack/LeaderTrack" to="Room/FlyTrack/FollowerTrack" method="StartTrack"]
-[connection signal="ButtonPressed" from="Room/InLevelButton" to="Room/FlyTrack/LeaderTrack" method="StartSystem"]
-[connection signal="ButtonReleased" from="Room/InLevelButton" to="Room/FlyTrack/LeaderTrack" method="StopSystem"]
-
 [editable path="Room"]
-[editable path="Room/FlyTrack/LeaderTrack"]
-[editable path="Room/FlyTrack/FollowerTrack"]
