@@ -18,6 +18,7 @@ public partial class MovingPlatformTrack : Path2D
 	[Export] public bool BounceOffEnd = false;
 	[Export] public bool AutoStart = false;
 	[Export] public bool Stoppable = false;
+	[Export] public bool OrientPlatformWithTrack = false;
 
 
 	// Called when the node enters the scene tree for the first time.
@@ -28,6 +29,7 @@ public partial class MovingPlatformTrack : Path2D
 
 		// Matching how to follow with client's demands
 		HowToFollow.Loop = TrackLoops;
+		HowToFollow.Rotates = OrientPlatformWithTrack;
 
 		// Starting process if applicable
 		_move = AutoStart;

@@ -16,5 +16,6 @@ RemoteTransform = NodePath("FollowsPath/RemoteTransform")
 HowToFollow = NodePath("FollowsPath")
 
 [node name="FollowsPath" type="PathFollow2D" parent="."]
+rotates = false
 
 [node name="RemoteTransform" type="RemoteTransform2D" parent="FollowsPath"]
