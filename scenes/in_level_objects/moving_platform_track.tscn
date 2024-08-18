@@ -17,6 +17,7 @@ script = ExtResource("1_yxgwc")
 RemoteTransform = NodePath("FollowsPath/RemoteTransform")
 HowToFollow = NodePath("FollowsPath")
 Platform = NodePath("AnimatableBody2D")
+BounceOffEnd = true
 AutoStart = true
 
 [node name="FollowsPath" type="PathFollow2D" parent="."]

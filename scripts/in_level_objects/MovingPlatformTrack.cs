@@ -4,8 +4,10 @@ public partial class MovingPlatformTrack : Path2D
 {
 	// Tracks whether or not the platform should be moving
 	private bool _move;
+	// Tracks direction of the platform
+	private bool _goBackward;
 
-
+	// TODO: See if remote transform can be removed without issue
 	[Export] public RemoteTransform2D RemoteTransform;
 	[Export] public PathFollow2D HowToFollow;
 	[Export] public AnimatableBody2D Platform;
@@ -29,6 +31,7 @@ public partial class MovingPlatformTrack : Path2D
 
 		// Starting process if applicable
 		_move = AutoStart;
+		_goBackward = true;
 	}
 
 	// Easy signal transfers to stop / start the platform
@@ -43,7 +46,14 @@ public partial class MovingPlatformTrack : Path2D
 	{
 		if (_move)
 		{
-			HowToFollow.ProgressRatio += (float)delta / 10 * TrackSpeed;
+			if (BounceOffEnd && _goBackward)
+				HowToFollow.ProgressRatio -= (float)delta / 10 * TrackSpeed;
+			else
+				HowToFollow.ProgressRatio += (float)delta / 10 * TrackSpeed;
+
+			if (BounceOffEnd && (HowToFollow.ProgressRatio <= 0 || HowToFollow.ProgressRatio >= 1))
+				_goBackward = !_goBackward;
+
 		}
 
 	}
