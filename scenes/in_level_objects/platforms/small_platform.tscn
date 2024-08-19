@@ -24,4 +24,6 @@ position = Vector2(100, 0)
 shape = SubResource("RectangleShape2D_w1ib8")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+light_mask = 2
+visibility_layer = 2
 texture = SubResource("AtlasTexture_ceo41")
