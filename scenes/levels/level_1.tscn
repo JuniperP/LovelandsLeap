@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://ca1nkabl72yvt" path="res://audio/music/loveland__platforming_music.wav" id="4_iwaey"]
 [ext_resource type="PackedScene" uid="uid://cs66fauscvr67" path="res://scenes/in_level_objects/in_level_button.tscn" id="8_vhq5w"]
 [ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/moving_platform_track.tscn" id="9_v68ep"]
-[ext_resource type="PackedScene" uid="uid://b5ovwc4k8xaal" path="res://scenes/in_level_objects/small_platform.tscn" id="10_e2kl1"]
+[ext_resource type="PackedScene" uid="uid://b5ovwc4k8xaal" path="res://scenes/in_level_objects/platforms/small_platform.tscn" id="10_e2kl1"]
 [ext_resource type="PackedScene" uid="uid://dynldm7etkjb2" path="res://scenes/in_level_objects/fly_path.tscn" id="10_k4vc1"]
 
 [sub_resource type="Curve2D" id="Curve2D_hck64"]
@@ -66,7 +66,7 @@ TrackLoops = true
 position = Vector2(2679, 625)
 curve = SubResource("Curve2D_ccfu5")
 Platform = NodePath("SmallPlatform")
-TrackSpeed = 10.0
+TrackSpeed = 2.0
 BounceOffEnd = true
 Stoppable = true
 
