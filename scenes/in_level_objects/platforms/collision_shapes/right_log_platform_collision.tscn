@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5m4ksmcq78vy"]
+
+[ext_resource type="Texture2D" uid="uid://dnh0cnucyc6tp" path="res://assets/tiles.png" id="1_fmt0u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntkwx"]
+atlas = ExtResource("1_fmt0u")
+region = Rect2(200, 200, 100, 100)
+
+[node name="RightLogPlatformCollision" type="CollisionPolygon2D"]
+polygon = PackedVector2Array(-50, 50, 40, 50, 47, 20, 47, -19, 41, -50, -50, -50)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ntkwx")

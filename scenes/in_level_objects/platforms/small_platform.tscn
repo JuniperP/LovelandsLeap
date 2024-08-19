@@ -1,11 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5ovwc4k8xaal"]
+[gd_scene load_steps=6 format=3 uid="uid://b5ovwc4k8xaal"]
+
+[ext_resource type="Texture2D" uid="uid://dnh0cnucyc6tp" path="res://assets/tiles.png" id="1_chltk"]
+[ext_resource type="PackedScene" uid="uid://dakbxs5hkpy70" path="res://scenes/in_level_objects/platforms/collision_shapes/left_log_platform_collision.tscn" id="1_v5mxa"]
+[ext_resource type="PackedScene" uid="uid://c5m4ksmcq78vy" path="res://scenes/in_level_objects/platforms/collision_shapes/right_log_platform_collision.tscn" id="2_xmlrw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1ib8"]
-size = Vector2(300, 100)
+size = Vector2(100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceo41"]
+atlas = ExtResource("1_chltk")
+region = Rect2(100, 200, 100, 100)
 
 [node name="SmallPlatform" type="AnimatableBody2D"]
+modulate = Color(0.701961, 0.701961, 0.701961, 1)
+
+[node name="LeftLogPlatformCollision" parent="." instance=ExtResource("1_v5mxa")]
+position = Vector2(-100, 0)
+
+[node name="RightLogPlatformCollision" parent="." instance=ExtResource("2_xmlrw")]
+position = Vector2(100, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_w1ib8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = SubResource("AtlasTexture_ceo41")

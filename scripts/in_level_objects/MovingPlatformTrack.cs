@@ -74,19 +74,20 @@ public partial class MovingPlatformTrack : Path2D
 		// Constant speed
 		float ratio = HowToFollow.ProgressRatio;
 
-		// Check basics reqs to ease
-		if ((HowToFollow.ProgressRatio <= .1 || HowToFollow.ProgressRatio >= .9) && BounceOffEnd)
+		if (BounceOffEnd)
 		{
-			// Speedup when headed toward center
-			if (_slowDownFactor > 10 && ((_goBackward && ratio >= .9) || (!_goBackward && ratio <= .1)))
-				_slowDownFactor -= (float)delta * 20;
-
-			// Slow down when approaching edge
-			if (_slowDownFactor < 30 && ((_goBackward && ratio <= .1) || (_goBackward && ratio >= .9)))
-				_slowDownFactor += (float)delta * 20;
+			if (ratio > .8)
+				_slowDownFactor = ratio * 12.5f;	
+			else if(ratio < .2)
+				_slowDownFactor = (1 - ratio) * 12.5f;
+			else
+				_slowDownFactor = 10;
 		}
 		else
 			_slowDownFactor = 10;
+
+			//GET EXTACT RATIO BY DIOING ALG 2 with parabolas!
+			// Also add comments
 
 		return _slowDownFactor;
 	}
