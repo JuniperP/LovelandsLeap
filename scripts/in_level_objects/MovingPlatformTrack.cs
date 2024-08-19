@@ -52,7 +52,7 @@ public partial class MovingPlatformTrack : Path2D
 		if (_move)
 		{
 			// Constant speed
-			float slowDownFactor = CalculateSpeedFactor(delta);
+			float slowDownFactor = CalculateSpeedFactor();
 
 			// Moving the platform the right direction
 			if (BounceOffEnd && _goBackward)
@@ -69,10 +69,12 @@ public partial class MovingPlatformTrack : Path2D
 	}
 
 	// Calculated the arbitrary speed with easing
-	private float CalculateSpeedFactor(double delta)
+	private float CalculateSpeedFactor()
 	{
 		// Constant speed
 		float ratio = HowToFollow.ProgressRatio;
+
+		//TODO: Make easing better by doing a bit of algebra 2
 
 		if (BounceOffEnd)
 		{
@@ -88,9 +90,6 @@ public partial class MovingPlatformTrack : Path2D
 		// All other cases give the constant speed factor
 		else
 			_slowDownFactor = 10;
-
-			//GET EXTACT RATIO BY DIOING ALG 2 with parabolas!
-			// Also add comments
 
 		return _slowDownFactor;
 	}
