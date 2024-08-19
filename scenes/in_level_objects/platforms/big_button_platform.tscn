@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://c75w8ita6k4k"]
+
+[ext_resource type="PackedScene" uid="uid://dakbxs5hkpy70" path="res://scenes/in_level_objects/platforms/collision_shapes/left_log_platform_collision.tscn" id="1_5eunn"]
+[ext_resource type="Script" path="res://scripts/in_level_objects/ButtonPlatform.cs" id="1_i2ihi"]
+[ext_resource type="PackedScene" uid="uid://c5m4ksmcq78vy" path="res://scenes/in_level_objects/platforms/collision_shapes/right_log_platform_collision.tscn" id="2_exr1h"]
+[ext_resource type="Texture2D" uid="uid://dnh0cnucyc6tp" path="res://assets/tiles.png" id="3_v287m"]
+[ext_resource type="PackedScene" uid="uid://cs66fauscvr67" path="res://scenes/in_level_objects/in_level_button.tscn" id="5_t8lgj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcj1c"]
+size = Vector2(300, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxh72"]
+atlas = ExtResource("3_v287m")
+region = Rect2(100, 200, 100, 100)
+
+[node name="BIGButtonPlatform" type="AnimatableBody2D"]
+modulate = Color(0.701961, 0.701961, 0.701961, 1)
+script = ExtResource("1_i2ihi")
+
+[node name="LeftLogPlatformCollision" parent="." instance=ExtResource("1_5eunn")]
+position = Vector2(-300, 0)
+
+[node name="RightLogPlatformCollision" parent="." instance=ExtResource("2_exr1h")]
+position = Vector2(300, 0)
+
+[node name="RightLogPlatformCollision2" parent="." instance=ExtResource("2_exr1h")]
+position = Vector2(200, -100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hcj1c")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+light_mask = 2
+visibility_layer = 2
+texture = SubResource("AtlasTexture_xxh72")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CollisionShape2D"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-100, 0)
+texture = SubResource("AtlasTexture_xxh72")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CollisionShape2D"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-200, 0)
+texture = SubResource("AtlasTexture_xxh72")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CollisionShape2D"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(100, 0)
+texture = SubResource("AtlasTexture_xxh72")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CollisionShape2D"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(200, 0)
+texture = SubResource("AtlasTexture_xxh72")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -100)
+shape = SubResource("RectangleShape2D_hcj1c")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D2"]
+light_mask = 2
+visibility_layer = 2
+texture = SubResource("AtlasTexture_xxh72")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CollisionShape2D2"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-100, 0)
+texture = SubResource("AtlasTexture_xxh72")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CollisionShape2D2"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(100, 0)
+texture = SubResource("AtlasTexture_xxh72")
+
+[node name="InLevelButton" parent="." instance=ExtResource("5_t8lgj")]
+modulate = Color(1, 1, 1, 1)
+position = Vector2(0, -200)
+
+[node name="LeftLogPlatformCollision2" parent="." instance=ExtResource("1_5eunn")]
+position = Vector2(-200, -100)
+
+[connection signal="ButtonPressed" from="InLevelButton" to="." method="PlatformButtonPressed"]
+[connection signal="ButtonReleased" from="InLevelButton" to="." method="PlatformButtonReleased"]

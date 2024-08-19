@@ -7,6 +7,7 @@
 size = Vector2(100, 100)
 
 [node name="InLevelButton" type="Area2D" node_paths=PackedStringArray("OnStateSprite", "OffStateSprite")]
+modulate = Color(0.701961, 0.701961, 0.701961, 1)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_awemj")
@@ -17,10 +18,16 @@ OffStateSprite = NodePath("HitBox/OffButton")
 shape = SubResource("RectangleShape2D_ud0y0")
 
 [node name="OffButton" type="Sprite2D" parent="HitBox"]
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_oqvsf")
 
 [node name="OnButton" type="Sprite2D" parent="HitBox"]
 visible = false
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_oqvsf")
 flip_v = true
 
