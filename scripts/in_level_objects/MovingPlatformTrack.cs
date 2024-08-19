@@ -76,13 +76,16 @@ public partial class MovingPlatformTrack : Path2D
 
 		if (BounceOffEnd)
 		{
+			// Proportionally slow down when at ends
 			if (ratio > .8)
 				_slowDownFactor = ratio * 12.5f;	
 			else if(ratio < .2)
 				_slowDownFactor = (1 - ratio) * 12.5f;
+			// Go constant speed though middle
 			else
 				_slowDownFactor = 10;
 		}
+		// All other cases give the constant speed factor
 		else
 			_slowDownFactor = 10;
 
