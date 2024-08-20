@@ -19,7 +19,7 @@ point_count = 4
 [sub_resource type="Curve2D" id="Curve2D_j5s2l"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -35, 143, 0, 0, 0, 0, 500, 0)
+"points": PackedVector2Array(0, 0, 0, 0, -35, 143, 0, 0, 0, 0, -41, -287)
 }
 point_count = 2
 
@@ -67,7 +67,7 @@ curve = SubResource("Curve2D_hck64")
 TrackLoops = true
 
 [node name="MovingPlatformTrack2" parent="." node_paths=PackedStringArray("Platform") instance=ExtResource("9_v68ep")]
-position = Vector2(940, -474)
+position = Vector2(1780, 26)
 curve = SubResource("Curve2D_j5s2l")
 Platform = NodePath("SmallPlatform")
 TrackSpeed = 2.0

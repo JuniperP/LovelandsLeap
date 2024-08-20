@@ -74,15 +74,11 @@ public partial class MovingPlatformTrack : Path2D
 		// Constant speed
 		float ratio = HowToFollow.ProgressRatio;
 
-		//TODO: Make easing better by doing a bit of algebra 2
-
 		if (BounceOffEnd)
 		{
-			// Proportionally slow down when at ends
-			if (ratio > .8)
-				_slowDownFactor = ratio * 12.5f;	
-			else if(ratio < .2)
-				_slowDownFactor = (1 - ratio) * 12.5f;
+			// Proportionally slow down and speeding up when at ends
+			if (ratio > .8 || ratio < .2)
+				_slowDownFactor = 75 * (ratio - .2f) * (ratio - .8f) + 10;
 			// Go constant speed though middle
 			else
 				_slowDownFactor = 10;
