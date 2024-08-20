@@ -69,7 +69,7 @@ public class GrappleState : MovementState
 			DisableGrapple();
 	}
 
-	public override void EnableGrapple() { }
+	public override void EnableGrapple(Node2D target) { }
 
 	public override void DisableGrapple()
 	{

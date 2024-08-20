@@ -88,7 +88,7 @@ public partial class Player : CharacterBody2D
 	// The parameter is required for this method to be a collision listener
 	public void EnableGrapple(Node target)
 	{
-		MovementState.EnableGrapple();
+		MovementState.EnableGrapple((Node2D)target);
 	}
 
 	public void DisableGrapple()

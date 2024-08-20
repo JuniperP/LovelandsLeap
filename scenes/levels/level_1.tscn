@@ -19,9 +19,9 @@ point_count = 4
 [sub_resource type="Curve2D" id="Curve2D_j5s2l"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -35, 143, 20, -384, -20, 384, -685, -79, 0, 0, 0, 0, -41, -287)
+"points": PackedVector2Array(0, 0, 0, 0, -35, 143, 0, 0, -20, 384, -41, -287)
 }
-point_count = 3
+point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_ukj7v"]
 resource_local_to_scene = true
@@ -67,10 +67,9 @@ curve = SubResource("Curve2D_hck64")
 TrackLoops = true
 
 [node name="MovingPlatformTrack2" parent="." node_paths=PackedStringArray("Platform") instance=ExtResource("9_v68ep")]
-position = Vector2(1780, 26)
+position = Vector2(1148, -358)
 curve = SubResource("Curve2D_j5s2l")
 Platform = NodePath("SmallPlatform")
-TrackSpeed = 10.0
 BounceOffEnd = true
 AutoStart = true
 
@@ -81,7 +80,6 @@ position = Vector2(23, 135)
 position = Vector2(3204, -416)
 curve = SubResource("Curve2D_ukj7v")
 Platform = NodePath("BIGButtonPlatform")
-TrackSpeed = 20.0
 TrackLoops = true
 
 [node name="BIGButtonPlatform" parent="MovingPlatformTrack" instance=ExtResource("7_uk8fc")]

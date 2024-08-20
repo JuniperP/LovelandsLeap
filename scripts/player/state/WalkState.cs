@@ -176,15 +176,18 @@ public class WalkState : MovementState
 		}
 	}
 
-	public override void EnableGrapple()
+	public override void EnableGrapple(Node2D target)
 	{
-		// Remove tongue projectile
-		Ctx.TongueProj.QueueFree();
 
 		// Create spring and update line
 		Ctx.TongueSpring = Ctx.TongueSpringScene.Instantiate<TongueSpring>();
 		Ctx.TongueSpring.GlobalPosition = Ctx.TongueProj.GlobalPosition;
+		Ctx.TongueSpring.Offset = target.GlobalPosition - Ctx.TongueProj.GlobalPosition;
+		Ctx.TongueSpring.AttachedTo = target;
 		Ctx.TongueLine.Target = Ctx.TongueSpring;
+
+		// Remove tongue projectile
+		Ctx.TongueProj.QueueFree();
 
 		// Create tongue weight (pendulee)
 		Ctx.TongueWeight = Ctx.TongueWeightScene.Instantiate<RigidBody2D>();
