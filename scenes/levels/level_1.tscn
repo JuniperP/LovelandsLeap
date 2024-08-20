@@ -19,9 +19,9 @@ point_count = 4
 [sub_resource type="Curve2D" id="Curve2D_j5s2l"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -35, 143, 0, 0, 0, 0, -41, -287)
+"points": PackedVector2Array(0, 0, 0, 0, -35, 143, 20, -384, -20, 384, -685, -79, 0, 0, 0, 0, -41, -287)
 }
-point_count = 2
+point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_ukj7v"]
 resource_local_to_scene = true
@@ -70,7 +70,7 @@ TrackLoops = true
 position = Vector2(1780, 26)
 curve = SubResource("Curve2D_j5s2l")
 Platform = NodePath("SmallPlatform")
-TrackSpeed = 2.0
+TrackSpeed = 10.0
 BounceOffEnd = true
 AutoStart = true
 

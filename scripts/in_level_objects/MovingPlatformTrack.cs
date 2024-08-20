@@ -15,7 +15,7 @@ public partial class MovingPlatformTrack : Path2D
 
 	// Note: it is not possible to have a looping bouncing track; less it would loop and bounce at the end
 	[ExportGroup("PropertiesOfTheTrack")]
-	[Export] public float TrackSpeed = 5;
+	[Export] public float ProportionalSpeedModifier = 5;
 	[Export] public bool TrackLoops = false;
 	[Export] public bool BounceOffEnd = false;
 	[Export] public bool AutoStart = false;
@@ -56,9 +56,9 @@ public partial class MovingPlatformTrack : Path2D
 
 			// Moving the platform the right direction
 			if (BounceOffEnd && _goBackward)
-				HowToFollow.ProgressRatio -= (float)delta / slowDownFactor * TrackSpeed;
+				HowToFollow.ProgressRatio -= (float)delta / slowDownFactor * ProportionalSpeedModifier;
 			else
-				HowToFollow.ProgressRatio += (float)delta / slowDownFactor * TrackSpeed;
+				HowToFollow.ProgressRatio += (float)delta / slowDownFactor * ProportionalSpeedModifier;
 
 			// Flipping direction if needed
 			if (BounceOffEnd && (HowToFollow.ProgressRatio <= 0 || HowToFollow.ProgressRatio >= 1))
