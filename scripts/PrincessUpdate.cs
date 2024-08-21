@@ -20,17 +20,17 @@ public partial class PrincessUpdate : AudioStreamPlayer2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		// Setting up to play the correct sound effect with -6db being default sound
+		// Setting up to play the correct sound effect with -3db being default sound
 		if (PlayerReached == GameState.Percent50)
 		{
 			Stream = Halfway;
-			VolumeDb = -9;
+			VolumeDb = -6;
 		}
 		else
 		{
 			Stream = StartEnd;
 			if (PlayerReached == GameState.Percent25)
-				VolumeDb = -12;
+				VolumeDb = -9;
 		}
 
 	}

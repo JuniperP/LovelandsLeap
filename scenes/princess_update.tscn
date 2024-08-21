@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bxmm0500ev832" path="res://audio/sfx/princess_halfway_sfx.wav" id="3_pa3up"]
 
 [node name="PrincessUpdate" type="AudioStreamPlayer2D"]
-volume_db = -6.0
+volume_db = -3.0
 bus = &"Music"
 script = ExtResource("1_5mxks")
 StartEnd = ExtResource("2_fv858")

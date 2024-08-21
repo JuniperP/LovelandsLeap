@@ -31,7 +31,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="PrincessUpdate" parent="." instance=ExtResource("4_ptyyd")]
-PlayerReached = 2
+PlayerReached = 1
 
 [connection signal="FadedOut" from="Room/Camera2D/Control/LoadingScreen" to="PrincessUpdate" method="PlayPrincessUpdate"]
 
