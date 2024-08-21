@@ -4,5 +4,6 @@
 [ext_resource type="Script" path="res://scripts/audio_related/MainPlatformingTheme.cs" id="2_6wvn5"]
 
 [node name="MainPlatformingThemeStream" type="AudioStreamPlayer"]
+process_mode = 3
 stream = ExtResource("1_vimvv")
 script = ExtResource("2_6wvn5")

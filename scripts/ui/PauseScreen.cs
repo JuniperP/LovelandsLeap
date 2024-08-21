@@ -15,8 +15,20 @@ public partial class PauseScreen : Toggleable
 	// Overriding the close method to also unpause the game
 	protected override void Close()
 	{
+		// Unpausing the music
+		GetNode<MainPlatformingTheme>("/root/MainPlatformingThemeStream").ProcessMode = ProcessModeEnum.Always;
+
 		GetTree().Paused = false;
 		Visible = false;
+	}
+
+	//Overriding the open method to pause the music
+	protected override void Open()
+	{
+		// Pausing the music
+		GetNode<MainPlatformingTheme>("/root/MainPlatformingThemeStream").ProcessMode = ProcessModeEnum.Pausable;
+
+		Visible = true;
 	}
 
 	// Return to the main menu
