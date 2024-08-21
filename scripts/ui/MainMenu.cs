@@ -36,6 +36,17 @@ public partial class MainMenu : Control
 
 	}
 
+	// Loading in a new game by fading screen and changing scene
+	private void LoadSavedGame()
+	{
+		if (LoadLevelData.SavePathExist())
+		{
+			LoadingScreen.NeedsToStartPlatTheme = true;
+			SceneManager.SetNextGoTo(LoadLevelData.LoadData());
+			LoadingScreen.FadeIn();
+		}
+	}
+
 	// Sets up to run the credits
 	private void OnCreditButtonPressed()
 	{
