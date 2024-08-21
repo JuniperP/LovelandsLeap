@@ -7,7 +7,7 @@ public enum GameState : byte
 	Percent75,
 }
 
-public partial class PrincessUpdate : AudioStreamPlayer2D
+public partial class PrincessUpdate : AudioStreamPlayer
 {
 	// Getting how far the player is in the game
 	[Export] public GameState PlayerReached;

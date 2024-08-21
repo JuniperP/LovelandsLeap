@@ -3,6 +3,6 @@
 [ext_resource type="AudioStream" uid="uid://ca1nkabl72yvt" path="res://audio/music/loveland__platforming_music.wav" id="1_vimvv"]
 [ext_resource type="Script" path="res://scripts/audio_related/MainPlatformingTheme.cs" id="2_6wvn5"]
 
-[node name="MainPlatformingThemeStream" type="AudioStreamPlayer2D"]
+[node name="MainPlatformingThemeStream" type="AudioStreamPlayer"]
 stream = ExtResource("1_vimvv")
 script = ExtResource("2_6wvn5")

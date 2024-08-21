@@ -24,5 +24,6 @@ public partial class Camera : Camera2D
 		Vector2 maxPos = new(Right - camRadii.X, Bottom - camRadii.Y);
 
 		Position = targetPos.Clamp(minPos, maxPos);
+
 	}
 }
