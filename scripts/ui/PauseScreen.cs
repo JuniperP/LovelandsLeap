@@ -22,6 +22,8 @@ public partial class PauseScreen : Toggleable
 	// Return to the main menu
 	private void ToMainMenu()
 	{
+		// Stopping the platforming theme music
+		GetNode<MainPlatformingTheme>("/root/MainPlatformingThemeStream").Stop();
 		SceneManager.SetNextGoTo(ToScene.MainMenu);
 		LoadingScreen.FadeIn();
 	}
