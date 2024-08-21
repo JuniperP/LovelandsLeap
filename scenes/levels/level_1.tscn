@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://duhqqspapvtn0"]
+[gd_scene load_steps=12 format=3 uid="uid://duhqqspapvtn0"]
 
+[ext_resource type="Script" path="res://scripts/Temp1stLevelScript.cs" id="1_c1ql1"]
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background.tscn" id="1_u3dt8"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="4_6pusj"]
@@ -36,6 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_c1ql1")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_u3dt8")]
 
