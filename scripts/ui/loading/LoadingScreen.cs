@@ -22,8 +22,9 @@ public partial class LoadingScreen : Toggleable
 	// Tracking fade transition
 	public static float TransTheFade = 0;
 
-	// Signal to say we have faded in
+	// Signal to say we have completed fades
 	[Signal] public delegate void FadedInEventHandler();
+	[Signal] public delegate void FadedOutEventHandler();
 
 
 	// Called when the node enters the scene tree for the first time.
@@ -49,6 +50,7 @@ public partial class LoadingScreen : Toggleable
 				{
 					AllowFade = false;
 					MouseFilter = MouseFilterEnum.Ignore;
+					EmitSignal(SignalName.FadedOut);
 				}
 
 			}
@@ -57,8 +59,8 @@ public partial class LoadingScreen : Toggleable
 			{
 				if (TransTheFade >= 1f)
 				{
-					EmitSignal(SignalName.FadedIn);
 					AllowFade = false;
+					EmitSignal(SignalName.FadedIn);
 				}
 			}
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw70kralmfnwa"]
+[gd_scene load_steps=5 format=3 uid="uid://cw70kralmfnwa"]
 
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background.tscn" id="1_4yov0"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="1_jga2t"]
 [ext_resource type="AudioStream" uid="uid://ca1nkabl72yvt" path="res://audio/music/loveland__platforming_music.wav" id="3_5ybmn"]
+[ext_resource type="PackedScene" uid="uid://bxeghwuww2dvu" path="res://scenes/princess_update.tscn" id="4_ptyyd"]
 
 [node name="Level1" type="Control"]
 layout_mode = 3
@@ -28,5 +29,10 @@ layer_0/tile_data = PackedInt32Array(589824, 65539, 1, 589827, 65539, 0, 589828,
 stream = ExtResource("3_5ybmn")
 autoplay = true
 bus = &"Music"
+
+[node name="PrincessUpdate" parent="." instance=ExtResource("4_ptyyd")]
+PlayerReached = 2
+
+[connection signal="FadedOut" from="Room/Camera2D/Control/LoadingScreen" to="PrincessUpdate" method="PlayPrincessUpdate"]
 
 [editable path="Room"]

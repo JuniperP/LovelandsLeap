@@ -19,8 +19,6 @@ public enum SFX : byte
 	LongCroak,
 	IntoFrog,
 	UIButton,
-	PrincessStartEnd,
-	PrincessHalfway,
 }
 
 public partial class SoundManager : Node
@@ -37,9 +35,6 @@ public partial class SoundManager : Node
 		{SFX.TongueShoot, "tongue_shoot_sfx"},
 		{SFX.TongueHit, "tongue_hit_sfx"},
 		{SFX.UIButton, "ui_button_sfx"},
-		// For when the player is 25%, 50%, and 75% of the way through the game
-		{SFX.PrincessStartEnd, "princess_start_end_sfx"},
-		{SFX.PrincessHalfway, "princess_halfway_sfx"}
 
 	};
 
@@ -55,8 +50,6 @@ public partial class SoundManager : Node
 		{SFX.TongueShoot,  CreateAudioPlayer(SFX.TongueShoot)},
 		{SFX.TongueHit, CreateAudioPlayer(SFX.TongueHit)},
 		{SFX.UIButton,  CreateAudioPlayer(SFX.UIButton)},
-		{SFX.PrincessStartEnd, CreateAudioPlayer(SFX.PrincessStartEnd)},
-		{SFX.PrincessHalfway, CreateAudioPlayer(SFX.PrincessHalfway)},
 	};
 
 	// Method to create our audio sources for our dictionary
