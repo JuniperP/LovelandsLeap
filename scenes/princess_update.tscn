@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxeghwuww2dvu"]
 
-[ext_resource type="Script" path="res://scripts/PrincessUpdate.cs" id="1_5mxks"]
+[ext_resource type="Script" path="res://scripts/audio_related/PrincessUpdate.cs" id="1_5mxks"]
 [ext_resource type="AudioStream" uid="uid://pdjpaetm4f5u" path="res://audio/sfx/princess_start_end_sfx.wav" id="2_fv858"]
 [ext_resource type="AudioStream" uid="uid://bxmm0500ev832" path="res://audio/sfx/princess_halfway_sfx.wav" id="3_pa3up"]
 

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://coboy3tpwfont"]
+
+[ext_resource type="AudioStream" uid="uid://ca1nkabl72yvt" path="res://audio/music/loveland__platforming_music.wav" id="1_vimvv"]
+[ext_resource type="Script" path="res://scripts/audio_related/MainPlatformingTheme.cs" id="2_6wvn5"]
+
+[node name="MainPlatformingThemeStream" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_vimvv")
+script = ExtResource("2_6wvn5")

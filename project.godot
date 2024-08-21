@@ -23,6 +23,10 @@ boot_splash/minimum_display_time=1000
 
 buses/default_bus_layout="res://resources/default_bus_layout.tres"
 
+[autoload]
+
+MainPlatformingThemeStream="*res://scenes/main_platforming_theme_stream.tscn"
+
 [display]
 
 window/size/viewport_width=1920
