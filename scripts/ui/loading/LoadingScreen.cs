@@ -22,6 +22,9 @@ public partial class LoadingScreen : Toggleable
 	// Tracking fade transition
 	public static float TransTheFade = 0;
 
+	// Tracks whether we just loaded the game from the main menu
+	public bool JustLoadFromMenu;
+
 	// Signal to say we have completed fades
 	[Signal] public delegate void FadedInEventHandler();
 	[Signal] public delegate void FadedOutEventHandler();
@@ -50,7 +53,9 @@ public partial class LoadingScreen : Toggleable
 				{
 					AllowFade = false;
 					MouseFilter = MouseFilterEnum.Ignore;
-					EmitSignal(SignalName.FadedOut);
+
+					// Starting global platforming music if needed
+					StartPlatformingMusic();
 				}
 
 			}
@@ -84,5 +89,13 @@ public partial class LoadingScreen : Toggleable
 	{
 		IsFadeOut = false;
 		AllowFade = true;
+	}
+
+	// Needed as the theme is globally played 
+	private void StartPlatformingMusic()
+	{
+		if(JustLoadFromMenu)
+			// Since we use C# instead of GD and autoload just throws item to root...
+			GetNode<MainPlatformingTheme>("/root/MainPlatformingThemeStream").Play();
 	}
 }
