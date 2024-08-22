@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://b2tihhjl4n2r6" path="res://assets/background/big_blue_tree.png" id="10_jcjfr"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
 
 [node name="StillLayer" type="ParallaxLayer" parent="."]
 modulate = Color(0.6399, 0.652408, 0.79, 1)
