@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c75w8ita6k4k"]
+[gd_scene load_steps=9 format=3 uid="uid://c75w8ita6k4k"]
 
 [ext_resource type="PackedScene" uid="uid://dakbxs5hkpy70" path="res://scenes/in_level_objects/platforms/collision_shapes/left_log_platform_collision.tscn" id="1_5eunn"]
 [ext_resource type="Script" path="res://scripts/in_level_objects/ButtonPlatform.cs" id="1_i2ihi"]
@@ -7,11 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://cs66fauscvr67" path="res://scenes/in_level_objects/in_level_button.tscn" id="5_t8lgj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hcj1c"]
-size = Vector2(300, 100)
+size = Vector2(500, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxh72"]
 atlas = ExtResource("3_v287m")
 region = Rect2(100, 200, 100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gauxu"]
+size = Vector2(300, 100)
 
 [node name="BIGButtonPlatform" type="AnimatableBody2D"]
 modulate = Color(0.701961, 0.701961, 0.701961, 1)
@@ -60,7 +63,7 @@ texture = SubResource("AtlasTexture_xxh72")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(0, -100)
-shape = SubResource("RectangleShape2D_hcj1c")
+shape = SubResource("RectangleShape2D_gauxu")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D2"]
 light_mask = 2
@@ -70,13 +73,13 @@ texture = SubResource("AtlasTexture_xxh72")
 [node name="Sprite2D2" type="Sprite2D" parent="CollisionShape2D2"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(-100, 0)
+position = Vector2(100, 0)
 texture = SubResource("AtlasTexture_xxh72")
 
-[node name="Sprite2D4" type="Sprite2D" parent="CollisionShape2D2"]
+[node name="Sprite2D3" type="Sprite2D" parent="CollisionShape2D2"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(100, 0)
+position = Vector2(-100, 0)
 texture = SubResource("AtlasTexture_xxh72")
 
 [node name="InLevelButton" parent="." instance=ExtResource("5_t8lgj")]
