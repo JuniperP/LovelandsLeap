@@ -6,7 +6,7 @@
 
 [node name="PrincessUpdate" type="AudioStreamPlayer"]
 volume_db = -3.0
-bus = &"Music"
+bus = &"Sound Effects"
 script = ExtResource("1_5mxks")
 StartEnd = ExtResource("2_fv858")
 Halfway = ExtResource("3_pa3up")

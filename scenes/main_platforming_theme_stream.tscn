@@ -6,4 +6,5 @@
 [node name="MainPlatformingThemeStream" type="AudioStreamPlayer"]
 process_mode = 3
 stream = ExtResource("1_vimvv")
+bus = &"Music"
 script = ExtResource("2_6wvn5")
