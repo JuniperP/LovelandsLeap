@@ -11,6 +11,7 @@ script = ExtResource("1_vfrg2")
 LengthFactor = 0.75
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = 1
 collision_layer = 0
 collision_mask = 0
 
