@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://chm8yefqnrjo1" path="res://assets/witch/witch_portrait.png" id="5_25kel"]
 [ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frog_portrait.png" id="6_ooaw7"]
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="7_pxjvu"]
-[ext_resource type="SpriteFrames" uid="uid://dyimfn0lnsc3" path="res://resources/sprite_frames/witch.tres" id="8_hxawq"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/witch.tres" id="8_hxawq"]
 [ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="9_s3mif"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="9_sdyub"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="10_pflis"]
@@ -329,7 +329,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3ohwg")
-NextScene = "res://scenes/levels/level_1.tscn"
+NextScene = "res://scenes/levels/tutorial.tscn"
+CancelScene = "res://scenes/levels/tutorial.tscn"
 ElementNodes = [NodePath("Animations/FadeIn"), NodePath("Animations/HumanWalk"), NodePath("Dialogue/Human1"), NodePath("Dialogue/Witch1"), NodePath("Dialogue/Human2"), NodePath("Dialogue/Witch2"), NodePath("Animations/Transform"), NodePath("Dialogue/Witch3"), NodePath("Dialogue/Frog1"), NodePath("Dialogue/Witch4"), NodePath("Dialogue/Frog2"), NodePath("Dialogue/Witch5"), NodePath("Animations/Disappear"), NodePath("Dialogue/Frog3"), NodePath("Animations/FadeOut")]
 
 [node name="Overlay" type="ColorRect" parent="."]

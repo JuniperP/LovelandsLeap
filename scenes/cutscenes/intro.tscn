@@ -198,7 +198,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pqwlb")
 NextScene = "res://scenes/cutscenes/transformation.tscn"
-CancelScene = "res://scenes/levels/level_1.tscn"
+CancelScene = "res://scenes/levels/tutorial.tscn"
 ElementNodes = [NodePath("3s Pause"), NodePath("OrderDialogue"), NodePath("HumanAppear"), NodePath("ForestDialogue"), NodePath("HumanWalk"), NodePath("FadeOut")]
 
 [node name="Overlay" type="ColorRect" parent="."]

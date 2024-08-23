@@ -24,7 +24,7 @@ public partial class MainMenu : Control
 	private void StartNewGame()
 	{
 		// Overwrite save data
-		LoadLevelData.SaveData(ToScene.Level1);
+		LoadLevelData.SaveData(ToScene.Tutorial);
 
 		// Accounting for speedrun
 		if (ToggleSpeedrun.HasTimer)
