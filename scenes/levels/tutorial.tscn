@@ -218,6 +218,7 @@ position = Vector2(11850, -260)
 position = Vector2(14346, -147)
 _sendsTo = 2
 
+[connection signal="hidden" from="Room/Camera2D/Control/PauseScreen" to="." method="_Ready"]
 [connection signal="ButtonPressed" from="InLevelButton" to="." method="DisengageTongue"]
 [connection signal="ButtonPressed" from="InLevelButton" to="MovingPlatformTrack" method="TogglePlatform"]
 

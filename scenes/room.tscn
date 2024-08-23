@@ -67,5 +67,3 @@ light_mask = 2
 visibility_layer = 2
 tile_set = ExtResource("8_60br4")
 format = 2
-
-[connection signal="hidden" from="Camera2D/Control/PauseScreen" to="Camera2D/Control/LiveFrogReaction" method="UpdateReaction"]
