@@ -19,6 +19,7 @@ public enum SFX : byte
 	LongCroak,
 	IntoFrog,
 	UIButton,
+	FlyCatch,
 }
 
 public partial class SoundManager : Node
@@ -35,6 +36,7 @@ public partial class SoundManager : Node
 		{SFX.TongueShoot, "tongue_shoot_sfx"},
 		{SFX.TongueHit, "tongue_hit_sfx"},
 		{SFX.UIButton, "ui_button_sfx"},
+		{SFX.FlyCatch, "fly_catch_sfx"}
 
 	};
 
@@ -50,6 +52,7 @@ public partial class SoundManager : Node
 		{SFX.TongueShoot,  CreateAudioPlayer(SFX.TongueShoot)},
 		{SFX.TongueHit, CreateAudioPlayer(SFX.TongueHit)},
 		{SFX.UIButton,  CreateAudioPlayer(SFX.UIButton)},
+		{SFX.FlyCatch, CreateAudioPlayer(SFX.FlyCatch)},
 	};
 
 	// Method to create our audio sources for our dictionary

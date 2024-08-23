@@ -16,7 +16,7 @@ public partial class FlyBehavoir : Area2D
 	{
 		if (node is Player || node is TongueProjectile || node.GetParent() is TongueLine)
 		{
-			SoundManager.PlaySound(SFX.Croak, GetTree().Root);
+			SoundManager.PlaySound(SFX.FlyCatch, GetTree().Root);
 			FlyCount.UpCount();
 			QueueFree();
 		}
