@@ -32,6 +32,7 @@ public partial class Tutorial : Node
 			theme.Play();
 	}
 
+	// Easy signal tells to change the button label accordingly
 	private void DisengageTongue()
 	{
 		_useTongue.Text = $"Disengage your tongue by\npressing [{Keybinds._acts[UserAction.SAction].Input.AsText()}]\nor touching a surface";
