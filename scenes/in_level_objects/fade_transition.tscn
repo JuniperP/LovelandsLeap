@@ -1,19 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://l1sc7rrtk6mn"]
+[gd_scene load_steps=4 format=3 uid="uid://l1sc7rrtk6mn"]
 
 [ext_resource type="Script" path="res://scripts/in_level_objects/FadeTransition.cs" id="1_y6f60"]
+[ext_resource type="AudioStream" uid="uid://ccoaup3vxqa2n" path="res://audio/sfx/exiting_level_sfx.wav" id="2_a7x31"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80ngs"]
 size = Vector2(100, 300)
 
-[node name="FadeTransition" type="Area2D"]
+[node name="FadeTransition" type="Area2D" node_paths=PackedStringArray("_leavingSFX")]
 collision_layer = 2
 collision_mask = 2
+audio_bus_name = &"Sound Effects"
 script = ExtResource("1_y6f60")
+_leavingSFX = NodePath("ExitingSFX")
 
 [node name="CollisionFade" type="CollisionShape2D" parent="."]
 light_mask = 2
 visibility_layer = 2
 z_index = 20
 shape = SubResource("RectangleShape2D_80ngs")
+
+[node name="ExitingSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_a7x31")
 
 [connection signal="body_entered" from="." to="." method="FrogEntered"]
