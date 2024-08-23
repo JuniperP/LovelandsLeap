@@ -36,6 +36,12 @@ public partial class PauseScreen : Toggleable
 	{
 		// Stopping the platforming theme music
 		GetNode<MainPlatformingTheme>("/root/MainPlatformingThemeStream").Stop();
+
+		// Resetting the in level fly count
+		FlyCount.FliesGottenLevel = 0;
+		FlyCount.TotalLevelFlies = 0;
+
+		// Going to main menu
 		SceneManager.SetNextGoTo(ToScene.MainMenu);
 		LoadingScreen.FadeIn();
 	}

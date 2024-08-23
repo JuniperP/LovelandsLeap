@@ -17,7 +17,7 @@ public partial class FadeTransition : Area2D
 			// Saves the game
 			LoadLevelData.SaveData(_sendsTo);
 
-			// Resting the amount flies for the in level count
+			// Resetting the amount flies for the in level count
 			FlyCount.FliesGottenLevel = 0;
 			FlyCount.TotalLevelFlies = 0;
 
