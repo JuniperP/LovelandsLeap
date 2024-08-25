@@ -43,7 +43,7 @@ public partial class SceneManager : Node
 		{ToScene.PlayTestLevel,  "res://scenes/levels/play_test.tscn"},
 		{ToScene.Tutorial,  "res://scenes/levels/tutorial.tscn"},
 		{ToScene.Level1,  "res://scenes/levels/level_1.tscn"},
-		{ToScene.Level2,  "res://scenes/levels/level_2.tscn"},
+		{ToScene.Level2,  "res://scenes/levels/temp_level.tscn"},
 		{ToScene.Level3,  "res://scenes/levels/level_3.tscn"},
 		{ToScene.Level4,  "res://scenes/levels/level_4.tscn"},
 	};
