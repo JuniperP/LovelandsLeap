@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://chm8yefqnrjo1" path="res://assets/witch/witch_portrait.png" id="5_25kel"]
 [ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frog_portrait.png" id="6_ooaw7"]
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="7_pxjvu"]
-[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/witch.tres" id="8_hxawq"]
+[ext_resource type="SpriteFrames" uid="uid://dyimfn0lnsc3" path="res://resources/sprite_frames/witch.tres" id="8_hxawq"]
 [ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="9_s3mif"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="9_sdyub"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="10_pflis"]
@@ -395,7 +395,6 @@ grow_vertical = 2
 
 [node name="Human1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 Sprite = NodePath("../../HumanLoc/HumanSprite")
 
@@ -407,7 +406,6 @@ text = "Wha-? Hey, that’s mine!"
 
 [node name="Witch1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
@@ -422,7 +420,6 @@ text = "Uh- crap! No it isn't, I found it first!"
 
 [node name="Human2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 Sprite = NodePath("../../HumanLoc/HumanSprite")
 
@@ -435,7 +432,6 @@ That’s clearly my food! Give it back!"
 
 [node name="Witch2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
@@ -450,7 +446,6 @@ text = "Aack!! Don’t yell at me! Finders keepers!!"
 
 [node name="Witch3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
@@ -470,7 +465,6 @@ clip_text = false
 
 [node name="Frog1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
@@ -483,7 +477,6 @@ text = "*Croak?*"
 
 [node name="Witch4" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
@@ -499,7 +492,6 @@ I’ve met her."
 
 [node name="Frog2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
@@ -512,7 +504,6 @@ text = "*Croak.*"
 
 [node name="Witch5" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
@@ -532,7 +523,6 @@ clip_text = false
 
 [node name="Frog3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
