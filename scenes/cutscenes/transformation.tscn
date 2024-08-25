@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://drmiub3t1pxal"]
+[gd_scene load_steps=38 format=3 uid="uid://drmiub3t1pxal"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_3ohwg"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutscenePause.cs" id="2_on0j3"]
@@ -8,11 +8,20 @@
 [ext_resource type="Texture2D" uid="uid://ysmgbmc0yui1" path="res://assets/background/mossy_tree.png" id="4_y5tct"]
 [ext_resource type="Texture2D" uid="uid://chm8yefqnrjo1" path="res://assets/witch/witch_portrait.png" id="5_25kel"]
 [ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frog_portrait.png" id="6_ooaw7"]
+[ext_resource type="AudioStream" uid="uid://47f5gyc1hst1" path="res://audio/sfx/dialogue/MC/mc_3_passive_babble_3.wav" id="6_qm0g7"]
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="7_pxjvu"]
 [ext_resource type="SpriteFrames" uid="uid://dyimfn0lnsc3" path="res://resources/sprite_frames/witch.tres" id="8_hxawq"]
+[ext_resource type="AudioStream" uid="uid://dfpmmc2i1e3xl" path="res://audio/sfx/dialogue/Witch/witch_12_no_rare.wav" id="8_yjn7n"]
 [ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="9_s3mif"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="9_sdyub"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="10_pflis"]
+[ext_resource type="AudioStream" uid="uid://dntilfeue3tta" path="res://audio/sfx/dialogue/MC/mc_5_angry_babble_2.wav" id="10_u168e"]
+[ext_resource type="AudioStream" uid="uid://ca57wsmu1c1fp" path="res://audio/sfx/dialogue/Witch/witch_20_passive_to_mad_babble.wav" id="11_x3tek"]
+[ext_resource type="AudioStream" uid="uid://cua6dqwm655k6" path="res://audio/sfx/dialogue/Witch/witch_13_tststststststsst_stststss.wav" id="12_lqb85"]
+[ext_resource type="AudioStream" uid="uid://cm31852o876g6" path="res://audio/sfx/dialogue/Frog/croak.mp3" id="13_6h17b"]
+[ext_resource type="AudioStream" uid="uid://fnvffar300ml" path="res://audio/sfx/dialogue/Witch/witch_18_passive_babble.wav" id="15_jglfn"]
+[ext_resource type="AudioStream" uid="uid://bbb7phk5v6cmo" path="res://audio/sfx/dialogue/Witch/witch_2_yebableghbababa_ngairuugh.wav" id="16_shblu"]
+[ext_resource type="AudioStream" uid="uid://bi3pdvdmheuds" path="res://audio/sfx/dialogue/Frog/long_croak.wav" id="17_ig77s"]
 
 [sub_resource type="Animation" id="Animation_b1prn"]
 length = 0.001
@@ -396,6 +405,7 @@ grow_vertical = 2
 [node name="Human1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
+talkingAudio = ExtResource("6_qm0g7")
 Sprite = NodePath("../../HumanLoc/HumanSprite")
 
 [node name="ProfilePicture" parent="Dialogue/Human1/BackBox" index="1"]
@@ -407,6 +417,7 @@ text = "Wha-? Hey, that’s mine!"
 [node name="Witch1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
+talkingAudio = ExtResource("8_yjn7n")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
 [node name="Background" parent="Dialogue/Witch1/BackBox" index="0"]
@@ -421,6 +432,7 @@ text = "Uh- crap! No it isn't, I found it first!"
 [node name="Human2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
+talkingAudio = ExtResource("10_u168e")
 Sprite = NodePath("../../HumanLoc/HumanSprite")
 
 [node name="ProfilePicture" parent="Dialogue/Human2/BackBox" index="1"]
@@ -433,6 +445,7 @@ That’s clearly my food! Give it back!"
 [node name="Witch2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
+talkingAudio = ExtResource("11_x3tek")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
 [node name="Background" parent="Dialogue/Witch2/BackBox" index="0"]
@@ -447,6 +460,7 @@ text = "Aack!! Don’t yell at me! Finders keepers!!"
 [node name="Witch3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
+talkingAudio = ExtResource("12_lqb85")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
 [node name="Background" parent="Dialogue/Witch3/BackBox" index="0"]
@@ -466,6 +480,7 @@ clip_text = false
 [node name="Frog1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
+talkingAudio = ExtResource("13_6h17b")
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
 
@@ -478,6 +493,7 @@ text = "*Croak?*"
 [node name="Witch4" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
+talkingAudio = ExtResource("15_jglfn")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
 [node name="Background" parent="Dialogue/Witch4/BackBox" index="0"]
@@ -493,6 +509,7 @@ I’ve met her."
 [node name="Frog2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
+talkingAudio = ExtResource("13_6h17b")
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
 
@@ -505,6 +522,7 @@ text = "*Croak.*"
 [node name="Witch5" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
+talkingAudio = ExtResource("16_shblu")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
 [node name="Background" parent="Dialogue/Witch5/BackBox" index="0"]
@@ -524,6 +542,7 @@ clip_text = false
 [node name="Frog3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
+talkingAudio = ExtResource("17_ig77s")
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
 
