@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/ui/MainMenu.cs" id="1_byusu"]
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/main_menu.jpg" id="2_qxlys"]
-[ext_resource type="FontFile" uid="uid://cbxq0tmy5e4n3" path="res://assets/fonts/logo/Wittgenstien/Wittgenstein-Italic-VariableFont_wght.ttf" id="3_d8am2"]
 [ext_resource type="PackedScene" uid="uid://c4suej1iw3wkr" path="res://scenes/ui/settings/settings.tscn" id="3_ps8pg"]
+[ext_resource type="FontFile" uid="uid://hw1t6nlg1t1y" path="res://assets/fonts/logo/nerko_one_regular.ttf" id="3_r1n3c"]
 [ext_resource type="AudioStream" uid="uid://nnautoxm2usu" path="res://audio/music/loveland_menu_music.wav" id="4_e7cc2"]
 [ext_resource type="PackedScene" uid="uid://dnkodbiws2j72" path="res://scenes/ui/overwrite_saved_game.tscn" id="5_sksx0"]
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="6_cfs3o"]
@@ -44,7 +44,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_d8am2")
+theme_override_colors/font_color = Color(1, 0.996078, 0.937255, 1)
+theme_override_colors/font_outline_color = Color(0.102, 0.1292, 0.17, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("3_r1n3c")
 theme_override_font_sizes/font_size = 156
 text = "
 LOVELAND "
