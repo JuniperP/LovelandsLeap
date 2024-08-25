@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://duhqqspapvtn0"]
+[gd_scene load_steps=12 format=3 uid="uid://duhqqspapvtn0"]
 
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background.tscn" id="1_xxhk0"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="2_s6yqr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/moving_platform_track.tscn" id="5_ns61n"]
 [ext_resource type="PackedScene" uid="uid://b5ovwc4k8xaal" path="res://scenes/in_level_objects/platforms/small_platform.tscn" id="6_tw5jc"]
 [ext_resource type="PackedScene" uid="uid://c75w8ita6k4k" path="res://scenes/in_level_objects/platforms/big_button_platform.tscn" id="7_0862q"]
+[ext_resource type="PackedScene" uid="uid://bxeghwuww2dvu" path="res://scenes/in_level_objects/princess_update.tscn" id="8_6am0s"]
 
 [sub_resource type="Curve2D" id="Curve2D_hck64"]
 resource_local_to_scene = true
@@ -79,6 +80,9 @@ TrackLoops = true
 [node name="BIGButtonPlatform" parent="MovingPlatformTrack" instance=ExtResource("7_0862q")]
 position = Vector2(-31, 85)
 
+[node name="PrincessUpdate" parent="." instance=ExtResource("8_6am0s")]
+
+[connection signal="FadedOut" from="Room/Camera2D/Control/LoadingScreen" to="PrincessUpdate" method="PlayPrincessUpdate"]
 [connection signal="ButtonPressed" from="MovingPlatformTrack/BIGButtonPlatform" to="MovingPlatformTrack" method="TogglePlatform"]
 [connection signal="ButtonReleased" from="MovingPlatformTrack/BIGButtonPlatform" to="MovingPlatformTrack" method="TogglePlatform"]
 
