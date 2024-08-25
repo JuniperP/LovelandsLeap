@@ -56,6 +56,8 @@ public partial class LoadingScreen : Toggleable
 
 					// Starting global platforming music if needed
 					StartPlatformingMusic();
+
+					EmitSignal(SignalName.FadedOut);
 				}
 
 			}
