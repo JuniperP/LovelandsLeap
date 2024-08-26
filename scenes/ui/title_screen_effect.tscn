@@ -1,0 +1,122 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4fh3ko82pj3s"]
+
+[ext_resource type="Script" path="res://scripts/ui/TitleScreenEffect.cs" id="1_5nchv"]
+[ext_resource type="Texture2D" uid="uid://bbt06fq84gl2h" path="res://assets/background/leaf_blob_1.png" id="1_21v2s"]
+
+[node name="TitleScreenEffect" type="ParallaxBackground"]
+layer = -2
+scroll_limit_end = Vector2(1e+06, 1e+06)
+scroll_ignore_camera_zoom = true
+script = ExtResource("1_5nchv")
+
+[node name="FrontLayer" type="ParallaxLayer" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+motion_scale = Vector2(1.25, 1.25)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="FrontLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(360, 244)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_21v2s")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="FrontLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(189, 756)
+scale = Vector2(0.168, 0.157756)
+texture = ExtResource("1_21v2s")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="FrontLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(877, 735)
+scale = Vector2(0.186, 0.258416)
+texture = ExtResource("1_21v2s")
+centered = false
+
+[node name="Sprite2D4" type="Sprite2D" parent="FrontLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1188, 470)
+scale = Vector2(0.076, 0.1)
+texture = ExtResource("1_21v2s")
+centered = false
+
+[node name="MidLayer" type="ParallaxLayer" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="MidLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1489, 838)
+scale = Vector2(0.188, 0.225413)
+texture = ExtResource("1_21v2s")
+centered = false
+
+[node name="Sprite2D5" type="Sprite2D" parent="MidLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(654, 445)
+scale = Vector2(0.138, 0.166667)
+texture = ExtResource("1_21v2s")
+centered = false
+
+[node name="Sprite2D7" type="Sprite2D" parent="MidLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(485, 1010)
+scale = Vector2(0.06, 0.0775578)
+texture = ExtResource("1_21v2s")
+centered = false
+
+[node name="Sprite2D8" type="Sprite2D" parent="MidLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1404, 235)
+scale = Vector2(0.0540001, 0.0577559)
+texture = ExtResource("1_21v2s")
+centered = false
+
+[node name="Sprite2D6" type="Sprite2D" parent="MidLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1002, 21)
+scale = Vector2(0.1005, 0.115512)
+texture = ExtResource("1_21v2s")
+centered = false
+
+[node name="BackLayer" type="ParallaxLayer" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+motion_scale = Vector2(0.75, 0.75)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D7" type="Sprite2D" parent="BackLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(183, 440)
+scale = Vector2(0.06, 0.0775578)
+texture = ExtResource("1_21v2s")
+centered = false
+
+[node name="Sprite2D8" type="Sprite2D" parent="BackLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1261, 698)
+scale = Vector2(0.153, 0.176568)
+texture = ExtResource("1_21v2s")
+centered = false
+
+[node name="Sprite2D10" type="Sprite2D" parent="BackLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(671, 139)
+scale = Vector2(0.153, 0.176568)
+texture = ExtResource("1_21v2s")
+centered = false
+
+[node name="Sprite2D11" type="Sprite2D" parent="BackLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1558, 295)
+scale = Vector2(0.103, 0.130363)
+texture = ExtResource("1_21v2s")
+centered = false
+
+[node name="Sprite2D9" type="Sprite2D" parent="BackLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(543, 698)
+scale = Vector2(0.103, 0.110561)
+texture = ExtResource("1_21v2s")
+centered = false
