@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://beaw13scnxun1"]
+[gd_scene load_steps=13 format=3 uid="uid://beaw13scnxun1"]
 
 [ext_resource type="Script" path="res://scripts/ui/MainMenu.cs" id="1_byusu"]
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/main_menu.jpg" id="2_qxlys"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dnkodbiws2j72" path="res://scenes/ui/overwrite_saved_game.tscn" id="5_sksx0"]
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="6_cfs3o"]
 [ext_resource type="PackedScene" uid="uid://2jyl564ee5cu" path="res://scenes/ui/speed_run_timer.tscn" id="7_4ckpd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y44ab"]
 
 [sub_resource type="Gradient" id="Gradient_7tm51"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0.823529)
@@ -37,6 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_y44ab")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="OPBack"]
 layer = -3
@@ -57,6 +60,7 @@ expand_mode = 1
 [node name="Lighting" type="PointLight2D" parent="OPBack/CanvasLayer/TextureRect"]
 position = Vector2(960.5, 539)
 scale = Vector2(1.25065, 0.705729)
+energy = 0.85
 blend_mode = 2
 range_layer_min = -100
 range_item_cull_mask = 2
