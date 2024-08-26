@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Loveland"
-config/version="a.3.0"
+config/version="a.4.0"
 run/main_scene="res://scenes/very_start.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 boot_splash/bg_color=Color(0.0862745, 0.0862745, 0.0862745, 1)
