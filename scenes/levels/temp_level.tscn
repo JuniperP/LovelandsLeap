@@ -82,7 +82,7 @@ position = Vector2(-31, 85)
 
 [node name="PrincessUpdate" parent="." instance=ExtResource("8_6am0s")]
 
-[connection signal="FadedOut" from="Room/Camera2D/Control/LoadingScreen" to="PrincessUpdate" method="PlayPrincessUpdate"]
+[connection signal="FadedOut" from="Room/Camera2D/CanvasLayer/Control/LoadingScreen" to="PrincessUpdate" method="PlayPrincessUpdate"]
 [connection signal="ButtonPressed" from="MovingPlatformTrack/BIGButtonPlatform" to="MovingPlatformTrack" method="TogglePlatform"]
 [connection signal="ButtonReleased" from="MovingPlatformTrack/BIGButtonPlatform" to="MovingPlatformTrack" method="TogglePlatform"]
 
