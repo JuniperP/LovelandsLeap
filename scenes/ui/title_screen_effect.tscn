@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4fh3ko82pj3s"]
+[gd_scene load_steps=3 format=3 uid="uid://c65bn2g4p34gv"]
 
 [ext_resource type="Script" path="res://scripts/ui/TitleScreenEffect.cs" id="1_5nchv"]
 [ext_resource type="Texture2D" uid="uid://bbt06fq84gl2h" path="res://assets/background/leaf_blob_1.png" id="1_21v2s"]
