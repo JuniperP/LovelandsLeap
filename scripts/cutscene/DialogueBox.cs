@@ -16,7 +16,7 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 	[Export] public float TextSpeed = 40f;
 
 	// [ExportGroup("Talking SFX")]
-	[Export] public AudioStream talkingAudio;
+	[Export] public AudioStream TalkingAudio;
 
 	[ExportGroup("Sprite Animation")]
 	[Export] public AnimatedSprite2D Sprite;
@@ -156,7 +156,7 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 	private void PlayAudio()
 	{
 		// Return if the stream does not exist
-		if (!talkingAudio.IsValid())
+		if (!TalkingAudio.IsValid())
 			return;
 		// Return if the player is already playing
 		else if (_audioPlayer.IsValid() && !_audioPlayer.StreamPaused)
@@ -166,7 +166,7 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 		_audioPlayer = new()
 		{
 			Bus = "Sound Effects",
-			Stream = talkingAudio
+			Stream = TalkingAudio
 		};
 		_audioPlayer.Finished += _audioPlayer.QueueFree;
 
