@@ -16,6 +16,7 @@ public partial class Cutscene : Node
 
 	private ICutsceneElement[] _elements;
 	private int _currentElement = 0;
+	private bool _wasAnythingPressed = false;
 
 	public override void _Ready()
 	{
@@ -50,8 +51,12 @@ public partial class Cutscene : Node
 	{
 		if (Input.IsActionJustPressed("ui_cancel") && LoadingScreen.TransTheFade <= 0)
 			SkipScene();
-		else if (Input.IsActionJustPressed("ui_accept"))
+		// If anything is just pressed down
+		else if (Input.IsAnythingPressed() && !_wasAnythingPressed)
 			StepAnimation();
+
+		// Update anything pressed boolean
+		_wasAnythingPressed = Input.IsAnythingPressed();
 	}
 
 	public void StepAnimation()
