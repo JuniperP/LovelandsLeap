@@ -24,6 +24,7 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 	[Export] public string TalkingAnimation = "talking";
 
 	private State _loadState = State.Inactive;
+	private bool _playingAudio;
 	private Label _label;
 	private Tween _tween;
 	private Action _callBack;
@@ -131,6 +132,7 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 		Hide();
 		Modulate = Colors.Transparent;
 		_label.VisibleRatio = 0;
+		_playingAudio = false;
 
 		_tween.Kill();
 
@@ -155,11 +157,8 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 
 	private void PlayAudio()
 	{
-		// Return if the stream does not exist
-		if (!TalkingAudio.IsValid())
-			return;
-		// Return if the player is already playing
-		else if (_audioPlayer.IsValid() && !_audioPlayer.StreamPaused)
+		// Return if the stream does not exist or already playing
+		if (!TalkingAudio.IsValid() || _playingAudio)
 			return;
 
 		// Create audio player and free it when it finishes playing
@@ -173,5 +172,6 @@ public partial class DialogueBox : Toggleable, ICutsceneElement
 		// Add to scene and start playing talking audio
 		AddChild(_audioPlayer);
 		_audioPlayer.Play();
+		_playingAudio = true;
 	}
 }
