@@ -12,7 +12,7 @@ motion_scale = Vector2(1.05, 1.05)
 
 [node name="BigBlueTree" type="Sprite2D" parent="ParallaxLayer"]
 modulate = Color(0.381537, 0.616521, 0.304908, 1)
-light_mask = 2
+light_mask = 0
 visibility_layer = 2
 z_index = 50
 texture_filter = 1
