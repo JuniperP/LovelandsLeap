@@ -518,7 +518,7 @@ TalkingAnimation = "croak"
 texture = ExtResource("6_ooaw7")
 
 [node name="Text" parent="Dialogue/Frog3/BackBox" index="2"]
-text = "*Croak... (angrily)*"
+text = "*Croak!!*"
 
 [node name="Animations" type="Node" parent="."]
 
