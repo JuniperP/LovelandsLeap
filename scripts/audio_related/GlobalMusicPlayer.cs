@@ -33,6 +33,7 @@ public partial class GlobalMusicPlayer : AudioStreamPlayer
 		return $"res://audio/music/{unique}.wav";
 	}
 
+	// TODO: Do a valid node check before accessing instance instead of catching an error
 	// Call the method on the autoloaded instance
 	public static void PlayMusic(MusicID id)
 	{
@@ -67,6 +68,36 @@ public partial class GlobalMusicPlayer : AudioStreamPlayer
 		{
 			_instance.Stop();
 			_instance.Stream = null;
+		}
+		catch (NullReferenceException e)
+		{
+			throw new InvalidOperationException(
+				"There is no GlobalMusicPlayer object. Is the script autoloaded?", e
+			);
+		}
+	}
+
+	// Call the method on the autoloaded instance
+	public static void PauseMusic()
+	{
+		try
+		{
+			_instance.StreamPaused = true;
+		}
+		catch (NullReferenceException e)
+		{
+			throw new InvalidOperationException(
+				"There is no GlobalMusicPlayer object. Is the script autoloaded?", e
+			);
+		}
+	}
+
+	// Call the method on the autoloaded instance
+	public static void UnpauseMusic()
+	{
+		try
+		{
+			_instance.StreamPaused = false;
 		}
 		catch (NullReferenceException e)
 		{

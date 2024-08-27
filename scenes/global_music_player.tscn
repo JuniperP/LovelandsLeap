@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://scripts/audio_related/GlobalMusicPlayer.cs" id="1_uj6yj"]
 
 [node name="GlobalMusicPlayer" type="AudioStreamPlayer"]
+process_mode = 3
 script = ExtResource("1_uj6yj")
