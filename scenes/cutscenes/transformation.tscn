@@ -337,6 +337,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3ohwg")
+StopMusicAtEnd = true
 NextScene = "res://scenes/levels/tutorial.tscn"
 CancelScene = "res://scenes/levels/tutorial.tscn"
 ElementNodes = [NodePath("Animations/FadeIn"), NodePath("Animations/HumanWalk"), NodePath("Dialogue/Human1"), NodePath("Dialogue/Witch1"), NodePath("Dialogue/Human2"), NodePath("Dialogue/Witch2"), NodePath("Animations/Transform"), NodePath("Dialogue/Witch3"), NodePath("Dialogue/Frog1"), NodePath("Dialogue/Witch4"), NodePath("Dialogue/Frog2"), NodePath("Dialogue/Witch5"), NodePath("Animations/Disappear"), NodePath("Dialogue/Frog3"), NodePath("Animations/FadeOut")]

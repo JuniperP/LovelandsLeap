@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://br888scm3xpk"]
+[gd_scene load_steps=21 format=3 uid="uid://br888scm3xpk"]
 
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/main_menu.jpg" id="1_1v0w2"]
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_pqwlb"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="5_ck5ta"]
 [ext_resource type="AudioStream" uid="uid://b81w6w82dsxf4" path="res://audio/sfx/dialogue/MC/mc_1_passive_babble_1.wav" id="5_w176a"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/mc_portrait.png" id="6_1deqh"]
-[ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/music/loveland_cutscene_music.wav" id="8_5gsvf"]
 [ext_resource type="AudioStream" uid="uid://rbqw1hh7q1es" path="res://audio/sfx/dialogue/MC/mc_4_angry_babble_1.wav" id="9_15ff6"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="9_anup7"]
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="10_t3rc1"]
@@ -289,11 +288,6 @@ script = ExtResource("5_ck5ta")
 
 [node name="InfoToSkip" parent="." instance=ExtResource("9_anup7")]
 layout_mode = 0
-
-[node name="Theme" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_5gsvf")
-autoplay = true
-bus = &"Music"
 
 [node name="LoadingScreen" parent="." instance=ExtResource("10_t3rc1")]
 visible = false

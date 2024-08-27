@@ -3,6 +3,9 @@ using Godot;
 
 public partial class Cutscene : Node
 {
+	[Export] public MusicID MusicToPlay;
+	[Export] public bool StopMusicAtEnd;
+
 	[Export(PropertyHint.File, "*.tscn")] public string NextScene;
 	[Export(PropertyHint.File, "*.tscn")] public string CancelScene;
 
@@ -36,6 +39,7 @@ public partial class Cutscene : Node
 		// CancelScene defaults to NextScene if value is null
 		CancelScene ??= NextScene;
 
+		GlobalMusicPlayer.PlayMusic(MusicToPlay);
 		StepAnimation();
 	}
 
@@ -69,10 +73,15 @@ public partial class Cutscene : Node
 	public void ChangeToNext()
 	{
 		GetTree().ChangeSceneToFile(NextScene);
+
+		if (StopMusicAtEnd)
+			GlobalMusicPlayer.StopMusic();
 	}
 
 	public void SkipScene()
 	{
 		GetTree().ChangeSceneToFile(CancelScene);
+
+		GlobalMusicPlayer.StopMusic();
 	}
 }
