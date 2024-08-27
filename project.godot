@@ -25,7 +25,6 @@ buses/default_bus_layout="res://resources/default_bus_layout.tres"
 
 [autoload]
 
-MainPlatformingThemeStream="*res://scenes/main_platforming_theme_stream.tscn"
 GlobalMusicPlayer="*res://scenes/global_music_player.tscn"
 
 [display]
