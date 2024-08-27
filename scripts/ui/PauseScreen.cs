@@ -16,7 +16,7 @@ public partial class PauseScreen : Toggleable
 	protected override void Close()
 	{
 		// Unpausing the music
-		GetNode<MainPlatformingTheme>("/root/MainPlatformingThemeStream").ProcessMode = ProcessModeEnum.Always;
+		GlobalMusicPlayer.PauseMusic();
 
 		GetTree().Paused = false;
 		Visible = false;
@@ -26,7 +26,7 @@ public partial class PauseScreen : Toggleable
 	protected override void Open()
 	{
 		// Pausing the music
-		GetNode<MainPlatformingTheme>("/root/MainPlatformingThemeStream").ProcessMode = ProcessModeEnum.Pausable;
+		GlobalMusicPlayer.UnpauseMusic();
 
 		Visible = true;
 	}
@@ -35,7 +35,7 @@ public partial class PauseScreen : Toggleable
 	private void ToMainMenu()
 	{
 		// Stopping the platforming theme music
-		GetNode<MainPlatformingTheme>("/root/MainPlatformingThemeStream").Stop();
+		GlobalMusicPlayer.StopMusic();
 
 		// Resetting the in level fly count
 		FlyCount.FliesGottenLevel = 0;

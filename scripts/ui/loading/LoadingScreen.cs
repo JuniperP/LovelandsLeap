@@ -99,7 +99,7 @@ public partial class LoadingScreen : Toggleable
 		if (NeedsToStartPlatTheme)
 		{
 			// Since we use C# instead of GD and autoload just throws item to root...
-			GetNode<MainPlatformingTheme>("/root/MainPlatformingThemeStream").Play();
+			GlobalMusicPlayer.PlayMusic(MusicID.Platforming);
 
 			NeedsToStartPlatTheme = false;
 		}

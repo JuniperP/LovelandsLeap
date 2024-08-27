@@ -27,9 +27,7 @@ public partial class Tutorial : Node
 		_pause.Text = $"Press [{Keybinds._acts[UserAction.Cancel].Input.AsText()}]\nat any time to\npause the game";
 
 		// Playing the main theme
-		MainPlatformingTheme theme = GetNode<MainPlatformingTheme>("/root/MainPlatformingThemeStream");
-		if(!theme.Playing)
-			theme.Play();
+		GlobalMusicPlayer.PlayMusic(MusicID.Platforming);
 	}
 
 	// Easy signal tells to change the button label accordingly
