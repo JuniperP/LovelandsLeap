@@ -20,11 +20,17 @@ public partial class GlobalMusicPlayer : AudioStreamPlayer
 		{MusicID.Abomination, "abomination"},
 	};
 
-	// Create a pseudo-singleton
+	// Create a singleton
 	private static GlobalMusicPlayer _instance;
 	public GlobalMusicPlayer()
 	{
-		_instance = this;
+		// Raise an error if there is already an instance, otherwise set this as the instance
+		if (_instance.IsValid())
+			throw new InvalidOperationException(
+				"There is already a GlobalMusicPlayer. There cannot be multiple instances."
+			);
+		else
+			_instance = this;
 	}
 
 	// Forms the path name for some audio file 
