@@ -33,20 +33,10 @@ public partial class GlobalMusicPlayer : AudioStreamPlayer
 		return $"res://audio/music/{unique}.wav";
 	}
 
-	// TODO: Do a valid node check before accessing instance instead of catching an error
-	// Call the method on the autoloaded instance
 	public static void PlayMusic(MusicID id)
 	{
-		try
-		{
-			_instance.InternalPlayMusic(id);
-		}
-		catch (NullReferenceException e)
-		{
-			throw new InvalidOperationException(
-				"There is no GlobalMusicPlayer object. Is the script autoloaded?", e
-			);
-		}
+		CheckInstance();
+		_instance.InternalPlayMusic(id);
 	}
 
 	private void InternalPlayMusic(MusicID id)
@@ -61,49 +51,31 @@ public partial class GlobalMusicPlayer : AudioStreamPlayer
 		}
 	}
 
-	// Call the method on the autoloaded instance
 	public static void StopMusic()
 	{
-		try
-		{
-			_instance.Stop();
-			_instance.Stream = null;
-		}
-		catch (NullReferenceException e)
-		{
-			throw new InvalidOperationException(
-				"There is no GlobalMusicPlayer object. Is the script autoloaded?", e
-			);
-		}
+		CheckInstance();
+		_instance.Stop();
+		_instance.Stream = null;
 	}
 
-	// Call the method on the autoloaded instance
 	public static void PauseMusic()
 	{
-		try
-		{
-			_instance.StreamPaused = true;
-		}
-		catch (NullReferenceException e)
-		{
-			throw new InvalidOperationException(
-				"There is no GlobalMusicPlayer object. Is the script autoloaded?", e
-			);
-		}
+		CheckInstance();
+		_instance.StreamPaused = true;
 	}
 
-	// Call the method on the autoloaded instance
 	public static void UnpauseMusic()
 	{
-		try
-		{
-			_instance.StreamPaused = false;
-		}
-		catch (NullReferenceException e)
-		{
+		CheckInstance();
+		_instance.StreamPaused = false;
+	}
+
+	private static void CheckInstance()
+	{
+		// Check for singleton instance
+		if (!_instance.IsValid())
 			throw new InvalidOperationException(
-				"There is no GlobalMusicPlayer object. Is the script autoloaded?", e
+				"There is no GlobalMusicPlayer object. Is the script autoloaded?"
 			);
-		}
 	}
 }
