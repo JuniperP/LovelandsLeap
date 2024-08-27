@@ -4,14 +4,20 @@ using System;
 
 public enum MusicID
 {
-	CutsceneMusic
+	Cutscene,
+	Platforming,
+	MainMenu,
+	Abomination,
 }
 
 public partial class GlobalMusicPlayer : AudioStreamPlayer
 {
 	private readonly Dictionary<MusicID, string> _audioPaths = new()
 	{
-		{MusicID.CutsceneMusic, "loveland_cutscene_music"}
+		{MusicID.Cutscene, "loveland_cutscene_music"},
+		{MusicID.Platforming, "loveland_platforming_music"},
+		{MusicID.MainMenu, "loveland_menu_music"},
+		{MusicID.Abomination, "abomination"},
 	};
 
 	// Create a pseudo-singleton
