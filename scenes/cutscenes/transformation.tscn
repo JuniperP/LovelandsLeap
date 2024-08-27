@@ -374,7 +374,7 @@ grow_vertical = 2
 [node name="Human1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
-talkingAudio = ExtResource("6_qm0g7")
+TalkingAudio = ExtResource("6_qm0g7")
 Sprite = NodePath("../../HumanLoc/HumanSprite")
 
 [node name="ProfilePicture" parent="Dialogue/Human1/BackBox" index="1"]
@@ -386,7 +386,7 @@ text = "Wha-? Hey, that’s mine!"
 [node name="Witch1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
-talkingAudio = ExtResource("8_yjn7n")
+TalkingAudio = ExtResource("8_yjn7n")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
 [node name="Background" parent="Dialogue/Witch1/BackBox" index="0"]
@@ -401,7 +401,7 @@ text = "Uh- crap! No it isn't, I found it first!"
 [node name="Human2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
-talkingAudio = ExtResource("10_u168e")
+TalkingAudio = ExtResource("10_u168e")
 Sprite = NodePath("../../HumanLoc/HumanSprite")
 
 [node name="ProfilePicture" parent="Dialogue/Human2/BackBox" index="1"]
@@ -414,7 +414,7 @@ That’s clearly my food! Give it back!"
 [node name="Witch2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
-talkingAudio = ExtResource("11_x3tek")
+TalkingAudio = ExtResource("11_x3tek")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
 [node name="Background" parent="Dialogue/Witch2/BackBox" index="0"]
@@ -429,7 +429,7 @@ text = "Aack!! Don’t yell at me! Finders keepers!!"
 [node name="Witch3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
-talkingAudio = ExtResource("12_lqb85")
+TalkingAudio = ExtResource("12_lqb85")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
 [node name="Background" parent="Dialogue/Witch3/BackBox" index="0"]
@@ -449,7 +449,7 @@ clip_text = false
 [node name="Frog1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
-talkingAudio = ExtResource("13_6h17b")
+TalkingAudio = ExtResource("13_6h17b")
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
 
@@ -462,7 +462,7 @@ text = "*Croak?*"
 [node name="Witch4" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
-talkingAudio = ExtResource("15_jglfn")
+TalkingAudio = ExtResource("15_jglfn")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
 [node name="Background" parent="Dialogue/Witch4/BackBox" index="0"]
@@ -478,7 +478,7 @@ I’ve met her."
 [node name="Frog2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
-talkingAudio = ExtResource("13_6h17b")
+TalkingAudio = ExtResource("13_6h17b")
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
 
@@ -491,7 +491,7 @@ text = "*Croak.*"
 [node name="Witch5" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
-talkingAudio = ExtResource("16_shblu")
+TalkingAudio = ExtResource("16_shblu")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
 [node name="Background" parent="Dialogue/Witch5/BackBox" index="0"]
@@ -511,7 +511,7 @@ clip_text = false
 [node name="Frog3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("3_5l45d")]
 visible = false
 layout_mode = 1
-talkingAudio = ExtResource("17_ig77s")
+TalkingAudio = ExtResource("17_ig77s")
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
 

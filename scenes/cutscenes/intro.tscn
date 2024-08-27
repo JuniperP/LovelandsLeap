@@ -228,7 +228,7 @@ script = ExtResource("3_xpijr")
 [node name="OrderDialogue" parent="." instance=ExtResource("4_vo1hj")]
 visible = false
 layout_mode = 1
-talkingAudio = ExtResource("5_w176a")
+TalkingAudio = ExtResource("5_w176a")
 
 [node name="ProfilePicture" parent="OrderDialogue/BackBox" index="1"]
 texture = ExtResource("6_1deqh")
@@ -260,7 +260,7 @@ autoplay = "idle"
 [node name="ForestDialogue" parent="." node_paths=PackedStringArray("Sprite") instance=ExtResource("4_vo1hj")]
 visible = false
 layout_mode = 1
-talkingAudio = ExtResource("9_15ff6")
+TalkingAudio = ExtResource("9_15ff6")
 Sprite = NodePath("../HumanLoc/Sprite")
 
 [node name="ProfilePicture" parent="ForestDialogue/BackBox" index="1"]
