@@ -3,12 +3,15 @@ using Godot;
 
 public partial class Cutscene : Node
 {
+	// Music variables
 	[Export] public MusicID MusicToPlay;
-	[Export] public bool StopMusicAtEnd;
+	[Export] public bool StopMusicAtEnd; // Music stops at the end of this cutscene
 
+	// Scene file paths
 	[Export(PropertyHint.File, "*.tscn")] public string NextScene;
 	[Export(PropertyHint.File, "*.tscn")] public string CancelScene;
 
+	// All the cutscene elements (need to implement ICutsceneElement)
 	[Export] public Node[] ElementNodes;
 
 	private ICutsceneElement[] _elements;
