@@ -200,11 +200,12 @@ text = "Click to reset"
 
 [node name="Instructions" type="RichTextLabel" parent="."]
 layout_mode = 1
-offset_right = 900.0
-offset_bottom = 120.0
+offset_top = 38.0
+offset_right = 1000.0
+offset_bottom = 90.0
 theme_override_font_sizes/italics_font_size = 32
 bbcode_enabled = true
-text = "[center][i] 																																																		Further your experience by editing other settings[i] [center]
+text = "[center][i]Further your experience by editing other settings[i][center]
 "
 scroll_active = false
 
@@ -222,11 +223,11 @@ grow_vertical = 1
 [connection signal="pressed" from="VerburgingToggle/ToggleClassic" to="VerburgingToggle/ToggleClassic" method="AdjustNameAndScreen"]
 [connection signal="visibility_changed" from="VerburgingToggle/ToggleClassic" to="VerburgingToggle/ToggleClassic" method="UpdateText"]
 [connection signal="pressed" from="SpeedRunTimer/ToggleSpeedrun" to="SpeedRunTimer/ToggleSpeedrun" method="AdjustNameAndScreen"]
-[connection signal="visibility_changed" from="SpeedRunTimer/ToggleSpeedrun" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateText"]
 [connection signal="visibility_changed" from="SpeedRunTimer/ToggleSpeedrun" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateTime"]
+[connection signal="visibility_changed" from="SpeedRunTimer/ToggleSpeedrun" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateText"]
 [connection signal="pressed" from="LiveFrogReaction/ToggleReaction" to="LiveFrogReaction/ToggleReaction" method="AdjustNameAndScreen"]
 [connection signal="visibility_changed" from="LiveFrogReaction/ToggleReaction" to="LiveFrogReaction/ToggleReaction" method="UpdateText"]
 [connection signal="pressed" from="FactoryReset/ResetSettings" to="ConfirmReset" method="Open"]
 [connection signal="visibility_changed" from="ConfirmReset" to="VerburgingToggle/ToggleClassic" method="UpdateText"]
-[connection signal="visibility_changed" from="ConfirmReset" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateText"]
 [connection signal="visibility_changed" from="ConfirmReset" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateTime"]
+[connection signal="visibility_changed" from="ConfirmReset" to="SpeedRunTimer/ToggleSpeedrun" method="UpdateText"]

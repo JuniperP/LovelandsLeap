@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4suej1iw3wkr"]
+[gd_scene load_steps=10 format=3 uid="uid://c4suej1iw3wkr"]
 
 [ext_resource type="Script" path="res://scripts/ui/settings/Settings.cs" id="1_0yej3"]
 [ext_resource type="PackedScene" uid="uid://btiq6vr6uavrk" path="res://scenes/ui/settings/audio_to_change.tscn" id="2_eko1f"]
+[ext_resource type="Theme" uid="uid://bmipwiwogjf5d" path="res://assets/themes/ui.theme" id="2_g544f"]
 [ext_resource type="PackedScene" uid="uid://dcxi6hn46xvnw" path="res://scenes/ui/settings/buttons_to_change.tscn" id="3_34cfb"]
 [ext_resource type="PackedScene" uid="uid://b3unscwxm55g1" path="res://scenes/ui/settings/display_to_change.tscn" id="4_h7u6u"]
 [ext_resource type="PackedScene" uid="uid://bx1xpj1qy44d8" path="res://scenes/ui/settings/other_to_change.tscn" id="5_h2a55"]
@@ -21,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_g544f")
 script = ExtResource("1_0yej3")
 
 [node name="BackBox" type="Panel" parent="."]
@@ -41,8 +43,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_dd3uq")
 
 [node name="Title" type="Label" parent="BackBox"]
 layout_mode = 0
-offset_right = 1004.0
-offset_bottom = 100.0
+offset_top = 10.0
+offset_right = 1000.0
+offset_bottom = 124.0
+theme = ExtResource("2_g544f")
 theme_override_font_sizes/font_size = 96
 text = "SETTINGS"
 horizontal_alignment = 1
