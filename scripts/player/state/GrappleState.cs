@@ -24,7 +24,7 @@ public class GrappleState : MovementState
 		{
 			// Get the normalized vector from the weight to spring
 			Vector2 forceDir = weightPos.DirectionTo(springPos);
-			
+
 			/* 
 				Vector arithmetic dictates that swapping the X and Y values and
 				multiplying one component by -1 results in 90 degree rotation.
@@ -47,6 +47,8 @@ public class GrappleState : MovementState
 			// Apply the logarithmically adjusted force to the weight
 			Ctx.TongueWeight.ApplyForce(forceDir * logFactor * Ctx.SwingForce * (float)delta);
 		}
+
+		Ctx.TongueWeight.ApplyForce(Ctx.SwingFollowForce * Ctx.TongueSpring.Displacement * (float)delta);
 
 		// Set player velocity to move towards weight
 		Vector2 diff = weightPos - Ctx.GlobalPosition;

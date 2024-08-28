@@ -7,6 +7,8 @@ public partial class TongueSpring : DampedSpringJoint2D
 	public PhysicsBody2D Target;
 	public Vector2 Offset;
 	public Node2D AttachedTo;
+	// Displacement since last physics process
+	public Vector2 Displacement { get; private set; } = Vector2.Zero;
 
 	public override void _Ready()
 	{
@@ -22,6 +24,10 @@ public partial class TongueSpring : DampedSpringJoint2D
 	public override void _PhysicsProcess(double delta)
 	{
 		if (AttachedTo.IsValid() && AttachedTo is not TileMap)
+		{
+			Vector2 oldPos = GlobalPosition;
 			Position = AttachedTo.GlobalPosition - Offset;
+			Displacement = Position - oldPos;
+		}
 	}
 }

@@ -34,6 +34,7 @@ public partial class Player : CharacterBody2D
 	[Export] public double AutoDegrappleBuffer = 0.5;
 	[ExportSubgroup("Swinging Factors", "Swing")]
 	[Export] public int SwingForce = 6000;
+	[Export] public int SwingFollowForce = 1;
 	[Export] public int SwingBaseDistance = 100;
 	[Export] public float SwingLogBase = 3;
 
