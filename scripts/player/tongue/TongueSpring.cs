@@ -19,7 +19,7 @@ public partial class TongueSpring : DampedSpringJoint2D
 	}
 
 	// Updating the springs position to match it's surface's
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
 		if (AttachedTo.IsValid() && AttachedTo is not TileMap)
 			Position = AttachedTo.GlobalPosition - Offset;
