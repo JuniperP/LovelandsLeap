@@ -59,11 +59,13 @@ public partial class Cutscene : Node
 		_wasAnythingPressed = Input.IsAnythingPressed();
 	}
 
-	public void StepAnimation()
+	public async void StepAnimation()
 	{
 		// Base case, out of elements in array
 		if (_currentElement >= _elements.Length)
 		{
+			// Wait until this frame has been rendered (lets the current animation finish)
+			await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
 			ChangeToNext();
 			return;
 		}
