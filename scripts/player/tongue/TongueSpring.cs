@@ -3,11 +3,10 @@ using Godot;
 public partial class TongueSpring : DampedSpringJoint2D
 {
 	[Export] public float LengthFactor = 1;
-	[Export] public PhysicsBody2D Target;
 
-	// Idk why Juniper exports all of these but sure
-	[Export] public Vector2 Offset;
-	[Export] public Node2D AttachedTo;
+	public PhysicsBody2D Target;
+	public Vector2 Offset;
+	public Node2D AttachedTo;
 
 	public override void _Ready()
 	{
@@ -20,9 +19,9 @@ public partial class TongueSpring : DampedSpringJoint2D
 	}
 
 	// Updating the springs position to match it's surface's
-    public override void _Process(double delta)
-    {
-		if(AttachedTo.IsValid() && AttachedTo is not TileMap)	
-        	Position = AttachedTo.GlobalPosition - Offset;
-    }
+	public override void _Process(double delta)
+	{
+		if (AttachedTo.IsValid() && AttachedTo is not TileMap)
+			Position = AttachedTo.GlobalPosition - Offset;
+	}
 }
