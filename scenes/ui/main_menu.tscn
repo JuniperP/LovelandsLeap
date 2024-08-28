@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://beaw13scnxun1"]
+[gd_scene load_steps=19 format=3 uid="uid://beaw13scnxun1"]
 
 [ext_resource type="Script" path="res://scripts/ui/MainMenu.cs" id="1_byusu"]
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/main_menu.jpg" id="2_qxlys"]
 [ext_resource type="Shader" path="res://assets/color_vignette.gdshader" id="2_uk4k1"]
 [ext_resource type="PackedScene" uid="uid://c65bn2g4p34gv" path="res://scenes/ui/title_screen_effect.tscn" id="3_4331o"]
+[ext_resource type="Script" path="res://scripts/ui/VignetteOverlay.cs" id="3_ajw4l"]
 [ext_resource type="PackedScene" uid="uid://c4suej1iw3wkr" path="res://scenes/ui/settings/settings.tscn" id="3_ps8pg"]
 [ext_resource type="FontFile" uid="uid://hw1t6nlg1t1y" path="res://assets/fonts/logo/nerko_one_regular.ttf" id="3_r1n3c"]
 [ext_resource type="AudioStream" uid="uid://nnautoxm2usu" path="res://audio/music/loveland_menu_music.wav" id="4_e7cc2"]
@@ -30,7 +31,7 @@ gradient = SubResource("Gradient_axv26")
 
 [sub_resource type="Gradient" id="Gradient_7tm51"]
 interpolation_mode = 2
-colors = PackedColorArray(1, 0.995333, 0.96, 1, 0.117647, 0.180392, 0.329412, 0.917647)
+colors = PackedColorArray(1, 0.995333, 0.96, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5grc2"]
 gradient = SubResource("Gradient_7tm51")
@@ -59,6 +60,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_y44ab")
 
 [node name="VignetteOverlay" type="TextureRect" parent="OPBack"]
+visible = false
 light_mask = 0
 z_index = 100
 material = SubResource("ShaderMaterial_21216")
@@ -69,6 +71,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_k3nu0")
+script = ExtResource("3_ajw4l")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="OPBack"]
 layer = -3
