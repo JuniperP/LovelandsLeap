@@ -4,8 +4,7 @@ public partial class MovingPlatformTrack : Path2D
 {
 	// Tracks whether or not the platform should be moving
 	private bool _move;
-	// Tracks direction of the platform
-	private bool _goBackward;
+	private static float _percentChange;
 
 	private float _slowDownFactor;
 
@@ -15,12 +14,12 @@ public partial class MovingPlatformTrack : Path2D
 
 	// Note: it is not possible to have a looping bouncing track; less it would loop and bounce at the end
 	[ExportGroup("PropertiesOfTheTrack")]
-	[Export] public float ProportionalSpeedModifier = 5;
 	[Export] public bool TrackLoops = false;
 	[Export] public bool BounceOffEnd = false;
 	[Export] public bool AutoStart = false;
 	[Export] public bool Stoppable = false;
 	[Export] public bool OrientPlatformWithTrack = false;
+	[Export] public float TimeToCompleteTrack = 1;
 
 
 	// Called when the node enters the scene tree for the first time.
@@ -35,7 +34,6 @@ public partial class MovingPlatformTrack : Path2D
 
 		// Starting process if applicable
 		_move = AutoStart;
-		_goBackward = true;
 		_slowDownFactor = 30;
 	}
 
@@ -49,45 +47,25 @@ public partial class MovingPlatformTrack : Path2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		// Moving the platform accordingly
 		if (_move)
-		{
-			// Constant speed
-			float slowDownFactor = CalculateSpeedFactor();
-
-			// Moving the platform the right direction
-			if (BounceOffEnd && _goBackward)
-				HowToFollow.ProgressRatio -= (float)delta / slowDownFactor * ProportionalSpeedModifier;
-			else
-				HowToFollow.ProgressRatio += (float)delta / slowDownFactor * ProportionalSpeedModifier;
-
-			// Flipping direction if needed
-			if (BounceOffEnd && (HowToFollow.ProgressRatio <= 0 || HowToFollow.ProgressRatio >= 1))
-				_goBackward = !_goBackward;
-
-		}
+			HowToFollow.ProgressRatio = CalculateOnCurve(HowToFollow.ProgressRatio, delta);
 
 	}
 
 	// Calculated the arbitrary speed with easing
-	private float CalculateSpeedFactor()
+	private float CalculateOnCurve(float ratio, double delta)
 	{
-		// Constant speed
-		float ratio = HowToFollow.ProgressRatio;
-
 		if (BounceOffEnd)
 		{
-			// Proportionally slow down and speeding up when at ends
-			if (ratio > .8 || ratio < .2)
-				_slowDownFactor = 75 * (ratio - .2f) * (ratio - .8f) + 10;
-			// Go constant speed though middle
-			else
-				_slowDownFactor = 10;
-		}
-		// All other cases give the constant speed factor
-		else
-			_slowDownFactor = 10;
+			// Updating the point on the curve
+			_percentChange += (float)delta / TimeToCompleteTrack;
 
-		return _slowDownFactor;
+			// Moving the point on a curve based on the new % of the to cover
+			return -.5f * Mathf.Cos(Mathf.Pi * _percentChange) + .5f;
+		}
+
+		return ratio + (float)delta / TimeToCompleteTrack;
 	}
 
 }
