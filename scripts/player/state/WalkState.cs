@@ -18,7 +18,7 @@ public class WalkState : MovementState
 		AnimState newState = Ctx.AnimManager.State;
 
 		// Kill vertical velocity when hitting ceiling
-		if (Ctx.IsOnCeiling())
+		if (Ctx.IsOnCeiling() && targetVelocity.Y < -0.1f)
 			targetVelocity.Y = 0;
 
 		bool isFloored = Ctx.IsOnFloor();
