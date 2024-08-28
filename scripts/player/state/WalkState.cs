@@ -2,6 +2,7 @@ using Godot;
 
 public class WalkState : MovementState
 {
+	private double _jumpBufferTime = Mathf.Inf;
 	private bool _isFastFalling = false;
 
 	// Track if the player was in the air last frame
@@ -95,19 +96,41 @@ public class WalkState : MovementState
 		// Handle gravity
 		float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 
-		if (floored)
+		// Handle jumping
+		if (Input.IsActionJustPressed("move_up"))
 		{
-			_isFastFalling = false;
-
-			// Handle jump
-			if (Input.IsActionJustPressed("move_up"))
+			if (floored) // Jump if on the ground
 			{
 				velocity = -Ctx.JumpImpulse;
 				SoundManager.PlaySound(SFX.Jump, Ctx);
 			}
+			else // Buffer a jump input
+				_jumpBufferTime = 0d;
 		}
-		else  // Midair
+
+		if (floored)
 		{
+			// If player has recently buffered a jump, perform one
+			if (_jumpBufferTime < Ctx.JumpBufferTime)
+			{
+				SoundManager.PlaySound(SFX.Jump, Ctx);
+				velocity = -Ctx.JumpImpulse;
+
+				// Perform jump cut immediately if the jump button is no longer held
+				if (!Input.IsActionPressed("move_up"))
+					velocity *= Ctx.JumpCutFactor;
+			}
+
+			// Reset variables
+			_isFastFalling = false;
+			_jumpBufferTime = Mathf.Inf;
+		}
+		else // Midair
+		{
+			// Increment jump buffer if active
+			if (_jumpBufferTime != Mathf.Inf)
+				_jumpBufferTime += delta;
+
 			if (Input.IsActionJustPressed("move_down"))
 				_isFastFalling = true;
 
