@@ -31,7 +31,7 @@ gradient = SubResource("Gradient_axv26")
 
 [sub_resource type="Gradient" id="Gradient_7tm51"]
 interpolation_mode = 2
-colors = PackedColorArray(1, 0.995333, 0.96, 1, 0, 0, 0, 1)
+colors = PackedColorArray(1, 0.995333, 0.96, 1, 0.1054, 0.15314, 0.31, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5grc2"]
 gradient = SubResource("Gradient_7tm51")
@@ -60,7 +60,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_y44ab")
 
 [node name="VignetteOverlay" type="TextureRect" parent="OPBack"]
-visible = false
 light_mask = 0
 z_index = 100
 material = SubResource("ShaderMaterial_21216")
@@ -92,7 +91,6 @@ expand_mode = 1
 [node name="Lighting" type="PointLight2D" parent="OPBack/CanvasLayer/TextureRect"]
 position = Vector2(960.5, 539)
 scale = Vector2(1.25065, 0.705729)
-energy = 0.85
 blend_mode = 2
 range_layer_min = -100
 range_item_cull_mask = 2
