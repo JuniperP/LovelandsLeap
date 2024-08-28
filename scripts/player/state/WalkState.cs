@@ -2,6 +2,7 @@ using Godot;
 
 public class WalkState : MovementState
 {
+	private double _coyoteTime = 0d;
 	private double _jumpBufferTime = Mathf.Inf;
 	private bool _isFastFalling = false;
 
@@ -99,7 +100,8 @@ public class WalkState : MovementState
 		// Handle jumping
 		if (Input.IsActionJustPressed("move_up"))
 		{
-			if (floored) // Jump if on the ground
+			// Jump if on the ground or have coyote frames
+			if (floored || _coyoteTime < Ctx.MaxCoyoteTime)
 			{
 				velocity = -Ctx.JumpImpulse;
 				SoundManager.PlaySound(SFX.Jump, Ctx);
@@ -123,6 +125,7 @@ public class WalkState : MovementState
 
 			// Reset variables
 			_isFastFalling = false;
+			_coyoteTime = 0d;
 			_jumpBufferTime = Mathf.Inf;
 		}
 		else // Midair
@@ -130,6 +133,9 @@ public class WalkState : MovementState
 			// Increment jump buffer if active
 			if (_jumpBufferTime != Mathf.Inf)
 				_jumpBufferTime += delta;
+
+			// Increment coyote time
+			_coyoteTime += delta;
 
 			if (Input.IsActionJustPressed("move_down"))
 				_isFastFalling = true;

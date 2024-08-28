@@ -22,6 +22,7 @@ public partial class Player : CharacterBody2D
 	[Export] public int JumpImpulse = 1000;
 	[Export] public float JumpCutFactor = 0.5f;
 	[Export] public double JumpBufferTime = 0.25;
+	[Export] public double MaxCoyoteTime = 0.09;
 	[Export] public float GravityFactor = 1f;
 	[Export] public float FallGravityFactor = 1.5f;
 	[Export] public int MaxFallSpeed = 1500;
