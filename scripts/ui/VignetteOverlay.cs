@@ -3,7 +3,7 @@ using System;
 
 public partial class VignetteOverlay : TextureRect
 {
-	// Time of the half cycle (start to end)
+	// Time to fade in and out
 	[Export] public double FadePeriod = 10;
 	[Export] public float StartStrength = 0.9f;
 	[Export] public float EndStrength = 1.2f;
