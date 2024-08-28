@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://beaw13scnxun1"]
+[gd_scene load_steps=18 format=3 uid="uid://beaw13scnxun1"]
 
 [ext_resource type="Script" path="res://scripts/ui/MainMenu.cs" id="1_byusu"]
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/main_menu.jpg" id="2_qxlys"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://nnautoxm2usu" path="res://audio/music/loveland_menu_music.wav" id="4_e7cc2"]
 [ext_resource type="PackedScene" uid="uid://dnkodbiws2j72" path="res://scenes/ui/overwrite_saved_game.tscn" id="5_sksx0"]
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="6_cfs3o"]
+[ext_resource type="Theme" uid="uid://bmipwiwogjf5d" path="res://assets/themes/ui.theme" id="6_esdx0"]
 [ext_resource type="PackedScene" uid="uid://2jyl564ee5cu" path="res://scenes/ui/speed_run_timer.tscn" id="7_4ckpd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y44ab"]
@@ -118,12 +119,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -320.0
+offset_left = -330.0
 offset_top = -90.0
 offset_right = -50.0
 offset_bottom = -15.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("6_esdx0")
 theme_override_font_sizes/font_size = 48
 text = "New Game"
 
@@ -134,12 +136,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -320.0
+offset_left = -346.0
 offset_top = 35.0
 offset_right = -50.0
 offset_bottom = 110.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("6_esdx0")
 theme_override_font_sizes/font_size = 48
 text = "Load Game"
 
@@ -156,6 +159,7 @@ offset_right = -50.0
 offset_bottom = 235.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("6_esdx0")
 theme_override_font_sizes/font_size = 48
 text = "Settings"
 
@@ -172,6 +176,7 @@ offset_right = -50.0
 offset_bottom = 360.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("6_esdx0")
 theme_override_font_sizes/font_size = 48
 text = "Credits"
 
@@ -188,6 +193,7 @@ offset_right = -50.0
 offset_bottom = 485.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("6_esdx0")
 theme_override_font_sizes/font_size = 48
 text = "Quit
 "
