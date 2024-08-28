@@ -57,9 +57,9 @@ public class GrappleState : MovementState
 			DisableGrapple();
 
 		// Handle sprite direction
-		if (Ctx.Velocity.X > 0.1f)
+		if (Ctx.Velocity.X > 100f)
 			Ctx.AnimManager.IsLeftFacing = false;
-		else if (Ctx.Velocity.X < -0.1f)
+		else if (Ctx.Velocity.X < -100f)
 			Ctx.AnimManager.IsLeftFacing = true;
 	}
 
