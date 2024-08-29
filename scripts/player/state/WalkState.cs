@@ -113,7 +113,7 @@ public class WalkState : MovementState
 		if (floored)
 		{
 			// If player has recently buffered a jump, perform one
-			if (_jumpBufferTime < Ctx.JumpBufferTime)
+			if (_jumpBufferTime < Ctx.JumpBufferTime && velocity != -Ctx.JumpImpulse)
 			{
 				SoundManager.PlaySound(SFX.Jump, Ctx);
 				velocity = -Ctx.JumpImpulse;
