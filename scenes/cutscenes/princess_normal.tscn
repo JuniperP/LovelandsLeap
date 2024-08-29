@@ -1,0 +1,587 @@
+[gd_scene load_steps=23 format=3 uid="uid://df6ucomymik0q"]
+
+[ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_e7reo"]
+[ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backround_stripey.jpg" id="3_5gnx6"]
+[ext_resource type="Texture2D" uid="uid://ysmgbmc0yui1" path="res://assets/background/mossy_tree.png" id="4_d0b8k"]
+[ext_resource type="SpriteFrames" uid="uid://hq7btpb76h0j" path="res://resources/sprite_frames/princess.tres" id="5_2xgpo"]
+[ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="5_r1ls8"]
+[ext_resource type="Texture2D" uid="uid://chm8yefqnrjo1" path="res://assets/witch/witch_portrait.png" id="7_dopru"]
+[ext_resource type="Texture2D" uid="uid://drv8g6tx6yeyf" path="res://assets/princess/princess_portrait.png" id="7_yqssx"]
+[ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frog_portrait.png" id="8_mlafx"]
+[ext_resource type="Texture2D" uid="uid://10fehss1o3au" path="res://assets/frog/iguana_portrait.png" id="9_5ts8p"]
+[ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="9_h1hg3"]
+[ext_resource type="SpriteFrames" uid="uid://dyimfn0lnsc3" path="res://resources/sprite_frames/witch.tres" id="10_nwuek"]
+[ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="11_r41yp"]
+[ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="12_e71ay"]
+
+[sub_resource type="Animation" id="Animation_48xoy"]
+resource_name = "main"
+length = 2.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Overlay:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Overlay:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l5pl5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Overlay:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Overlay:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uajul"]
+_data = {
+"RESET": SubResource("Animation_l5pl5"),
+"main": SubResource("Animation_48xoy")
+}
+
+[sub_resource type="Animation" id="Animation_p4ra7"]
+resource_name = "main"
+length = 5.0
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FrogLoc:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-204, 790), Vector2(1211, 790)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FrogLoc/FrogSprite")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"walking"],
+"method": &"play"
+}, {
+"args": [&"idle"],
+"method": &"play"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../PrincessLoc/PrincessSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3jjli"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FrogLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-204, 790)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PrincessLoc/PrincessSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fjodb"]
+_data = {
+"RESET": SubResource("Animation_3jjli"),
+"main": SubResource("Animation_p4ra7")
+}
+
+[sub_resource type="Animation" id="Animation_68boi"]
+resource_name = "main"
+length = 2.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Overlay:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Overlay:color")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.0862745, 0.0862745, 0.0862745, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_afrce"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Overlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Overlay:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fr2k0"]
+_data = {
+"RESET": SubResource("Animation_afrce"),
+"main": SubResource("Animation_68boi")
+}
+
+[node name="Transformation" type="Control" node_paths=PackedStringArray("ElementNodes")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e7reo")
+NextScene = "res://scenes/credits.tscn"
+ElementNodes = [NodePath("Animations/FadeIn"), NodePath("Animations/FrogWalk"), NodePath("Dialogue/Frog1"), NodePath("Dialogue/Princess1"), NodePath("Dialogue/Frog2"), NodePath("Dialogue/Princess2"), NodePath("Dialogue/Frog3"), NodePath("Dialogue/Princess3"), NodePath("Dialogue/Frog4"), NodePath("Dialogue/Princess4"), NodePath("Animations/FadeOut")]
+
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="Control" parent="."]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stripey" type="TextureRect" parent="Background"]
+modulate = Color(0.639216, 0.65098, 0.788235, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+offset_right = 1920.0
+offset_bottom = 1631.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_5gnx6")
+stretch_mode = 5
+
+[node name="MossyTree" type="TextureRect" parent="Background"]
+modulate = Color(0.356863, 0.360784, 0.490196, 1)
+layout_mode = 1
+offset_left = 76.0
+offset_top = 260.0
+offset_right = 1076.0
+offset_bottom = 1894.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_d0b8k")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Dialogue" type="Control" parent="."]
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frog1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../FrogLoc/FrogSprite")
+TalkingAnimation = "croak"
+
+[node name="ProfilePicture" parent="Dialogue/Frog1/BackBox" index="1"]
+texture = ExtResource("8_mlafx")
+
+[node name="Text" parent="Dialogue/Frog1/BackBox" index="2"]
+text = "*Croaaaaak*"
+
+[node name="Princess1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../PrincessLoc/PrincessSprite")
+
+[node name="Background" parent="Dialogue/Princess1/BackBox" index="0"]
+modulate = Color(0.7, 0.64, 1, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Princess1/BackBox" index="1"]
+texture = ExtResource("7_yqssx")
+
+[node name="Text" parent="Dialogue/Princess1/BackBox" index="2"]
+text = "Why, yes, I am the Princess of Loveland!"
+
+[node name="Frog2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../FrogLoc/FrogSprite")
+TalkingAnimation = "croak"
+
+[node name="ProfilePicture" parent="Dialogue/Frog2/BackBox" index="1"]
+texture = ExtResource("8_mlafx")
+
+[node name="Text" parent="Dialogue/Frog2/BackBox" index="2"]
+text = "*Croak!*"
+
+[node name="Princess2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../PrincessLoc/PrincessSprite")
+
+[node name="Background" parent="Dialogue/Princess2/BackBox" index="0"]
+modulate = Color(0.7, 0.64, 1, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Princess2/BackBox" index="1"]
+texture = ExtResource("7_yqssx")
+
+[node name="Text" parent="Dialogue/Princess2/BackBox" index="2"]
+offset_top = -90.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 42
+text = "Huh? You said you’ve been turned into a frog?
+By a witch who said I didn’t take visitors?
+That’s preposterous! I always see my visitors!"
+
+[node name="Frog3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../FrogLoc/FrogSprite")
+TalkingAnimation = "croak"
+
+[node name="ProfilePicture" parent="Dialogue/Frog3/BackBox" index="1"]
+texture = ExtResource("8_mlafx")
+
+[node name="Text" parent="Dialogue/Frog3/BackBox" index="2"]
+text = "*Croak.*"
+
+[node name="Princess3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../PrincessLoc/PrincessSprite")
+
+[node name="Background" parent="Dialogue/Princess3/BackBox" index="0"]
+modulate = Color(0.7, 0.64, 1, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Princess3/BackBox" index="1"]
+texture = ExtResource("7_yqssx")
+
+[node name="Text" parent="Dialogue/Princess3/BackBox" index="2"]
+text = "Right, right. I can turn you back.
+I just need to, um… kiss you. On the lips."
+
+[node name="Frog4" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../FrogLoc/FrogSprite")
+TalkingAnimation = "croak"
+
+[node name="ProfilePicture" parent="Dialogue/Frog4/BackBox" index="1"]
+texture = ExtResource("8_mlafx")
+
+[node name="Text" parent="Dialogue/Frog4/BackBox" index="2"]
+text = "*CROAK!?*"
+
+[node name="Princess4" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../PrincessLoc/PrincessSprite")
+
+[node name="Background" parent="Dialogue/Princess4/BackBox" index="0"]
+modulate = Color(0.7, 0.64, 1, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Princess4/BackBox" index="1"]
+texture = ExtResource("7_yqssx")
+
+[node name="Text" parent="Dialogue/Princess4/BackBox" index="2"]
+text = "Stop complaining, this is a lot grosser for me.
+Give me a second."
+
+[node name="Frog5" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../FrogLoc/FrogSprite")
+TalkingAnimation = "croak"
+
+[node name="ProfilePicture" parent="Dialogue/Frog5/BackBox" index="1"]
+texture = ExtResource("8_mlafx")
+
+[node name="Text" parent="Dialogue/Frog5/BackBox" index="2"]
+text = "*Croak??*"
+
+[node name="Princess5" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../PrincessLoc/PrincessSprite")
+
+[node name="Background" parent="Dialogue/Princess5/BackBox" index="0"]
+modulate = Color(0.7, 0.64, 1, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Princess5/BackBox" index="1"]
+texture = ExtResource("7_yqssx")
+
+[node name="Text" parent="Dialogue/Princess5/BackBox" index="2"]
+text = "Huh? But I’m a princess!
+That should have worked!"
+
+[node name="Witch1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../WitchLoc/WitchSprite")
+
+[node name="Background" parent="Dialogue/Witch1/BackBox" index="0"]
+modulate = Color(0.3978, 0.78, 0.4615, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Witch1/BackBox" index="1"]
+texture = ExtResource("7_dopru")
+
+[node name="Text" parent="Dialogue/Witch1/BackBox" index="2"]
+offset_top = -68.5
+offset_bottom = 68.5
+theme_override_font_sizes/font_size = 40
+text = "HaHA! Got you! She’s not a real princess, she’s just a girl who dresses like that and says she is! The only thing that could reverse that spell is the person who cast it!!"
+autowrap_mode = 2
+clip_text = false
+
+[node name="Frog6" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../FrogLoc/FrogSprite")
+TalkingAnimation = "croak"
+
+[node name="ProfilePicture" parent="Dialogue/Frog6/BackBox" index="1"]
+texture = ExtResource("8_mlafx")
+
+[node name="Text" parent="Dialogue/Frog6/BackBox" index="2"]
+text = "*CROAK.*"
+
+[node name="Witch2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../WitchLoc/WitchSprite")
+
+[node name="Background" parent="Dialogue/Witch2/BackBox" index="0"]
+modulate = Color(0.3978, 0.78, 0.4615, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Witch2/BackBox" index="1"]
+texture = ExtResource("7_dopru")
+
+[node name="Text" parent="Dialogue/Witch2/BackBox" index="2"]
+offset_top = -68.5
+offset_bottom = 68.5
+theme_override_font_sizes/font_size = 42
+text = "Ugh, do you really want to be turned back that badly? Whatever! If you really want it that badly, then fine!"
+autowrap_mode = 2
+clip_text = false
+
+[node name="Witch3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../WitchLoc/WitchSprite")
+
+[node name="Background" parent="Dialogue/Witch3/BackBox" index="0"]
+modulate = Color(0.3978, 0.78, 0.4615, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Witch3/BackBox" index="1"]
+texture = ExtResource("7_dopru")
+
+[node name="Text" parent="Dialogue/Witch3/BackBox" index="2"]
+offset_top = -68.5
+offset_bottom = 68.5
+theme_override_font_sizes/font_size = 42
+text = "I don’t have time for this, I need to scavenge for more food deliveries in the woods. Now leave me alone!"
+autowrap_mode = 2
+clip_text = false
+
+[node name="Iguana1" parent="Dialogue" instance=ExtResource("5_r1ls8")]
+visible = false
+layout_mode = 1
+
+[node name="ProfilePicture" parent="Dialogue/Iguana1/BackBox" index="1"]
+texture = ExtResource("9_5ts8p")
+
+[node name="Text" parent="Dialogue/Iguana1/BackBox" index="2"]
+text = "!!!!!!!!"
+
+[node name="Animations" type="Node" parent="."]
+
+[node name="FadeIn" type="AnimationPlayer" parent="Animations"]
+libraries = {
+"": SubResource("AnimationLibrary_uajul")
+}
+script = ExtResource("9_h1hg3")
+
+[node name="FrogWalk" type="AnimationPlayer" parent="Animations"]
+libraries = {
+"": SubResource("AnimationLibrary_fjodb")
+}
+script = ExtResource("9_h1hg3")
+
+[node name="FadeOut" type="AnimationPlayer" parent="Animations"]
+libraries = {
+"": SubResource("AnimationLibrary_fr2k0")
+}
+script = ExtResource("9_h1hg3")
+
+[node name="FrogLoc" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -204.0
+offset_top = 790.0
+offset_right = -204.0
+offset_bottom = 790.0
+
+[node name="FrogSprite" type="AnimatedSprite2D" parent="FrogLoc"]
+scale = Vector2(0.765957, 0.765957)
+sprite_frames = ExtResource("11_r41yp")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="PrincessLoc" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1553.0
+offset_top = 790.0
+offset_right = 1553.0
+offset_bottom = 790.0
+
+[node name="PrincessSprite" type="AnimatedSprite2D" parent="PrincessLoc"]
+scale = Vector2(0.4, 0.4)
+sprite_frames = ExtResource("5_2xgpo")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="WitchLoc" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -245.0
+offset_top = 796.0
+offset_right = -245.0
+offset_bottom = 796.0
+
+[node name="WitchSprite" type="AnimatedSprite2D" parent="WitchLoc"]
+scale = Vector2(0.075, 0.075)
+sprite_frames = ExtResource("10_nwuek")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true
+
+[node name="InfoToSkip" parent="." instance=ExtResource("12_e71ay")]
+layout_mode = 0
+offset_right = 355.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[editable path="Dialogue/Frog1"]
+[editable path="Dialogue/Princess1"]
+[editable path="Dialogue/Frog2"]
+[editable path="Dialogue/Princess2"]
+[editable path="Dialogue/Frog3"]
+[editable path="Dialogue/Princess3"]
+[editable path="Dialogue/Frog4"]
+[editable path="Dialogue/Princess4"]
+[editable path="Dialogue/Frog5"]
+[editable path="Dialogue/Princess5"]
+[editable path="Dialogue/Witch1"]
+[editable path="Dialogue/Frog6"]
+[editable path="Dialogue/Witch2"]
+[editable path="Dialogue/Witch3"]
+[editable path="Dialogue/Iguana1"]
