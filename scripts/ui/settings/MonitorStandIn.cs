@@ -18,9 +18,9 @@ public partial class MonitorStandIn : Control
 
 		// Modulating to match set up as needed
 		if (DisplayChanging.CurrentScreen == MonitorNum)
-			Modulate = new Color(1, 1, 1, 1f);
-		else
 			Modulate = new Color(1, 1, 1, 0.5f);
+		else
+			Modulate = new Color(1, 1, 1, 1f);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,9 +31,9 @@ public partial class MonitorStandIn : Control
 		{
 			// Setting symbols appropriately
 			if (DisplayChanging.CurrentScreen == MonitorNum)
-				Modulate = new Color(1, 1, 1, 1f);
-			else
 				Modulate = new Color(1, 1, 1, 0.5f);
+			else
+				Modulate = new Color(1, 1, 1, 1f);
 
 			// Setting the new choice at the final run through (Godot goes in linear order)
 			if(MonitorNum + 1 == DisplayServer.GetScreenCount())
