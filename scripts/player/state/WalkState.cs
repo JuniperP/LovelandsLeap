@@ -101,7 +101,7 @@ public class WalkState : MovementState
 		if (Input.IsActionJustPressed("move_up"))
 		{
 			// Jump if on the ground or have coyote frames
-			if (floored || _coyoteTime < Ctx.MaxCoyoteTime)
+			if (floored || (_coyoteTime < Ctx.MaxCoyoteTime && velocity > 0.1f))
 			{
 				velocity = -Ctx.JumpImpulse;
 				SoundManager.PlaySound(SFX.Jump, Ctx);
