@@ -41,8 +41,13 @@ public partial class MainMenu : Control
 	{
 		if (LoadLevelData.SavePathExist())
 		{
-			LoadingScreen.NeedsToStartPlatTheme = true;
+			
 			SceneManager.SetNextGoTo(LoadLevelData.LoadData());
+
+			// Queueing up the appropriate music
+			if(SceneManager.GetNextGoTo() != ToScene.Tutorial)
+				LoadingScreen.NeedsToStartPlatTheme = true;
+
 			LoadingScreen.FadeIn();
 		}
 	}

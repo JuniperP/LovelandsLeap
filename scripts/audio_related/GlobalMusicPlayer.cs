@@ -8,16 +8,18 @@ public enum MusicID
 	Platforming,
 	MainMenu,
 	Abomination,
+	Tutorial,
 }
 
 public partial class GlobalMusicPlayer : AudioStreamPlayer
 {
 	private readonly Dictionary<MusicID, string> _audioPaths = new()
 	{
-		{MusicID.Cutscene, "loveland_cutscene_music"},
+		{MusicID.Cutscene, "loveland_cutscene_ambience"},
 		{MusicID.Platforming, "loveland_platforming_music"},
 		{MusicID.MainMenu, "loveland_menu_music"},
 		{MusicID.Abomination, "abomination"},
+		{MusicID.Tutorial, "loveland_tutorial_music"}
 	};
 
 	// Create a singleton

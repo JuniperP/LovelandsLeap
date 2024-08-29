@@ -27,6 +27,10 @@ public partial class FadeTransition : Area2D
 			// Sets up to go to the next area
 			SceneManager.SetNextGoTo(_sendsTo);
 
+			// Queueing up the main platform theme for level 1
+			if(_sendsTo == ToScene.Level1)
+				LoadingScreen.NeedsToStartPlatTheme = true;
+
 			// Starts into next scene
 			LoadingScreen.FadeIn();
 		}
