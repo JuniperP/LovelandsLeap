@@ -16,7 +16,7 @@ public partial class PauseScreen : Toggleable
 	protected override void Close()
 	{
 		// Unpausing the music
-		GlobalMusicPlayer.PauseMusic();
+		GlobalMusicPlayer.UnpauseMusic();
 
 		GetTree().Paused = false;
 		Visible = false;
@@ -26,7 +26,7 @@ public partial class PauseScreen : Toggleable
 	protected override void Open()
 	{
 		// Pausing the music
-		GlobalMusicPlayer.UnpauseMusic();
+		GlobalMusicPlayer.PauseMusic();
 
 		Visible = true;
 	}
