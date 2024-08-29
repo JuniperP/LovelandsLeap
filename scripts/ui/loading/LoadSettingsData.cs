@@ -29,7 +29,6 @@ public partial class LoadSettingsData : Node
 		config.SetValue("KeyBinds", "PActIn", Keybinds._acts[UserAction.PAction].Input);
 		config.SetValue("KeyBinds", "SActIn", Keybinds._acts[UserAction.SAction].Input);
 		config.SetValue("KeyBinds", "CancelIn", Keybinds._acts[UserAction.Cancel].Input);
-		config.SetValue("KeyBinds", "AcceptIn", Keybinds._acts[UserAction.Accept].Input);
 
 
 		// Display info to be stored
@@ -83,7 +82,6 @@ public partial class LoadSettingsData : Node
 		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "PActIn"), UserAction.PAction);
 		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "SActIn"), UserAction.SAction);
 		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "CancelIn"), UserAction.Cancel);
-		KeyBindManager.SetKeyBind((InputEvent)config.GetValue("KeyBinds", "AcceptIn"), UserAction.Accept);
 
 		// Matching if the screen is windowed
 		ToggleFullScreen.IsFull = (bool)config.GetValue("Display", "FullScreen");

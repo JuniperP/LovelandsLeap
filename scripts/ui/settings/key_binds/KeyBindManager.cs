@@ -73,8 +73,6 @@ public partial class KeyBindManager : Control
 			// Ensuring the user doesn't click the button to change the bind again
 			if (ourInput is InputEventMouseButton && ((InputEventMouseButton)ourInput).ButtonIndex == MouseButton.Left)
 				_preventDoubleClick = true;
-			else if (_actionToSet == UserAction.Accept)
-				_preventDoubleClick = true;
 				
 
 		}

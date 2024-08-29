@@ -12,7 +12,6 @@ public enum UserAction : byte
 	PAction,
 	SAction,
 	Cancel,
-	Accept,
 }
 
 
@@ -29,6 +28,5 @@ public partial class Keybinds : Node
 		{UserAction.PAction, new ActionRep("primary_action", InputMap.ActionGetEvents("primary_action")[0], "Shoot Tongue")},
 		{UserAction.SAction, new ActionRep("secondary_action", InputMap.ActionGetEvents("secondary_action")[0], "Retract Tongue")},
 		{UserAction.Cancel, new ActionRep("ui_cancel",InputMap.ActionGetEvents("ui_cancel")[0], "Cancel")},
-		{UserAction.Accept, new ActionRep("ui_accept",InputMap.ActionGetEvents("ui_accept")[0], "Accept")}
 	};
 }
