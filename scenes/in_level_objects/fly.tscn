@@ -26,7 +26,7 @@ stream = ExtResource("3_r68av")
 volume_db = -6.0
 pitch_scale = 2.0
 autoplay = true
-max_distance = 750.0
+max_distance = 500.0
 bus = &"Sound Effects"
 
 [connection signal="area_entered" from="." to="." method="Collect"]
