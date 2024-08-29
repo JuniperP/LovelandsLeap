@@ -25,6 +25,9 @@ public partial class Tutorial : Node
 		_jumpAndHold2.Text = $"Disengage with\n[{Keybinds._acts[UserAction.SAction].Input.AsText()}]";
 		_swing.Text = $"Press [{Keybinds._acts[UserAction.Left].Input.AsText()}] and [{Keybinds._acts[UserAction.Right].Input.AsText()}]\nto swing yourself\nwhile grappled";
 		_pause.Text = $"Press [{Keybinds._acts[UserAction.Cancel].Input.AsText()}]\nat any time to\npause the game";
+	
+		// Start playing the tutorial music
+		GlobalMusicPlayer.PlayMusic(MusicID.Tutorial);
 	}
 
 	// Easy signal tells to change the button label accordingly

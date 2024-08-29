@@ -58,10 +58,13 @@ public partial class SceneManager : Node
 	// Sends user to new scene
 	public static void GoToSetScene(Node useNode)
 	{
-
 		// If asked, the scene switches
 		if (_goTo != ToScene.PlaceHolder)
 		{
+			// Stopping overlap from music changes across stages
+			if(LoadingScreen.NeedsToStartPlatTheme)
+				GlobalMusicPlayer.StopMusic();
+
 			// Loading in a backdrop to hide the debug boxes
 			PackedScene loadingScene = (PackedScene) ResourceLoader.Load(_scenes[ToScene.BlackBackDrop]);
 			Node loadingScreen = loadingScene.Instantiate();

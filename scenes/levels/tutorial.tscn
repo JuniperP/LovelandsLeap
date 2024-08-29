@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bggusjf21kduu"]
+[gd_scene load_steps=13 format=3 uid="uid://bggusjf21kduu"]
 
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background.tscn" id="1_73850"]
 [ext_resource type="Script" path="res://scripts/in_level_objects/Tutorial.cs" id="1_b0xre"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dymkmt6rmafx8" path="res://scenes/in_level_objects/platforms/long_platform.tscn" id="8_s44hf"]
 [ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="9_0bafc"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="10_ujwgc"]
-[ext_resource type="AudioStream" uid="uid://mwhd3dnj8cv0" path="res://audio/music/loveland_tutorial_music.wav" id="11_782lh"]
 
 [sub_resource type="Curve2D" id="Curve2D_u21ri"]
 resource_local_to_scene = true
@@ -223,11 +222,6 @@ position = Vector2(11850, -260)
 [node name="FadeTransition" parent="." instance=ExtResource("10_ujwgc")]
 position = Vector2(14346, -147)
 _sendsTo = 2
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_782lh")
-autoplay = true
-bus = &"Music"
 
 [connection signal="ButtonPressed" from="InLevelButton" to="." method="DisengageTongue"]
 [connection signal="ButtonPressed" from="InLevelButton" to="MovingPlatformTrack" method="TogglePlatform"]
