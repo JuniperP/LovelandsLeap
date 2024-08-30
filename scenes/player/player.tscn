@@ -29,6 +29,7 @@ collision_layer = 2
 script = ExtResource("1_neipv")
 Speed = 600
 JumpImpulse = 1520
+JumpBufferTime = 0.17
 GravityFactor = 3.0
 MaxFallSpeed = 1750
 FastFallFactor = 1.5
