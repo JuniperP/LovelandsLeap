@@ -100,7 +100,7 @@ public class WalkState : MovementState
 		// Handle jumping
 		if (Input.IsActionJustPressed("move_up"))
 		{
-			// Jump if on the ground or have coyote frames
+			// Jump if player is on the ground or has coyote frames
 			if (floored || (_coyoteTime < Ctx.MaxCoyoteTime && velocity > 0.1f))
 			{
 				velocity = -Ctx.JumpImpulse;
@@ -112,7 +112,7 @@ public class WalkState : MovementState
 
 		if (floored)
 		{
-			// If player has recently buffered a jump, perform one
+			// If player has recently buffered a jump (and isn't already jumping), perform one
 			if (_jumpBufferTime < Ctx.JumpBufferTime && velocity != -Ctx.JumpImpulse)
 			{
 				SoundManager.PlaySound(SFX.Jump, Ctx);
