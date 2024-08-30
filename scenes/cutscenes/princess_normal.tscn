@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://df6ucomymik0q"]
+[gd_scene load_steps=26 format=3 uid="uid://df6ucomymik0q"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_e7reo"]
 [ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backround_stripey.jpg" id="3_5gnx6"]
@@ -155,6 +155,70 @@ _data = {
 "main": SubResource("Animation_p4ra7")
 }
 
+[sub_resource type="Animation" id="Animation_k4iuo"]
+resource_name = "main"
+length = 7.25
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PrincessLoc:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4, 4.25, 4.5, 4.75, 5, 6.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1553, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1553, 600)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PrincessLoc/PrincessSprite")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.75),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"kiss"],
+"method": &"play"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../PrincessLoc/PrincessSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.5, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_eomxa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PrincessLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1553, 600)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h448h"]
+_data = {
+"RESET": SubResource("Animation_eomxa"),
+"main": SubResource("Animation_k4iuo")
+}
+
 [sub_resource type="Animation" id="Animation_afrce"]
 length = 0.001
 tracks/0/type = "value"
@@ -226,7 +290,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e7reo")
 NextScene = "res://scenes/credits.tscn"
-ElementNodes = [NodePath("Animations/FadeIn"), NodePath("Animations/FrogWalk"), NodePath("Dialogue/Frog1"), NodePath("Dialogue/Princess1"), NodePath("Dialogue/Frog2"), NodePath("Dialogue/Princess2"), NodePath("Dialogue/Frog3"), NodePath("Dialogue/Princess3"), NodePath("Dialogue/Frog4"), NodePath("Dialogue/Princess4"), NodePath("Animations/FadeOut")]
+ElementNodes = [NodePath("Animations/FadeIn"), NodePath("Animations/FrogWalk"), NodePath("Dialogue/Frog1"), NodePath("Dialogue/Princess1"), NodePath("Dialogue/Frog2"), NodePath("Dialogue/Princess2"), NodePath("Dialogue/Frog3"), NodePath("Dialogue/Princess3"), NodePath("Dialogue/Frog4"), NodePath("Dialogue/Princess4"), NodePath("Animations/PrincessKiss"), NodePath("Dialogue/Frog5"), NodePath("Dialogue/Princess5"), NodePath("Animations/FadeOut")]
 
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false
@@ -515,6 +579,12 @@ libraries = {
 }
 script = ExtResource("9_h1hg3")
 
+[node name="PrincessKiss" type="AnimationPlayer" parent="Animations"]
+libraries = {
+"": SubResource("AnimationLibrary_h448h")
+}
+script = ExtResource("9_h1hg3")
+
 [node name="FadeOut" type="AnimationPlayer" parent="Animations"]
 libraries = {
 "": SubResource("AnimationLibrary_fr2k0")
@@ -539,11 +609,12 @@ autoplay = "idle"
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1553.0
-offset_top = 790.0
+offset_top = 600.0
 offset_right = 1553.0
-offset_bottom = 790.0
+offset_bottom = 600.0
 
 [node name="PrincessSprite" type="AnimatedSprite2D" parent="PrincessLoc"]
+z_index = -1
 scale = Vector2(0.4, 0.4)
 sprite_frames = ExtResource("5_2xgpo")
 animation = &"idle"
