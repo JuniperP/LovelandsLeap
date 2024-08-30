@@ -1,17 +1,17 @@
 [gd_scene load_steps=11 format=3 uid="uid://bbywb3ahikweu"]
 
-[ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backround_stripey.jpg" id="1_2urcj"]
-[ext_resource type="Texture2D" uid="uid://cms8h7iumo8vh" path="res://assets/background/simple_yellow_tree.png" id="2_1m08n"]
-[ext_resource type="Texture2D" uid="uid://b0lhve5bvnrqn" path="res://assets/background/big_tree.png" id="2_akdxq"]
-[ext_resource type="Texture2D" uid="uid://ysmgbmc0yui1" path="res://assets/background/mossy_tree.png" id="2_j18jy"]
-[ext_resource type="Texture2D" uid="uid://cvmvl4vbo8dtf" path="res://assets/background/nice_tree.png" id="4_tpf00"]
-[ext_resource type="Texture2D" uid="uid://bbt06fq84gl2h" path="res://assets/background/leaf_blob_1.png" id="5_qdoy8"]
-[ext_resource type="Texture2D" uid="uid://5wsnb6pe0l6l" path="res://assets/background/twin_trees.png" id="6_e0siv"]
-[ext_resource type="Texture2D" uid="uid://cwv57l6rvqx1t" path="res://assets/background/leaf_blob_2.png" id="8_3a8cc"]
-[ext_resource type="Texture2D" uid="uid://csquqptgaodh4" path="res://assets/background/leaf_blob_3.png" id="9_kcdyy"]
-[ext_resource type="Texture2D" uid="uid://b2tihhjl4n2r6" path="res://assets/background/big_blue_tree.png" id="10_jcjfr"]
+[ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backround_stripey.jpg" id="1_cums7"]
+[ext_resource type="Texture2D" uid="uid://cms8h7iumo8vh" path="res://assets/background/simple_yellow_tree.png" id="2_tptp3"]
+[ext_resource type="Texture2D" uid="uid://ysmgbmc0yui1" path="res://assets/background/mossy_tree.png" id="3_53xa7"]
+[ext_resource type="Texture2D" uid="uid://b0lhve5bvnrqn" path="res://assets/background/big_tree.png" id="4_gq5av"]
+[ext_resource type="Texture2D" uid="uid://cvmvl4vbo8dtf" path="res://assets/background/nice_tree.png" id="5_tlsxs"]
+[ext_resource type="Texture2D" uid="uid://bbt06fq84gl2h" path="res://assets/background/leaf_blob_1.png" id="6_mdiux"]
+[ext_resource type="Texture2D" uid="uid://5wsnb6pe0l6l" path="res://assets/background/twin_trees.png" id="7_e1beg"]
+[ext_resource type="Texture2D" uid="uid://cwv57l6rvqx1t" path="res://assets/background/leaf_blob_2.png" id="8_c5yfh"]
+[ext_resource type="Texture2D" uid="uid://csquqptgaodh4" path="res://assets/background/leaf_blob_3.png" id="9_l5wtp"]
+[ext_resource type="Texture2D" uid="uid://b2tihhjl4n2r6" path="res://assets/background/big_blue_tree.png" id="10_m45i8"]
 
-[node name="ParallaxBackground" type="ParallaxBackground"]
+[node name="ParallaxBackgroundMidgame" type="ParallaxBackground"]
 scroll_ignore_camera_zoom = true
 
 [node name="StillLayer" type="ParallaxLayer" parent="."]
@@ -23,7 +23,7 @@ motion_offset = Vector2(960, 540)
 light_mask = 8
 visibility_layer = 8
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_2urcj")
+texture = ExtResource("1_cums7")
 
 [node name="FarLayer" type="ParallaxLayer" parent="."]
 modulate = Color(0.198094, 0.199224, 0.285105, 1)
@@ -36,19 +36,19 @@ light_mask = 8
 visibility_layer = 8
 position = Vector2(678, 7)
 scale = Vector2(0.5215, 0.5215)
-texture = ExtResource("2_1m08n")
+texture = ExtResource("2_tptp3")
 
 [node name="MossyTree" type="Sprite2D" parent="FarLayer"]
 light_mask = 8
 visibility_layer = 8
 position = Vector2(1417, -16)
-texture = ExtResource("2_j18jy")
+texture = ExtResource("3_53xa7")
 
 [node name="BigTree" type="Sprite2D" parent="FarLayer"]
 light_mask = 8
 visibility_layer = 8
 position = Vector2(13, -8)
-texture = ExtResource("2_akdxq")
+texture = ExtResource("4_gq5av")
 
 [node name="Mid1Layer" type="ParallaxLayer" parent="."]
 modulate = Color(0.255303, 0.281372, 0.339544, 1)
@@ -60,19 +60,19 @@ motion_mirroring = Vector2(4000, 0)
 light_mask = 4
 visibility_layer = 4
 position = Vector2(-332, 45)
-texture = ExtResource("4_tpf00")
+texture = ExtResource("5_tlsxs")
 
 [node name="Leafblob1" type="Sprite2D" parent="Mid1Layer"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(509, 434)
-texture = ExtResource("5_qdoy8")
+texture = ExtResource("6_mdiux")
 
 [node name="TwinTrees" type="Sprite2D" parent="Mid1Layer"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(1980, -34)
-texture = ExtResource("6_e0siv")
+texture = ExtResource("7_e1beg")
 
 [node name="Mid2Layer" type="ParallaxLayer" parent="."]
 modulate = Color(0.313905, 0.344546, 0.410855, 1)
@@ -84,17 +84,17 @@ motion_mirroring = Vector2(3000, 0)
 light_mask = 4
 visibility_layer = 4
 position = Vector2(-734, 399)
-texture = ExtResource("8_3a8cc")
+texture = ExtResource("8_c5yfh")
 
 [node name="Leafblob3" type="Sprite2D" parent="Mid2Layer"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(1315, 387)
-texture = ExtResource("9_kcdyy")
+texture = ExtResource("9_l5wtp")
 
 [node name="BigBlueTree" type="Sprite2D" parent="Mid2Layer"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(0, 101)
 scale = Vector2(0.661702, 0.661702)
-texture = ExtResource("10_jcjfr")
+texture = ExtResource("10_m45i8")

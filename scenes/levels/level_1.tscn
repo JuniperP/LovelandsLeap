@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgsucys0hu2xn"]
 
-[ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background.tscn" id="1_u3dt8"]
+[ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background_midgame.tscn" id="1_u3dt8"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
 [ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="3_ae4l5"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="4_6pusj"]
