@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdm1uwfekp5iw"]
+
+[ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backround_stripey.jpg" id="1_j5jc0"]
+[ext_resource type="Texture2D" uid="uid://b0lhve5bvnrqn" path="res://assets/background/big_tree.png" id="2_uxg2k"]
+
+[node name="ParallaxBackgroundFinalLevel" type="ParallaxBackground"]
+
+[node name="StillLayer" type="ParallaxLayer" parent="."]
+modulate = Color(0.6399, 0.652408, 0.79, 1)
+motion_scale = Vector2(0, 0)
+motion_offset = Vector2(960, 540)
+
+[node name="BG" type="Sprite2D" parent="StillLayer"]
+modulate = Color(0, 0, 1, 1)
+light_mask = 8
+visibility_layer = 8
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_j5jc0")
+
+[node name="OnlyLayer" type="ParallaxLayer" parent="."]
+modulate = Color(0.313726, 0.345098, 0.411765, 1)
+motion_scale = Vector2(0.05, 0.01)
+motion_offset = Vector2(960, 540)
+motion_mirroring = Vector2(3000, 0)
+
+[node name="SoloBlueTwinTree" type="Sprite2D" parent="OnlyLayer"]
+modulate = Color(1, 0, 1, 1)
+light_mask = 8
+visibility_layer = 8
+position = Vector2(300, 0)
+texture = ExtResource("2_uxg2k")
