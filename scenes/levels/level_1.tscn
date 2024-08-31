@@ -15,8 +15,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GreenTree" parent="." instance=ExtResource("5_y1bwk")]
-offset = Vector2(7000, -600)
-transform = Transform2D(1, 0, 0, 1, 7000, -600)
+offset = Vector2(7000, -400)
+transform = Transform2D(1, 0, 0, 1, 7000, -400)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_u3dt8")]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://kn1e2rfx52n4"]
+[gd_scene load_steps=10 format=3 uid="uid://kn1e2rfx52n4"]
 
 [ext_resource type="Texture2D" uid="uid://bw25gbmxm0mis" path="res://assets/background/backround_swirly.jpg" id="1_ko4nk"]
 [ext_resource type="Texture2D" uid="uid://cvmvl4vbo8dtf" path="res://assets/background/nice_tree.png" id="2_arase"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://b2tihhjl4n2r6" path="res://assets/background/big_blue_tree.png" id="5_ya5vn"]
 [ext_resource type="Texture2D" uid="uid://cms8h7iumo8vh" path="res://assets/background/simple_yellow_tree.png" id="6_rhx7m"]
 [ext_resource type="Texture2D" uid="uid://cwv57l6rvqx1t" path="res://assets/background/leaf_blob_2.png" id="7_r4g61"]
-[ext_resource type="Texture2D" uid="uid://gx88oqfgsc0w" path="res://assets/background/solo_yellow_twin.png" id="8_nrnhc"]
 [ext_resource type="Texture2D" uid="uid://pac87w0fqtd" path="res://assets/background/leaf_blob_5.png" id="9_cnqmi"]
 [ext_resource type="Texture2D" uid="uid://bjat4buu8kt0i" path="res://assets/background/trunk_peeling_bark.png" id="10_6gl0n"]
 
@@ -27,13 +26,13 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ko4nk")
 
 [node name="FarLayer" type="ParallaxLayer" parent="."]
-modulate = Color(0.2, 0.2, 0.286275, 1)
+modulate = Color(0.0784314, 0.0784314, 0.12549, 1)
 motion_scale = Vector2(0.05, 0.01)
 motion_offset = Vector2(960, 540)
 motion_mirroring = Vector2(3000, 0)
 
 [node name="NiceTree" type="Sprite2D" parent="FarLayer"]
-modulate = Color(1, 0.972549, 0, 1)
+modulate = Color(0, 1, 1, 1)
 light_mask = 4
 visibility_layer = 4
 position = Vector2(1300, -100)
@@ -42,6 +41,7 @@ texture = ExtResource("2_arase")
 flip_h = true
 
 [node name="SoloBlueTwinTree" type="Sprite2D" parent="FarLayer"]
+modulate = Color(0, 0.992157, 1, 1)
 light_mask = 8
 visibility_layer = 8
 position = Vector2(300, -100)
@@ -57,36 +57,35 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("10_6gl0n")
 
 [node name="Mid1Layer" type="ParallaxLayer" parent="."]
-modulate = Color(0.254902, 0.282353, 0.341176, 1)
+modulate = Color(0.156863, 0.176471, 0.219608, 1)
 motion_scale = Vector2(0.1, 0.05)
 motion_offset = Vector2(960, 540)
 motion_mirroring = Vector2(4000, 0)
 
-[node name="BigGreenTree" type="Sprite2D" parent="Mid1Layer"]
-modulate = Color(1, 0, 1, 1)
+[node name="VanGoghTree" type="Sprite2D" parent="Mid1Layer"]
+modulate = Color(0, 0, 1, 1)
 light_mask = 4
 visibility_layer = 4
-position = Vector2(200, 100)
-scale = Vector2(0.8, 0.8)
+position = Vector2(300, 100)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_ya5vn")
 
 [node name="Leafblob2" type="Sprite2D" parent="Mid1Layer"]
 modulate = Color(0, 1, 1, 1)
 light_mask = 4
 visibility_layer = 4
-position = Vector2(-700, 400)
-scale = Vector2(1.2, 1.2)
+position = Vector2(-500, 300)
 texture = ExtResource("7_r4g61")
 flip_h = true
 flip_v = true
 
-[node name="SoloYellowTwin" type="Sprite2D" parent="Mid1Layer"]
-modulate = Color(0, 0, 0, 1)
+[node name="MossyTree" type="Sprite2D" parent="Mid1Layer"]
+modulate = Color(0, 1, 1, 1)
 light_mask = 4
 visibility_layer = 4
 position = Vector2(1300, 100)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("8_nrnhc")
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_sy13f")
 flip_h = true
 
 [node name="Mid2Layer" type="ParallaxLayer" parent="."]
@@ -95,25 +94,25 @@ motion_scale = Vector2(0.15, 0.05)
 motion_offset = Vector2(960, 540)
 motion_mirroring = Vector2(3000, 0)
 
-[node name="MossyTree" type="Sprite2D" parent="Mid2Layer"]
-modulate = Color(0, 1, 1, 1)
+[node name="SmallBlueTree" type="Sprite2D" parent="Mid2Layer"]
 light_mask = 8
 visibility_layer = 8
-position = Vector2(-300, 300)
-texture = ExtResource("4_sy13f")
+position = Vector2(1400, 250)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("5_ya5vn")
 flip_h = true
 
 [node name="Leafblob5" type="Sprite2D" parent="Mid2Layer"]
+modulate = Color(0, 1, 1, 1)
 light_mask = 4
 visibility_layer = 4
-position = Vector2(850, 400)
-scale = Vector2(1.2, 1.2)
+position = Vector2(-600, 400)
 texture = ExtResource("9_cnqmi")
 
 [node name="SimpleGreenTree" type="Sprite2D" parent="Mid2Layer"]
-modulate = Color(0.54902, 1, 1, 1)
+modulate = Color(0, 1, 0, 1)
 light_mask = 8
 visibility_layer = 8
-position = Vector2(1400, 400)
-scale = Vector2(0.6, 0.6)
+position = Vector2(-200, 200)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_rhx7m")
