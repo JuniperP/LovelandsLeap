@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://kn1e2rfx52n4"]
+[gd_scene load_steps=11 format=3 uid="uid://kn1e2rfx52n4"]
 
 [ext_resource type="Texture2D" uid="uid://bw25gbmxm0mis" path="res://assets/background/backround_swirly.jpg" id="1_ko4nk"]
 [ext_resource type="Texture2D" uid="uid://cvmvl4vbo8dtf" path="res://assets/background/nice_tree.png" id="2_arase"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cwv57l6rvqx1t" path="res://assets/background/leaf_blob_2.png" id="7_r4g61"]
 [ext_resource type="Texture2D" uid="uid://pac87w0fqtd" path="res://assets/background/leaf_blob_5.png" id="9_cnqmi"]
 [ext_resource type="Texture2D" uid="uid://bjat4buu8kt0i" path="res://assets/background/trunk_peeling_bark.png" id="10_6gl0n"]
+[ext_resource type="Texture2D" uid="uid://csquqptgaodh4" path="res://assets/background/leaf_blob_3.png" id="10_fypqo"]
 
 [node name="ParallaxBackgroundLategame" type="ParallaxBackground"]
 scroll_ignore_camera_zoom = true
@@ -106,13 +107,22 @@ flip_h = true
 modulate = Color(0, 1, 1, 1)
 light_mask = 4
 visibility_layer = 4
-position = Vector2(-600, 400)
+position = Vector2(-200, 400)
 texture = ExtResource("9_cnqmi")
 
 [node name="SimpleGreenTree" type="Sprite2D" parent="Mid2Layer"]
 modulate = Color(0, 1, 0, 1)
 light_mask = 8
 visibility_layer = 8
-position = Vector2(-200, 200)
+position = Vector2(-600, 200)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_rhx7m")
+
+[node name="LeafBlob3" type="Sprite2D" parent="Mid2Layer"]
+modulate = Color(0, 1, 1, 1)
+light_mask = 8
+visibility_layer = 8
+position = Vector2(200, 500)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_fypqo")
+flip_v = true
