@@ -13,13 +13,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Instructions" type="RichTextLabel" parent="."]
-layout_mode = 0
+layout_mode = 1
 offset_right = 900.0
 offset_bottom = 120.0
 theme_override_font_sizes/italics_font_size = 32
 bbcode_enabled = true
 text = "[center][i] 
-	Drag the sliders to adjust each outputs volume[i] [center]
+Drag the sliders to adjust each output's volume[i] [center]
 "
 scroll_active = false
 

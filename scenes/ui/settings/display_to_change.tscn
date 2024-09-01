@@ -1,10 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3unscwxm55g1"]
+[gd_scene load_steps=8 format=3 uid="uid://b3unscwxm55g1"]
 
 [ext_resource type="Script" path="res://scripts/ui/settings/toggle_buttons/ToggleFullScreen.cs" id="1_1oo7p"]
+[ext_resource type="Script" path="res://scripts/ui/settings/InGameBrightnessLabel.cs" id="2_2trj4"]
 [ext_resource type="Script" path="res://scripts/ui/settings/DisplayChanging.cs" id="2_oj3xi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nyn2"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg627"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71lr8"]
+bg_color = Color(0.6, 0.6, 0.6, 0.470588)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bx7rq"]
+bg_color = Color(0.864675, 0.864675, 0.864675, 0.470588)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="DisplayToChange" type="Control"]
 layout_mode = 3
@@ -19,9 +50,9 @@ grow_vertical = 2
 [node name="FullScreenName" type="Label" parent="."]
 layout_mode = 1
 offset_left = 25.0
-offset_top = 150.0
+offset_top = 165.0
 offset_right = 244.0
-offset_bottom = 205.0
+offset_bottom = 220.0
 theme_override_font_sizes/font_size = 40
 text = "Full Screen:"
 
@@ -39,25 +70,66 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_2nyn2")
 script = ExtResource("1_1oo7p")
 
+[node name="InGameBrightnessLabel" type="Label" parent="." node_paths=PackedStringArray("Slider", "Percentage")]
+layout_mode = 1
+offset_left = 25.0
+offset_top = 265.0
+offset_right = 409.0
+offset_bottom = 320.0
+theme_override_font_sizes/font_size = 40
+text = "In Game Brightness:"
+script = ExtResource("2_2trj4")
+Slider = NodePath("BrightSlider")
+Percentage = NodePath("BrightSlider/Percentage")
+
+[node name="BrightSlider" type="HSlider" parent="InGameBrightnessLabel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 75.0
+offset_top = 47.5
+offset_right = 775.0
+offset_bottom = 77.5
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_bg627")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_71lr8")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_bx7rq")
+max_value = 1.0
+step = 0.01
+
+[node name="Percentage" type="Label" parent="InGameBrightnessLabel/BrightSlider"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 725.0
+offset_top = -22.5
+offset_right = 807.0
+offset_bottom = 22.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "0%"
+
 [node name="ChooseDisplay" type="Label" parent="."]
 layout_mode = 0
 offset_left = 25.0
-offset_top = 250.0
-offset_right = 240.0
-offset_bottom = 305.0
+offset_top = 420.0
+offset_right = 603.0
+offset_bottom = 475.0
 theme_override_font_sizes/font_size = 40
 text = "Choose Monitor To Display To:
 "
 script = ExtResource("2_oj3xi")
 
 [node name="Instructions" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_right = 930.0
-offset_bottom = 120.0
+offset_right = 900.0
+offset_bottom = 160.0
 theme_override_font_sizes/italics_font_size = 32
 bbcode_enabled = true
-text = "[center][i]Utilize the following options to adjust how
- the game is displayed[i] [center]
+text = "[center][i] 
+Utilize the following options to adjust how the
+game is displayed[i] [center]
 "
 scroll_active = false
 

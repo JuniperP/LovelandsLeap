@@ -104,8 +104,13 @@ layout_mode = 2
 
 [node name="DisplayToChange" parent="BackBox/TabContainer/Display" instance=ExtResource("4_h7u6u")]
 layout_mode = 1
-offset_top = 63.0
-offset_bottom = 63.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Other" type="TabBar" parent="BackBox/TabContainer"]
 visible = false
@@ -113,5 +118,12 @@ layout_mode = 2
 
 [node name="OtherToChange" parent="BackBox/TabContainer/Other" instance=ExtResource("5_h2a55")]
 layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="pressed" from="BackBox/Cancel" to="." method="Close"]

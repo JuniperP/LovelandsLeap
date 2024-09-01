@@ -106,18 +106,6 @@ offset_bottom = 120.0
 grow_horizontal = 1
 _actionToSet = 6
 
-[node name="Instructions" type="RichTextLabel" parent="."]
-layout_mode = 1
-offset_right = 930.0
-offset_bottom = 120.0
-theme_override_font_sizes/italics_font_size = 32
-bbcode_enabled = true
-text = "[center][i]
- Set a key bind by selecting a control and entering the new key you wish to utilize[i] [center]
-"
-fit_content = true
-scroll_active = false
-
 [node name="PlayTestButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 2
@@ -130,5 +118,16 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_rmpa0")
 text = " PLAY TEST CONTROLS"
 script = ExtResource("2_wxg0s")
+
+[node name="Instructions" type="RichTextLabel" parent="."]
+offset_right = 900.0
+offset_bottom = 160.0
+theme_override_font_sizes/italics_font_size = 32
+bbcode_enabled = true
+text = "[center][i] 
+Set a key bind by selecting a control and
+entering the new key you wish to utilize[i] [center]
+"
+scroll_active = false
 
 [connection signal="pressed" from="PlayTestButton" to="PlayTestButton" method="PlayTest"]
