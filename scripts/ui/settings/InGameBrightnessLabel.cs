@@ -29,7 +29,7 @@ public partial class InGameBrightnessLabel : Label
 	{
 		environment.AdjustmentBrightness = newVal;
 
-		Percentage.Text = $"{Mathf.Round(newVal / 2 * 100)}%";
+		Percentage.Text = $"{Mathf.Round((newVal-.5) * 100)}%";
 	}
 
 }

@@ -95,8 +95,8 @@ grow_vertical = 2
 theme_override_styles/slider = SubResource("StyleBoxFlat_bg627")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_71lr8")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_bx7rq")
-min_value = 0.01
-max_value = 2.0
+min_value = 0.5
+max_value = 1.5
 step = 0.01
 value = 1.0
 
@@ -125,6 +125,7 @@ text = "Choose Monitor To Display To:
 script = ExtResource("2_oj3xi")
 
 [node name="Instructions" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_right = 900.0
 offset_bottom = 160.0
 theme_override_font_sizes/italics_font_size = 32
