@@ -210,6 +210,7 @@ Further your experience by editing other settings[i] [center]
 scroll_active = false
 
 [node name="ConfirmReset" parent="." instance=ExtResource("1_vwavv")]
+visible = false
 layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
