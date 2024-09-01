@@ -64,7 +64,7 @@ motion_offset = Vector2(960, 540)
 motion_mirroring = Vector2(4000, 0)
 
 [node name="VanGoghTree" type="Sprite2D" parent="Mid1Layer"]
-modulate = Color(0, 0, 1, 1)
+modulate = Color(1, 0, 1, 1)
 light_mask = 4
 visibility_layer = 4
 position = Vector2(300, 100)
@@ -96,6 +96,7 @@ motion_offset = Vector2(960, 540)
 motion_mirroring = Vector2(3000, 0)
 
 [node name="SmallBlueTree" type="Sprite2D" parent="Mid2Layer"]
+modulate = Color(0, 1, 1, 1)
 light_mask = 8
 visibility_layer = 8
 position = Vector2(1400, 250)
