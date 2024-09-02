@@ -4,7 +4,7 @@ public partial class MovingPlatformTrack : Path2D
 {
 	// Tracks whether or not the platform should be moving
 	private bool _move;
-	private static float _percentChange;
+	private float _percentChange;
 
 	private float _slowDownFactor;
 
