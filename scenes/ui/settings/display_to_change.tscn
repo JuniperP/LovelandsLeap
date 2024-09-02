@@ -66,9 +66,9 @@ script = ExtResource("2_jwe24")
 [node name="ChooseDisplay" type="Label" parent="."]
 layout_mode = 0
 offset_left = 25.0
-offset_top = 420.0
+offset_top = 365.0
 offset_right = 603.0
-offset_bottom = 475.0
+offset_bottom = 420.0
 theme_override_font_sizes/font_size = 40
 text = "Choose Monitor To Display To:
 "
