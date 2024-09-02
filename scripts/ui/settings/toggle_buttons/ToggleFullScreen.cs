@@ -7,11 +7,7 @@ public partial class ToggleFullScreen : ToggleButton
 	// Turning off and on full screen
 	public override void Toggle()
 	{
-		// Switch in or out of full screen
-		if (IsFull)
-			DisplayServer.WindowSetMode(DisplayServer.WindowMode.ExclusiveFullscreen);
-		else
-			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+		AdjustWindowLocation();
 	}
 
 	// Getters and setters
@@ -23,5 +19,16 @@ public partial class ToggleFullScreen : ToggleButton
 	protected override void SetState(bool state)
 	{
 		IsFull = state;
+	}
+
+	// Helper func to change the window
+	public static void AdjustWindowLocation()
+	{
+		// Switch in or out of full screen
+		if (IsFull)
+			DisplayServer.WindowSetMode(DisplayServer.WindowMode.ExclusiveFullscreen);
+		else
+			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+
 	}
 }

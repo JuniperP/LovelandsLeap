@@ -33,6 +33,7 @@ public partial class LoadSettingsData : Node
 
 		// Display info to be stored
 		config.SetValue("Display", "FullScreen", ToggleFullScreen.IsFull);
+		config.SetValue("Display", "Vsync", ToggleVSync.UseVsync);
 		config.SetValue("Display", "WhichScreen", MonitorStandIn.ChosenScreen);
 
 
@@ -85,17 +86,15 @@ public partial class LoadSettingsData : Node
 
 		// Matching if the screen is windowed
 		ToggleFullScreen.IsFull = (bool)config.GetValue("Display", "FullScreen");
-		// Adjusting for if the screen isn't windowed for user
-		if ((bool)config.GetValue("Display", "FullScreen"))
-			// Full screened
-			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
-		else
-			// Windowed
-			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+		ToggleFullScreen.AdjustWindowLocation();
+
+		ToggleVSync.UseVsync = (bool)config.GetValue("Display", "Vsync");
+		ToggleVSync.AdjustVsync();
 
 
 		// Giving the preferred screen to play on
 		MonitorStandIn.ChosenScreen = (int)config.GetValue("Display", "WhichScreen");
+
 
 		// Setting extra settings
 		ToggleClassicVerburg.Classic = (bool)config.GetValue("Extra", "ClassicVer");
