@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
 [ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="3_ae4l5"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="4_6pusj"]
-[ext_resource type="PackedScene" uid="uid://cx851gyg67ibt" path="res://scenes/in_level_objects/green_tree.tscn" id="5_y1bwk"]
+[ext_resource type="PackedScene" uid="uid://cx851gyg67ibt" path="res://scenes/in_level_objects/decoration_parallax/green_tree.tscn" id="5_y1bwk"]
 
 [node name="Level1" type="Control"]
 layout_mode = 3
