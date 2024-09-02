@@ -26,7 +26,6 @@ buses/default_bus_layout="res://resources/default_bus_layout.tres"
 [autoload]
 
 GlobalMusicPlayer="*res://scenes/global_music_player.tscn"
-GlobalScreenEffects="*res://scenes/global_screen_effects.tscn"
 
 [display]
 
