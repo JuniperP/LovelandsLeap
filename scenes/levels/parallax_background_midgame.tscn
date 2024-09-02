@@ -27,7 +27,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_cums7")
 
 [node name="FarLayer" type="ParallaxLayer" parent="."]
-modulate = Color(0.0789851, 0.0795487, 0.125841, 1)
+modulate = Color(0.118547, 0.119288, 0.179, 1)
 motion_scale = Vector2(0.05, 0.01)
 motion_offset = Vector2(960, 540)
 motion_mirroring = Vector2(3000, 0)
@@ -53,7 +53,7 @@ position = Vector2(13, -8)
 texture = ExtResource("4_gq5av")
 
 [node name="Mid1Layer" type="ParallaxLayer" parent="."]
-modulate = Color(0.156863, 0.176471, 0.219608, 1)
+modulate = Color(0.17674, 0.198095, 0.245069, 1)
 motion_scale = Vector2(0.1, 0.05)
 motion_offset = Vector2(960, 540)
 motion_mirroring = Vector2(4000, 0)
@@ -72,6 +72,34 @@ position = Vector2(509, 434)
 texture = ExtResource("6_mdiux")
 
 [node name="TwinTrees" type="Sprite2D" parent="Mid1Layer"]
+modulate = Color(1, 1, 0, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(1600, 0)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("7_v1n3u")
+flip_h = true
+
+[node name="Mid1Layer2" type="ParallaxLayer" parent="."]
+modulate = Color(0.17674, 0.198095, 0.245069, 1)
+motion_scale = Vector2(0.1, 0.05)
+motion_offset = Vector2(960, 540)
+motion_mirroring = Vector2(4000, 0)
+
+[node name="NiceTree" type="Sprite2D" parent="Mid1Layer2"]
+modulate = Color(0.75209, 0.885223, 0.584532, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-332, 45)
+texture = ExtResource("5_tlsxs")
+
+[node name="Leafblob1" type="Sprite2D" parent="Mid1Layer2"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(509, 434)
+texture = ExtResource("6_mdiux")
+
+[node name="TwinTrees" type="Sprite2D" parent="Mid1Layer2"]
 modulate = Color(1, 1, 0, 1)
 light_mask = 4
 visibility_layer = 4

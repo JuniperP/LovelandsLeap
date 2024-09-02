@@ -58,7 +58,7 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("10_6gl0n")
 
 [node name="Mid1Layer" type="ParallaxLayer" parent="."]
-modulate = Color(0.156863, 0.176471, 0.219608, 1)
+modulate = Color(0.155893, 0.177429, 0.216914, 1)
 motion_scale = Vector2(0.1, 0.05)
 motion_offset = Vector2(960, 540)
 motion_mirroring = Vector2(4000, 0)
