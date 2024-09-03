@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b5ovwc4k8xaal" path="res://scenes/in_level_objects/platforms/small_platform.tscn" id="5_uqafp"]
 [ext_resource type="PackedScene" uid="uid://dymkmt6rmafx8" path="res://scenes/in_level_objects/platforms/platform.tscn" id="5_wn8ll"]
 [ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="6_ttakw"]
-[ext_resource type="PackedScene" uid="uid://dynldm7etkjb2" path="res://scenes/in_level_objects/fly_path.tscn" id="8_lxbri"]
+[ext_resource type="PackedScene" uid="uid://cscyxa7owiydr" path="res://scenes/in_level_objects/fly_tracks/circle_fly.tscn" id="9_bi7km"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="10_y1fmd"]
 
 [sub_resource type="Curve2D" id="Curve2D_wq4cl"]
@@ -32,7 +32,7 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_d4hv2"]
+[sub_resource type="Curve2D" id="Curve2D_a4n8s"]
 resource_local_to_scene = true
 bake_interval = 0.01
 _data = {
@@ -105,11 +105,9 @@ TimeToCompleteTrack = 1.5
 [node name="SmallPlatform" parent="MovingPlatformTrack3" instance=ExtResource("5_uqafp")]
 position = Vector2(-9, 10)
 
-[node name="FlyPath" parent="." instance=ExtResource("8_lxbri")]
+[node name="CircleFly" parent="." instance=ExtResource("9_bi7km")]
 position = Vector2(7000, -450)
-curve = SubResource("Curve2D_d4hv2")
-TrackSpeed = 2.0
-TrackLoops = true
+curve = SubResource("Curve2D_a4n8s")
 
 [node name="MovingPlatformTrack4" parent="." node_paths=PackedStringArray("Platform") instance=ExtResource("3_4pwx7")]
 position = Vector2(10050, -250)
