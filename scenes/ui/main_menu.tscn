@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://beaw13scnxun1"]
+[gd_scene load_steps=19 format=3 uid="uid://beaw13scnxun1"]
 
 [ext_resource type="Script" path="res://scripts/ui/MainMenu.cs" id="1_byusu"]
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/main_menu.jpg" id="2_qxlys"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c4suej1iw3wkr" path="res://scenes/ui/settings/settings.tscn" id="3_ps8pg"]
 [ext_resource type="FontFile" uid="uid://hw1t6nlg1t1y" path="res://assets/fonts/logo/nerko_one_regular.ttf" id="3_r1n3c"]
 [ext_resource type="AudioStream" uid="uid://nnautoxm2usu" path="res://audio/music/loveland_menu_music.wav" id="4_e7cc2"]
+[ext_resource type="Script" path="res://scripts/ui/LightOscillator.cs" id="5_n8t6e"]
 [ext_resource type="PackedScene" uid="uid://dnkodbiws2j72" path="res://scenes/ui/overwrite_saved_game.tscn" id="5_sksx0"]
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="6_cfs3o"]
 [ext_resource type="Theme" uid="uid://bmipwiwogjf5d" path="res://assets/themes/ui.theme" id="6_esdx0"]
@@ -34,10 +35,10 @@ colors = PackedColorArray(1, 0.995333, 0.96, 1, 0.1054, 0.15314, 0.31, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5grc2"]
 gradient = SubResource("Gradient_7tm51")
-width = 1536
-height = 1536
+width = 2000
+height = 2000
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.863248, 0.623932)
+fill_to = Vector2(0.739316, 0.581197)
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -94,6 +95,9 @@ range_layer_min = -100
 range_item_cull_mask = 2
 shadow_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_5grc2")
+script = ExtResource("5_n8t6e")
+StartPoint = Vector2(-100, -20)
+EndPoint = Vector2(100, 20)
 
 [node name="Title" type="Label" parent="OPBack"]
 layout_mode = 1
