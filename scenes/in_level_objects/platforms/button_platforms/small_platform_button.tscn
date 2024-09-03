@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2n0qpnf7fijb"]
+
+[ext_resource type="PackedScene" uid="uid://b5ovwc4k8xaal" path="res://scenes/in_level_objects/platforms/small_platform.tscn" id="1_w537w"]
+[ext_resource type="Script" path="res://scripts/in_level_objects/ButtonPlatform.cs" id="2_46gxc"]
+[ext_resource type="PackedScene" uid="uid://cs66fauscvr67" path="res://scenes/in_level_objects/in_level_button.tscn" id="3_1gvo5"]
+
+[node name="SmallPlatformButton" instance=ExtResource("1_w537w")]
+script = ExtResource("2_46gxc")
+
+[node name="InLevelButton" parent="." index="3" instance=ExtResource("3_1gvo5")]
+modulate = Color(1, 1, 1, 1)
+position = Vector2(0, 100)
+rotation = 3.14159
+
+[connection signal="ButtonPressed" from="InLevelButton" to="." method="PlatformButtonPressed"]
+[connection signal="ButtonReleased" from="InLevelButton" to="." method="PlatformButtonReleased"]

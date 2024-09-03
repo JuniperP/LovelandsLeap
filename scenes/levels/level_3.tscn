@@ -303,6 +303,7 @@ Platform = NodePath("VerticalBlockPlatform")
 
 [node name="FadeTransition" parent="." instance=ExtResource("11_gkgvx")]
 position = Vector2(11550, 350)
+_sendsTo = 5
 
 [connection signal="ButtonPressed" from="InLevelButton" to="MovingPlatformTrack" method="TogglePlatform"]
 [connection signal="ButtonPressed" from="InLevelButton" to="MovingPlatformTrack2" method="TogglePlatform"]
