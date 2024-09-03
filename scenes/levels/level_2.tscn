@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/moving_platform_track.tscn" id="3_4pwx7"]
 [ext_resource type="PackedScene" uid="uid://bytyg3finqb36" path="res://scenes/in_level_objects/platforms/small_vertical_block_platform.tscn" id="4_finji"]
 [ext_resource type="PackedScene" uid="uid://b5ovwc4k8xaal" path="res://scenes/in_level_objects/platforms/small_platform.tscn" id="5_uqafp"]
-[ext_resource type="PackedScene" uid="uid://dymkmt6rmafx8" path="res://scenes/in_level_objects/platforms/long_platform.tscn" id="5_wn8ll"]
+[ext_resource type="PackedScene" uid="uid://dymkmt6rmafx8" path="res://scenes/in_level_objects/platforms/platform.tscn" id="5_wn8ll"]
 [ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="6_ttakw"]
 [ext_resource type="PackedScene" uid="uid://dynldm7etkjb2" path="res://scenes/in_level_objects/fly_path.tscn" id="8_lxbri"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="10_y1fmd"]
@@ -123,5 +123,6 @@ TimeToCompleteTrack = 2.0
 
 [node name="FadeTransition" parent="." instance=ExtResource("10_y1fmd")]
 position = Vector2(11247, -950)
+_sendsTo = 4
 
 [editable path="Room"]

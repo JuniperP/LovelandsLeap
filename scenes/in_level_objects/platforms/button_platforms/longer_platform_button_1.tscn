@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr6oe3fd1xd0t"]
+
+[ext_resource type="PackedScene" uid="uid://bn7o6iodvjufq" path="res://scenes/in_level_objects/platforms/longer_platform.tscn" id="1_5sl8s"]
+[ext_resource type="Script" path="res://scripts/in_level_objects/ButtonPlatform.cs" id="2_7kgmm"]
+[ext_resource type="PackedScene" uid="uid://cs66fauscvr67" path="res://scenes/in_level_objects/in_level_button.tscn" id="3_uvd7w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62xau"]
+resource_local_to_scene = true
+size = Vector2(700, 100)
+
+[node name="LongerPlatformButton1" instance=ExtResource("1_5sl8s")]
+script = ExtResource("2_7kgmm")
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("RectangleShape2D_62xau")
+
+[node name="InLevelButton" parent="." index="3" instance=ExtResource("3_uvd7w")]
+modulate = Color(1, 1, 1, 1)
+position = Vector2(250, 100)
+rotation = 3.14159
+StaysOn = true
+
+[connection signal="ButtonPressed" from="InLevelButton" to="." method="PlatformButtonPressed"]

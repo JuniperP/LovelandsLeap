@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cs66fauscvr67" path="res://scenes/in_level_objects/in_level_button.tscn" id="5_t8lgj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hcj1c"]
+resource_local_to_scene = true
 size = Vector2(500, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxh72"]

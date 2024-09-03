@@ -15,12 +15,12 @@ region = Rect2(100, 200, 100, 100)
 modulate = Color(0.701961, 0.701961, 0.701961, 1)
 
 [node name="RightLogPlatformCollision" parent="." instance=ExtResource("1_l8hni")]
-position = Vector2(0, 100)
-rotation = 1.5708
+position = Vector2(0, -100)
+rotation = -1.5708
 
 [node name="LeftLogPlatformCollision" parent="." instance=ExtResource("2_sxlql")]
-position = Vector2(0, -100)
-rotation = 1.5708
+position = Vector2(0, 100)
+rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tx8e8")
@@ -28,5 +28,5 @@ shape = SubResource("RectangleShape2D_tx8e8")
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
 light_mask = 2
 visibility_layer = 2
-rotation = 1.5708
+rotation = -1.5708
 texture = SubResource("AtlasTexture_6ugib")
