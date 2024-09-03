@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://df6ucomymik0q"]
+[gd_scene load_steps=31 format=3 uid="uid://df6ucomymik0q"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_e7reo"]
 [ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backround_stripey.jpg" id="3_5gnx6"]
@@ -222,6 +222,33 @@ _data = {
 "main": SubResource("Animation_k4iuo")
 }
 
+[sub_resource type="Animation" id="Animation_cwfqd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../WitchLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-216, 659)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FrogLoc/FrogSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_4bo4p"]
 resource_name = "main"
 length = 5.0
@@ -251,37 +278,34 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_cwfqd"]
-length = 0.001
-tracks/0/type = "value"
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j7jr6"]
+_data = {
+"RESET": SubResource("Animation_cwfqd"),
+"main": SubResource("Animation_4bo4p")
+}
+
+[sub_resource type="Animation" id="Animation_ymhv5"]
+resource_name = "main"
+length = 2.0
+step = 0.25
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../WitchLoc:position")
+tracks/0/path = NodePath("../FrogLoc/FrogSprite")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-216, 659)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../FrogLoc/FrogSprite:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [{
+"args": [&"transforming"],
+"method": &"play"
+}]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j7jr6"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sygyk"]
 _data = {
-"RESET": SubResource("Animation_cwfqd"),
-"main": SubResource("Animation_4bo4p")
+"main": SubResource("Animation_ymhv5")
 }
 
 [sub_resource type="Animation" id="Animation_afrce"]
@@ -355,7 +379,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e7reo")
 NextScene = "res://scenes/credits.tscn"
-ElementNodes = [NodePath("Animations/FadeIn"), NodePath("Animations/FrogWalk"), NodePath("Dialogue/Frog1"), NodePath("Dialogue/Princess1"), NodePath("Dialogue/Frog2"), NodePath("Dialogue/Princess2"), NodePath("Dialogue/Frog3"), NodePath("Dialogue/Princess3"), NodePath("Dialogue/Frog4"), NodePath("Dialogue/Princess4"), NodePath("Animations/PrincessKiss"), NodePath("Dialogue/Frog5"), NodePath("Dialogue/Princess5"), NodePath("Animations/WitchWalk"), NodePath("Dialogue/Witch1"), NodePath("Dialogue/Frog6"), NodePath("Dialogue/Witch2"), NodePath("Dialogue/Witch3"), NodePath("Dialogue/Iguana1"), NodePath("Animations/FadeOut")]
+ElementNodes = [NodePath("Animations/FadeIn"), NodePath("Animations/FrogWalk"), NodePath("Dialogue/Frog1"), NodePath("Dialogue/Princess1"), NodePath("Dialogue/Frog2"), NodePath("Dialogue/Princess2"), NodePath("Dialogue/Frog3"), NodePath("Dialogue/Princess3"), NodePath("Dialogue/Frog4"), NodePath("Dialogue/Princess4"), NodePath("Animations/PrincessKiss"), NodePath("Dialogue/Frog5"), NodePath("Dialogue/Princess5"), NodePath("Animations/WitchWalk"), NodePath("Dialogue/Witch1"), NodePath("Dialogue/Frog6"), NodePath("Dialogue/Witch2"), NodePath("Dialogue/Witch3"), NodePath("Animations/Transform"), NodePath("Dialogue/Iguana1"), NodePath("Animations/FadeOut")]
 
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false
@@ -656,6 +680,12 @@ libraries = {
 }
 script = ExtResource("9_h1hg3")
 
+[node name="Transform" type="AnimationPlayer" parent="Animations"]
+libraries = {
+"": SubResource("AnimationLibrary_sygyk")
+}
+script = ExtResource("9_h1hg3")
+
 [node name="FadeOut" type="AnimationPlayer" parent="Animations"]
 libraries = {
 "": SubResource("AnimationLibrary_fr2k0")
@@ -673,7 +703,7 @@ offset_bottom = 666.0
 [node name="FrogSprite" type="AnimatedSprite2D" parent="FrogLoc"]
 scale = Vector2(0.765957, 0.765957)
 sprite_frames = ExtResource("11_r41yp")
-animation = &"idle"
+animation = &"transforming"
 autoplay = "idle"
 
 [node name="PrincessLoc" type="Control" parent="."]

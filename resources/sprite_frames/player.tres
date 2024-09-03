@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://b8fx45kl5qo25"]
+[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://b8fx45kl5qo25"]
 
 [ext_resource type="Texture2D" uid="uid://cfp5imsajyjw3" path="res://assets/frog/frog_base.png" id="1_mx3cy"]
 [ext_resource type="Texture2D" uid="uid://cmentswd75fhb" path="res://assets/frog/frog_idle_1.png" id="2_f7jqy"]
@@ -12,10 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://dv4nwmkbas6tq" path="res://assets/frog/frog_3.png" id="8_0cy1x"]
 [ext_resource type="Texture2D" uid="uid://dpd4k5jhc8ejd" path="res://assets/frog/frog_walk_1.png" id="9_kxvy3"]
 [ext_resource type="Texture2D" uid="uid://o1o22mtjmpg6" path="res://assets/frog/frog_walk_2.png" id="10_khd2a"]
+[ext_resource type="Texture2D" uid="uid://bsxfahayfk41f" path="res://assets/frog/iguana_1.png" id="11_02354"]
 [ext_resource type="Texture2D" uid="uid://bo34vm5kufg8q" path="res://assets/frog/frog_walk_3.png" id="11_pxxol"]
+[ext_resource type="Texture2D" uid="uid://c4vww5x666mb3" path="res://assets/frog/iguana_2.png" id="12_g23l4"]
 [ext_resource type="Texture2D" uid="uid://b5dao0wirnswg" path="res://assets/frog/frog_walk_4.png" id="12_wesqd"]
 [ext_resource type="Texture2D" uid="uid://dqntvh6oj0vc2" path="res://assets/frog/frog_walk_5.png" id="13_kd56i"]
+[ext_resource type="Texture2D" uid="uid://betvdnsjtrl7o" path="res://assets/frog/iguana_3.png" id="13_uo08o"]
 [ext_resource type="Texture2D" uid="uid://boxsf2qm8j3k6" path="res://assets/frog/frog_walk_6.png" id="14_ci2xp"]
+[ext_resource type="Texture2D" uid="uid://3dj5wocouea2" path="res://assets/frog/iguana_4.png" id="14_rl1qh"]
 [ext_resource type="Texture2D" uid="uid://5bgefkhocyis" path="res://assets/frog/frog_walk_7.png" id="15_ckoup"]
 
 [resource]
@@ -87,6 +91,26 @@ animations = [{
 "loop": false,
 "name": &"tongue",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mx3cy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_02354")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_g23l4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uo08o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rl1qh")
+}],
+"loop": false,
+"name": &"transforming",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
