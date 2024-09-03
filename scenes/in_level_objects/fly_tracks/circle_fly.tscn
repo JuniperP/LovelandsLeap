@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cscyxa7owiydr"]
+
+[ext_resource type="PackedScene" uid="uid://dynldm7etkjb2" path="res://scenes/in_level_objects/fly_tracks/fly_path.tscn" id="1_kfw34"]
+
+[sub_resource type="Curve2D" id="Curve2D_8illh"]
+resource_local_to_scene = true
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, 0, 0, 150, 0, 0, 0, 0, 150, 0, 150, 150, 0, 0, 0, -150, 300, 0, 0, 0, -150, 0, 150, -150, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="CircleFly" instance=ExtResource("1_kfw34")]
+curve = SubResource("Curve2D_8illh")
+TrackSpeed = 2.0
+TrackLoops = true
+
+[node name="FollowsPath" parent="." index="0"]
+rotation = 1.5708
