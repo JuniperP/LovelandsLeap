@@ -1,18 +1,28 @@
-[gd_scene load_steps=31 format=3 uid="uid://df6ucomymik0q"]
+[gd_scene load_steps=41 format=3 uid="uid://df6ucomymik0q"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_e7reo"]
 [ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backround_stripey.jpg" id="3_5gnx6"]
 [ext_resource type="Texture2D" uid="uid://ysmgbmc0yui1" path="res://assets/background/mossy_tree.png" id="4_d0b8k"]
 [ext_resource type="SpriteFrames" uid="uid://hq7btpb76h0j" path="res://resources/sprite_frames/princess.tres" id="5_2xgpo"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="5_r1ls8"]
+[ext_resource type="AudioStream" uid="uid://bi3pdvdmheuds" path="res://audio/sfx/dialogue/Frog/long_croak.wav" id="5_w5qsv"]
 [ext_resource type="Texture2D" uid="uid://chm8yefqnrjo1" path="res://assets/witch/witch_portrait.png" id="7_dopru"]
+[ext_resource type="AudioStream" uid="uid://dyp7s34uduydp" path="res://audio/sfx/dialogue/princess/princess_8_talking_4.wav" id="7_jhl65"]
 [ext_resource type="Texture2D" uid="uid://drv8g6tx6yeyf" path="res://assets/princess/princess_portrait.png" id="7_yqssx"]
+[ext_resource type="AudioStream" uid="uid://cm31852o876g6" path="res://audio/sfx/dialogue/Frog/croak.mp3" id="8_k1cuw"]
 [ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frog_portrait.png" id="8_mlafx"]
 [ext_resource type="Texture2D" uid="uid://10fehss1o3au" path="res://assets/frog/iguana_portrait.png" id="9_5ts8p"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="9_h1hg3"]
+[ext_resource type="AudioStream" uid="uid://8ifhykkxlgwa" path="res://audio/sfx/dialogue/Iguana/iguana_8_mrum.wav" id="10_fbye5"]
 [ext_resource type="SpriteFrames" uid="uid://dyimfn0lnsc3" path="res://resources/sprite_frames/witch.tres" id="10_nwuek"]
+[ext_resource type="AudioStream" uid="uid://bwv00pw31cn2e" path="res://audio/sfx/dialogue/princess/princess_9_talking_5.wav" id="10_pe44w"]
+[ext_resource type="AudioStream" uid="uid://bcj1shlbu301m" path="res://audio/sfx/dialogue/princess/princess_13_sigh_4.wav" id="11_lh012"]
 [ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="11_r41yp"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="12_e71ay"]
+[ext_resource type="AudioStream" uid="uid://g1gxlg3as0ec" path="res://audio/sfx/dialogue/princess/princess_12_sigh_3.wav" id="12_hl7la"]
+[ext_resource type="AudioStream" uid="uid://dl4tmk5obi7m7" path="res://audio/sfx/dialogue/Witch/witch_1_reEhe_hahahe_hewuugh.wav" id="13_q6h6r"]
+[ext_resource type="AudioStream" uid="uid://kwv0fla5bnq2" path="res://audio/sfx/dialogue/Witch/witch_3_heegtovelike.wav" id="15_aa4m7"]
+[ext_resource type="AudioStream" uid="uid://cuxn2voeqbbkb" path="res://audio/sfx/dialogue/Witch/witch_15_nyewthul_nwehenee.wav" id="16_7jieh"]
 
 [sub_resource type="Animation" id="Animation_l5pl5"]
 length = 0.001
@@ -370,7 +380,7 @@ _data = {
 "main": SubResource("Animation_68boi")
 }
 
-[node name="Transformation" type="Control" node_paths=PackedStringArray("ElementNodes")]
+[node name="PrincessNormal" type="Control" node_paths=PackedStringArray("ElementNodes")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -440,6 +450,7 @@ grow_vertical = 2
 [node name="Frog1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("5_w5qsv")
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
 
@@ -452,6 +463,7 @@ text = "*Croaaaaak*"
 [node name="Princess1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("7_jhl65")
 Sprite = NodePath("../../PrincessLoc/PrincessSprite")
 
 [node name="Background" parent="Dialogue/Princess1/BackBox" index="0"]
@@ -466,6 +478,7 @@ text = "Why, yes, I am the Princess of Loveland!"
 [node name="Frog2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("8_k1cuw")
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
 
@@ -478,6 +491,7 @@ text = "*Croak!*"
 [node name="Princess2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("10_pe44w")
 Sprite = NodePath("../../PrincessLoc/PrincessSprite")
 
 [node name="Background" parent="Dialogue/Princess2/BackBox" index="0"]
@@ -497,6 +511,7 @@ That’s preposterous! I always see my visitors!"
 [node name="Frog3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("5_w5qsv")
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
 
@@ -509,6 +524,7 @@ text = "*Croak.*"
 [node name="Princess3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("11_lh012")
 Sprite = NodePath("../../PrincessLoc/PrincessSprite")
 
 [node name="Background" parent="Dialogue/Princess3/BackBox" index="0"]
@@ -524,6 +540,7 @@ I just need to, um… kiss you. On the lips."
 [node name="Frog4" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("8_k1cuw")
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
 
@@ -536,6 +553,7 @@ text = "*CROAK!?*"
 [node name="Princess4" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("12_hl7la")
 Sprite = NodePath("../../PrincessLoc/PrincessSprite")
 
 [node name="Background" parent="Dialogue/Princess4/BackBox" index="0"]
@@ -551,6 +569,7 @@ Give me a second."
 [node name="Frog5" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("8_k1cuw")
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
 
@@ -563,6 +582,7 @@ text = "*Croak??*"
 [node name="Princess5" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("10_pe44w")
 Sprite = NodePath("../../PrincessLoc/PrincessSprite")
 
 [node name="Background" parent="Dialogue/Princess5/BackBox" index="0"]
@@ -578,6 +598,7 @@ That should have worked!"
 [node name="Witch1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("13_q6h6r")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
 [node name="Background" parent="Dialogue/Witch1/BackBox" index="0"]
@@ -597,6 +618,7 @@ clip_text = false
 [node name="Frog6" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("8_k1cuw")
 Sprite = NodePath("../../FrogLoc/FrogSprite")
 TalkingAnimation = "croak"
 
@@ -609,6 +631,7 @@ text = "*CROAK.*"
 [node name="Witch2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("15_aa4m7")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
 [node name="Background" parent="Dialogue/Witch2/BackBox" index="0"]
@@ -628,6 +651,7 @@ clip_text = false
 [node name="Witch3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("16_7jieh")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
 [node name="Background" parent="Dialogue/Witch3/BackBox" index="0"]
@@ -647,6 +671,7 @@ clip_text = false
 [node name="Iguana1" parent="Dialogue" instance=ExtResource("5_r1ls8")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("10_fbye5")
 
 [node name="ProfilePicture" parent="Dialogue/Iguana1/BackBox" index="1"]
 texture = ExtResource("9_5ts8p")
