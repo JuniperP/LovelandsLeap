@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqgu4qurlm5q3"]
+
+[ext_resource type="PackedScene" uid="uid://dynldm7etkjb2" path="res://scenes/in_level_objects/fly_tracks/fly_path.tscn" id="1_m1o2s"]
+
+[sub_resource type="Curve2D" id="Curve2D_3v2tw"]
+resource_local_to_scene = true
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, 0, -100, 100, 100, 0, 0, 0, 100, 100, 100, 200, -100, -100, 100, 100, 400, 0, 0, 0, -100, 100, 400, 200, 100, -100, 0, 0, 100, 0)
+}
+point_count = 5
+
+[node name="InfiniteFly" instance=ExtResource("1_m1o2s")]
+position = Vector2(1, 0)
+curve = SubResource("Curve2D_3v2tw")
+TrackSpeed = 2.0
+TrackLoops = true
+
+[node name="FollowsPath" parent="." index="0"]
+position = Vector2(100, 0)
+rotation = 2.35619
