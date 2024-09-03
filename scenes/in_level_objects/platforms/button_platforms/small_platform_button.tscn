@@ -11,6 +11,7 @@ script = ExtResource("2_46gxc")
 modulate = Color(1, 1, 1, 1)
 position = Vector2(0, 100)
 rotation = 3.14159
+StaysOn = true
 
 [connection signal="ButtonPressed" from="InLevelButton" to="." method="PlatformButtonPressed"]
 [connection signal="ButtonReleased" from="InLevelButton" to="." method="PlatformButtonReleased"]

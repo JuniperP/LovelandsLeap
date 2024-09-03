@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://cximbve33g0g0"]
+[gd_scene load_steps=15 format=3 uid="uid://cximbve33g0g0"]
 
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background_midgame.tscn" id="1_m085o"]
-[ext_resource type="PackedScene" uid="uid://dpted5etiwgyp" path="res://scenes/in_level_objects/decoration_parallax/bush_bundle.tscn" id="1_yrrqn"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="2_tg5fo"]
 [ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/moving_platform_track.tscn" id="3_4pwx7"]
 [ext_resource type="PackedScene" uid="uid://bytyg3finqb36" path="res://scenes/in_level_objects/platforms/small_vertical_block_platform.tscn" id="4_finji"]
@@ -55,10 +54,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BushBundle" parent="." instance=ExtResource("1_yrrqn")]
-offset = Vector2(5900, 600)
-transform = Transform2D(0.8, 0, 0, 0.8, 5900, 600)
-
 [node name="ParallaxBackgroundMidgame" parent="." instance=ExtResource("1_m085o")]
 
 [node name="Room" parent="." instance=ExtResource("2_tg5fo")]
@@ -110,7 +105,7 @@ position = Vector2(7000, -450)
 curve = SubResource("Curve2D_a4n8s")
 
 [node name="MovingPlatformTrack4" parent="." node_paths=PackedStringArray("Platform") instance=ExtResource("3_4pwx7")]
-position = Vector2(10050, -250)
+position = Vector2(10050, -350)
 curve = SubResource("Curve2D_sns3y")
 Platform = NodePath("LongPlatform")
 BounceOffEnd = true
