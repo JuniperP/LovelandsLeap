@@ -20,7 +20,7 @@ shape = SubResource("RectangleShape2D_xgmb8")
 self_modulate = Color(0.552941, 0.552941, 0.552941, 1)
 light_mask = 2
 visibility_layer = 2
-scale = Vector2(0.075, 0.075)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_5ggay")
 flip_h = true
 
