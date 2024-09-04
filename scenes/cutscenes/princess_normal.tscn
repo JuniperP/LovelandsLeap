@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://df6ucomymik0q"]
+[gd_scene load_steps=40 format=3 uid="uid://df6ucomymik0q"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_e7reo"]
 [ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backround_stripey.jpg" id="3_5gnx6"]
@@ -22,7 +22,6 @@
 [ext_resource type="AudioStream" uid="uid://g1gxlg3as0ec" path="res://audio/sfx/dialogue/princess/princess_12_sigh_3.wav" id="12_hl7la"]
 [ext_resource type="AudioStream" uid="uid://dl4tmk5obi7m7" path="res://audio/sfx/dialogue/Witch/witch_1_reEhe_hahahe_hewuugh.wav" id="13_q6h6r"]
 [ext_resource type="AudioStream" uid="uid://kwv0fla5bnq2" path="res://audio/sfx/dialogue/Witch/witch_3_heegtovelike.wav" id="15_aa4m7"]
-[ext_resource type="AudioStream" uid="uid://cuxn2voeqbbkb" path="res://audio/sfx/dialogue/Witch/witch_15_nyewthul_nwehenee.wav" id="16_7jieh"]
 
 [sub_resource type="Animation" id="Animation_l5pl5"]
 length = 0.001
@@ -389,7 +388,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e7reo")
 NextScene = "res://scenes/credits.tscn"
-ElementNodes = [NodePath("Animations/FadeIn"), NodePath("Animations/FrogWalk"), NodePath("Dialogue/Frog1"), NodePath("Dialogue/Princess1"), NodePath("Dialogue/Frog2"), NodePath("Dialogue/Princess2"), NodePath("Dialogue/Frog3"), NodePath("Dialogue/Princess3"), NodePath("Dialogue/Frog4"), NodePath("Dialogue/Princess4"), NodePath("Animations/PrincessKiss"), NodePath("Dialogue/Frog5"), NodePath("Dialogue/Princess5"), NodePath("Animations/WitchWalk"), NodePath("Dialogue/Witch1"), NodePath("Dialogue/Frog6"), NodePath("Dialogue/Witch2"), NodePath("Dialogue/Witch3"), NodePath("Animations/Transform"), NodePath("Dialogue/Iguana1"), NodePath("Animations/FadeOut")]
+ElementNodes = [NodePath("Animations/FadeIn"), NodePath("Animations/FrogWalk"), NodePath("Dialogue/Frog1"), NodePath("Dialogue/Princess1"), NodePath("Dialogue/Frog2"), NodePath("Dialogue/Princess2"), NodePath("Dialogue/Frog3"), NodePath("Dialogue/Princess3"), NodePath("Dialogue/Frog4"), NodePath("Dialogue/Princess4"), NodePath("Animations/PrincessKiss"), NodePath("Dialogue/Frog5"), NodePath("Dialogue/Princess5"), NodePath("Animations/WitchWalk"), NodePath("Dialogue/Witch1"), NodePath("Dialogue/Frog6"), NodePath("Dialogue/Witch2"), NodePath("Animations/Transform"), NodePath("Dialogue/Iguana1"), NodePath("Animations/FadeOut")]
 
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false
@@ -629,7 +628,6 @@ texture = ExtResource("8_mlafx")
 text = "*CROAK.*"
 
 [node name="Witch2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
-visible = false
 layout_mode = 1
 TalkingAudio = ExtResource("15_aa4m7")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
@@ -644,27 +642,7 @@ texture = ExtResource("7_dopru")
 offset_top = -68.5
 offset_bottom = 68.5
 theme_override_font_sizes/font_size = 42
-text = "Ugh, do you really want to be turned back that badly? Whatever! If you really want it that badly, then fine!"
-autowrap_mode = 2
-clip_text = false
-
-[node name="Witch3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
-visible = false
-layout_mode = 1
-TalkingAudio = ExtResource("16_7jieh")
-Sprite = NodePath("../../WitchLoc/WitchSprite")
-
-[node name="Background" parent="Dialogue/Witch3/BackBox" index="0"]
-modulate = Color(0.3978, 0.78, 0.4615, 1)
-
-[node name="ProfilePicture" parent="Dialogue/Witch3/BackBox" index="1"]
-texture = ExtResource("7_dopru")
-
-[node name="Text" parent="Dialogue/Witch3/BackBox" index="2"]
-offset_top = -68.5
-offset_bottom = 68.5
-theme_override_font_sizes/font_size = 42
-text = "I don’t have time for this, I need to scavenge for more food deliveries in the woods. Now leave me alone!"
+text = "Ugh, do you really want to be turned back that badly? Whatever! I don’t have time for this, I need to scavenge for more food deliveries in the woods."
 autowrap_mode = 2
 clip_text = false
 
@@ -780,5 +758,4 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 [editable path="Dialogue/Witch1"]
 [editable path="Dialogue/Frog6"]
 [editable path="Dialogue/Witch2"]
-[editable path="Dialogue/Witch3"]
 [editable path="Dialogue/Iguana1"]
