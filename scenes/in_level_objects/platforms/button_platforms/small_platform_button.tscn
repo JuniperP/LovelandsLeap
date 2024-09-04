@@ -9,7 +9,7 @@ script = ExtResource("2_46gxc")
 
 [node name="InLevelButton" parent="." index="3" instance=ExtResource("3_1gvo5")]
 modulate = Color(1, 1, 1, 1)
-position = Vector2(0, 100)
+position = Vector2(0, 80)
 rotation = 3.14159
 StaysOn = true
 

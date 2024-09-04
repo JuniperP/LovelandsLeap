@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs66fauscvr67"]
+[gd_scene load_steps=5 format=3 uid="uid://cs66fauscvr67"]
 
 [ext_resource type="Script" path="res://scripts/in_level_objects/InLevelButton.cs" id="1_awemj"]
-[ext_resource type="Texture2D" uid="uid://bc1ravcc5syh4" path="res://assets/ui/icon.svg" id="2_oqvsf"]
+[ext_resource type="Texture2D" uid="uid://bxsqnn7pe4k73" path="res://assets/button_red_up.png" id="2_0ss7h"]
+[ext_resource type="Texture2D" uid="uid://cjxqymnxert33" path="res://assets/button_red_down.png" id="3_xu3yf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ud0y0"]
-size = Vector2(100, 100)
+size = Vector2(100, 30)
 
 [node name="InLevelButton" type="Area2D" node_paths=PackedStringArray("OnStateSprite", "OffStateSprite")]
 modulate = Color(0.701961, 0.701961, 0.701961, 1)
@@ -18,18 +19,21 @@ OffStateSprite = NodePath("HitBox/OffButton")
 shape = SubResource("RectangleShape2D_ud0y0")
 
 [node name="OffButton" type="Sprite2D" parent="HitBox"]
+modulate = Color(0.683077, 0.683077, 0.683077, 1)
 light_mask = 2
 visibility_layer = 2
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_oqvsf")
+position = Vector2(0, 20)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_0ss7h")
 
 [node name="OnButton" type="Sprite2D" parent="HitBox"]
 visible = false
+self_modulate = Color(0.572988, 0.572988, 0.572988, 1)
 light_mask = 2
 visibility_layer = 2
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_oqvsf")
-flip_v = true
+position = Vector2(0, 30)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("3_xu3yf")
 
 [connection signal="body_entered" from="." to="." method="PressButton"]
 [connection signal="body_exited" from="." to="." method="ReleaseButton"]

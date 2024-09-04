@@ -85,7 +85,7 @@ texture = SubResource("AtlasTexture_xxh72")
 
 [node name="InLevelButton" parent="." instance=ExtResource("5_t8lgj")]
 modulate = Color(1, 1, 1, 1)
-position = Vector2(0, -200)
+position = Vector2(0, -180)
 
 [node name="LeftLogPlatformCollision2" parent="." instance=ExtResource("1_5eunn")]
 position = Vector2(-200, -100)
