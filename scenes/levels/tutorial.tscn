@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bggusjf21kduu"]
+[gd_scene load_steps=14 format=3 uid="uid://bggusjf21kduu"]
 
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background_midgame.tscn" id="1_73850"]
 [ext_resource type="Script" path="res://scripts/in_level_objects/Tutorial.cs" id="1_b0xre"]
+[ext_resource type="Theme" uid="uid://bmipwiwogjf5d" path="res://assets/themes/ui.theme" id="1_fklw0"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="2_qmpv4"]
 [ext_resource type="Texture2D" uid="uid://bwmgvd2163fvx" path="res://assets/background/pretty_corner_branch.png" id="3_wxe5l"]
 [ext_resource type="PackedScene" uid="uid://cs66fauscvr67" path="res://scenes/in_level_objects/in_level_button.tscn" id="5_ivftp"]
@@ -32,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_fklw0")
 script = ExtResource("1_b0xre")
 _walk = NodePath("WalkLabel")
 _jump = NodePath("JumpLabel")
