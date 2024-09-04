@@ -4,10 +4,8 @@ public class WalkState : MovementState
 {
 	private double _coyoteTime = 0d;
 	private double _jumpBufferTime = Mathf.Inf;
+	private double _fallingTime = 0d;
 	private bool _isFastFalling = false;
-
-	// Track if the player was in the air last frame
-	private bool _wasInAir = false;
 
 	// Constructor that calls parent constructor (weird notation)
 	public WalkState(Player ctx) : base(ctx) { }
@@ -57,18 +55,9 @@ public class WalkState : MovementState
 		// Used to determine what the final acceleration will be
 		float accelFactor = 1f;
 
-		// Accounting for free fall and subsequent landing sfx
-		if (floored && _wasInAir)
-		{
-			SoundManager.PlaySound(SFX.Land, Ctx);
-			_wasInAir = false;
-		}
 		// If in the air, change acceleration by some factor
-		else if (!floored)
-		{
+		if (!floored)
 			accelFactor *= Ctx.AccelAirFactor;
-			_wasInAir = true;
-		}
 
 		// If trying to move in opposite direction
 		if (Mathf.Sign(velocity) != Mathf.Sign(direction))
@@ -123,10 +112,15 @@ public class WalkState : MovementState
 					velocity *= Ctx.JumpCutFactor;
 			}
 
+			// Accounting for free fall and subsequent landing sfx
+			if (_fallingTime > 0.1)
+				SoundManager.PlaySound(SFX.Land, Ctx);
+
 			// Reset variables
 			_isFastFalling = false;
 			_coyoteTime = 0d;
 			_jumpBufferTime = Mathf.Inf;
+			_fallingTime = 0d;
 		}
 		else // Midair
 		{
@@ -134,8 +128,9 @@ public class WalkState : MovementState
 			if (_jumpBufferTime != Mathf.Inf)
 				_jumpBufferTime += delta;
 
-			// Increment coyote time
+			// Increment coyote and fall time
 			_coyoteTime += delta;
+			_fallingTime += delta;
 
 			if (Input.IsActionJustPressed("move_down"))
 				_isFastFalling = true;
