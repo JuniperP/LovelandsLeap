@@ -11,6 +11,8 @@ lock_rotation = true
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_7khyr")
+Speed = 1250
+MaxDistance = 550.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cd8mv")
