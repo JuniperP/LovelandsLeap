@@ -3,7 +3,10 @@ using Godot;
 
 public partial class Tutorial : Node
 {
+	[Export] private Player _player;
+
 	// Each of the text to alter
+	[ExportGroup("Labels")]
 	[Export] private Label _walk;
 	[Export] private Label _jump;
 	[Export] private Label _holdJump;
@@ -25,7 +28,16 @@ public partial class Tutorial : Node
 		_jumpAndHold2.Text = $"Disengage with\n[{Keybinds._acts[UserAction.SAction].Input.AsText()}]";
 		_swing.Text = $"Press [{Keybinds._acts[UserAction.Left].Input.AsText()}] and [{Keybinds._acts[UserAction.Right].Input.AsText()}]\nto swing yourself\nwhile grappled";
 		_pause.Text = $"Press [{Keybinds._acts[UserAction.Cancel].Input.AsText()}]\nat any time to\npause the game";
-	
+
+		foreach (Node node in GetChildren())
+		{
+			if (node is not FadingText label)
+				continue;
+
+			label.Target = _player;
+			label.CalculateCenter();
+		}
+
 		// Start playing the tutorial music
 		GlobalMusicPlayer.PlayMusic(MusicID.Tutorial);
 	}
