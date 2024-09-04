@@ -25,6 +25,6 @@ public partial class FlyBehavoir : Area2D
 	// Toggle the way the fly is looking
 	public void FlipFly()
 	{
-		Sprite.FlipV = !Sprite.FlipV;
+		Sprite.FlipH = !Sprite.FlipH;
 	}
 }
