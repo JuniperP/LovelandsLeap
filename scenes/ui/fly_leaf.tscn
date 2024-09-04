@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://duqqh5c65mt0q"]
+
+[ext_resource type="Script" path="res://scripts/in_level_objects/flies/FlyLeaf.cs" id="1_3nd5p"]
+[ext_resource type="Texture2D" uid="uid://1aps5jtltq4r" path="res://assets/leaf_blue_2.0.png" id="2_7kb74"]
+[ext_resource type="Theme" uid="uid://bmipwiwogjf5d" path="res://assets/themes/ui.theme" id="2_8ddxv"]
+
+[node name="FlyLeaf" type="Control" node_paths=PackedStringArray("InLevel", "Total")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3nd5p")
+InLevel = NodePath("TextureRect/InLevel")
+Total = NodePath("TextureRect/Total")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.756863, 0.756863, 0.764706, 1)
+layout_mode = 0
+offset_left = 40.0
+offset_top = -227.0
+offset_right = 2009.0
+offset_bottom = 1656.0
+rotation = 0.553117
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("2_7kb74")
+
+[node name="FliesDeclare" type="Label" parent="TextureRect"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.283
+offset_top = 184.079
+offset_right = 170.718
+offset_bottom = 481.079
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.891422
+theme = ExtResource("2_8ddxv")
+theme_override_font_sizes/font_size = 200
+text = "Flies"
+horizontal_alignment = 1
+
+[node name="InLevel" type="Label" parent="TextureRect"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -343.592
+offset_top = 284.128
+offset_right = 367.408
+offset_bottom = 567.128
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.891422
+theme = ExtResource("2_8ddxv")
+theme_override_font_sizes/font_size = 215
+text = "9 / 9"
+horizontal_alignment = 1
+
+[node name="Total" type="Label" parent="TextureRect"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.299
+offset_top = 479.807
+offset_right = 551.701
+offset_bottom = 776.807
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.891422
+theme = ExtResource("2_8ddxv")
+theme_override_font_sizes/font_size = 215
+text = "99 / 99"
+horizontal_alignment = 1

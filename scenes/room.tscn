@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://ccc6gfv7e6o6w" path="res://scenes/player/player.tscn" id="1_1djk0"]
 [ext_resource type="Script" path="res://scripts/Camera.cs" id="1_iamro"]
 [ext_resource type="PackedScene" uid="uid://bogkg7ij1umf1" path="res://scenes/ui/pause_screen.tscn" id="1_rm67i"]
+[ext_resource type="PackedScene" uid="uid://duqqh5c65mt0q" path="res://scenes/ui/fly_leaf.tscn" id="2_byowp"]
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="3_6sffn"]
 [ext_resource type="PackedScene" uid="uid://2jyl564ee5cu" path="res://scenes/ui/speed_run_timer.tscn" id="4_cf0s8"]
 [ext_resource type="PackedScene" uid="uid://tig2ub6l5vjg" path="res://scenes/ui/live_frog_reaction.tscn" id="5_k7no0"]
-[ext_resource type="PackedScene" uid="uid://c3y1226gfn5tq" path="res://scenes/ui/fly_count_back_drop.tscn" id="6_adkuw"]
 [ext_resource type="TileSet" uid="uid://wt1ltmigo2ju" path="res://assets/tilemap.tres" id="8_60br4"]
 
 [node name="Room" type="Node2D"]
@@ -31,7 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.334, 1.334)
 
-[node name="FlyCountBackDrop" parent="Camera2D/CanvasLayer/Control" instance=ExtResource("6_adkuw")]
+[node name="FlyLeaf" parent="Camera2D/CanvasLayer/Control" instance=ExtResource("2_byowp")]
 layout_mode = 1
 
 [node name="LiveFrogReaction" parent="Camera2D/CanvasLayer/Control" instance=ExtResource("5_k7no0")]
