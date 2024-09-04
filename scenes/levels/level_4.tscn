@@ -3,14 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://dpted5etiwgyp" path="res://scenes/in_level_objects/decoration_parallax/bush_bundle.tscn" id="1_cjq36"]
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background_midgame.tscn" id="1_rsrjh"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="2_d3ma6"]
-[ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/moving_platform_track.tscn" id="3_gqy4c"]
+[ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/platform_paths/moving_platform_track.tscn" id="3_gqy4c"]
 [ext_resource type="PackedScene" uid="uid://c75w8ita6k4k" path="res://scenes/in_level_objects/platforms/button_platforms/big_button_platform.tscn" id="4_l0tmr"]
 [ext_resource type="PackedScene" uid="uid://b5ovwc4k8xaal" path="res://scenes/in_level_objects/platforms/small_platform.tscn" id="5_j2lpu"]
 [ext_resource type="PackedScene" uid="uid://dymkmt6rmafx8" path="res://scenes/in_level_objects/platforms/platform.tscn" id="6_26v3u"]
 [ext_resource type="PackedScene" uid="uid://dynldm7etkjb2" path="res://scenes/in_level_objects/fly_tracks/fly_path.tscn" id="7_s4ghb"]
 [ext_resource type="PackedScene" uid="uid://bqgu4qurlm5q3" path="res://scenes/in_level_objects/fly_tracks/infinite_fly.tscn" id="7_uoi1y"]
 [ext_resource type="PackedScene" uid="uid://bytyg3finqb36" path="res://scenes/in_level_objects/platforms/small_vertical_block_platform.tscn" id="8_7ojla"]
-[ext_resource type="PackedScene" uid="uid://bp7s26m8lyu8h" path="res://scenes/in_level_objects/platforms/longest_vertical_block_platform.tscn" id="9_38o21"]
+[ext_resource type="PackedScene" uid="uid://bp7s26m8lyu8h" path="res://scenes/in_level_objects/platforms/long_vertical_block_platform.tscn" id="9_38o21"]
 [ext_resource type="PackedScene" uid="uid://d2n0qpnf7fijb" path="res://scenes/in_level_objects/platforms/button_platforms/small_platform_button.tscn" id="10_gd2ho"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="11_4xmbe"]
 [ext_resource type="PackedScene" uid="uid://cscyxa7owiydr" path="res://scenes/in_level_objects/fly_tracks/circle_fly.tscn" id="11_67l4r"]
@@ -226,6 +226,7 @@ curve = SubResource("Curve2D_k3ls3")
 
 [node name="FadeTransition" parent="." instance=ExtResource("11_4xmbe")]
 position = Vector2(11650, 450)
+_sendsTo = 6
 
 [node name="FlyPath2" parent="." instance=ExtResource("7_s4ghb")]
 position = Vector2(8350, -1400)

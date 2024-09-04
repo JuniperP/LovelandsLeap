@@ -19,5 +19,3 @@ HowToFollow = NodePath("FollowsPath")
 rotates = false
 
 [node name="RemoteTransform" type="RemoteTransform2D" parent="FollowsPath"]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

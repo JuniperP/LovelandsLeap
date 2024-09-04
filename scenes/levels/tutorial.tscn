@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="2_qmpv4"]
 [ext_resource type="Texture2D" uid="uid://bwmgvd2163fvx" path="res://assets/background/pretty_corner_branch.png" id="3_wxe5l"]
 [ext_resource type="PackedScene" uid="uid://cs66fauscvr67" path="res://scenes/in_level_objects/in_level_button.tscn" id="5_ivftp"]
-[ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/moving_platform_track.tscn" id="6_l5yg1"]
+[ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/platform_paths/moving_platform_track.tscn" id="6_l5yg1"]
 [ext_resource type="PackedScene" uid="uid://cpx4f3socslo0" path="res://scenes/in_level_objects/platforms/vertical_block_platform.tscn" id="7_ypxfs"]
 [ext_resource type="PackedScene" uid="uid://dymkmt6rmafx8" path="res://scenes/in_level_objects/platforms/platform.tscn" id="8_s44hf"]
 [ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="9_0bafc"]

@@ -1,74 +1,65 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp7s26m8lyu8h"]
+[gd_scene load_steps=5 format=3 uid="uid://dhcgj0dau2x5s"]
 
-[ext_resource type="PackedScene" uid="uid://dakbxs5hkpy70" path="res://scenes/in_level_objects/platforms/collision_shapes/left_log_platform_collision.tscn" id="1_ss1nx"]
-[ext_resource type="PackedScene" uid="uid://c5m4ksmcq78vy" path="res://scenes/in_level_objects/platforms/collision_shapes/right_log_platform_collision.tscn" id="2_p6mlb"]
+[ext_resource type="PackedScene" uid="uid://bp7s26m8lyu8h" path="res://scenes/in_level_objects/platforms/long_vertical_block_platform.tscn" id="1_fmywn"]
 [ext_resource type="Texture2D" uid="uid://dnh0cnucyc6tp" path="res://assets/tiles.png" id="3_y7bev"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyces"]
-size = Vector2(100, 700)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b52yl"]
+resource_local_to_scene = true
+size = Vector2(100, 1300)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iqnw5"]
 atlas = ExtResource("3_y7bev")
 region = Rect2(100, 200, 100, 100)
 
-[node name="LongestVerticalBlockPlatform" type="AnimatableBody2D"]
-modulate = Color(0.701961, 0.701961, 0.701961, 1)
+[node name="LongestVerticalBlockPlatform" instance=ExtResource("1_fmywn")]
 
-[node name="LeftLogPlatformCollision" parent="." instance=ExtResource("1_ss1nx")]
-position = Vector2(0, 400)
-rotation = -1.5708
+[node name="LeftLogPlatformCollision" parent="." index="0"]
+position = Vector2(0, 700)
 
-[node name="RightLogPlatformCollision" parent="." instance=ExtResource("2_p6mlb")]
+[node name="RightLogPlatformCollision" parent="." index="1"]
+position = Vector2(0, -700)
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("RectangleShape2D_b52yl")
+
+[node name="Sprite2D8" type="Sprite2D" parent="CollisionShape2D" index="1"]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(0, -400)
 rotation = -1.5708
+texture = SubResource("AtlasTexture_iqnw5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_nyces")
-
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+[node name="Sprite2D9" type="Sprite2D" parent="CollisionShape2D" index="2"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(0, -300)
+position = Vector2(0, -500)
 rotation = -1.5708
 texture = SubResource("AtlasTexture_iqnw5")
 
-[node name="Sprite2D2" type="Sprite2D" parent="CollisionShape2D"]
+[node name="Sprite2D10" type="Sprite2D" parent="CollisionShape2D" index="3"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(0, 100)
+position = Vector2(0, -600)
 rotation = -1.5708
 texture = SubResource("AtlasTexture_iqnw5")
 
-[node name="Sprite2D3" type="Sprite2D" parent="CollisionShape2D"]
+[node name="Sprite2D11" type="Sprite2D" parent="CollisionShape2D" index="9"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(0, -100)
+position = Vector2(0, 400)
 rotation = -1.5708
 texture = SubResource("AtlasTexture_iqnw5")
 
-[node name="Sprite2D4" type="Sprite2D" parent="CollisionShape2D"]
+[node name="Sprite2D12" type="Sprite2D" parent="CollisionShape2D" index="10"]
 light_mask = 2
 visibility_layer = 2
+position = Vector2(0, 500)
 rotation = -1.5708
 texture = SubResource("AtlasTexture_iqnw5")
 
-[node name="Sprite2D5" type="Sprite2D" parent="CollisionShape2D"]
+[node name="Sprite2D13" type="Sprite2D" parent="CollisionShape2D" index="11"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(0, 200)
-rotation = -1.5708
-texture = SubResource("AtlasTexture_iqnw5")
-
-[node name="Sprite2D6" type="Sprite2D" parent="CollisionShape2D"]
-light_mask = 2
-visibility_layer = 2
-position = Vector2(0, 300)
-rotation = -1.5708
-texture = SubResource("AtlasTexture_iqnw5")
-
-[node name="Sprite2D7" type="Sprite2D" parent="CollisionShape2D"]
-light_mask = 2
-visibility_layer = 2
-position = Vector2(0, -200)
+position = Vector2(0, 600)
 rotation = -1.5708
 texture = SubResource("AtlasTexture_iqnw5")

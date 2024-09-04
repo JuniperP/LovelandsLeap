@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkl255nq0rf0t"]
+
+[ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/platform_paths/moving_platform_track.tscn" id="1_ogbut"]
+
+[sub_resource type="Curve2D" id="Curve2D_2g8pd"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 350, 0, 0, 0, 0, 350, 0, 350, 350, 0, 0, 0, -350, 700, 0, 0, 0, -350, 0, 350, -350, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="CircleMovingPlatformTrack" instance=ExtResource("1_ogbut")]
+curve = SubResource("Curve2D_2g8pd")
+TrackLoops = true
+AutoStart = true
+TimeToCompleteTrack = 5.0

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://csnti3j2wsf5q"]
+
+[ext_resource type="PackedScene" uid="uid://dymkmt6rmafx8" path="res://scenes/in_level_objects/platforms/platform.tscn" id="1_msxlt"]
+[ext_resource type="Script" path="res://scripts/in_level_objects/ButtonPlatform.cs" id="2_5b5ks"]
+[ext_resource type="PackedScene" uid="uid://cs66fauscvr67" path="res://scenes/in_level_objects/in_level_button.tscn" id="3_wqefi"]
+
+[node name="TrapPlatform" instance=ExtResource("1_msxlt")]
+script = ExtResource("2_5b5ks")
+
+[node name="InLevelButton" parent="." index="3" instance=ExtResource("3_wqefi")]
+position = Vector2(-200, -80)
+
+[node name="InLevelButton2" parent="." index="4" instance=ExtResource("3_wqefi")]
+position = Vector2(-100, -80)
+
+[node name="InLevelButton3" parent="." index="5" instance=ExtResource("3_wqefi")]
+position = Vector2(0, -80)
+
+[node name="InLevelButton4" parent="." index="6" instance=ExtResource("3_wqefi")]
+position = Vector2(100, -80)
+
+[node name="InLevelButton5" parent="." index="7" instance=ExtResource("3_wqefi")]
+position = Vector2(200, -80)
+
+[connection signal="ButtonPressed" from="InLevelButton" to="." method="PlatformButtonPressed"]
+[connection signal="ButtonPressed" from="InLevelButton2" to="." method="PlatformButtonPressed"]
+[connection signal="ButtonPressed" from="InLevelButton3" to="." method="PlatformButtonPressed"]
+[connection signal="ButtonPressed" from="InLevelButton4" to="." method="PlatformButtonPressed"]
+[connection signal="ButtonPressed" from="InLevelButton5" to="." method="PlatformButtonPressed"]
