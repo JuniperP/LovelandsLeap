@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://duqqh5c65mt0q"]
 
 [ext_resource type="Script" path="res://scripts/in_level_objects/flies/FlyLeaf.cs" id="1_3nd5p"]
-[ext_resource type="Texture2D" uid="uid://1aps5jtltq4r" path="res://assets/leaf_blue_2.0.png" id="2_7kb74"]
+[ext_resource type="Texture2D" uid="uid://1aps5jtltq4r" path="res://assets/ui/leaf_blue_2.0.png" id="2_7kb74"]
 [ext_resource type="Theme" uid="uid://bmipwiwogjf5d" path="res://assets/themes/ui.theme" id="2_8ddxv"]
 
 [node name="FlyLeaf" type="Control" node_paths=PackedStringArray("InLevel", "Total")]
