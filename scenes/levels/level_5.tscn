@@ -152,7 +152,7 @@ Platform = NodePath("VerticalBlockPlatform")
 position = Vector2(3950, 0)
 curve = SubResource("Curve2D_vem65")
 Platform = NodePath("TrapPlatform")
-TrackLoops = true
+BounceOffEnd = true
 TimeToCompleteTrack = 0.9
 
 [node name="TrapPlatform" parent="MovingPlatformTrack" instance=ExtResource("7_i4fo0")]
