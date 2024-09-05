@@ -16,7 +16,7 @@
 [sub_resource type="Curve2D" id="Curve2D_86jpw"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, -500, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, -550, 0, 0, 0, 0, 0, 0)
 }
 point_count = 2
 
@@ -151,7 +151,7 @@ BounceOffEnd = true
 TimeToCompleteTrack = 2.0
 
 [node name="SmallPlatform" parent="MovingPlatformTrack" instance=ExtResource("4_ia7gn")]
-position = Vector2(8, -521)
+position = Vector2(5, -558)
 
 [node name="MovingPlatformTrack2" parent="." node_paths=PackedStringArray("Platform") instance=ExtResource("3_5sglk")]
 position = Vector2(1000, 200)
