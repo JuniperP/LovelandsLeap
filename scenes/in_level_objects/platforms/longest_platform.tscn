@@ -1,0 +1,155 @@
+[gd_scene load_steps=5 format=3 uid="uid://t6witfppmixi"]
+
+[ext_resource type="PackedScene" uid="uid://bn7o6iodvjufq" path="res://scenes/in_level_objects/platforms/longer_platform.tscn" id="1_arr8n"]
+[ext_resource type="Texture2D" uid="uid://dnh0cnucyc6tp" path="res://assets/tiles.png" id="2_0so2x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t5g4"]
+resource_local_to_scene = true
+size = Vector2(2900, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkhsq"]
+atlas = ExtResource("2_0so2x")
+region = Rect2(100, 200, 100, 100)
+
+[node name="LongestPlatform" instance=ExtResource("1_arr8n")]
+
+[node name="LeftLogPlatformCollision" parent="." index="0"]
+position = Vector2(-1500, 0)
+
+[node name="RightLogPlatformCollision" parent="." index="1"]
+position = Vector2(1500, 0)
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("RectangleShape2D_7t5g4")
+
+[node name="Sprite2D9" type="Sprite2D" parent="CollisionShape2D" index="7"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-600, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D10" type="Sprite2D" parent="CollisionShape2D" index="8"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-500, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D11" type="Sprite2D" parent="CollisionShape2D" index="9"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-400, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D12" type="Sprite2D" parent="CollisionShape2D" index="10"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-700, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D13" type="Sprite2D" parent="CollisionShape2D" index="11"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-800, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D14" type="Sprite2D" parent="CollisionShape2D" index="12"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-900, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D8" type="Sprite2D" parent="CollisionShape2D" index="13"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-1000, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D15" type="Sprite2D" parent="CollisionShape2D" index="14"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-1100, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D16" type="Sprite2D" parent="CollisionShape2D" index="15"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-1200, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D17" type="Sprite2D" parent="CollisionShape2D" index="16"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-1300, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D19" type="Sprite2D" parent="CollisionShape2D" index="17"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-1400, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D20" type="Sprite2D" parent="CollisionShape2D" index="18"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(400, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D22" type="Sprite2D" parent="CollisionShape2D" index="19"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(500, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D23" type="Sprite2D" parent="CollisionShape2D" index="20"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(600, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D24" type="Sprite2D" parent="CollisionShape2D" index="21"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(700, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D25" type="Sprite2D" parent="CollisionShape2D" index="22"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(800, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D18" type="Sprite2D" parent="CollisionShape2D" index="23"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(900, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D26" type="Sprite2D" parent="CollisionShape2D" index="24"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(1000, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D27" type="Sprite2D" parent="CollisionShape2D" index="25"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(1100, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D28" type="Sprite2D" parent="CollisionShape2D" index="26"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(1200, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D29" type="Sprite2D" parent="CollisionShape2D" index="27"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(1300, 0)
+texture = SubResource("AtlasTexture_hkhsq")
+
+[node name="Sprite2D30" type="Sprite2D" parent="CollisionShape2D" index="28"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(1400, 0)
+texture = SubResource("AtlasTexture_hkhsq")
