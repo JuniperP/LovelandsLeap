@@ -23,7 +23,7 @@ motion_offset = Vector2(960, 540)
 modulate = Color(0, 1, 1, 1)
 light_mask = 8
 visibility_layer = 8
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.501, 0.501)
 texture = ExtResource("1_ko4nk")
 
 [node name="FarLayer" type="ParallaxLayer" parent="."]
