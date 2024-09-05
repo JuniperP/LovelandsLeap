@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://clnx8ma77b6h3"]
+[gd_scene load_steps=11 format=3 uid="uid://clnx8ma77b6h3"]
 
 [ext_resource type="PackedScene" uid="uid://ccc6gfv7e6o6w" path="res://scenes/player/player.tscn" id="1_1djk0"]
 [ext_resource type="Script" path="res://scripts/Camera.cs" id="1_iamro"]
@@ -7,7 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="3_6sffn"]
 [ext_resource type="PackedScene" uid="uid://2jyl564ee5cu" path="res://scenes/ui/speed_run_timer.tscn" id="4_cf0s8"]
 [ext_resource type="PackedScene" uid="uid://tig2ub6l5vjg" path="res://scenes/ui/live_frog_reaction.tscn" id="5_k7no0"]
+[ext_resource type="Shader" path="res://assets/shaders/hsv.gdshader" id="7_slxp7"]
 [ext_resource type="TileSet" uid="uid://wt1ltmigo2ju" path="res://assets/tilemap.tres" id="8_60br4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pdmyb"]
+shader = ExtResource("7_slxp7")
 
 [node name="Room" type="Node2D"]
 
@@ -18,6 +22,7 @@ Target = NodePath("../Player")
 metadata/_edit_group_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+layer = 5
 scale = Vector2(0.75, 0.75)
 transform = Transform2D(0.75, 0, 0, 0.75, 0, 0)
 
@@ -61,6 +66,16 @@ grow_horizontal = 0
 [node name="LoadingScreen" parent="Camera2D/CanvasLayer/Control" instance=ExtResource("3_6sffn")]
 visible = false
 layout_mode = 1
+
+[node name="EnvironmentShading" type="CanvasLayer" parent="Camera2D"]
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/EnvironmentShading"]
+material = SubResource("ShaderMaterial_pdmyb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Player" parent="." instance=ExtResource("1_1djk0")]
 z_index = 10
