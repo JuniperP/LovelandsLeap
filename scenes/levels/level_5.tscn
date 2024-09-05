@@ -231,6 +231,7 @@ StaysOn = true
 
 [node name="FadeTransition" parent="." instance=ExtResource("11_f0as4")]
 position = Vector2(19850, -550)
+_sendsTo = 7
 
 [connection signal="ButtonPressed" from="MovingPlatformTrack/TrapPlatform" to="MovingPlatformTrack" method="TogglePlatform"]
 [connection signal="ButtonPressed" from="InLevelButton" to="MovingPlatformTrack6" method="TogglePlatform"]

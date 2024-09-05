@@ -18,6 +18,7 @@ public enum ToScene : int
 	Level3 = 4,
 	Level4 = 5,
 	Level5 = 6,
+	Level6 = 7,
 
 }
 public partial class SceneManager : Node
@@ -48,6 +49,7 @@ public partial class SceneManager : Node
 		{ToScene.Level3,  "res://scenes/levels/level_3.tscn"},
 		{ToScene.Level4,  "res://scenes/levels/level_4.tscn"},
 		{ToScene.Level5,  "res://scenes/levels/level_5.tscn"},
+		{ToScene.Level6,  "res://scenes/levels/level_6.tscn"},
 	};
 
 
