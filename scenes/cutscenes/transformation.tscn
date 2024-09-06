@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_3ohwg"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutscenePause.cs" id="2_on0j3"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="3_5l45d"]
-[ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_backgrounds/parallax_background_midgame.tscn" id="3_w1n0w"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/mc_portrait.png" id="4_4qoas"]
 [ext_resource type="Texture2D" uid="uid://chm8yefqnrjo1" path="res://assets/witch/witch_portrait.png" id="5_25kel"]
 [ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frog_portrait.png" id="6_ooaw7"]
@@ -22,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://bbb7phk5v6cmo" path="res://audio/sfx/dialogue/Witch/witch_2_yebableghbababa_ngairuugh.wav" id="16_shblu"]
 [ext_resource type="AudioStream" uid="uid://bi3pdvdmheuds" path="res://audio/sfx/dialogue/Frog/long_croak.wav" id="17_ig77s"]
 [ext_resource type="AudioStream" uid="uid://lrex53y0bgtp" path="res://audio/sfx/cutscene/magic_sfx.wav" id="21_p45bv"]
+[ext_resource type="PackedScene" uid="uid://datdp4bedwrf4" path="res://scenes/levels/parallax_backgrounds/parallax_background_earlygame.tscn" id="22_2y1dl"]
 
 [sub_resource type="Animation" id="Animation_b1prn"]
 length = 0.001
@@ -360,6 +360,10 @@ NextScene = "res://scenes/levels/tutorial.tscn"
 CancelScene = "res://scenes/levels/tutorial.tscn"
 ElementNodes = [NodePath("Animations/FadeIn"), NodePath("Animations/HumanWalk"), NodePath("Dialogue/Human1"), NodePath("Dialogue/Witch1"), NodePath("Dialogue/Human2"), NodePath("Dialogue/Witch2"), NodePath("Animations/Transform"), NodePath("Dialogue/Witch3"), NodePath("Dialogue/Frog1"), NodePath("Dialogue/Witch4"), NodePath("Dialogue/Frog2"), NodePath("Dialogue/Witch5"), NodePath("Animations/Disappear"), NodePath("Dialogue/Frog3"), NodePath("Animations/FadeOut")]
 
+[node name="ParallaxBackgroundEarlygame" parent="." instance=ExtResource("22_2y1dl")]
+offset = Vector2(960, 540)
+transform = Transform2D(1, 0, 0, 1, 960, 540)
+
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false
 z_index = 100
@@ -374,11 +378,6 @@ color = Color(0, 0, 0, 1)
 [node name="3s Pause" type="Timer" parent="."]
 wait_time = 3.0
 script = ExtResource("2_on0j3")
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("3_w1n0w")]
-offset = Vector2(950, 700)
-scale = Vector2(1.05, 1.05)
-transform = Transform2D(1.05, 0, 0, 1.05, 950, 700)
 
 [node name="Dialogue" type="Control" parent="."]
 z_index = 10
