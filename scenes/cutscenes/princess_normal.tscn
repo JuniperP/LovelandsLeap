@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://df6ucomymik0q"]
+[gd_scene load_steps=44 format=3 uid="uid://df6ucomymik0q"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_e7reo"]
 [ext_resource type="Texture2D" uid="uid://bnd06vdkw4tuw" path="res://assets/background/back_drops/backround_mountains.jpg" id="2_7bsjm"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://dl4tmk5obi7m7" path="res://audio/sfx/dialogue/Witch/witch_1_reEhe_hahahe_hewuugh.wav" id="13_q6h6r"]
 [ext_resource type="AudioStream" uid="uid://kwv0fla5bnq2" path="res://audio/sfx/dialogue/Witch/witch_3_heegtovelike.wav" id="15_aa4m7"]
 [ext_resource type="AudioStream" uid="uid://lrex53y0bgtp" path="res://audio/sfx/cutscene/magic_sfx.wav" id="24_men1q"]
+[ext_resource type="AudioStream" uid="uid://k63x1w4qqh0v" path="res://audio/sfx/dialogue/Iguana/iguana_4_thhh_BAH.wav" id="25_sroi0"]
 
 [sub_resource type="Animation" id="Animation_l5pl5"]
 length = 0.001
@@ -298,7 +299,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_ymhv5"]
 resource_name = "main"
-length = 4.5
+length = 5.5
 step = 0.25
 tracks/0/type = "method"
 tracks/0/imported = false
@@ -322,6 +323,23 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Iguana")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 4.5),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [0.0],
@@ -779,6 +797,10 @@ flip_h = true
 
 [node name="WitchMagic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_men1q")
+bus = &"Sound Effects"
+
+[node name="Iguana" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_sroi0")
 bus = &"Sound Effects"
 
 [node name="InfoToSkip" parent="." instance=ExtResource("12_e71ay")]
