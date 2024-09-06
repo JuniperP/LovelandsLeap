@@ -297,6 +297,7 @@ position = Vector2(10350, -3750)
 
 [node name="FadeTransition" parent="." instance=ExtResource("15_2fre3")]
 position = Vector2(12350, -3150)
+_sendsTo = 8
 
 [connection signal="ButtonPressed" from="InLevelButton" to="MovingPlatformTrack" method="TogglePlatform"]
 [connection signal="ButtonPressed" from="InLevelButton" to="MovingPlatformTrack2" method="TogglePlatform"]
