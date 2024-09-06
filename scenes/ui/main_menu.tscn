@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/ui/MainMenu.cs" id="1_byusu"]
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/main_menu.jpg" id="2_qxlys"]
-[ext_resource type="Shader" path="res://assets/color_vignette.gdshader" id="2_uk4k1"]
+[ext_resource type="Shader" path="res://assets/shaders/color_vignette.gdshader" id="2_uk4k1"]
 [ext_resource type="PackedScene" uid="uid://c65bn2g4p34gv" path="res://scenes/ui/title_screen_effect.tscn" id="3_4331o"]
 [ext_resource type="PackedScene" uid="uid://c4suej1iw3wkr" path="res://scenes/ui/settings/settings.tscn" id="3_ps8pg"]
 [ext_resource type="FontFile" uid="uid://hw1t6nlg1t1y" path="res://assets/fonts/logo/nerko_one_regular.ttf" id="3_r1n3c"]
