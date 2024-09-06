@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://byh5pvj8ur4sc"]
+[gd_scene load_steps=21 format=3 uid="uid://byh5pvj8ur4sc"]
 
 [ext_resource type="PackedScene" uid="uid://kn1e2rfx52n4" path="res://scenes/levels/parallax_backgrounds/parallax_background_lategame.tscn" id="1_qt8ko"]
 [ext_resource type="PackedScene" uid="uid://dfkuaivbh6jfo" path="res://scenes/in_level_objects/decoration_parallax/roots_clump.tscn" id="2_pdwi7"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bp7s26m8lyu8h" path="res://scenes/in_level_objects/platforms/long_vertical_block_platform.tscn" id="7_auc18"]
 [ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="8_sb5yx"]
 [ext_resource type="PackedScene" uid="uid://bqgu4qurlm5q3" path="res://scenes/in_level_objects/fly_tracks/infinite_fly.tscn" id="9_2h7ku"]
+[ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="11_2swto"]
 
 [sub_resource type="Curve2D" id="Curve2D_sabe3"]
 resource_local_to_scene = true
@@ -222,5 +223,9 @@ TimeToCompleteTrack = 3.0
 position = Vector2(20950, -2600)
 curve = SubResource("Curve2D_qp72r")
 TrackSpeed = 5.0
+
+[node name="FadeTransition" parent="." instance=ExtResource("11_2swto")]
+position = Vector2(22950, -1950)
+_sendsTo = 9
 
 [editable path="Room"]
