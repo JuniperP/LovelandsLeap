@@ -2,6 +2,7 @@ shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
 
+uniform vec4 tint: source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform float h: hint_range(0,2) = 1;
 uniform float s: hint_range(0,2) = 1;
 uniform float v: hint_range(0,2) = 1;
@@ -26,6 +27,7 @@ void fragment() {
 	vec4 bg = texture(screen_texture, SCREEN_UV);
 	
 	bg.rgb = hsv2rgb(rgb2hsv(bg.rgb) * vec3(h, s, v));
+    bg *= tint;
 	
 	COLOR = bg;
 }

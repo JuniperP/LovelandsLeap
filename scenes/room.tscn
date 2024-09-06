@@ -12,6 +12,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pdmyb"]
 shader = ExtResource("7_slxp7")
+shader_parameter/tint = Color(1, 1, 1, 1)
 shader_parameter/h = 1.0
 shader_parameter/s = 1.0
 shader_parameter/v = 1.0
