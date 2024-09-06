@@ -107,7 +107,6 @@ public partial class SpeedRunTimer : Toggleable
 	public static void FinishedRun()
 	{
 		_currentlyRunning = false;
-		_belowMax = true;
 
 		// Save record
 		ToggleSpeedrun.NewTime(_timeElapsed);

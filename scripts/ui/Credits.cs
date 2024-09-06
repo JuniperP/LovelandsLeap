@@ -8,9 +8,6 @@ public partial class Credits : Control
 		// Jump cut effect
 		LoadingScreen.TransTheFade = 0;
 		AsciiFrog.NewVisRatio = 0;
-		
-		// Testing speedrun timer
-		// SpeedRunTimer.FinishedRun();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
