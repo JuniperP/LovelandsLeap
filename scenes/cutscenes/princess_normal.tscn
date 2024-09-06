@@ -628,6 +628,7 @@ texture = ExtResource("8_mlafx")
 text = "*CROAK.*"
 
 [node name="Witch2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
+visible = false
 layout_mode = 1
 TalkingAudio = ExtResource("15_aa4m7")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
