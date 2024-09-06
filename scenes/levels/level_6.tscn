@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c4bgsad2wxsmf"]
+[gd_scene load_steps=29 format=3 uid="uid://c4bgsad2wxsmf"]
 
 [ext_resource type="PackedScene" uid="uid://kn1e2rfx52n4" path="res://scenes/levels/parallax_background_lategame.tscn" id="1_0tvvp"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="2_c4280"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cscyxa7owiydr" path="res://scenes/in_level_objects/fly_tracks/circle_fly.tscn" id="9_hahqs"]
 [ext_resource type="PackedScene" uid="uid://t6witfppmixi" path="res://scenes/in_level_objects/platforms/longest_platform.tscn" id="11_aqj3m"]
 [ext_resource type="PackedScene" uid="uid://bp7s26m8lyu8h" path="res://scenes/in_level_objects/platforms/long_vertical_block_platform.tscn" id="12_fg7f7"]
-[ext_resource type="Curve2D" uid="uid://cwewrnltlpby1" path="res://scenes/in_level_objects/platform_paths/oval.tres" id="13_fb1f7"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="15_2fre3"]
 
 [sub_resource type="Curve2D" id="Curve2D_ktwul"]
@@ -94,12 +93,28 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Curve2D" id="Curve2D_j8ia3"]
+resource_local_to_scene = true
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, -200, 0, 200, 0, -350, -200, 0, 200, 0, 250, 0, 0, 200, 0, -200, 500, -350, 200, 0, -200, 0, 250, -700, 0, -200, -200, 0, 0, -350)
+}
+point_count = 5
+
 [sub_resource type="Curve2D" id="Curve2D_4psq1"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -700)
 }
 point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_2bb2l"]
+resource_local_to_scene = true
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, -200, 0, 200, 0, -350, -200, 0, 200, 0, 250, 0, 0, 200, 0, -200, 500, -350, 200, 0, -200, 0, 250, -700, 0, -200, -200, 0, 0, -350)
+}
+point_count = 5
 
 [node name="Level6" type="Control"]
 layout_mode = 3
@@ -240,7 +255,7 @@ position = Vector2(12, -1)
 
 [node name="MovingPlatformTrack11" parent="." node_paths=PackedStringArray("Platform") instance=ExtResource("3_olkir")]
 position = Vector2(9300, -2500)
-curve = ExtResource("13_fb1f7")
+curve = SubResource("Curve2D_j8ia3")
 Platform = NodePath("LongPlatform")
 TrackLoops = true
 Stoppable = true
@@ -264,7 +279,7 @@ position = Vector2(-8, -17)
 [node name="MovingPlatformTrack13" parent="." node_paths=PackedStringArray("Platform") instance=ExtResource("3_olkir")]
 position = Vector2(11300, -3200)
 rotation = 3.14159
-curve = ExtResource("13_fb1f7")
+curve = SubResource("Curve2D_2bb2l")
 Platform = NodePath("LongPlatform")
 TrackLoops = true
 Stoppable = true

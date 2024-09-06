@@ -206,7 +206,6 @@ public class WalkState : MovementState
 		// Create spring and update line
 		Ctx.TongueSpring = Ctx.TongueSpringScene.Instantiate<TongueSpring>();
 		Ctx.TongueSpring.GlobalPosition = Ctx.TongueProj.GlobalPosition;
-		Ctx.TongueSpring.Offset = target.GlobalPosition - Ctx.TongueProj.GlobalPosition;
 		Ctx.TongueSpring.AttachedTo = target;
 		Ctx.TongueLine.Target = Ctx.TongueSpring;
 
