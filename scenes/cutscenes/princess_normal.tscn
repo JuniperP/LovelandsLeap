@@ -1,9 +1,11 @@
-[gd_scene load_steps=40 format=3 uid="uid://df6ucomymik0q"]
+[gd_scene load_steps=42 format=3 uid="uid://df6ucomymik0q"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_e7reo"]
-[ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/back_drops/backround_stripey.jpg" id="3_5gnx6"]
-[ext_resource type="Texture2D" uid="uid://ysmgbmc0yui1" path="res://assets/background/mossy_tree.png" id="4_d0b8k"]
+[ext_resource type="Texture2D" uid="uid://bnd06vdkw4tuw" path="res://assets/background/back_drops/backround_mountains.jpg" id="2_7bsjm"]
+[ext_resource type="Texture2D" uid="uid://drgongiwty04g" path="res://assets/background/supplemental/hammock.png" id="3_gkrek"]
+[ext_resource type="Texture2D" uid="uid://c2tt6q64474ke" path="res://assets/background/supplemental/tent.png" id="4_854vo"]
 [ext_resource type="SpriteFrames" uid="uid://hq7btpb76h0j" path="res://resources/sprite_frames/princess.tres" id="5_2xgpo"]
+[ext_resource type="Texture2D" uid="uid://bdjc2npk7aqnt" path="res://assets/background/supplemental/lantern.png" id="5_3unq8"]
 [ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="5_r1ls8"]
 [ext_resource type="AudioStream" uid="uid://bi3pdvdmheuds" path="res://audio/sfx/dialogue/Frog/long_croak.wav" id="5_w5qsv"]
 [ext_resource type="Texture2D" uid="uid://chm8yefqnrjo1" path="res://assets/witch/witch_portrait.png" id="7_dopru"]
@@ -114,7 +116,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_p4ra7"]
 resource_name = "main"
-length = 5.0
+length = 4.5
 step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -123,10 +125,10 @@ tracks/0/path = NodePath("../FrogLoc:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.5),
+"times": PackedFloat32Array(0, 3.75),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-204, 666), Vector2(1211, 666)]
+"values": [Vector2(-204, 666), Vector2(721, 666)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -135,7 +137,7 @@ tracks/1/path = NodePath("../FrogLoc/FrogSprite")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 4.5),
+"times": PackedFloat32Array(0, 3.75),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [&"walking"],
@@ -176,7 +178,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1553, 600)]
+"values": [Vector2(1043, 600)]
 }
 
 [sub_resource type="Animation" id="Animation_k4iuo"]
@@ -193,7 +195,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4, 4.25, 4.5, 4.75, 5, 6.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1553, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1347, 600), Vector2(1553, 600)]
+"values": [Vector2(1043, 600), Vector2(817, 600), Vector2(817, 600), Vector2(817, 600), Vector2(817, 600), Vector2(817, 600), Vector2(817, 600), Vector2(817, 600), Vector2(817, 600), Vector2(817, 600), Vector2(817, 600), Vector2(817, 600), Vector2(817, 600), Vector2(817, 600), Vector2(817, 600), Vector2(817, 600), Vector2(1043, 600)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -260,7 +262,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_4bo4p"]
 resource_name = "main"
-length = 5.0
+length = 4.0
 step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -269,10 +271,10 @@ tracks/0/path = NodePath("../WitchLoc:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.5),
+"times": PackedFloat32Array(0, 3.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-216, 659), Vector2(740, 659)]
+"values": [Vector2(-216, 659), Vector2(250, 659)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -281,7 +283,7 @@ tracks/1/path = NodePath("../FrogLoc/FrogSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2.75),
+"times": PackedFloat32Array(1.75),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -387,8 +389,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e7reo")
+StopMusicAtEnd = true
 NextScene = "res://scenes/credits.tscn"
 ElementNodes = [NodePath("Animations/FadeIn"), NodePath("Animations/FrogWalk"), NodePath("Dialogue/Frog1"), NodePath("Dialogue/Princess1"), NodePath("Dialogue/Frog2"), NodePath("Dialogue/Princess2"), NodePath("Dialogue/Frog3"), NodePath("Dialogue/Princess3"), NodePath("Dialogue/Frog4"), NodePath("Dialogue/Princess4"), NodePath("Animations/PrincessKiss"), NodePath("Dialogue/Frog5"), NodePath("Dialogue/Princess5"), NodePath("Animations/WitchWalk"), NodePath("Dialogue/Witch1"), NodePath("Dialogue/Frog6"), NodePath("Dialogue/Witch2"), NodePath("Animations/Transform"), NodePath("Dialogue/Iguana1"), NodePath("Animations/FadeOut")]
+metadata/_edit_lock_ = true
 
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false
@@ -401,7 +405,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Background" type="Control" parent="."]
+[node name="BackroundMountains" type="TextureRect" parent="."]
+modulate = Color(0.75696, 0.76, 0.6688, 1)
+z_index = -100
+layout_mode = 0
+offset_left = -18.0
+offset_top = -316.0
+offset_right = 1940.0
+offset_bottom = 1160.0
+texture = ExtResource("2_7bsjm")
+expand_mode = 1
+
+[node name="Midground" type="Control" parent="."]
 z_index = -10
 layout_mode = 1
 anchors_preset = 15
@@ -410,32 +425,35 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Stripey" type="TextureRect" parent="Background"]
-modulate = Color(0.639216, 0.65098, 0.788235, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -150.0
-offset_right = 1920.0
-offset_bottom = 1631.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_5gnx6")
-stretch_mode = 5
+[node name="Hammock" type="TextureRect" parent="Midground"]
+modulate = Color(0.756863, 0.760784, 0.670588, 1)
+layout_mode = 0
+offset_left = 233.0
+offset_top = -11.0
+offset_right = 1017.0
+offset_bottom = 791.0
+texture = ExtResource("3_gkrek")
+expand_mode = 1
 
-[node name="MossyTree" type="TextureRect" parent="Background"]
-modulate = Color(0.356863, 0.360784, 0.490196, 1)
-layout_mode = 1
-offset_left = 76.0
-offset_top = 260.0
-offset_right = 1076.0
-offset_bottom = 1894.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_d0b8k")
-expand_mode = 3
-stretch_mode = 5
+[node name="Tent" type="TextureRect" parent="Midground"]
+modulate = Color(0.756863, 0.760784, 0.670588, 1)
+layout_mode = 0
+offset_left = 1098.0
+offset_top = 434.0
+offset_right = 1864.0
+offset_bottom = 1012.0
+texture = ExtResource("4_854vo")
+expand_mode = 1
+
+[node name="Lantern" type="TextureRect" parent="Midground"]
+modulate = Color(0.91, 0.91, 0.91, 1)
+layout_mode = 0
+offset_left = 1350.0
+offset_top = 835.0
+offset_right = 1448.0
+offset_bottom = 1025.0
+texture = ExtResource("5_3unq8")
+expand_mode = 1
 
 [node name="Dialogue" type="Control" parent="."]
 z_index = 10
@@ -445,6 +463,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="Frog1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("5_r1ls8")]
 visible = false
@@ -713,9 +732,9 @@ autoplay = "idle"
 [node name="PrincessLoc" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1553.0
+offset_left = 1043.0
 offset_top = 600.0
-offset_right = 1553.0
+offset_right = 1043.0
 offset_bottom = 600.0
 
 [node name="PrincessSprite" type="AnimatedSprite2D" parent="PrincessLoc"]
