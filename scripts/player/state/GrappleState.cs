@@ -48,7 +48,7 @@ public class GrappleState : MovementState
 			Ctx.TongueWeight.ApplyForce(forceDir * logFactor * Ctx.SwingForce * (float)delta);
 		}
 
-		//Ctx.TongueWeight.ApplyForce(Ctx.SwingFollowForce * Ctx.TongueSpring.Displacement * (float)delta);
+		Ctx.TongueWeight.ApplyForce(Ctx.SwingFollowForce * Ctx.TongueSpring.Displacement * (float)delta);
 
 		// Set player velocity to move towards weight
 		Vector2 diff = weightPos - Ctx.GlobalPosition;

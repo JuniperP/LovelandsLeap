@@ -11,7 +11,6 @@ public partial class TongueSpring : DampedSpringJoint2D
 	// Displacement since last physics process
 	public Vector2 Displacement { get; private set; } = Vector2.Zero;
 	// Vars to ensure no rotation issues
-	private Vector2 _adjustedOffset;
 	private float _initialGrapplePlatformRotation = 0f;
 	public RemoteTransform2D Remote;
 
@@ -42,7 +41,7 @@ public partial class TongueSpring : DampedSpringJoint2D
 		{
 			// Setting the new position
 			Vector2 oldPos = GlobalPosition;
-			Vector2 NewPosition = AttachedTo.GlobalPosition - _adjustedOffset;
+			Vector2 NewPosition = Remote.GlobalPosition;
 			Displacement = NewPosition - oldPos;
 		}
 	}
