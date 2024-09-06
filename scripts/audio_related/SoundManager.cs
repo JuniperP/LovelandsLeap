@@ -20,6 +20,8 @@ public enum SFX : byte
 	IntoFrog,
 	UIButton,
 	FlyCatch,
+	HouseDoor,
+	Magic,
 }
 
 public partial class SoundManager : Node
@@ -36,8 +38,9 @@ public partial class SoundManager : Node
 		{SFX.TongueShoot, "tongue_shoot_sfx"},
 		{SFX.TongueHit, "tongue_hit_sfx"},
 		{SFX.UIButton, "ui_button_sfx"},
-		{SFX.FlyCatch, "fly_catch_sfx"}
-
+		{SFX.FlyCatch, "fly_catch_sfx"},
+		{SFX.HouseDoor, "cutscene/house_door_sfx"},
+		{SFX.Magic, "cutscene/magic_sfx"},
 	};
 
 	// Dictionary for comprehensive access to each sfx
