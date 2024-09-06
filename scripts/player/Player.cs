@@ -70,6 +70,7 @@ public partial class Player : CharacterBody2D
 	public TongueProjectile TongueProj;
 	public TongueLine TongueLine;
 	public TongueSpring TongueSpring;
+	public RemoteTransform2D TongueSpringRemote;
 	public RigidBody2D TongueWeight;
 
 	public override void _Ready()

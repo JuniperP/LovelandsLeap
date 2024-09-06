@@ -81,6 +81,7 @@ public class GrappleState : MovementState
 		// Remove all grappling objects
 		Ctx.TongueLine.QueueFree();
 		Ctx.TongueSpring.QueueFree();
+		Ctx.TongueSpringRemote.QueueFree();
 		Ctx.TongueWeight.QueueFree();
 
 		// Change state to walk

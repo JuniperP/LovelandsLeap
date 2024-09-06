@@ -207,6 +207,8 @@ public class WalkState : MovementState
 		Ctx.TongueSpring = Ctx.TongueSpringScene.Instantiate<TongueSpring>();
 		Ctx.TongueSpring.GlobalPosition = Ctx.TongueProj.GlobalPosition;
 		Ctx.TongueSpring.AttachedTo = target;
+		Ctx.TongueSpring.Remote = new RemoteTransform2D();
+		Ctx.TongueSpringRemote = Ctx.TongueSpring.Remote;
 		Ctx.TongueLine.Target = Ctx.TongueSpring;
 
 		// Remove tongue projectile
