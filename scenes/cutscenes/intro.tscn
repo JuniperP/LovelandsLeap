@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://br888scm3xpk"]
+[gd_scene load_steps=22 format=3 uid="uid://br888scm3xpk"]
 
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/back_drops/main_menu.jpg" id="1_1v0w2"]
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_pqwlb"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="5_ck5ta"]
 [ext_resource type="AudioStream" uid="uid://b81w6w82dsxf4" path="res://audio/sfx/dialogue/MC/mc_1_passive_babble_1.wav" id="5_w176a"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/mc_portrait.png" id="6_1deqh"]
+[ext_resource type="AudioStream" uid="uid://b8xpr4umk4wtv" path="res://audio/sfx/cutscene/house_door_sfx.wav" id="8_pngvr"]
 [ext_resource type="AudioStream" uid="uid://rbqw1hh7q1es" path="res://audio/sfx/dialogue/MC/mc_4_angry_babble_1.wav" id="9_15ff6"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="9_anup7"]
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="10_t3rc1"]
@@ -42,7 +43,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_y2puc"]
 resource_name = "main"
-length = 1.25
+length = 5.5
 step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -51,7 +52,7 @@ tracks/0/path = NodePath("HumanLoc/Sprite:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(4.25),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -63,10 +64,27 @@ tracks/1/path = NodePath("HumanLoc/Sprite:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25),
+"times": PackedFloat32Array(4.25, 4.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HouseDoor")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rhlva"]
@@ -241,6 +259,9 @@ libraries = {
 "": SubResource("AnimationLibrary_rhlva")
 }
 script = ExtResource("5_ck5ta")
+
+[node name="HouseDoor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_pngvr")
 
 [node name="HumanLoc" type="Control" parent="."]
 anchors_preset = 0
