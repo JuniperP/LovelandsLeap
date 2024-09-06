@@ -1,17 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://brv2do2v4lh5y"]
 
-[ext_resource type="Script" path="res://scripts/in_level_objects/flies/FlyBehavior.cs" id="1_87t10"]
+[ext_resource type="Script" path="res://scripts/in_level_objects/flies/FlyBehavior.cs" id="1_qs6jg"]
 [ext_resource type="Texture2D" uid="uid://bg5weowrtbydl" path="res://assets/fly_fat.png" id="2_5ggay"]
 [ext_resource type="AudioStream" uid="uid://cpcrqhkb3yla1" path="res://audio/sfx/fly_bzzzz_sfx.wav" id="3_r68av"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgmb8"]
 size = Vector2(100, 100)
 
-[node name="Fly" type="Area2D" node_paths=PackedStringArray("Sprite")]
+[node name="Fly" type="Area2D"]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_87t10")
-Sprite = NodePath("FlyHitBox/FlySprite")
+script = ExtResource("1_qs6jg")
 
 [node name="FlyHitBox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xgmb8")
