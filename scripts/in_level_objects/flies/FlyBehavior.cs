@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class FlyBehavoir : Area2D
+public partial class FlyBehavior : Area2D
 {
 	[Export] public Sprite2D Sprite;
 

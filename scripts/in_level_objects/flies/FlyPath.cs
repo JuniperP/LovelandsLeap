@@ -7,7 +7,7 @@ public partial class FlyPath : Path2D
 
 	// How the path is being followed
 	[Export] public PathFollow2D HowToFollow;
-	[Export] public FlyBehavoir Fly;
+	[Export] public FlyBehavior Fly;
 
 	[ExportGroup("PropertiesOfTheTrack")]
 	[Export] public float TrackSpeed = 5;
