@@ -2,16 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://bfh4b4yy8ol8a" path="res://assets/background/solo_blue_twin.png" id="1_fdb1y"]
 
-[node name="GreenTree" type="ParallaxBackground"]
+[node name="DeepBlueTree" type="ParallaxBackground"]
 layer = 0
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+modulate = Color(0.299316, 0.329727, 0.394365, 1)
 texture_filter = 1
 motion_scale = Vector2(1.05, 1.05)
 
 [node name="BigBlueTree" type="Sprite2D" parent="ParallaxLayer"]
-modulate = Color(0.314166, 0.515761, 0.248263, 1)
+modulate = Color(1, 0.270588, 1, 1)
 light_mask = 0
 visibility_layer = 2
 z_index = 50
