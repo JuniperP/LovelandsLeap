@@ -262,6 +262,7 @@ script = ExtResource("5_ck5ta")
 
 [node name="HouseDoor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_pngvr")
+bus = &"Sound Effects"
 
 [node name="HumanLoc" type="Control" parent="."]
 anchors_preset = 0
