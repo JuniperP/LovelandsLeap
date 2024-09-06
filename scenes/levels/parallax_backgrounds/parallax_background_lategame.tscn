@@ -111,14 +111,6 @@ texture = ExtResource("7_r4g61")
 flip_h = true
 flip_v = true
 
-[node name="MossyTree" type="Sprite2D" parent="Mid1Layer"]
-modulate = Color(0, 1, 1, 1)
-light_mask = 4
-visibility_layer = 4
-position = Vector2(1502, 44)
-texture = ExtResource("4_sy13f")
-flip_h = true
-
 [node name="SoloBlueTwinTree" type="Sprite2D" parent="Mid1Layer"]
 modulate = Color(0, 0.992157, 1, 1)
 light_mask = 8
@@ -128,12 +120,20 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("3_o7y4g")
 
 [node name="SmallBlueTree2" type="Sprite2D" parent="Mid1Layer"]
-modulate = Color(0, 1, 1, 1)
+modulate = Color(2.5028e-06, 0.669723, 0.669723, 1)
 light_mask = 8
 visibility_layer = 8
-position = Vector2(969, 129)
+position = Vector2(1316, 79)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("8_34rem")
+flip_h = true
+
+[node name="MossyTree" type="Sprite2D" parent="Mid1Layer"]
+modulate = Color(0, 1, 1, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(1502, 44)
+texture = ExtResource("4_sy13f")
 flip_h = true
 
 [node name="Mid1Layer2" type="ParallaxLayer" parent="."]
@@ -153,14 +153,6 @@ texture = ExtResource("7_r4g61")
 flip_h = true
 flip_v = true
 
-[node name="MossyTree" type="Sprite2D" parent="Mid1Layer2"]
-modulate = Color(0, 1, 1, 1)
-light_mask = 4
-visibility_layer = 4
-position = Vector2(1502, 44)
-texture = ExtResource("4_sy13f")
-flip_h = true
-
 [node name="SoloBlueTwinTree" type="Sprite2D" parent="Mid1Layer2"]
 modulate = Color(0, 0.992157, 1, 1)
 light_mask = 8
@@ -170,16 +162,23 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("3_o7y4g")
 
 [node name="SmallBlueTree2" type="Sprite2D" parent="Mid1Layer2"]
-modulate = Color(0, 1, 1, 1)
+modulate = Color(2.5028e-06, 0.669723, 0.669723, 1)
 light_mask = 8
 visibility_layer = 8
-position = Vector2(969, 129)
+position = Vector2(1316, 79)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("8_34rem")
 flip_h = true
 
+[node name="MossyTree" type="Sprite2D" parent="Mid1Layer2"]
+modulate = Color(0, 1, 1, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(1502, 44)
+texture = ExtResource("4_sy13f")
+flip_h = true
+
 [node name="Mid2Layer" type="ParallaxLayer" parent="."]
-visible = false
 modulate = Color(0.313726, 0.345098, 0.411765, 1)
 motion_scale = Vector2(0.15, 0.05)
 motion_offset = Vector2(960, 540)
