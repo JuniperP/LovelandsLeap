@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://clnx8ma77b6h3"]
+[gd_scene load_steps=12 format=3 uid="uid://clnx8ma77b6h3"]
 
 [ext_resource type="PackedScene" uid="uid://ccc6gfv7e6o6w" path="res://scenes/player/player.tscn" id="1_1djk0"]
 [ext_resource type="Script" path="res://scripts/Camera.cs" id="1_iamro"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://tig2ub6l5vjg" path="res://scenes/ui/live_frog_reaction.tscn" id="5_k7no0"]
 [ext_resource type="Shader" path="res://assets/shaders/color_adjustment.gdshader" id="7_3layg"]
 [ext_resource type="TileSet" uid="uid://wt1ltmigo2ju" path="res://assets/tilemap.tres" id="8_60br4"]
+[ext_resource type="Script" path="res://scripts/in_level_objects/EnvironmentalShader.cs" id="8_cyucn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pdmyb"]
 shader = ExtResource("7_3layg")
@@ -73,13 +74,14 @@ layout_mode = 1
 
 [node name="EnvironmentShading" type="CanvasLayer" parent="Camera2D"]
 
-[node name="ColorRect" type="ColorRect" parent="Camera2D/EnvironmentShading"]
+[node name="Shader" type="ColorRect" parent="Camera2D/EnvironmentShading"]
 material = SubResource("ShaderMaterial_pdmyb")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("8_cyucn")
 
 [node name="Player" parent="." instance=ExtResource("1_1djk0")]
 z_index = 10
