@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://cs5cgiht6dlvx"]
+[gd_scene load_steps=25 format=3 uid="uid://cs5cgiht6dlvx"]
 
 [ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_backgrounds/parallax_background_midgame.tscn" id="1_1udgk"]
+[ext_resource type="PackedScene" uid="uid://bxeghwuww2dvu" path="res://scenes/in_level_objects/princess_update.tscn" id="2_6va8i"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="2_di4iq"]
 [ext_resource type="PackedScene" uid="uid://dkl255nq0rf0t" path="res://scenes/in_level_objects/platform_paths/circle_moving_platform_track.tscn" id="3_5qvut"]
 [ext_resource type="PackedScene" uid="uid://dymkmt6rmafx8" path="res://scenes/in_level_objects/platforms/platform.tscn" id="4_arq8p"]
@@ -100,6 +101,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ParallaxBackgroundMidgame" parent="." instance=ExtResource("1_1udgk")]
+
+[node name="PrincessUpdate" parent="." instance=ExtResource("2_6va8i")]
+PlayerReached = 1
 
 [node name="Room" parent="." instance=ExtResource("2_di4iq")]
 
@@ -233,6 +237,7 @@ StaysOn = true
 position = Vector2(19850, -550)
 _sendsTo = 7
 
+[connection signal="FadedOut" from="Room/Camera2D/CanvasLayer/Control/LoadingScreen" to="PrincessUpdate" method="PlayPrincessUpdate"]
 [connection signal="ButtonPressed" from="MovingPlatformTrack/TrapPlatform" to="MovingPlatformTrack" method="TogglePlatform"]
 [connection signal="ButtonPressed" from="InLevelButton" to="MovingPlatformTrack6" method="TogglePlatform"]
 [connection signal="ButtonPressed" from="InLevelButton2" to="MovingPlatformTrack7" method="TogglePlatform"]
