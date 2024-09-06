@@ -7,12 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="3_6sffn"]
 [ext_resource type="PackedScene" uid="uid://2jyl564ee5cu" path="res://scenes/ui/speed_run_timer.tscn" id="4_cf0s8"]
 [ext_resource type="PackedScene" uid="uid://tig2ub6l5vjg" path="res://scenes/ui/live_frog_reaction.tscn" id="5_k7no0"]
-[ext_resource type="Shader" path="res://assets/shaders/color_adjustment.gdshader" id="7_3layg"]
+[ext_resource type="Shader" path="res://assets/shaders/hsv.gdshader" id="7_slxp7"]
 [ext_resource type="TileSet" uid="uid://wt1ltmigo2ju" path="res://assets/tilemap.tres" id="8_60br4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pdmyb"]
-shader = ExtResource("7_3layg")
-shader_parameter/tint = Color(1, 1, 1, 1)
+shader = ExtResource("7_slxp7")
 shader_parameter/h = 1.0
 shader_parameter/s = 1.0
 shader_parameter/v = 1.0

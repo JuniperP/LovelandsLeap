@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfkuaivbh6jfo"]
+
+[ext_resource type="Texture2D" uid="uid://xcx7gsj15bi8" path="res://assets/background/greentreetrunk.png" id="1_btii8"]
+[ext_resource type="Texture2D" uid="uid://cp8ptq4m7shps" path="res://assets/background/treetrunkgreenfull.png" id="2_7q6vw"]
+
+[node name="RootsClump" type="ParallaxBackground"]
+layer = 0
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+modulate = Color(0.352511, 0.386174, 0.457652, 1)
+texture_filter = 1
+motion_scale = Vector2(1.05, 1.05)
+
+[node name="Bush1" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0, 1, 0, 1)
+light_mask = 0
+visibility_layer = 2
+z_index = 50
+texture_filter = 1
+position = Vector2(226, -819)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("1_btii8")
+flip_h = true
+flip_v = true
+
+[node name="Bush2" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0, 1, 0, 1)
+light_mask = 0
+visibility_layer = 2
+z_index = 50
+texture_filter = 1
+position = Vector2(1006, 1976)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_7q6vw")
+
+[node name="Bush3" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0, 1, 0, 1)
+light_mask = 0
+visibility_layer = 2
+z_index = 50
+texture_filter = 1
+position = Vector2(382, 2150)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("1_btii8")
+flip_h = true
+
+[node name="Bush5" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0, 1, 0, 1)
+light_mask = 0
+visibility_layer = 2
+z_index = 50
+texture_filter = 1
+position = Vector2(1357, 2085)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("1_btii8")
+
+[node name="Bush4" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0, 1, 0, 1)
+light_mask = 0
+visibility_layer = 2
+z_index = 50
+texture_filter = 1
+position = Vector2(1168, -670)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_7q6vw")
+flip_h = true
+flip_v = true
+
+[node name="Bush6" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0, 1, 0, 1)
+light_mask = 0
+visibility_layer = 2
+z_index = 50
+texture_filter = 1
+position = Vector2(866, -950)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_7q6vw")
+flip_v = true
