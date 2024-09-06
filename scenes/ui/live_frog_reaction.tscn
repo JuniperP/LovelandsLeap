@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frog_portrait.png" id="1_8p4nj"]
 [ext_resource type="Script" path="res://scripts/ui/LiveFrogReaction.cs" id="1_at6ic"]
-[ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backround_stripey.jpg" id="2_15r21"]
+[ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/back_drops/backround_stripey.jpg" id="2_15r21"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4rym"]
 bg_color = Color(0, 0, 0, 1)

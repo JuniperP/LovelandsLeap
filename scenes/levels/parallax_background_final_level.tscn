@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bdm1uwfekp5iw"]
 
-[ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backround_stripey.jpg" id="1_j5jc0"]
+[ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/back_drops/backround_stripey.jpg" id="1_j5jc0"]
 [ext_resource type="Texture2D" uid="uid://b0lhve5bvnrqn" path="res://assets/background/big_tree.png" id="2_uxg2k"]
 
 [node name="ParallaxBackgroundFinalLevel" type="ParallaxBackground"]

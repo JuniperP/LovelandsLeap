@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bbywb3ahikweu"]
 
-[ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/backround_stripey.jpg" id="1_cums7"]
+[ext_resource type="Texture2D" uid="uid://160txivyubme" path="res://assets/background/back_drops/backround_stripey.jpg" id="1_cums7"]
 [ext_resource type="Texture2D" uid="uid://cms8h7iumo8vh" path="res://assets/background/simple_yellow_tree.png" id="2_tptp3"]
 [ext_resource type="Texture2D" uid="uid://ysmgbmc0yui1" path="res://assets/background/mossy_tree.png" id="3_53xa7"]
 [ext_resource type="Texture2D" uid="uid://b0lhve5bvnrqn" path="res://assets/background/big_tree.png" id="4_gq5av"]
@@ -52,33 +52,6 @@ visibility_layer = 8
 position = Vector2(13, -8)
 texture = ExtResource("4_gq5av")
 
-[node name="FarLayer2" type="ParallaxLayer" parent="."]
-modulate = Color(0.118547, 0.119288, 0.179, 1)
-position = Vector2(3000, 0)
-motion_scale = Vector2(0.05, 0.01)
-motion_offset = Vector2(960, 540)
-motion_mirroring = Vector2(6000, 0)
-
-[node name="SimpleYellowTree" type="Sprite2D" parent="FarLayer2"]
-light_mask = 8
-visibility_layer = 8
-position = Vector2(678, 7)
-scale = Vector2(0.5215, 0.5215)
-texture = ExtResource("2_tptp3")
-
-[node name="MossyTree" type="Sprite2D" parent="FarLayer2"]
-light_mask = 8
-visibility_layer = 8
-position = Vector2(1417, -16)
-texture = ExtResource("3_53xa7")
-
-[node name="BigTree" type="Sprite2D" parent="FarLayer2"]
-modulate = Color(1, 1, 0, 1)
-light_mask = 8
-visibility_layer = 8
-position = Vector2(13, -8)
-texture = ExtResource("4_gq5av")
-
 [node name="Mid1Layer" type="ParallaxLayer" parent="."]
 modulate = Color(0.17674, 0.198095, 0.245069, 1)
 motion_scale = Vector2(0.1, 0.05)
@@ -107,35 +80,6 @@ scale = Vector2(1.1, 1.1)
 texture = ExtResource("7_v1n3u")
 flip_h = true
 
-[node name="Mid1Layer2" type="ParallaxLayer" parent="."]
-modulate = Color(0.17674, 0.198095, 0.245069, 1)
-position = Vector2(4000, 0)
-motion_scale = Vector2(0.1, 0.05)
-motion_offset = Vector2(960, 540)
-motion_mirroring = Vector2(8000, 0)
-
-[node name="NiceTree" type="Sprite2D" parent="Mid1Layer2"]
-modulate = Color(0.75209, 0.885223, 0.584532, 1)
-light_mask = 4
-visibility_layer = 4
-position = Vector2(-332, 45)
-texture = ExtResource("5_tlsxs")
-
-[node name="Leafblob1" type="Sprite2D" parent="Mid1Layer2"]
-light_mask = 4
-visibility_layer = 4
-position = Vector2(509, 434)
-texture = ExtResource("6_mdiux")
-
-[node name="TwinTrees" type="Sprite2D" parent="Mid1Layer2"]
-modulate = Color(1, 1, 0, 1)
-light_mask = 4
-visibility_layer = 4
-position = Vector2(1600, 0)
-scale = Vector2(1.1, 1.1)
-texture = ExtResource("7_v1n3u")
-flip_h = true
-
 [node name="Mid2Layer" type="ParallaxLayer" parent="."]
 modulate = Color(0.313905, 0.344546, 0.410855, 1)
 motion_scale = Vector2(0.15, 0.05)
@@ -155,33 +99,6 @@ position = Vector2(1315, 387)
 texture = ExtResource("9_l5wtp")
 
 [node name="BigBlueTree" type="Sprite2D" parent="Mid2Layer"]
-modulate = Color(0.517647, 1, 0.435294, 1)
-light_mask = 4
-visibility_layer = 4
-position = Vector2(0, 150)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("10_m45i8")
-
-[node name="Mid2Layer2" type="ParallaxLayer" parent="."]
-modulate = Color(0.313905, 0.344546, 0.410855, 1)
-position = Vector2(3000, 0)
-motion_scale = Vector2(0.15, 0.05)
-motion_offset = Vector2(960, 540)
-motion_mirroring = Vector2(6000, 0)
-
-[node name="Leafblob2" type="Sprite2D" parent="Mid2Layer2"]
-light_mask = 4
-visibility_layer = 4
-position = Vector2(-734, 399)
-texture = ExtResource("8_c5yfh")
-
-[node name="Leafblob3" type="Sprite2D" parent="Mid2Layer2"]
-light_mask = 4
-visibility_layer = 4
-position = Vector2(1315, 387)
-texture = ExtResource("9_l5wtp")
-
-[node name="BigBlueTree" type="Sprite2D" parent="Mid2Layer2"]
 modulate = Color(0.517647, 1, 0.435294, 1)
 light_mask = 4
 visibility_layer = 4
