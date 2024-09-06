@@ -10,9 +10,11 @@ public partial class TongueSpring : DampedSpringJoint2D
 	public Node2D AttachedTo;
 	// Displacement since last physics process
 	public Vector2 Displacement { get; private set; } = Vector2.Zero;
+	private Vector2 _oldPosition;
 	// Vars to ensure no rotation issues
 	private float _initialGrapplePlatformRotation = 0f;
 	public RemoteTransform2D Remote;
+	
 
 
 	public override void _Ready()
@@ -30,6 +32,7 @@ public partial class TongueSpring : DampedSpringJoint2D
 			Remote.RemotePath = GetPath();
 			AttachedTo.AddChild(Remote);
 			Remote.GlobalPosition = GlobalPosition;
+			_oldPosition = GlobalPosition;
 		}
 
 	}
@@ -40,9 +43,8 @@ public partial class TongueSpring : DampedSpringJoint2D
 		if (AttachedTo.IsValid() && AttachedTo is not TileMap)
 		{
 			// Setting the new position
-			Vector2 oldPos = GlobalPosition;
-			Vector2 NewPosition = Remote.GlobalPosition;
-			Displacement = NewPosition - oldPos;
+			Displacement = GlobalPosition - _oldPosition;
+			_oldPosition = GlobalPosition;
 		}
 	}
 }
