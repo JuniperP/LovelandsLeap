@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://d1vin50wj27p"]
 
 [ext_resource type="PackedScene" uid="uid://dpted5etiwgyp" path="res://scenes/in_level_objects/decoration_parallax/bush_bundle.tscn" id="1_cjq36"]
-[ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background_midgame.tscn" id="1_rsrjh"]
+[ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_backgrounds/parallax_background_midgame.tscn" id="1_rsrjh"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="2_d3ma6"]
 [ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/platform_paths/moving_platform_track.tscn" id="3_gqy4c"]
 [ext_resource type="PackedScene" uid="uid://c75w8ita6k4k" path="res://scenes/in_level_objects/platforms/button_platforms/big_button_platform.tscn" id="4_l0tmr"]

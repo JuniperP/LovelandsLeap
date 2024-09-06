@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://cj1jihpsiscsc"]
 
 [ext_resource type="PackedScene" uid="uid://qtb311seicd8" path="res://scenes/in_level_objects/decoration_parallax/mossy_green_tree.tscn" id="1_ey6ko"]
-[ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background_midgame.tscn" id="1_r7lr8"]
+[ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_backgrounds/parallax_background_midgame.tscn" id="1_r7lr8"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="2_mvic7"]
 [ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/platform_paths/moving_platform_track.tscn" id="3_5sglk"]
 [ext_resource type="PackedScene" uid="uid://cs66fauscvr67" path="res://scenes/in_level_objects/in_level_button.tscn" id="3_wnows"]

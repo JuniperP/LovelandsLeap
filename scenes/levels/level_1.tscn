@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgsucys0hu2xn"]
 
-[ext_resource type="PackedScene" uid="uid://bbywb3ahikweu" path="res://scenes/levels/parallax_background_midgame.tscn" id="1_u3dt8"]
+[ext_resource type="PackedScene" uid="uid://datdp4bedwrf4" path="res://scenes/levels/parallax_backgrounds/parallax_background_earlygame.tscn" id="1_58lc1"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="3_7eaaa"]
 [ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="3_ae4l5"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="4_6pusj"]
-[ext_resource type="PackedScene" uid="uid://cx851gyg67ibt" path="res://scenes/in_level_objects/decoration_parallax/green_tree.tscn" id="5_y1bwk"]
+[ext_resource type="PackedScene" uid="uid://cx851gyg67ibt" path="res://scenes/in_level_objects/decoration_parallax/deep_blue_tree.tscn" id="5_y1bwk"]
 
 [node name="Level1" type="Control"]
 layout_mode = 3
@@ -14,11 +14,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ParallaxBackgroundEarlygame" parent="." instance=ExtResource("1_58lc1")]
+
 [node name="GreenTree" parent="." instance=ExtResource("5_y1bwk")]
 offset = Vector2(7400, -400)
 transform = Transform2D(1, 0, 0, 1, 7400, -400)
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("1_u3dt8")]
 
 [node name="Room" parent="." instance=ExtResource("3_7eaaa")]
 

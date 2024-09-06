@@ -1,0 +1,194 @@
+[gd_scene load_steps=8 format=3 uid="uid://datdp4bedwrf4"]
+
+[ext_resource type="Texture2D" uid="uid://bqfvtl577m65s" path="res://assets/background/back_drops/backround_clouds_blue_yellow.jpg" id="1_jablo"]
+[ext_resource type="Texture2D" uid="uid://5wsnb6pe0l6l" path="res://assets/background/twin_trees.png" id="2_u8sjk"]
+[ext_resource type="Texture2D" uid="uid://cms8h7iumo8vh" path="res://assets/background/simple_yellow_tree.png" id="4_232dq"]
+[ext_resource type="Texture2D" uid="uid://bl4b0bjf7ccb2" path="res://assets/background/treetrunkbluesmooth.png" id="5_guif7"]
+[ext_resource type="Texture2D" uid="uid://b6u07hdhj1le8" path="res://assets/background/treetrunkblue.png" id="6_bjgov"]
+[ext_resource type="Texture2D" uid="uid://dj5xxexqaiajo" path="res://assets/background/treetrunkgreenyellow.png" id="6_hmtf3"]
+[ext_resource type="Texture2D" uid="uid://bbt06fq84gl2h" path="res://assets/background/leaf_blob_1.png" id="7_3c730"]
+
+[node name="ParallaxBackgroundEarlygame" type="ParallaxBackground"]
+scroll_ignore_camera_zoom = true
+
+[node name="StillLayer" type="ParallaxLayer" parent="."]
+modulate = Color(0.6399, 0.652408, 0.79, 1)
+motion_scale = Vector2(0, 0)
+motion_offset = Vector2(960, 540)
+
+[node name="BG" type="Sprite2D" parent="StillLayer"]
+light_mask = 8
+visibility_layer = 8
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_jablo")
+
+[node name="FarLayer" type="ParallaxLayer" parent="."]
+modulate = Color(0.118547, 0.119288, 0.179, 1)
+motion_scale = Vector2(0.05, 0.01)
+motion_offset = Vector2(960, 540)
+motion_mirroring = Vector2(6000, 0)
+
+[node name="BackTwins" type="Sprite2D" parent="FarLayer"]
+modulate = Color(0.980392, 0, 1, 1)
+light_mask = 8
+visibility_layer = 8
+position = Vector2(380, -5)
+texture = ExtResource("2_u8sjk")
+
+[node name="FarLayer2" type="ParallaxLayer" parent="."]
+modulate = Color(0.118547, 0.119288, 0.179, 1)
+position = Vector2(3000, 0)
+motion_scale = Vector2(0.05, 0.01)
+motion_offset = Vector2(960, 540)
+motion_mirroring = Vector2(6000, 0)
+
+[node name="BackTwins" type="Sprite2D" parent="FarLayer2"]
+modulate = Color(0.980392, 0, 1, 1)
+light_mask = 8
+visibility_layer = 8
+position = Vector2(380, -5)
+texture = ExtResource("2_u8sjk")
+
+[node name="Mid1Layer" type="ParallaxLayer" parent="."]
+modulate = Color(0.17674, 0.198095, 0.245069, 1)
+motion_scale = Vector2(0.1, 0.05)
+motion_offset = Vector2(960, 540)
+motion_mirroring = Vector2(8000, 0)
+
+[node name="Bluept1" type="Sprite2D" parent="Mid1Layer"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-540, 5)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("6_bjgov")
+
+[node name="Bluept2" type="Sprite2D" parent="Mid1Layer"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-260, 24)
+rotation = 0.37001
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_guif7")
+flip_h = true
+
+[node name="OrangeTree" type="Sprite2D" parent="Mid1Layer"]
+modulate = Color(1, 0.27451, 0, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(671, 79)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_232dq")
+
+[node name="Mid1Layer2" type="ParallaxLayer" parent="."]
+modulate = Color(0.17674, 0.198095, 0.245069, 1)
+position = Vector2(4000, 0)
+motion_scale = Vector2(0.1, 0.05)
+motion_offset = Vector2(960, 540)
+motion_mirroring = Vector2(8000, 0)
+
+[node name="Bluept1" type="Sprite2D" parent="Mid1Layer2"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-540, 5)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("6_bjgov")
+
+[node name="Bluept2" type="Sprite2D" parent="Mid1Layer2"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-260, 24)
+rotation = 0.37001
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_guif7")
+flip_h = true
+
+[node name="OrangeTree" type="Sprite2D" parent="Mid1Layer2"]
+modulate = Color(1, 0.27451, 0, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(671, 79)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_232dq")
+
+[node name="Mid2Layer" type="ParallaxLayer" parent="."]
+modulate = Color(0.397057, 0.431978, 0.507401, 1)
+motion_scale = Vector2(0.15, 0.05)
+motion_offset = Vector2(960, 540)
+motion_mirroring = Vector2(6000, 0)
+
+[node name="OrangeTree" type="Sprite2D" parent="Mid2Layer"]
+modulate = Color(1, 0.498039, 1, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(180, 146)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("4_232dq")
+flip_h = true
+
+[node name="SunsetTree" type="Sprite2D" parent="Mid2Layer"]
+modulate = Color(1, 0.32549, 0.482353, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(1623, 179)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("6_hmtf3")
+
+[node name="Bush1" type="Sprite2D" parent="Mid2Layer"]
+modulate = Color(1, 0.235294, 0, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-434, 445)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_3c730")
+
+[node name="Bush2" type="Sprite2D" parent="Mid2Layer"]
+modulate = Color(1, 0.235294, 0, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-710, 277)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_3c730")
+flip_h = true
+flip_v = true
+
+[node name="Mid2Layer2" type="ParallaxLayer" parent="."]
+modulate = Color(0.397057, 0.431978, 0.507401, 1)
+position = Vector2(3000, 0)
+motion_scale = Vector2(0.15, 0.05)
+motion_offset = Vector2(960, 540)
+motion_mirroring = Vector2(6000, 0)
+
+[node name="OrangeTree" type="Sprite2D" parent="Mid2Layer2"]
+modulate = Color(1, 0.498039, 1, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(180, 146)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("4_232dq")
+flip_h = true
+
+[node name="SunsetTree" type="Sprite2D" parent="Mid2Layer2"]
+modulate = Color(1, 0.32549, 0.482353, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(1623, 179)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("6_hmtf3")
+
+[node name="Bush1" type="Sprite2D" parent="Mid2Layer2"]
+modulate = Color(1, 0.235294, 0, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-434, 445)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_3c730")
+
+[node name="Bush2" type="Sprite2D" parent="Mid2Layer2"]
+modulate = Color(1, 0.235294, 0, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-710, 277)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_3c730")
+flip_h = true
+flip_v = true
