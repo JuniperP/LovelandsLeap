@@ -2,9 +2,9 @@ shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
 
-uniform float h: hint_range(0,1) = 1;
-uniform float s: hint_range(0,1) = 1;
-uniform float v: hint_range(0,1) = 1;
+uniform float h: hint_range(0,2) = 1;
+uniform float s: hint_range(0,2) = 1;
+uniform float v: hint_range(0,2) = 1;
 
 vec3 rgb2hsv(vec3 c) {
     vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
