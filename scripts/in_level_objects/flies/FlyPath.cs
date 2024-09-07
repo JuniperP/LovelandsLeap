@@ -46,7 +46,11 @@ public partial class FlyPath : Path2D
 
 	private void ToggleDirection()
 	{
-		_goFoward = !_goFoward;
-		Fly.FlipFly();
+		if (IsInstanceValid(Fly))
+		{
+			_goFoward = !_goFoward;
+			Fly.FlipFly();
+		}
+
 	}
 }

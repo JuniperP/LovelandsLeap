@@ -7,9 +7,9 @@
 resource_local_to_scene = true
 bake_interval = 0.01
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 1, 0, 0, 0, 0, 400, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 400, 0)
 }
-point_count = 3
+point_count = 2
 
 [node name="FlyPath" type="Path2D" node_paths=PackedStringArray("HowToFollow", "Fly")]
 curve = SubResource("Curve2D_0vgy8")
@@ -18,6 +18,5 @@ HowToFollow = NodePath("FollowsPath")
 Fly = NodePath("FollowsPath/Fly")
 
 [node name="FollowsPath" type="PathFollow2D" parent="."]
-rotation = 0.00499996
 
 [node name="Fly" parent="FollowsPath" instance=ExtResource("1_n5wqg")]
