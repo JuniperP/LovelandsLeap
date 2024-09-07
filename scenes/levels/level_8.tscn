@@ -366,6 +366,7 @@ curve = SubResource("Curve2D_i2gc0")
 
 [node name="FadeTransition" parent="." instance=ExtResource("17_ht5ul")]
 position = Vector2(22350, -1850)
+_sendsTo = 10
 
 [node name="TheMaze" type="Node2D" parent="."]
 position = Vector2(18000, -2000)
@@ -530,9 +531,9 @@ TimeToCompleteTrack = 1.5
 [connection signal="ButtonPressed" from="InLevelButton" to="TheMaze/MovingPlatformTrack10" method="TogglePlatform"]
 [connection signal="ButtonPressed" from="InLevelButton" to="TheMaze/MovingPlatformTrack19" method="TogglePlatform"]
 [connection signal="ButtonPressed" from="InLevelButton" to="TheMaze/MovingPlatformTrack20" method="TogglePlatform"]
-[connection signal="ButtonPressed" from="InLevelButton" to="TheMaze/MovingPlatformTrack18" method="TogglePlatform"]
 [connection signal="ButtonPressed" from="InLevelButton" to="TheMaze/MovingPlatformTrack21" method="TogglePlatform"]
 [connection signal="ButtonPressed" from="InLevelButton" to="TheMaze/MovingPlatformTrack22" method="TogglePlatform"]
 [connection signal="ButtonPressed" from="InLevelButton" to="TheMaze/MovingPlatformTrack23" method="TogglePlatform"]
+[connection signal="ButtonPressed" from="InLevelButton" to="TheMaze/MovingPlatformTrack18" method="TogglePlatform"]
 
 [editable path="Room"]
