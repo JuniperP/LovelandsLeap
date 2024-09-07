@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://js6dadsijsgm"]
+[gd_scene load_steps=42 format=3 uid="uid://js6dadsijsgm"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_g5qut"]
 [ext_resource type="Texture2D" uid="uid://bnd06vdkw4tuw" path="res://assets/background/back_drops/backround_mountains.jpg" id="2_ufswb"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://g1gxlg3as0ec" path="res://audio/sfx/dialogue/princess/princess_12_sigh_3.wav" id="14_5nf6g"]
 [ext_resource type="AudioStream" uid="uid://dl4tmk5obi7m7" path="res://audio/sfx/dialogue/Witch/witch_1_reEhe_hahahe_hewuugh.wav" id="15_5jhnp"]
 [ext_resource type="Texture2D" uid="uid://chm8yefqnrjo1" path="res://assets/witch/witch_portrait.png" id="16_fc8jf"]
+[ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/mc_portrait.png" id="17_1fo8t"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="20_0536g"]
 [ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="21_r7skt"]
 [ext_resource type="SpriteFrames" uid="uid://hq7btpb76h0j" path="res://resources/sprite_frames/princess.tres" id="22_q7rk8"]
@@ -300,24 +301,10 @@ step = 0.25
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../FrogLoc/FrogSprite")
+tracks/0/path = NodePath("../WitchMagic")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [&"transforming"],
-"method": &"play"
-}]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../WitchMagic")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 4.5),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
@@ -328,9 +315,37 @@ tracks/1/keys = {
 "method": &"stop"
 }]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FrogLoc/FrogSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_vkap3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FrogLoc/FrogSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sygyk"]
 _data = {
+"RESET": SubResource("Animation_vkap3"),
 "main": SubResource("Animation_ymhv5")
 }
 
@@ -406,7 +421,7 @@ grow_vertical = 2
 script = ExtResource("1_g5qut")
 StopMusicAtEnd = true
 NextScene = "res://scenes/credits.tscn"
-ElementNodes = [NodePath("Animations/FadeIn"), NodePath("Animations/FrogWalk"), NodePath("Dialogue/Frog1"), NodePath("Dialogue/Princess1"), NodePath("Dialogue/Frog2"), NodePath("Dialogue/Princess2"), NodePath("Dialogue/Frog3"), NodePath("Dialogue/Princess3"), NodePath("Dialogue/Frog4"), NodePath("Dialogue/Princess4"), NodePath("Animations/PrincessKiss"), NodePath("Dialogue/Frog5"), NodePath("Dialogue/Princess5"), NodePath("Animations/WitchWalk"), NodePath("Dialogue/Witch1"), NodePath("Animations/Transform"), NodePath("Animations/FadeOut")]
+ElementNodes = [NodePath("Animations/FadeIn"), NodePath("Animations/FrogWalk"), NodePath("Dialogue/Frog1"), NodePath("Dialogue/Princess1"), NodePath("Dialogue/Frog2"), NodePath("Dialogue/Princess2"), NodePath("Dialogue/Frog3"), NodePath("Dialogue/Princess3"), NodePath("Dialogue/Frog4"), NodePath("Dialogue/Princess4"), NodePath("Animations/PrincessKiss"), NodePath("Dialogue/Frog5"), NodePath("Dialogue/Princess5"), NodePath("Animations/WitchWalk"), NodePath("Dialogue/Witch1"), NodePath("Dialogue/Frog6"), NodePath("Animations/Transform"), NodePath("Animations/FadeOut")]
 metadata/_edit_lock_ = true
 
 [node name="Overlay" type="ColorRect" parent="."]
@@ -648,6 +663,44 @@ text = "HaHA! Got you! She’s not a real princess, she’s just a girl who dres
 autowrap_mode = 2
 clip_text = false
 
+[node name="Frog6" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("6_l8cxm")]
+visible = false
+layout_mode = 1
+TalkingAudio = ExtResource("11_1ef2e")
+Sprite = NodePath("../../FrogLoc/FrogSprite")
+TalkingAnimation = "croak"
+
+[node name="ProfilePicture" parent="Dialogue/Frog6/BackBox" index="1"]
+texture = ExtResource("8_356j0")
+
+[node name="Text" parent="Dialogue/Frog6/BackBox" index="2"]
+text = "*CROAK.*"
+
+[node name="Witch2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("6_l8cxm")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../WitchLoc/WitchSprite")
+
+[node name="Background" parent="Dialogue/Witch2/BackBox" index="0"]
+modulate = Color(0.3978, 0.78, 0.4615, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Witch2/BackBox" index="1"]
+texture = ExtResource("16_fc8jf")
+
+[node name="Text" parent="Dialogue/Witch2/BackBox" index="2"]
+text = "Maybe I went too far... Alright, go on then."
+
+[node name="Human1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("6_l8cxm")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("")
+
+[node name="ProfilePicture" parent="Dialogue/Human1/BackBox" index="1"]
+texture = ExtResource("17_1fo8t")
+
+[node name="Text" parent="Dialogue/Human1/BackBox" index="2"]
+text = "Um… I- I gotta go!"
+
 [node name="Animations" type="Node" parent="."]
 
 [node name="FadeIn" type="AnimationPlayer" parent="Animations"]
@@ -751,3 +804,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 [editable path="Dialogue/Frog5"]
 [editable path="Dialogue/Princess5"]
 [editable path="Dialogue/Witch1"]
+[editable path="Dialogue/Frog6"]
+[editable path="Dialogue/Witch2"]
+[editable path="Dialogue/Human1"]
