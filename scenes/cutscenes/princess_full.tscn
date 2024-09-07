@@ -1,0 +1,513 @@
+[gd_scene load_steps=29 format=3 uid="uid://ba77i7lj31gmr"]
+
+[ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_njx5k"]
+[ext_resource type="Texture2D" uid="uid://bnd06vdkw4tuw" path="res://assets/background/back_drops/backround_mountains.jpg" id="2_diftw"]
+[ext_resource type="Texture2D" uid="uid://drgongiwty04g" path="res://assets/background/supplemental/hammock.png" id="3_8tu88"]
+[ext_resource type="Texture2D" uid="uid://c2tt6q64474ke" path="res://assets/background/supplemental/tent.png" id="4_gurqn"]
+[ext_resource type="Texture2D" uid="uid://bdjc2npk7aqnt" path="res://assets/background/supplemental/lantern.png" id="5_gowd8"]
+[ext_resource type="PackedScene" uid="uid://dxyctaqoyr6tj" path="res://scenes/ui/dialogue_box.tscn" id="6_ocgq8"]
+[ext_resource type="AudioStream" uid="uid://bi3pdvdmheuds" path="res://audio/sfx/dialogue/Frog/long_croak.wav" id="7_h6joe"]
+[ext_resource type="Texture2D" uid="uid://c4c0kx425qyx1" path="res://assets/frog/frog_portrait.png" id="8_gwfox"]
+[ext_resource type="AudioStream" uid="uid://dyp7s34uduydp" path="res://audio/sfx/dialogue/princess/princess_8_talking_4.wav" id="9_s0oog"]
+[ext_resource type="Texture2D" uid="uid://drv8g6tx6yeyf" path="res://assets/princess/princess_portrait.png" id="10_e648j"]
+[ext_resource type="AudioStream" uid="uid://cm31852o876g6" path="res://audio/sfx/dialogue/Frog/croak.mp3" id="11_3b5q8"]
+[ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="20_3eow2"]
+[ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="21_hjsy8"]
+[ext_resource type="SpriteFrames" uid="uid://hq7btpb76h0j" path="res://resources/sprite_frames/princess.tres" id="22_i684h"]
+[ext_resource type="AudioStream" uid="uid://lrex53y0bgtp" path="res://audio/sfx/cutscene/magic_sfx.wav" id="25_4u7wu"]
+[ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="26_0m1u2"]
+
+[sub_resource type="Animation" id="Animation_l5pl5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Overlay:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Overlay:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_48xoy"]
+resource_name = "main"
+length = 2.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Overlay:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Overlay:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uajul"]
+_data = {
+"RESET": SubResource("Animation_l5pl5"),
+"main": SubResource("Animation_48xoy")
+}
+
+[sub_resource type="Animation" id="Animation_3jjli"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FrogLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-204, 666)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PrincessLoc/PrincessSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_p4ra7"]
+resource_name = "main"
+length = 4.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FrogLoc:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-204, 666), Vector2(721, 666)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FrogLoc/FrogSprite")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.75),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"walking"],
+"method": &"play"
+}, {
+"args": [&"idle"],
+"method": &"play"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../PrincessLoc/PrincessSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fjodb"]
+_data = {
+"RESET": SubResource("Animation_3jjli"),
+"main": SubResource("Animation_p4ra7")
+}
+
+[sub_resource type="Animation" id="Animation_51841"]
+resource_name = "main"
+length = 2.75
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FrogLoc:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(721, 666), Vector2(2100, 666)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FrogLoc/FrogSprite")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"walking"],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_wvx4i"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_an2ww"]
+_data = {
+"RESET": SubResource("Animation_wvx4i"),
+"main": SubResource("Animation_51841")
+}
+
+[sub_resource type="Animation" id="Animation_afrce"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Overlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Overlay:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_68boi"]
+resource_name = "main"
+length = 2.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Overlay:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Overlay:color")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.0862745, 0.0862745, 0.0862745, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fr2k0"]
+_data = {
+"RESET": SubResource("Animation_afrce"),
+"main": SubResource("Animation_68boi")
+}
+
+[node name="PrincessFull" type="Control" node_paths=PackedStringArray("ElementNodes")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_njx5k")
+StopMusicAtEnd = true
+NextScene = "res://scenes/credits.tscn"
+ElementNodes = [NodePath("Animations/FadeIn"), NodePath("Animations/FrogWalkIn"), NodePath("Dialogue/Frog1"), NodePath("Dialogue/Princess1"), NodePath("Dialogue/Frog2"), NodePath("Dialogue/Princess2"), NodePath("Dialogue/Frog3"), NodePath("Dialogue/Princess3"), NodePath("Animations/FrogWalkOut"), NodePath("Dialogue/Princess4"), NodePath("Animations/FadeOut")]
+metadata/_edit_lock_ = true
+
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BackroundMountains" type="TextureRect" parent="."]
+modulate = Color(0.75696, 0.76, 0.6688, 1)
+z_index = -100
+layout_mode = 0
+offset_left = -18.0
+offset_top = -316.0
+offset_right = 1940.0
+offset_bottom = 1160.0
+texture = ExtResource("2_diftw")
+expand_mode = 1
+
+[node name="Midground" type="Control" parent="."]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hammock" type="TextureRect" parent="Midground"]
+modulate = Color(0.756863, 0.760784, 0.670588, 1)
+layout_mode = 0
+offset_left = 233.0
+offset_top = -11.0
+offset_right = 1017.0
+offset_bottom = 791.0
+texture = ExtResource("3_8tu88")
+expand_mode = 1
+
+[node name="Tent" type="TextureRect" parent="Midground"]
+modulate = Color(0.756863, 0.760784, 0.670588, 1)
+layout_mode = 0
+offset_left = 1098.0
+offset_top = 434.0
+offset_right = 1864.0
+offset_bottom = 1012.0
+texture = ExtResource("4_gurqn")
+expand_mode = 1
+
+[node name="Lantern" type="TextureRect" parent="Midground"]
+modulate = Color(0.91, 0.91, 0.91, 1)
+layout_mode = 0
+offset_left = 1350.0
+offset_top = 835.0
+offset_right = 1448.0
+offset_bottom = 1025.0
+texture = ExtResource("5_gowd8")
+expand_mode = 1
+
+[node name="Dialogue" type="Control" parent="."]
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Frog1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("6_ocgq8")]
+visible = false
+layout_mode = 1
+TalkingAudio = ExtResource("7_h6joe")
+Sprite = NodePath("../../FrogLoc/FrogSprite")
+TalkingAnimation = "croak"
+
+[node name="ProfilePicture" parent="Dialogue/Frog1/BackBox" index="1"]
+texture = ExtResource("8_gwfox")
+
+[node name="Text" parent="Dialogue/Frog1/BackBox" index="2"]
+text = "*Croaaaaak*"
+
+[node name="Princess1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("6_ocgq8")]
+visible = false
+layout_mode = 1
+TalkingAudio = ExtResource("9_s0oog")
+Sprite = NodePath("../../PrincessLoc/PrincessSprite")
+
+[node name="Background" parent="Dialogue/Princess1/BackBox" index="0"]
+modulate = Color(0.7, 0.64, 1, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Princess1/BackBox" index="1"]
+texture = ExtResource("10_e648j")
+
+[node name="Text" parent="Dialogue/Princess1/BackBox" index="2"]
+text = "Why, yes, I am the Princess of Loveland!"
+
+[node name="Frog2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("6_ocgq8")]
+visible = false
+layout_mode = 1
+TalkingAudio = ExtResource("11_3b5q8")
+Sprite = NodePath("../../FrogLoc/FrogSprite")
+TalkingAnimation = "croak"
+
+[node name="ProfilePicture" parent="Dialogue/Frog2/BackBox" index="1"]
+texture = ExtResource("8_gwfox")
+
+[node name="Text" parent="Dialogue/Frog2/BackBox" index="2"]
+text = "*Croak.*"
+
+[node name="Princess2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("6_ocgq8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../PrincessLoc/PrincessSprite")
+
+[node name="Background" parent="Dialogue/Princess2/BackBox" index="0"]
+modulate = Color(0.7, 0.64, 1, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Princess2/BackBox" index="1"]
+texture = ExtResource("10_e648j")
+
+[node name="Text" parent="Dialogue/Princess2/BackBox" index="2"]
+text = "Wait, have you been eating flies?"
+
+[node name="Frog3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("6_ocgq8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../FrogLoc/FrogSprite")
+TalkingAnimation = "croak"
+
+[node name="ProfilePicture" parent="Dialogue/Frog3/BackBox" index="1"]
+texture = ExtResource("8_gwfox")
+
+[node name="Text" parent="Dialogue/Frog3/BackBox" index="2"]
+text = "*Croak* ;)"
+
+[node name="Princess3" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("6_ocgq8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../PrincessLoc/PrincessSprite")
+
+[node name="Background" parent="Dialogue/Princess3/BackBox" index="0"]
+modulate = Color(0.7, 0.64, 1, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Princess3/BackBox" index="1"]
+texture = ExtResource("10_e648j")
+
+[node name="Text" parent="Dialogue/Princess3/BackBox" index="2"]
+text = "AND YOU ENJOYED IT?!"
+
+[node name="Princess4" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("6_ocgq8")]
+visible = false
+layout_mode = 1
+Sprite = NodePath("../../PrincessLoc/PrincessSprite")
+
+[node name="Background" parent="Dialogue/Princess4/BackBox" index="0"]
+modulate = Color(0.7, 0.64, 1, 1)
+
+[node name="ProfilePicture" parent="Dialogue/Princess4/BackBox" index="1"]
+texture = ExtResource("10_e648j")
+
+[node name="Text" parent="Dialogue/Princess4/BackBox" index="2"]
+text = "HUHH?!?!"
+
+[node name="Animations" type="Node" parent="."]
+
+[node name="FadeIn" type="AnimationPlayer" parent="Animations"]
+libraries = {
+"": SubResource("AnimationLibrary_uajul")
+}
+script = ExtResource("20_3eow2")
+
+[node name="FrogWalkIn" type="AnimationPlayer" parent="Animations"]
+libraries = {
+"": SubResource("AnimationLibrary_fjodb")
+}
+script = ExtResource("20_3eow2")
+
+[node name="FrogWalkOut" type="AnimationPlayer" parent="Animations"]
+libraries = {
+"": SubResource("AnimationLibrary_an2ww")
+}
+script = ExtResource("20_3eow2")
+
+[node name="FadeOut" type="AnimationPlayer" parent="Animations"]
+libraries = {
+"": SubResource("AnimationLibrary_fr2k0")
+}
+script = ExtResource("20_3eow2")
+
+[node name="FrogLoc" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -204.0
+offset_top = 666.0
+offset_right = -204.0
+offset_bottom = 666.0
+
+[node name="FrogSprite" type="AnimatedSprite2D" parent="FrogLoc"]
+scale = Vector2(0.765957, 0.765957)
+sprite_frames = ExtResource("21_hjsy8")
+animation = &"transforming"
+autoplay = "idle"
+
+[node name="PrincessLoc" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1043.0
+offset_top = 600.0
+offset_right = 1043.0
+offset_bottom = 600.0
+
+[node name="PrincessSprite" type="AnimatedSprite2D" parent="PrincessLoc"]
+z_index = -1
+scale = Vector2(0.4, 0.4)
+sprite_frames = ExtResource("22_i684h")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="WitchMagic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_4u7wu")
+bus = &"Sound Effects"
+
+[node name="InfoToSkip" parent="." instance=ExtResource("26_0m1u2")]
+layout_mode = 0
+offset_right = 355.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[editable path="Dialogue/Frog1"]
+[editable path="Dialogue/Princess1"]
+[editable path="Dialogue/Frog2"]
+[editable path="Dialogue/Princess2"]
+[editable path="Dialogue/Frog3"]
+[editable path="Dialogue/Princess3"]
+[editable path="Dialogue/Princess4"]
