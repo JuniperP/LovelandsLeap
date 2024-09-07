@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="6_yl0q6"]
 [ext_resource type="PackedScene" uid="uid://dr6oe3fd1xd0t" path="res://scenes/in_level_objects/platforms/button_platforms/longer_platform_button_1.tscn" id="7_ahs1p"]
 [ext_resource type="PackedScene" uid="uid://bpfoshxfnwbx" path="res://scenes/in_level_objects/platforms/button_platforms/longer_platform_button_2.tscn" id="8_b4wwi"]
-[ext_resource type="PackedScene" uid="uid://cpx4f3socslo0" path="res://scenes/in_level_objects/platforms/vertical_block_platform.tscn" id="9_4al5o"]
-[ext_resource type="PackedScene" uid="uid://bp7s26m8lyu8h" path="res://scenes/in_level_objects/platforms/long_vertical_block_platform.tscn" id="9_mxogx"]
+[ext_resource type="PackedScene" uid="uid://cpx4f3socslo0" path="res://scenes/in_level_objects/platforms/vertical_platforms/vertical_block_platform.tscn" id="9_4al5o"]
+[ext_resource type="PackedScene" uid="uid://bp7s26m8lyu8h" path="res://scenes/in_level_objects/platforms/vertical_platforms/long_vertical_block_platform.tscn" id="9_mxogx"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="11_gkgvx"]
 
 [sub_resource type="Curve2D" id="Curve2D_86jpw"]

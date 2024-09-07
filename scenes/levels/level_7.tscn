@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://scripts/in_level_objects/SpinPlatform.cs" id="4_btwkm"]
 [ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/platform_paths/moving_platform_track.tscn" id="5_6yxrr"]
 [ext_resource type="PackedScene" uid="uid://dymkmt6rmafx8" path="res://scenes/in_level_objects/platforms/platform.tscn" id="6_wo2ru"]
-[ext_resource type="PackedScene" uid="uid://bp7s26m8lyu8h" path="res://scenes/in_level_objects/platforms/long_vertical_block_platform.tscn" id="7_auc18"]
+[ext_resource type="PackedScene" uid="uid://bp7s26m8lyu8h" path="res://scenes/in_level_objects/platforms/vertical_platforms/long_vertical_block_platform.tscn" id="7_auc18"]
 [ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="8_sb5yx"]
 [ext_resource type="PackedScene" uid="uid://bqgu4qurlm5q3" path="res://scenes/in_level_objects/fly_tracks/infinite_fly.tscn" id="9_2h7ku"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="11_2swto"]

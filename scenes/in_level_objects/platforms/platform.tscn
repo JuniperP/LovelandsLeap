@@ -5,13 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://dnh0cnucyc6tp" path="res://assets/tiles.png" id="3_escrl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6s31"]
+resource_local_to_scene = true
 size = Vector2(300, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nv564"]
 atlas = ExtResource("3_escrl")
 region = Rect2(100, 200, 100, 100)
 
-[node name="LongPlatform" type="AnimatableBody2D"]
+[node name="Platform" type="AnimatableBody2D"]
 modulate = Color(0.701961, 0.701961, 0.701961, 1)
 
 [node name="RightLogPlatformCollision" parent="." instance=ExtResource("1_lwdoi")]

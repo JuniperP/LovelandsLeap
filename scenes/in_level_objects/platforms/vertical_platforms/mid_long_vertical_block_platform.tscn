@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu6x34n82ucdc"]
+
+[ext_resource type="PackedScene" uid="uid://cpx4f3socslo0" path="res://scenes/in_level_objects/platforms/vertical_platforms/vertical_block_platform.tscn" id="1_o18uu"]
+[ext_resource type="Texture2D" uid="uid://dnh0cnucyc6tp" path="res://assets/tiles.png" id="2_sgjta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnuc5"]
+resource_local_to_scene = true
+size = Vector2(100, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trb73"]
+atlas = ExtResource("2_sgjta")
+region = Rect2(100, 200, 100, 100)
+
+[node name="MidLongVerticalBlockPlatform" instance=ExtResource("1_o18uu")]
+
+[node name="LeftLogPlatformCollision" parent="." index="0"]
+position = Vector2(0, 350)
+
+[node name="RightLogPlatformCollision" parent="." index="1"]
+position = Vector2(0, -350)
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("RectangleShape2D_tnuc5")
+
+[node name="Sprite2D" parent="CollisionShape2D" index="0"]
+position = Vector2(0, 50)
+
+[node name="Sprite2D4" type="Sprite2D" parent="CollisionShape2D" index="1"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, 250)
+rotation = -1.5708
+texture = SubResource("AtlasTexture_trb73")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CollisionShape2D" index="2"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, -150)
+rotation = -1.5708
+texture = SubResource("AtlasTexture_trb73")
+
+[node name="Sprite2D6" type="Sprite2D" parent="CollisionShape2D" index="3"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, -250)
+rotation = -1.5708
+texture = SubResource("AtlasTexture_trb73")
+
+[node name="Sprite2D2" parent="CollisionShape2D" index="4"]
+position = Vector2(0, 150)
+
+[node name="Sprite2D3" parent="CollisionShape2D" index="5"]
+position = Vector2(0, -50)

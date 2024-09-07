@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bxeghwuww2dvu" path="res://scenes/in_level_objects/princess_update.tscn" id="2_1hry7"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="2_tg5fo"]
 [ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/platform_paths/moving_platform_track.tscn" id="3_4pwx7"]
-[ext_resource type="PackedScene" uid="uid://bytyg3finqb36" path="res://scenes/in_level_objects/platforms/small_vertical_block_platform.tscn" id="4_finji"]
+[ext_resource type="PackedScene" uid="uid://bytyg3finqb36" path="res://scenes/in_level_objects/platforms/vertical_platforms/small_vertical_block_platform.tscn" id="4_finji"]
 [ext_resource type="PackedScene" uid="uid://b5ovwc4k8xaal" path="res://scenes/in_level_objects/platforms/small_platform.tscn" id="5_uqafp"]
 [ext_resource type="PackedScene" uid="uid://dymkmt6rmafx8" path="res://scenes/in_level_objects/platforms/platform.tscn" id="5_wn8ll"]
 [ext_resource type="PackedScene" uid="uid://brv2do2v4lh5y" path="res://scenes/in_level_objects/fly.tscn" id="6_ttakw"]

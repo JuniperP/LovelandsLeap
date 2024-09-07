@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhcgj0dau2x5s"]
 
-[ext_resource type="PackedScene" uid="uid://bp7s26m8lyu8h" path="res://scenes/in_level_objects/platforms/long_vertical_block_platform.tscn" id="1_fmywn"]
+[ext_resource type="PackedScene" uid="uid://bp7s26m8lyu8h" path="res://scenes/in_level_objects/platforms/vertical_platforms/long_vertical_block_platform.tscn" id="1_fmywn"]
 [ext_resource type="Texture2D" uid="uid://dnh0cnucyc6tp" path="res://assets/tiles.png" id="3_y7bev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b52yl"]
