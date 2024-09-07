@@ -57,7 +57,7 @@ public class GrappleState : MovementState
 		// If player collided after buffer time (effectively a grace period)
 		if (Ctx.MoveAndSlide() && _grappleTime >= Ctx.AutoDegrappleBuffer)
 		{
-			SoundManager.PlaySound(SFX.Land, Ctx);
+			SoundManager.PlaySound(SFX.WallBump, Ctx);
 			DisableGrapple();
 		}
 

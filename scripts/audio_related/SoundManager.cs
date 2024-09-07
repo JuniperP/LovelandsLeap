@@ -20,8 +20,10 @@ public enum SFX : byte
 	IntoFrog,
 	UIButton,
 	FlyCatch,
+	WallBump,
 	HouseDoor,
 	Magic,
+	
 }
 
 public partial class SoundManager : Node
@@ -39,6 +41,7 @@ public partial class SoundManager : Node
 		{SFX.TongueHit, "tongue_hit_sfx"},
 		{SFX.UIButton, "ui_button_sfx"},
 		{SFX.FlyCatch, "fly_catch_sfx"},
+		{SFX.WallBump, "wall_bump_sfx"}
 	};
 
 	// Dictionary for comprehensive access to each sfx
@@ -54,6 +57,7 @@ public partial class SoundManager : Node
 		{SFX.TongueHit, CreateAudioPlayer(SFX.TongueHit)},
 		{SFX.UIButton,  CreateAudioPlayer(SFX.UIButton)},
 		{SFX.FlyCatch, CreateAudioPlayer(SFX.FlyCatch)},
+		{SFX.WallBump, CreateAudioPlayer(SFX.WallBump)},
 	};
 
 	// Method to create our audio sources for our dictionary
