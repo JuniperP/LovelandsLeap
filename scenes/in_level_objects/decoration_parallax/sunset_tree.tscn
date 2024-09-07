@@ -7,7 +7,7 @@ layer = 0
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-modulate = Color(0.352511, 0.386174, 0.457652, 1)
+modulate = Color(0.285424, 0.314858, 0.377431, 1)
 texture_filter = 1
 motion_scale = Vector2(1.05, 1.05)
 
