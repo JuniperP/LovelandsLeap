@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://js6dadsijsgm"]
+[gd_scene load_steps=45 format=3 uid="uid://js6dadsijsgm"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_g5qut"]
 [ext_resource type="Texture2D" uid="uid://bnd06vdkw4tuw" path="res://assets/background/back_drops/backround_mountains.jpg" id="2_ufswb"]
@@ -17,6 +17,8 @@
 [ext_resource type="AudioStream" uid="uid://dl4tmk5obi7m7" path="res://audio/sfx/dialogue/Witch/witch_1_reEhe_hahahe_hewuugh.wav" id="15_5jhnp"]
 [ext_resource type="Texture2D" uid="uid://chm8yefqnrjo1" path="res://assets/witch/witch_portrait.png" id="16_fc8jf"]
 [ext_resource type="Texture2D" uid="uid://b48bhdgi0b5x3" path="res://assets/human/mc_portrait.png" id="17_1fo8t"]
+[ext_resource type="AudioStream" uid="uid://b51nqschpuorq" path="res://audio/sfx/dialogue/Witch/witch_8_rwail.wav" id="17_57osg"]
+[ext_resource type="AudioStream" uid="uid://cbdmeax2xgry2" path="res://audio/sfx/dialogue/MC/mc_7_angry_babble_4.wav" id="18_2s73c"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="20_0536g"]
 [ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="21_r7skt"]
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="22_64alo"]
@@ -831,6 +833,7 @@ text = "*CROAK.*"
 [node name="Witch2" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("6_l8cxm")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("17_57osg")
 Sprite = NodePath("../../WitchLoc/WitchSprite")
 
 [node name="Background" parent="Dialogue/Witch2/BackBox" index="0"]
@@ -845,6 +848,7 @@ text = "Maybe I went too far... Alright, go on then."
 [node name="Human1" parent="Dialogue" node_paths=PackedStringArray("Sprite") instance=ExtResource("6_l8cxm")]
 visible = false
 layout_mode = 1
+TalkingAudio = ExtResource("18_2s73c")
 Sprite = NodePath("../../HumanLoc/HumanSprite")
 
 [node name="ProfilePicture" parent="Dialogue/Human1/BackBox" index="1"]
