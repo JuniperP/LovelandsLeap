@@ -39,5 +39,6 @@ position = Vector2(3200, -1450)
 [node name="FadeTransition" parent="." instance=ExtResource("4_6pusj")]
 position = Vector2(13250, -350)
 _sendsTo = 3
+_nextAreasTheme = 4
 
 [editable path="Room"]

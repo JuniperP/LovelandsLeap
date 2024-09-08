@@ -367,6 +367,7 @@ curve = SubResource("Curve2D_i2gc0")
 [node name="FadeTransition" parent="." instance=ExtResource("17_ht5ul")]
 position = Vector2(22350, -1850)
 _sendsTo = 10
+_nextAreasTheme = 7
 
 [node name="TheMaze" type="Node2D" parent="."]
 position = Vector2(18000, -2000)

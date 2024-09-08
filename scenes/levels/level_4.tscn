@@ -227,6 +227,7 @@ curve = SubResource("Curve2D_k3ls3")
 [node name="FadeTransition" parent="." instance=ExtResource("11_4xmbe")]
 position = Vector2(11650, 450)
 _sendsTo = 6
+_nextAreasTheme = 5
 
 [node name="FlyPath2" parent="." instance=ExtResource("7_s4ghb")]
 position = Vector2(8350, -1400)

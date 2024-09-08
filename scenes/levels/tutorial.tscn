@@ -236,6 +236,7 @@ position = Vector2(11850, -260)
 [node name="FadeTransition" parent="." instance=ExtResource("10_ujwgc")]
 position = Vector2(14550, -147)
 _sendsTo = 2
+_nextAreasTheme = 4
 
 [connection signal="hidden" from="Room/Camera2D/CanvasLayer/Control/PauseScreen" to="." method="UpdateText"]
 [connection signal="ButtonPressed" from="InLevelButton" to="." method="DisengageTongue"]
