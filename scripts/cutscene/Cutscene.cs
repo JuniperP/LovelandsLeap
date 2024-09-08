@@ -45,6 +45,10 @@ public partial class Cutscene : Node
 
 		GlobalMusicPlayer.PlayMusic(MusicToPlay);
 		StepAnimation();
+
+		// Jump cut effect for loading screen
+		LoadingScreen.TransTheFade = 0;
+		AsciiFrog.NewVisRatio = 0;
 	}
 
 	public override void _Process(double delta)
