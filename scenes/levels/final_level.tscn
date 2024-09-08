@@ -208,6 +208,7 @@ TrackSpeed = 4.0
 
 [node name="FadeTransition" parent="." instance=ExtResource("10_64781")]
 position = Vector2(4750, -9150)
+_sendsTo = 12
 _toEndCutscene = true
 
 [connection signal="ButtonPressed" from="MovingPlatformTrack8/SmallPlatformButton" to="MovingPlatformTrack9" method="TogglePlatform"]

@@ -22,6 +22,9 @@ public enum ToScene : int
 	Level7 = 8,
 	Level8 = 9,
 	FinalLevel = 10,
+	HungryEnding = 11,
+	NormalEnding = 12,
+	FullEnding = 13,
 
 }
 public partial class SceneManager : Node
@@ -56,6 +59,9 @@ public partial class SceneManager : Node
 		{ToScene.Level7,  "res://scenes/levels/level_7.tscn"},
 		{ToScene.Level8,  "res://scenes/levels/level_8.tscn"},
 		{ToScene.FinalLevel,  "res://scenes/levels/final_level.tscn"},
+		{ToScene.HungryEnding, "res://scenes/cutscenes/princess_hungry.tscn"},
+		{ToScene.NormalEnding, "res://scenes/cutscenes/princess_normal.tscn"},
+		{ToScene.FullEnding, "res://scenes/cutscenes/princess_full.tscn"}
 	};
 
 

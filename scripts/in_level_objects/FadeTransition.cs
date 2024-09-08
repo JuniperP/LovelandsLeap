@@ -25,19 +25,34 @@ public partial class FadeTransition : Area2D
 			// Playing the leaving sfx
 			_leavingSFX.Play();
 
-			// Sets up to go to the next area
-			SceneManager.SetNextGoTo(_sendsTo);
-
-			// Queueing up the main platform theme for level 1
-			if(_sendsTo == ToScene.Level1)
-				LoadingScreen.NeedsToStartPlatTheme = true;
-
-			// The run has finished!
-			if(_toEndCutscene)
+			if (_toEndCutscene)
+			{
+				// The run has finished!
 				SpeedRunTimer.FinishedRun();
+
+				// Giving the user the right ending
+				if (FlyCount.FliesGottenTotal == 0)
+					SceneManager.SetNextGoTo(ToScene.HungryEnding);
+				else if (FlyCount.FliesGottenTotal == FlyCount.TotalGameFlies)
+					SceneManager.SetNextGoTo(ToScene.FullEnding);
+				else
+					SceneManager.SetNextGoTo(ToScene.NormalEnding);
+			}
+
+			else
+			{
+				// Sets up to go to the next area
+				SceneManager.SetNextGoTo(_sendsTo);
+
+				// Queueing up the main platform theme for level 1
+				if (_sendsTo == ToScene.Level1)
+					LoadingScreen.NeedsToStartPlatTheme = true;
+			}
 
 			// Starts into next scene
 			LoadingScreen.FadeIn();
+
+
 		}
 	}
 }
