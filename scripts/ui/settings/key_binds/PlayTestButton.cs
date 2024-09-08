@@ -4,7 +4,7 @@ public partial class PlayTestButton : Button
 	// Telling the node that its time to play test
 	private static void PlayTest()
 	{
-		LoadingScreen.NeedsToStartPlatTheme = true;
+		GlobalMusicPlayer.ToPlay = MusicID.Forest;
 		SceneManager.SetNextGoTo(ToScene.PlayTestLevel);
 		LoadingScreen.FadeIn();
 	}

@@ -4,8 +4,10 @@ public partial class FadeTransition : Area2D
 {
 	// Where the player is going to
 	[Export] private ToScene _sendsTo;
-	[Export] private AudioStreamPlayer _leavingSFX;
 	[Export] private bool _toEndCutscene = false;
+	[Export] private MusicID _nextAreasTheme = MusicID.DeepWoods;
+	[Export] private AudioStreamPlayer _leavingSFX;
+
 
 	// What is signaled when the player enters - sends to new scene
 	private void FrogEntered(Node2D node)
@@ -32,22 +34,30 @@ public partial class FadeTransition : Area2D
 
 				// Giving the user the right ending
 				if (FlyCount.FliesGottenTotal == 0)
+				{
 					SceneManager.SetNextGoTo(ToScene.HungryEnding);
+					GlobalMusicPlayer.ToPlay = MusicID.Cutscene;
+				}	
 				else if (FlyCount.FliesGottenTotal == FlyCount.TotalGameFlies)
+				{
 					SceneManager.SetNextGoTo(ToScene.FullEnding);
+					//GlobalMusicPlayer.ToPlay = 
+				}
 				else
+				{
 					SceneManager.SetNextGoTo(ToScene.NormalEnding);
+					GlobalMusicPlayer.ToPlay = MusicID.Cutscene;
+				}
+					
 			}
 
+			// Sets up to go to the next area
 			else
 			{
-				// Sets up to go to the next area
 				SceneManager.SetNextGoTo(_sendsTo);
-
-				// Queueing up the main platform theme for level 1
-				if (_sendsTo == ToScene.Level1)
-					LoadingScreen.NeedsToStartPlatTheme = true;
+				GlobalMusicPlayer.ToPlay = _nextAreasTheme;
 			}
+
 
 			// Starts into next scene
 			LoadingScreen.FadeIn();

@@ -8,6 +8,8 @@ public partial class Credits : Control
 		// Jump cut effect
 		LoadingScreen.TransTheFade = 0;
 		AsciiFrog.NewVisRatio = 0;
+
+		GlobalMusicPlayer.PlayMusic(MusicID.Abomination);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

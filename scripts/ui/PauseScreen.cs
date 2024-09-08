@@ -34,8 +34,7 @@ public partial class PauseScreen : Toggleable
 	// Return to the main menu
 	private void ToMainMenu()
 	{
-		// Stopping the platforming theme music
-		GlobalMusicPlayer.StopMusic();
+		// Doesn't set music because main menu has to do that itself
 
 		// Resetting the in level fly count
 		FlyCount.FliesGottenLevel = 0;

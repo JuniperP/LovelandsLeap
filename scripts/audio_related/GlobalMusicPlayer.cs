@@ -30,6 +30,11 @@ public partial class GlobalMusicPlayer : AudioStreamPlayer
 
 	// Create a singleton
 	private static GlobalMusicPlayer _instance;
+
+	// What music to switch to next
+	public static MusicID ToPlay = MusicID.MainMenu;
+
+
 	public GlobalMusicPlayer()
 	{
 		// Raise an error if there is already an instance, otherwise set this as the instance

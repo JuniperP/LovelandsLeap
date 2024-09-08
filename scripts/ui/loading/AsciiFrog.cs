@@ -37,9 +37,12 @@ public partial class AsciiFrog : RichTextLabel
 		// If allowed to fade, fades as needed
 		if (_canFade)
 		{
-
 			if (_fadeOut) // Fading out
 			{
+				// STARTING RIGHT MUSIC AS NEW AREA IS BEING ENTERED!
+				GlobalMusicPlayer.PlayMusic(GlobalMusicPlayer.ToPlay);
+
+
 				delta *= -1f;
 
 				if (VisibleRatio <= 0)
