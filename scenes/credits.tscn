@@ -21,7 +21,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 6470.0
+offset_bottom = 6834.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
@@ -38,6 +38,7 @@ text = "
 
 
 LOVELAND
+
 
 
 Programming & Godot Engineers
@@ -67,22 +68,25 @@ Phoebe Tozer
 
 
 Sprite Creation
+Phoebe Tozer
 Lee Zwart
 
 
 Story/Script
+Teddy Jacobson
 Alex Lloyd
-Phoebe Tozer
+Juniper Pasternak
 Lee Zwart
-
 
 
 Sound Effect Creation
 Anja Jacobson
 Teddy Jacobson
 Alex Lloyd
+Amanda Tozer
+Joe Tozer
+Max Tozer
 Phoebe Tozer
-
 
 
 Concept Design
@@ -94,9 +98,9 @@ Phoebe Tozer
 Lee Zwart
 
 
-
 Funding
 Eric Jacobson
+
 
 
 A special thanks to the Godot Wild Jam!
