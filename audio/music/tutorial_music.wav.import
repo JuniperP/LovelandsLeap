@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://mwhd3dnj8cv0"
-path="res://.godot/imported/loveland_tutorial_music.wav-5e3b770582c6bd6e0758f689b2ec2c7a.sample"
+path="res://.godot/imported/tutorial_music.wav-3853ffbf9544a745b71121eda1a7c1e0.sample"
 
 [deps]
 
-source_file="res://audio/music/loveland_tutorial_music.wav"
-dest_files=["res://.godot/imported/loveland_tutorial_music.wav-5e3b770582c6bd6e0758f689b2ec2c7a.sample"]
+source_file="res://audio/music/tutorial_music.wav"
+dest_files=["res://.godot/imported/tutorial_music.wav-3853ffbf9544a745b71121eda1a7c1e0.sample"]
 
 [params]
 

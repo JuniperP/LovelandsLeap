@@ -5,21 +5,27 @@ using System;
 public enum MusicID
 {
 	Cutscene,
-	Platforming,
 	MainMenu,
 	Abomination,
 	Tutorial,
+	Sunset,
+	Forest,
+	DeepWoods,
+	TheOldestTree,
 }
 
 public partial class GlobalMusicPlayer : AudioStreamPlayer
 {
 	private readonly Dictionary<MusicID, string> _audioPaths = new()
 	{
-		{MusicID.Cutscene, "loveland_cutscene_ambience"},
-		{MusicID.Platforming, "loveland_platforming_music"},
-		{MusicID.MainMenu, "loveland_menu_music"},
+		{MusicID.Cutscene, "cutscene_ambience"},
+		{MusicID.MainMenu, "menu_music"},
 		{MusicID.Abomination, "abomination"},
-		{MusicID.Tutorial, "loveland_tutorial_music"}
+		{MusicID.Tutorial, "tutorial_music"},
+		{MusicID.Sunset, "loveland_platforming_music"},
+		{MusicID.Forest, "loveland_platforming_music"},
+		{MusicID.DeepWoods, "deep_woods_music"},
+		{MusicID.TheOldestTree, "loveland_platforming_music"},
 	};
 
 	// Create a singleton
