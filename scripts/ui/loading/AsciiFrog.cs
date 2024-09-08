@@ -19,7 +19,7 @@ public partial class AsciiFrog : RichTextLabel
 	{
 		VisibleRatio = NewVisRatio;
 
-		if (VisibleRatio >= 0)
+		if (VisibleRatio > 0)
 		{
 			_canFade = true;
 			_fadeOut = true;
