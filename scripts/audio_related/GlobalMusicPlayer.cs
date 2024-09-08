@@ -22,10 +22,10 @@ public partial class GlobalMusicPlayer : AudioStreamPlayer
 		{MusicID.MainMenu, "menu_music"},
 		{MusicID.Abomination, "abomination"},
 		{MusicID.Tutorial, "tutorial_music"},
-		{MusicID.Sunset, "loveland_platforming_music"},
-		{MusicID.Forest, "loveland_platforming_music"},
+		{MusicID.Sunset, "sunset_music"},
+		{MusicID.Forest, "forest_music"},
 		{MusicID.DeepWoods, "deep_woods_music"},
-		{MusicID.TheOldestTree, "loveland_platforming_music"},
+		{MusicID.TheOldestTree, "the_oldest_tree_music"},
 	};
 
 	// Create a singleton
