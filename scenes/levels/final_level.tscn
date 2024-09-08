@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://dbys2e20t5wos"]
+[gd_scene load_steps=23 format=3 uid="uid://dbys2e20t5wos"]
 
 [ext_resource type="PackedScene" uid="uid://bdm1uwfekp5iw" path="res://scenes/levels/parallax_backgrounds/parallax_background_final_level.tscn" id="1_03b8e"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="2_j3ps3"]
+[ext_resource type="Shader" path="res://assets/shaders/color_adjustment.gdshader" id="3_bcphe"]
 [ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/platform_paths/moving_platform_track.tscn" id="3_v8ro8"]
 [ext_resource type="PackedScene" uid="uid://dymkmt6rmafx8" path="res://scenes/in_level_objects/platforms/platform.tscn" id="5_u2a4e"]
 [ext_resource type="PackedScene" uid="uid://b5ovwc4k8xaal" path="res://scenes/in_level_objects/platforms/small_platform.tscn" id="6_sgb37"]
@@ -10,6 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://bytyg3finqb36" path="res://scenes/in_level_objects/platforms/vertical_platforms/small_vertical_block_platform.tscn" id="8_w6nul"]
 [ext_resource type="PackedScene" uid="uid://cscyxa7owiydr" path="res://scenes/in_level_objects/fly_tracks/circle_fly.tscn" id="9_4a7p4"]
 [ext_resource type="PackedScene" uid="uid://l1sc7rrtk6mn" path="res://scenes/in_level_objects/fade_transition.tscn" id="10_64781"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ou03f"]
+resource_local_to_scene = true
+shader = ExtResource("3_bcphe")
+shader_parameter/tint = Color(1, 1, 1, 1)
+shader_parameter/h = 1.0
+shader_parameter/s = 1.0
+shader_parameter/v = 1.0
 
 [sub_resource type="Curve2D" id="Curve2D_ry3co"]
 resource_local_to_scene = true
@@ -99,6 +108,9 @@ grow_vertical = 2
 Left = -250
 Right = 4350
 Bottom = 2300
+
+[node name="Shader" parent="Room/Camera2D/EnvironmentShading" index="0"]
+material = SubResource("ShaderMaterial_ou03f")
 
 [node name="Player" parent="Room" index="1"]
 position = Vector2(0, 2000)
