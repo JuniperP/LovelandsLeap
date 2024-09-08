@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://qtb311seicd8"]
 
-[ext_resource type="Texture2D" uid="uid://bfh4b4yy8ol8a" path="res://assets/background/solo_blue_twin.png" id="1_tr81n"]
+[ext_resource type="Texture2D" uid="uid://ysmgbmc0yui1" path="res://assets/background/mossy_tree.png" id="1_41n1b"]
 
-[node name="SunsetTree" type="ParallaxBackground"]
+[node name="MossyTree" type="ParallaxBackground"]
 layer = 0
 scroll_ignore_camera_zoom = true
 
@@ -12,11 +12,11 @@ texture_filter = 1
 motion_scale = Vector2(1.05, 1.05)
 
 [node name="tree" type="Sprite2D" parent="ParallaxLayer"]
-modulate = Color(0, 0.443137, 1, 1)
+modulate = Color(0, 1, 0, 1)
 light_mask = 0
 visibility_layer = 2
 z_index = 50
 texture_filter = 1
-scale = Vector2(1.3, 1.3)
-texture = ExtResource("1_tr81n")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_41n1b")
 flip_h = true
