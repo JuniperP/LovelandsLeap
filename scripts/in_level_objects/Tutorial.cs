@@ -19,6 +19,9 @@ public partial class Tutorial : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		// Start playing the tutorial music
+		GlobalMusicPlayer.PlayMusic(MusicID.Tutorial);
+		
 		// Setting up the explanation texts
 		UpdateText();
 
@@ -31,8 +34,6 @@ public partial class Tutorial : Node
 			label.CalculateCenter();
 		}
 
-		// Start playing the tutorial music
-		GlobalMusicPlayer.PlayMusic(MusicID.Tutorial);
 	}
 
 	// Easy signal tells to change the button label accordingly
