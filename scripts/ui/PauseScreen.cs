@@ -34,7 +34,7 @@ public partial class PauseScreen : Toggleable
 	// Return to the main menu
 	private void ToMainMenu()
 	{
-		// Doesn't set music because main menu has to do that itself
+		GlobalMusicPlayer.ToPlay = MusicID.MainMenu;
 
 		// Resetting the in level fly count
 		FlyCount.FliesGottenLevel = 0;
