@@ -4,7 +4,7 @@ using System;
 public partial class SpeedRunTimer : Toggleable
 {
 	// Total time elapsed
-	private static float _timeElapsed = 0;
+	public static float TimeElapsed = 0;
 
 	// To see if a run is currently happening 
 	private static bool _currentlyRunning = false;
@@ -46,23 +46,23 @@ public partial class SpeedRunTimer : Toggleable
 
 			// Increasing the time
 			if (_currentlyRunning)
-				_timeElapsed += (float)delta;
+				TimeElapsed += (float)delta;
 
 			// Updating the clock
 			if (Visible)
 			{
 				// Centiseconds excluding the "#."
-				_centiseconds.Text = FormCentSec(_timeElapsed);
+				_centiseconds.Text = FormCentSec(TimeElapsed);
 
 				// Seconds
-				_seconds.Text = FormSec(_timeElapsed);
+				_seconds.Text = FormSec(TimeElapsed);
 
 				// Minutes
-				_minutes.Text = FormMin(_timeElapsed);
+				_minutes.Text = FormMin(TimeElapsed);
 			}
 
 			// Ensuring the max wasn't met
-			if (_timeElapsed >= 6000)
+			if (TimeElapsed >= 6000)
 				_belowMax = false;
 		}
 
@@ -109,14 +109,14 @@ public partial class SpeedRunTimer : Toggleable
 		_currentlyRunning = false;
 
 		// Save record
-		ToggleSpeedrun.NewTime(_timeElapsed);
+		ToggleSpeedrun.NewTime(TimeElapsed);
 	}
 
 	// Resets the current speedrun
 	public static void ResetRun()
 	{
 		_currentlyRunning = false;
-		_timeElapsed = 0;
+		TimeElapsed = 0;
 		_belowMax = true;
 	}
 }
