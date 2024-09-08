@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/in_level_objects/EnvironmentalShader.cs" id="8_cyucn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pdmyb"]
+resource_local_to_scene = true
 shader = ExtResource("7_3layg")
 shader_parameter/tint = Color(1, 1, 1, 1)
 shader_parameter/h = 1.0
