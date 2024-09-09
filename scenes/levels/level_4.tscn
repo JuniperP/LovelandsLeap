@@ -129,7 +129,7 @@ transform = Transform2D(0.8, 0, 0, 0.8, 2750, 750)
 
 [node name="Camera2D" parent="Room" index="0"]
 Left = -250
-Top = -1900
+Top = -2200
 Right = 11300
 Bottom = 800
 
