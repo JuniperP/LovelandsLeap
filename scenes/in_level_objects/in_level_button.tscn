@@ -39,6 +39,7 @@ texture = ExtResource("3_xu3yf")
 
 [node name="ButtonSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_m7nm3")
+bus = &"Sound Effects"
 
 [connection signal="body_entered" from="." to="." method="PressButton"]
 [connection signal="body_exited" from="." to="." method="ReleaseButton"]
