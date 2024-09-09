@@ -83,13 +83,15 @@ public class WalkState : MovementState
 		);
 
 		// Play walking sound if moving and there's no time left on the walk SFX
-		if (floored && Mathf.Abs(velocity) > 0.01f && _walkSoundLeft <= 0d)
+		if (floored && Mathf.Abs(velocity) > 250f && _walkSoundLeft <= 0d)
 		{
 			Random rand = new();
 
 			// Play random walk sound
 			SFX sfx = (SFX)rand.Next((int)SFX.Walk1, (int)SFX.Walk4 + 1);
-			SoundManager.PlaySound(sfx, Ctx);
+			float volume = (float)rand.NextDouble() * 3f - 3f;
+			float pitch = (float)rand.NextDouble() * 0.3f + 0.85f;
+			SoundManager.PlaySound(sfx, Ctx, volume, pitch);
 
 			// Set random remaining walk time
 			_walkSoundLeft = rand.NextDouble() * 0.3 + 0.3;

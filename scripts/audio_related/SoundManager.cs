@@ -85,10 +85,12 @@ public partial class SoundManager : Node
 	}
 
 	// Client method to easily play sounds from anywhere
-	public static void PlaySound(SFX sound, Node playOn)
+	public static void PlaySound(SFX sound, Node playOn, float volumeDB = 0f, float pitchScale = 1f)
 	{
 		// Makes new case of sfx
 		AudioStreamPlayer toPlay = (AudioStreamPlayer)_sounds[sound].Duplicate();
+		toPlay.VolumeDb = volumeDB;
+		toPlay.PitchScale = pitchScale;
 
 		// Set up sfx to explode ensuring no dispose issues, many AudioStreamPlayers, etc.
 		toPlay.Finished += () => toPlay.QueueFree();
