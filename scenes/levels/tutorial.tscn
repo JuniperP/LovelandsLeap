@@ -17,7 +17,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rn3rj"]
 resource_local_to_scene = true
 shader = ExtResource("5_4tiim")
-shader_parameter/tint = Color(1, 0.470588, 0, 0.137255)
+shader_parameter/tint = Color(1, 0.196078, 0, 0.0980392)
 shader_parameter/h = 0.0
 shader_parameter/s = 1.222
 shader_parameter/v = 1.315
