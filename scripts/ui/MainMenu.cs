@@ -28,6 +28,9 @@ public partial class MainMenu : Control
 	{
 		GlobalMusicPlayer.ToPlay = MusicID.Cutscene;
 
+		// Resetting the flies you've obtained
+		FlyCount.FliesGottenTotal = 0;
+
 		// Overwrite save data
 		LoadLevelData.SaveData(ToScene.Tutorial);
 
