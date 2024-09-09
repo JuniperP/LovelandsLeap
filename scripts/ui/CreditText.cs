@@ -20,6 +20,8 @@ public partial class CreditText : Label
 			SpeedRunTimer.TimeElapsed = 0;
 		}
 
+		Text += $"Press [{Keybinds._acts[UserAction.Cancel].Input.AsText()}]\nto return to the main menu";
+
 	}
 
 
@@ -28,7 +30,7 @@ public partial class CreditText : Label
 	public override void _Process(double delta)
 	{
 		// Checks if at point in credits to cut the scrolling
-		if (Position.Y > -(Size.Y - 1000))
+		if (Position.Y > -(Size.Y - 900))
 		{
 			// Scrolls and updates
 			Position = new Vector2(Position.X, Position.Y - (120 * (float)delta));
