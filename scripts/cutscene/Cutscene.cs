@@ -4,7 +4,6 @@ using Godot;
 public partial class Cutscene : Node
 {
 	// Music variables
-	[Export] public MusicID MusicToPlay;
 	[Export] public bool StopMusicAtEnd; // Music stops at the end of this cutscene
 
 	// Scene file paths
@@ -43,12 +42,7 @@ public partial class Cutscene : Node
 		// CancelScene defaults to NextScene if value is null
 		CancelScene ??= NextScene;
 
-		GlobalMusicPlayer.PlayMusic(MusicToPlay);
 		StepAnimation();
-
-		// Jump cut effect for loading screen
-		LoadingScreen.TransTheFade = 0;
-		AsciiFrog.NewVisRatio = 0;
 	}
 
 	public override void _Process(double delta)

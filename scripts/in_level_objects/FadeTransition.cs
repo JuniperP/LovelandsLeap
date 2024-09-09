@@ -41,7 +41,7 @@ public partial class FadeTransition : Area2D
 				else if (FlyCount.FliesGottenTotal == FlyCount.TotalGameFlies)
 				{
 					SceneManager.SetNextGoTo(ToScene.FullEnding);
-					//GlobalMusicPlayer.ToPlay = 
+					GlobalMusicPlayer.ToPlay = MusicID.TrueEnding;
 				}
 				else
 				{

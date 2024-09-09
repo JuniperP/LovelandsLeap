@@ -12,6 +12,7 @@ public enum MusicID
 	Forest,
 	DeepWoods,
 	TheOldestTree,
+	TrueEnding,
 }
 
 public partial class GlobalMusicPlayer : AudioStreamPlayer
@@ -26,6 +27,7 @@ public partial class GlobalMusicPlayer : AudioStreamPlayer
 		{MusicID.Forest, "forest_music"},
 		{MusicID.DeepWoods, "deep_woods_music"},
 		{MusicID.TheOldestTree, "the_oldest_tree_music"},
+		{MusicID.TrueEnding, "true_ending_cutscene"}
 	};
 
 	// Create a singleton

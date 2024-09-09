@@ -26,6 +26,8 @@ public partial class MainMenu : Control
 	// Confirm starts a new game
 	private void StartNewGame()
 	{
+		GlobalMusicPlayer.ToPlay = MusicID.Cutscene;
+
 		// Overwrite save data
 		LoadLevelData.SaveData(ToScene.Tutorial);
 
@@ -49,7 +51,9 @@ public partial class MainMenu : Control
 			// Queueing up the appropriate music
 			int songID = (int)SceneManager.GetNextGoTo();
 
-			if(songID == 2 || songID == 3)
+			if(songID == 1)
+				GlobalMusicPlayer.ToPlay = MusicID.Tutorial;
+			else if(songID == 2 || songID == 3)
 				GlobalMusicPlayer.ToPlay = MusicID.Sunset;
 			else if (3 < songID && songID < 7)
 				GlobalMusicPlayer.ToPlay = MusicID.Forest;
