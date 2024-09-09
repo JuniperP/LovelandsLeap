@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://df6ucomymik0q"]
+[gd_scene load_steps=45 format=3 uid="uid://df6ucomymik0q"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_gf2qm"]
 [ext_resource type="Texture2D" uid="uid://bnd06vdkw4tuw" path="res://assets/background/back_drops/backround_mountains.jpg" id="2_dfxco"]
@@ -21,11 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://10fehss1o3au" path="res://assets/frog/iguana_portrait.png" id="19_n7p2a"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="20_t1ves"]
 [ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="21_lvin2"]
-[ext_resource type="SpriteFrames" uid="uid://hq7btpb76h0j" path="res://resources/sprite_frames/princess.tres" id="22_hchxd"]
-[ext_resource type="SpriteFrames" uid="uid://dyimfn0lnsc3" path="res://resources/sprite_frames/witch.tres" id="23_fqcuy"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/princess.tres" id="22_hchxd"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/witch.tres" id="23_fqcuy"]
 [ext_resource type="AudioStream" uid="uid://lrex53y0bgtp" path="res://audio/sfx/cutscene/magic_sfx.wav" id="24_n1dtr"]
 [ext_resource type="AudioStream" uid="uid://k63x1w4qqh0v" path="res://audio/sfx/dialogue/Iguana/iguana_4_thhh_BAH.wav" id="25_krknq"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="26_r30c8"]
+[ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="27_13ogb"]
 
 [sub_resource type="Animation" id="Animation_l5pl5"]
 length = 0.001
@@ -808,6 +809,10 @@ layout_mode = 0
 offset_right = 355.0
 offset_bottom = 67.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="LoadingScreen" parent="." instance=ExtResource("27_13ogb")]
+visible = false
+layout_mode = 1
 
 [editable path="Dialogue/Frog1"]
 [editable path="Dialogue/Princess1"]

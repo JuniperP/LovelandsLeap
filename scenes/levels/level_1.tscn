@@ -10,10 +10,10 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l5qbg"]
 resource_local_to_scene = true
 shader = ExtResource("4_3e38t")
-shader_parameter/tint = Color(1, 0.784314, 0, 0.137255)
+shader_parameter/tint = Color(1, 0.705882, 0, 0.137255)
 shader_parameter/h = 0.0
 shader_parameter/s = 1.222
-shader_parameter/v = 1.0
+shader_parameter/v = 1.315
 
 [node name="Level1" type="Control"]
 layout_mode = 3

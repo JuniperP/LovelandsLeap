@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://js6dadsijsgm"]
+[gd_scene load_steps=46 format=3 uid="uid://js6dadsijsgm"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_g5qut"]
 [ext_resource type="Texture2D" uid="uid://bnd06vdkw4tuw" path="res://assets/background/back_drops/backround_mountains.jpg" id="2_ufswb"]
@@ -22,10 +22,11 @@
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="20_0536g"]
 [ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="21_r7skt"]
 [ext_resource type="SpriteFrames" uid="uid://bpsekjb4cflxu" path="res://resources/sprite_frames/human.tres" id="22_64alo"]
-[ext_resource type="SpriteFrames" uid="uid://hq7btpb76h0j" path="res://resources/sprite_frames/princess.tres" id="22_q7rk8"]
-[ext_resource type="SpriteFrames" uid="uid://dyimfn0lnsc3" path="res://resources/sprite_frames/witch.tres" id="23_ews82"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/princess.tres" id="22_q7rk8"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/witch.tres" id="23_ews82"]
 [ext_resource type="AudioStream" uid="uid://lrex53y0bgtp" path="res://audio/sfx/cutscene/magic_sfx.wav" id="24_c571r"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="26_j4yyq"]
+[ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="27_d7cs6"]
 
 [sub_resource type="Animation" id="Animation_l5pl5"]
 length = 0.001
@@ -297,6 +298,57 @@ _data = {
 "main": SubResource("Animation_4bo4p")
 }
 
+[sub_resource type="Animation" id="Animation_vkap3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FrogLoc/FrogSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HumanLoc/HumanSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../WitchLoc/WitchSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../HumanLoc/HumanSprite:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_ymhv5"]
 resource_name = "main"
 length = 8.0
@@ -394,57 +446,6 @@ tracks/6/keys = {
 "args": [],
 "method": &"stop"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_vkap3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../FrogLoc/FrogSprite:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../HumanLoc/HumanSprite:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../WitchLoc/WitchSprite:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../HumanLoc/HumanSprite:flip_h")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sygyk"]
@@ -963,6 +964,10 @@ layout_mode = 0
 offset_right = 355.0
 offset_bottom = 67.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="LoadingScreen" parent="." instance=ExtResource("27_d7cs6")]
+visible = false
+layout_mode = 1
 
 [editable path="Dialogue/Frog1"]
 [editable path="Dialogue/Princess1"]

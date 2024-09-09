@@ -19,10 +19,10 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tbls3"]
 resource_local_to_scene = true
 shader = ExtResource("3_d1ldf")
-shader_parameter/tint = Color(1, 1, 1, 1)
+shader_parameter/tint = Color(0, 1, 0, 0.176471)
 shader_parameter/h = 1.0
 shader_parameter/s = 1.0
-shader_parameter/v = 1.0
+shader_parameter/v = 0.8
 
 [sub_resource type="Curve2D" id="Curve2D_ktwul"]
 resource_local_to_scene = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://br888scm3xpk"]
+[gd_scene load_steps=22 format=3 uid="uid://br888scm3xpk"]
 
 [ext_resource type="Texture2D" uid="uid://dxu5iwpx476b6" path="res://assets/background/back_drops/main_menu.jpg" id="1_1v0w2"]
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_pqwlb"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://b8xpr4umk4wtv" path="res://audio/sfx/cutscene/house_door_sfx.wav" id="8_pngvr"]
 [ext_resource type="AudioStream" uid="uid://rbqw1hh7q1es" path="res://audio/sfx/dialogue/MC/mc_4_angry_babble_1.wav" id="9_15ff6"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="9_anup7"]
+[ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="10_t3rc1"]
 
 [sub_resource type="Animation" id="Animation_ry7t4"]
 length = 0.001
@@ -310,6 +311,10 @@ script = ExtResource("5_ck5ta")
 
 [node name="InfoToSkip" parent="." instance=ExtResource("9_anup7")]
 layout_mode = 0
+
+[node name="LoadingScreen" parent="." instance=ExtResource("10_t3rc1")]
+visible = false
+layout_mode = 1
 
 [editable path="OrderDialogue"]
 [editable path="ForestDialogue"]

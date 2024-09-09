@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ba77i7lj31gmr"]
+[gd_scene load_steps=32 format=3 uid="uid://ba77i7lj31gmr"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_njx5k"]
 [ext_resource type="Texture2D" uid="uid://bnd06vdkw4tuw" path="res://assets/background/back_drops/backround_mountains.jpg" id="2_diftw"]
@@ -13,9 +13,10 @@
 [ext_resource type="AudioStream" uid="uid://cm31852o876g6" path="res://audio/sfx/dialogue/Frog/croak.mp3" id="11_3b5q8"]
 [ext_resource type="AudioStream" uid="uid://g1gxlg3as0ec" path="res://audio/sfx/dialogue/princess/princess_12_sigh_3.wav" id="12_ajqt8"]
 [ext_resource type="AudioStream" uid="uid://bwv00pw31cn2e" path="res://audio/sfx/dialogue/princess/princess_9_talking_5.wav" id="13_x70yk"]
+[ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="19_7w1lr"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="20_3eow2"]
 [ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="21_hjsy8"]
-[ext_resource type="SpriteFrames" uid="uid://hq7btpb76h0j" path="res://resources/sprite_frames/princess.tres" id="22_i684h"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/princess.tres" id="22_i684h"]
 [ext_resource type="AudioStream" uid="uid://lrex53y0bgtp" path="res://audio/sfx/cutscene/magic_sfx.wav" id="25_4u7wu"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="26_0m1u2"]
 
@@ -509,6 +510,10 @@ layout_mode = 0
 offset_right = 355.0
 offset_bottom = 67.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="LoadingScreen" parent="." instance=ExtResource("19_7w1lr")]
+visible = false
+layout_mode = 1
 
 [editable path="Dialogue/Frog1"]
 [editable path="Dialogue/Princess1"]

@@ -19,10 +19,10 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5aaow"]
 resource_local_to_scene = true
 shader = ExtResource("4_hc7eq")
-shader_parameter/tint = Color(1, 1, 1, 1)
-shader_parameter/h = 1.0
-shader_parameter/s = 1.0
-shader_parameter/v = 1.0
+shader_parameter/tint = Color(0.588235, 1, 0, 0.156863)
+shader_parameter/h = 2.0
+shader_parameter/s = 1.333
+shader_parameter/v = 0.9
 
 [sub_resource type="Curve2D" id="Curve2D_1ra4t"]
 resource_local_to_scene = true
