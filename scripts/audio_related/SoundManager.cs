@@ -8,10 +8,9 @@ dialogue sfx are imported directly within their respective cutscenes.
 */
 
 // Enums for all of the possible names
-public enum SFX : byte
+public enum SFX : int
 {
-	Walk,
-	Jump,
+	Jump = 1,
 	Land,
 	TongueShoot,
 	TongueHit,
@@ -23,7 +22,10 @@ public enum SFX : byte
 	WallBump,
 	HouseDoor,
 	Magic,
-	
+	Walk1,
+	Walk2,
+	Walk3,
+	Walk4,
 }
 
 public partial class SoundManager : Node
@@ -31,7 +33,6 @@ public partial class SoundManager : Node
 	// Dictionary to easily get the prefix for a each sfx file name 
 	private static readonly Dictionary<SFX, string> _sound_paths = new()
 	{
-		{SFX.Walk, "walk_sfx"},
 		{SFX.Jump, "jump_sfx"},
 		{SFX.Land, "land_sfx"},
 		{SFX.Croak, "croak_sfx"},
@@ -41,13 +42,16 @@ public partial class SoundManager : Node
 		{SFX.TongueHit, "tongue_hit_sfx"},
 		{SFX.UIButton, "ui_button_sfx"},
 		{SFX.FlyCatch, "fly_catch_sfx"},
-		{SFX.WallBump, "wall_bump_sfx"}
+		{SFX.WallBump, "wall_bump_sfx"},
+		{SFX.Walk1, "walk_1_sfx"},
+		{SFX.Walk2, "walk_2_sfx"},
+		{SFX.Walk3, "walk_3_sfx"},
+		{SFX.Walk4, "walk_4_sfx"},
 	};
 
 	// Dictionary for comprehensive access to each sfx
 	private static readonly Dictionary<SFX, AudioStreamPlayer> _sounds = new()
 	{
-		{SFX.Walk, CreateAudioPlayer(SFX.Walk)},
 		{SFX.Jump,  CreateAudioPlayer(SFX.Jump)},
 		{SFX.Land,  CreateAudioPlayer(SFX.Land)},
 		{SFX.Croak,  CreateAudioPlayer(SFX.Croak)},
@@ -58,6 +62,10 @@ public partial class SoundManager : Node
 		{SFX.UIButton,  CreateAudioPlayer(SFX.UIButton)},
 		{SFX.FlyCatch, CreateAudioPlayer(SFX.FlyCatch)},
 		{SFX.WallBump, CreateAudioPlayer(SFX.WallBump)},
+		{SFX.Walk1, CreateAudioPlayer(SFX.Walk1)},
+		{SFX.Walk2, CreateAudioPlayer(SFX.Walk2)},
+		{SFX.Walk3, CreateAudioPlayer(SFX.Walk3)},
+		{SFX.Walk4, CreateAudioPlayer(SFX.Walk4)},
 	};
 
 	// Method to create our audio sources for our dictionary

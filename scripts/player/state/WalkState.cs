@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 public class WalkState : MovementState
@@ -6,6 +7,9 @@ public class WalkState : MovementState
 	private double _jumpBufferTime = Mathf.Inf;
 	private double _fallingTime = 0d;
 	private bool _isFastFalling = false;
+
+	// TODO: Walk sound should be managed by SoundManager
+	private double _walkSoundLeft = 0d;
 
 	// Constructor that calls parent constructor (weird notation)
 	public WalkState(Player ctx) : base(ctx) { }
@@ -77,6 +81,21 @@ public class WalkState : MovementState
 			direction * Ctx.Speed,  // Target velocity
 			Ctx.Acceleration * accelFactor * (float)delta  // How much to adjust by
 		);
+
+		// Play walking sound if moving and there's no time left on the walk SFX
+		if (floored && Mathf.Abs(velocity) > 0.01f && _walkSoundLeft <= 0d)
+		{
+			Random rand = new();
+
+			// Play random walk sound
+			SFX sfx = (SFX)rand.Next((int)SFX.Walk1, (int)SFX.Walk4 + 1);
+			SoundManager.PlaySound(sfx, Ctx);
+
+			// Set random remaining walk time
+			_walkSoundLeft = rand.NextDouble() * 0.3 + 0.3;
+		}
+		else // Reduce walk sound time
+			_walkSoundLeft -= delta;
 
 		return velocity;
 	}
