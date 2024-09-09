@@ -10,9 +10,10 @@ public partial class InLevelButton : Area2D
 	// Indicating whether buttons stay pushed down or pop back up
 	[Export] public bool StaysOn;
 
-	[ExportGroup("Sprites")]
+	[ExportGroup("Sprites & Sounds")]
 	[Export] public Sprite2D OnStateSprite;
 	[Export] public Sprite2D OffStateSprite;
+	[Export] public AudioStreamPlayer Sfx;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -26,6 +27,7 @@ public partial class InLevelButton : Area2D
 		if (!_pressed && (node is Player || node is TongueProjectile))
 		{
 			ToggleButton();
+			Sfx.Play();
 			EmitSignal(SignalName.ButtonPressed);
 		}
 	}
