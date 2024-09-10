@@ -12,6 +12,6 @@ public partial class FlyLeaf : Control
 		InLevel.Text = $"{FlyCount.FliesGottenLevel} / {FlyCount.TotalLevelFlies}";
 
 		// Updating the total numbers text
-		Total.Text = $"{FlyCount.FliesGottenTotal} / {FlyCount.TotalGameFlies}";
+		Total.Text = $"{FlyCount.FliesGottenLevelTotal} / {FlyCount.TotalGameFlies}";
 	}
 }

@@ -17,12 +17,15 @@ public partial class FadeTransition : Area2D
 			// Pauses so the player cant run around
 			GetTree().Paused = true;
 
+			// Resetting the amount flies for the in level count
+			FlyCount.FliesGottenTotal = FlyCount.FliesGottenLevelTotal;
+			FlyCount.FliesGottenLevel = 0;
+			FlyCount.TotalLevelFlies = 0;
+
 			// Saves the game
 			LoadLevelData.SaveData(_sendsTo);
 
-			// Resetting the amount flies for the in level count
-			FlyCount.FliesGottenLevel = 0;
-			FlyCount.TotalLevelFlies = 0;
+			
 
 			// Playing the leaving sfx
 			_leavingSFX.Play();
@@ -33,12 +36,12 @@ public partial class FadeTransition : Area2D
 				SpeedRunTimer.FinishedRun();
 
 				// Giving the user the right ending
-				if (FlyCount.FliesGottenTotal == 0)
+				if (FlyCount.FliesGottenLevelTotal == 0)
 				{
 					SceneManager.SetNextGoTo(ToScene.HungryEnding);
 					GlobalMusicPlayer.ToPlay = MusicID.Cutscene;
 				}	
-				else if (FlyCount.FliesGottenTotal == FlyCount.TotalGameFlies)
+				else if (FlyCount.FliesGottenLevelTotal == FlyCount.TotalGameFlies)
 				{
 					SceneManager.SetNextGoTo(ToScene.FullEnding);
 					GlobalMusicPlayer.ToPlay = MusicID.TrueEnding;

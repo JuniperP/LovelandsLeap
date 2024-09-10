@@ -22,7 +22,7 @@ public partial class LoadLevelData : Node
 		saveFile.StoreLine(jsonString);
 
 		// Converting the player's fly count into json format
-		jsonString = Json.Stringify((Godot.Collections.Dictionary)new() { { "FlyCount", (int)FlyCount.FliesGottenTotal } });
+		jsonString = Json.Stringify((Godot.Collections.Dictionary)new() { { "FlyCount", FlyCount.FliesGottenTotal } });
 
 		// Storing fly data
 		saveFile.StoreLine(jsonString);

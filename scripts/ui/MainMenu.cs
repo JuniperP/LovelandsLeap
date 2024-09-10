@@ -30,6 +30,7 @@ public partial class MainMenu : Control
 
 		// Resetting the flies you've obtained
 		FlyCount.FliesGottenTotal = 0;
+		FlyCount.FliesGottenLevelTotal = 0;
 
 		// Overwrite save data
 		LoadLevelData.SaveData(ToScene.Tutorial);
@@ -50,6 +51,9 @@ public partial class MainMenu : Control
 		if (LoadLevelData.SavePathExist())
 		{
 			SceneManager.SetNextGoTo(LoadLevelData.LoadData());
+
+			// Setting up your fly count
+			FlyCount.FliesGottenLevelTotal = FlyCount.FliesGottenTotal;
 
 			// Queueing up the appropriate music
 			int songID = (int)SceneManager.GetNextGoTo();
