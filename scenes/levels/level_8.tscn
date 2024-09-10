@@ -28,7 +28,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xm6w6"]
 resource_local_to_scene = true
 shader = ExtResource("4_hrxki")
-shader_parameter/tint = Color(0, 0.588235, 1, 0.156863)
+shader_parameter/tint = Color(0, 0.588235, 1, 0.176471)
 shader_parameter/h = 2.0
 shader_parameter/s = 1.0
 shader_parameter/v = 1.3
