@@ -28,6 +28,11 @@ public enum SFX : int
 	Walk4,
 }
 
+/*
+Note: Most nodes just export AudioStreamPlayers to play sfx.
+This class is mainly for the situations where an easy sound effect
+option on a scene doesn't exist, such as with UI button sounds.
+*/
 public partial class SoundManager : Node
 {
 	// Dictionary to easily get the prefix for a each sfx file name 
