@@ -1,12 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://duhqqspapvtn0"]
+[gd_scene load_steps=15 format=3 uid="uid://duhqqspapvtn0"]
 
 [ext_resource type="PackedScene" uid="uid://kn1e2rfx52n4" path="res://scenes/levels/parallax_backgrounds/parallax_background_lategame.tscn" id="1_wlaqp"]
 [ext_resource type="PackedScene" uid="uid://clnx8ma77b6h3" path="res://scenes/room.tscn" id="2_s6yqr"]
+[ext_resource type="Shader" path="res://assets/shaders/color_adjustment.gdshader" id="3_0vl44"]
 [ext_resource type="PackedScene" uid="uid://dynldm7etkjb2" path="res://scenes/in_level_objects/fly_tracks/fly_path.tscn" id="4_laj0m"]
 [ext_resource type="PackedScene" uid="uid://d3v5dbjjeis3a" path="res://scenes/in_level_objects/platform_paths/moving_platform_track.tscn" id="5_ns61n"]
 [ext_resource type="PackedScene" uid="uid://b5ovwc4k8xaal" path="res://scenes/in_level_objects/platforms/small_platform.tscn" id="6_tw5jc"]
 [ext_resource type="PackedScene" uid="uid://c75w8ita6k4k" path="res://scenes/in_level_objects/platforms/button_platforms/big_button_platform.tscn" id="7_0862q"]
 [ext_resource type="PackedScene" uid="uid://bxeghwuww2dvu" path="res://scenes/in_level_objects/princess_update.tscn" id="8_6am0s"]
+[ext_resource type="PackedScene" uid="uid://dymkmt6rmafx8" path="res://scenes/in_level_objects/platforms/platform.tscn" id="9_g1ftl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nn6ry"]
+resource_local_to_scene = true
+shader = ExtResource("3_0vl44")
+shader_parameter/tint = Color(1, 1, 1, 1)
+shader_parameter/h = 1.0
+shader_parameter/s = 1.0
+shader_parameter/v = 1.0
 
 [sub_resource type="Curve2D" id="Curve2D_hck64"]
 resource_local_to_scene = true
@@ -29,6 +39,13 @@ _data = {
 }
 point_count = 6
 
+[sub_resource type="Curve2D" id="Curve2D_3skj8"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2500)
+}
+point_count = 2
+
 [node name="TempLevel" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -43,8 +60,10 @@ grow_vertical = 2
 
 [node name="Camera2D" parent="Room" index="0"]
 Left = -500
-Top = -1000
 Bottom = 1000
+
+[node name="Shader" parent="Room/Camera2D/EnvironmentShading" index="0"]
+material = SubResource("ShaderMaterial_nn6ry")
 
 [node name="Player" parent="Room" index="1"]
 position = Vector2(-17, 21)
@@ -79,6 +98,17 @@ TimeToCompleteTrack = 10.0
 position = Vector2(-31, 85)
 
 [node name="PrincessUpdate" parent="." instance=ExtResource("8_6am0s")]
+
+[node name="MovingPlatformTrack3" parent="." node_paths=PackedStringArray("Platform") instance=ExtResource("5_ns61n")]
+position = Vector2(5360, 517)
+curve = SubResource("Curve2D_3skj8")
+Platform = NodePath("Platform")
+BounceOffEnd = true
+AutoStart = true
+TimeToCompleteTrack = 2.0
+
+[node name="Platform" parent="MovingPlatformTrack3" instance=ExtResource("9_g1ftl")]
+position = Vector2(41, -94)
 
 [connection signal="FadedOut" from="Room/Camera2D/CanvasLayer/Control/LoadingScreen" to="PrincessUpdate" method="PlayPrincessUpdate"]
 [connection signal="ButtonPressed" from="MovingPlatformTrack/BIGButtonPlatform" to="MovingPlatformTrack" method="TogglePlatform"]
