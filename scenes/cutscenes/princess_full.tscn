@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ba77i7lj31gmr"]
+[gd_scene load_steps=35 format=3 uid="uid://ba77i7lj31gmr"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_njx5k"]
 [ext_resource type="Texture2D" uid="uid://bnd06vdkw4tuw" path="res://assets/background/back_drops/backround_mountains.jpg" id="2_diftw"]
@@ -16,9 +16,23 @@
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="19_7w1lr"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="20_3eow2"]
 [ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="21_hjsy8"]
-[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/princess.tres" id="22_i684h"]
+[ext_resource type="SpriteFrames" uid="uid://hq7btpb76h0j" path="res://resources/sprite_frames/princess.tres" id="22_i684h"]
 [ext_resource type="AudioStream" uid="uid://lrex53y0bgtp" path="res://audio/sfx/cutscene/magic_sfx.wav" id="25_4u7wu"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="26_0m1u2"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ecjo8"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_whv32"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.643636, 1)
+colors = PackedColorArray(0.992157, 1, 0.780392, 0.368627, 0.996078, 1, 0.92549, 0.243137, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tsgvv"]
+gradient = SubResource("Gradient_whv32")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.837607, 0.833333)
 
 [sub_resource type="Animation" id="Animation_l5pl5"]
 length = 0.001
@@ -328,14 +342,29 @@ texture = ExtResource("4_gurqn")
 expand_mode = 1
 
 [node name="Lantern" type="TextureRect" parent="Midground"]
-modulate = Color(0.91, 0.91, 0.91, 1)
-layout_mode = 0
+modulate = Color(0.72, 0.71544, 0.5832, 1)
 offset_left = 1350.0
 offset_top = 835.0
 offset_right = 1448.0
 offset_bottom = 1025.0
 texture = ExtResource("5_gowd8")
 expand_mode = 1
+
+[node name="Light" type="TextureRect" parent="Midground/Lantern"]
+material = SubResource("CanvasItemMaterial_ecjo8")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -203.0
+offset_right = 203.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_tsgvv")
 
 [node name="Dialogue" type="Control" parent="."]
 z_index = 10

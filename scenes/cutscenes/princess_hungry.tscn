@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://df6ucomymik0q"]
+[gd_scene load_steps=48 format=3 uid="uid://df6ucomymik0q"]
 
 [ext_resource type="Script" path="res://scripts/cutscene/Cutscene.cs" id="1_gf2qm"]
 [ext_resource type="Texture2D" uid="uid://bnd06vdkw4tuw" path="res://assets/background/back_drops/backround_mountains.jpg" id="2_dfxco"]
@@ -21,12 +21,26 @@
 [ext_resource type="Texture2D" uid="uid://10fehss1o3au" path="res://assets/frog/iguana_portrait.png" id="19_n7p2a"]
 [ext_resource type="Script" path="res://scripts/cutscene/CutAnimationPlayer.cs" id="20_t1ves"]
 [ext_resource type="SpriteFrames" uid="uid://b8fx45kl5qo25" path="res://resources/sprite_frames/player.tres" id="21_lvin2"]
-[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/princess.tres" id="22_hchxd"]
-[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/witch.tres" id="23_fqcuy"]
+[ext_resource type="SpriteFrames" uid="uid://hq7btpb76h0j" path="res://resources/sprite_frames/princess.tres" id="22_hchxd"]
+[ext_resource type="SpriteFrames" uid="uid://dyimfn0lnsc3" path="res://resources/sprite_frames/witch.tres" id="23_fqcuy"]
 [ext_resource type="AudioStream" uid="uid://lrex53y0bgtp" path="res://audio/sfx/cutscene/magic_sfx.wav" id="24_n1dtr"]
 [ext_resource type="AudioStream" uid="uid://k63x1w4qqh0v" path="res://audio/sfx/dialogue/Iguana/iguana_4_thhh_BAH.wav" id="25_krknq"]
 [ext_resource type="PackedScene" uid="uid://k783tahpmrke" path="res://scenes/cutscenes/info_to_skip.tscn" id="26_r30c8"]
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="27_13ogb"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ncsgs"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_whv32"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.643636, 1)
+colors = PackedColorArray(0.992157, 1, 0.780392, 0.368627, 0.996078, 1, 0.92549, 0.243137, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tsgvv"]
+gradient = SubResource("Gradient_whv32")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.837607, 0.833333)
 
 [sub_resource type="Animation" id="Animation_l5pl5"]
 length = 0.001
@@ -483,7 +497,7 @@ texture = ExtResource("4_cm61g")
 expand_mode = 1
 
 [node name="Lantern" type="TextureRect" parent="Midground"]
-modulate = Color(0.91, 0.91, 0.91, 1)
+modulate = Color(0.72, 0.71544, 0.5832, 1)
 layout_mode = 0
 offset_left = 1350.0
 offset_top = 835.0
@@ -491,6 +505,22 @@ offset_right = 1448.0
 offset_bottom = 1025.0
 texture = ExtResource("5_8wu6x")
 expand_mode = 1
+
+[node name="Light" type="TextureRect" parent="Midground/Lantern"]
+material = SubResource("CanvasItemMaterial_ncsgs")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -203.0
+offset_right = 203.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_tsgvv")
 
 [node name="Dialogue" type="Control" parent="."]
 z_index = 10
