@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c4suej1iw3wkr" path="res://scenes/ui/settings/settings.tscn" id="3_ps8pg"]
 [ext_resource type="FontFile" uid="uid://hw1t6nlg1t1y" path="res://assets/fonts/logo/nerko_one_regular.ttf" id="3_r1n3c"]
 [ext_resource type="Script" path="res://scripts/ui/LightOscillator.cs" id="5_n8t6e"]
-[ext_resource type="PackedScene" uid="uid://dnkodbiws2j72" path="res://scenes/ui/overwrite_saved_game.tscn" id="5_sksx0"]
+[ext_resource type="PackedScene" uid="uid://dnkodbiws2j72" path="res://scenes/ui/overwrite_confirm.tscn" id="5_sksx0"]
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="6_cfs3o"]
 [ext_resource type="Theme" uid="uid://bmipwiwogjf5d" path="res://assets/themes/ui.theme" id="6_esdx0"]
 [ext_resource type="PackedScene" uid="uid://2jyl564ee5cu" path="res://scenes/ui/speed_run_timer.tscn" id="7_4ckpd"]
@@ -207,6 +207,28 @@ layout_mode = 1
 [node name="OverwriteConfirm" parent="OPBack" instance=ExtResource("5_sksx0")]
 visible = false
 layout_mode = 1
+
+[node name="Clarification" type="Label" parent="OPBack/OverwriteConfirm"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -502.0
+offset_top = -430.0
+offset_right = 502.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_esdx0")
+theme_override_font_sizes/font_size = 88
+text = "ARE YOU SURE YOU 
+WANT TO OVERWRITE
+YOUR CURRENT
+GAME'S SAVE DATA?"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SpeedRunTimer" parent="OPBack" instance=ExtResource("7_4ckpd")]
 visible = false

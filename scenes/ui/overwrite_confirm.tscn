@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnkodbiws2j72"]
+[gd_scene load_steps=5 format=3 uid="uid://dnkodbiws2j72"]
 
-[ext_resource type="Script" path="res://scripts/ui/OverwriteSavedGame.cs" id="1_mwf81"]
+[ext_resource type="Theme" uid="uid://bmipwiwogjf5d" path="res://assets/themes/ui.theme" id="1_8fbw8"]
+[ext_resource type="Script" path="res://scripts/ui/OverwriteConfirm.cs" id="2_for16"]
 
 [sub_resource type="Theme" id="Theme_m3tk4"]
 
@@ -14,7 +15,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_mwf81")
+theme = ExtResource("1_8fbw8")
+script = ExtResource("2_for16")
 
 [node name="BackBox" type="Panel" parent="."]
 layout_mode = 1
@@ -31,17 +33,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_m3tk4")
 theme_override_styles/panel = SubResource("StyleBoxFlat_dd3uq")
-
-[node name="Title" type="Label" parent="BackBox"]
-layout_mode = 0
-offset_right = 1004.0
-offset_bottom = 561.0
-theme_override_font_sizes/font_size = 88
-text = "ARE YOU SURE YOU 
-WANT TO OVERWRITE
-YOUR CURRENT
-GAME'S SAVE DATA?"
-horizontal_alignment = 1
 
 [node name="YESButton" type="Button" parent="BackBox"]
 layout_mode = 1

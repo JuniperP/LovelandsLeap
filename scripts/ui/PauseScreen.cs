@@ -31,6 +31,18 @@ public partial class PauseScreen : Toggleable
 		Visible = true;
 	}
 
+	// Easy restarting of the current level
+	private void RestartLevel()
+	{
+		// Resetting the in level fly count
+		FlyCount.FliesGottenLevel = 0;
+		FlyCount.TotalLevelFlies = 0;
+
+		// Going to back to the same level
+		SceneManager.SetNextGoTo(SceneManager.GetNextGoTo());
+		LoadingScreen.FadeIn();
+	}
+
 	// Return to the main menu
 	private void ToMainMenu()
 	{
