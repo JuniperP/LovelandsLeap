@@ -215,7 +215,7 @@ point_count = 4
 [sub_resource type="Curve2D" id="Curve2D_4jyrr"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3075, 836, 0, 0, 0, 0, 4000, 1600)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3075, 836, 0, 0, 0, 0, 3900, 1600)
 }
 point_count = 3
 
@@ -510,7 +510,7 @@ TimeToCompleteTrack = 2.25
 [node name="MidLongPlatform" parent="TheMaze/MovingPlatformTrack22" instance=ExtResource("22_us0km")]
 
 [node name="MovingPlatformTrack23" parent="TheMaze" node_paths=PackedStringArray("Platform") instance=ExtResource("5_bvxwb")]
-position = Vector2(-2100, -350)
+position = Vector2(-2000, -350)
 curve = SubResource("Curve2D_4jyrr")
 Platform = NodePath("SecondLongestPlatform")
 TimeToCompleteTrack = 2.5
