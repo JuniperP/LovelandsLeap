@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c4suej1iw3wkr" path="res://scenes/ui/settings/settings.tscn" id="3_ps8pg"]
 [ext_resource type="FontFile" uid="uid://hw1t6nlg1t1y" path="res://assets/fonts/logo/nerko_one_regular.ttf" id="3_r1n3c"]
 [ext_resource type="Script" path="res://scripts/ui/LightOscillator.cs" id="5_n8t6e"]
-[ext_resource type="PackedScene" path="res://scenes/ui/overwrite_confirm.tscn" id="5_sksx0"]
+[ext_resource type="PackedScene" uid="uid://dnkodbiws2j72" path="res://scenes/ui/overwrite_confirm.tscn" id="5_sksx0"]
 [ext_resource type="PackedScene" uid="uid://djsutjm53512j" path="res://scenes/ui/loading_screen.tscn" id="6_cfs3o"]
 [ext_resource type="Theme" uid="uid://bmipwiwogjf5d" path="res://assets/themes/ui.theme" id="6_esdx0"]
 [ext_resource type="PackedScene" uid="uid://2jyl564ee5cu" path="res://scenes/ui/speed_run_timer.tscn" id="7_4ckpd"]
