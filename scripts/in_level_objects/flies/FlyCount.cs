@@ -15,7 +15,7 @@ public partial class FlyCount : Node
 	public static int TotalLevelFlies = 0;
 
 	// Total flies number in whole game
-	public static int TotalGameFlies = 22;
+	public static int TotalGameFlies = 27;
 
 
 	// Used to adjust around new games and loading games
