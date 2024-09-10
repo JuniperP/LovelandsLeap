@@ -36,12 +36,12 @@ public partial class FadeTransition : Area2D
 				SpeedRunTimer.FinishedRun();
 
 				// Giving the user the right ending
-				if (FlyCount.FliesGottenLevelTotal == 0)
+				if (FlyCount.FliesGottenTotal == 0)
 				{
 					SceneManager.SetNextGoTo(ToScene.HungryEnding);
 					GlobalMusicPlayer.ToPlay = MusicID.Cutscene;
 				}	
-				else if (FlyCount.FliesGottenLevelTotal == FlyCount.TotalGameFlies)
+				else if (FlyCount.FliesGottenTotal == FlyCount.TotalGameFlies)
 				{
 					SceneManager.SetNextGoTo(ToScene.FullEnding);
 					GlobalMusicPlayer.ToPlay = MusicID.TrueEnding;
