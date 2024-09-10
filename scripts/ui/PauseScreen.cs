@@ -37,6 +37,7 @@ public partial class PauseScreen : Toggleable
 		// Resetting the in level fly count
 		FlyCount.FliesGottenLevel = 0;
 		FlyCount.TotalLevelFlies = 0;
+		FlyCount.FliesGottenLevelTotal = FlyCount.FliesGottenTotal;
 
 		// Going to back to the same level
 		SceneManager.SetNextGoTo(SceneManager.GetNextGoTo());
