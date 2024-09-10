@@ -776,7 +776,7 @@ offset_bottom = 600.0
 
 [node name="PrincessSprite" type="AnimatedSprite2D" parent="PrincessLoc"]
 z_index = -1
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.35, 0.35)
 sprite_frames = ExtResource("22_hchxd")
 animation = &"idle"
 autoplay = "idle"
