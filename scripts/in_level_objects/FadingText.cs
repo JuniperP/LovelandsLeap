@@ -12,13 +12,6 @@ public partial class FadingText : Label
     public void CalculateCenter()
     {
         _centerPos = GlobalPosition + Size / 2;
-
-        // CollisionShape2D shape = new()
-        // {
-        //     Shape = new CircleShape2D(),
-        // };
-        // AddChild(shape);
-        // shape.GlobalPosition = _centerPos;
     }
 
     public override void _Process(double delta)

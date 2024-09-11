@@ -48,7 +48,7 @@ public partial class InLevelButton : Area2D
 		_pressed = !_pressed;
 
 		// Change sprite state to match click state
-		if(OnStateSprite.Visible == true)
+		if (OnStateSprite.Visible == true)
 		{
 			OnStateSprite.Hide();
 			OffStateSprite.Show();
@@ -58,7 +58,7 @@ public partial class InLevelButton : Area2D
 			OnStateSprite.Show();
 			OffStateSprite.Hide();
 		}
-			
+
 	}
 
 }

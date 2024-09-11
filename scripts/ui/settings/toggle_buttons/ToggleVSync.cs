@@ -31,5 +31,5 @@ public partial class ToggleVSync : ToggleButton
 			DisplayServer.WindowSetVsyncMode(DisplayServer.VSyncMode.Disabled);
 
 	}
-	
+
 }

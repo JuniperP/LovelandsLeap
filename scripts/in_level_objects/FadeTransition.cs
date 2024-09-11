@@ -25,7 +25,7 @@ public partial class FadeTransition : Area2D
 			// Saves the game
 			LoadLevelData.SaveData(_sendsTo);
 
-			
+
 
 			// Playing the leaving sfx
 			_leavingSFX.Play();
@@ -40,7 +40,7 @@ public partial class FadeTransition : Area2D
 				{
 					SceneManager.SetNextGoTo(ToScene.HungryEnding);
 					GlobalMusicPlayer.ToPlay = MusicID.Cutscene;
-				}	
+				}
 				else if (FlyCount.FliesGottenTotal == FlyCount.TotalGameFlies)
 				{
 					SceneManager.SetNextGoTo(ToScene.FullEnding);
@@ -51,7 +51,7 @@ public partial class FadeTransition : Area2D
 					SceneManager.SetNextGoTo(ToScene.NormalEnding);
 					GlobalMusicPlayer.ToPlay = MusicID.Cutscene;
 				}
-					
+
 			}
 
 			// Sets up to go to the next area

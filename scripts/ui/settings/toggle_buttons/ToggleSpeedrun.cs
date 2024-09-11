@@ -45,7 +45,7 @@ public partial class ToggleSpeedrun : ToggleButton
         Label min = current.GetNode<Label>("Minutes");
 
         // Accounting for no record
-        if(PBTime == float.PositiveInfinity)
+        if (PBTime == float.PositiveInfinity)
         {
             centiSec.Text = "na";
             sec.Text = "na";

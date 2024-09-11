@@ -12,11 +12,11 @@ public partial class CreditText : Label
 		if (time > 0 && sceneCameFrom >= 11)
 		{
 			string pbMessage = "";
-			if(time == ToggleSpeedrun.PBTime)
+			if (time == ToggleSpeedrun.PBTime)
 				pbMessage = "\n\nA new personal best!";
-			
+
 			Text = $"\n\n\n\n\n\n\n\n\n\n\nEnd of run time:   {SpeedRunTimer.FormMin(time)} : {SpeedRunTimer.FormSec(time)} : {SpeedRunTimer.FormCentSec(time)}{pbMessage}{Text}";
-			
+
 			SpeedRunTimer.TimeElapsed = 0;
 		}
 

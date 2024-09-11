@@ -78,7 +78,7 @@ public partial class SceneManager : Node
 		if (_goTo != ToScene.PlaceHolder)
 		{
 			// Loading in a backdrop to hide the debug boxes
-			PackedScene loadingScene = (PackedScene) ResourceLoader.Load(_scenes[ToScene.BlackBackDrop]);
+			PackedScene loadingScene = (PackedScene)ResourceLoader.Load(_scenes[ToScene.BlackBackDrop]);
 			Node loadingScreen = loadingScene.Instantiate();
 			useNode.GetTree().Root.CallDeferred("add_child", loadingScreen);
 

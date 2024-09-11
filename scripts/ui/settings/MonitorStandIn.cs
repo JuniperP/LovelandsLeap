@@ -36,7 +36,7 @@ public partial class MonitorStandIn : Control
 				Modulate = new Color(1, 1, 1, 1f);
 
 			// Setting the new choice at the final run through (Godot goes in linear order)
-			if(MonitorNum + 1 == DisplayServer.GetScreenCount())
+			if (MonitorNum + 1 == DisplayServer.GetScreenCount())
 				ChosenScreen = DisplayChanging.CurrentScreen;
 		}
 	}

@@ -1,4 +1,3 @@
-using System;
 using Godot;
 
 public partial class TongueSpring : DampedSpringJoint2D
@@ -14,7 +13,7 @@ public partial class TongueSpring : DampedSpringJoint2D
 	// Vars to ensure no rotation issues
 	private float _initialGrapplePlatformRotation = 0f;
 	public RemoteTransform2D Remote;
-	
+
 
 
 	public override void _Ready()

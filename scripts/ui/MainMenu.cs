@@ -58,17 +58,17 @@ public partial class MainMenu : Control
 			// Queueing up the appropriate music
 			int songID = (int)SceneManager.GetNextGoTo();
 
-			if(songID == 1)
+			if (songID == 1)
 				GlobalMusicPlayer.ToPlay = MusicID.Tutorial;
-			else if(songID == 2 || songID == 3)
+			else if (songID == 2 || songID == 3)
 				GlobalMusicPlayer.ToPlay = MusicID.Sunset;
 			else if (3 < songID && songID < 7)
 				GlobalMusicPlayer.ToPlay = MusicID.Forest;
-			else if (6 <songID && songID < 10)
+			else if (6 < songID && songID < 10)
 				GlobalMusicPlayer.ToPlay = MusicID.DeepWoods;
 			else if (songID == 11)
 				GlobalMusicPlayer.ToPlay = MusicID.TheOldestTree;
-				
+
 			LoadingScreen.FadeIn();
 		}
 	}

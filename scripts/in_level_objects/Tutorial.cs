@@ -1,6 +1,5 @@
 using Godot;
 
-
 public partial class Tutorial : Node
 {
 	[Export] private Player _player;
@@ -21,7 +20,7 @@ public partial class Tutorial : Node
 	{
 		// Start playing the tutorial music
 		GlobalMusicPlayer.PlayMusic(MusicID.Tutorial);
-		
+
 		// Setting up the explanation texts
 		UpdateText();
 
