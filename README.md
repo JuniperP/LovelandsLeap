@@ -70,6 +70,7 @@ Phoebe Tozer
 
 ### UI Art
 
+Juniper Pasternak
 Phoebe Tozer  
 Teddy Jacobson  
 One image designed by Freepik (www.freepik.com)  
