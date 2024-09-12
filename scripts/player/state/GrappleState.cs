@@ -13,6 +13,7 @@ public class GrappleState : MovementState
 		_grappleTime += delta;
 
 		// Store as variables for brevity
+		float weightMass = Ctx.TongueWeight.Mass;
 		Vector2 weightPos = Ctx.TongueWeight.GlobalPosition;
 		Vector2 springPos = Ctx.TongueSpring.GlobalPosition;
 
@@ -20,7 +21,7 @@ public class GrappleState : MovementState
 		float inputDir = Input.GetAxis("move_left", "move_right");
 
 		// If trying to move and below the tongue pivot
-		if (inputDir != 0f && weightPos.Y > springPos.Y)
+		if (inputDir != 0f && weightPos.Y > springPos.Y && Ctx.Velocity.Length() < Ctx.SwingSpeedLimit)
 		{
 			// Get the normalized vector from the weight to spring
 			Vector2 forceDir = weightPos.DirectionTo(springPos);
@@ -45,7 +46,9 @@ public class GrappleState : MovementState
 							/ Mathf.Log(Ctx.SwingLogBase);
 
 			// Apply the logarithmically adjusted force to the weight
-			Ctx.TongueWeight.ApplyForce(forceDir * logFactor * Ctx.SwingForce * (float)delta);
+			Ctx.TongueWeight.ApplyForce(
+				forceDir * logFactor * weightMass * Ctx.SwingForce * (float)delta
+			);
 		}
 
 		Ctx.TongueWeight.ApplyForce(Ctx.SwingFollowForce * Ctx.TongueSpring.Displacement * (float)delta);

@@ -6,7 +6,9 @@
 
 [node name="TongueSpring" type="DampedSpringJoint2D"]
 node_a = NodePath("StaticBody2D")
+bias = 0.9
 stiffness = 64.0
+damping = 16.0
 script = ExtResource("1_vfrg2")
 LengthFactor = 0.75
 
