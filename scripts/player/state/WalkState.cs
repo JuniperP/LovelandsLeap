@@ -20,10 +20,6 @@ public class WalkState : MovementState
 		Vector2 targetVelocity = Ctx.Velocity;
 		AnimState newState = Ctx.AnimManager.State;
 
-		// Kill vertical velocity when hitting ceiling
-		if (Ctx.IsOnCeiling() && targetVelocity.Y < -0.1f)
-			targetVelocity.Y = 0;
-
 		bool isFloored = Ctx.IsOnFloor();
 		// Horizontal input direction in range [-1f, 1f]
 		float direction = Input.GetAxis("move_left", "move_right");
@@ -104,6 +100,10 @@ public class WalkState : MovementState
 
 	private float VerticalVelocity(double delta, float velocity, bool floored)
 	{
+		// Kill vertical velocity when hitting ceiling
+		if (Ctx.IsOnCeiling() && velocity < -0.1f)
+			velocity = 0f;
+
 		// Handle gravity
 		float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 
