@@ -9,7 +9,7 @@ size = Vector2(100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ceo41"]
 atlas = ExtResource("1_chltk")
-region = Rect2(100, 200, 100, 100)
+region = Rect2(100.5, 200.5, 100, 100)
 
 [node name="SmallPlatform" type="AnimatableBody2D"]
 modulate = Color(0.701961, 0.701961, 0.701961, 1)
