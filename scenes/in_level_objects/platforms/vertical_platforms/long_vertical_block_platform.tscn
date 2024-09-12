@@ -10,7 +10,7 @@ size = Vector2(100, 700)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iqnw5"]
 atlas = ExtResource("3_6pniv")
-region = Rect2(100.5, 200.5, 100, 100)
+region = Rect2(99.5, 200.5, 100, 100)
 
 [node name="LongVerticalBlockPlatform" type="AnimatableBody2D"]
 modulate = Color(0.701961, 0.701961, 0.701961, 1)

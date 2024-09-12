@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qx8ih"]
 atlas = ExtResource("1_sapuf")
-region = Rect2(0.5, 200.5, 100, 100)
+region = Rect2(-0.5, 200.5, 100, 100)
 
 [node name="LeftLogPlatformCollision" type="CollisionPolygon2D"]
 polygon = PackedVector2Array(50, 50, -40, 50, -48, 17, -48, -15, -41, -50, 50, -50)

@@ -9,7 +9,7 @@ size = Vector2(100, 600)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_trb73"]
 atlas = ExtResource("2_sgjta")
-region = Rect2(100.5, 200.5, 100, 100)
+region = Rect2(99.5, 200.5, 100, 100)
 
 [node name="MidLongVerticalBlockPlatform" instance=ExtResource("1_o18uu")]
 

@@ -12,7 +12,7 @@ size = Vector2(500, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxh72"]
 atlas = ExtResource("3_v287m")
-region = Rect2(100.5, 200.5, 100, 100)
+region = Rect2(99.5, 200.5, 100, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gauxu"]
 size = Vector2(300, 100)
