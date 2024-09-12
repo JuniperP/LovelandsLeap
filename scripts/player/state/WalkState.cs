@@ -122,15 +122,22 @@ public class WalkState : MovementState
 
 		if (floored)
 		{
-			// If player has recently buffered a jump (and isn't already jumping), perform one
-			if (_jumpBufferTime < Ctx.JumpBufferTime && velocity != -Ctx.JumpImpulse)
+			// Not already jumping
+			if (velocity != -Ctx.JumpImpulse)
 			{
-				SoundManager.PlaySound(SFX.Jump, Ctx);
-				velocity = -Ctx.JumpImpulse;
+				// If player has recently buffered a jump, perform one
+				if (_jumpBufferTime < Ctx.JumpBufferTime)
+				{
+					SoundManager.PlaySound(SFX.Jump, Ctx);
+					velocity = -Ctx.JumpImpulse;
 
-				// Perform jump cut immediately if the jump button is no longer held
-				if (!Input.IsActionPressed("move_up"))
-					velocity *= Ctx.JumpCutFactor;
+					// Perform jump cut immediately if the jump button is no longer held
+					if (!Input.IsActionPressed("move_up"))
+						velocity *= Ctx.JumpCutFactor;
+				}
+				// Avoid moving platform launch while preserving jump velocity
+				else if (_fallingTime > 0.07)
+					velocity = 0f;
 			}
 
 			// Accounting for free fall and subsequent landing sfx
