@@ -16,7 +16,7 @@ shape = SubResource("RectangleShape2D_2hkyr")
 
 [node name="InLevelButton" parent="." index="3" instance=ExtResource("3_sehc5")]
 modulate = Color(1, 1, 1, 1)
-position = Vector2(-300, 80)
+position = Vector2(-250, 80)
 rotation = 3.14159
 StaysOn = true
 

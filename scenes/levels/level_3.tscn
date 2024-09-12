@@ -213,7 +213,7 @@ TimeToCompleteTrack = 2.0
 [node name="LongerPlatformButton2" parent="MovingPlatformTrack6" instance=ExtResource("8_b4wwi")]
 
 [node name="InLevelButton2" parent="." instance=ExtResource("3_wnows")]
-position = Vector2(3150, -650)
+position = Vector2(3150, -670)
 rotation = 3.14159
 StaysOn = true
 
