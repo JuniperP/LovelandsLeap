@@ -79,7 +79,7 @@ public class WalkState : MovementState
 		);
 
 		// Play walking sound if moving and there's no time left on the walk SFX
-		if (floored && Mathf.Abs(velocity) > 250f && _walkSoundLeft <= 0d)
+		if (floored && Mathf.Abs(velocity) > (0.9f * Ctx.Speed) && _walkSoundLeft <= 0d)
 		{
 			Random rand = new();
 
