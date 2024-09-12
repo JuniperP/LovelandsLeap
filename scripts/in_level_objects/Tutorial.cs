@@ -18,6 +18,9 @@ public partial class Tutorial : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		// Have loading the game and restarting the send you to tutorial
+		SceneManager.SetNextGoTo(ToScene.Tutorial);
+
 		// Start playing the tutorial music
 		GlobalMusicPlayer.PlayMusic(MusicID.Tutorial);
 
