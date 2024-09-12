@@ -132,7 +132,6 @@ TimeToCompleteTrack = 2.0
 [node name="FadeTransition" parent="." instance=ExtResource("10_y1fmd")]
 position = Vector2(11350, -950)
 _sendsTo = 4
-_nextAreasTheme = 5
 
 [connection signal="FadedOut" from="Room/Camera2D/CanvasLayer/Control/LoadingScreen" to="PrincessUpdate" method="PlayPrincessUpdate"]
 

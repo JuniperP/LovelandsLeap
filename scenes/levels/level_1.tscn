@@ -10,7 +10,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l5qbg"]
 resource_local_to_scene = true
 shader = ExtResource("4_3e38t")
-shader_parameter/tint = Color(1, 0.509804, 0, 0.117647)
+shader_parameter/tint = Color(1, 0.509804, 0, 0.137255)
 shader_parameter/h = 0.0
 shader_parameter/s = 1.222
 shader_parameter/v = 1.315
@@ -24,8 +24,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="DeepBlueTree" parent="." instance=ExtResource("1_oe4bh")]
-offset = Vector2(7400, -400)
-transform = Transform2D(1, 0, 0, 1, 7400, -400)
+offset = Vector2(7400, -375)
+transform = Transform2D(1, 0, 0, 1, 7400, -375)
 
 [node name="ParallaxBackgroundEarlygame" parent="." instance=ExtResource("1_58lc1")]
 
@@ -54,6 +54,5 @@ position = Vector2(3200, -1450)
 [node name="FadeTransition" parent="." instance=ExtResource("4_6pusj")]
 position = Vector2(13350, -350)
 _sendsTo = 3
-_nextAreasTheme = 4
 
 [editable path="Room"]
