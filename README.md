@@ -38,8 +38,8 @@ We currently welcome contributions in the forms of:
 Loveland Assets refers to all intellectual property in this repository, excluding Loveland Code.  
 Loveland Code refers to all source code, Godot files, and related documentation within this repository.
 
-Loveland Assets © 2024 by Alcove Devs is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).  
-Loveland Code © 2024 by Alcove Devs is licensed under [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
+Loveland Assets © 2024 by Alex Lloyd, Amanda Tozer, Anja Jacobson, Elliot Newhouse, Joe Tozer, Juniper Pasternak, Lee Zwart, Max Tozer, Phoebe Tozer, Theodore (Teddy) Jacobson,  is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).  
+Loveland Code © 2024 by Juniper Pasternak and Teddy Jacobson is licensed under [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ## Credits
 
@@ -62,7 +62,7 @@ Teddy Jacobson
 Elliot Newhouse  
 Max Tozer  
 Phoebe Tozer  
-trouby, "frogs at summer night" effect from FreeSound.  https://freesound.org/s/379828/  
+frogs at summer night by trouby -- https://freesound.org/s/379828/ -- License: Attribution 4.0
 
 ### Background Art
 
@@ -73,7 +73,7 @@ Phoebe Tozer
 Juniper Pasternak
 Phoebe Tozer  
 Teddy Jacobson  
-One image designed by Freepik (www.freepik.com)  
+Hand drawn frog silhouette designed by Freepik, www.freepik.com
 
 ### Sprite Creation
 
@@ -113,7 +113,32 @@ Teddy Jacobson
 
 ### Funding
 
-Eric Jacobson  
+Eric Jacobson
+
+### Godot License
+
+This game uses Godot Engine, available under the following license:
+
+Copyright (c) 2014-present Godot Engine contributors.
+Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ### Other
 
