@@ -30,6 +30,29 @@ public partial class GlobalMusicPlayer : AudioStreamPlayer
 		{MusicID.TrueEnding, "true_ending_cutscene"}
 	};
 
+	// Each stages corresponding music that plays during it
+	private static readonly Dictionary<ToScene, MusicID> _idsForStages = new()
+	{
+		{ToScene.MainMenu, MusicID.MainMenu},
+		{ToScene.Credits, MusicID.Abomination},
+		{ToScene.PlayTestLevel, MusicID.Sunset},
+		{ToScene.IntroCutscene, MusicID.Cutscene},
+		{ToScene.Tutorial, MusicID.Tutorial},
+		{ToScene.Level1, MusicID.Sunset},
+		{ToScene.Level2, MusicID.Sunset},
+		{ToScene.Level3, MusicID.Forest},
+		{ToScene.Level4, MusicID.Forest},
+		{ToScene.Level5, MusicID.Forest},
+		{ToScene.Level6, MusicID.DeepWoods},
+		{ToScene.Level7, MusicID.DeepWoods},
+		{ToScene.Level8, MusicID.DeepWoods},
+		{ToScene.FinalLevel, MusicID.TheOldestTree},
+		{ToScene.HungryEnding, MusicID.Cutscene},
+		{ToScene.NormalEnding, MusicID.Cutscene},
+		{ToScene.FullEnding, MusicID.TrueEnding},
+
+	};
+
 	// Create a singleton
 	private static GlobalMusicPlayer _instance;
 
@@ -52,6 +75,11 @@ public partial class GlobalMusicPlayer : AudioStreamPlayer
 	private static string FormPath(string unique)
 	{
 		return $"res://audio/music/{unique}.wav";
+	}
+
+	public static MusicID GetSceneMusicID(ToScene scene)
+	{
+		return _idsForStages[scene];
 	}
 
 	public static void PlayMusic(MusicID id)

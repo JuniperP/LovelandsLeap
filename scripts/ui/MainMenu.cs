@@ -11,7 +11,7 @@ public partial class MainMenu : Control
 		SoundManager.ApplyButtonSFX(this);
 
 		// Playing own music so splash and credits don't cause issues
-		GlobalMusicPlayer.PlayMusic(MusicID.MainMenu);
+		GlobalMusicPlayer.PlayMusic(GlobalMusicPlayer.GetSceneMusicID(ToScene.MainMenu));
 	}
 
 	// Sets up to start the game
@@ -26,7 +26,7 @@ public partial class MainMenu : Control
 	// Confirm starts a new game
 	private void StartNewGame()
 	{
-		GlobalMusicPlayer.ToPlay = MusicID.Cutscene;
+		GlobalMusicPlayer.ToPlay = GlobalMusicPlayer.GetSceneMusicID(ToScene.IntroCutscene);
 
 		// Resetting the flies you've obtained
 		FlyCount.FliesGottenTotal = 0;
@@ -56,18 +56,7 @@ public partial class MainMenu : Control
 			FlyCount.FliesGottenLevelTotal = FlyCount.FliesGottenTotal;
 
 			// Queueing up the appropriate music
-			int songID = (int)SceneManager.GetNextGoTo();
-
-			if (songID == 1)
-				GlobalMusicPlayer.ToPlay = MusicID.Tutorial;
-			else if (songID == 2 || songID == 3)
-				GlobalMusicPlayer.ToPlay = MusicID.Sunset;
-			else if (3 < songID && songID < 7)
-				GlobalMusicPlayer.ToPlay = MusicID.Forest;
-			else if (6 < songID && songID < 10)
-				GlobalMusicPlayer.ToPlay = MusicID.DeepWoods;
-			else if (songID == 11)
-				GlobalMusicPlayer.ToPlay = MusicID.TheOldestTree;
+			GlobalMusicPlayer.ToPlay = GlobalMusicPlayer.GetSceneMusicID(SceneManager.GetNextGoTo());
 
 			LoadingScreen.FadeIn();
 		}

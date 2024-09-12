@@ -22,7 +22,7 @@ public partial class Tutorial : Node
 		SceneManager.SetNextGoTo(ToScene.Tutorial);
 
 		// Start playing the tutorial music
-		GlobalMusicPlayer.PlayMusic(MusicID.Tutorial);
+		GlobalMusicPlayer.PlayMusic(GlobalMusicPlayer.GetSceneMusicID(ToScene.Tutorial));
 
 		// Setting up the explanation texts
 		UpdateText();

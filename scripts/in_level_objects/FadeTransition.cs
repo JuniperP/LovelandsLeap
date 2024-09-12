@@ -5,7 +5,6 @@ public partial class FadeTransition : Area2D
 	// Where the player is going to
 	[Export] private ToScene _sendsTo;
 	[Export] private bool _toEndCutscene = false;
-	[Export] private MusicID _nextAreasTheme = MusicID.DeepWoods;
 	[Export] private AudioStreamPlayer _leavingSFX;
 
 
@@ -39,17 +38,17 @@ public partial class FadeTransition : Area2D
 				if (FlyCount.FliesGottenTotal == 0)
 				{
 					SceneManager.SetNextGoTo(ToScene.HungryEnding);
-					GlobalMusicPlayer.ToPlay = MusicID.Cutscene;
+					GlobalMusicPlayer.ToPlay = GlobalMusicPlayer.GetSceneMusicID(ToScene.HungryEnding);
 				}
 				else if (FlyCount.FliesGottenTotal == FlyCount.TotalGameFlies)
 				{
 					SceneManager.SetNextGoTo(ToScene.FullEnding);
-					GlobalMusicPlayer.ToPlay = MusicID.TrueEnding;
+					GlobalMusicPlayer.ToPlay = GlobalMusicPlayer.GetSceneMusicID(ToScene.FullEnding);
 				}
 				else
 				{
 					SceneManager.SetNextGoTo(ToScene.NormalEnding);
-					GlobalMusicPlayer.ToPlay = MusicID.Cutscene;
+					GlobalMusicPlayer.ToPlay = GlobalMusicPlayer.GetSceneMusicID(ToScene.NormalEnding);
 				}
 
 			}
@@ -58,7 +57,7 @@ public partial class FadeTransition : Area2D
 			else
 			{
 				SceneManager.SetNextGoTo(_sendsTo);
-				GlobalMusicPlayer.ToPlay = _nextAreasTheme;
+				GlobalMusicPlayer.ToPlay = GlobalMusicPlayer.GetSceneMusicID(_sendsTo);
 			}
 
 

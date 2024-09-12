@@ -9,7 +9,7 @@ public partial class Credits : Control
 		LoadingScreen.TransTheFade = 0;
 		AsciiFrog.NewVisRatio = 0;
 
-		GlobalMusicPlayer.PlayMusic(MusicID.Abomination);
+		GlobalMusicPlayer.PlayMusic(GlobalMusicPlayer.GetSceneMusicID(ToScene.Credits));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
