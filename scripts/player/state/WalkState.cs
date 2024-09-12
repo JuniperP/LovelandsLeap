@@ -136,7 +136,7 @@ public class WalkState : MovementState
 						velocity *= Ctx.JumpCutFactor;
 				}
 				// Avoid moving platform launch while preserving jump velocity
-				else if (_fallingTime > 0.07)
+				else if (!Input.IsActionPressed("move_up"))
 					velocity = 0f;
 			}
 
