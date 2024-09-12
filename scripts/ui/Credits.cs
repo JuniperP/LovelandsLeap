@@ -16,7 +16,7 @@ public partial class Credits : Control
 	public override void _Process(double delta)
 	{
 		// Letting the user quit from the credits
-		if (Input.IsActionPressed("ui_cancel"))
+		if (Input.IsActionJustPressed("ui_cancel"))
 		{
 			SceneManager.SetNextGoTo(ToScene.MainMenu);
 			SceneManager.GoToSetScene(this);
