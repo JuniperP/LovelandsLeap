@@ -38,7 +38,7 @@ We currently welcome contributions in the forms of:
 Loveland Assets refers to all intellectual property in this repository, excluding Loveland Code.  
 Loveland Code refers to all source code, Godot files, and related documentation within this repository.
 
-Loveland Assets © 2024 by Alex Lloyd, Amanda Tozer, Anja Jacobson, Elliot Newhouse, Joe Tozer, Juniper Pasternak, Lee Zwart, Max Tozer, Phoebe Tozer, Theodore (Teddy) Jacobson is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).  
+Loveland Assets © 2024 by Alex Lloyd, Amanda Tozer, Anja Jacobson, Elliot Newhouse, Joseph Tozer, Juniper Pasternak, Lee Zwart, Max Tozer, Phoebe Tozer, Theodore (Teddy) Jacobson is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).  
 Loveland Code © 2024 by Juniper Pasternak and Teddy Jacobson is licensed under [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ## Credits
