@@ -111,6 +111,9 @@ Lee Zwart
 Phoebe Tozer  
 Teddy Jacobson  
 
+### Likeness For Artistic Purpose
+Joe Tozer
+
 ### Funding
 
 Eric Jacobson
