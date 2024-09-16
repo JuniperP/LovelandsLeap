@@ -111,7 +111,7 @@ theme_override_constants/outline_size = 50
 theme_override_fonts/font = ExtResource("3_r1n3c")
 theme_override_font_sizes/font_size = 156
 text = "
-LOVELAND "
+LOVELAND'S LEAP "
 horizontal_alignment = 2
 
 [node name="NewGameButton" type="Button" parent="OPBack"]

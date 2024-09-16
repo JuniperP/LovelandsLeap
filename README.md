@@ -1,14 +1,14 @@
-# [![Loveland](assets/logo.png)](https://github.com/JuniperP/Loveland)
+# [![Loveland's Leap](assets/logo.png)](https://github.com/JuniperP/LovelandsLeap)
 
 [//]: # (Relink image to Steam page)
 
 [//]: # (TODO: Add Shields badges to Steam, Itch, Trailer)
 
-Loveland is a short platformer video game inspired by the folktales of the Loveland Frog, a cryptid from Ohio. This passion project was produced over a single summer by a small team using [Godot Engine](https://godotengine.org). We invite you to play for free on [Steam](TODO) or [Itch](TODO), as well as learn from, explore, and even modify our open source code.
+Loveland's Leap is a short platformer video game inspired by the folktales of the Loveland Frog, a cryptid from Ohio. This passion project was produced over a single summer by a small team using [Godot Engine](https://godotengine.org). We invite you to play for free on [Steam](TODO) or [Itch](TODO), as well as learn from, explore, and even modify our open source code.
 
 ## About
 
-Loveland was originally produced for [Godot Wild Jam #70](https://itch.io/jam/godot-wild-jam-70). After that initial (very broken) release, we continued working until it was ready to share with the world. This was a big milestone for our team, being our first game to come fully to fruition.
+Loveland's Leap was originally produced for [Godot Wild Jam #70](https://itch.io/jam/godot-wild-jam-70). After that initial (very broken) release, we continued working until it was ready to share with the world. This was a big milestone for our team, being our first game to come fully to fruition.
 
 ## Installation and Usage
 
@@ -27,23 +27,23 @@ To run the game locally, you will need to install Godot and clone this project.
 
 We currently welcome contributions in the forms of:
 
-- [Bug reports](https://github.com/JuniperP/Loveland/issues)
-- Bug fixes via [pull requests](https://github.com/JuniperP/Loveland/pulls)
+- [Bug reports](https://github.com/JuniperP/LovelandsLeap/issues)
+- Bug fixes via [pull requests](https://github.com/JuniperP/LovelandsLeap/pulls)
 
 > [!NOTE]
 > There are no current plans for additional in-game content, but we would love to see any content you make!
 
 ## License
 
-Loveland Assets refers to all intellectual property in this repository, excluding Loveland Code.  
-Loveland Code refers to all source code, Godot files, and related documentation within this repository.
+Loveland's Leap Assets refers to all intellectual property in this repository, excluding Loveland's Leap Code.  
+Loveland's Leap Code refers to all source code, Godot files, and related documentation within this repository.
 
-Loveland Assets © 2024 by Alex Lloyd, Amanda Tozer, Anja Jacobson, Elliot Newhouse, Joseph Tozer, Juniper Pasternak, Lee Zwart, Max Tozer, Phoebe Tozer, Theodore (Teddy) Jacobson is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).  
-Loveland Code © 2024 by Juniper Pasternak and Teddy Jacobson is licensed under [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
+Loveland's Leap Assets © 2024 by Alex Lloyd, Amanda Tozer, Anja Jacobson, Elliot Newhouse, Joseph Tozer, Juniper Pasternak, Lee Zwart, Max Tozer, Phoebe Tozer, Theodore (Teddy) Jacobson is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).  
+Loveland's Leap Code © 2024 by Juniper Pasternak and Teddy Jacobson is licensed under [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ## Credits
 
-Loveland is created and developed by Alcove Devs.
+Loveland's Leap is created and developed by Alcove Devs.
 
 <details>
 
