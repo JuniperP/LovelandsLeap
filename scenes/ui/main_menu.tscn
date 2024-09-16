@@ -258,7 +258,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 32
 text = "Copyright 2024"
 underline = 1
-uri = "https://github.com/JuniperP/Loveland?tab=readme-ov-file#license"
+uri = "https://github.com/JuniperP/LovelandsLeap?tab=readme-ov-file#license"
 
 [connection signal="TriedStartGame" from="." to="OPBack/OverwriteConfirm" method="Open"]
 [connection signal="pressed" from="OPBack/NewGameButton" to="." method="OnNewGameButtonPressed"]
