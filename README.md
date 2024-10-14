@@ -15,9 +15,9 @@ Loveland's Leap was originally produced for [Godot Wild Jam #70](https://itch.io
 To run the game locally, you will need to install Godot and clone this project.
 
 > [!IMPORTANT]
-> This project uses [Godot Engine 4.2 (.NET build)](https://godotengine.org/download/archive/4.2-stable/) and has not been tested on other versions of Godot.
+> This project uses [Godot Engine 4.2.2 (.NET build)](https://godotengine.org/download/archive/4.2.2-stable/) and has not been tested on other versions of Godot.
 
-1. Install [Godot 4.2 .NET](https://godotengine.org/download/archive/4.2-stable/).
+1. Install [Godot 4.2.2 .NET](https://godotengine.org/download/archive/4.2.2-stable/).
 2. If you do not have any familiarity with Godot, consider reading the [Documentation Introduction](https://docs.godotengine.org/en/stable/about/introduction.html) and [Engine Introduction](https://docs.godotengine.org/en/stable/getting_started/introduction/introduction_to_godot.html) to get familiar with the program.
 3. Clone this repository.
 4. Run Godot Engine and import this repository.
@@ -43,7 +43,7 @@ Loveland's Leap Code © 2024 by Juniper Pasternak and Teddy Jacobson is licensed
 
 ## Credits
 
-Loveland's Leap is created and developed by Alcove Devs.
+Loveland's Leap is created and developed by Alcove Devs<super>*</super>.
 
 <details>
 
@@ -150,3 +150,5 @@ A special thanks to the [Godot Wild Jam](https://godotwildjam.com/)!
 And thank you for playing!
 
 </details>
+
+<super>*</super>Alcove Devs is our group's nickname, not the name of a company.
