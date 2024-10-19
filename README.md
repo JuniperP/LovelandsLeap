@@ -1,10 +1,8 @@
-# [![Loveland's Leap](assets/logo.png)](https://www.youtube.com/watch?v=08zGP7-lnrE)
+# [![Loveland's Leap](assets/logo.png)](https://store.steampowered.com/app/3236360/Lovelands_Leap/)
 
-[//]: # (Relink image to Steam page)
+[//]: # (TODO: Add Shields badges to Steam and Trailer)
 
-[//]: # (TODO: Add Shields badges to Steam, Itch, Trailer)
-
-Loveland's Leap is a short platformer video game inspired by the folktales of the Loveland Frog, a cryptid from Ohio. This passion project was produced over a single summer by a small team using [Godot Engine](https://godotengine.org). We invite you to play for free on Steam (COMING SOON), view the [trailer](https://www.youtube.com/watch?v=08zGP7-lnrE), as well as learn from, explore, and even modify our open source code.
+Loveland's Leap is a short platformer video game inspired by the folktales of the Loveland Frog, a cryptid from Ohio. This passion project was produced over a single summer by a small team using [Godot Engine](https://godotengine.org). We invite you to play for free on [Steam](https://store.steampowered.com/app/3236360/Lovelands_Leap/), view the [trailer](https://www.youtube.com/watch?v=08zGP7-lnrE), as well as learn from, explore, and even modify our open source code.
 
 ## About
 
