@@ -260,7 +260,7 @@ text = "Copyright 2024"
 underline = 1
 uri = "https://github.com/JuniperP/LovelandsLeap?tab=readme-ov-file#license"
 
-[connection signal="TriedStartGame" from="." to="OPBack/OverwriteConfirm" method="Open"]
+[connection signal="TriedStartGame" from="." to="OPBack/OverwriteConfirm" method="show"]
 [connection signal="pressed" from="OPBack/NewGameButton" to="." method="OnNewGameButtonPressed"]
 [connection signal="pressed" from="OPBack/LoadButton" to="." method="LoadSavedGame"]
 [connection signal="pressed" from="OPBack/SettingsButton" to="OPBack/Settings" method="Open"]
