@@ -3,10 +3,10 @@ using Godot;
 public partial class LoadSettingsData : Node
 {
 	// The file we will store to
-	private static string _storeTo = "user://lovelandsettings.cfg";
+	private static string _storeTo = "user://lovelandsleapsettings.cfg";
 
 	// File for resetting settings
-	private static string _defaultSettings = "user://lovelanddefaultsettings.cfg";
+	private static string _defaultSettings = "user://lovelandsleapdefaultsettings.cfg";
 
 	// Save settings data from the game
 	public static void SaveData(bool setUpDefault)

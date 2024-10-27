@@ -3,7 +3,7 @@ using Godot;
 public partial class LoadLevelData : Node
 {
 	// Where we will be saving all non config data to
-	private static string _saveTo = "user://lovelandsavedata.json";
+	private static string _saveTo = "user://lovelandsleapsavedata.json";
 
 	/*
 		Method to store game data.
