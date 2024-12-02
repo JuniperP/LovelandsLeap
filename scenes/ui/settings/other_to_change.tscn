@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bx1xpj1qy44d8"]
+[gd_scene load_steps=7 format=3 uid="uid://bx1xpj1qy44d8"]
 
 [ext_resource type="Script" path="res://scripts/ui/settings/toggle_buttons/ToggleClassicVerburg.cs" id="1_1mm41"]
 [ext_resource type="PackedScene" uid="uid://bj4wxcrjnpx2w" path="res://scenes/ui/settings/confirm_reset.tscn" id="1_vwavv"]
+[ext_resource type="Theme" uid="uid://bmipwiwogjf5d" path="res://assets/themes/ui.theme" id="2_lxid2"]
 [ext_resource type="Script" path="res://scripts/ui/settings/toggle_buttons/ToggleSpeedrun.cs" id="2_ml621"]
 [ext_resource type="Script" path="res://scripts/ui/settings/toggle_buttons/ToggleReaction.cs" id="3_eo5p3"]
 
@@ -48,6 +49,7 @@ offset_left = 25.0
 offset_top = 305.0
 offset_right = 408.0
 offset_bottom = 360.0
+theme = ExtResource("2_lxid2")
 theme_override_font_sizes/font_size = 40
 text = "Speedrun Timer:"
 
@@ -86,14 +88,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 340.0
+offset_left = 330.0
 offset_top = -38.5
-offset_right = 408.0
+offset_right = 399.0
 offset_bottom = 38.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
-text = "na
-"
+text = "na"
 horizontal_alignment = 2
 
 [node name="Seconds" type="Label" parent="SpeedRunTimer/ToggleSpeedrun/CurrentTimeLabel"]
@@ -101,9 +102,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 435.0
+offset_left = 430.0
 offset_top = -38.5
-offset_right = 503.0
+offset_right = 499.0
 offset_bottom = 38.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
@@ -115,14 +116,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 525.0
+offset_left = 530.0
 offset_top = -38.5
-offset_right = 593.0
+offset_right = 599.0
 offset_bottom = 38.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
-text = "na
-"
+text = "na"
 horizontal_alignment = 2
 
 [node name="Colon1" type="Label" parent="SpeedRunTimer/ToggleSpeedrun/CurrentTimeLabel"]
@@ -130,9 +130,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 415.0
+offset_left = 405.0
 offset_top = -41.0
-offset_right = 440.0
+offset_right = 430.0
 offset_bottom = 36.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
