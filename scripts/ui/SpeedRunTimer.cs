@@ -106,10 +106,14 @@ public partial class SpeedRunTimer : Toggleable
 	// Ends the current speedrun
 	public static void FinishedRun()
 	{
-		_currentlyRunning = false;
+		if (_currentlyRunning)
+		{
+			_currentlyRunning = false;
 
-		// Save record
-		ToggleSpeedrun.NewTime(TimeElapsed);
+			// Save record
+			ToggleSpeedrun.NewTime(TimeElapsed);
+		}
+
 	}
 
 	// Resets the current speedrun
