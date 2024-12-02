@@ -29,7 +29,7 @@ public partial class ToggleSpeedrun : ToggleButton
     // Allowing change to the pb time while also preventing none valid times
     public static void NewTime(float time)
     {
-        if ((time < PBTime || PBTime <= 0) && time > 0)
+        if (time < PBTime && time > 0)
             PBTime = time;
     }
 
