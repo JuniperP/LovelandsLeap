@@ -26,10 +26,10 @@ public partial class ToggleSpeedrun : ToggleButton
         HasTimer = state;
     }
 
-    // Allowing change to the pb time
+    // Allowing change to the pb time while also preventing none valid times
     public static void NewTime(float time)
     {
-        if (time < PBTime)
+        if ((time < PBTime || PBTime <= 0) && time > 0)
             PBTime = time;
     }
 
