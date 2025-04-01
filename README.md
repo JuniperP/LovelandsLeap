@@ -68,7 +68,7 @@ Phoebe Tozer
 
 ### UI Art
 
-Juniper Pasternak
+Juniper Pasternak  
 Phoebe Tozer  
 Teddy Jacobson  
 Hand drawn frog silhouette designed by Freepik, www.freepik.com
